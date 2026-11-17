@@ -1,0 +1,267 @@
+{
+  "日期": "2026-10-11",
+  "类型": "单方只读评估与生产计划编制",
+  "生产业务实施": "未执行",
+  "文件": [
+    {
+      "路径": "migration/质控科与护理部9张报表迁移复核长任务生产计划-v1.md",
+      "sha256": "2fab96b22610ed8393db21fe84251a4a5fd0e7ad76e8472f2dbba0d1095a13b3",
+      "bytes": 40096
+    },
+    {
+      "路径": "review/round-9/最终报告.md",
+      "sha256": "58fae108155f8d04fa562205db0766586891d26b7e75011ca9640969aca70b64",
+      "bytes": 6553
+    },
+    {
+      "路径": "migration/batches/质控护理九报表/执行台账.csv",
+      "sha256": "0a83f97e9c183fe83f5bfe5fde37ef07e5c6bbf621ca16115ccf787cd7afa404",
+      "bytes": 3497
+    },
+    {
+      "路径": "migration/batches/质控护理九报表/阶段任务清单.csv",
+      "sha256": "b04fb38974806cb4118f410fb95d67eb50febf554c1b566cc1712ff3c6cd87dc",
+      "bytes": 4990
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/assessment.txt",
+      "sha256": "492c9596caeefdfd4f99b02e607a1b2027d3757a1a2c53c124183da62ed7be0c",
+      "bytes": 42890
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_dept_wh.layout.json",
+      "sha256": "71a727e1fe255bf551368bd05ee181099e23f6d7e872d54b612a9e9ef55aa4a6",
+      "bytes": 4494
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_exam_dept_person.layout.json",
+      "sha256": "87a07283b16a4e324c10b566394f051bb8ca9070ca86dca8f2f83a018649c51a",
+      "bytes": 3131
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_hulidanyuangzl.layout.json",
+      "sha256": "c24eeb206e67345825aab51041a2bbecbb85e102bb1b258a409147c72003f1a8",
+      "bytes": 19480
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_hulidanyuangzl_news.layout.json",
+      "sha256": "d8cab79e2dff3766fb04a2e4524ef621d7c33bf6489fe7a1905a0cc1c6d4c44a",
+      "bytes": 8482
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_operation_tj.layout.json",
+      "sha256": "9f2a2caa1c6da5d35c9e2f2284f76bd41e22cd7841d80bf5753d3c1589552a0a",
+      "bytes": 2141
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_tjbb_2.layout.json",
+      "sha256": "bae14eb525e68ff9d7e2269c05271f91225d14e8f5e74064c189daf5ef06030f",
+      "bytes": 11646
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_tjbb_hldy.layout.json",
+      "sha256": "0c02febf832dd911492abd7f611aa2e82464e0e95c684e4bdb260d8af0d5e541",
+      "bytes": 13317
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/d_ward_tian.layout.json",
+      "sha256": "e8e02b75d11278fd7cb906d965434de154cc9cf820a605a0ff1050a947f0c608",
+      "bytes": 10849
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/exact_layout.json",
+      "sha256": "03648896598fd6af9d8bd802fb9f9629a79375b9b4b626d1698e7e36404779af",
+      "bytes": 498910
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/exact_layout.py",
+      "sha256": "4ba3da52b4e2b1242e215be16b01fb2b0917f5319ebf96d2d5c8b035bac540fa",
+      "bytes": 3308
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/finalize_artifacts.py",
+      "sha256": "8d3131a1d3d14347c8cfc2f697b767b76ed333f49ade0b01c76acbe30c53a3ad",
+      "bytes": 6803
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/inspect_sources.py",
+      "sha256": "f171afb33df68edb0035872abec55845c7b75a7cba6779143ae01c513918ddd1",
+      "bytes": 1846
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/inventory.sh",
+      "sha256": "191683ae9ae88fb0428fb25943c0fbf1c80b296ed4abcb17a50d16ee867fdf96",
+      "bytes": 317
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/local_inventory.py",
+      "sha256": "43fd3c9d9516cf11741fd9d6c334deaf14ba97a7603ecd85c5227fb06025232d",
+      "bytes": 2605
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/menu.compiled.txt",
+      "sha256": "bca5c27c05dd4a954ab56ec8d50df6457e728bbb5f728375e9d55fbb7b4d57db",
+      "bytes": 313197
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/menu_evidence.json",
+      "sha256": "dc8f64e866c573cb3a4a837764cca055b089b14454c8add90ce7b8a1d5e25549",
+      "bytes": 2128
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/menu_evidence.py",
+      "sha256": "fa45f87fb96a2564cb16cbb0429edd394291c3910ddf1ad5926cf6dbd59410f8",
+      "bytes": 1657
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/preflight.out",
+      "sha256": "2e6ef3a0846dee248ad531a62d4826f2a872adf9a23e187344ddee6656fbc7f4",
+      "bytes": 382
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/preflight.sh",
+      "sha256": "116f210241b5a73993e1e051f634959df835ee50533eccd7167a5eab23c41788",
+      "bytes": 349
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/production_before.json",
+      "sha256": "e7e49b13d61cf69d42ba0e1f3d2f4a873707a6c9486fdca9a1b359af18c5f5e5",
+      "bytes": 59225
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/production_inventory.py",
+      "sha256": "fdd3b4917d22825d1610a7f41650858fd2bfbf5e0edc5396f3e74f435d94da55",
+      "bytes": 4351
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/remote.py",
+      "sha256": "69095fe428b03b0dea21c18e409af0780ece928062201fec8f2e013a9ae1bda3",
+      "bytes": 810
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/source_details.txt",
+      "sha256": "92752b011b9449d880e868371699ece94dfcd852d2645697592a8da580e0de06",
+      "bytes": 41102
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/source_inventory.json",
+      "sha256": "191f2fa350309a010b14894bb35868294c7b83964e5daf6e30d2aaf7889d48cc",
+      "bytes": 133085
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/source_srd.json",
+      "sha256": "0687856b9a7b7e6ec585b00865fa21525c597c64a29c7c650f84f972d71921a4",
+      "bytes": 443380
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/summarize.py",
+      "sha256": "2a5da7136be4fcfa92ddf6fe51a04734349f08bd7645dbb24eb77832135fb208",
+      "bytes": 1754
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_dept.compiled.txt",
+      "sha256": "694fa219673da17a6e708de3bbad5b864262463a1612a5b1a79b11c76c1bdbf3",
+      "bytes": 28311
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_exam_dept_person.compiled.txt",
+      "sha256": "c43f77b0aea866e235f94bfdfa946139021f1d581b9405d69ab1ae531cc5aaef",
+      "bytes": 18154
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_hulidanyuangzl.compiled.txt",
+      "sha256": "875190d6b9456e13efa1bf0f21a351b4bacea706771bef7a40865029ae196fd2",
+      "bytes": 32148
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_hulidanyuangzl.sql_literals.json",
+      "sha256": "b8f999cbf20c8a192274e47479c56fb73f5f047e10dcffb4afa0ab90d3816753",
+      "bytes": 1750
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_month_report_new.compiled.txt",
+      "sha256": "73fa98635aa15528bcac9e84e757b50df6fcac5880075d1b33989ae73203ea32",
+      "bytes": 23114
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_nursing_workload.compiled.txt",
+      "sha256": "2df8e9650310de195af3909da7a3aded8b12090cc730affc847cb8be69b47399",
+      "bytes": 64304
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_nursing_workload.sql_literals.json",
+      "sha256": "109f3cb5c4c7729502762e2c41f3d65eca4e518d4acee94abab5f11df83508ed",
+      "bytes": 16091
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_operation_tj.compiled.txt",
+      "sha256": "da743167422ece298a0d4dc21d4cd43ca2a9b5001779a3a2b2641790b5230a4d",
+      "bytes": 21959
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_tjbb_2_zgz.compiled.txt",
+      "sha256": "9def66e1e33d9d8f78439ee72428f0116b5e9f194e331bea2c8cc0cfe1ba9136",
+      "bytes": 43090
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_tjbb_2_zgz.sql_literals.json",
+      "sha256": "27cfa53d6050b7b3f6b8d17fcb96be1e1f7bef23fab2c4d2c5d44c3db5ce423e",
+      "bytes": 5676
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_tjbb_hldy.compiled.txt",
+      "sha256": "2b6bb3f7e6ba1ddf2f6b812e753a3bc28e4532494c9fd6ffd1d730943211b0b1",
+      "bytes": 41585
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_tjbb_hldy.sql_literals.json",
+      "sha256": "a7ff3215071599791bdf1bdc1bf81afd65eda8679e9e974340a3a7ac96868b5d",
+      "bytes": 2646
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_ward_tian.compiled.txt",
+      "sha256": "3e54b7319a970ff165a64188a49d64df3933abbd2651b2bede9f18f8a1dad192",
+      "bytes": 45137
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_ward_tian.sql_literals.json",
+      "sha256": "be70dfce7457d1af7a2c2b730dfb3bdf97ae870313501804f6da31b45224ac3c",
+      "bytes": 5331
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_work_sum.compiled.txt",
+      "sha256": "95ff576c51ca5be21467a4e88a36d08498bec254a87469c9cadf7e0ed81c8e76",
+      "bytes": 30544
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/w_work_sum.sql_literals.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE/原始表头与计算候选.csv",
+      "sha256": "1275721e2c9c66a1956d95bf81e0ac6299967d8cb844e9940e89d9db2790312c",
+      "bytes": 21038
+    },
+    {
+      "路径": "migration/README.md",
+      "sha256": "eed25ffdc92df4e99e3414e2e3fe4fa7dcd64aafc491dee875048101dbece67d",
+      "bytes": 2462
+    },
+    {
+      "路径": "migration/执行进度.md",
+      "sha256": "b765849103dac278a5b7542b2918d6f979a4d8e7d893f57e6419a5828e986148",
+      "bytes": 37520
+    },
+    {
+      "路径": "迁移完成情况与待办说明.md",
+      "sha256": "9b71c0f49c75623435534deed9e88e904a8a2303ef61282410b36b4998721668",
+      "bytes": 10282
+    },
+    {
+      "路径": "migration/生产系统改进长任务计划-v1-多方互查修订版.md",
+      "sha256": "9759752dd8dcb20ac42089e18bf1aa81437e25330521beed8a7b9b7a2af0ec8d",
+      "bytes": 18561
+    }
+  ]
+}

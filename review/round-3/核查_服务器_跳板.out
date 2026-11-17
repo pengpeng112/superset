@@ -1,0 +1,125 @@
+[jump] 10.10.8.53:40022 connected; host-key ssh-ed25519 16fef8edee76e3d7137060d145b24b74
+===== [jump_info] rc=0 $ hostname; ip -4 addr 2>/dev/null | grep inet | head -6
+localhost.localdomain
+    inet 127.0.0.1/8 scope host lo
+    inet 10.10.8.53/24 brd 10.10.8.255 scope global noprefixroute ens9
+    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-21fac5268cd5
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-d4996a08c5cc
+===== [jump_to_73_22] rc=0 $ timeout 4 bash -c '</dev/tcp/10.10.8.73/22' 2>/dev/null && echo TGT_22_OPEN || echo TGT_22_FAIL
+TGT_22_OPEN
+===== [jump_to_216_1521] rc=0 $ timeout 4 bash -c '</dev/tcp/10.10.8.216/1521' 2>/dev/null && echo REACH_216_1521_OK || echo REACH_216_1521_FAIL
+REACH_216_1521_OK
+===== [tunnel] direct-tcpip 10.10.8.73:22 via jump
+[target] 10.10.8.73:22 connected; host-key ssh-ed25519 d1a5e9304f64228403dc138b068c3fbd
+===== [os] rc=0 $ cat /etc/os-release 2>/dev/null | head -5; uname -m; uname -r
+NAME="openEuler"
+VERSION="22.03 (LTS-SP2)"
+ID="openEuler"
+VERSION_ID="22.03"
+PRETTY_NAME="openEuler 22.03 (LTS-SP2)"
+x86_64
+5.10.0-153.12.0.92.oe2203sp2.x86_64
+===== [cpu_mem] rc=0 $ nproc; free -h
+16
+               total        used        free      shared  buff/cache   available
+Mem:            30Gi       4.1Gi        12Gi       218Mi        14Gi        26Gi
+Swap:           15Gi          0B        15Gi
+===== [disk] rc=0 $ df -h | grep -Ev 'tmpfs|overlay|shm' | head -15
+文件系统                    容量  已用  可用 已用% 挂载点
+/dev/mapper/openeuler-root   69G   33G   32G   51% /
+/dev/sda1                   974M  151M  756M   17% /boot
+/dev/mapper/openeuler-home  898G  130G  723G   16% /home
+===== [docker] rc=0 $ docker --version 2>&1; docker compose version 2>&1; docker ps -a --format '{{.Names}}\t{{.Image}}\t{{.Status}}' 2>&1 | head -20
+Docker version 24.0.9, build 2936816
+Docker Compose version v5.5.0
+ai-hms-dry-weight-ml	ai-hms-model-services-dry-weight-ml	Up 5 weeks (healthy)
+ai-hms-idh-pre	ai-hms-model-services-idh-pre	Up 6 weeks (healthy)
+ai-hms-sbp	ai-hms-model-services-sbp	Up 6 weeks (unhealthy)
+ai-hms-model-gateway	nginx:1.27-alpine	Up 6 weeks
+ai-hms-qc-eval	ai-hms-model-services-qc-eval	Up 6 weeks (healthy)
+ai-hms-actrs	ai-hms-model-services-actrs	Up 4 weeks (healthy)
+ai-hms-idh	ai-hms-model-services-idh	Up 6 weeks (healthy)
+data-asset-api	data-asset:130p1-20260814062017	Up 6 weeks (healthy)
+data-asset-api-pre-126p5-20260811223311	581c5efc2d1d	Exited (0) 7 weeks ago
+data-asset-api-pre-signature125-20260810161506	data-asset:identity122-20260809	Exited (0) 7 weeks ago
+data-asset-api-pre-rbac-dict	data-asset:sync-202608042015-auto-approve	Exited (0) 2 months ago
+catalog-unify-test	data-asset:20260714-e9e11-test	Exited (255) 6 weeks ago
+charming_nightingale	0ac59e08bf14	Exited (1) 2 months ago
+unruffled_solomon	0132020541b4	Exited (1) 2 months ago
+===== [python] rc=0 $ python3 --version 2>&1; ls /usr/bin/python* 2>/dev/null
+Python 3.9.9
+/usr/bin/python3
+/usr/bin/python3.9
+===== [ports_listen] rc=0 $ (ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null) | head -30
+State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                                                                                                                                                                                                                                                                          
+LISTEN 0      244               0.0.0.0:5432       0.0.0.0:*    users:(("postgres",pid=1333,fd=5))                                                                                                                                                                                                                                                                                                                                                                                                              
+LISTEN 0      2048            127.0.0.1:30523      0.0.0.0:*    users:(("klnagent",pid=1226,fd=126))                                                                                                                                                                                                                                                                                                                                                                                                            
+LISTEN 0      2048            127.0.0.1:34683      0.0.0.0:*    users:(("klnagent",pid=1226,fd=55))                                                                                                                                                                                                                                                                                                                                                                                                             
+LISTEN 0      2048            127.0.0.1:8000       0.0.0.0:*    users:(("uvicorn",pid=2450,fd=12))                                                                                                                                                                                                                                                                                                                                                                                                              
+LISTEN 0      4096              0.0.0.0:8900       0.0.0.0:*    users:(("docker-proxy",pid=747239,fd=4))                                                                                                                                                                                                                                                                                                                                                                                                        
+LISTEN 0      4096            127.0.0.1:34763      0.0.0.0:*    users:(("containerd",pid=1312,fd=11))                                                                                                                                                                                                                                                                                                                                                                                                           
+LISTEN 0      511               0.0.0.0:80         0.0.0.0:*    users:(("nginx",pid=1442,fd=10),("nginx",pid=1440,fd=10),("nginx",pid=1439,fd=10),("nginx",pid=1438,fd=10),("nginx",pid=1437,fd=10),("nginx",pid=1434,fd=10),("nginx",pid=1432,fd=10),("nginx",pid=1431,fd=10),("nginx",pid=1430,fd=10),("nginx",pid=1429,fd=10),("nginx",pid=1428,fd=10),("nginx",pid=1427,fd=10),("nginx",pid=1426,fd=10),("nginx",pid=1425,fd=10),("nginx",pid=1424,fd=10),("nginx",pid=1422,fd=10),("nginx",pid=1420,fd=10))
+LISTEN 0      128               0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=1321,fd=3))                                                                                                                                                                                                                                                                                                                                                                                                                  
+LISTEN 0      4096   [::ffff:127.0.0.1]:9879             *:*    users:(("kesl",pid=1275,fd=236))                                                                                                                                                                                                                                                                                                                                                                                                                
+LISTEN 0      244                  [::]:5432          [::]:*    users:(("postgres",pid=1333,fd=6))                                                                                                                                                                                                                                                                                                                                                                                                              
+LISTEN 0      2048                [::1]:30523         [::]:*    users:(("klnagent",pid=1226,fd=125))                                                                                                                                                                                                                                                                                                                                                                                                            
+LISTEN 0      2048                [::1]:34683         [::]:*    users:(("klnagent",pid=1226,fd=56))                                                                                                                                                                                                                                                                                                                                                                                                             
+LISTEN 0      4096   [::ffff:127.0.0.1]:9789             *:*    users:(("kesl",pid=1275,fd=237))                                                                                                                                                                                                                                                                                                                                                                                                                
+LISTEN 0      4096                 [::]:8900          [::]:*    users:(("docker-proxy",pid=747247,fd=4))                                                                                                                                                                                                                                                                                                                                                                                                        
+LISTEN 0      511                  [::]:80            [::]:*    users:(("nginx",pid=1442,fd=11),("nginx",pid=1440,fd=11),("nginx",pid=1439,fd=11),("nginx",pid=1438,fd=11),("nginx",pid=1437,fd=11),("nginx",pid=1434,fd=11),("nginx",pid=1432,fd=11),("nginx",pid=1431,fd=11),("nginx",pid=1430,fd=11),("nginx",pid=1429,fd=11),("nginx",pid=1428,fd=11),("nginx",pid=1427,fd=11),("nginx",pid=1426,fd=11),("nginx",pid=1425,fd=11),("nginx",pid=1424,fd=11),("nginx",pid=1422,fd=11),("nginx",pid=1420,fd=11))
+LISTEN 0      128                  [::]:22            [::]:*    users:(("sshd",pid=1321,fd=4))
+===== [services] rc=0 $ systemctl list-units --type=service --state=running --no-pager 2>/dev/null | head -35
+UNIT                     LOAD   ACTIVE SUB     DESCRIPTION
+  auditd.service           loaded active running Security Auditing Service
+  chronyd.service          loaded active running NTP client/server
+  containerd.service       loaded active running containerd container runtime
+  crond.service            loaded active running Command Scheduler
+  dbus.service             loaded active running D-Bus System Message Bus
+  docker.service           loaded active running Docker Application Container Engine
+  firewalld.service        loaded active running firewalld - dynamic firewall daemon
+  getty@tty1.service       loaded active running Getty on tty1
+  irqbalance.service       loaded active running irqbalance daemon
+  kesl.service             loaded active running kesl
+  klnagent64.service       loaded active running Kaspersky Network Agent.
+  NetworkManager.service   loaded active running Network Manager
+  nginx.service            loaded active running The nginx HTTP and reverse proxy server
+  polkit.service           loaded active running Authorization Manager
+  postgresql.service       loaded active running PostgreSQL 14 Database Server
+  rngd.service             loaded active running Hardware RNG Entropy Gatherer Daemon
+  rsyslog.service          loaded active running System Logging Service
+  sshd.service             loaded active running OpenSSH server daemon
+  systemd-journald.service loaded active running Journal Service
+  systemd-logind.service   loaded active running User Login Management
+  systemd-udevd.service    loaded active running Rule-based Manager for Device Events and Files
+  tuned.service            loaded active running Dynamic System Tuning Daemon
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+22 loaded units listed.
+===== [db_oracle_reach] rc=0 $ timeout 4 bash -c '</dev/tcp/10.10.8.216/1521' 2>/dev/null && echo REACH_10.10.8.216_1521_OK || echo REACH_10.10.8.216_1521_FAIL
+REACH_10.10.8.216_1521_OK
+===== [egress] rc=0 $ timeout 4 bash -c '</dev/tcp/mirrors.aliyun.com/443' 2>/dev/null && echo EGRESS_OK || echo EGRESS_FAIL_INTRANET
+EGRESS_FAIL_INTRANET
+===== [dirs] rc=0 $ ls -d /data /opt /app 2>/dev/null; ls /opt 2>/dev/null | head -10
+/data
+/opt
+ai-hms-models
+containerd
+data-asset
+kaspersky
+med-audit
+oracle
+===== [selinux_firewall] rc=0 $ getenforce 2>&1; systemctl is-active firewalld 2>&1
+Disabled
+active
+===== [locale_tz] rc=0 $ timedatectl 2>/dev/null | head -4
+Local time: 日 2026-10-04 21:48:45 CST
+           Universal time: 日 2026-10-04 13:48:45 UTC
+                 RTC time: 日 2026-10-04 13:49:23
+                Time zone: Asia/Shanghai (CST, +0800)
+===== [mem_total_mb] rc=0 $ awk '/MemTotal/{print int($2/1024)}' /proc/meminfo
+31541
+===== [existing_superset] rc=0 $ ls -d /opt/superset* /data/superset* 2>/dev/null; docker images 2>/dev/null | grep -i superset | head -5
+===== DONE jump+target read-only inspection

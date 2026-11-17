@@ -1,0 +1,5501 @@
+{
+ "browser": "Chrome/156.0.8078.81",
+ "templates": [
+  {
+   "dashboard": 72,
+   "slice_id": 373,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A373%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 338,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "CHUYUAN"
+        },
+        "expressionType": "SIMPLE",
+        "label": "住院出院总人数"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "338__table",
+     "viz_type": "big_number_total",
+     "slice_id": 373,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "CHUYUAN"
+      },
+      "expressionType": "SIMPLE",
+      "label": "住院出院总人数"
+     },
+     "adhoc_filters": [],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_BEGIN",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 373,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "1880418a4e1fe4b8",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 372,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A372%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 347,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "expressionType": "SQL",
+        "label": "急诊与观察室人次",
+        "sqlExpression": "SUM(JIZHENS)+SUM(GUANCHA)"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "347__table",
+     "viz_type": "big_number_total",
+     "slice_id": 372,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "expressionType": "SQL",
+      "label": "急诊与观察室人次",
+      "sqlExpression": "SUM(JIZHENS)+SUM(GUANCHA)"
+     },
+     "adhoc_filters": [],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_BEGIN",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 372,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 2,
+   "hit_at_capture": true,
+   "cache_key16": "5937f86c912cc7b3",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 371,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A371%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 347,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "MEN_ZHENS"
+        },
+        "expressionType": "SIMPLE",
+        "label": "门急诊总诊疗人次"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "347__table",
+     "viz_type": "big_number_total",
+     "slice_id": 371,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "MEN_ZHENS"
+      },
+      "expressionType": "SIMPLE",
+      "label": "门急诊总诊疗人次"
+     },
+     "adhoc_filters": [],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_BEGIN",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 371,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 4,
+   "hit_at_capture": true,
+   "cache_key16": "5b3b6b790bcb7ba1",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 375,
+   "viz": "echarts_timeseries_bar",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A375%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 347,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       {
+        "columnType": "BASE_AXIS",
+        "sqlExpression": "KSDM",
+        "label": "KSDM",
+        "expressionType": "SQL",
+        "isColumnReference": true
+       }
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "MEN_ZHENS"
+        },
+        "expressionType": "SIMPLE",
+        "hasCustomLabel": true,
+        "label": "门急诊诊疗人次"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "MEN_ZHENS"
+         },
+         "expressionType": "SIMPLE",
+         "hasCustomLabel": true,
+         "label": "门急诊诊疗人次"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 15,
+      "series_columns": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "time_offsets": [],
+      "post_processing": [
+       {
+        "operation": "pivot",
+        "options": {
+         "index": [
+          "KSDM"
+         ],
+         "columns": [],
+         "aggregates": {
+          "门急诊诊疗人次": {
+           "operator": "mean"
+          }
+         },
+         "drop_missing_columns": false
+        }
+       },
+       {
+        "operation": "flatten"
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "347__table",
+     "viz_type": "echarts_timeseries_bar",
+     "slice_id": 375,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "x_axis": "KSDM",
+     "xAxisForceCategorical": false,
+     "x_axis_sort_asc": true,
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "MEN_ZHENS"
+       },
+       "expressionType": "SIMPLE",
+       "hasCustomLabel": true,
+       "label": "门急诊诊疗人次"
+      }
+     ],
+     "groupby": [],
+     "adhoc_filters": [],
+     "group_others_when_limit_reached": false,
+     "order_desc": true,
+     "row_limit": 15,
+     "truncate_metric": true,
+     "show_empty_columns": true,
+     "comparison_type": "values",
+     "annotation_layers": [],
+     "forecastEnabled": false,
+     "forecastPeriods": 10,
+     "forecastInterval": 0.8,
+     "orientation": "vertical",
+     "x_axis_title": "",
+     "x_axis_title_margin": 15,
+     "y_axis_title": "",
+     "y_axis_title_margin": 15,
+     "y_axis_title_position": "Left",
+     "sort_series_type": "sum",
+     "sort_series_ascending": false,
+     "color_scheme": "supersetColors",
+     "time_shift_color": true,
+     "show_value": true,
+     "only_total": true,
+     "percentage_threshold": 0,
+     "color_by_primary_axis": false,
+     "minorTicks": false,
+     "zoomable": false,
+     "show_legend": false,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "x_axis_time_format": "smart_date",
+     "x_axis_number_format": "~g",
+     "xAxisLabelRotation": 0,
+     "xAxisLabelInterval": "auto",
+     "y_axis_format": ",d",
+     "currency_format": {
+      "symbolPosition": ""
+     },
+     "logAxis": false,
+     "minorSplitLine": false,
+     "truncateYAxis": false,
+     "y_axis_bounds": [
+      null,
+      null
+     ],
+     "truncateXAxis": true,
+     "force_max_interval": false,
+     "rich_tooltip": true,
+     "showTooltipTotal": true,
+     "showTooltipPercentage": false,
+     "tooltipSortByMetric": false,
+     "tooltipTimeFormat": "smart_date",
+     "echart_options": "{}",
+     "granularity_sqla": "STAT_BEGIN",
+     "log_scale": false,
+     "marker_enabled": true,
+     "marker_size": 6,
+     "show_extra_controls": false,
+     "sort_by_metric": true,
+     "time_range": "No filter",
+     "x_axis_label_rotation": 45,
+     "z_index": null,
+     "chart_id": 375,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 6,
+   "hit_at_capture": true,
+   "cache_key16": "c03c0d6072e61f61",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 376,
+   "viz": "echarts_timeseries_bar",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A376%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 338,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       {
+        "columnType": "BASE_AXIS",
+        "sqlExpression": "KSDM",
+        "label": "KSDM",
+        "expressionType": "SQL",
+        "isColumnReference": true
+       }
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "CHUYUAN"
+        },
+        "expressionType": "SIMPLE",
+        "hasCustomLabel": true,
+        "label": "出院人数"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "CHUYUAN"
+         },
+         "expressionType": "SIMPLE",
+         "hasCustomLabel": true,
+         "label": "出院人数"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 15,
+      "series_columns": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "time_offsets": [],
+      "post_processing": [
+       {
+        "operation": "pivot",
+        "options": {
+         "index": [
+          "KSDM"
+         ],
+         "columns": [],
+         "aggregates": {
+          "出院人数": {
+           "operator": "mean"
+          }
+         },
+         "drop_missing_columns": false
+        }
+       },
+       {
+        "operation": "flatten"
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "338__table",
+     "viz_type": "echarts_timeseries_bar",
+     "slice_id": 376,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "x_axis": "KSDM",
+     "xAxisForceCategorical": false,
+     "x_axis_sort_asc": true,
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "CHUYUAN"
+       },
+       "expressionType": "SIMPLE",
+       "hasCustomLabel": true,
+       "label": "出院人数"
+      }
+     ],
+     "groupby": [],
+     "adhoc_filters": [],
+     "group_others_when_limit_reached": false,
+     "order_desc": true,
+     "row_limit": 15,
+     "truncate_metric": true,
+     "show_empty_columns": true,
+     "comparison_type": "values",
+     "annotation_layers": [],
+     "forecastEnabled": false,
+     "forecastPeriods": 10,
+     "forecastInterval": 0.8,
+     "orientation": "vertical",
+     "x_axis_title": "",
+     "x_axis_title_margin": 15,
+     "y_axis_title": "",
+     "y_axis_title_margin": 15,
+     "y_axis_title_position": "Left",
+     "sort_series_type": "sum",
+     "sort_series_ascending": false,
+     "color_scheme": "supersetColors",
+     "time_shift_color": true,
+     "show_value": true,
+     "only_total": true,
+     "percentage_threshold": 0,
+     "color_by_primary_axis": false,
+     "minorTicks": false,
+     "zoomable": false,
+     "show_legend": false,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "x_axis_time_format": "smart_date",
+     "x_axis_number_format": "~g",
+     "xAxisLabelRotation": 0,
+     "xAxisLabelInterval": "auto",
+     "y_axis_format": ",d",
+     "currency_format": {
+      "symbolPosition": ""
+     },
+     "logAxis": false,
+     "minorSplitLine": false,
+     "truncateYAxis": false,
+     "y_axis_bounds": [
+      null,
+      null
+     ],
+     "truncateXAxis": true,
+     "force_max_interval": false,
+     "rich_tooltip": true,
+     "showTooltipTotal": true,
+     "showTooltipPercentage": false,
+     "tooltipSortByMetric": false,
+     "tooltipTimeFormat": "smart_date",
+     "echart_options": "{}",
+     "granularity_sqla": "STAT_BEGIN",
+     "log_scale": false,
+     "marker_enabled": true,
+     "marker_size": 6,
+     "show_extra_controls": false,
+     "sort_by_metric": true,
+     "time_range": "No filter",
+     "x_axis_label_rotation": 45,
+     "z_index": null,
+     "chart_id": 376,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 8,
+   "hit_at_capture": true,
+   "cache_key16": "bdeff1615caee232",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 374,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A374%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 338,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "CURR"
+        },
+        "expressionType": "SIMPLE",
+        "label": "月末实际在院人数"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "338__table",
+     "viz_type": "big_number_total",
+     "slice_id": 374,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "CURR"
+      },
+      "expressionType": "SIMPLE",
+      "label": "月末实际在院人数"
+     },
+     "adhoc_filters": [],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_BEGIN",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 374,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 10,
+   "hit_at_capture": true,
+   "cache_key16": "eaa504f36542cc59",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 377,
+   "viz": "pie",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A377%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 374,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "转归"
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "人数"
+        },
+        "expressionType": "SIMPLE",
+        "label": "转归人数"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "人数"
+         },
+         "expressionType": "SIMPLE",
+         "label": "转归人数"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 100,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [
+       {
+        "operation": "contribution",
+        "options": {
+         "columns": [
+          "转归人数"
+         ],
+         "rename_columns": [
+          "转归人数__contribution"
+         ]
+        }
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "374__table",
+     "viz_type": "pie",
+     "slice_id": 377,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "groupby": [
+      "转归"
+     ],
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "人数"
+      },
+      "expressionType": "SIMPLE",
+      "label": "转归人数"
+     },
+     "adhoc_filters": [],
+     "row_limit": 100,
+     "sort_by_metric": true,
+     "color_scheme": "supersetColors",
+     "show_labels_threshold": 5,
+     "threshold_for_other": 0,
+     "show_legend": true,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "label_type": "name_value",
+     "number_format": ",d",
+     "date_format": "smart_date",
+     "show_labels": true,
+     "labels_outside": true,
+     "label_line": false,
+     "show_total": false,
+     "outerRadius": 70,
+     "donut": true,
+     "innerRadius": 40,
+     "granularity_sqla": "STAT_BEGIN",
+     "legendPosition": "right",
+     "time_range": "No filter",
+     "chart_id": 377,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 13,
+   "hit_at_capture": true,
+   "cache_key16": "3e5c322167f45d3f",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 378,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A378%7D&dashboard_id=72",
+   "body": {
+    "datasource": {
+     "id": 348,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "2026-09-01 : 2026-10-01",
+      "granularity": "STAT_BEGIN",
+      "filters": [
+       {
+        "col": "KS",
+        "op": "NOT IN",
+        "val": [
+         "总计",
+         "合计"
+        ]
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS"
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "DISCH_N"
+        },
+        "expressionType": "SIMPLE",
+        "label": "出院人数"
+       },
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "BED_END"
+        },
+        "expressionType": "SIMPLE",
+        "label": "月末实有病床"
+       },
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "DEATH_RATE"
+        },
+        "expressionType": "SIMPLE",
+        "label": "病死率(%)"
+       },
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "OCC_DAYS"
+        },
+        "expressionType": "SIMPLE",
+        "label": "出院者占用总床日"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "DISCH_N"
+         },
+         "expressionType": "SIMPLE",
+         "label": "出院人数"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 50,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     }
+    ],
+    "form_data": {
+     "datasource": "348__table",
+     "viz_type": "table",
+     "slice_id": 378,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "aggregate",
+     "groupby": [
+      "KS"
+     ],
+     "temporal_columns_lookup": {},
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "DISCH_N"
+       },
+       "expressionType": "SIMPLE",
+       "label": "出院人数"
+      },
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "BED_END"
+       },
+       "expressionType": "SIMPLE",
+       "label": "月末实有病床"
+      },
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "DEATH_RATE"
+       },
+       "expressionType": "SIMPLE",
+       "label": "病死率(%)"
+      },
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "OCC_DAYS"
+       },
+       "expressionType": "SIMPLE",
+       "label": "出院者占用总床日"
+      }
+     ],
+     "all_columns": [],
+     "percent_metrics": [],
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": [
+        "总计",
+        "合计"
+       ],
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi378_ex_total",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "NOT IN",
+       "sqlExpression": null,
+       "subject": "KS"
+      }
+     ],
+     "order_by_cols": [],
+     "order_desc": true,
+     "server_pagination": false,
+     "server_page_length": 10,
+     "row_limit": 50,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 25,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "column_config": {},
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "granularity_sqla": "STAT_BEGIN",
+     "include_time": false,
+     "time_range": "No filter",
+     "chart_id": 378,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {
+      "time_range": "2026-09-01 : 2026-10-01"
+     },
+     "dashboardId": 72,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 17,
+   "hit_at_capture": true,
+   "cache_key16": "26b7b98e16d5db59",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 72,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 347,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_BEGIN"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {
+       "native_filters_key": "apEha5UwBVM"
+      },
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "347__table",
+     "groupby": [
+      "STAT_BEGIN"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "defaultValue": "2026-09-01 : 2026-10-01",
+     "url_params": {
+      "native_filters_key": "apEha5UwBVM"
+     },
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 72,
+     "native_filter_id": "NATIVE-FILTER-BI1-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "2ffce12c3db34a75",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 380,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A380%7D&dashboard_id=73",
+   "body": {
+    "datasource": {
+     "id": 324,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_DATE",
+      "filters": [
+       {
+        "col": "DTIME",
+        "op": "==",
+        "val": "17:00"
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "COUNT(*)"
+        },
+        "expressionType": "SIMPLE"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "324__table",
+     "viz_type": "big_number_total",
+     "slice_id": 380,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "COUNT(*)"
+      },
+      "expressionType": "SIMPLE"
+     },
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": "17:00",
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi380_d1700",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "==",
+       "sqlExpression": null,
+       "subject": "DTIME"
+      }
+     ],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_DATE",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 380,
+     "label_colors": {},
+     "shared_label_colors": [
+      "累计人次"
+     ],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 73,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "ae55c91b32568833",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 381,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A381%7D&dashboard_id=73",
+   "body": {
+    "datasource": {
+     "id": 326,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_DATE",
+      "filters": [
+       {
+        "col": "DTIME",
+        "op": "==",
+        "val": "17:00"
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "COUNT(*)"
+        },
+        "expressionType": "SIMPLE"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "326__table",
+     "viz_type": "big_number_total",
+     "slice_id": 381,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "COUNT(*)"
+      },
+      "expressionType": "SIMPLE"
+     },
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": "17:00",
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi381_d1700",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "==",
+       "sqlExpression": null,
+       "subject": "DTIME"
+      }
+     ],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_DATE",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 381,
+     "label_colors": {},
+     "shared_label_colors": [
+      "累计人次"
+     ],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 73,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 3,
+   "hit_at_capture": true,
+   "cache_key16": "a6f37ee91d4ad4ba",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 379,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A379%7D&dashboard_id=73",
+   "body": {
+    "datasource": {
+     "id": 325,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_DATE",
+      "filters": [
+       {
+        "col": "DTIME",
+        "op": "==",
+        "val": "17:00"
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "COUNT(*)"
+        },
+        "expressionType": "SIMPLE"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "325__table",
+     "viz_type": "big_number_total",
+     "slice_id": 379,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "COUNT(*)"
+      },
+      "expressionType": "SIMPLE"
+     },
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": "17:00",
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi379_d1700",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "==",
+       "sqlExpression": null,
+       "subject": "DTIME"
+      }
+     ],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_DATE",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 379,
+     "label_colors": {},
+     "shared_label_colors": [
+      "累计人次"
+     ],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 73,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 6,
+   "hit_at_capture": true,
+   "cache_key16": "eaba95ce14dd6a0a",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 384,
+   "viz": "echarts_timeseries_line",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A384%7D&dashboard_id=73",
+   "body": {
+    "datasource": {
+     "id": 322,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_DATE",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       {
+        "columnType": "BASE_AXIS",
+        "sqlExpression": "DTIME",
+        "label": "DTIME",
+        "expressionType": "SQL",
+        "isColumnReference": true
+       }
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "COUNT(*)"
+        },
+        "expressionType": "SIMPLE",
+        "hasCustomLabel": true,
+        "label": "累计人次"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "COUNT(*)"
+         },
+         "expressionType": "SIMPLE",
+         "hasCustomLabel": true,
+         "label": "累计人次"
+        },
+        true
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 50,
+      "series_columns": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "time_offsets": [],
+      "post_processing": [
+       {
+        "operation": "pivot",
+        "options": {
+         "index": [
+          "DTIME"
+         ],
+         "columns": [],
+         "aggregates": {
+          "累计人次": {
+           "operator": "mean"
+          }
+         },
+         "drop_missing_columns": false
+        }
+       },
+       {
+        "operation": "flatten"
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "322__table",
+     "viz_type": "echarts_timeseries_line",
+     "slice_id": 384,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "x_axis": "DTIME",
+     "xAxisForceCategorical": false,
+     "x_axis_sort_asc": true,
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "COUNT(*)"
+       },
+       "expressionType": "SIMPLE",
+       "hasCustomLabel": true,
+       "label": "累计人次"
+      }
+     ],
+     "groupby": [],
+     "adhoc_filters": [],
+     "group_others_when_limit_reached": false,
+     "order_desc": false,
+     "row_limit": 50,
+     "truncate_metric": true,
+     "show_empty_columns": true,
+     "comparison_type": "values",
+     "annotation_layers": [],
+     "forecastEnabled": false,
+     "forecastPeriods": 10,
+     "forecastInterval": 0.8,
+     "x_axis_title": "",
+     "x_axis_title_margin": 15,
+     "y_axis_title": "",
+     "y_axis_title_margin": 15,
+     "y_axis_title_position": "Left",
+     "sort_series_type": "sum",
+     "sort_series_ascending": false,
+     "color_scheme": "supersetColors",
+     "time_shift_color": true,
+     "show_value": false,
+     "only_total": true,
+     "percentage_threshold": 0,
+     "area": false,
+     "opacity": 0.2,
+     "markerEnabled": false,
+     "markerSize": 6,
+     "zoomable": false,
+     "minorTicks": false,
+     "show_legend": false,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "x_axis_time_format": "smart_date",
+     "x_axis_number_format": "~g",
+     "xAxisLabelRotation": 0,
+     "xAxisLabelInterval": "auto",
+     "force_max_interval": false,
+     "rich_tooltip": true,
+     "showTooltipTotal": true,
+     "showTooltipPercentage": false,
+     "tooltipSortByMetric": false,
+     "tooltipTimeFormat": "smart_date",
+     "y_axis_format": ",d",
+     "currency_format": {
+      "symbolPosition": ""
+     },
+     "logAxis": false,
+     "minorSplitLine": false,
+     "truncateXAxis": true,
+     "truncateYAxis": false,
+     "y_axis_bounds": [
+      null,
+      null
+     ],
+     "echart_options": "{}",
+     "granularity_sqla": "STAT_DATE",
+     "log_scale": false,
+     "marker_enabled": true,
+     "marker_size": 6,
+     "show_extra_controls": false,
+     "sort_by_metric": false,
+     "time_range": "No filter",
+     "z_index": null,
+     "chart_id": 384,
+     "label_colors": {},
+     "shared_label_colors": [
+      "累计人次"
+     ],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 73,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 8,
+   "hit_at_capture": true,
+   "cache_key16": "7ae2361f128a519f",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 385,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A385%7D&dashboard_id=73",
+   "body": {
+    "datasource": {
+     "id": 325,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_DATE",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "DTIME",
+       "STAT_DATE"
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "COUNT(*)"
+        },
+        "expressionType": "SIMPLE"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "COUNT(*)"
+         },
+         "expressionType": "SIMPLE"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 30,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     }
+    ],
+    "form_data": {
+     "datasource": "325__table",
+     "viz_type": "table",
+     "slice_id": 385,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "aggregate",
+     "groupby": [
+      "DTIME",
+      "STAT_DATE"
+     ],
+     "temporal_columns_lookup": {},
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "COUNT(*)"
+       },
+       "expressionType": "SIMPLE"
+      }
+     ],
+     "all_columns": [],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": false,
+     "server_pagination": false,
+     "server_page_length": 10,
+     "row_limit": 30,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 25,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "column_config": {},
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "granularity_sqla": "STAT_DATE",
+     "include_time": false,
+     "time_range": "No filter",
+     "chart_id": 385,
+     "label_colors": {},
+     "shared_label_colors": [
+      "累计人次"
+     ],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 73,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 11,
+   "hit_at_capture": true,
+   "cache_key16": "6a65b70300b8e3cf",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 382,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A382%7D&dashboard_id=73",
+   "body": {
+    "datasource": {
+     "id": 322,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_DATE",
+      "filters": [
+       {
+        "col": "DTIME",
+        "op": "==",
+        "val": "17:00"
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "COUNT(*)"
+        },
+        "expressionType": "SIMPLE"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "322__table",
+     "viz_type": "big_number_total",
+     "slice_id": 382,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "COUNT(*)"
+      },
+      "expressionType": "SIMPLE"
+     },
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": "17:00",
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi382_d1700",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "==",
+       "sqlExpression": null,
+       "subject": "DTIME"
+      }
+     ],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_DATE",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 382,
+     "label_colors": {},
+     "shared_label_colors": [
+      "累计人次"
+     ],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 73,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 16,
+   "hit_at_capture": true,
+   "cache_key16": "270fb104bdaadf6d",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 383,
+   "viz": "echarts_timeseries_line",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A383%7D&dashboard_id=73",
+   "body": {
+    "datasource": {
+     "id": 325,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_DATE",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       {
+        "columnType": "BASE_AXIS",
+        "sqlExpression": "DTIME",
+        "label": "DTIME",
+        "expressionType": "SQL",
+        "isColumnReference": true
+       }
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "COUNT(*)"
+        },
+        "expressionType": "SIMPLE",
+        "hasCustomLabel": true,
+        "label": "累计人次"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "COUNT(*)"
+         },
+         "expressionType": "SIMPLE",
+         "hasCustomLabel": true,
+         "label": "累计人次"
+        },
+        true
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 50,
+      "series_columns": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "time_offsets": [],
+      "post_processing": [
+       {
+        "operation": "pivot",
+        "options": {
+         "index": [
+          "DTIME"
+         ],
+         "columns": [],
+         "aggregates": {
+          "累计人次": {
+           "operator": "mean"
+          }
+         },
+         "drop_missing_columns": false
+        }
+       },
+       {
+        "operation": "flatten"
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "325__table",
+     "viz_type": "echarts_timeseries_line",
+     "slice_id": 383,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "x_axis": "DTIME",
+     "xAxisForceCategorical": false,
+     "x_axis_sort_asc": true,
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "COUNT(*)"
+       },
+       "expressionType": "SIMPLE",
+       "hasCustomLabel": true,
+       "label": "累计人次"
+      }
+     ],
+     "groupby": [],
+     "adhoc_filters": [],
+     "group_others_when_limit_reached": false,
+     "order_desc": false,
+     "row_limit": 50,
+     "truncate_metric": true,
+     "show_empty_columns": true,
+     "comparison_type": "values",
+     "annotation_layers": [],
+     "forecastEnabled": false,
+     "forecastPeriods": 10,
+     "forecastInterval": 0.8,
+     "x_axis_title": "",
+     "x_axis_title_margin": 15,
+     "y_axis_title": "",
+     "y_axis_title_margin": 15,
+     "y_axis_title_position": "Left",
+     "sort_series_type": "sum",
+     "sort_series_ascending": false,
+     "color_scheme": "supersetColors",
+     "time_shift_color": true,
+     "show_value": false,
+     "only_total": true,
+     "percentage_threshold": 0,
+     "area": false,
+     "opacity": 0.2,
+     "markerEnabled": false,
+     "markerSize": 6,
+     "zoomable": false,
+     "minorTicks": false,
+     "show_legend": false,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "x_axis_time_format": "smart_date",
+     "x_axis_number_format": "~g",
+     "xAxisLabelRotation": 0,
+     "xAxisLabelInterval": "auto",
+     "force_max_interval": false,
+     "rich_tooltip": true,
+     "showTooltipTotal": true,
+     "showTooltipPercentage": false,
+     "tooltipSortByMetric": false,
+     "tooltipTimeFormat": "smart_date",
+     "y_axis_format": ",d",
+     "currency_format": {
+      "symbolPosition": ""
+     },
+     "logAxis": false,
+     "minorSplitLine": false,
+     "truncateXAxis": true,
+     "truncateYAxis": false,
+     "y_axis_bounds": [
+      null,
+      null
+     ],
+     "echart_options": "{}",
+     "granularity_sqla": "STAT_DATE",
+     "log_scale": false,
+     "marker_enabled": true,
+     "marker_size": 6,
+     "show_extra_controls": false,
+     "sort_by_metric": false,
+     "time_range": "No filter",
+     "z_index": null,
+     "chart_id": 383,
+     "label_colors": {},
+     "shared_label_colors": [
+      "累计人次"
+     ],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 73,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 18,
+   "hit_at_capture": true,
+   "cache_key16": "d302d117932c8808",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 73,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 325,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_DATE"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "325__table",
+     "groupby": [
+      "STAT_DATE"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {},
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 73,
+     "native_filter_id": "NATIVE-FILTER-BI2-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "f742c650af830118",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 74,
+   "slice_id": 392,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A392%7D&dashboard_id=74",
+   "body": {
+    "datasource": {
+     "id": 345,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_BEGIN",
+      "filters": [
+       {
+        "col": "BRANCH_NAME",
+        "op": "IN",
+        "val": [
+         "门诊"
+        ]
+       },
+       {
+        "col": "TJ_KSMC",
+        "op": "==",
+        "val": "合计"
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "OPER_NUM"
+        },
+        "expressionType": "SIMPLE",
+        "label": "门诊手术台数"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "345__table",
+     "viz_type": "big_number_total",
+     "slice_id": 392,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "OPER_NUM"
+      },
+      "expressionType": "SIMPLE",
+      "label": "门诊手术台数"
+     },
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": [
+        "门诊"
+       ],
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi_mz_branch",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "IN",
+       "sqlExpression": null,
+       "subject": "BRANCH_NAME"
+      },
+      {
+       "clause": "WHERE",
+       "comparator": "合计",
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi_mz_total_row",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "==",
+       "sqlExpression": null,
+       "subject": "TJ_KSMC"
+      }
+     ],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_BEGIN",
+     "subheader": "门诊分支合计行",
+     "time_range": "No filter",
+     "chart_id": 392,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 74,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "5d57b770f97de5d6",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 74,
+   "slice_id": 389,
+   "viz": "pie",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A389%7D&dashboard_id=74",
+   "body": {
+    "datasource": {
+     "id": 373,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_BEGIN",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "BRANCH_NAME"
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "OPER_NUM"
+        },
+        "expressionType": "SIMPLE",
+        "label": "手术台数"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "OPER_NUM"
+         },
+         "expressionType": "SIMPLE",
+         "label": "手术台数"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 100,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [
+       {
+        "operation": "contribution",
+        "options": {
+         "columns": [
+          "手术台数"
+         ],
+         "rename_columns": [
+          "手术台数__contribution"
+         ]
+        }
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "373__table",
+     "viz_type": "pie",
+     "slice_id": 389,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "groupby": [
+      "BRANCH_NAME"
+     ],
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "OPER_NUM"
+      },
+      "expressionType": "SIMPLE",
+      "label": "手术台数"
+     },
+     "adhoc_filters": [],
+     "row_limit": 100,
+     "sort_by_metric": true,
+     "color_scheme": "supersetColors",
+     "show_labels_threshold": 5,
+     "threshold_for_other": 0,
+     "show_legend": true,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "label_type": "name_value",
+     "number_format": ",d",
+     "date_format": "smart_date",
+     "show_labels": true,
+     "labels_outside": true,
+     "label_line": false,
+     "show_total": false,
+     "outerRadius": 70,
+     "donut": true,
+     "innerRadius": 40,
+     "granularity_sqla": "STAT_BEGIN",
+     "legendPosition": "right",
+     "time_range": "No filter",
+     "chart_id": 389,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 74,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 3,
+   "hit_at_capture": true,
+   "cache_key16": "a671eb17c19bfce7",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 74,
+   "slice_id": 386,
+   "viz": "big_number_total",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A386%7D&dashboard_id=74",
+   "body": {
+    "datasource": {
+     "id": 345,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_BEGIN",
+      "filters": [
+       {
+        "col": "TJ_KSMC",
+        "op": "==",
+        "val": "合计"
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "OPER_NUM"
+        },
+        "expressionType": "SIMPLE",
+        "label": "手术总台数"
+       }
+      ],
+      "annotation_layers": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "datasource": "345__table",
+     "viz_type": "big_number_total",
+     "slice_id": 386,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "metric": {
+      "aggregate": "SUM",
+      "column": {
+       "column_name": "OPER_NUM"
+      },
+      "expressionType": "SIMPLE",
+      "label": "手术总台数"
+     },
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": "合计",
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi386_total_row",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "==",
+       "sqlExpression": null,
+       "subject": "TJ_KSMC"
+      }
+     ],
+     "header_font_size": 0.4,
+     "subtitle_font_size": 0.15,
+     "show_metric_name": false,
+     "metric_name_font_size": 0.15,
+     "y_axis_format": ",d",
+     "time_format": "smart_date",
+     "force_timestamp_formatting": false,
+     "compare_lag": "",
+     "compare_suffix": "",
+     "date_format": "smart_date",
+     "granularity_sqla": "STAT_BEGIN",
+     "subheader": "",
+     "time_range": "No filter",
+     "chart_id": 386,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 74,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 6,
+   "hit_at_capture": true,
+   "cache_key16": "329e4cd5c1cc8b17",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 74,
+   "slice_id": 387,
+   "viz": "echarts_timeseries_bar",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A387%7D&dashboard_id=74",
+   "body": {
+    "datasource": {
+     "id": 345,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_BEGIN",
+      "filters": [
+       {
+        "col": "TJ_KSMC",
+        "op": "NOT IN",
+        "val": [
+         "合计"
+        ]
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       {
+        "columnType": "BASE_AXIS",
+        "sqlExpression": "TJ_KSMC",
+        "label": "TJ_KSMC",
+        "expressionType": "SQL",
+        "isColumnReference": true
+       }
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "OPER_NUM"
+        },
+        "expressionType": "SIMPLE",
+        "hasCustomLabel": true,
+        "label": "手术台数"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "OPER_NUM"
+         },
+         "expressionType": "SIMPLE",
+         "hasCustomLabel": true,
+         "label": "手术台数"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 15,
+      "series_columns": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "time_offsets": [],
+      "post_processing": [
+       {
+        "operation": "pivot",
+        "options": {
+         "index": [
+          "TJ_KSMC"
+         ],
+         "columns": [],
+         "aggregates": {
+          "手术台数": {
+           "operator": "mean"
+          }
+         },
+         "drop_missing_columns": false
+        }
+       },
+       {
+        "operation": "flatten"
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "345__table",
+     "viz_type": "echarts_timeseries_bar",
+     "slice_id": 387,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "x_axis": "TJ_KSMC",
+     "xAxisForceCategorical": false,
+     "x_axis_sort_asc": true,
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "OPER_NUM"
+       },
+       "expressionType": "SIMPLE",
+       "hasCustomLabel": true,
+       "label": "手术台数"
+      }
+     ],
+     "groupby": [],
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": [
+        "合计"
+       ],
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi387_ex_total",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "NOT IN",
+       "sqlExpression": null,
+       "subject": "TJ_KSMC"
+      }
+     ],
+     "group_others_when_limit_reached": false,
+     "order_desc": true,
+     "row_limit": 15,
+     "truncate_metric": true,
+     "show_empty_columns": true,
+     "comparison_type": "values",
+     "annotation_layers": [],
+     "forecastEnabled": false,
+     "forecastPeriods": 10,
+     "forecastInterval": 0.8,
+     "orientation": "vertical",
+     "x_axis_title": "",
+     "x_axis_title_margin": 15,
+     "y_axis_title": "",
+     "y_axis_title_margin": 15,
+     "y_axis_title_position": "Left",
+     "sort_series_type": "sum",
+     "sort_series_ascending": false,
+     "color_scheme": "supersetColors",
+     "time_shift_color": true,
+     "show_value": true,
+     "only_total": true,
+     "percentage_threshold": 0,
+     "color_by_primary_axis": false,
+     "minorTicks": false,
+     "zoomable": false,
+     "show_legend": false,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "x_axis_time_format": "smart_date",
+     "x_axis_number_format": "~g",
+     "xAxisLabelRotation": 0,
+     "xAxisLabelInterval": "auto",
+     "y_axis_format": ",d",
+     "currency_format": {
+      "symbolPosition": ""
+     },
+     "logAxis": false,
+     "minorSplitLine": false,
+     "truncateYAxis": false,
+     "y_axis_bounds": [
+      null,
+      null
+     ],
+     "truncateXAxis": true,
+     "force_max_interval": false,
+     "rich_tooltip": true,
+     "showTooltipTotal": true,
+     "showTooltipPercentage": false,
+     "tooltipSortByMetric": false,
+     "tooltipTimeFormat": "smart_date",
+     "echart_options": "{}",
+     "granularity_sqla": "STAT_BEGIN",
+     "log_scale": false,
+     "marker_enabled": true,
+     "marker_size": 6,
+     "show_extra_controls": false,
+     "sort_by_metric": true,
+     "time_range": "No filter",
+     "x_axis_label_rotation": 45,
+     "z_index": null,
+     "chart_id": 387,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 74,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 8,
+   "hit_at_capture": true,
+   "cache_key16": "b23c5165fa087fe9",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 74,
+   "slice_id": 391,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A391%7D&dashboard_id=74",
+   "body": {
+    "datasource": {
+     "id": 350,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_BEGIN",
+      "filters": [
+       {
+        "col": "KS",
+        "op": "NOT IN",
+        "val": [
+         "合计"
+        ]
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS"
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "DISCH_N"
+        },
+        "expressionType": "SIMPLE",
+        "label": "出院人数"
+       },
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "BED_END"
+        },
+        "expressionType": "SIMPLE",
+        "label": "月末实有病床"
+       },
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "CURE_RATE"
+        },
+        "expressionType": "SIMPLE",
+        "label": "治愈率(%)"
+       },
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "DEATH_RATE"
+        },
+        "expressionType": "SIMPLE",
+        "label": "病死率(%)"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "DISCH_N"
+         },
+         "expressionType": "SIMPLE",
+         "label": "出院人数"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 50,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     }
+    ],
+    "form_data": {
+     "datasource": "350__table",
+     "viz_type": "table",
+     "slice_id": 391,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "aggregate",
+     "groupby": [
+      "KS"
+     ],
+     "temporal_columns_lookup": {},
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "DISCH_N"
+       },
+       "expressionType": "SIMPLE",
+       "label": "出院人数"
+      },
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "BED_END"
+       },
+       "expressionType": "SIMPLE",
+       "label": "月末实有病床"
+      },
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "CURE_RATE"
+       },
+       "expressionType": "SIMPLE",
+       "label": "治愈率(%)"
+      },
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "DEATH_RATE"
+       },
+       "expressionType": "SIMPLE",
+       "label": "病死率(%)"
+      }
+     ],
+     "all_columns": [],
+     "percent_metrics": [],
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": [
+        "合计"
+       ],
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi391_ex_total",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "NOT IN",
+       "sqlExpression": null,
+       "subject": "KS"
+      }
+     ],
+     "order_by_cols": [],
+     "order_desc": true,
+     "server_pagination": false,
+     "server_page_length": 10,
+     "row_limit": 50,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 25,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "column_config": {},
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "granularity_sqla": "STAT_BEGIN",
+     "include_time": false,
+     "time_range": "No filter",
+     "chart_id": 391,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 74,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 10,
+   "hit_at_capture": true,
+   "cache_key16": "15939445cd6a2f87",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 74,
+   "slice_id": 390,
+   "viz": "echarts_timeseries_bar",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A390%7D&dashboard_id=74",
+   "body": {
+    "datasource": {
+     "id": 350,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "time_range": "No filter",
+      "granularity": "STAT_BEGIN",
+      "filters": [
+       {
+        "col": "KS",
+        "op": "NOT IN",
+        "val": [
+         "合计"
+        ]
+       }
+      ],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       {
+        "columnType": "BASE_AXIS",
+        "sqlExpression": "KS",
+        "label": "KS",
+        "expressionType": "SQL",
+        "isColumnReference": true
+       }
+      ],
+      "metrics": [
+       {
+        "aggregate": "SUM",
+        "column": {
+         "column_name": "DISCH_N"
+        },
+        "expressionType": "SIMPLE",
+        "hasCustomLabel": true,
+        "label": "出院人数"
+       }
+      ],
+      "orderby": [
+       [
+        {
+         "aggregate": "SUM",
+         "column": {
+          "column_name": "DISCH_N"
+         },
+         "expressionType": "SIMPLE",
+         "hasCustomLabel": true,
+         "label": "出院人数"
+        },
+        false
+       ]
+      ],
+      "annotation_layers": [],
+      "row_limit": 15,
+      "series_columns": [],
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "time_offsets": [],
+      "post_processing": [
+       {
+        "operation": "pivot",
+        "options": {
+         "index": [
+          "KS"
+         ],
+         "columns": [],
+         "aggregates": {
+          "出院人数": {
+           "operator": "mean"
+          }
+         },
+         "drop_missing_columns": false
+        }
+       },
+       {
+        "operation": "flatten"
+       }
+      ]
+     }
+    ],
+    "form_data": {
+     "datasource": "350__table",
+     "viz_type": "echarts_timeseries_bar",
+     "slice_id": 390,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 4,
+     "matrixify_cell_title_template": "",
+     "x_axis": "KS",
+     "xAxisForceCategorical": false,
+     "x_axis_sort_asc": true,
+     "metrics": [
+      {
+       "aggregate": "SUM",
+       "column": {
+        "column_name": "DISCH_N"
+       },
+       "expressionType": "SIMPLE",
+       "hasCustomLabel": true,
+       "label": "出院人数"
+      }
+     ],
+     "groupby": [],
+     "adhoc_filters": [
+      {
+       "clause": "WHERE",
+       "comparator": [
+        "合计"
+       ],
+       "expressionType": "SIMPLE",
+       "filterOptionName": "bi390_ex_total",
+       "isExtra": false,
+       "isNew": false,
+       "operator": "NOT IN",
+       "sqlExpression": null,
+       "subject": "KS"
+      }
+     ],
+     "group_others_when_limit_reached": false,
+     "order_desc": true,
+     "row_limit": 15,
+     "truncate_metric": true,
+     "show_empty_columns": true,
+     "comparison_type": "values",
+     "annotation_layers": [],
+     "forecastEnabled": false,
+     "forecastPeriods": 10,
+     "forecastInterval": 0.8,
+     "orientation": "vertical",
+     "x_axis_title": "",
+     "x_axis_title_margin": 15,
+     "y_axis_title": "",
+     "y_axis_title_margin": 15,
+     "y_axis_title_position": "Left",
+     "sort_series_type": "sum",
+     "sort_series_ascending": false,
+     "color_scheme": "supersetColors",
+     "time_shift_color": true,
+     "show_value": true,
+     "only_total": true,
+     "percentage_threshold": 0,
+     "color_by_primary_axis": false,
+     "minorTicks": false,
+     "zoomable": false,
+     "show_legend": false,
+     "legendType": "scroll",
+     "legendOrientation": "top",
+     "x_axis_time_format": "smart_date",
+     "x_axis_number_format": "~g",
+     "xAxisLabelRotation": 0,
+     "xAxisLabelInterval": "auto",
+     "y_axis_format": ",d",
+     "currency_format": {
+      "symbolPosition": ""
+     },
+     "logAxis": false,
+     "minorSplitLine": false,
+     "truncateYAxis": false,
+     "y_axis_bounds": [
+      null,
+      null
+     ],
+     "truncateXAxis": true,
+     "force_max_interval": false,
+     "rich_tooltip": true,
+     "showTooltipTotal": true,
+     "showTooltipPercentage": false,
+     "tooltipSortByMetric": false,
+     "tooltipTimeFormat": "smart_date",
+     "echart_options": "{}",
+     "granularity_sqla": "STAT_BEGIN",
+     "log_scale": false,
+     "marker_enabled": true,
+     "marker_size": 6,
+     "show_extra_controls": false,
+     "sort_by_metric": true,
+     "time_range": "No filter",
+     "x_axis_label_rotation": 45,
+     "z_index": null,
+     "chart_id": 390,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "own_color_scheme": "supersetColors",
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 74,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 15,
+   "hit_at_capture": true,
+   "cache_key16": "5659e83d75545dfa",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 74,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 345,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_BEGIN"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "345__table",
+     "groupby": [
+      "STAT_BEGIN"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {},
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 74,
+     "native_filter_id": "NATIVE-FILTER-BI3-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "4a61821948720edc",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 32,
+   "slice_id": 324,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A324%7D&dashboard_id=32",
+   "body": {
+    "datasource": {
+     "id": 338,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KSDM",
+       "ORIAL",
+       "RUMEN",
+       "ZHUANRU",
+       "CHUYUAN",
+       "RECOVER",
+       "EFFECT",
+       "UNTREAT",
+       "DIED",
+       "OTHER_N",
+       "WILL_N",
+       "XFER",
+       "ZHUANCHU",
+       "CURR",
+       "DIFF_N",
+       "PLSX",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 50000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     }
+    ],
+    "form_data": {
+     "datasource": "338__table",
+     "viz_type": "table",
+     "slice_id": 324,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "KSDM",
+      "ORIAL",
+      "RUMEN",
+      "ZHUANRU",
+      "CHUYUAN",
+      "RECOVER",
+      "EFFECT",
+      "UNTREAT",
+      "DIED",
+      "OTHER_N",
+      "WILL_N",
+      "XFER",
+      "ZHUANCHU",
+      "CURR",
+      "DIFF_N",
+      "PLSX",
+      "STAT_BEGIN",
+      "STAT_END"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": false,
+     "server_pagination": false,
+     "server_page_length": 10,
+     "row_limit": 50000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 50,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "chart_id": 324,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 32,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "b5a82a16771ec6e2",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 32,
+   "slice_id": 342,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A342%7D&dashboard_id=32",
+   "body": {
+    "datasource": {
+     "id": 347,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KSDM",
+       "TOTAL_NUM",
+       "JI",
+       "MEN_ZHENS",
+       "JIZHENS",
+       "JIZHEN_SIWANG",
+       "GUANCHA",
+       "GUANCHA_SIWANG",
+       "JIANCHA",
+       "PLSX",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 50000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     }
+    ],
+    "form_data": {
+     "datasource": "347__table",
+     "viz_type": "table",
+     "slice_id": 342,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "KSDM",
+      "TOTAL_NUM",
+      "JI",
+      "MEN_ZHENS",
+      "JIZHENS",
+      "JIZHEN_SIWANG",
+      "GUANCHA",
+      "GUANCHA_SIWANG",
+      "JIANCHA",
+      "PLSX",
+      "STAT_BEGIN",
+      "STAT_END"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": false,
+     "server_pagination": false,
+     "server_page_length": 10,
+     "row_limit": 50000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 50,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "chart_id": 342,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 32,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 22,
+   "hit_at_capture": true,
+   "cache_key16": "f363d67a81e0ff0b",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 32,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 338,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_BEGIN"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "338__table",
+     "groupby": [
+      "STAT_BEGIN"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {},
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 32,
+     "native_filter_id": "NATIVE_FILTER-MONTHNEW1",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "60346bc1ebd2b17f",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 35,
+   "slice_id": 332,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A332%7D&dashboard_id=35",
+   "body": {
+    "datasource": {
+     "id": 348,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 10,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     },
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 50000,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": [],
+      "is_rowcount": true
+     }
+    ],
+    "form_data": {
+     "datasource": "348__table",
+     "viz_type": "table",
+     "slice_id": 332,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "KS",
+      "BED_END",
+      "OPEN_DAYS",
+      "AVG_BEDS",
+      "USED_DAYS",
+      "OCC_DAYS",
+      "DISCH_N",
+      "CURE_RATE",
+      "IMPROVE_RATE",
+      "DEATH_RATE",
+      "TURNOVER",
+      "WORK_DAYS",
+      "USAGE_RATE",
+      "AVG_LOS_TRANS",
+      "AVG_LOS",
+      "STAT_BEGIN",
+      "STAT_END"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": false,
+     "server_pagination": true,
+     "server_page_length": 10,
+     "row_limit": 50000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 50,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "chart_id": 332,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 35,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 1006,
+   "hit_at_capture": false,
+   "cache_key16": "163109df2e1a8bc8",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 35,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 348,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_BEGIN"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {
+       "native_filters_key": "SlIB7zzM9nM"
+      },
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "348__table",
+     "groupby": [
+      "STAT_BEGIN"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {
+      "native_filters_key": "SlIB7zzM9nM"
+     },
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 35,
+     "native_filter_id": "NATIVE_FILTER-UI-35-QC-NF-MONTH",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 1011,
+   "hit_at_capture": false,
+   "cache_key16": "607c281f3d65e583",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 41,
+   "slice_id": 334,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A334%7D&dashboard_id=41",
+   "body": {
+    "datasource": {
+     "id": 350,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "AVG_INPAT",
+       "PEAK_NUM",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 10,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     },
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "AVG_INPAT",
+       "PEAK_NUM",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 50000,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": [],
+      "is_rowcount": true
+     }
+    ],
+    "form_data": {
+     "datasource": "350__table",
+     "viz_type": "table",
+     "slice_id": 334,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "KS",
+      "BED_END",
+      "OPEN_DAYS",
+      "AVG_BEDS",
+      "USED_DAYS",
+      "OCC_DAYS",
+      "DISCH_N",
+      "CURE_RATE",
+      "IMPROVE_RATE",
+      "DEATH_RATE",
+      "TURNOVER",
+      "WORK_DAYS",
+      "USAGE_RATE",
+      "AVG_LOS_TRANS",
+      "AVG_LOS",
+      "AVG_INPAT",
+      "PEAK_NUM",
+      "STAT_BEGIN",
+      "STAT_END"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": false,
+     "server_pagination": true,
+     "server_page_length": 10,
+     "row_limit": 50000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 50,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "chart_id": 334,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 41,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 1006,
+   "hit_at_capture": false,
+   "cache_key16": "e86531f891c09d3d",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 41,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 350,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_BEGIN"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {
+       "native_filters_key": "BNIqMz0K7ss"
+      },
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "350__table",
+     "groupby": [
+      "STAT_BEGIN"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {
+      "native_filters_key": "BNIqMz0K7ss"
+     },
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 41,
+     "native_filter_id": "NATIVE_FILTER-UI-41-COMPAT-H02-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 1012,
+   "hit_at_capture": false,
+   "cache_key16": "eb02ab1abfbc6915",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 45,
+   "slice_id": 333,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A333%7D&dashboard_id=45",
+   "body": {
+    "datasource": {
+     "id": 357,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "granularity": "ADMISSION_DATE_TIME_2",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 10,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     },
+     {
+      "granularity": "ADMISSION_DATE_TIME_2",
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 50000,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": [],
+      "is_rowcount": true
+     }
+    ],
+    "form_data": {
+     "datasource": "357__table",
+     "viz_type": "table",
+     "slice_id": 333,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "KS",
+      "BED_END",
+      "OPEN_DAYS",
+      "AVG_BEDS",
+      "USED_DAYS",
+      "OCC_DAYS",
+      "DISCH_N",
+      "CURE_RATE",
+      "IMPROVE_RATE",
+      "DEATH_RATE",
+      "TURNOVER",
+      "WORK_DAYS",
+      "USAGE_RATE",
+      "AVG_LOS_TRANS",
+      "AVG_LOS",
+      "STAT_BEGIN",
+      "STAT_END"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": true,
+     "server_pagination": true,
+     "server_page_length": 10,
+     "row_limit": 50000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "smart_date",
+     "page_length": 50,
+     "include_search": false,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "granularity_sqla": "ADMISSION_DATE_TIME_2",
+     "chart_id": 333,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 45,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "9ddce2635e7795b5",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 45,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 357,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_BEGIN"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "357__table",
+     "groupby": [
+      "STAT_BEGIN"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {},
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 45,
+     "native_filter_id": "NATIVE_FILTER-P45-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "2bbd113ed47f745c",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 46,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 358,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_BEGIN"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {
+       "native_filters_key": "SClcQlVNopM"
+      },
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "358__table",
+     "groupby": [
+      "STAT_BEGIN"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {
+      "native_filters_key": "SClcQlVNopM"
+     },
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 46,
+     "native_filter_id": "NATIVE_FILTER-P46-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 1006,
+   "hit_at_capture": false,
+   "cache_key16": "d673737501178c5e",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 46,
+   "slice_id": 335,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A335%7D&dashboard_id=46",
+   "body": {
+    "datasource": {
+     "id": 358,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "AVG_INPAT",
+       "PEAK_NUM",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 10,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     },
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "KS",
+       "BED_END",
+       "OPEN_DAYS",
+       "AVG_BEDS",
+       "USED_DAYS",
+       "OCC_DAYS",
+       "DISCH_N",
+       "CURE_RATE",
+       "IMPROVE_RATE",
+       "DEATH_RATE",
+       "TURNOVER",
+       "WORK_DAYS",
+       "USAGE_RATE",
+       "AVG_LOS_TRANS",
+       "AVG_LOS",
+       "AVG_INPAT",
+       "PEAK_NUM",
+       "STAT_BEGIN",
+       "STAT_END"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 50000,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": [],
+      "is_rowcount": true
+     }
+    ],
+    "form_data": {
+     "datasource": "358__table",
+     "viz_type": "table",
+     "slice_id": 335,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "KS",
+      "BED_END",
+      "OPEN_DAYS",
+      "AVG_BEDS",
+      "USED_DAYS",
+      "OCC_DAYS",
+      "DISCH_N",
+      "CURE_RATE",
+      "IMPROVE_RATE",
+      "DEATH_RATE",
+      "TURNOVER",
+      "WORK_DAYS",
+      "USAGE_RATE",
+      "AVG_LOS_TRANS",
+      "AVG_LOS",
+      "AVG_INPAT",
+      "PEAK_NUM",
+      "STAT_BEGIN",
+      "STAT_END"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": true,
+     "server_pagination": true,
+     "server_page_length": 10,
+     "row_limit": 50000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "smart_date",
+     "page_length": 50,
+     "include_search": false,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "chart_id": 335,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 46,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 1008,
+   "hit_at_capture": false,
+   "cache_key16": "bb245083e356546e",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 60,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 329,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "STAT_DATE"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {
+       "native_filters_key": "LLCak9Axw_g"
+      },
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "329__table",
+     "groupby": [
+      "STAT_DATE"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {
+      "native_filters_key": "LLCak9Axw_g"
+     },
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 60,
+     "native_filter_id": "NATIVE_FILTER-P60-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 1003,
+   "hit_at_capture": false,
+   "cache_key16": "f91c41d2f351588e",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 60,
+   "slice_id": 337,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A337%7D&dashboard_id=60",
+   "body": {
+    "datasource": {
+     "id": 329,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "FOUR_OPER_COUNT_ZB",
+       "AVG_IN_HOS",
+       "ACDI_ZB",
+       "门诊人次数与出院人次数比",
+       "OPER_COUNT_ZB",
+       "WC_OPER_COUNT_ZB",
+       "STAT_DATE"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 10,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     },
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "FOUR_OPER_COUNT_ZB",
+       "AVG_IN_HOS",
+       "ACDI_ZB",
+       "门诊人次数与出院人次数比",
+       "OPER_COUNT_ZB",
+       "WC_OPER_COUNT_ZB",
+       "STAT_DATE"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 50000,
+      "row_offset": 0,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": [],
+      "is_rowcount": true
+     }
+    ],
+    "form_data": {
+     "datasource": "329__table",
+     "viz_type": "table",
+     "slice_id": 337,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "FOUR_OPER_COUNT_ZB",
+      "AVG_IN_HOS",
+      "ACDI_ZB",
+      "门诊人次数与出院人次数比",
+      "OPER_COUNT_ZB",
+      "WC_OPER_COUNT_ZB",
+      "STAT_DATE"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": true,
+     "server_pagination": true,
+     "server_page_length": 10,
+     "row_limit": 50000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "smart_date",
+     "page_length": 50,
+     "include_search": false,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "chart_id": 337,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 60,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 8019,
+   "hit_at_capture": false,
+   "cache_key16": "6690efe2cd113849",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 63,
+   "slice_id": 347,
+   "viz": "table",
+   "url_path": "/api/v1/chart/data?form_data=%7B%22slice_id%22%3A347%7D&dashboard_id=63",
+   "body": {
+    "datasource": {
+     "id": 365,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "药品hisid",
+       "药物名称",
+       "剂型",
+       "规格",
+       "包装",
+       "药品总用量",
+       "药品总用量单位",
+       "药品总费用（元）",
+       "是否为含酶抑制剂复方制剂",
+       "主要成分",
+       "主要成分与酶抑制剂的配比分子",
+       "主要成分与酶抑制剂的配比分母",
+       "DDDS",
+       "抗菌药物级别"
+      ],
+      "orderby": [],
+      "annotation_layers": [],
+      "row_limit": 100000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": false,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {},
+      "post_processing": [],
+      "time_offsets": []
+     }
+    ],
+    "form_data": {
+     "datasource": "365__table",
+     "viz_type": "table",
+     "slice_id": 347,
+     "url_params": {},
+     "matrixify_enable": false,
+     "matrixify_mode_columns": "disabled",
+     "matrixify_dimension_selection_mode_columns": "members",
+     "matrixify_dimension_columns": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_columns": 10,
+     "matrixify_all_sort_by_columns": "a_to_z",
+     "matrixify_topn_order_columns": true,
+     "matrixify_show_column_headers": true,
+     "matrixify_fit_columns_dynamically": true,
+     "matrixify_mode_rows": "disabled",
+     "matrixify_dimension_selection_mode_rows": "members",
+     "matrixify_dimension_rows": {
+      "dimension": "",
+      "values": []
+     },
+     "matrixify_topn_value_rows": 10,
+     "matrixify_all_sort_by_rows": "a_to_z",
+     "matrixify_topn_order_rows": true,
+     "matrixify_show_row_labels": true,
+     "matrixify_row_height": 300,
+     "matrixify_charts_per_row": 3,
+     "matrixify_cell_title_template": "",
+     "query_mode": "raw",
+     "groupby": [],
+     "temporal_columns_lookup": {},
+     "all_columns": [
+      "药品hisid",
+      "药物名称",
+      "剂型",
+      "规格",
+      "包装",
+      "药品总用量",
+      "药品总用量单位",
+      "药品总费用（元）",
+      "是否为含酶抑制剂复方制剂",
+      "主要成分",
+      "主要成分与酶抑制剂的配比分子",
+      "主要成分与酶抑制剂的配比分母",
+      "DDDS",
+      "抗菌药物级别"
+     ],
+     "percent_metrics": [],
+     "adhoc_filters": [],
+     "order_by_cols": [],
+     "order_desc": false,
+     "server_pagination": false,
+     "server_page_length": 10,
+     "row_limit": 100000,
+     "percent_metric_calculation": "row_limit",
+     "show_totals": false,
+     "table_timestamp_format": "%Y-%m-%d",
+     "page_length": 50,
+     "include_search": true,
+     "allow_rearrange_columns": false,
+     "allow_render_html": true,
+     "show_cell_bars": true,
+     "align_pn": false,
+     "color_pn": true,
+     "comparison_color_enabled": false,
+     "comparison_color_scheme": "Green",
+     "comparison_type": "values",
+     "chart_id": 347,
+     "label_colors": {},
+     "shared_label_colors": [],
+     "map_label_colors": {},
+     "extra_filters": [],
+     "extra_form_data": {},
+     "dashboardId": 63,
+     "force": false,
+     "result_format": "json",
+     "result_type": "full",
+     "include_time": false
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "920024cee5d99710",
+   "cache_timeout": 86400
+  },
+  {
+   "dashboard": 63,
+   "slice_id": 0,
+   "viz": "filter_time",
+   "url_path": "/api/v1/chart/data",
+   "body": {
+    "datasource": {
+     "id": 365,
+     "type": "table"
+    },
+    "force": false,
+    "queries": [
+     {
+      "filters": [],
+      "extras": {
+       "having": "",
+       "where": ""
+      },
+      "applied_time_extras": {},
+      "columns": [
+       "出院日期T"
+      ],
+      "metrics": [
+       "count"
+      ],
+      "annotation_layers": [],
+      "row_limit": 1000,
+      "series_limit": 0,
+      "group_others_when_limit_reached": false,
+      "order_desc": true,
+      "url_params": {},
+      "custom_params": {},
+      "custom_form_data": {}
+     }
+    ],
+    "form_data": {
+     "enableEmptyFilter": false,
+     "datasource": "365__table",
+     "groupby": [
+      "出院日期T"
+     ],
+     "adhoc_filters": [],
+     "extra_filters": [],
+     "extra_form_data": {},
+     "metrics": [
+      "count"
+     ],
+     "row_limit": 1000,
+     "showSearch": true,
+     "url_params": {},
+     "inView": true,
+     "viz_type": "filter_time",
+     "type": "NATIVE_FILTER",
+     "dashboardId": 63,
+     "native_filter_id": "NATIVE_FILTER-KYB2-消耗-DATE",
+     "force": false,
+     "result_format": "json",
+     "result_type": "full"
+    },
+    "result_format": "json",
+    "result_type": "full"
+   },
+   "ms_at_capture": 0,
+   "hit_at_capture": true,
+   "cache_key16": "41a3234fe02ef66d",
+   "cache_timeout": 86400
+  }
+ ]
+}

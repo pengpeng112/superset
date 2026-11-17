@@ -1,0 +1,69 @@
+[08:45:44] browser ctC version=Chrome/156.0.8078.81 viewport=1366x768
+[08:45:53] PASS login | logged in as admin
+[08:45:59] PASS page35-version | ui=20261106f11 guard=20261105g4 cols=17
+[08:45:59] PASS page35-no-english | clean; ths sample=['科别', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']
+[08:45:59] PASS page35-anchor | anchors=['科别', '科室名称'] found in 科别 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周转次
+[08:45:59] PASS page35-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:45:59] PASS page35-num | num=140 right=140 tabnum=140 thRight=14 bad=[] sample=['41', '1271', '41', '429', '421']
+[08:45:59] PASS page35-zero | zeroMarked=31 zeroTotal=31 miss=0
+[08:45:59] PASS page35-summary | summaryRows=0 labels=[]
+[08:46:05] PASS page36-version | ui=20261106f11 guard=20261105g4 cols=18
+[08:46:05] PASS page36-no-english | clean; ths sample=['科别', '开放床位', '原有人数', '入院人数', '转入人数', '小计']
+[08:46:05] PASS page36-anchor | anchors=['科别'] found in 科别 开放床位 原有人数 入院人数 转入人数 小计 转科 治愈 好转 未愈 死亡 小计 现有人数 床位使用率 出院者共住院天数 出院者平均住院天数 统计日期 提
+[08:46:05] PASS page36-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:46:05] PASS page36-num | num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]
+[08:46:05] PASS page36-zero | zeroMarked=0 zeroTotal=0 miss=0
+[08:46:05] PASS page36-summary | summaryRows=0 labels=[]
+[08:46:11] PASS page41-version | ui=20261106f11 guard=20261105g4 cols=19
+[08:46:11] PASS page41-no-english | clean; ths sample=['护理单元', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']
+[08:46:11] PASS page41-anchor | anchors=['病区代码', '科室名称', '护理单元'] found in 护理单元 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周
+[08:46:11] PASS page41-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:46:11] PASS page41-num | num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]
+[08:46:11] PASS page41-zero | zeroMarked=0 zeroTotal=0 miss=0
+[08:46:11] PASS page41-summary | summaryRows=0 labels=[]
+[08:46:17] PASS page45-version | ui=20261106f11 guard=20261105g4 cols=17
+[08:46:17] PASS page45-no-english | clean; ths sample=['科别', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']
+[08:46:17] PASS page45-anchor | anchors=['科别'] found in 科别 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周转次
+[08:46:17] PASS page45-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:46:17] PASS page45-num | num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]
+[08:46:17] PASS page45-zero | zeroMarked=0 zeroTotal=0 miss=0
+[08:46:17] PASS page45-summary | summaryRows=0 labels=[]
+[08:46:22] PASS page46-version | ui=20261106f11 guard=20261105g4 cols=19
+[08:46:22] PASS page46-no-english | clean; ths sample=['护理单元', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']
+[08:46:22] PASS page46-anchor | anchors=['护理单元'] found in 护理单元 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周
+[08:46:23] PASS page46-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:46:23] PASS page46-num | num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]
+[08:46:23] PASS page46-zero | zeroMarked=0 zeroTotal=0 miss=0
+[08:46:23] PASS page46-summary | summaryRows=0 labels=[]
+[08:46:28] PASS page47-version | ui=20261106f11 guard=20261105g4 cols=3
+[08:46:28] PASS page47-no-english | clean; ths sample=['入院科室', '接诊医生', '接诊医生']
+[08:46:28] PASS page47-anchor | anchors=['接诊医生', '入院时间'] found in 入院科室 接诊医生 接诊医生
+[08:46:29] PASS page47-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:46:29] PASS page47-num | num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]
+[08:46:29] PASS page47-zero | zeroMarked=0 zeroTotal=0 miss=0
+[08:46:29] PASS page47-summary | summaryRows=0 labels=[]
+[08:46:34] PASS page50-version | ui=20261106f11 guard=20261105g4 cols=9
+[08:46:34] PASS page50-no-english | clean; ths sample=['项目名称', '台次', '术者', '患者标识', '姓名', '科室名称']
+[08:46:34] PASS page50-anchor | anchors=['患者标识', '姓名', '项目名称'] found in 项目名称 台次 术者 患者标识 姓名 科室名称 提示 统计开始日期 统计结束日期
+[08:46:34] PASS page50-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:46:34] PASS page50-num | num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]
+[08:46:34] PASS page50-zero | zeroMarked=0 zeroTotal=0 miss=0
+[08:46:34] PASS page50-summary | summaryRows=0 labels=[]
+[08:49:08] FAIL page51-table | thead not ready in 150s
+[08:51:41] FAIL page58-table | thead not ready in 150s
+[08:54:14] FAIL page59-table | thead not ready in 150s
+[08:54:20] PASS page60-version | ui=20261106f11 guard=20261105g4 cols=7
+[08:54:20] PASS page60-no-english | clean; ths sample=['四级手术占比(%)', '平均住院日', 'ACDI_ZB', '门诊人次数与出院人次数比', '手术患者占比(%)', '微创手术占比(%)']
+[08:54:20] PASS page60-anchor | anchors=['四级手术占比(%)', '微创手术占比(%)', '手术患者占比(%)'] found in 四级手术占比(%) 平均住院日 ACDI_ZB 门诊人次数与出院人次数比 手术患者占比(%) 微创手术占比(%) 统计日期
+[08:54:20] PASS page60-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:54:20] PASS page60-num | num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]
+[08:54:20] PASS page60-zero | zeroMarked=0 zeroTotal=0 miss=0
+[08:54:20] PASS page60-summary | summaryRows=0 labels=[]
+[08:54:28] PASS page65-version | ui=20261106f11 guard=20261105g4 cols=35
+[08:54:28] PASS page65-no-english | clean; ths sample=['患者唯一标识', '患者住院唯一标识', '住院病历号', '医嘱唯一标识', '医嘱开立科室代码', '医嘱开立科室名称']
+[08:54:28] PASS page65-anchor | anchors=['药品分组', '药物名称'] found in 患者唯一标识 患者住院唯一标识 住院病历号 医嘱唯一标识 医嘱开立科室代码 医嘱开立科室名称 医嘱类型 医嘱分类 药品hisid 药物名称 剂型 规格 包装 给
+[08:54:28] PASS page65-sticky | no sticky; overflow=False (sw=None cw=None) -> consistent
+[08:54:28] PASS page65-num | num=200 right=200 tabnum=200 thRight=6 bad=[] sample=['1', '100', '1', '1', '0']
+[08:54:28] PASS page65-zero | zeroMarked=50 zeroTotal=50 miss=0
+[08:54:28] PASS page65-summary | summaryRows=0 labels=[]
+[08:54:30] results -> F:\python\superset\migration\sources\20261106-CHINESE-TABLEUI\acc3-ctC-1366x768.json (67 rows, 3 fail)

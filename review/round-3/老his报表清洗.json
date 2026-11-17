@@ -1,0 +1,167 @@
+[
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.PAT_VISIT.ADMISSION_DATE_TIME , DEPT_DICT_B.DEPT_NAME , HIS.PAT_VISIT.DISCHARGE_DATE_TIME , DEPT_DICT_A.DEPT_NAME , HIS.PAT_VISIT.VISIT_ID FROM HIS.PAT_VISIT , HIS.DEPT_DICT DEPT_DICT_A , HIS.DEPT_DICT DEPT_DICT_B WHERE ( HIS.PAT_VISIT.DEPT_DISCHARGE_FROM = DEPT_DICT_A.DEPT_CODE ) and ( HIS.PAT_VISIT.DEPT_ADMISSION_TO = DEPT_DICT_B.DEPT_CODE ) and ( ( HIS.PAT_VISIT.PATIENT_ID = \u0001 ) )"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.PAT_VISIT.PATIENT_ID, HIS.PAT_VISIT.VISIT_ID, HIS.pats_in_hospital.ADMISSION_DATE_TIME, HIS.dept_dict.dept_name, HIS.PAT_VISIT.DEPT_DISCHARGE_FROM, HIS.PATS_IN_HOSPITAL.BED_NO, HIS.PATS_IN_HOSPITAL.WARD_CODE, 0 costs, 0 yj FROM HIS.PAT_VISIT,DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "DEPT_LOAD_DAY",
+  "sql": "SELECT HIS.DEPT_DICT.DEPT_NAME, to_char(HIS.DEPT_ADT.ST_DATE,'yyyy-mm-dd'), sum(HIS.DEPT_LOAD_DAY.CRITICAL_NUM), sum(HIS.DEPT_ADT.ADM_OUTP), sum(HIS.DEPT_ADT.DISCHARGE_NUM), sum(HIS.DEPT_ADT.USED_BED_DAYS) FROM HIS.DEPT_ADT, HIS.DEPT_LOAD_DAY, HIS.DEPT_DICT WHERE DEPDAT*"
+ },
+ {
+  "src": "统计管理\\clinic.pbd",
+  "name": "DEPT_EXAM_DAY",
+  "sql": "SELECT \"HIS.DEPT_DICT\".\"DEPT_NAME\", \"DEPT_EXAM_DAY\".\"EXAM_CLASS\", SUM(COMPLETED_NUM) completed, SUM(ABNORMAL_NUM) abnormal , \"DEPT_EXAM_DAY\".\"EXAM_SUBCLASS\" FROM \"HIS.DEPT_DICT\", \"DEPT_EXAM_DAY\" WHERE ( \"HIS.DEPT_DICT\".\"DEPT_CODE\" (+) = \"DEPT_EXAM_DAY\".\"DEPT_CODE\" ) AND (ST_DATE >= \u0001 ) AND ( ST_DATE <= \u0001 ) GROUP DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "Select SUM ( NVL ( OUTP_NUM , 0 ) ) , SUM ( NVL ( HEALTH_EXAM_NUM , 0 ) ) from HIS.DEPT_OUTP_NUM_DAY where DEPT_CODE =DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "Select DISTINCT HIS.DEPT_OUTP_NUM_DAY.DEPT_CODE,HIS.DEPT_DICT.DEPT_NAME FROM HIS.DEPT_DICT,HIS.DEPT_OUTP_NUM_DAY WHERE HIS.DEPT_OUTP_NUM_DAY.DEPT_CODE=HIS.DEPT_DICT.DEPT_CODE ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "Select count ( *) from HIS.V_PAT_VISIT , HIS.OPERATION where HIS.V_PAT_VISIT.patient_id =HIS.operation.patient_id and HIS.V_PAT_VISIT.visit_id =HIS.operation.visit_id and HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM =' ' and HIS.V_PAT_VISIT.DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "SELECT nvl ( SUM ( outp_num ) , 0 ) FROM HIS.dept_outp_num_day WHERE trunc ( st_date ) between TRUNC(SYSDATE,'MM') and SYSDATE and clinic_type like '%专家%'"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "EMERGENCY_DAY",
+  "sql": "SELECT NVL ( SUM ( emergency_num ) , 0 ) , NVL ( SUM ( out_observ_num ) , 0 ) , NVL ( SUM ( died_in_observ_num ) , 0 ) , NVL ( SUM ( rescued_num ) , 0 ) , NVL ( SUM ( res_suc_num ) , 0 ) , NVL ( SUM ( died_in_clinic_num ) , 0 ) , NVL ( SUM ( died_when_arrived_num ) , 0 ) , NVL ( SUM ( emeygency_bed_sum ) , 0 ) FROM HIS.emergency_day WHERE trunc ( st_date ) between TRUNC(SYSDATE,'MM') and SYSDATE"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "SELECT NVL ( SUM ( outp_num ) , 0 ) FROM HIS.dept_outp_num_day WHERE ( trunc ( st_date ) BETWEEN TRUNC(SYSDATE,'MM') AND SYSDATE ) AND ( dept_code =' ' )"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "SELECT NVL ( SUM ( outp_num ) , 0 ) FROM HIS.dept_outp_num_day WHERE trunc ( st_date ) BETDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.DEPT_DISCHARGE_FROM, COUNT(*) ss_hj FROM (SELECT DISTINCT HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM HIS.DEPT_DISCHARGE_FROM, HIS.operation.patient_id,HIS.operation.visit_id FROM HIS.operation,HIS.V_PAT_VISIT WHERE (TRUNC(operating_date) between \u0001 and \u0001 ) and (HIS.V_PAT_VISIT.patient_id = HIS.operation.patient_id) and (HIS.V_PAT_VISIT.visit_id = HIS.operation.visit_id ) ) DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM HIS.DEPT_DISCHARGE_FROM, SUM(DECODE(ACCIDENT_CLASS,'1',1,'2',1,'3',1,0)) ylsg_num FROM HIS.ACCIDENT_REC ,HIS.V_PAT_VISIT WHERE (TRUNC(OCCUR_DATE) between \u0001 and \u0001) and (HIS.V_PAT_VISIT.patient_id = HIS.ACCIDENT_REC.patient_id) group by HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM) t_g, (SELECT HIS.V_PAT_VISIT.DEPTDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "select HIS.DEPT_DISCHARGE_FROM from HIS.V_PAT_VISIT where DISCHARGE_DATE_TIME >=\u0001 and DISCHARGE_DATE_TIME <=\u0001) HIS.V_PAT_VISIT where (HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM = t_a.DEPT_DISCHARGE_FROMDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "SELECT NVL ( SUM ( outp_num ) , 0 ) FROM HIS.dept_outp_num_day WHERE trunc ( st_date ) BETWEEN TRUNC(SYSDATE,'MM') AND SYSDATE"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM HIS.DEPT_DISCHARGE_FROM, COUNT(SERIAL_NO) yzcc_num FROM HIS.ACCIDENT_REC ,HIS.V_PAT_VISIT WHERE (TRUNC(OCCUR_DATE) between \u0001 and \u0001 ) and (ACCIDENT_CLASS = '4') and (HIS.V_PAT_VISIT.patient_id = HIS.ACCIDENT_REC.patient_id) group by HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM) t_h, (select HIS.DEPT_DISCHARGE_FROM from HIS.V_PAT_VISIT where DISCHARGE_DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.V_PAT_VISIT.discharge_date_time, HIS.V_PAT_VISIT.admission_date_time, HIS.V_PAT_VISIT.patient_id, HIS.V_PAT_VISIT.visit_id FROM HIS.V_PAT_VISIT WHERE ( discharge_date_time between \u0001 and \u0001) AND ( HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM = \u0001)"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "Select Nvl(Sum(outp_num),0) From HIS.DEPT_OUTP_NUM_DAY Where St_Date Between ? And ?"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "select m.dept_name, d.fee_class_name, sum(c.payments) from HIS.dept_dict m,HIS.pat_visit a,HIS.inp_settle_master b,HIS.inp_settle_detail c,HIS.inp_rcpt_fee_dict d where m.dept_code = a.dept_discharge_from and a.patient_id = b.patient_id and a.visit_id = b.visit_id and b.rcpt_no = c.rcpt_no and c.fee_class_name = d.fee_class_code and trunc(b.settling_date) >=DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "DEPT_ADT_DAY",
+  "sql": "select ward_code wardcode, count(*) bedno, 0 bedused, 0 admissionnum, 0 transfromnum, 0 outhospitalnum, 0 diednum, 0 transtonum, 0 zhiyunum, 0 betternum, 0 inpday from HIS.bed_rec where BED_APPROVED_TYPE=0 group by ward_code union all select HIS.dept_vs_ward.ward_code wardcode, 0 bedno, sum(HIS.dept_adt_day.BED_USED_NUM) bedused, sum(ADM_OUTP_NUM + FROM_OTHER_HOSPITAL_NUM) admissionnum, sum(from_other_dept_num) transfromnum, DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "select HIS.dept_vs_ward.ward_code wardcode , 0 bedno, 0 bedused, 0 admissionnum, 0 transfromnum, 0 outhospitalnum, 0 diednum, 0 transtonum, 0 zhiyunum, 0 betternum, sum(ceil(discharge_date_time-admission_date_time)) inpday from HIS.dept_vs_ward, HIS.pat_visit where HIS.dept_vs_ward.dept_code = HIS.pat_visit.dept_discharge_from and to_char(HIS.pat_visit.discharge_date_time,'yyyy-mm-dd') = \u0001 group bDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "INP_BILL_MONTH_ED",
+  "sql": "SELECT sum(COSTS)/10000 incomes, to_char(ST_MONTH,'YYYY' ) year, to_char(ST_MONTH,'mm' ) month FROM HIS.INP_BILL_MONTH_ED WHERE TO_CHAR(ST_MONTH,'YYYY-MM-DD') >= to_char( add_months(SYSDATE,-36),'yyyy')||'01-01'DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "INP_BILL_MONTH_ED",
+  "sql": "SELECT \"HIS.INP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", sum(\"HIS.INP_BILL_MONTH_ED\".\"COSTS\") costs FROM \"HIS.INP_BILL_MONTH_ED\",\"HIS.INP_RCPT_FEE_DICT\" WHERE to_char( \"HIS.INP_BILL_MONTH_ED\".\"ST_MONTH\",'yyyy-mm') >= \u0001 AND to_char( \"HIS.INP_BILL_MONTH_ED\".\"ST_MONTH\",'yyyy-mm') <= \u0001 AND \"HIS.INP_BILL_MONTH_ED\".\"CLASS_ON_RCPT\" DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "select distinct diagnosis_desc from HIS.diagnosis, HIS.pat_visit where diagnosis_type=3 and diagnosis_no=1 and HIS.pat_visit.patient_id=HIS.diagnosis.patient_id and HIS.diagnosis.visit_id=HIS.pat_visit.visit_id and to_char(admission_date_time,'yyyy-mm-dd') >= \u0001 and to_char(admission_date_time,'yyyy-mm-dd') <= \u0001 and HIS.dept_discharge_from is not null"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT \"HIS.PAT_MASTER_INDEX\".\"PATIENT_ID\", \"HIS.PAT_MASTER_INDEX\".\"INP_NO\", HIS.pat_master_index.name, V_PAT_VISIT_b.dept_admission_to, V_PAT_VISIT_b.admission_date_time, HIS.diagnosis.diagnosis_desc, V_PAT_VISIT_a.dept_discharge_from, V_PAT_VISIT_a.discharge_date_time FROM \"HIS.PAT_MASTER_INDEX\", (SELECT patient_id,visit_id,HIS.dept_discharge_from,discharge_date_time FROM HIS.V_PAT_VISIT) V_PAT_VISIT_a , DAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM HIS.DEPT_DISCHARGE_FROM, 0 a, count(*) b, 0 c, 0 d from HIS.V_PAT_VISIT,HIS.pat_master_index,HIS.hospital_config where HIS.V_PAT_VISIT.patient_id = HIS.pat_master_index.patient_id and NVL(substr(HIS.PAT_MASTER_INDEX.BIRTH_PLACE,1,2),' ') = substr(HIS.hospital_config.location,1,2) and NVL(HIS.PAT_MASTER_INDEX.patient_class,'0') <> '1' and PAT_MASTERDAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM HIS.DEPT_DISCHARGE_FROM, 0 a, 0 b, count(*) c, 0 d from HIS.V_PAT_VISIT,HIS.pat_master_index,HIS.hospital_config where HIS.V_PAT_VISIT.patient_id = HIS.pat_master_index.patient_id and NVL(substr(HIS.PAT_MASTER_INDEX.BIRTH_PLACE,1,2),' ') <> subsDAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "SELECT HIS.V_PAT_VISIT.DEPT_DISCHARGE_FROM HIS.DEPT_DISCHARGE_FROM, 0 a, 0 b, 0 c, count(*) d from HIS.V_PAT_VISIT,HIS.pat_master_index,HIS.hospital_config where HIS.V_PAT_VISIT.patient_id = HIS.pat_master_index.patient_id and PAT_MASTEDAT*"
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "DEPT_OUTP_NUM_DAY",
+  "sql": "select Nvl(DEPT_CODE,'') , 0, 0, 0, 0 , 0 , 0 , sum(HEALTH_EXAM_NUM) check_num, 0 from HIS.DEPT_OUTP_NUM_DAY where ( Trunc(ST_DATE) between \u0001 and \u0001 ) and ( DEPT_CODE = \u0001 or \u0001 = 'all' ) group by Nvl(DEPT_CODE,'') union all select Nvl(DEPT_CODE,'') , 0, 0, 0, sum(died_in_clinic_num) emer_died_num, sum(admitted_num) catch_num, sum(died_in_observ_num) catch_died_num, 0 check_num, sum(emeygency_bed_sum) family_bed_num from HIS.EMEDAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "DEPT_CLINIC_DAY",
+  "sql": "SELECT ST_DATE, sum(EMERGENCY) emerg FROM HIS.DEPT_CLINIC_DAY WHERE TO_CHAR(ST_DATE,'YYYY-MM-DD') >= \u0001 AND TO_CHAR(ST_DATE,'YYYY-MM-DD') <= \u0001 GROUP BY ST_DATE"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "DEPT_ADT_DAY",
+  "sql": "SELECT SUM ( a.TRANS_DEPT_NUM ) BED_USED_NUM FROM HIS.DEPT_ADT_DAY a , HIS.dept_vs_ward b where a.dept_code =b.dept_code and a.ST_DATEDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "select a.patient_id, a.visit_id, a.dept_admission_to, a.admission_date_time, a.dept_discharge_from, a.discharge_date_time, b.ward_stayed, b.admission_date_time, b.discharge_date_time, b.dept_ward_transfered_to from HIS.pat_visit a, HIS.ward_transfer b where a.discharge_date_time >= \u0001 and a.discharge_date_time <= \u0001 and a.patient_id = b.patiDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "DEPT_DISCHARGE_FROM",
+  "sql": "select d.dept_name dept_name ,'平均住院天数' js,round(sum(round(p.discharge_date_time - p.admission_date_time)) / count(*)) rj from HIS.pat_visit p,HIS.dept_dict d ,HIS.inp_settle_master ism where p.discharge_date_time is not null and p.dept_discharge_from =d.dept_code and p.charge_type in(\u0001) and p.patient_id =ism.patient_id and p.visit_id =ism.visit_id and ism.transactDAT*"
+ }
+]

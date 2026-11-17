@@ -1,0 +1,14 @@
+*.md filter=redact
+*.py filter=redact
+*.sh filter=redact
+*.json filter=redact
+*.txt filter=redact
+*.csv filter=redact
+*.tsv filter=redact
+*.html filter=redact
+*.log filter=redact
+*.yaml filter=redact
+*.yml filter=redact
+*.err filter=redact
+*.raw filter=redact
+*.out filter=redact

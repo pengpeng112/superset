@@ -1,0 +1,281 @@
+﻿browser,browser_version,user,viewport,verify_point,check,result,detail
+chrome,Chrome/156.0.8078.81,admin,1366x768,LOGIN,login,PASS,logged in as admin
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page2-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page2-crumb,PASS,count=1 crumb='报表目录 / 病案专项 / 病案首页非医嘱离院与死亡明细' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page2-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page61-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page65-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1366x768,VP2,page70-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,001643,1366x768,LOGIN,login,PASS,logged in as 001643
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page61-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page65-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,001643,1366x768,VP2,page70-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,003158,1366x768,LOGIN,login,PASS,logged in as 003158
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP1/VP3,home-sidebar,PASS,nav=True items=9
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP1/VP3,home-nav-kyb,PASS,kyb=False label='' (expect False)
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP3,home-search-手术,PASS,rows=4 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP3,home-search-医嘱,PASS,rows=0 empty=True 
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP1/VP3,dir34-groups,PASS,"groups=8 ids=33,26,25,27,28,29,30,31"
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP1/VP3,dir34-kyb-group,PASS,kyb group=False (expect False)
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP3,dir34-search-手术,PASS,"visible=2 expanded=True rowsOk=True shown=4 ids=33,29"
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP3,dir34-search-医嘱,PASS,visible=0 expected for guest
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome,Chrome/156.0.8078.81,003158,1366x768,VP1,guest-direct-61-denied,PASS,filterBar=False hdt=0 chartTable=False marker=not found
+chrome,Chrome/156.0.8078.81,admin,1920x1080,LOGIN,login,PASS,logged in as admin
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page2-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page2-crumb,PASS,count=1 crumb='报表目录 / 病案专项 / 病案首页非医嘱离院与死亡明细' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page2-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page61-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page65-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,admin,1920x1080,VP2,page70-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,001643,1920x1080,LOGIN,login,PASS,logged in as 001643
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page61-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page65-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome,Chrome/156.0.8078.81,001643,1920x1080,VP2,page70-hdt,PASS,hdt pickers=1
+chrome,Chrome/156.0.8078.81,003158,1920x1080,LOGIN,login,PASS,logged in as 003158
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP1/VP3,home-sidebar,PASS,nav=True items=9
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP1/VP3,home-nav-kyb,PASS,kyb=False label='' (expect False)
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP3,home-search-手术,PASS,rows=4 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP3,home-search-医嘱,PASS,rows=0 empty=True 
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP1/VP3,dir34-groups,PASS,"groups=8 ids=33,26,25,27,28,29,30,31"
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP1/VP3,dir34-kyb-group,PASS,kyb group=False (expect False)
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP3,dir34-search-手术,PASS,"visible=2 expanded=True rowsOk=True shown=4 ids=33,29"
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP3,dir34-search-医嘱,PASS,visible=0 expected for guest
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome,Chrome/156.0.8078.81,003158,1920x1080,VP1,guest-direct-61-denied,PASS,filterBar=False hdt=0 chartTable=False marker=not found
+chrome87,Chrome/87.0.4272.0,admin,1366x768,LOGIN,login,PASS,logged in as admin
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page2-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page2-crumb,PASS,count=1 crumb='报表目录 / 病案专项 / 病案首页非医嘱离院与死亡明细' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page2-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page61-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page65-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1366x768,VP2,page70-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,001643,1366x768,LOGIN,login,PASS,logged in as 001643
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page61-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page65-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,001643,1366x768,VP2,page70-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,003158,1366x768,LOGIN,login,PASS,logged in as 003158
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP1/VP3,home-sidebar,PASS,nav=True items=9
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP1/VP3,home-nav-kyb,PASS,kyb=False label='' (expect False)
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP3,home-search-手术,PASS,rows=4 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP3,home-search-医嘱,PASS,rows=0 empty=True 
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP1/VP3,dir34-groups,PASS,"groups=8 ids=33,26,25,27,28,29,30,31"
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP1/VP3,dir34-kyb-group,PASS,kyb group=False (expect False)
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP3,dir34-search-手术,PASS,"visible=2 expanded=True rowsOk=True shown=4 ids=33,29"
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP3,dir34-search-医嘱,PASS,visible=0 expected for guest
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome87,Chrome/87.0.4272.0,003158,1366x768,VP1,guest-direct-61-denied,PASS,filterBar=False hdt=0 chartTable=False marker=not found
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,LOGIN,login,PASS,logged in as admin
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page2-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page2-crumb,PASS,count=1 crumb='报表目录 / 病案专项 / 病案首页非医嘱离院与死亡明细' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page2-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page61-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page65-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,admin,1920x1080,VP2,page70-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,LOGIN,login,PASS,logged in as 001643
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1/VP3,home-sidebar,PASS,nav=True items=10
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1/VP3,home-nav-kyb,PASS,kyb=True label='抗菌药物监测10 项' (expect True)
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,home-search-手术,PASS,rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,home-search-医嘱,PASS,rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,home-search-jump,PASS,href=/superset/dashboard/65/ landed=/superset/dashboard/65/
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1/VP3,dir34-groups,PASS,"groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1/VP3,dir34-kyb-group,PASS,kyb group=True (expect True)
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1/VP3,dir34-kyb-10,PASS,reports=10 hrefs ok=True
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,dir34-search-手术,PASS,"visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,dir34-search-医嘱,PASS,visible=1 expanded=True rowsOk=True shown=1 ids=kyb
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP1,dir34-kyb-open-61,PASS,landed=/superset/dashboard/61/ reportPage=True queryUi=True
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page61-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page61-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page61-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page65-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page65-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page65-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page70-classes,PASS,hh-report-page=True hh-query-ui=True
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page70-crumb,PASS,count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/
+chrome87,Chrome/87.0.4272.0,001643,1920x1080,VP2,page70-hdt,PASS,hdt pickers=1
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,LOGIN,login,PASS,logged in as 003158
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP1/VP3,home-sidebar,PASS,nav=True items=9
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP1/VP3,home-nav-kyb,PASS,kyb=False label='' (expect False)
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP1/VP3,home-search-input,PASS,input#hh-report-search
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP3,home-search-手术,PASS,rows=4 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP3,home-search-月报,PASS,rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP3,home-search-医嘱,PASS,rows=0 empty=True 
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP1/VP3,dir34-groups,PASS,"groups=8 ids=33,26,25,27,28,29,30,31"
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP1/VP3,dir34-kyb-group,PASS,kyb group=False (expect False)
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP1/VP3,dir34-search-input,PASS,dir search wrap
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP3,dir34-search-手术,PASS,"visible=2 expanded=True rowsOk=True shown=4 ids=33,29"
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP3,dir34-search-月报,PASS,"visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP3,dir34-search-医嘱,PASS,visible=0 expected for guest
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP3,dir34-search-clear,PASS,all visible=True all rows=True
+chrome87,Chrome/87.0.4272.0,003158,1920x1080,VP1,guest-direct-61-denied,PASS,filterBar=False hdt=0 chartTable=False marker=not found

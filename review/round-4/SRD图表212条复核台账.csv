@@ -1,0 +1,216 @@
+﻿图表ID,数据集ID,源序号,模块,数据窗口,图表标题,重复源对象,含NULL比较,存在WHERE不可满足查询块,顶层WHERE不可满足,NULL化后与提取SQL结构一致,日期主列,可识别日期列数,中文列数,列数,含GROUP_BY,含ORDER_BY,含UNION,源含compute控件,参数名,结果上限,业务验收,修复建议
+98,96,1,cate_d,d_area_dict,老HIS-d_area_dict,False,False,False,False,True,,0,0,2,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+99,97,2,cate_d,d_arrear_stat,老HIS-欠费病人明细报表,False,True,True,True,True,,0,6,12,False,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+100,98,3,cate_d,d_banot,老HIS-Pat Master Index Inp No,False,True,True,True,True,,0,5,6,False,False,False,False,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+101,99,4,cate_d,d_banull,老HIS-Pat Master Index Inp No,False,True,True,True,True,,0,5,6,False,False,False,False,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+102,100,5,cate_d,d_baqt,老HIS-Pat Master Index Inp No,False,True,True,True,True,,0,5,6,False,False,False,False,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+103,101,6,cate_d,d_brzc,老HIS-病人姓名,False,True,True,True,True,,0,4,7,False,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+104,102,7,cate_d,d_brzr,老HIS-病人姓名,False,True,True,True,True,,0,4,7,False,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+105,103,10,cate_d,d_categrarygd,老HIS-病  案  归  档  情  况,False,True,True,True,True,,0,2,6,True,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+106,104,14,cate_d,d_categrorycywgd,"老HIS-Pat Visit
+Doctor In Charge",False,True,True,True,True,,0,2,3,True,False,False,False,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+107,105,16,cate_d,d_cycostwk,"老HIS-Pat Visit
+Admission Date Time",False,True,True,True,True,,0,5,6,False,False,False,False,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+108,106,17,cate_d,d_ddd_dept,老HIS-Dept Code,False,False,False,False,True,,0,2,2,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+109,107,18,cate_d,d_dddw_director,老HIS-d_dddw_director,False,False,False,False,True,,0,1,3,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+110,108,19,cate_d,d_dddw_doctor,老HIS-d_dddw_doctor,False,False,False,False,True,,0,1,3,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+111,109,20,cate_d,d_dddw_doctor_all,老HIS-d_dddw_doctor_all,False,False,False,False,True,,0,2,3,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+112,110,21,cate_d,d_dddw_doctor_in,老HIS-d_dddw_doctor_in,False,False,False,False,True,,0,1,3,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+113,111,22,cate_d,d_dddw_mzdoctor,老HIS-Name,False,False,False,False,True,,0,1,1,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+114,112,23,cate_d,d_dddw_pat_master_index,老HIS-Patient Id,False,False,False,False,True,,0,3,3,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+115,113,27,cate_d,d_dynaoperation,老HIS-d_dynaoperation,False,True,True,True,True,,0,2,6,False,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+116,114,28,cate_d,d_dynaoperation_ans,老HIS-d_dynaoperation_ans,False,True,True,True,True,,0,2,6,False,False,False,False,js;ks,1000,未验证,恢复参数及计算口径后验收
+117,115,29,cate_d,d_fs_statday,老HIS-d_fs_statday,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+118,116,30,cate_d,d_fs_zystatday,老HIS-d_fs_zystatday,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+119,117,31,cate_d,d_hossettle,老HIS-科室名称,False,False,False,False,True,,0,5,7,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+120,118,32,cate_d,d_hosunsettle,老HIS-科室名称,False,False,False,False,True,,0,5,7,False,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+121,119,33,cate_d,d_hy_mzdetail,老HIS-d_hy_mzdetail,False,True,True,True,True,,0,3,6,True,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+122,120,34,cate_d,d_hy_statday,老HIS-门诊化验：,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+123,121,35,cate_d,d_hy_statdaymaster,老HIS-d_hy_statdaymaster,False,True,True,True,True,,0,3,3,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+124,122,36,cate_d,d_hy_zydetail,老HIS-d_hy_zydetail,False,True,True,True,True,,0,3,6,True,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+125,123,37,cate_d,d_hy_zystatday,老HIS-住院化验：,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+126,124,38,cate_d,d_hy_zystatdaymaster,老HIS-住院化验：,False,True,True,True,True,,0,3,3,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+127,125,39,cate_d,d_jc_statday,老HIS-d_jc_statday,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+128,126,40,cate_d,d_jc_zystatday,老HIS-d_jc_zystatday,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+129,127,41,cate_d,d_modi_dict_outcode_input,老HIS-输入码,False,True,True,True,True,,0,0,5,False,False,False,False,code;name;topic,1000,未验证,恢复参数及计算口径后验收
+130,128,42,cate_d,d_mrfee_class,老HIS-Mr Fee Class Name,False,False,False,False,True,,0,0,1,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+131,129,43,cate_d,d_mz,老HIS-科室名称,False,True,True,True,True,,0,3,6,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+132,130,49,cate_d,d_operation_dict,老HIS-手术操作名称,False,True,True,True,True,,0,1,2,False,False,False,False,code,1000,未验证,恢复参数及计算口径后验收
+133,131,50,cate_d,d_outer_code_input,"老HIS-当前编码条目输入码录入区",False,False,False,False,True,,0,0,6,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+134,132,51,cate_d,d_outer_code_txt,老HIS-d_outer_code_txt,False,False,False,False,True,,0,3,3,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+135,133,53,cate_d,d_schotistic_diag,老HIS-疾病名称,False,False,False,False,True,,0,2,3,True,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+136,134,58,cate_d,d_select_oper,老HIS-手术名称,False,False,False,False,True,,0,0,22,False,True,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+137,135,59,cate_d,d_ss_statday,老HIS-d_ss_statday,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+138,136,60,cate_d,d_ss_zystatday,老HIS-d_ss_zystatday,False,True,True,True,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+139,137,61,cate_d,d_try,老HIS-d_try,False,True,True,True,True,,0,0,3,False,False,False,True,patient_id;visit_id,1000,未验证,恢复参数及计算口径后验收
+140,138,62,cate_d,d_try_bank,老HIS-d_try_bank,False,True,True,True,True,,0,0,3,False,False,False,True,patient_id;visit_id,1000,未验证,恢复参数及计算口径后验收
+141,139,63,cate_d,d_zy,老HIS-科室名称,False,True,True,True,True,,0,3,6,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+142,140,66,cate_d,d_zycosts,老HIS-病人姓名,False,True,True,True,True,,0,3,9,False,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+143,141,67,cate_d,dw_diag_obj,老HIS-诊断类别,False,True,True,True,True,,0,5,7,False,False,False,False,m_patientid,1000,未验证,恢复参数及计算口径后验收
+144,142,69,cate_d,dw_operation_obj,老HIS-手术名称,False,True,True,True,True,,0,4,5,False,False,False,False,m_patientid,1000,未验证,恢复参数及计算口径后验收
+145,143,70,cate_d,dw_patnature_obj,老HIS-dw_patnature_obj,False,True,True,True,True,,0,4,5,False,False,False,False,inp_no;patient_id,1000,未验证,恢复参数及计算口径后验收
+146,144,75,clinic,d_clinic_inp_mr,老HIS-d_clinic_inp_mr,False,True,True,True,True,,0,3,4,False,False,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+147,145,76,clinic,d_clinic_inp_reckoning,老HIS-d_clinic_inp_reckoning,False,True,True,True,True,,0,3,4,False,False,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+148,146,77,clinic,d_clinic_inp_subj_code,老HIS-d_clinic_inp_subj_code,False,True,True,True,True,,0,3,4,False,False,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+149,147,78,clinic,d_clinic_inp,老HIS-d_clinic_inp,False,True,True,True,True,,0,3,4,False,False,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+150,148,79,clinic,d_prn_day_test,老HIS-d_prn_day_test,False,True,True,True,True,,0,1,4,True,False,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+151,149,89,dis_report,d_dis_mzyb2_dw2_bk,老HIS-治愈者平均住院日,False,True,True,True,True,,0,5,6,False,False,False,True,adt_end_date;adt_start_date;as_dept,1000,未验证,恢复参数及计算口径后验收
+152,150,90,dis_report,d_dis_operation_st,老HIS-d_dis_operation_st,False,True,True,True,True,,0,0,9,False,False,False,True,dept;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+153,151,94,dis_report,d_dis_treat_167_report,老HIS-d_dis_treat_167_report,False,True,True,True,True,,0,0,13,True,False,False,True,as_sex;dept;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+154,152,95,dis_report,d_dis_treat_167_reportecnomic,老HIS-d_dis_treat_167_reportecnomic,False,True,True,True,True,,0,0,26,True,False,False,True,dept;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+155,153,97,dis_report,d_dis_treat_st,老HIS-d_dis_treat_st,False,True,True,True,True,,0,0,25,True,False,False,True,dept;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+156,154,98,dis_report,d_dise_class_stat_dict,老HIS-d_dise_class_stat_dict,False,True,True,False,True,,0,0,4,False,True,True,False,STAT_LEVEL,1000,未验证,恢复参数及计算口径后验收
+157,155,99,dis_report,d_disease_class_report,老HIS-d_disease_class_report,False,True,True,True,True,,0,0,10,True,False,False,True,dept;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+158,156,100,dis_report,d_disease_clss_st,老HIS-治愈者平均住院日,False,True,True,True,True,,0,7,9,True,False,False,True,dept;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+159,157,101,dis_report,d_dysyntaxpatient,老HIS-d_dysyntaxpatient,False,True,True,True,True,,0,2,5,False,False,False,False,js;ks,1000,未验证,恢复参数及计算口径后验收
+160,158,102,dis_report,d_mr_fee_class,老HIS-Mr Fee Class Name,False,False,False,False,True,,0,0,2,False,True,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+161,159,110,dis_report,d_prn_medi_report,老HIS-d_prn_medi_report,False,True,True,False,True,,0,1,20,True,False,True,True,dept1_len;dept2_len;end_datetime;start_datetime,1000,未验证,恢复参数及计算口径后验收
+162,160,112,dis_report,d_special_costs_st,老HIS-Count(~,False,True,True,True,True,,0,0,3,True,False,False,True,charge_type_set;end_day;oper_mark;start_day,1000,未验证,恢复参数及计算口径后验收
+163,161,113,dis_report,d_special_discharge_st,老HIS-Sum(trunc(~,False,True,True,True,True,,0,0,2,False,False,False,False,charge_type_set;end_day;oper_mark;start_day,1000,未验证,恢复参数及计算口径后验收
+164,162,114,dis_report,d_tj1,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+165,163,115,dis_report,d_tj2,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+166,164,116,dis_report,d_tj3,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+167,165,117,dis_report,d_tj4,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+168,166,118,dis_report,d_tjll,老HIS-d_tjll,True,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+169,167,119,dis_report,dw_month_report2_main,老HIS-二、门诊分科人次数,False,False,False,False,True,,0,0,17,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+170,168,125,dis_report,dw_year_report1,老HIS-dw_year_report1,False,True,True,True,True,,0,1,8,False,True,False,False,tj_type,1000,未验证,恢复参数及计算口径后验收
+171,169,129,dis_report,yty,"老HIS-医   疗事   故发生数",False,False,False,False,True,,0,0,31,False,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+172,170,130,disanalyse,d_blood_query,老HIS-d_blood_query,False,True,True,True,True,,0,1,5,True,False,False,False,pid,1000,未验证,恢复参数及计算口径后验收
+173,171,131,disanalyse,d_new_diagnosis_costs,老HIS-d_new_diagnosis_costs,True,False,False,False,True,,0,1,3,True,False,True,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+174,172,132,disanalyse,d_tj1,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+175,173,133,disanalyse,d_tj2,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+176,174,134,disanalyse,d_tj3,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+177,175,135,disanalyse,d_tj4,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+178,176,136,disanalyse,d_tjll,老HIS-d_tjll,True,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+179,177,138,disanalyse,dap2000202,老HIS-dap2000202,False,False,False,False,True,,0,0,17,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+180,178,139,disanalyse,dap2000203,老HIS-dap2000203,False,True,True,False,True,,0,0,30,True,False,False,True,adt_end_date;adt_start_date,1000,未验证,恢复参数及计算口径后验收
+181,179,142,disanalyse,dap20302,老HIS-dap20302,False,True,True,True,True,,0,0,21,True,False,False,True,ldt_js;ldt_ks;ls_dept_code,1000,未验证,恢复参数及计算口径后验收
+182,180,143,disanalyse,dap30002,老HIS-dap30002,False,True,True,True,True,,0,0,10,True,True,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+183,181,144,disanalyse,dap30302,老HIS-dap30302,False,True,True,False,True,,0,0,11,True,True,False,True,as_dept;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+184,182,145,disanalyse,dap30402,老HIS-dap30402,False,True,True,True,True,,0,6,24,True,False,False,True,ldt_frdate;ldt_todate,1000,未验证,恢复参数及计算口径后验收
+185,183,146,disanalyse,dap30502,老HIS-dap30502,False,True,True,False,True,,0,0,21,True,False,True,True,ldt_frdate;ldt_todate,1000,未验证,恢复参数及计算口径后验收
+186,184,147,disanalyse,dap30602,老HIS-dap30602,False,True,True,True,True,,0,0,4,True,True,False,True,ldt_frdate;ldt_todate,1000,未验证,恢复参数及计算口径后验收
+187,185,150,disanalyse,dap40302,老HIS-dap40302,False,True,True,True,True,,0,0,7,True,False,False,True,dept;end_day;start_day,1000,未验证,恢复参数及计算口径后验收
+188,186,151,disanalyse,dw_outp_dept,老HIS-dw_outp_dept,False,True,True,True,True,,0,1,3,False,False,False,False,stat_dept_name,1000,未验证,恢复参数及计算口径后验收
+189,187,152,disanalyse,het10102,老HIS-het10102,False,True,True,False,True,,0,0,7,True,False,True,True,Dto;dFrom,1000,未验证,恢复参数及计算口径后验收
+190,188,153,disanalyse,wbj10002,老HIS-wbj10002,False,False,False,False,True,,0,0,77,True,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+191,189,154,djdesign,d_bydoctor,老HIS-Orders Order Text,False,True,True,True,True,,0,0,4,True,False,False,True,jsdate;ksdate;text,1000,未验证,恢复参数及计算口径后验收
+192,190,155,djdesign,d_dispense,老HIS-药品名称,False,True,True,True,True,,0,2,6,True,True,False,False,dept;form;jsdate;ksdate,1000,未验证,恢复参数及计算口径后验收
+193,191,156,djdesign,d_doctor,老HIS-d_doctor,False,True,True,True,True,,0,1,5,True,False,False,True,js;ks;text,1000,未验证,恢复参数及计算口径后验收
+194,192,157,djdesign,d_drugpresc,老HIS-药品名称,False,True,True,True,True,,0,2,6,True,True,False,False,dept;form;jsdate;ksdate,1000,未验证,恢复参数及计算口径后验收
+195,193,159,djdesign,d_newdispense,老HIS-d_newdispense,False,True,True,True,True,,0,0,6,True,False,False,False,dept;form;jsdate;ksdate,1000,未验证,恢复参数及计算口径后验收
+196,194,160,djdesign,d_newdispensedoctor,"老HIS-Drug Dispense Rec
+Drug Units",False,True,True,True,True,,0,0,7,True,False,False,False,dept;form;jsdate;ksdate,1000,未验证,恢复参数及计算口径后验收
+197,195,161,djdesign,d_newpresc,老HIS-d_newpresc,False,True,True,True,True,,0,0,6,True,False,False,False,dept;form;jsdate;ksdate;storage,1000,未验证,恢复参数及计算口径后验收
+198,196,162,djdesign,d_newpresc_inp,老HIS-d_newpresc_inp,False,True,True,True,True,,0,0,6,True,False,False,False,dept;form;jsdate;ksdate,1000,未验证,恢复参数及计算口径后验收
+199,197,163,djdesign,d_newpresc_outp,老HIS-d_newpresc_outp,False,True,True,True,True,,0,0,6,True,False,False,False,dept;form;jsdate;ksdate,1000,未验证,恢复参数及计算口径后验收
+200,198,164,djdesign,d_newprescdoctor,老HIS-d_newprescdoctor,False,True,True,True,True,,0,0,7,True,False,False,False,form;jsdate;ksdate;li_presc_source,1000,未验证,恢复参数及计算口径后验收
+201,199,165,drug,d_dispense_drugsum,老HIS-d_dispense_drugsum,False,True,True,True,True,,0,1,7,True,False,False,True,ldtEnd;ldtStart;ls_storage,1000,未验证,恢复参数及计算口径后验收
+202,200,166,drug,d_dispense_drugsum_prn,老HIS-摆药出库药品品种金额统计,False,True,True,True,True,,0,3,7,True,False,False,True,ldt_start;ldt_stop;ls_storage,1000,未验证,恢复参数及计算口径后验收
+203,201,167,drug,d_drug_price,老HIS-d_drug_price,False,True,True,True,True,,0,0,14,False,False,False,False,li_codelen;ls_drugcode,1000,未验证,恢复参数及计算口径后验收
+204,202,170,drug,d_drug_sell_for_alldept_sx,老HIS-d_drug_sell_for_alldept_sx,False,True,True,False,True,,0,0,6,True,True,True,True,enddate;itemclass;startdate,1000,未验证,恢复参数及计算口径后验收
+205,203,171,drug,d_drug_storage_for_alldept_sx,老HIS-d_drug_storage_for_alldept_sx,False,True,True,True,True,,0,0,13,False,False,False,False,drugcode;storagecode,1000,未验证,恢复参数及计算口径后验收
+206,204,172,drug,d_drug_storage_used_forall_storage_sx,老HIS-d_drug_storage_used_forall_storage_sx,False,True,True,False,True,,0,9,10,True,False,True,True,enddate;startdate,1000,未验证,恢复参数及计算口径后验收
+207,205,174,drug,d_drugused_for_allstorage_sx,老HIS-d_drugused_for_allstorage_sx,False,True,True,False,True,,0,6,11,True,False,True,True,drugcode;drugstorage;enddate;startdate,1000,未验证,恢复参数及计算口径后验收
+208,206,175,drug,d_exp_export_detail_sx,老HIS-d_exp_export_detail_sx,False,True,True,True,True,,0,1,7,True,False,False,True,end_date;ls_rece;ls_storage;start_date,1000,未验证,恢复参数及计算口径后验收
+209,207,176,drug,d_exp_export_master_sx,老HIS-d_exp_export_master_sx,False,True,True,True,True,,0,1,2,True,False,False,False,end_date;ls_storage;start_date,1000,未验证,恢复参数及计算口径后验收
+210,208,177,drug,d_im_ex_stock,老HIS-d_im_ex_stock,False,True,True,False,True,,0,0,13,True,False,True,True,ldt_start;ldt_stop;ls_storage,1000,未验证,恢复参数及计算口径后验收
+211,209,178,drug,d_im_ex_stock_060109,老HIS-d_im_ex_stock_060109,False,True,True,False,True,,0,0,12,True,False,True,True,ldt_start;ldt_stop;ls_storage,1000,未验证,恢复参数及计算口径后验收
+212,210,179,drug,d_im_ex_stock_exp,老HIS-d_im_ex_stock_exp,False,True,True,False,True,,0,0,13,True,False,True,True,ldt_start;ldt_stop;ls_storage,1000,未验证,恢复参数及计算口径后验收
+213,211,180,drug,d_im_ex_stock_prn,老HIS-药 品 入 出 存 统 计,False,True,True,False,True,,0,2,11,True,False,True,True,ls_end;ls_start;ls_storage,1000,未验证,恢复参数及计算口径后验收
+214,212,181,drug,d_presc_drugsum,老HIS-d_presc_drugsum,False,True,True,True,True,,0,0,7,True,False,False,True,ls_end;ls_start;ls_storage,1000,未验证,恢复参数及计算口径后验收
+215,213,182,drug,d_presc_drugsum_prn,老HIS-处方药品出库品种金额统计,False,True,True,True,True,,0,3,7,True,False,False,True,ls_end;ls_start;ls_storage,1000,未验证,恢复参数及计算口径后验收
+216,214,185,inp,d_adt_log_day_graph,老HIS-d_adt_log_day_graph,False,True,True,True,True,,0,1,4,True,False,False,False,js;ks,1000,未验证,恢复参数及计算口径后验收
+217,215,186,inp,d_adt_log_month_graph,老HIS-d_adt_log_month_graph,False,True,True,True,True,,0,1,4,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+218,216,187,inp,d_adt_log_month_graph_new,老HIS-d_adt_log_month_graph_new,False,True,True,True,True,,0,0,4,True,False,False,False,adt_end_date;adt_start_date,1000,未验证,恢复参数及计算口径后验收
+219,217,189,inp,d_arrear_stat,老HIS-d_arrear_stat,False,True,True,True,True,,0,6,12,False,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+220,218,190,inp,d_bed_rec,老HIS-d_bed_rec,False,False,False,False,True,,0,1,9,True,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+221,219,191,inp,d_bed_rec_prt,老HIS-床位情况统计,False,False,False,False,True,,0,1,9,True,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+222,220,192,inp,d_bill_item_detail,老HIS-计价日期及时间,False,False,False,False,True,BILLING_DATE_TIME,1,10,16,False,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+223,221,193,inp,d_criticall_serious_detail,老HIS-d_criticall_serious_detail,False,False,False,False,True,ADMISSION_DATE_TIME,2,5,14,True,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+224,222,194,inp,d_criticall_serious_prn,老HIS-d_criticall_serious_prn,False,False,False,False,True,ADMISSION_DATE_TIME,2,5,14,True,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+225,223,195,inp,d_dept_adt_month,老HIS-d_dept_adt_month,False,True,True,True,True,,0,0,10,True,False,False,True,ls_end;ls_start,1000,未验证,恢复参数及计算口径后验收
+226,224,196,inp,d_dept_adt_year,老HIS-d_dept_adt_year,False,True,True,True,True,,0,0,10,True,False,False,True,ls_end;ls_start,1000,未验证,恢复参数及计算口径后验收
+227,225,198,inp,d_dis_control_regedit_disdesc_sx,老HIS-d_dis_control_regedit_disdesc_sx,False,True,True,True,True,,0,0,1,False,False,False,False,ls_end;ls_start,1000,未验证,恢复参数及计算口径后验收
+228,226,199,inp,d_dis_control_regedit_pats_list_sx,老HIS-d_dis_control_regedit_pats_list_sx,False,True,True,True,True,,0,3,5,False,False,False,True,ls_diagnosis_desc;ls_end;ls_start,1000,未验证,恢复参数及计算口径后验收
+229,227,203,inp,d_discharge_disposition_dict,老HIS-d_discharge_disposition_dict,False,False,False,False,True,,0,0,2,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+230,228,204,inp,d_doctor_in_charge,老HIS-d_doctor_in_charge,False,True,True,False,True,,0,0,10,True,False,True,True,dept_code;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+231,229,205,inp,d_excel_titlename,老HIS-d_excel_titlename,False,True,True,True,True,,0,1,2,True,True,False,False,js;ks,1000,未验证,恢复参数及计算口径后验收
+232,230,206,inp,d_inp_bill_day_graph,老HIS-统计区间：,False,True,True,True,True,,0,1,2,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+233,231,208,inp,d_inp_bill_month_graph11,老HIS-d_inp_bill_month_graph11,False,False,False,False,True,,0,0,3,True,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+234,232,210,inp,d_inp_nursing_sx_work,老HIS-d_inp_nursing_sx_work,False,True,True,False,True,,0,22,23,True,False,True,True,enddt;startdt,1000,未验证,恢复参数及计算口径后验收
+235,233,211,inp,d_inp_rcpt,老HIS-收据项目,False,False,False,False,True,,0,0,2,False,True,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+236,234,212,inp,d_inp_rcpt_class,老HIS-Fee Class Code,False,False,False,False,True,,0,0,2,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+237,235,216,inp,d_insurance_out_quary_sx,老HIS-d_insurance_out_quary_sx,False,True,True,False,True,,0,8,9,True,False,True,True,dt_end;dt_start,1000,未验证,恢复参数及计算口径后验收
+238,236,217,inp,d_insurance_type,老HIS-d_insurance_type,False,False,False,False,True,,0,0,1,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+239,237,219,inp,d_new_bed_and_pats_yesterdayinfo_sx,老HIS-d_new_bed_and_pats_yesterdayinfo_sx,False,True,True,False,True,,0,10,11,True,False,True,True,ls_date,1000,未验证,恢复参数及计算口径后验收
+240,238,221,inp,d_new_pat_admission,老HIS-d_new_pat_admission,False,True,True,True,True,,0,5,14,False,True,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+241,239,222,inp,d_new_pat_admission_back,老HIS-d_new_pat_admission_back,False,True,True,True,True,,0,5,13,False,True,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+242,240,223,inp,d_new_pat_discharge,老HIS-d_new_pat_discharge,False,True,True,True,True,,0,5,14,False,True,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+243,241,224,inp,d_new_patvisit_costs,老HIS-d_new_patvisit_costs,False,True,True,True,True,,0,2,3,True,True,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+244,242,234,inp,d_print_cost_detail,老HIS-病 人 费 用 清 单,False,False,False,False,True,预交金余额：,1,10,16,False,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+245,243,235,inp,d_print_single_rcpt_cost,老HIS-1234567891,False,False,False,False,True,,0,0,2,False,True,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+246,244,237,inp,d_total_fee_for_zlh,老HIS-d_total_fee_for_zlh,False,True,True,False,True,,0,5,5,False,False,True,True,ds_end;ds_start,1000,未验证,恢复参数及计算口径后验收
+247,245,239,inp,d_try,老HIS-d_try,False,True,True,True,True,,0,0,3,False,False,False,True,patient_id;visit_id,1000,未验证,恢复参数及计算口径后验收
+248,246,242,inp,inp_bill_ordered_patient_detailcosts,老HIS-inp_bill_ordered_patient_detailcosts,False,True,True,False,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+249,247,243,inp,inp_bill_ordered_sx,老HIS-inp_bill_ordered_sx,False,True,True,True,True,,0,0,15,True,False,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+250,248,244,inp,inp_bill_performed_patient_costs,老HIS-inp_bill_performed_patient_costs,False,True,True,False,True,,0,2,5,True,False,False,True,js;ks,1000,未验证,恢复参数及计算口径后验收
+251,249,245,inp,inp_bill_performed_sx,老HIS-inp_bill_performed_sx,False,True,True,True,True,,0,0,15,True,False,False,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+252,250,246,medicaldata,mdp10002,老HIS-mdp10002,False,True,True,True,True,,0,0,10,True,False,False,True,end_day;start_day,1000,未验证,恢复参数及计算口径后验收
+253,251,247,medicaldata,mdp10102,老HIS-mdp10102,False,True,True,True,True,,0,1,9,True,False,False,True,adt_end;adt_start,1000,未验证,恢复参数及计算口径后验收
+254,252,248,medicaldata,mdp10202,老HIS-mdp10202,False,True,True,True,True,,0,3,11,True,False,False,True,ldtEnd;ldtStart,1000,未验证,恢复参数及计算口径后验收
+255,253,249,medicaldata,mdp10302,老HIS-mdp10302,False,False,False,False,True,,0,2,6,False,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+256,254,251,medicaldata,mdp20002,老HIS-mdp20002,False,True,True,True,True,,0,5,16,False,True,False,True,ldt_end;ldt_start;lsDept,1000,未验证,恢复参数及计算口径后验收
+257,255,252,medicaldata,mdp20302,老HIS-mdp20302,False,True,True,True,True,,0,2,9,True,False,False,True,asMrFeeCol;ldt_frdate;ldt_todate,1000,未验证,恢复参数及计算口径后验收
+258,256,253,medicaldata,mdp30402,老HIS-mdp30402,False,True,True,True,True,,0,0,12,True,False,False,True,asMrFeeCol;ldt_end;ldt_start;ls_dept,1000,未验证,恢复参数及计算口径后验收
+259,257,254,medicaldata,mdp30502,老HIS-mdp30502,False,True,True,False,True,,0,4,5,True,False,True,True,ldt_end;ldt_start,1000,未验证,恢复参数及计算口径后验收
+260,258,259,medicaldata,mdp40102,老HIS-mdp40102,False,True,True,True,True,,0,0,4,True,False,False,True,ldt_end;ldt_start,1000,未验证,恢复参数及计算口径后验收
+261,259,261,mrdatainput_dw,d_clinic_in_num_month,老HIS-d_clinic_in_num_month,False,True,True,True,True,,0,1,3,True,False,False,False,ldt_end;ldt_start,1000,未验证,恢复参数及计算口径后验收
+262,260,262,mrdatainput_dw,d_clinic_in_num_zm_month,老HIS-d_clinic_in_num_zm_month,False,True,True,True,True,,0,1,3,True,False,False,False,ldt_end;ldt_start,1000,未验证,恢复参数及计算口径后验收
+263,261,263,mrdatainput_dw,d_dddw_unit,老HIS-d_dddw_unit,False,False,False,False,True,,0,0,2,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+264,262,264,mrdatainput_dw,d_q_clinicmaster,老HIS-d_q_clinicmaster,False,True,True,False,True,,0,1,10,True,False,True,True,adFrom;adTo;sDept,1000,未验证,恢复参数及计算口径后验收
+265,263,267,mrpublic,d_dis_mzyb2_dw2_bk,老HIS-d_dis_mzyb2_dw2_bk,False,True,True,True,True,,0,0,6,False,False,False,True,adt_end_date;adt_start_date;as_dept,1000,未验证,恢复参数及计算口径后验收
+266,264,268,mrpublic,d_tj2,老HIS-Discharge Date Time,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+267,265,269,mrpublic,dd_unit_table,老HIS-Unit Code,False,False,False,False,True,,0,0,2,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+268,266,270,p_comm_print,d_clinic_comp,老HIS-d_clinic_comp,False,True,True,True,True,,0,5,15,True,False,False,True,ldt_frdate;ldt_todate,1000,未验证,恢复参数及计算口径后验收
+269,267,273,p_comm_print,d_desc_age,老HIS-d_desc_age,False,True,True,False,True,,0,5,6,True,False,True,True,end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+270,268,274,p_comm_print,d_diag_comp,老HIS-d_diag_comp,False,True,True,True,True,,0,0,18,True,False,False,True,ldt_frdate;ldt_todate,1000,未验证,恢复参数及计算口径后验收
+271,269,275,p_comm_print,d_dis_mzyb2_dw2_bk,老HIS-d_dis_mzyb2_dw2_bk,False,True,True,True,True,,0,0,6,False,False,False,True,adt_end_date;adt_start_date;as_dept,1000,未验证,恢复参数及计算口径后验收
+272,270,276,p_comm_print,d_dis_treat_report_icd10,老HIS-d_dis_treat_report_icd10,False,True,True,True,True,,0,0,8,True,False,False,True,diagnosis_name;end_date;start_date,1000,未验证,恢复参数及计算口径后验收
+273,271,279,p_comm_print,d_mrstat_8711,老HIS-d_mrstat_8711,False,True,True,True,True,,0,1,8,True,False,False,True,ldt_frdate;ldt_todate,1000,未验证,恢复参数及计算口径后验收
+274,272,281,pubcomm,d_bill_item_refund,老HIS-项目类别,False,False,False,False,True,BILLING_DATE_TIME,1,3,31,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+275,273,282,pubcomm,d_bill_refund,老HIS-d_bill_refund,False,False,False,False,True,,0,3,28,True,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+276,274,283,pubcomm,d_bill_refund_print,老HIS-d_bill_refund_print,False,False,False,False,True,,0,3,28,True,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+277,275,284,pubcomm,d_inhospital_info,老HIS-d_inhospital_info,False,False,False,False,True,ADMISSION_DATE_TIME,1,6,8,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+278,276,286,spjxc,d_3,老HIS-d_3,False,True,True,True,True,,0,3,6,True,True,False,True,as_ym,1000,未验证,恢复参数及计算口径后验收
+279,277,287,spjxc,d_4,老HIS-d_4,False,True,True,True,True,,0,2,7,False,False,False,True,ANUM_E;ANUM_S;AS_EDT;AS_SDT,1000,未验证,恢复参数及计算口径后验收
+280,278,288,spjxc,d_cancel_discharge_pat,老HIS-d_cancel_discharge_pat,False,True,True,True,True,,0,5,7,False,True,False,True,ldEnd;ldStart,1000,未验证,恢复参数及计算口径后验收
+281,279,289,spjxc,d_clinic_pats,老HIS-d_clinic_pats,False,True,True,True,True,,0,0,3,False,False,False,True,ldt_end;ldt_start,1000,未验证,恢复参数及计算口径后验收
+282,280,290,spjxc,d_dept_wh,老HIS-d_dept_wh,False,False,False,False,True,,0,2,10,False,False,False,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+283,281,291,spjxc,d_exam_dept_person,老HIS-d_exam_dept_person,False,True,True,False,True,,0,1,4,True,False,True,True,ldt_end;ldt_start;ls_bnj;ls_hj,1000,未验证,恢复参数及计算口径后验收
+284,282,294,spjxc,d_hldy5,老HIS-d_hldy5,False,False,False,False,True,,0,2,2,False,True,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+285,283,295,spjxc,d_hldy_chu,老HIS-d_hldy_chu,False,True,True,False,True,,0,2,4,True,True,True,False,ld_js;ld_ks,1000,未验证,恢复参数及计算口径后验收
+286,284,296,spjxc,d_hldy_code,老HIS-d_hldy_code,False,False,False,False,True,,0,2,2,False,True,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+287,285,297,spjxc,d_hulidanyuangzl2,老HIS-d_hulidanyuangzl2,False,False,False,False,True,,0,2,2,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+288,286,298,spjxc,d_hulidanyuangzl4,老HIS-d_hulidanyuangzl4,False,False,False,False,True,,0,2,2,False,True,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+289,287,299,spjxc,d_hulidanyuangzl5,老HIS-d_hulidanyuangzl5,False,False,False,False,True,,0,2,2,False,True,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+290,288,300,spjxc,d_ks_tywh,老HIS-d_ks_tywh,False,False,False,False,True,CREATE_DATE,1,2,46,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+291,289,301,spjxc,d_new_bed_and_pats_yesterdayinfo_sx,老HIS-d_new_bed_and_pats_yesterdayinfo_sx,False,True,True,False,True,,0,10,11,True,False,True,True,ls_date,1000,未验证,恢复参数及计算口径后验收
+292,290,302,spjxc,d_operation_tj,老HIS-d_operation_tj,False,True,True,False,True,,0,1,3,True,True,True,True,ldt_begin;ldt_end;outp_or_inp,1000,未验证,恢复参数及计算口径后验收
+293,291,303,spjxc,d_operation_tj_sxold,老HIS-d_operation_tj_sxold,False,True,True,False,True,,0,1,3,True,True,True,True,ldt_begin;ldt_end;outp_or_inp,1000,未验证,恢复参数及计算口径后验收
+294,292,312,spjxc,d_sx1,老HIS-d_sx1,False,False,False,False,True,,0,0,4,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+295,293,313,spjxc,d_sx2,老HIS-d_sx2,False,False,False,False,True,,0,0,4,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+296,294,314,spjxc,d_sx3,老HIS-d_sx3,False,False,False,False,True,,0,0,4,False,False,False,False,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+297,295,320,spjxc,d_tjbb_mz,老HIS-d_tjbb_mz,False,True,True,False,True,,0,1,20,True,True,True,True,adt_begin;adt_end,1000,未验证,恢复参数及计算口径后验收
+298,296,321,spjxc,d_tjbb_mz_slslx,老HIS-d_tjbb_mz_slslx,False,True,True,False,True,,0,1,20,True,True,True,True,adt_begin;adt_end,1000,未验证,恢复参数及计算口径后验收
+299,297,328,spjxc,d_tjll1,老HIS-d_tjll1,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+300,298,329,spjxc,d_tjll2,老HIS-d_tjll2,False,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+301,299,332,spjxc,d_total_costs_for_zlh,老HIS-d_total_costs_for_zlh,False,True,True,False,True,,0,5,5,False,False,True,False,ds_end;ds_start,1000,未验证,恢复参数及计算口径后验收
+302,300,333,spjxc,d_wstj_4,老HIS-d_wstj_4,False,True,True,True,True,,0,0,13,False,False,False,False,DT_YEAR,1000,未验证,恢复参数及计算口径后验收
+303,301,335,spjxc,d_zrzmzbb,老HIS-d_zrzmzbb,False,True,True,False,True,,0,12,12,True,True,True,True,ldt_js;ldt_ks,1000,未验证,恢复参数及计算口径后验收
+304,302,336,spjxc,d_zrzmzbb1,老HIS-d_zrzmzbb1,False,True,True,False,True,,0,10,10,True,True,True,True,ldt_js;ldt_ks,1000,未验证,恢复参数及计算口径后验收
+305,303,337,spjxc,d_zrzmzbb_20210821,老HIS-d_zrzmzbb_20210821,False,True,True,False,True,,0,12,12,True,True,True,True,ldt_js;ldt_ks,1000,未验证,恢复参数及计算口径后验收
+306,304,338,spjxc,d_zrzmzbb_20210821_modify,老HIS-d_zrzmzbb_20210821_modify,False,True,True,False,True,,0,12,12,True,True,True,True,ldt_js;ldt_ks,1000,未验证,恢复参数及计算口径后验收
+307,305,118,dis_report,d_tjll,老HIS-d_tjll,True,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收
+308,306,131,disanalyse,d_new_diagnosis_costs,老HIS-d_new_diagnosis_costs,True,False,False,False,True,,0,1,3,True,False,True,True,,1000,未验证,核对计算、中文列头、权限及完整性后验收
+309,307,136,disanalyse,d_tjll,老HIS-d_tjll,True,True,True,True,True,,0,2,4,False,False,False,True,dept;js;ks,1000,未验证,恢复参数及计算口径后验收

@@ -1,0 +1,95 @@
+{
+ "browser": "Chrome/157.0.8103.51",
+ "checks": [
+  {
+   "check": "V0_version",
+   "pass": true,
+   "detail": {
+    "v": "20261117h14",
+    "md_links": 57
+   }
+  },
+  {
+   "check": "V1_kyb_init",
+   "pass": true,
+   "detail": {
+    "exists": true,
+    "open": "0",
+    "links": 10,
+    "visible": false
+   }
+  },
+  {
+   "check": "V2_desc_expands",
+   "pass": true,
+   "detail": {
+    "open": "1",
+    "visible": true,
+    "flag_alive": true,
+    "url": "/superset/dashboard/34/"
+   }
+  },
+  {
+   "check": "V3_name_toggles",
+   "pass": true,
+   "detail": {
+    "open": "1",
+    "flag_alive": true,
+    "url": "/superset/dashboard/34/"
+   }
+  },
+  {
+   "check": "V4_collapse_sticks",
+   "pass": true,
+   "detail": {
+    "exists": true,
+    "open": "0",
+    "links": 10,
+    "visible": false
+   }
+  },
+  {
+   "check": "V5_hashchange_expands",
+   "pass": true,
+   "detail": {
+    "exists": true,
+    "open": "1",
+    "links": 10,
+    "visible": true
+   }
+  },
+  {
+   "check": "V6_native_toggle_sticks",
+   "pass": true,
+   "detail": {
+    "before": "0",
+    "just_after": "1",
+    "after_2_5s": "1",
+    "ss": "[\"kyb\",\"33\"]",
+    "visible": true,
+    "links": 6
+   }
+  },
+  {
+   "check": "V7_native_reload_memory",
+   "pass": true,
+   "detail": {
+    "open_after_reload": "1",
+    "ss": "[\"kyb\",\"33\"]"
+   }
+  },
+  {
+   "check": "V8_kyb_link_ids",
+   "pass": true,
+   "detail": "61,62,63,64,65,66,67,68,69,70"
+  },
+  {
+   "check": "V9_home_landing",
+   "pass": true,
+   "detail": {
+    "url": "/superset/dashboard/34/",
+    "open": "1"
+   }
+  }
+ ]
+}

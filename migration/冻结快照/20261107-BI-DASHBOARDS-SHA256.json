@@ -1,0 +1,86 @@
+{
+ "run_id": "20261107-BI-DASHBOARDS",
+ "date": "2026-11-08",
+ "summary": "3 个可视化 BI 驾驶舱（看板 72/73/74）剩余任务一次性完成：止损（74 绑 Gamma、8 图 viz_type 对齐、目录 34 搜索框/入口条、73 sameday 契约、slug 别名）+ 口径修复（granularity/合计行/17:00 桶/381 换超声 ds326/386 只取合计/新增 392 门诊台数/377 五项）+ 可视化（柱图×4、折线×2、饼图×2 含新数据集 373/374）+ 查询按钮死锁规避（report-dates d17）+ 台账回退 + 4 轮双浏览器验收 154 项 0 失败 + 快照 PASS 原有对象零修改",
+ "assets_final": {
+  "custom/home-ui.js": {
+   "sha256": "a8d3c9919bd9639be0e1b989e00fe4febe81ea0a31a17eb9c8bb48b45a81e13d",
+   "version": "20261107h8（保持）"
+  },
+  "custom/report-ui.js": {
+   "sha256": "498467edfdbf909dd09fc4abddea9ae1e77bc459f624b193bb533bf10de4698d",
+   "version": "20261107f12（保持）"
+  },
+  "custom/report-dates.js": {
+   "sha256": "ca62d31f74434bcba1330beef39749364cb4ee8b7fa908b8de6c232e50555cfb",
+   "version": "20261107d17（d14→d17：73 sameday 契约 + BI 驾驶舱查询按钮死锁规避）"
+  },
+  "custom/report-guards.js": {
+   "sha256": "4faa3d390fbde65dd1d1ad761826ec3d70ac45c5a2f54b21a64f06eb8ee66718",
+   "version": "20261105g4（本批未动）"
+  },
+  "nginx.conf": {
+   "sha256": "50176dc7bce330fdd51238f33872f488739cf44d0f7698e6aa68c3eb3f3e71f0",
+   "version": "inode 47580611 保持，本批未改"
+  }
+ },
+ "production_before_assets": {
+  "custom/home-ui.js": "426d186c64db0b37b3cd699950125130b515fb50326010a0de61ec9b836f48b6 (20261107h8, F13)",
+  "custom/report-ui.js": "60e73f667d97535abf3a749e2e8a4c1267d086d004689bbfb632996ce211948e (20261107f12, F13)",
+  "custom/report-dates.js": "86dee5cfae2dfcf974127035aaa51f7c0c357ad8b3e1ce8dad28becc83fee4d5 (20261107d14, F13)",
+  "nginx.conf": "50176dc7bce330fdd51238f33872f488739cf44d0f7698e6aa68c3eb3f3e71f0 (inode 47580611)",
+  "server_backup_dir": "73:/home/superset/migration-private/20261107-BI-DASHBOARDS/before-fix/（批前整体回退另有 before-assets/：h7/f11/d13/nginx）"
+ },
+ "objects": {
+  "dashboards": {
+   "72": {"uuid": "2876eabf-7244-482d-b41b-4f3e2e9f7e60", "roles": [4], "charts": [371, 372, 373, 374, 375, 376, 377, 378]},
+   "73": {"uuid": "d8899717-30eb-4d40-a73e-84a481d84aa6", "roles": [4], "charts": [379, 380, 381, 382, 383, 384, 385], "filter_targets": [325, 324, 322, 326]},
+   "74": {"uuid": "7e09d129-8485-4bf8-bf49-3360dd5a8cf6", "roles": [4], "charts": [392, 386, 389, 387, 390, 391]}
+  },
+  "datasets_created": {
+   "373": {"table_name": "BI_手术分支合计两行", "uuid": "8aa7735c-abfd-4e81-9715-41b122727bfc"},
+   "374": {"table_name": "BI_出院转归构成长表", "uuid": "92a381c8-7a61-4fdb-a286-11f3282e0184"}
+  },
+  "chart_392_created": {"uuid": "0deba468-74eb-46ec-83fd-b6a01493780d", "title": "【BI】门诊手术台数"},
+  "deleted_for_reference_only": {"charts": "355-370, 388", "dashboards": "71"}
+ },
+ "snapshot": {
+  "before": "snapshot-before.raw（写前 2026-11-08 10:18）",
+  "t0": "snapshot-t0.raw sha256=4ccab3e0a51906cac56eed33620f397fe432f3e7f8c0c1e4b901109f6a9d5c0b（开工 PASS）",
+  "final": "snapshot-final.raw sha256=2d1857c94c9ba69fe0ddf33105923bd7473f8905bbff5ff1e6c8a0dd3a08eb3b（RESULT PASS 原有对象零修改；NEW_view_menu 709/710、NEW_perm_view 846/847 均仅涉新数据集）",
+  "counts_final": "charts=86 datasets=77 dashboards=52 published=50 users=2383 roles=342 rls=0"
+ },
+ "acceptance": {
+  "matrix": "Chrome156 + Chromium87 × 1920x1080/1366x768 × admin/003158",
+  "results": "154 checks, 0 FAIL（bi-acceptance.json/.csv）",
+  "cold_start": "72: 3.5-5.7s / 73: 6.1-8.4s / 74: 6.4-8.2s（全部<10s）；热 2.9-3.9s",
+  "linkage": "72: 54619→56279(8月)；73: 1852/99(11-06)→1963(11-05)；74: 507/129 默认→1997/516(9月)",
+  "shots": "shots/bi-dashboard-{1,2,3}-{chrome|c87}-{res}[-003158].png + bi-home/bi-dir34（40 张，未隐藏表体）"
+ },
+ "evidence_sha256": {
+  "bi-acceptance.json": "f14a853714ef2f48b8c5f33c73c5b27a49abbd4c1ca5ef5910d60403fa8e24e0",
+  "bi-acceptance.csv": "63cd128c3ceeb144f6916d6fde85a7b9e2963e434c6d64b51597168e41a501cc",
+  "bi_created_ledger.json": "8c85c91f31e0d02e08aa57b4880e8962607a6d53c174f0b3ff74c33d9f7df961",
+  "snapshot-t0.raw": "4ccab3e0a51906cac56eed33620f397fe432f3e7f8c0c1e4b901109f6a9d5c0b",
+  "snapshot-final.raw": "2d1857c94c9ba69fe0ddf33105923bd7473f8905bbff5ff1e6c8a0dd3a08eb3b",
+  "最终报告.md": "7e5e31f9292cd141767d1aa2940adf3bd2d2261a2016f6ad967a355115f89cb9",
+  "rollback_bi.py": "ed4908b2300fe883a7808437924c00a001a2e306acb85e4634218d6c3d839212",
+  "fix_t2_caliber.py": "4025bdb98604dfb849f686b80e10fd43e229448f46ed654934e4dbe3fb855a04",
+  "fix_t3_pies.py": "98ca546401db056e9ad16d7772c13577992ceaad6d13e6c59a5a58e37bb81397",
+  "t2_recon.json": "8956a2c95419ba6683c9309490082cc74c6b269424ac3a0e9ca63ca3af3ddf6c",
+  "evidence/bi_sql/ds_unpivot_zhuangui.sql": "8d62df13da4cc86acc8d10dddaa0cf5f8da750be66e09c39abf3a965faaa0525",
+  "evidence/bi_sql/ds_branch_total.sql": "18cba18a646d80c774141baa06ef55659c797e74cc699456426459cee8b6fc2b"
+ },
+ "rollback": {
+  "frontend": "before-fix/（本批修改前四件）或 before-assets/（批前四件）cat 覆盖",
+  "objects": "ACC_ADMIN=… python rollback_bi.py（顺序看板→图表→数据集，--dry-run 已核 26 对象=ledger=生产现存）",
+  "verify": "snapshot_bi.sh + compare_snapshot.py 应 PASS/SAME"
+ },
+ "known_issues": [
+  "Superset 前端缺陷：多图看板首载 applied dataMask 空 → 原生查询按钮恒禁用（d17 规避，升级后复查）",
+  "d15 教训：解锁逻辑不得挂 MutationObserver 驱动的 render()（会饿死网格挂载）",
+  "BI-3 无抗菌药物图（ds365 聚合 48.4s）；取药图换超声（ds323 冷查 17.6-18.6s）",
+  "dist_bar 未注册；柱图走 echarts_timeseries_bar；饼图度量 label 不得与列名同名（ORA-00935）",
+  "377 口径：五项和=ds348 总计出院人数；ds338 CHUYUAN=七项和（含自动出院/转院），两数据集口径差属源数据语义"
+ ]
+}

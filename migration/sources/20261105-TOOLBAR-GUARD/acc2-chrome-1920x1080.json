@@ -1,0 +1,332 @@
+[
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "login",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as admin"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-summary",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "summary='⏳ 正在查询数据（已用时 0 秒，大表可能需 15~45 秒，请稍候）…' chart= 0.0s"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-buttons",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=True csvDisabled=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 10 行数据 · 耗时 1.8 秒' chart= 0.0s"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 10 行数据 · 耗时 1.0 秒' chart= 0.0s"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 10 行数据 · 耗时 0.3 秒' chart= 0.0s"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-firstload",
+    "verify_point": "VP4",
+    "result": "PASS",
+    "detail": "first-open 0.0s (<20s) state="
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 23,641 行数据 · 耗时 4.5 秒' chart= 1.3s"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "density-toggle",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "compact h=45 ss=compact -> standard h=59 ss=standard"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-day-query",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "draft=set:2026-09-16 : 2026-09-17 state= 0.0s summary=''"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-xlsx-click",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "button disabled"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-csv-click",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "button disabled"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-xlsx-download",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no file; note=共返回 10 行数据 · 耗时 0.3 秒"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-csv-download",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no file; note=共返回 10 行数据 · 耗时 0.3 秒"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-span30-blocked",
+    "verify_point": "VP3",
+    "result": "FAIL",
+    "detail": "msg='' lastBlock='' before= after= draft=set:2026-09-01 : 2026-10-01"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-span15-passed",
+    "verify_point": "VP3",
+    "result": "FAIL",
+    "detail": "draft=set:2026-09-01 : 2026-09-16 state= 0s span={\"days\":15}"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-truncation-banner",
+    "verify_point": "VP3",
+    "result": "FAIL",
+    "detail": "banner=False rows=-1 limit=0 text=''"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-banner-removed",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "after requery banner=False state="
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-week-query",
+    "verify_point": "VP4",
+    "result": "FAIL",
+    "detail": "draft=set:2026-09-01 : 2026-09-08 state= 0s summary=''"
+  }
+]

@@ -1,0 +1,35 @@
+# ===== 大型二进制与本地产物（不入库）=====
+dev/pgdata/
+tools/
+migration/tools/chromium80/
+migration/tools/chromium87/
+migration/tools/chromium87-dl/
+migration/tools/chromium87-r809590/
+migration/tools/browser-transpile/
+offline-bundle/images/
+review/round-3/oracle-thick-test/
+# 浏览器测试 profile 残留
+migration/sources/*/profile-*
+profile-*/
+# 生成的转译产物与缓存
+__pycache__/
+*.pyc
+# 超过 GitHub 单文件限制的归档/二进制（双保险）
+*.tar
+*.zip
+*.dll
+*.exe
+*.msi
+*.pma
+.v2c/
+.video_agent/
+nul
+.gitsanit/
+*.err
+*.raw
+migration/sources/*/downloads/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp

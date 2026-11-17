@@ -1,0 +1,152 @@
+我按只读方式审这份部署计划：先读方案原文和仓库里的对照材料，不登录服务器、不连数据库、不改任何文件。方案已读完。接下来对照 v2 选型清单、核查脚本和仓库约定，核对方案里的技术断言是否站得住。总评：这版计划覆盖了需求的形状，但还不能交给另一个 AI 照做。九项要求都有对应章节，服务器不可达时停下、元数据库不用 Oracle、业务库只读，这几处判断是对的。真正的问题是关键步骤写错或只写了要点：功能开关不会生效，用户同步连错库，行级权限表达式对不上科室，异步导出被写成了 Superset 并不存在的本地取件目录，而生产数仓账号会被拿去长期读写。
+
+本次只读审查，未登录 10.10.8.73，未连接任何数据库，未改文件。依据是 `review/round-3/方案.md`、同目录核查脚本和输出、`superset-选型复核清单-v2-多方互查修订版.md`、`AGENTS.md`、sjzc 技能说明，以及 Superset 6.1.0 官方配置文档。
+
+## 需求覆盖
+
+| 要素 | 落点 | 判断 |
+|---|---|---|
+| U1 若干部署安装长任务，交另一个 AI | P1–P5，第 5、13 节 | 结构覆盖。关键文件其实还不存在，见下文 |
+| U2 服务器 10.10.8.73 | 第 2 节、P3 | 目标写明了。起草时只证明了默认 22 端口 TCP 超时 |
+| U3 用 sjzc 连各库并查询 | P4-S1、P5-S0 | 用到了技能，但把技能能力写成了“能拿出连接串和样例数据” |
+| U4 计划必须详细 | 第 0 节自称命令级 | 外壳详细。compose、生产配置、备份、同步脚本、定时报告不是可执行全文 |
+| U5 可以登录核查 | 第 3 节、P3-S0 | 有一次 SSH 超时证据。第 3 节其余行没有证据文件 |
+| U6 先本地开发，再部署，并连各业务系统 | P1→P2→P3→P4 | 顺序对。本地只冒烟一台 Oracle；Windows 安装步骤会把执行者带进死路 |
+| U7 登录用户用 HIS 的 sys_employee | P5 | 默认做成了另一套 Superset 密码，不是 HIS 登录；同步源被写成数据中心 |
+| U8 授权记录连接信息 | 第 0、2 节 | 记了。记法与工作区禁令和方案自己的“不进代码仓库”冲突 |
+| U9 需要数据库时用 10.10.8.216，单独建表 | D2、P5-S1 | 不用 Oracle 当元数据库，这个技术判断成立。落地方式超出“单独建表” |
+
+## 高风险问题
+
+**1. 三个会改变行为的配置开关写错了位置（P1-S4、P3-S4）**
+
+方案把下面三项写成模块级变量：
+
+- `ENABLE_TEMPLATE_PROCESSING = True`
+- `EMBEDDED_SUPERSET = True`
+- `ALERT_REPORTS = True`
+
+Superset 6.1.0 官方说明要求放进 `FEATURE_FLAGS` 字典。裸赋值不会打开 Jinja RLS、门户嵌入和定时报告。P5 的科室隔离、P5-S5 的嵌入验收、D6 的定时报告会在“配置已经写过”的情况下全部不生效。
+
+定时报告还缺官方要求的 `CeleryConfig.beat_schedule`（`reports.scheduler`）以及 `WEBDRIVER_BASEURL`。P3-S4 只写了 broker、result backend 和 imports。beat 容器起来也不会按计划发报告。`WEBDRIVER_BASEURL_USER_FRIENDLY` 的默认值是 `http://0.0.0.0:8080/`，和本方案的 8088/nginx 80 对不上。
+
+**2. “超过 10 万行走 Celery，产物落到服务器目录”不成立（D6、第 1 节、第 12 节风险 8）**
+
+官方导出文档的实际分叉是：
+
+- 未配置对象存储：在请求内生成文件，受 `EXCEL_EXPORT_SYNC_MAX_ROWS`（默认 10 万）限制，超过则直接 400。
+- 配置了 `EXCEL_EXPORT_S3_BUCKET` 或 `EXPORT_STORAGE`：Celery 上传到对象存储，再用邮件发链接。
+
+没有“写到 `/data/superset/media` 再取件”这条产品路径。第 1 节说轨道二依赖的异步导出基础设施已在 P3 就位，第 12 节又把 `SUP_EXPORT_AUDIT` 当作导出治理。P3 创建了 `media` 目录，P5 没有任何步骤建审计表，也没有把 Superset 导出接到这张表。v2 风险 8 和轨道二治理红线在本稿里没有处置。
+
+**3. sys_employee 的源被提前写成数据中心（P5-S0 与 P5-S1 矛盾）**
+
+sjzc 技能写明：HIS 源库 live 是 `his_source_10_10_10_15`，表结构镜像在 `DATA_CENTER`；数据中心 live 是 `ods_8_216`（10.10.8.216）。
+
+P5-S0 要求先查 HIS。P5-S1 第 1 步却固定“oracledb 连 10.10.8.216 读 sys_employee”，不按 S0 的结果改目标。数仓镜像经常不带密码哈希，而且相对 HIS 有延迟。方案 B 需要的哈希可能根本不在 216 上。离职人员会继续留到下一次镜像和次日 06:00 同步之后。
+
+第 2 节红线写“不直连生产 HIS，只连 ODS”。第 9 节 P4 又要求把约 20 个业务库都接进 Superset。用户原话是登录身份用 HIS 的 `sys_employee`，报表连接各业务系统。三句话在方案里同时成立，执行者无法知道哪条优先。
+
+**4. 行级权限的唯一示例是错的（P5-S2）**
+
+P5-S1 规定 `username=工号`。P5-S2 给出的规则是：
+
+```text
+dept_code = '{{ current_user.username }}'
+```
+
+这是在用科室编码等于工号做过滤。`SUP_USER_DEPT` 建了，示例却不用它。执行者会抄这行。结果是全员看不到数据，或者碰巧撞号时看到别人的数据。P5-S5 四面验收会失败，失败原因会被误判成账号或网络问题。
+
+自定义角色只写了“创建 `role_<科室码>`，不继承内置角色”。没有写明要授哪些 `datasource_access`。v2 论断 9 还要求仪表盘按角色隔离时打开 `DASHBOARD_RBAC`，方案未配。空角色登录后打不开看板；若执行者图省事去克隆 Admin，则科室隔离消失。
+
+**5. 方案 B 的扩展点会让 Superset 启动失败（P5-S3）**
+
+方案写“继承 FAB `SecurityManager`，覆写 `auth_db` 视图”。Superset 启动时检查 `CUSTOM_SECURITY_MANAGER` 必须继承 `SupersetSecurityManager`，继承 FAB 的类会直接抛异常。口令校验应覆盖 `auth_user_db`，不是一个名为 `auth_db` 的视图。
+
+决策矩阵里还有两条不能留给执行者试的选项：明文口令“直接迁移”；无盐哈希时初始密码等于工号后 6 位。Superset 默认不会强制首登改密。后一条等于任何人都能算出全院账号的密码。
+
+**6. 数据中心 `ods` 账号的用法超出“单独创建表”（D2、P1-S6、P5-S1）**
+
+不用 Oracle 做 Superset 元数据库，这个判断成立。官方元数据库支持范围是 PostgreSQL/MySQL（开发默认 SQLite），Oracle 跑不了这套 alembic 迁移。用户原话里的“如果需要”允许另找元数据库，D2 已标明这是推断。
+
+超出授权的部分是：
+
+- 同步任务长期用 `ods` 账号读人员表，而不是只建一次表。
+- 未指定独立 schema、表空间和最小权限。表会进 `ods` 的默认 schema，和数仓对象混在一起。
+- 脚本一旦写错 SQL，这个账号有能力改动既有数仓表。方案只靠执行者自觉遵守 `SUP_` 前缀。
+- P1-S6 写明 ods 账号只做 `SELECT 1`，不做业务检索。P1-S7 接着要求用“某张小表”建数据集并导出。两步互相否定。导出文件和截图会进本机工作区。
+
+**7. sjzc 被写成了它做不到的事（P4-S1、P5-S0）**
+
+技能返回系统、表和字段，凭据由平台解析且不回显。live 查询还有授权、审批和时间窗口。硬红线禁止把姓名、电话、身份证和明细写入文档或日志。
+
+P4-S1 要求 `/sjzc` 产出“地址:端口/库、账号状态”。执行者拿不到口令，有动机补全甚至编造连接串。P5-S0 要求把 5 行样例写入 `sys_employee_结构核实.md`。样例里会有姓名，可能还有密码哈希。这直接违反该技能的红线。
+
+**8. 口令已经写进工作区（第 0、2 节，`核查_服务器.py`）**
+
+用户授权记录连接信息，记录本身符合 U8。`AGENTS.md` 规定账号密码不写进任何文档。方案第 2 节写“不外传、不写入代码仓库”，同一文件的第 0 节和第 2 节已经记下 root 与 ods 口令，核查脚本又把 root 口令做成了源码常量。脚本使用 `AutoAddPolicy()`，不校验主机指纹。
+
+这不是“将来注意保密”，是送审稿里已经发生的事。
+
+## 照做就会失败或验收对不上的问题
+
+**生产栈要点不是一份 compose（P3-S3、第 11 节）**
+
+P2-S4 写“完整文件已在介质 compose\ 内”。当前仓库没有这份文件，也没有 `superset_user_sync.py` 和 `pg_backup.sh`。P5 却写“骨架已备”。
+
+运行服务实际是 postgres、redis、web、worker、beat、nginx，共 6 个，另加一次性 init。验收写“5 服务全部健康”。要点里只有 postgres 有 healthcheck。验收又要求 `restart: unless-stopped`，要点里没有这项。
+
+未写的内容会直接导致部署完不可用：nginx 的 `proxy_read_timeout` 和转发头、`ENABLE_PROXY_FIX`、数据库口令和 Redis 口令的生成（P3-S2 只生成两把 Superset 密钥）、防火墙放行、SELinux 卷标签、容器时区。备份命令是宿主上的 `pg_dump`，介质里没有 PostgreSQL 客户端，也没写 `docker exec`。宿主重启后的恢复验收和备份验收都没有可执行步骤。
+
+`WTF_CSRF_EXEMPT_LIST = []` 会盖掉官方默认豁免。`TALISMAN_CONFIG` 用了一份很短的 CSP，未保留 Superset 前端需要的 script/style/worker 来源，页面会白屏。同文件又用 `HTTP_HEADERS` 再写一条 CSP，两条会互相覆盖。
+
+**镜像 Dockerfile 有两处会整段失败（P2-S2）**
+
+`mysqlclient`、`opengauss-sqlalchemy` 和 `oracledb` 写在同一条 `pip install` 里。官方镜像未先装 `default-libmysqlclient-dev`、编译工具链。mysqlclient 失败时，Oracle 驱动也不会装上。注释里的 PyMySQL 退路没有写进 Dockerfile；P4 的 URI 仍是 `mysql+mysqlclient://`，与 PyMySQL 的 `mysql+pymysql://` 不一致。
+
+Playwright 以 root 执行 `playwright install --with-deps`，浏览器默认进 `/root/.cache`。随后 `USER superset`，worker 找不到 Chromium。未设置 `PLAYWRIGHT_BROWSERS_PATH`，也未安装中文字体。定时报告截图会缺字或直接失败。版本写成“当期稳定版”，未锁定 Superset 6.1.0 依赖的那一版。
+
+P2-S6 的 `pip download --only-binary=:all:` 下不到 mysqlclient 这类无 wheel 的包，也下不到 Chromium 浏览器本体。P3-S0 允许离线安装 docker-ce rpm，P2 介质清单里没有 docker-ce、containerd 和 compose 插件，也没有按 `os-release` 区分 rpm/deb。服务器若没有 Docker，备选路线是断的。
+
+**本地开发步骤含无效排障，且命令方言是 cmd（P1）**
+
+P1-S2 的失败处置是“编译失败先装 `pip install cx_Freeze` 无关”。这句不能指导排障。本机默认壳是 PowerShell，方案使用 `set`、`^` 和 `findstr`，这是 cmd 语法。Superset 的受支持安装路径是 Linux/Docker；Windows venv 安装 6.1.0 经常在编译依赖处停下。P1 一旦停下，方案自己定义的“先本地验证再做镜像”就没有试验场。
+
+P1-S3 允许忘了 PostgreSQL 口令就改用 SQLite。v2 风险 3 禁止把 SQLite 用于后续步骤，方案虽然加了这句，但把它写进了主步骤。
+
+**SQL Server 被当成一种库（P4-S2）**
+
+sjzc 写明心电库是 SQL Server 2008 R2，需要 TDS 7.0。方案对所有 SQL Server 使用同一条 `mssql+pymssql://`。新版 pymssql 连 2008 R2 会失败。Vastbase 五项实测本身与 v2 风险 1 一致，可以保留。
+
+**大表没有门禁（P4-S2、D6）**
+
+每个业务库都打开 SQL Lab，`SQL_MAX_ROW=100000`，池为 `pool_size=5, max_overflow=10`。约 20 个库理论上限约 300 条连接。sjzc 对 `HIS.LAB_RESULT`、`INP_BILL_DETAIL` 有强制条件，方案没有把这些限制写成 Superset 的 statement timeout、角色禁 SQL Lab 或按库限额。只读账号仍可能把生产库扫满。
+
+**并行顺序会让 RLS 找不到数据集（第 5 节）**
+
+P4 与 P5 在 P3 之后并行。RLS 规则必须挂在数据集上。数据集尚未建立时，P5-S2 没有可绑定的对象。
+
+**幂等声明与步骤不符（第 5、13 节）**
+
+`CREATE DATABASE`、`fab create-admin`、建 Oracle 表、`docker load` 在重跑时都会失败。方案写“每步幂等或注明重做影响”，这些步骤既非幂等，也未注明影响。断点文件这个机制本身可用；时长未计入信息科确认的等待。
+
+**第 3 节的核查表超过了证据**
+
+`核查_服务器.out` 只有 paramiko 连 10.10.8.73:22 超时，远程命令没有执行。第 3 节另外列出的 ping、2222/80/8080/8088、10.10.8.216:1521 开放、本机 192.168.2.105、Docker/PostgreSQL 17/paramiko 4.0.0，仓库里没有对应记录。P3-S0 只重跑同一脚本，不会补做这些检查。
+
+脚本第 21 行出口探测写成了 `</dev/tcp/ mirrors.aliyun.com/443`，`/dev/tcp/` 后面多了一个空格，这条检查永远失败。脚本注释说口令记在方案第 3 节，实际在第 0 节和第 2 节。
+
+人工停点本身是对的：主机不通时不应绕过。停点之前的诊断还缺 SSH 端口、跳板和是否关机这几项，需要向信息科问，而不是再跑一次同样的 22 端口连接。
+
+## 对起草方六个问题的回答
+
+1. **D2 是否符合 U9。** 元数据库用 PostgreSQL，符合 Superset 的支持范围，也符合原话里的“如果需要”。把 216 上的 `ods` 账号变成每日同步的运行账号，不符合“单独创建表”。`SUP_EXPORT_AUDIT` 目前没有建表和写入步骤。
+2. **方案 A/B 和口令矩阵。** A 只能同步人名和科室，不能让职工用 HIS 口令登录。B 的基类写错。矩阵应删除明文迁移和“工号后 6 位”。v2 论断 10 的 AD/LDAP 应作为哈希不可迁移时的候选，而不是只出现在文末提问里。
+3. **介质是否缺件。** 缺。docker-ce 离线包、PostgreSQL 客户端、中文字体、Playwright 浏览器的固定安装路径、与 Superset 匹配的 Playwright 版本，都不在可执行步骤里。
+4. **workers 和 8GB 是否合适。** 方案把“信息科 1～2 人”当成了并发规模。登录范围是全院 `sys_employee`。4 个 web worker、2 个 celery 进程再加 Chromium，8GB 在截图时会不够。compose 未写 `/dev/shm` 大小。试点可以先小，但要点里没有并发上限和降配标准。
+5. **服务器不通时人工停点。** 符合预期。不要为了继续部署改走跳板私自扩大授权。现有脚本不足以说明是关机、错端口还是需要跳板。
+6. **时长和断点。** 进度文件可执行。时长未含停点等待。“每步幂等”与 P1、P3、P5 的实际命令不符。
+
+## 结论
+
+退回修订后再交给执行 AI。用户要的五段路径可以保留：本地验证、离线介质、73 上的生产栈、业务只读接入、HIS 人员身份。修订时至少要改掉功能开关的写法、导出路径的错误描述、sys_employee 的连接目标、RLS 示例、SecurityManager 基类、`ods` 账号的权限边界，以及口令和人员样例的落盘方式。在这些改完之前，P3 以后的步骤没有安全的执行基础。

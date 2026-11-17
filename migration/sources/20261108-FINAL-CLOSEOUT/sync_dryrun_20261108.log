@@ -1,0 +1,8 @@
+[sync] start mode=FULL dry=True
+[sync] source active=2382 universe=2453 depts=824
+[sync] dept code not in DEPT_DICT: 8888
+[sync] dept roles to rename: 0
+[sync] users index size=2383
+[sync] no deactivation candidates
+[sync] done {"fetch": 2382, "created": 0, "updated": 0, "unchanged": 2382, "deactivated": 0, "deactivated_departed": 0, "deactivated_vanished": 0, "manual_frozen": 0, "rls_created": 0, "renamed": 0, "failed": 0}
+{"fetch": 2382, "created": 0, "updated": 0, "unchanged": 2382, "deactivated": 0, "deactivated_departed": 0, "deactivated_vanished": 0, "manual_frozen": 0, "rls_created": 0, "renamed": 0, "failed": 0}

@@ -1,0 +1,1 @@
+﻿run_id,batch_id,change_id,report_key,source_key,对象类型,对象ID或private_ref,对象UUID,动作,管理范围版本,计划SHA,变更前SHA,变更后SHA,并发漂移检查,apply状态,API读回状态,受保护对象回归,私有回退包引用,回退验证状态,证据路径,执行时间,下一动作

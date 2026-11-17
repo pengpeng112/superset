@@ -1,0 +1,1 @@
+﻿principal_ref,report_key,操作,scope_type,scope_ref,字段范围引用,来源契约版本,来源规则引用,ALLOW_DENY_UNKNOWN,继承与拒绝引用,valid_from,valid_to,有效期引用,在职状态依据,旧当前结论,新专项例外引用,confidence,decision_status,冲突状态,目标角色引用,目标数据集引用,目标RLS引用,确认依据,期望SHA,实际SHA,发布状态,证据路径

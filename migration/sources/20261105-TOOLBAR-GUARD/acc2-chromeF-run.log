@@ -1,0 +1,37 @@
+[00:28:13] browser chromeF version=Chrome/156.0.8078.81 viewport=1920x1080 heavy=True
+[00:28:13] Browser.setDownloadBehavior receipt: {}
+[00:28:13] Page.setDownloadBehavior receipt: {}
+[00:28:19] PASS login | logged in as admin
+[00:28:24] FAIL page35-summary | summary='⏳ 正在查询数据（已用时 0 秒，大表可能需 15~45 秒，请稍候）…' chart=ok:10:50000 0.0s
+[00:28:24] FAIL page35-buttons | xlsx=True csv=True density=True xlsxDisabled=True csvDisabled=True
+[00:28:24] PASS page35-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[00:28:24] PASS page35-no-overflow | scrollWidth overflow=False
+[00:28:28] PASS page45-summary | summary='共返回 10 行数据 · 耗时 0.3 秒' chart=ok:10:50000 0.0s
+[00:28:28] PASS page45-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[00:28:28] PASS page45-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[00:28:28] PASS page45-no-overflow | scrollWidth overflow=False
+[00:28:31] PASS page50-summary | summary='共返回 10 行数据 · 耗时 0.3 秒' chart=ok:10:50000 0.0s
+[00:28:31] PASS page50-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[00:28:31] PASS page50-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[00:28:31] PASS page50-no-overflow | scrollWidth overflow=False
+[00:28:35] PASS page61-summary | summary='共返回 10 行数据 · 耗时 0.3 秒' chart=ok:10:100000 0.0s
+[00:28:35] PASS page61-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[00:28:35] PASS page61-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[00:28:35] PASS page61-no-overflow | scrollWidth overflow=False
+[00:28:35] PASS page61-firstload | first-open 3.3s (<20s) state=ok:10:100000
+[00:28:41] PASS page65-summary | summary='共返回 24,151 行数据 · 耗时 3.6 秒' chart=ok:24151:50000 1.6s
+[00:28:41] PASS page65-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[00:28:41] PASS page65-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[00:28:41] PASS page65-no-overflow | scrollWidth overflow=False
+[00:28:48] PASS density-toggle | compact h=42 ss=compact -> standard h=59 ss=standard
+[00:28:51] PASS page65-day-query | draft=picked:2026-09-16:2026-09-16 state=ok:4444:50000 1.4s summary='共返回 4,444 行数据 · 耗时 1.0 秒'
+[00:28:58] PASS page65-xlsx-file | 抗菌办·住院医嘱查询_20260916.xlsx | xlsx_rows=4445 cjk=True expect=4444(+header) | note=✅ 已导出 抗菌办·住院医嘱查询_20260916.xlsx
+[00:29:04] PASS page65-csv-file | 抗菌办·住院医嘱查询_20260916.csv | rows=4444 bom=True cjk_header=True header=患者唯一标识,患者住院唯一标识,住院病历号,医嘱唯一标识,医嘱开立科室代码,医嘱开立科室名称,医嘱类型,医嘱分类,药品h expect=4444 | note=✅ 已导出 抗菌办·住院医嘱查询_20260
+[00:29:12] FAIL page35-xlsx-file | 月工作报表（二）新_20261108.xlsx | xlsx_rows=151 cjk=True expect=1004(+header) | note=✅ 已导出 月工作报表（二）新_20261108.xlsx
+[00:29:16] FAIL page35-csv-file | 月工作报表（二）新_20261108.csv | rows=150 bom=True cjk_header=True header=科别,(月)底实有病床数,实际开放总床日数,平均开放病床数,实际占用总床日数,出院者占用总床日数,出院人数,治愈率(%) expect=1004 | note=✅ 已导出 月工作报表（二）新_20261108
+[00:29:27] PASS page65-span30-blocked | msg='该明细表数据量极大（单月超 10 万行），单次查询跨度请勿超过 15 天（建议按单日或单周查询导出）。' lastBlock='该明细表数据量极大（单月超 10 万行），单次查询跨度请勿超过 15 天（建议按单日或单周查询导出）' before=ok:24151:50000 after=ok:24151:50000 draft=
+[00:29:40] PASS page65-span15-passed | draft=picked:2026-09-01:2026-09-15 state=ok:50000:50000 10s span={"days":15}
+[00:29:40] PASS page65-truncation-banner | banner=True rows=50000 limit=50000 text='⚠️ 数据截断警告：当前查询结果已达到单次上限（50,000 行），超出的明细已被截断！为保证数据完整，请将左侧【日期范'
+[00:29:42] PASS page65-banner-removed | after requery banner=False state=ok:4444:50000
+[00:29:48] PASS page61-week-query | draft=picked:2026-09-01:2026-09-07 state=ok:10:100000 1s summary='共返回 10 行数据 · 耗时 0.3 秒'
+[00:29:50] results -> F:\python\superset\migration\sources\20261105-TOOLBAR-GUARD\acc2-chromeF-1920x1080.json (33 rows, 4 fail)

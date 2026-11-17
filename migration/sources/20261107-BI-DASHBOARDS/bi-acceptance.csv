@@ -1,0 +1,155 @@
+﻿browser,user,viewport,check,result,detail
+c87,admin,1366x768,login-admin,PASS,logged in as admin
+c87,admin,1366x768,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+c87,admin,1366x768,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+c87,admin,1366x768,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+c87,admin,1366x768,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+c87,admin,1366x768,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+c87,admin,1366x768,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+c87,admin,1366x768,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+c87,admin,1366x768,dash72-cold<10s,PASS,cold=4.7s
+c87,admin,1366x768,dash72-hot,PASS,hot=3.3s rendered=8/8
+c87,admin,1366x768,dash72-linkage,PASS,pick=picked:range apply=clicked 371: 54619→56279 373:5389
+c87,admin,1366x768,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+c87,admin,1366x768,dash73-cold<10s,PASS,cold=8.1s
+c87,admin,1366x768,dash73-hot,PASS,hot=2.9s rendered=7/7
+c87,admin,1366x768,dash73-linkage-1106,PASS,pick=picked:range apply=clicked 379=1852(应1852) 381=99
+c87,admin,1366x768,dash73-linkage-2days,PASS,379: 11-06=1852 → 11-05=1963（须不同且均非空）
+c87,admin,1366x768,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+c87,admin,1366x768,dash74-cold<10s,PASS,cold=7.8s
+c87,admin,1366x768,dash74-hot,PASS,hot=2.9s rendered=6/6
+c87,admin,1366x768,dash74-linkage,PASS,"pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={""住院"": 507, ""门诊"": 129} → 9月 386=1997 392=516"
+c87,003158,1366x768,login-003158,PASS,logged in as 003158
+c87,003158,1366x768,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+c87,003158,1366x768,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+c87,003158,1366x768,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+c87,003158,1366x768,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+c87,003158,1366x768,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+c87,003158,1366x768,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+c87,003158,1366x768,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+c87,003158,1366x768,dash72-cold<10s,PASS,cold=5.7s
+c87,003158,1366x768,dash72-hot,PASS,hot=2.9s rendered=8/8
+c87,003158,1366x768,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+c87,003158,1366x768,dash73-cold<10s,PASS,cold=8.4s
+c87,003158,1366x768,dash73-hot,PASS,hot=3.2s rendered=7/7
+c87,003158,1366x768,dash73-linkage-1106,PASS,本轮不测（003158@1366x768）
+c87,003158,1366x768,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+c87,003158,1366x768,dash74-cold<10s,PASS,cold=8.1s
+c87,003158,1366x768,dash74-hot,PASS,hot=3.3s rendered=6/6
+c87,admin,1920x1080,login-admin,PASS,logged in as admin
+c87,admin,1920x1080,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+c87,admin,1920x1080,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+c87,admin,1920x1080,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+c87,admin,1920x1080,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+c87,admin,1920x1080,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+c87,admin,1920x1080,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+c87,admin,1920x1080,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+c87,admin,1920x1080,dash72-cold<10s,PASS,cold=4.6s
+c87,admin,1920x1080,dash72-hot,PASS,hot=3.2s rendered=8/8
+c87,admin,1920x1080,dash72-linkage,PASS,pick=picked:range apply=clicked 371: 54619→56279 373:5389
+c87,admin,1920x1080,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+c87,admin,1920x1080,dash73-cold<10s,PASS,cold=7.7s
+c87,admin,1920x1080,dash73-hot,PASS,hot=3.2s rendered=7/7
+c87,admin,1920x1080,dash73-linkage-1106,PASS,pick=picked:range apply=clicked 379=1852(应1852) 381=99
+c87,admin,1920x1080,dash73-linkage-2days,PASS,379: 11-06=1852 → 11-05=1963（须不同且均非空）
+c87,admin,1920x1080,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+c87,admin,1920x1080,dash74-cold<10s,PASS,cold=7.5s
+c87,admin,1920x1080,dash74-hot,PASS,hot=3.9s rendered=6/6
+c87,admin,1920x1080,dash74-linkage,PASS,"pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={""住院"": 507, ""门诊"": 129} → 9月 386=1997 392=516"
+c87,003158,1920x1080,login-003158,PASS,logged in as 003158
+c87,003158,1920x1080,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+c87,003158,1920x1080,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+c87,003158,1920x1080,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+c87,003158,1920x1080,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+c87,003158,1920x1080,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+c87,003158,1920x1080,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+c87,003158,1920x1080,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+c87,003158,1920x1080,dash72-cold<10s,PASS,cold=5.3s
+c87,003158,1920x1080,dash72-hot,PASS,hot=3.0s rendered=8/8
+c87,003158,1920x1080,dash72-linkage,PASS,pick=picked:range apply=clicked 371: 54619→56279 373:5389
+c87,003158,1920x1080,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+c87,003158,1920x1080,dash73-cold<10s,PASS,cold=8.1s
+c87,003158,1920x1080,dash73-hot,PASS,hot=3.1s rendered=7/7
+c87,003158,1920x1080,dash73-linkage-1106,PASS,pick=picked:range apply=clicked 379=1852(应1852) 381=99
+c87,003158,1920x1080,dash73-linkage-2days,PASS,379: 11-06=1852 → 11-05=1963（须不同且均非空）
+c87,003158,1920x1080,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+c87,003158,1920x1080,dash74-cold<10s,PASS,cold=8.2s
+c87,003158,1920x1080,dash74-hot,PASS,hot=3.3s rendered=6/6
+c87,003158,1920x1080,dash74-linkage,PASS,"pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={""住院"": 507, ""门诊"": 129} → 9月 386=1997 392=516"
+chrome,admin,1366x768,login-admin,PASS,logged in as admin
+chrome,admin,1366x768,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+chrome,admin,1366x768,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+chrome,admin,1366x768,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+chrome,admin,1366x768,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+chrome,admin,1366x768,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+chrome,admin,1366x768,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+chrome,admin,1366x768,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+chrome,admin,1366x768,dash72-cold<10s,PASS,cold=4.0s
+chrome,admin,1366x768,dash72-hot,PASS,hot=2.9s rendered=8/8
+chrome,admin,1366x768,dash72-linkage,PASS,pick=picked:range apply=clicked 371: 54619→56279 373:5389
+chrome,admin,1366x768,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+chrome,admin,1366x768,dash73-cold<10s,PASS,cold=6.1s
+chrome,admin,1366x768,dash73-hot,PASS,hot=2.9s rendered=7/7
+chrome,admin,1366x768,dash73-linkage-1106,PASS,pick=picked:range apply=clicked 379=1852(应1852) 381=99
+chrome,admin,1366x768,dash73-linkage-2days,PASS,379: 11-06=1852 → 11-05=1963（须不同且均非空）
+chrome,admin,1366x768,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+chrome,admin,1366x768,dash74-cold<10s,PASS,cold=7.4s
+chrome,admin,1366x768,dash74-hot,PASS,hot=2.9s rendered=6/6
+chrome,admin,1366x768,dash74-linkage,PASS,"pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={""住院"": 507, ""门诊"": 129} → 9月 386=1997 392=516"
+chrome,003158,1366x768,login-003158,PASS,logged in as 003158
+chrome,003158,1366x768,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+chrome,003158,1366x768,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+chrome,003158,1366x768,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+chrome,003158,1366x768,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+chrome,003158,1366x768,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+chrome,003158,1366x768,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+chrome,003158,1366x768,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+chrome,003158,1366x768,dash72-cold<10s,PASS,cold=4.2s
+chrome,003158,1366x768,dash72-hot,PASS,hot=2.9s rendered=8/8
+chrome,003158,1366x768,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+chrome,003158,1366x768,dash73-cold<10s,PASS,cold=6.5s
+chrome,003158,1366x768,dash73-hot,PASS,hot=2.9s rendered=7/7
+chrome,003158,1366x768,dash73-linkage-1106,PASS,本轮不测（003158@1366x768）
+chrome,003158,1366x768,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+chrome,003158,1366x768,dash74-cold<10s,PASS,cold=7.4s
+chrome,003158,1366x768,dash74-hot,PASS,hot=2.9s rendered=6/6
+chrome,admin,1920x1080,login-admin,PASS,logged in as admin
+chrome,admin,1920x1080,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+chrome,admin,1920x1080,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+chrome,admin,1920x1080,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+chrome,admin,1920x1080,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+chrome,admin,1920x1080,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+chrome,admin,1920x1080,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+chrome,admin,1920x1080,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+chrome,admin,1920x1080,dash72-cold<10s,PASS,cold=3.5s
+chrome,admin,1920x1080,dash72-hot,PASS,hot=2.9s rendered=8/8
+chrome,admin,1920x1080,dash72-linkage,PASS,pick=picked:range apply=clicked 371: 54619→56279 373:5389
+chrome,admin,1920x1080,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+chrome,admin,1920x1080,dash73-cold<10s,PASS,cold=7.9s
+chrome,admin,1920x1080,dash73-hot,PASS,hot=2.9s rendered=7/7
+chrome,admin,1920x1080,dash73-linkage-1106,PASS,pick=picked:range apply=clicked 379=1852(应1852) 381=99
+chrome,admin,1920x1080,dash73-linkage-2days,PASS,379: 11-06=1852 → 11-05=1963（须不同且均非空）
+chrome,admin,1920x1080,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+chrome,admin,1920x1080,dash74-cold<10s,PASS,cold=7.0s
+chrome,admin,1920x1080,dash74-hot,PASS,hot=2.9s rendered=6/6
+chrome,admin,1920x1080,dash74-linkage,PASS,"pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={""住院"": 507, ""门诊"": 129} → 9月 386=1997 392=516"
+chrome,003158,1920x1080,login-003158,PASS,logged in as 003158
+chrome,003158,1920x1080,home-bi-section,PASS,"items=[{""t"": ""全院医疗运营核心指标总览"", ""h"": ""/superset/dashboard/72/""}, {""t"": ""门急诊流量与窗口负荷监测中心"", ""h"": ""/superset/dashboard/73/""}, {""t"": ""手术与住院医疗质量可视化分析"", ""h"" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+chrome,003158,1920x1080,home-bi-order,PASS,"sections=['可视化驾驶舱', '报表分类']"
+chrome,003158,1920x1080,dir34-search+showcase,PASS,"search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+chrome,003158,1920x1080,dir34-card-style,PASS,"h=56 borderLeft=3px rgb(22, 119, 200)"
+chrome,003158,1920x1080,dir34-card-click,PASS,click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+chrome,003158,1920x1080,slug72-crumb,PASS,crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True
+chrome,003158,1920x1080,dash72-render,PASS,charts=8 rendered=8 loading=0 other=0 errCards=0
+chrome,003158,1920x1080,dash72-cold<10s,PASS,cold=4.6s
+chrome,003158,1920x1080,dash72-hot,PASS,hot=2.9s rendered=8/8
+chrome,003158,1920x1080,dash72-linkage,PASS,pick=picked:range apply=clicked 371: 54619→56279 373:5389
+chrome,003158,1920x1080,dash73-render,PASS,charts=7 rendered=7 loading=0 other=0 errCards=0
+chrome,003158,1920x1080,dash73-cold<10s,PASS,cold=6.5s
+chrome,003158,1920x1080,dash73-hot,PASS,hot=2.9s rendered=7/7
+chrome,003158,1920x1080,dash73-linkage-1106,PASS,pick=picked:range apply=clicked 379=1852(应1852) 381=99
+chrome,003158,1920x1080,dash73-linkage-2days,PASS,379: 11-06=1852 → 11-05=1963（须不同且均非空）
+chrome,003158,1920x1080,dash74-render,PASS,charts=6 rendered=6 loading=0 other=0 errCards=0
+chrome,003158,1920x1080,dash74-cold<10s,PASS,cold=6.4s
+chrome,003158,1920x1080,dash74-hot,PASS,hot=2.9s rendered=6/6
+chrome,003158,1920x1080,dash74-linkage,PASS,"pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={""住院"": 507, ""门诊"": 129} → 9月 386=1997 392=516"

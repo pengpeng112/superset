@@ -1,0 +1,21 @@
+{
+ "browser": "Chrome/157.0.8103.51",
+ "R1_version": "20261117h15",
+ "R2_native25_click": "clicked-open",
+ "R3_native25_stick": {
+  "open": "1",
+  "links": 6,
+  "boxH": 240,
+  "display": "block",
+  "inline": "block"
+ },
+ "R4_home": {
+  "home_cls": true,
+  "nav_items": 13,
+  "kyb_side": 1
+ },
+ "R5_bi72": {
+  "query_ui": true,
+  "rendered": 27
+ }
+}

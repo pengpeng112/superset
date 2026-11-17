@@ -1,0 +1,259 @@
+{
+ "batch": "20261107-BI-DASHBOARDS",
+ "rebuilt_at": "2026-11-08 21:47:16",
+ "note": "T4 从生产枚举重建；deleted_* 为本批创建后中途已删除对象，仅备查，不可回滚恢复。",
+ "dashboards": [
+  {
+   "type": "dashboard",
+   "id": 72,
+   "uuid": "2876eabf-7244-482d-b41b-4f3e2e9f7e60",
+   "title": "全院医疗运营核心指标总览（BI 驾驶舱）",
+   "preexisting": false
+  },
+  {
+   "type": "dashboard",
+   "id": 73,
+   "uuid": "d8899717-30eb-4d40-a73e-84a481d84aa6",
+   "title": "门急诊流量与窗口负荷监测中心（BI 驾驶舱）",
+   "preexisting": false
+  },
+  {
+   "type": "dashboard",
+   "id": 74,
+   "uuid": "7e09d129-8485-4bf8-bf49-3360dd5a8cf6",
+   "title": "手术与住院医疗质量可视化分析（BI 驾驶舱）",
+   "preexisting": false
+  }
+ ],
+ "charts": [
+  {
+   "type": "chart",
+   "id": 377,
+   "uuid": "7b260ad0-db2c-4ad4-a2c6-4632d846e4dc",
+   "title": "【BI】全院出院患者转归构成（饼图）",
+   "viz_type": "pie",
+   "datasource_id": 374,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 389,
+   "uuid": "4b0e0b45-52b9-4a0b-b539-9b6019aa23c9",
+   "title": "【BI】门诊与住院手术量构成（饼图）",
+   "viz_type": "pie",
+   "datasource_id": 373,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 384,
+   "uuid": "342854e9-bb9f-43f3-aba8-a6270a09b860",
+   "title": "【BI】门诊采血截至各时点累计人次",
+   "viz_type": "echarts_timeseries_line",
+   "datasource_id": 322,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 383,
+   "uuid": "d573e377-fef5-4e15-bfac-a8ba775051dd",
+   "title": "【BI】门诊挂号截至各时点累计人次",
+   "viz_type": "echarts_timeseries_line",
+   "datasource_id": 325,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 390,
+   "uuid": "73d7f031-f584-4822-a831-f57d4a7680d2",
+   "title": "【BI】各病区出院人数 TOP15",
+   "viz_type": "echarts_timeseries_bar",
+   "datasource_id": 350,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 387,
+   "uuid": "1f2715ef-dc3a-4042-9698-4f25aea726e3",
+   "title": "【BI】住院手术科室 TOP15",
+   "viz_type": "echarts_timeseries_bar",
+   "datasource_id": 345,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 376,
+   "uuid": "f925b9c7-34d1-43a0-985e-1c86097e5ccb",
+   "title": "【BI】临床科室出院人数 TOP15",
+   "viz_type": "echarts_timeseries_bar",
+   "datasource_id": 338,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 375,
+   "uuid": "36ca1111-0768-4d82-9905-513e230ade7e",
+   "title": "【BI】临床科室门急诊诊疗人次 TOP15",
+   "viz_type": "echarts_timeseries_bar",
+   "datasource_id": 347,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 381,
+   "uuid": "d7ceba76-0ce3-43a4-8adb-0d8502216a8e",
+   "title": "【BI】截至17:00超声人次",
+   "viz_type": "big_number_total",
+   "datasource_id": 326,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 392,
+   "uuid": "0deba468-74eb-46ec-83fd-b6a01493780d",
+   "title": "【BI】门诊手术台数",
+   "viz_type": "big_number_total",
+   "datasource_id": 345,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 391,
+   "uuid": "b100efec-e009-4921-bd22-282d6187d9b1",
+   "title": "【BI】各病区核心质量指标汇总表",
+   "viz_type": "table",
+   "datasource_id": 350,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 386,
+   "uuid": "007277b6-ff5c-4b77-a9ef-50eb59f1b615",
+   "title": "【BI】住院手术台数",
+   "viz_type": "big_number_total",
+   "datasource_id": 345,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 385,
+   "uuid": "a718e6de-caf5-44d5-84de-1bcb9b064648",
+   "title": "【BI】门诊挂号分时段明细表",
+   "viz_type": "table",
+   "datasource_id": 325,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 382,
+   "uuid": "da990568-43d8-439f-8ffc-fb9025fd2127",
+   "title": "【BI】截至17:00采血人次",
+   "viz_type": "big_number_total",
+   "datasource_id": 322,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 380,
+   "uuid": "d9b9e285-ab78-4ad4-9211-db06cc4ed3ca",
+   "title": "【BI】截至17:00缴费人次",
+   "viz_type": "big_number_total",
+   "datasource_id": 324,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 379,
+   "uuid": "5020abf9-49eb-496d-bfe1-3e2cc7825555",
+   "title": "【BI】截至17:00挂号人次",
+   "viz_type": "big_number_total",
+   "datasource_id": 325,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 378,
+   "uuid": "8d39186a-0936-4e4c-957c-7c988e370e4d",
+   "title": "【BI】各科室核心运营指标排行明细表",
+   "viz_type": "table",
+   "datasource_id": 348,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 374,
+   "uuid": "37ed5020-1fe8-4acc-bf69-3cf4da7eca90",
+   "title": "【BI】月末实际在院人数",
+   "viz_type": "big_number_total",
+   "datasource_id": 338,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 373,
+   "uuid": "96264daa-1b07-400d-aaa6-c28bed4bcc9d",
+   "title": "【BI】住院出院总人数",
+   "viz_type": "big_number_total",
+   "datasource_id": 338,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 372,
+   "uuid": "d93abe5c-f926-41fc-ae6f-c04583c3cf0d",
+   "title": "【BI】急诊与观察室人次",
+   "viz_type": "big_number_total",
+   "datasource_id": 347,
+   "preexisting": false
+  },
+  {
+   "type": "chart",
+   "id": 371,
+   "uuid": "e12bfc97-c08c-4242-91bb-c19c5c245d1c",
+   "title": "【BI】门急诊总诊疗人次",
+   "viz_type": "big_number_total",
+   "datasource_id": 347,
+   "preexisting": false
+  }
+ ],
+ "datasets": [
+  {
+   "type": "dataset",
+   "id": 374,
+   "uuid": "92a381c8-7a61-4fdb-a286-11f3282e0184",
+   "table_name": "BI_出院转归构成长表",
+   "preexisting": false
+  },
+  {
+   "type": "dataset",
+   "id": 373,
+   "uuid": "8aa7735c-abfd-4e81-9715-41b122727bfc",
+   "table_name": "BI_手术分支合计两行",
+   "preexisting": false
+  }
+ ],
+ "deleted_for_reference": {
+  "charts": [
+   355,
+   356,
+   357,
+   358,
+   359,
+   360,
+   361,
+   362,
+   363,
+   364,
+   365,
+   366,
+   367,
+   368,
+   369,
+   370,
+   388
+  ],
+  "dashboards": [
+   71
+  ]
+ }
+}

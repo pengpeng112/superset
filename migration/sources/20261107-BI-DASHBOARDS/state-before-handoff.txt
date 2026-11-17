@@ -1,0 +1,77 @@
+TS 2026-11-08T13:41:51+08:00
+== COUNTS
+charts=85 datasets=75 dashboards=52 published=50 dash_slices=73 dash_roles=44
+== MAXIDS
+slices=391 tables=372 dashboards=74 table_columns=2853 sql_metrics=371 ab_view_menu=708 ab_permission_view=845 ab_permission_view_role=471
+== BI_DASHBOARDS
+72|bi-overview|published=true|全院医疗运营核心指标总览（BI 驾驶舱）
+73|bi-outpatient-flow|published=true|门急诊流量与窗口负荷监测中心（BI 驾驶舱）
+74|bi-surgery-quality|published=true|手术与住院医疗质量可视化分析（BI 驾驶舱）
+== BI_DASHBOARD_ROLES
+72|role=4
+73|role=4
+== BI_DASHBOARD_SLICES
+72|371,372,373,374,375,376,377,378
+73|379,380,381,382,383,384,385
+74|386,387,389,390,391
+== BI_CHARTS
+371|col_viz=big_number_total|params_viz=big_number_total|ds=347|cache=-|【BI】门急诊总诊疗人次
+372|col_viz=big_number_total|params_viz=big_number_total|ds=347|cache=-|【BI】急诊与观察室人次
+373|col_viz=big_number_total|params_viz=big_number_total|ds=338|cache=-|【BI】住院出院总人数
+374|col_viz=big_number_total|params_viz=big_number_total|ds=338|cache=-|【BI】月末实际在院人数
+375|col_viz=dist_bar|params_viz=table|ds=347|cache=-|【BI】临床科室门急诊诊疗人次 TOP15
+376|col_viz=dist_bar|params_viz=table|ds=338|cache=-|【BI】临床科室出院人数 TOP15
+377|col_viz=pie|params_viz=table|ds=338|cache=-|【BI】全院出院患者转归构成
+378|col_viz=table|params_viz=table|ds=348|cache=-|【BI】各科室核心运营指标排行明细表
+379|col_viz=big_number_total|params_viz=big_number_total|ds=325|cache=-|【BI】门诊挂号人次
+380|col_viz=big_number_total|params_viz=big_number_total|ds=324|cache=-|【BI】门诊缴费人次
+381|col_viz=big_number_total|params_viz=big_number_total|ds=323|cache=-|【BI】门诊取药人次
+382|col_viz=big_number_total|params_viz=big_number_total|ds=322|cache=-|【BI】门诊采血人次
+383|col_viz=dist_bar|params_viz=table|ds=325|cache=-|【BI】门诊挂号全天分时段流量
+384|col_viz=dist_bar|params_viz=table|ds=322|cache=-|【BI】门诊采血全天分时段流量
+385|col_viz=table|params_viz=table|ds=325|cache=-|【BI】各窗口分时段负荷明细对照表
+386|col_viz=big_number_total|params_viz=big_number_total|ds=345|cache=-|【BI】手术总台数
+387|col_viz=dist_bar|params_viz=table|ds=345|cache=-|【BI】手术科室分布 TOP15
+389|col_viz=pie|params_viz=table|ds=345|cache=-|【BI】门诊与住院手术量构成
+390|col_viz=dist_bar|params_viz=table|ds=350|cache=-|【BI】各病区出院人数 TOP15
+391|col_viz=table|params_viz=table|ds=350|cache=-|【BI】各病区核心质量指标汇总表
+== NEW_DATASETS
+== FILTERS
+72|NATIVE-FILTER-BI1-DATE|default=2026-09-01 : 2026-10-01
+73|NATIVE-FILTER-BI2-DATE|default=(none)
+74|NATIVE-FILTER-BI3-DATE|default=(none)
+== MAIN_DTTM
+322|DTIME|门诊采血人次时段统计
+323|DTIME|门诊取药人次时段统计
+324|DTIME|门诊缴费人次查询
+325|DTIME|门诊挂号量时段统计
+326|DTIME|门诊超声流量监测
+338|STAT_BEGIN|月工作报表(新)
+345|STAT_BEGIN|手术量统计
+347|STAT_BEGIN|月工作报表(新)·门诊部分
+348|STAT_BEGIN|月工作报表(二)新·主表
+350|STAT_BEGIN|护理工作量月报表·主表
+365|出院日期T|抗菌办·消耗明细
+== USER_003158_ROLES
+281|科室_微生物实验室（050205）
+4|Gamma
+== GAMMA_MEMBERS
+2382
+== CHART3_PARAMS
+{"viz_type": "echarts_timeseries_bar", "time_range": "No filter", "row_limit": 500, "adhoc_filters": [], "x_axis": "DISCHARGE_TIME", "time_grain_sqla": "P1M", "groupby": ["LEAVE_TYPE"], "metrics": [{"expressionType": "SQL", "sqlExpression": "COUNT(*)", "label": "人数"}], "show_legend": true, "rich_tooltip": true, "y_axis_format": ",d", "x_axis_time_format": "%Y-%m", "color_scheme": "supersetColors", "truncate_metric": true, "show_value": true, "datasource": "3__table", "verbose_map": {"DISCHARGE_TIME": "出院时间", "LEAVE_TYPE": "离院方式", "DISCHARGE_DEPT": "出院科室"}}
+== PIVOT_EXISTING
+283|检查按开单科室查询人次|dash=39
+drwxr-xr-x 2 root root  240 11月  8 13:41 .
+drwxrwxrwt 6 root root  380 11月  8 13:41 ..
+-rw-r--r-- 1 root root 7316 11月  8 13:41 ds322.sql
+-rw-r--r-- 1 root root 8789 11月  8 13:41 ds323.sql
+-rw-r--r-- 1 root root 8382 11月  8 13:41 ds324.sql
+-rw-r--r-- 1 root root 7485 11月  8 13:41 ds325.sql
+-rw-r--r-- 1 root root 9155 11月  8 13:41 ds326.sql
+-rw-r--r-- 1 root root 6457 11月  8 13:41 ds338.sql
+-rw-r--r-- 1 root root 4170 11月  8 13:41 ds345.sql
+-rw-r--r-- 1 root root 3700 11月  8 13:41 ds347.sql
+-rw-r--r-- 1 root root 5659 11月  8 13:41 ds348.sql
+-rw-r--r-- 1 root root 5627 11月  8 13:41 ds350.sql
+DONE
+[exit 0]

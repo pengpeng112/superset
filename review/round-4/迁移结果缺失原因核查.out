@@ -1,0 +1,37 @@
+{
+  "deploy_reports_srd.py": {
+    "sha256": "da0852cfa4194bbe875c2246a6f12b340352be3a619fa7aba6cfdba2206eca77",
+    "output_paths": [
+      {
+        "line": 119,
+        "path": "/app/superset_home/scripts/deploy_srd_result.json"
+      }
+    ]
+  },
+  "srd_retry.py": {
+    "sha256": "9ff3254b02d3a01c6bef3aa3d7a9c774f82e41797c5ac9afe5104e4d20c17022",
+    "output_paths": [
+      {
+        "line": 116,
+        "path": "/tmp/srd_retry_result.json"
+      }
+    ]
+  },
+  "deploy_srd_run.log": {
+    "terminal_exception_classes": [
+      "PermissionError"
+    ]
+  },
+  "srd_retry.log": {
+    "terminal_exception_classes": []
+  }
+}
+{
+  "/tmp/srd_retry_result.json": {
+    "ok_count": 3,
+    "fail_count": 86,
+    "failure_stage_counts": {
+      "retry": 86
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "轮次": "round-5",
+  "性质": "初始计划交付冻结，非生产验收",
+  "生成时间UTC": "2026-10-06T02:43:09.940836+00:00",
+  "算法": "sha256",
+  "文件": [
+    {
+      "路径": "superset-报表补迁与一致性验收及人员赋权长任务计划-v1.md",
+      "字节数": 67934,
+      "sha256": "61276564cb39ab8d16fa87f1b4af75c5fe137d05e13c4f1af2c67dc22b34ef7f"
+    },
+    {
+      "路径": "review/round-5/执行清单.csv",
+      "字节数": 15327,
+      "sha256": "38b46675649d6e930de3b1b57aa312967b2efd37fe082cf2a8d506e1e886c4fe"
+    },
+    {
+      "路径": "review/round-5/执行进度.md",
+      "字节数": 3683,
+      "sha256": "f74af0c6e093decc38a61b9ad6dc16c06d32e7128cc29d4f8209ff018cc11334"
+    },
+    {
+      "路径": "review/round-5/最终报告.md",
+      "字节数": 3984,
+      "sha256": "41d94559e17f4a9c895428ee2f0187619e0263e3c0fd9c856007c3f0adc0d247"
+    },
+    {
+      "路径": "review/round-5/模块迁移基线.csv",
+      "字节数": 1201,
+      "sha256": "06a168ed3d6d9ebb835e3eea03e19eb469cb9389840a4c5821b22726dd9a794b"
+    },
+    {
+      "路径": "review/round-5/模板/人员映射.csv",
+      "字节数": 234,
+      "sha256": "4af9b383c307d117083f4339690530d08670403ef31019ebd7bb9fcb7c8b393a"
+    },
+    {
+      "路径": "review/round-5/模板/使用说明.md",
+      "字节数": 5393,
+      "sha256": "fda884bc35033024c97f4137cbce5e8cc4ae2fb90ec012d82fd67a8de8bae59d"
+    },
+    {
+      "路径": "review/round-5/模板/功能目录.csv",
+      "字节数": 326,
+      "sha256": "1db74ccffe370ee86415fe6fd94fcf720a841c5a47cca5c350cebcca73477244"
+    },
+    {
+      "路径": "review/round-5/模板/参数映射.csv",
+      "字节数": 288,
+      "sha256": "a2336eee89c00f542c45307cd8f772a3e6de60387d8d281324f1b142a92aae67"
+    },
+    {
+      "路径": "review/round-5/模板/变更记录.csv",
+      "字节数": 310,
+      "sha256": "176f3730285d1cb8f0c3f424a3e3204404e5e19bac5e3ece3243f5460be1fc21"
+    },
+    {
+      "路径": "review/round-5/模板/对账用例.csv",
+      "字节数": 271,
+      "sha256": "2cd4903161f504adad9cae7a116dbdca2a007796a6c1c47d0941e2a92f1e70d1"
+    },
+    {
+      "路径": "review/round-5/模板/对账结果.csv",
+      "字节数": 457,
+      "sha256": "93611a3c56f6cd20df65afef53ba01cb3c7814fce49faa8827d2d4e757bb8a49"
+    },
+    {
+      "路径": "review/round-5/模板/报表口径卡.md",
+      "字节数": 5895,
+      "sha256": "4f5ee10c67fe7f8f39b26c24564e220bb0410f22e67b3c715a64ed4c3b3d69d0"
+    },
+    {
+      "路径": "review/round-5/模板/权限测试.csv",
+      "字节数": 355,
+      "sha256": "45a3b541b62d0c8b05300f15f478a2cbcf332e6cece6b0a31281d88bc79f1a7a"
+    },
+    {
+      "路径": "review/round-5/模板/权限矩阵.csv",
+      "字节数": 403,
+      "sha256": "27db1954445801fad3a49c0f6ae75aa385811abf9a976db4b1fd80153e5844ba"
+    },
+    {
+      "路径": "review/round-5/模板/计算映射.csv",
+      "字节数": 247,
+      "sha256": "6d9e41af6c2a355f1f33ebf1daefb8a14789369a90f1080213b94af59c5d6cec"
+    },
+    {
+      "路径": "review/round-5/模板/阻塞事项.csv",
+      "字节数": 257,
+      "sha256": "0dd4e955ba2991a5d656427236a0ffac7f239755eb6d6c37256811f33f502e53"
+    },
+    {
+      "路径": "review/round-5/源对象执行台账.csv",
+      "字节数": 111429,
+      "sha256": "c10f9e4835ded797d9dfcacaf7107362eb050f3d4c611221261b87da150ac331"
+    },
+    {
+      "路径": "review/round-5/生成计划配套台账.py",
+      "字节数": 19739,
+      "sha256": "f68be3a88171abed2e2230243b22816cb69ae45863e1a643ead247d08fe2f5f6"
+    },
+    {
+      "路径": "review/round-5/计划包校验结果.json",
+      "字节数": 711,
+      "sha256": "645af20174c89a04188f8b7bbda9f2578f69dfee328aacaea9796f65f326fed2"
+    }
+  ]
+}

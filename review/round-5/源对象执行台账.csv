@@ -1,0 +1,345 @@
+﻿source_key,源序号,模块,数据窗口,原提取标题_未核实,基线状态,基线对象份数,基线数据集ID,基线图表ID,源参数名,源含compute控件,原资产SHA,语义版本,处置类型,在用依据,report_keys,来源状态,独立参考状态,口径状态,权限模型状态,对象状态,对账状态,权限测试状态,性能状态,发布状态,目标对象映射引用,定义SHA,batch_id,阻塞引用,公开证据路径,下一动作,更新时间
+srd339:cate_d:d_area_dict:1,1,cate_d,d_area_dict,,已建对象，业务待验收,1,96,98,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_arrear_stat:2,2,cate_d,d_arrear_stat,欠费病人明细报表,已建对象，业务待验收,1,97,99,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_banot:3,3,cate_d,d_banot,Pat Master Index Inp No,已建对象，业务待验收,1,98,100,dept;js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_banull:4,4,cate_d,d_banull,Pat Master Index Inp No,已建对象，业务待验收,1,99,101,dept;js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_baqt:5,5,cate_d,d_baqt,Pat Master Index Inp No,已建对象，业务待验收,1,100,102,dept;js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_brzc:6,6,cate_d,d_brzc,病人姓名,已建对象，业务待验收,1,101,103,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_brzr:7,7,cate_d,d_brzr,病人姓名,已建对象，业务待验收,1,102,104,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_categrarycsd:8,8,cate_d,d_categrarycsd,病    案    催    收    单,未建对象：未在 SQL 失败清单，原因待追溯,0,,,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_categrarycsdks:9,9,cate_d,d_categrarycsdks,你科室有下列病人病案，在病人出院后至今仍未交到我室，请查询后速交我室，谢谢。,未建对象：未在 SQL 失败清单，原因待追溯,0,,,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_categrarygd:10,10,cate_d,d_categrarygd,病  案  归  档  情  况,已建对象，业务待验收,1,103,105,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_categraywgdqx:11,11,cate_d,d_categraywgdqx,病 案 归 档 情 况,未建对象：原 SQL 试跑失败记录,0,,,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_categrorycygd:12,12,cate_d,d_categrorycygd,Pat Visit Discharge Date Time,未建对象：原 SQL 试跑失败记录,0,,,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_categrorycygdcq:13,13,cate_d,d_categrorycygdcq,"Pat Visit
+Doctor In Charge",未建对象：原 SQL 试跑失败记录,0,,,dept;gd;js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_categrorycywgd:14,14,cate_d,d_categrorycywgd,"Pat Visit
+Doctor In Charge",已建对象，业务待验收,1,104,106,dept;js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_code_same:15,15,cate_d,d_code_same,重码显示区,未建对象：未在 SQL 失败清单，原因待追溯,0,,,code;name,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_cycostwk:16,16,cate_d,d_cycostwk,"Pat Visit
+Admission Date Time",已建对象，业务待验收,1,105,107,dept;js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_ddd_dept:17,17,cate_d,d_ddd_dept,Dept Code,已建对象，业务待验收,1,106,108,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dddw_director:18,18,cate_d,d_dddw_director,,已建对象，业务待验收,1,107,109,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dddw_doctor:19,19,cate_d,d_dddw_doctor,,已建对象，业务待验收,1,108,110,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dddw_doctor_all:20,20,cate_d,d_dddw_doctor_all,,已建对象，业务待验收,1,109,111,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dddw_doctor_in:21,21,cate_d,d_dddw_doctor_in,,已建对象，业务待验收,1,110,112,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dddw_mzdoctor:22,22,cate_d,d_dddw_mzdoctor,Name,已建对象，业务待验收,1,111,113,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dddw_pat_master_index:23,23,cate_d,d_dddw_pat_master_index,Patient Id,已建对象，业务待验收,1,112,114,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dictprint_print:24,24,cate_d,d_dictprint_print,中国人民解放军总医院,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_discharged_patients:25,25,cate_d,d_discharged_patients,出院第一诊断,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_discharged_patients_print:26,26,cate_d,d_discharged_patients_print,1996-01-01,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dynaoperation:27,27,cate_d,d_dynaoperation,,已建对象，业务待验收,1,113,115,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_dynaoperation_ans:28,28,cate_d,d_dynaoperation_ans,,已建对象，业务待验收,1,114,116,js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_fs_statday:29,29,cate_d,d_fs_statday,,已建对象，业务待验收,1,115,117,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_fs_zystatday:30,30,cate_d,d_fs_zystatday,,已建对象，业务待验收,1,116,118,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hossettle:31,31,cate_d,d_hossettle,科室名称,已建对象，业务待验收,1,117,119,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hosunsettle:32,32,cate_d,d_hosunsettle,科室名称,已建对象，业务待验收,1,118,120,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hy_mzdetail:33,33,cate_d,d_hy_mzdetail,,已建对象，业务待验收,1,119,121,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hy_statday:34,34,cate_d,d_hy_statday,门诊化验：,已建对象，业务待验收,1,120,122,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hy_statdaymaster:35,35,cate_d,d_hy_statdaymaster,,已建对象，业务待验收,1,121,123,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hy_zydetail:36,36,cate_d,d_hy_zydetail,,已建对象，业务待验收,1,122,124,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hy_zystatday:37,37,cate_d,d_hy_zystatday,住院化验：,已建对象，业务待验收,1,123,125,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_hy_zystatdaymaster:38,38,cate_d,d_hy_zystatdaymaster,住院化验：,已建对象，业务待验收,1,124,126,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_jc_statday:39,39,cate_d,d_jc_statday,,已建对象，业务待验收,1,125,127,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_jc_zystatday:40,40,cate_d,d_jc_zystatday,,已建对象，业务待验收,1,126,128,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_modi_dict_outcode_input:41,41,cate_d,d_modi_dict_outcode_input,输入码,已建对象，业务待验收,1,127,129,code;name;topic,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_mrfee_class:42,42,cate_d,d_mrfee_class,Mr Fee Class Name,已建对象，业务待验收,1,128,130,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_mz:43,43,cate_d,d_mz,科室名称,已建对象，业务待验收,1,129,131,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_not_in:44,44,cate_d,d_not_in,病案首页尚未编目的出院病人,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_not_in_print:45,45,cate_d,d_not_in_print,首页尚未编目的出院病人,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_notcatalog_patients:46,46,cate_d,d_notcatalog_patients,病人ID,未建对象：原 SQL 试跑失败记录,0,,,discharge_date;discharge_dept,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_notcatalog_patients_print:47,47,cate_d,d_notcatalog_patients_print,中国人民解放军总医院,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_operation:48,48,cate_d,d_operation,"手术编码",未建对象：原 SQL 试跑失败记录,0,,,patient_id;visit_id,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_operation_dict:49,49,cate_d,d_operation_dict,手术操作名称,已建对象，业务待验收,1,130,132,code,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_outer_code_input:50,50,cate_d,d_outer_code_input,"当前编码条目输入码录入区",已建对象，业务待验收,1,131,133,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_outer_code_txt:51,51,cate_d,d_outer_code_txt,,已建对象，业务待验收,1,132,134,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_query_patient:52,52,cate_d,d_query_patient,病人ID,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_schotistic_diag:53,53,cate_d,d_schotistic_diag,疾病名称,已建对象，业务待验收,1,133,135,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_search_brief:54,54,cate_d,d_search_brief,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_search_brief_print:55,55,cate_d,d_search_brief_print,中国人民解放军总医院,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_search_detail:56,56,cate_d,d_search_detail,出生日期,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_search_detail_print:57,57,cate_d,d_search_detail_print,HOSPITAL NAME,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_select_oper:58,58,cate_d,d_select_oper,手术名称,已建对象，业务待验收,1,134,136,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_ss_statday:59,59,cate_d,d_ss_statday,,已建对象，业务待验收,1,135,137,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_ss_zystatday:60,60,cate_d,d_ss_zystatday,,已建对象，业务待验收,1,136,138,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_try:61,61,cate_d,d_try,,已建对象，业务待验收,1,137,139,patient_id;visit_id,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_try_bank:62,62,cate_d,d_try_bank,,已建对象，业务待验收,1,138,140,patient_id;visit_id,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_zy:63,63,cate_d,d_zy,科室名称,已建对象，业务待验收,1,139,141,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_zy_monthreport:64,64,cate_d,d_zy_monthreport,Sum Of Compute 0003,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_zy_monthreport1:65,65,cate_d,d_zy_monthreport1,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:d_zycosts:66,66,cate_d,d_zycosts,病人姓名,已建对象，业务待验收,1,140,142,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:dw_diag_obj:67,67,cate_d,dw_diag_obj,诊断类别,已建对象，业务待验收,1,141,143,m_patientid,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:dw_inpathis_obj:68,68,cate_d,dw_inpathis_obj,入院日期,未建对象：原 SQL 试跑失败记录,0,,,m_patientid,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:dw_operation_obj:69,69,cate_d,dw_operation_obj,手术名称,已建对象，业务待验收,1,142,144,m_patientid,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:cate_d:dw_patnature_obj:70,70,cate_d,dw_patnature_obj,,已建对象，业务待验收,1,143,145,inp_no;patient_id,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp_dept:71,71,clinic,d_clinic_inp_dept,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp_dept_mr:72,72,clinic,d_clinic_inp_dept_mr,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp_dept_reckoning:73,73,clinic,d_clinic_inp_dept_reckoning,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp_dept_subj_code:74,74,clinic,d_clinic_inp_dept_subj_code,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp_mr:75,75,clinic,d_clinic_inp_mr,,已建对象，业务待验收,1,144,146,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp_reckoning:76,76,clinic,d_clinic_inp_reckoning,,已建对象，业务待验收,1,145,147,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp_subj_code:77,77,clinic,d_clinic_inp_subj_code,,已建对象，业务待验收,1,146,148,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_clinic_inp:78,78,clinic,d_clinic_inp,,已建对象，业务待验收,1,147,149,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:clinic:d_prn_day_test:79,79,clinic,d_prn_day_test,,已建对象，业务待验收,1,148,150,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:comm:dw_stat_dept:80,80,comm,dw_stat_dept,,未建对象：原 SQL 试跑失败记录,0,,,stat_dept_code,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_avg_costs:81,81,dis_report,d_dis_avg_costs,人  均  费  用,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_avg_costs_st:82,82,dis_report,d_dis_avg_costs_st,人  均  费  用,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_costs:83,83,dis_report,d_dis_costs,obj_53608449,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_costs_st:84,84,dis_report,d_dis_costs_st,费用类别,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_diag1:85,85,dis_report,d_dis_diag1,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_diag_single_analazy_fhlv:86,86,dis_report,d_dis_diag_single_analazy_fhlv,入院诊断与出院诊断符合率%,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_diag_st:87,87,dis_report,d_dis_diag_st,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_effic1:88,88,dis_report,d_dis_effic1,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_mzyb2_dw2_bk:89,89,dis_report,d_dis_mzyb2_dw2_bk,治愈者平均住院日,已建对象，业务待验收,1,149,151,adt_end_date;adt_start_date;as_dept,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_operation_st:90,90,dis_report,d_dis_operation_st,,已建对象，业务待验收,1,150,152,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_thr_day_defi:91,91,dis_report,d_dis_thr_day_defi,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_thr_day_defi_st:92,92,dis_report,d_dis_thr_day_defi_st,,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_treat:93,93,dis_report,d_dis_treat,治愈者平均住院日,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_treat_167_report:94,94,dis_report,d_dis_treat_167_report,,已建对象，业务待验收,1,151,153,as_sex;dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_treat_167_reportecnomic:95,95,dis_report,d_dis_treat_167_reportecnomic,,已建对象，业务待验收,1,152,154,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_treat_report:96,96,dis_report,d_dis_treat_report,出   院   病   人   数,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dis_treat_st:97,97,dis_report,d_dis_treat_st,,已建对象，业务待验收,1,153,155,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dise_class_stat_dict:98,98,dis_report,d_dise_class_stat_dict,,已建对象，业务待验收,1,154,156,STAT_LEVEL,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_disease_class_report:99,99,dis_report,d_disease_class_report,,已建对象，业务待验收,1,155,157,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_disease_clss_st:100,100,dis_report,d_disease_clss_st,治愈者平均住院日,已建对象，业务待验收,1,156,158,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_dysyntaxpatient:101,101,dis_report,d_dysyntaxpatient,,已建对象，业务待验收,1,157,159,js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_mr_fee_class:102,102,dis_report,d_mr_fee_class,Mr Fee Class Name,已建对象，业务待验收,1,158,160,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_mztj_ks:103,103,dis_report,d_mztj_ks,,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_dis_avg_costs:104,104,dis_report,d_prn_dis_avg_costs,YYYY-MM-DD,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_dis_costs:105,105,dis_report,d_prn_dis_costs,obj_53608449,未建对象：原 SQL 试跑失败记录,0,,,end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_dis_diag:106,106,dis_report,d_prn_dis_diag,门诊诊断与出院诊断符合率%,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_dis_diag_analazy:107,107,dis_report,d_prn_dis_diag_analazy,门诊诊断与出院诊断符合率%,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_dis_effic:108,108,dis_report,d_prn_dis_effic,平均    优先    一般,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_dis_treat:109,109,dis_report,d_prn_dis_treat,治愈者平均住院日,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_medi_report:110,110,dis_report,d_prn_medi_report,,已建对象，业务待验收,1,159,161,dept1_len;dept2_len;end_datetime;start_datetime,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_prn_medi_report_temp:111,111,dis_report,d_prn_medi_report_temp,"表    号：卫统2表1制表机关：卫生部批准机关：国家统计局批准文号：(96)国统字第52号",未建对象：未在 SQL 失败清单，原因待追溯,0,,,dept1_len;dept2_len;end_datetime;start_datetime,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_special_costs_st:112,112,dis_report,d_special_costs_st,Count(~,已建对象，业务待验收,1,160,162,charge_type_set;end_day;oper_mark;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_special_discharge_st:113,113,dis_report,d_special_discharge_st,Sum(trunc(~,已建对象，业务待验收,1,161,163,charge_type_set;end_day;oper_mark;start_day,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_tj1:114,114,dis_report,d_tj1,Discharge Date Time,已建对象，业务待验收,1,162,164,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_tj2:115,115,dis_report,d_tj2,Discharge Date Time,已建对象，业务待验收,1,163,165,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_tj3:116,116,dis_report,d_tj3,Discharge Date Time,已建对象，业务待验收,1,164,166,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_tj4:117,117,dis_report,d_tj4,Discharge Date Time,已建对象，业务待验收,1,165,167,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:d_tjll:118,118,dis_report,d_tjll,,已建对象，业务待验收,2,166;305,168;307,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_month_report2_main:119,119,dis_report,dw_month_report2_main,二、门诊分科人次数,已建对象，业务待验收,1,167,169,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_month_report3_main:120,120,dis_report,dw_month_report3_main,st_hospital_name,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_month_report3_main_bk:121,121,dis_report,dw_month_report3_main_bk,"表    号：卫统32表-3 制表机关：卫生部 备案机关：国家统计局 备案文号：(2001)卫办字第198号",未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_month_report_3main:122,122,dis_report,dw_month_report_3main,"医   疗事   故发生数",未建对象：未在 SQL 失败清单，原因待追溯,0,,,adt_end_date;adt_start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_tjks:123,123,dis_report,dw_tjks,Tjks Code,未建对象：原 SQL 试跑失败记录,0,,,ks_name,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_year_report:124,124,dis_report,dw_year_report,Diagnosis Name,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_year_report1:125,125,dis_report,dw_year_report1,,已建对象，业务待验收,1,168,170,tj_type,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_year_report_main:126,126,dis_report,dw_year_report_main,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_year_report_main_zhuanke:127,127,dis_report,dw_year_report_main_zhuanke,"表    号：卫统32表-3 制表机关：卫生部 备案机关：国家统计局 备案文号：(2001)卫办字第198号",未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:dw_year_report_o:128,128,dis_report,dw_year_report_o,Diagnosis Name,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:dis_report:yty:129,129,dis_report,yty,"医   疗事   故发生数",已建对象，业务待验收,1,169,171,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:d_blood_query:130,130,disanalyse,d_blood_query,,已建对象，业务待验收,1,170,172,pid,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:d_new_diagnosis_costs:131,131,disanalyse,d_new_diagnosis_costs,,已建对象，业务待验收,2,171;306,173;308,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:d_tj1:132,132,disanalyse,d_tj1,Discharge Date Time,已建对象，业务待验收,1,172,174,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:d_tj2:133,133,disanalyse,d_tj2,Discharge Date Time,已建对象，业务待验收,1,173,175,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:d_tj3:134,134,disanalyse,d_tj3,Discharge Date Time,已建对象，业务待验收,1,174,176,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:d_tj4:135,135,disanalyse,d_tj4,Discharge Date Time,已建对象，业务待验收,1,175,177,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:d_tjll:136,136,disanalyse,d_tjll,,已建对象，业务待验收,2,176;307,178;309,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap2000201:137,137,disanalyse,dap2000201,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap2000202:138,138,disanalyse,dap2000202,,已建对象，业务待验收,1,177,179,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap2000203:139,139,disanalyse,dap2000203,,已建对象，业务待验收,1,178,180,adt_end_date;adt_start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap20202:140,140,disanalyse,dap20202,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap20202_old:141,141,disanalyse,dap20202_old,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap20302:142,142,disanalyse,dap20302,,已建对象，业务待验收,1,179,181,ldt_js;ldt_ks;ls_dept_code,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap30002:143,143,disanalyse,dap30002,,已建对象，业务待验收,1,180,182,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap30302:144,144,disanalyse,dap30302,,已建对象，业务待验收,1,181,183,as_dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap30402:145,145,disanalyse,dap30402,,已建对象，业务待验收,1,182,184,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap30502:146,146,disanalyse,dap30502,,已建对象，业务待验收,1,183,185,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap30602:147,147,disanalyse,dap30602,,已建对象，业务待验收,1,184,186,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap40002:148,148,disanalyse,dap40002,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap40102:149,149,disanalyse,dap40102,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dap40302:150,150,disanalyse,dap40302,,已建对象，业务待验收,1,185,187,dept;end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:dw_outp_dept:151,151,disanalyse,dw_outp_dept,,已建对象，业务待验收,1,186,188,stat_dept_name,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:het10102:152,152,disanalyse,het10102,,已建对象，业务待验收,1,187,189,Dto;dFrom,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:disanalyse:wbj10002:153,153,disanalyse,wbj10002,,已建对象，业务待验收,1,188,190,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_bydoctor:154,154,djdesign,d_bydoctor,Orders Order Text,已建对象，业务待验收,1,189,191,jsdate;ksdate;text,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_dispense:155,155,djdesign,d_dispense,药品名称,已建对象，业务待验收,1,190,192,dept;form;jsdate;ksdate,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_doctor:156,156,djdesign,d_doctor,,已建对象，业务待验收,1,191,193,js;ks;text,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_drugpresc:157,157,djdesign,d_drugpresc,药品名称,已建对象，业务待验收,1,192,194,dept;form;jsdate;ksdate,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_mzdoctor:158,158,djdesign,d_mzdoctor,"Drug Presc Master
+Prescriber",未建对象：原 SQL 试跑失败记录,0,,,js;ks;text,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_newdispense:159,159,djdesign,d_newdispense,,已建对象，业务待验收,1,193,195,dept;form;jsdate;ksdate,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_newdispensedoctor:160,160,djdesign,d_newdispensedoctor,"Drug Dispense Rec
+Drug Units",已建对象，业务待验收,1,194,196,dept;form;jsdate;ksdate,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_newpresc:161,161,djdesign,d_newpresc,,已建对象，业务待验收,1,195,197,dept;form;jsdate;ksdate;storage,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_newpresc_inp:162,162,djdesign,d_newpresc_inp,,已建对象，业务待验收,1,196,198,dept;form;jsdate;ksdate,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_newpresc_outp:163,163,djdesign,d_newpresc_outp,,已建对象，业务待验收,1,197,199,dept;form;jsdate;ksdate,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:djdesign:d_newprescdoctor:164,164,djdesign,d_newprescdoctor,,已建对象，业务待验收,1,198,200,form;jsdate;ksdate;li_presc_source,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_dispense_drugsum:165,165,drug,d_dispense_drugsum,,已建对象，业务待验收,1,199,201,ldtEnd;ldtStart;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_dispense_drugsum_prn:166,166,drug,d_dispense_drugsum_prn,摆药出库药品品种金额统计,已建对象，业务待验收,1,200,202,ldt_start;ldt_stop;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drug_price:167,167,drug,d_drug_price,,已建对象，业务待验收,1,201,203,li_codelen;ls_drugcode,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drug_price_modify_profit_060109:168,168,drug,d_drug_price_modify_profit_060109,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drug_price_modify_profit_prn:169,169,drug,d_drug_price_modify_profit_prn,XXXX医院,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drug_sell_for_alldept_sx:170,170,drug,d_drug_sell_for_alldept_sx,,已建对象，业务待验收,1,202,204,enddate;itemclass;startdate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drug_storage_for_alldept_sx:171,171,drug,d_drug_storage_for_alldept_sx,,已建对象，业务待验收,1,203,205,drugcode;storagecode,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drug_storage_used_forall_storage_sx:172,172,drug,d_drug_storage_used_forall_storage_sx,,已建对象，业务待验收,1,204,206,enddate;startdate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drugallstorage_import_sxzx:173,173,drug,d_drugallstorage_import_sxzx,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,drugcode;drugstorage;enddate;startdate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_drugused_for_allstorage_sx:174,174,drug,d_drugused_for_allstorage_sx,,已建对象，业务待验收,1,205,207,drugcode;drugstorage;enddate;startdate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_exp_export_detail_sx:175,175,drug,d_exp_export_detail_sx,,已建对象，业务待验收,1,206,208,end_date;ls_rece;ls_storage;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_exp_export_master_sx:176,176,drug,d_exp_export_master_sx,,已建对象，业务待验收,1,207,209,end_date;ls_storage;start_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_im_ex_stock:177,177,drug,d_im_ex_stock,,已建对象，业务待验收,1,208,210,ldt_start;ldt_stop;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_im_ex_stock_060109:178,178,drug,d_im_ex_stock_060109,,已建对象，业务待验收,1,209,211,ldt_start;ldt_stop;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_im_ex_stock_exp:179,179,drug,d_im_ex_stock_exp,,已建对象，业务待验收,1,210,212,ldt_start;ldt_stop;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_im_ex_stock_prn:180,180,drug,d_im_ex_stock_prn,药 品 入 出 存 统 计,已建对象，业务待验收,1,211,213,ls_end;ls_start;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_presc_drugsum:181,181,drug,d_presc_drugsum,,已建对象，业务待验收,1,212,214,ls_end;ls_start;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:drug:d_presc_drugsum_prn:182,182,drug,d_presc_drugsum_prn,处方药品出库品种金额统计,已建对象，业务待验收,1,213,215,ls_end;ls_start;ls_storage,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_abstract_cards:183,183,inp,d_abstract_cards,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,WardCode,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_abstract_cards_01:184,184,inp,d_abstract_cards_01,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,WardCode,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_adt_log_day_graph:185,185,inp,d_adt_log_day_graph,,已建对象，业务待验收,1,214,216,js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_adt_log_month_graph:186,186,inp,d_adt_log_month_graph,,已建对象，业务待验收,1,215,217,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_adt_log_month_graph_new:187,187,inp,d_adt_log_month_graph_new,,已建对象，业务待验收,1,216,218,adt_end_date;adt_start_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_arrear_acct_detail:188,188,inp,d_arrear_acct_detail,回收日期及时间,未建对象：原 SQL 试跑失败记录,0,,,js;ks;operator,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_arrear_stat:189,189,inp,d_arrear_stat,,已建对象，业务待验收,1,217,219,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_bed_rec:190,190,inp,d_bed_rec,,已建对象，业务待验收,1,218,220,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_bed_rec_prt:191,191,inp,d_bed_rec_prt,床位情况统计,已建对象，业务待验收,1,219,221,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_bill_item_detail:192,192,inp,d_bill_item_detail,计价日期及时间,已建对象，业务待验收,1,220,222,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_criticall_serious_detail:193,193,inp,d_criticall_serious_detail,,已建对象，业务待验收,1,221,223,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_criticall_serious_prn:194,194,inp,d_criticall_serious_prn,,已建对象，业务待验收,1,222,224,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_dept_adt_month:195,195,inp,d_dept_adt_month,,已建对象，业务待验收,1,223,225,ls_end;ls_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_dept_adt_year:196,196,inp,d_dept_adt_year,,已建对象，业务待验收,1,224,226,ls_end;ls_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_diag_fee:197,197,inp,d_diag_fee,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_dis_control_regedit_disdesc_sx:198,198,inp,d_dis_control_regedit_disdesc_sx,,已建对象，业务待验收,1,225,227,ls_end;ls_start,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_dis_control_regedit_pats_list_sx:199,199,inp,d_dis_control_regedit_pats_list_sx,,已建对象，业务待验收,1,226,228,ls_diagnosis_desc;ls_end;ls_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_dis_diag:200,200,inp,d_dis_diag,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_dis_econic_stat:201,201,inp,d_dis_econic_stat,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_dis_effic:202,202,inp,d_dis_effic,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_discharge_disposition_dict:203,203,inp,d_discharge_disposition_dict,,已建对象，业务待验收,1,227,229,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_doctor_in_charge:204,204,inp,d_doctor_in_charge,,已建对象，业务待验收,1,228,230,dept_code;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_excel_titlename:205,205,inp,d_excel_titlename,,已建对象，业务待验收,1,229,231,js;ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inp_bill_day_graph:206,206,inp,d_inp_bill_day_graph,统计区间：,已建对象，业务待验收,1,230,232,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inp_bill_month_graph:207,207,inp,d_inp_bill_month_graph,统计区间：,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inp_bill_month_graph11:208,208,inp,d_inp_bill_month_graph11,,已建对象，业务待验收,1,231,233,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inp_bill_month_graph_prt:209,209,inp,d_inp_bill_month_graph_prt,住院费用统计对比,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inp_nursing_sx_work:210,210,inp,d_inp_nursing_sx_work,,已建对象，业务待验收,1,232,234,enddt;startdt,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inp_rcpt:211,211,inp,d_inp_rcpt,收据项目,已建对象，业务待验收,1,233,235,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inp_rcpt_class:212,212,inp,d_inp_rcpt_class,Fee Class Code,已建对象，业务待验收,1,234,236,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inpat_list1:213,213,inp,d_inpat_list1,入院日期,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_inpat_list_insurance:214,214,inp,d_inpat_list_insurance,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ls_type,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_insurance_inp_quary_sx:215,215,inp,d_insurance_inp_quary_sx,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,dt_end;dt_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_insurance_out_quary_sx:216,216,inp,d_insurance_out_quary_sx,,已建对象，业务待验收,1,235,237,dt_end;dt_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_insurance_type:217,217,inp,d_insurance_type,,已建对象，业务待验收,1,236,238,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_new_bed:218,218,inp,d_new_bed,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,WardCode,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_new_bed_and_pats_yesterdayinfo_sx:219,219,inp,d_new_bed_and_pats_yesterdayinfo_sx,,已建对象，业务待验收,1,237,239,ls_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_new_diagnosis_costs:220,220,inp,d_new_diagnosis_costs,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_new_pat_admission:221,221,inp,d_new_pat_admission,,已建对象，业务待验收,1,238,240,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_new_pat_admission_back:222,222,inp,d_new_pat_admission_back,,已建对象，业务待验收,1,239,241,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_new_pat_discharge:223,223,inp,d_new_pat_discharge,,已建对象，业务待验收,1,240,242,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_new_patvisit_costs:224,224,inp,d_new_patvisit_costs,,已建对象，业务待验收,1,241,243,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_admission:225,225,inp,d_pat_admission,入院日期及时间,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_admission_insurance:226,226,inp,d_pat_admission_insurance,入院日期及时间,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_admission_insurance_prn:227,227,inp,d_pat_admission_insurance_prn,全院医保入院病人登记表,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_admission_prn:228,228,inp,d_pat_admission_prn,1996-08-08,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_discharge:229,229,inp,d_pat_discharge,出院科室,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_discharge_insurance:230,230,inp,d_pat_discharge_insurance,出院科室,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_discharge_insurance_prn:231,231,inp,d_pat_discharge_insurance_prn,全院医保出院病人登记表,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_pat_discharge_prn:232,232,inp,d_pat_discharge_prn,1996-08-08,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_print_cost:233,233,inp,d_print_cost,病人费用清单,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_print_cost_detail:234,234,inp,d_print_cost_detail,病 人 费 用 清 单,已建对象，业务待验收,1,242,244,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_print_single_rcpt_cost:235,235,inp,d_print_single_rcpt_cost,1234567891,已建对象，业务待验收,1,243,245,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_single_fee_query:236,236,inp,d_single_fee_query,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_total_fee_for_zlh:237,237,inp,d_total_fee_for_zlh,,已建对象，业务待验收,1,244,246,ds_end;ds_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_transferring:238,238,inp,d_transferring,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_try:239,239,inp,d_try,,已建对象，业务待验收,1,245,247,patient_id;visit_id,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_zy_monthreport2:240,240,inp,d_zy_monthreport2,@dept_name,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:d_zy_monthreport3:241,241,inp,d_zy_monthreport3,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:inp_bill_ordered_patient_detailcosts:242,242,inp,inp_bill_ordered_patient_detailcosts,,已建对象，业务待验收,1,246,248,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:inp_bill_ordered_sx:243,243,inp,inp_bill_ordered_sx,,已建对象，业务待验收,1,247,249,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:inp_bill_performed_patient_costs:244,244,inp,inp_bill_performed_patient_costs,,已建对象，业务待验收,1,248,250,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:inp:inp_bill_performed_sx:245,245,inp,inp_bill_performed_sx,,已建对象，业务待验收,1,249,251,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp10002:246,246,medicaldata,mdp10002,,已建对象，业务待验收,1,250,252,end_day;start_day,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp10102:247,247,medicaldata,mdp10102,,已建对象，业务待验收,1,251,253,adt_end;adt_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp10202:248,248,medicaldata,mdp10202,,已建对象，业务待验收,1,252,254,ldtEnd;ldtStart,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp10302:249,249,medicaldata,mdp10302,,已建对象，业务待验收,1,253,255,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp10402:250,250,medicaldata,mdp10402,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp20002:251,251,medicaldata,mdp20002,,已建对象，业务待验收,1,254,256,ldt_end;ldt_start;lsDept,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp20302:252,252,medicaldata,mdp20302,,已建对象，业务待验收,1,255,257,asMrFeeCol;ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp30402:253,253,medicaldata,mdp30402,,已建对象，业务待验收,1,256,258,asMrFeeCol;ldt_end;ldt_start;ls_dept,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp30502:254,254,medicaldata,mdp30502,,已建对象，业务待验收,1,257,259,ldt_end;ldt_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp3060201:255,255,medicaldata,mdp3060201,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp3060202:256,256,medicaldata,mdp3060202,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp4000201:257,257,medicaldata,mdp4000201,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp4000202:258,258,medicaldata,mdp4000202,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp40102:259,259,medicaldata,mdp40102,,已建对象，业务待验收,1,258,260,ldt_end;ldt_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:medicaldata:mdp40202:260,260,medicaldata,mdp40202,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_end;ldt_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrdatainput_dw:d_clinic_in_num_month:261,261,mrdatainput_dw,d_clinic_in_num_month,,已建对象，业务待验收,1,259,261,ldt_end;ldt_start,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrdatainput_dw:d_clinic_in_num_zm_month:262,262,mrdatainput_dw,d_clinic_in_num_zm_month,,已建对象，业务待验收,1,260,262,ldt_end;ldt_start,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrdatainput_dw:d_dddw_unit:263,263,mrdatainput_dw,d_dddw_unit,,已建对象，业务待验收,1,261,263,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrdatainput_dw:d_q_clinicmaster:264,264,mrdatainput_dw,d_q_clinicmaster,,已建对象，业务待验收,1,262,264,adFrom;adTo;sDept,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrdatainput_dw:dept_adt_day_002:265,265,mrdatainput_dw,dept_adt_day_002,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrpublic:d_dis_30_new:266,266,mrpublic,d_dis_30_new,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrpublic:d_dis_mzyb2_dw2_bk:267,267,mrpublic,d_dis_mzyb2_dw2_bk,,已建对象，业务待验收,1,263,265,adt_end_date;adt_start_date;as_dept,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrpublic:d_tj2:268,268,mrpublic,d_tj2,Discharge Date Time,已建对象，业务待验收,1,264,266,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:mrpublic:dd_unit_table:269,269,mrpublic,dd_unit_table,Unit Code,已建对象，业务待验收,1,265,267,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_clinic_comp:270,270,p_comm_print,d_clinic_comp,,已建对象，业务待验收,1,266,268,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_clinic_dept:271,271,p_comm_print,d_clinic_dept,,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_clinicmaster_fenlei:272,272,p_comm_print,d_clinicmaster_fenlei,,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_desc_age:273,273,p_comm_print,d_desc_age,,已建对象，业务待验收,1,267,269,end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_diag_comp:274,274,p_comm_print,d_diag_comp,,已建对象，业务待验收,1,268,270,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_dis_mzyb2_dw2_bk:275,275,p_comm_print,d_dis_mzyb2_dw2_bk,,已建对象，业务待验收,1,269,271,adt_end_date;adt_start_date;as_dept,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_dis_treat_report_icd10:276,276,p_comm_print,d_dis_treat_report_icd10,,已建对象，业务待验收,1,270,272,diagnosis_name;end_date;start_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_laiwu_ksxiaoyi:277,277,p_comm_print,d_laiwu_ksxiaoyi,,未建对象：原 SQL 试跑失败记录,0,,,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_laiwu_menzhen:278,278,p_comm_print,d_laiwu_menzhen,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_mrstat_8711:279,279,p_comm_print,d_mrstat_8711,,已建对象，业务待验收,1,271,273,ldt_frdate;ldt_todate,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:p_comm_print:d_yaopinbili_laiwu:280,280,p_comm_print,d_yaopinbili_laiwu,,未建对象：原 SQL 试跑失败记录,0,,,js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:pubcomm:d_bill_item_refund:281,281,pubcomm,d_bill_item_refund,项目类别,已建对象，业务待验收,1,272,274,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:pubcomm:d_bill_refund:282,282,pubcomm,d_bill_refund,,已建对象，业务待验收,1,273,275,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:pubcomm:d_bill_refund_print:283,283,pubcomm,d_bill_refund_print,,已建对象，业务待验收,1,274,276,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:pubcomm:d_inhospital_info:284,284,pubcomm,d_inhospital_info,,已建对象，业务待验收,1,275,277,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_2:285,285,spjxc,d_2,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,as_dept;as_ym,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_3:286,286,spjxc,d_3,,已建对象，业务待验收,1,276,278,as_ym,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_4:287,287,spjxc,d_4,,已建对象，业务待验收,1,277,279,ANUM_E;ANUM_S;AS_EDT;AS_SDT,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_cancel_discharge_pat:288,288,spjxc,d_cancel_discharge_pat,,已建对象，业务待验收,1,278,280,ldEnd;ldStart,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_clinic_pats:289,289,spjxc,d_clinic_pats,,已建对象，业务待验收,1,279,281,ldt_end;ldt_start,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_dept_wh:290,290,spjxc,d_dept_wh,,已建对象，业务待验收,1,280,282,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_exam_dept_person:291,291,spjxc,d_exam_dept_person,,已建对象，业务待验收,1,281,283,ldt_end;ldt_start;ls_bnj;ls_hj,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_exam_person_ordered:292,292,spjxc,d_exam_person_ordered,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,end_date;outp_or_inp;st_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_exam_person_performed:293,293,spjxc,d_exam_person_performed,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,end_date;st_date;visit_id1;visit_id2,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_hldy5:294,294,spjxc,d_hldy5,,已建对象，业务待验收,1,282,284,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_hldy_chu:295,295,spjxc,d_hldy_chu,,已建对象，业务待验收,1,283,285,ld_js;ld_ks,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_hldy_code:296,296,spjxc,d_hldy_code,,已建对象，业务待验收,1,284,286,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_hulidanyuangzl2:297,297,spjxc,d_hulidanyuangzl2,,已建对象，业务待验收,1,285,287,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_hulidanyuangzl4:298,298,spjxc,d_hulidanyuangzl4,,已建对象，业务待验收,1,286,288,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_hulidanyuangzl5:299,299,spjxc,d_hulidanyuangzl5,,已建对象，业务待验收,1,287,289,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_ks_tywh:300,300,spjxc,d_ks_tywh,,已建对象，业务待验收,1,288,290,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_new_bed_and_pats_yesterdayinfo_sx:301,301,spjxc,d_new_bed_and_pats_yesterdayinfo_sx,,已建对象，业务待验收,1,289,291,ls_date,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_operation_tj:302,302,spjxc,d_operation_tj,,已建对象，业务待验收,1,290,292,ldt_begin;ldt_end;outp_or_inp,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_operation_tj_sxold:303,303,spjxc,d_operation_tj_sxold,,已建对象，业务待验收,1,291,293,ldt_begin;ldt_end;outp_or_inp,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_outp_appointment:304,304,spjxc,d_outp_appointment,,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_outp_blood:305,305,spjxc,d_outp_blood,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_outp_booking:306,306,spjxc,d_outp_booking,,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_outp_drug:307,307,spjxc,d_outp_drug,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_outp_pay:308,308,spjxc,d_outp_pay,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_outp_register3:309,309,spjxc,d_outp_register3,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_1:310,310,spjxc,d_1,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,as_dept;as_ym,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_outp_ultrasonic:311,311,spjxc,d_outp_ultrasonic,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_sx1:312,312,spjxc,d_sx1,,已建对象，业务待验收,1,292,294,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_sx2:313,313,spjxc,d_sx2,,已建对象，业务待验收,1,293,295,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_sx3:314,314,spjxc,d_sx3,,已建对象，业务待验收,1,294,296,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_test:315,315,spjxc,d_test,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_from;ldt_to;ls_charge_type,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tian_report:316,316,spjxc,d_tian_report,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tian_report_bak:317,317,spjxc,d_tian_report_bak,,未建对象：原 SQL 试跑失败记录,0,,,,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb:318,318,spjxc,d_tjbb,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_bak:319,319,spjxc,d_tjbb_bak,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_mz:320,320,spjxc,d_tjbb_mz,,已建对象，业务待验收,1,295,297,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_mz_slslx:321,321,spjxc,d_tjbb_mz_slslx,,已建对象，业务待验收,1,296,298,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_zy:322,322,spjxc,d_tjbb_zy,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_zy_new:323,323,spjxc,d_tjbb_zy_new,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_zy_new_191213:324,324,spjxc,d_tjbb_zy_new_191213,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_zy_new_210304:325,325,spjxc,d_tjbb_zy_new_210304,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjbb_zy_sb:326,326,spjxc,d_tjbb_zy_sb,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjll:327,327,spjxc,d_tjll,,未建对象：原 SQL 试跑失败记录,0,,,DEPT;JS;KS,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjll1:328,328,spjxc,d_tjll1,,已建对象，业务待验收,1,297,299,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjll2:329,329,spjxc,d_tjll2,,已建对象，业务待验收,1,298,300,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjll3:330,330,spjxc,d_tjll3,,未建对象：原 SQL 试跑失败记录,0,,,DEPT;JS;KS,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_tjll3_ward:331,331,spjxc,d_tjll3_ward,,未建对象：原 SQL 试跑失败记录,0,,,dept;js;ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_total_costs_for_zlh:332,332,spjxc,d_total_costs_for_zlh,,已建对象，业务待验收,1,299,301,ds_end;ds_start,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_wstj_4:333,333,spjxc,d_wstj_4,,已建对象，业务待验收,1,300,302,DT_YEAR,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_zkzb_query:334,334,spjxc,d_zkzb_query,,未建对象：原 SQL 试跑失败记录,0,,,adt_edt;adt_sdt,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_zrzmzbb:335,335,spjxc,d_zrzmzbb,,已建对象，业务待验收,1,301,303,ldt_js;ldt_ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_zrzmzbb1:336,336,spjxc,d_zrzmzbb1,,已建对象，业务待验收,1,302,304,ldt_js;ldt_ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_zrzmzbb_20210821:337,337,spjxc,d_zrzmzbb_20210821,,已建对象，业务待验收,1,303,305,ldt_js;ldt_ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:d_zrzmzbb_20210821_modify:338,338,spjxc,d_zrzmzbb_20210821_modify,,已建对象，业务待验收,1,304,306,ldt_js;ldt_ks,True,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,已有_待纠偏,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06
+srd339:spjxc:dddw_dept_dict:339,339,spjxc,dddw_dept_dict,,未建对象：原 SQL 试跑失败记录,0,,,,False,,,待确认,,,已盘点_round4提取记录,待核实,待还原,待确认,未建,未验证,未验证,未验证,本计划未发布,,,,,,P0刷新后P2核实来源及业务入口,2026-10-06

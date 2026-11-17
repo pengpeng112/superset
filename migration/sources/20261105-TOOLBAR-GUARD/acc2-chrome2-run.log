@@ -1,0 +1,36 @@
+[23:49:13] browser chrome2 version=Chrome/156.0.8078.81 viewport=1920x1080 heavy=True
+[23:49:14] download behavior set -> F:\python\superset\migration\sources\20261105-TOOLBAR-GUARD\downloads
+[23:49:20] PASS login | logged in as admin
+[23:49:23] PASS page35-summary | summary='共返回 10 行数据 · 耗时 0.3 秒' chart=ok:10:50000 0.0s
+[23:49:23] PASS page35-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[23:49:23] PASS page35-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[23:49:23] PASS page35-no-overflow | scrollWidth overflow=False
+[23:49:27] PASS page45-summary | summary='共返回 10 行数据 · 耗时 0.3 秒' chart=ok:10:50000 0.0s
+[23:49:28] PASS page45-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[23:49:28] PASS page45-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[23:49:28] PASS page45-no-overflow | scrollWidth overflow=False
+[23:49:31] PASS page50-summary | summary='共返回 10 行数据 · 耗时 0.3 秒' chart=ok:10:50000 0.0s
+[23:49:31] PASS page50-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[23:49:31] PASS page50-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[23:49:31] PASS page50-no-overflow | scrollWidth overflow=False
+[23:49:53] PASS page61-summary | summary='共返回 10 行数据 · 耗时 19.1 秒' chart=ok:10:100000 18.0s
+[23:49:53] PASS page61-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[23:49:53] PASS page61-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[23:49:53] PASS page61-no-overflow | scrollWidth overflow=False
+[23:49:53] FAIL page61-firstload | first-open 21.3s (<20s) state=ok:10:100000
+[23:49:58] PASS page65-summary | summary='共返回 24,151 行数据 · 耗时 4.0 秒' chart=ok:24151:50000 2.3s
+[23:49:58] PASS page65-buttons | xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False
+[23:49:58] PASS page65-versions | ui=20261105f10 guard=20261105g4 dates=20261104d13
+[23:49:58] PASS page65-no-overflow | scrollWidth overflow=False
+[23:50:08] FAIL density-toggle | compact h=42 ss=compact -> standard h=59 ss=standard
+[23:50:11] PASS page65-day-query | draft=picked:2026-09-16:2026-09-16 state=ok:4444:50000 1.4s summary='共返回 4,444 行数据 · 耗时 1.0 秒'
+[23:53:14] FAIL page65-xlsx-download | no file; note=共返回 4,444 行数据 · 耗时 1.0 秒
+[23:56:17] FAIL page65-csv-download | no file; note=共返回 4,444 行数据 · 耗时 1.0 秒
+[23:59:22] FAIL page35-xlsx-download | no file; note=✅ 已导出 月工作报表（二）新_20261107.xlsx
+[00:02:25] FAIL page35-csv-download | no file; note=✅ 已导出 月工作报表（二）新_20261107.csv
+[00:02:35] PASS page65-span30-blocked | msg='该明细表数据量极大（单月超 10 万行），单次查询跨度请勿超过 15 天（建议按单日或单周查询导出）。' lastBlock='该明细表数据量极大（单月超 10 万行），单次查询跨度请勿超过 15 天（建议按单日或单周查询导出）' before=ok:24151:50000 after=ok:24151:50000 draft=
+[00:02:47] PASS page65-span15-passed | draft=picked:2026-09-01:2026-09-15 state=ok:50000:50000 9s span={"days":15}
+[00:02:47] PASS page65-truncation-banner | banner=True rows=50000 limit=50000 text='⚠️ 数据截断警告：当前查询结果已达到单次上限（50,000 行），超出的明细已被截断！为保证数据完整，请将左侧【日期范'
+[00:02:49] PASS page65-banner-removed | after requery banner=False state=ok:4444:50000
+[00:02:55] PASS page61-week-query | draft=picked:2026-09-01:2026-09-07 state=ok:10:100000 1s summary='共返回 10 行数据 · 耗时 0.3 秒'
+[00:02:57] results -> F:\python\superset\migration\sources\20261105-TOOLBAR-GUARD\acc2-chrome2-1920x1080.json (33 rows, 6 fail)

@@ -1,0 +1,93 @@
+{
+  "日期": "2026-10-11",
+  "类型": "单方执行计划复核与提示词交接",
+  "生产业务实施": "未执行",
+  "说明": "本轮独立冻结；旧round-9记录保留当时版本含义，不覆盖旧归档。",
+  "文件": [
+    {
+      "路径": "migration/batches/质控护理九报表/执行台账.csv",
+      "sha256": "0a83f97e9c183fe83f5bfe5fde37ef07e5c6bbf621ca16115ccf787cd7afa404",
+      "bytes": 3497
+    },
+    {
+      "路径": "migration/batches/质控护理九报表/阶段任务清单.csv",
+      "sha256": "b04fb38974806cb4118f410fb95d67eb50febf554c1b566cc1712ff3c6cd87dc",
+      "bytes": 4990
+    },
+    {
+      "路径": "migration/README.md",
+      "sha256": "ac0d216dfc7a8083c4f83e195ca3df6133ca03322a2127c9ca5ec338299d1ff9",
+      "bytes": 2947
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE-R2/preflight.out",
+      "sha256": "c7414b05e05034c06cb0f91433121175ca2d132f8a1e129129406e1e4f1f3bf7",
+      "bytes": 381
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE-R2/production_recheck.json",
+      "sha256": "a9949823b7c1115eebb0b0bab1dc85b7ed090686c95cadfc71aabb6f440431bf",
+      "bytes": 59225
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE-R2/recheck.sh",
+      "sha256": "3d05586f8ffc3910f605ae93854435aac9fac8dc68921bea309257d10fe90c99",
+      "bytes": 180
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE-R2/revise_plan.py",
+      "sha256": "b7017c1831905178981c12ddd13978873ea0e20ba0e89d5ba0179c12c14a656c",
+      "bytes": 15514
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE-R2/validate_freeze.py",
+      "sha256": "29ed1787724cc2adf184f73745d444fb8fa74de6a9ed2e979196d4ea10a08e4f",
+      "bytes": 4465
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE-R2/交付验证.json",
+      "sha256": "2b79bf7a236e633c191c44c53fb3f3292d0892777bced9a73e59628c92259c73",
+      "bytes": 634
+    },
+    {
+      "路径": "migration/sources/20261011-QC-NURSE-R2/复查差异.json",
+      "sha256": "b220efc6914e82dbcbcd2b11d662bfc2732f7101a8c921c5f6c24bce250a0f02",
+      "bytes": 568
+    },
+    {
+      "路径": "migration/执行进度.md",
+      "sha256": "80b049d033dcfd3e9cabd86c328ce5495860c250c7cb6d2be987d6ed739f5254",
+      "bytes": 38833
+    },
+    {
+      "路径": "migration/生产系统改进长任务计划-v1-多方互查修订版.md",
+      "sha256": "6a4614e396c670274689519cc2d31d9a9212b29a13a16ff060129ff2331a7af5",
+      "bytes": 18989
+    },
+    {
+      "路径": "migration/质控科与护理部9张报表-交给执行AI的提示词.md",
+      "sha256": "09e153d0edd42a4b21d8ed8d3735a422a3ec823f5a1ffba5f964529ea6074218",
+      "bytes": 6202
+    },
+    {
+      "路径": "migration/质控科与护理部9张报表迁移复核长任务生产计划-v1.1-执行复核修订版.md",
+      "sha256": "d211ce5a041aaf1f300928890e70fd5f3f14bbd5ec9682c7f2d1f54342cb25e7",
+      "bytes": 48845
+    },
+    {
+      "路径": "review/round-10/最终报告.md",
+      "sha256": "26e36556ab7e2b0fe941653267c7d8e5e14ca0edaf0f89f9b7d03133e5e55351",
+      "bytes": 5291
+    },
+    {
+      "路径": "review/round-9/哈希记录.json",
+      "sha256": "362dfdf935e93fcdb5b572f6234cb2ae8bc905310a23323952260cc69ef54952",
+      "bytes": 10511
+    },
+    {
+      "路径": "迁移完成情况与待办说明.md",
+      "sha256": "8ae237943978d75dd55d4f7a22c20d0de2ad7e0b312ae34028a1acbdcc8148df",
+      "bytes": 10734
+    }
+  ]
+}

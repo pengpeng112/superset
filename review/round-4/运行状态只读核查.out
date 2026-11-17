@@ -1,0 +1,94 @@
+{
+  "captured_at_utc": "2026-10-06T02:03:05.952057+00:00",
+  "containers": [
+    {
+      "name": "superset-postgres",
+      "status": "running",
+      "health": "healthy",
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "name": "superset-redis",
+      "status": "running",
+      "health": "healthy",
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "name": "superset-web",
+      "status": "running",
+      "health": "healthy",
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "name": "superset-worker",
+      "status": "running",
+      "health": null,
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "name": "superset-beat",
+      "status": "running",
+      "health": null,
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "name": "superset-nginx",
+      "status": "running",
+      "health": null,
+      "restart_policy": "unless-stopped"
+    }
+  ],
+  "his_tunnel_status": "active",
+  "backup_files": [
+    {
+      "name": "superset-2026-10-05.dump",
+      "bytes": 542434,
+      "modified_at_utc": "2026-10-04T18:00:02.468027+00:00"
+    },
+    {
+      "name": "superset-2026-10-06.dump",
+      "bytes": 864798,
+      "modified_at_utc": "2026-10-05T18:00:02.531027+00:00"
+    }
+  ],
+  "query_timeout_config_lines": [
+    "ROW_LIMIT = 50000",
+    "SQL_MAX_ROW = 100000",
+    "TABLE_VIZ_MAX_ROW_SERVER = 500000",
+    "DEFAULT_SQLLAB_LIMIT = 1000",
+    "SQLLAB_TIMEOUT = 120"
+  ],
+  "scheduled_jobs": [
+    {
+      "schedule": "0 2 * * *",
+      "backup": true,
+      "user_sync": false
+    },
+    {
+      "schedule": "0 6 * * *",
+      "backup": false,
+      "user_sync": true
+    }
+  ],
+  "migration_log_facts": [
+    "BATCH_DONE 209 of 339",
+    "DASHBOARD 老HIS·cate_d 201",
+    "DASHBOARD 老HIS·clinic 201",
+    "DASHBOARD 老HIS·dis_report 201",
+    "DASHBOARD 老HIS·disanalyse 201",
+    "DASHBOARD 老HIS·djdesign 201",
+    "DASHBOARD 老HIS·drug 201",
+    "DASHBOARD 老HIS·inp 201",
+    "DASHBOARD 老HIS·medicaldata 201",
+    "DASHBOARD 老HIS·mrdatainput_dw 201",
+    "DASHBOARD 老HIS·mrpublic 201",
+    "DASHBOARD 老HIS·p_comm_print 201",
+    "DASHBOARD 老HIS·pubcomm 201",
+    "DASHBOARD 老HIS·spjxc 201",
+    "RETRY_DONE 3 of 86",
+    "APPEND 老HIS·disanalyse 500 2",
+    "APPEND 老HIS·dis_report 500 1",
+    "SUMMARY {\"ok\": 3, \"fail\": 86}"
+  ]
+}
+{"oracle_11g_rownum_patch_present": true}

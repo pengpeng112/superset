@@ -1,0 +1,25 @@
+{
+ "browser": "Chrome/156.0.8078.81",
+ "phase": "cold39",
+ "rows": [
+  {
+   "id": 39,
+   "first_dom_ms": 2197,
+   "full_ms": 16262,
+   "posts": 2,
+   "hits": 0,
+   "judged": 2,
+   "slowest_req_ms": 12058,
+   "rendered": 1,
+   "mr": false,
+   "table": false,
+   "rows": 0,
+   "err": false,
+   "sum": "共返回 765 行数据（约） · 耗时 13.0 秒",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  }
+ ]
+}

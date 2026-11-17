@@ -1,0 +1,232 @@
+[
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "login-admin",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as admin"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-bi-section",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ver=20261107h8 items=[{\"t\": \"全院医疗运营核心指标总览\", \"h\": \"/superset/dashboard/72/\"}, {\"t\": \"门急诊流量与窗口负荷监测中心\", \"h\": \"/superset/dashboard/73/\"}, {\"t\": \"手术与住院医疗质量可视化分析\", \"h\": \"/supers secs=['可视化驾驶舱', '报表分类']"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-bi-order",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "sections=['可视化驾驶舱', '报表分类']"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-bi-click",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-showcase",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "ver=20261107h8 cards=null cardH=None border=None bg=None"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-render",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "charts=8 rendered=5 loading=0 other=3 errCards=3 firstAllRendered=60.2s wall=64.1s"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-fast",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "firstAllRendered=60.2s (<10s)"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-page",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "biPage=True reportPage=True crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' holders=9"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "crumb=报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-linkage",
+    "verify_point": "VP3",
+    "result": "FAIL",
+    "detail": "pick=picked apply=clicked changedCharts=0/8 rowsBefore={\"371\": 1, \"372\": 1, \"373\": 1, \"374\": 1, \"375\": 15, \"376\": 15, \"377\": 0, \"378\":  rowsAfter={\"371\": 1, \"372\": 1, \"373\": 1, \"374\": 1, \"375\": 15, \"376\": 15, \"377\": 0, \"378\": "
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-render",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "charts=7 rendered=5 loading=0 other=2 errCards=2 firstAllRendered=60.2s wall=64.2s"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-fast",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "firstAllRendered=60.2s (<10s)"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-page",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "biPage=True reportPage=True crumb='报表目录 / 可视化驾驶舱 / 门急诊流量与窗口负荷监测中心（BI 驾驶舱）' holders=8"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "crumb=报表目录 / 可视化驾驶舱 / 门急诊流量与窗口负荷监测中心（BI 驾驶舱）"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-render",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "charts=5 rendered=2 loading=0 other=3 errCards=3 firstAllRendered=60.2s wall=64.7s"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-fast",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "firstAllRendered=60.2s (<10s)"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-page",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "biPage=True reportPage=True crumb='报表目录 / 可视化驾驶舱 / 手术与住院医疗质量可视化分析（BI 驾驶舱）' holders=6"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "crumb=报表目录 / 可视化驾驶舱 / 手术与住院医疗质量可视化分析（BI 驾驶舱）"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "login-003158",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as 003158"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-bi-section",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ver=20261107h8 items=[{\"t\": \"全院医疗运营核心指标总览\", \"h\": \"/superset/dashboard/72/\"}, {\"t\": \"门急诊流量与窗口负荷监测中心\", \"h\": \"/superset/dashboard/73/\"}, {\"t\": \"手术与住院医疗质量可视化分析\", \"h\": \"/supers secs=['可视化驾驶舱', '报表分类']"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-bi-order",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "sections=['可视化驾驶舱', '报表分类']"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-bi-click",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/"
+  },
+  {
+    "browser": "biA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-showcase",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "ver=20261107h8 cards=null cardH=None border=None bg=None"
+  }
+]

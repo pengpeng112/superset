@@ -1,0 +1,95 @@
+{
+ "browser": "Chrome/157.0.8103.51",
+ "checks": [
+  {
+   "check": "V0_version",
+   "pass": true,
+   "detail": {
+    "v": "20261117h13",
+    "native33_before": "0",
+    "md_links": 57
+   }
+  },
+  {
+   "check": "V1_init_collapsed",
+   "pass": true,
+   "detail": {
+    "exists": true,
+    "open": "0",
+    "toggle": "▸",
+    "links": 10,
+    "visible": false,
+    "rowToggle": "row_toggle=1"
+   }
+  },
+  {
+   "check": "V2_desc_click_expands",
+   "pass": true,
+   "detail": {
+    "open": "1",
+    "visible": true,
+    "flag_alive": true,
+    "url": "/superset/dashboard/34/"
+   }
+  },
+  {
+   "check": "V3_name_click_toggles",
+   "pass": true,
+   "detail": {
+    "open": "1",
+    "flag_alive": true,
+    "url": "/superset/dashboard/34/"
+   }
+  },
+  {
+   "check": "V4_collapse_sticks",
+   "pass": true,
+   "detail": {
+    "exists": true,
+    "open": "0",
+    "toggle": "▸",
+    "links": 10,
+    "visible": false,
+    "rowToggle": "row_toggle=1"
+   }
+  },
+  {
+   "check": "V5_hashchange_expands",
+   "pass": true,
+   "detail": {
+    "exists": true,
+    "open": "1",
+    "toggle": "▾",
+    "links": 10,
+    "visible": true,
+    "rowToggle": "row_toggle=1"
+   }
+  },
+  {
+   "check": "V6_native33_untouched",
+   "pass": false,
+   "detail": {
+    "kyb_open_after_collapse": "0",
+    "native33_before": "0",
+    "native33_open": "0",
+    "native33_links": 6,
+    "native33_flipped": false
+   }
+  },
+  {
+   "check": "V7_home_entry_landing",
+   "pass": true,
+   "detail": {
+    "url": "/superset/dashboard/34/",
+    "state": {
+     "exists": true,
+     "open": "1",
+     "toggle": "▾",
+     "links": 10,
+     "visible": true,
+     "rowToggle": "row_toggle=1"
+    }
+   }
+  }
+ ]
+}

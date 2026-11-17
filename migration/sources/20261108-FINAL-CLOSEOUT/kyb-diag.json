@@ -1,0 +1,78 @@
+{
+ "browser": "Chrome/157.0.8103.51",
+ "checks": {
+  "D1_init": {
+   "exists": true,
+   "open": "0",
+   "toggle": "▸",
+   "toggleAria": "false",
+   "links": 10,
+   "childText": "抗菌办·门急诊处方查询查询条件：开单日期抗菌办·住院检验结果查询查询条件：出院日期抗菌办·抗菌药物消耗查询（季度）查询条",
+   "head": "DIV"
+  },
+  "D2_toggle_expand": {
+   "exists": true,
+   "open": "1",
+   "toggle": "▾",
+   "toggleAria": "true",
+   "links": 10,
+   "childText": "抗菌办·门急诊处方查询查询条件：开单日期抗菌办·住院检验结果查询查询条件：出院日期抗菌办·抗菌药物消耗查询（季度）查询条",
+   "head": "DIV"
+  },
+  "D3_name_click": {
+   "collapsed_before": {
+    "exists": true,
+    "open": "0",
+    "toggle": "▸",
+    "toggleAria": "false",
+    "links": 10,
+    "childText": "抗菌办·门急诊处方查询查询条件：开单日期抗菌办·住院检验结果查询查询条件：出院日期抗菌办·抗菌药物消耗查询（季度）查询条",
+    "head": "DIV"
+   },
+   "after": {
+    "exists": true,
+    "open": "1",
+    "toggle": "▾",
+    "toggleAria": "true",
+    "links": 10,
+    "childText": "抗菌办·门急诊处方查询查询条件：开单日期抗菌办·住院检验结果查询查询条件：出院日期抗菌办·抗菌药物消耗查询（季度）查询条",
+    "head": "DIV"
+   },
+   "url": "/superset/dashboard/34/"
+  },
+  "D4_desc_click": {
+   "collapsed_before": {
+    "exists": true,
+    "open": "0",
+    "toggle": "▸",
+    "toggleAria": "false",
+    "links": 10,
+    "childText": "抗菌办·门急诊处方查询查询条件：开单日期抗菌办·住院检验结果查询查询条件：出院日期抗菌办·抗菌药物消耗查询（季度）查询条",
+    "head": "DIV"
+   },
+   "after": {
+    "exists": true,
+    "open": "0",
+    "toggle": "▸",
+    "toggleAria": "false",
+    "links": 10,
+    "childText": "抗菌办·门急诊处方查询查询条件：开单日期抗菌办·住院检验结果查询查询条件：出院日期抗菌办·抗菌药物消耗查询（季度）查询条",
+    "head": "DIV"
+   }
+  },
+  "D5_home_entry": {
+   "sidebar_item": true,
+   "after_nav": {
+    "exists": true,
+    "open": "1",
+    "toggle": "▾",
+    "toggleAria": "true",
+    "links": 10,
+    "childText": "抗菌办·门急诊处方查询查询条件：开单日期抗菌办·住院检验结果查询查询条件：出院日期抗菌办·抗菌药物消耗查询（季度）查询条",
+    "head": "DIV"
+   },
+   "url": "/superset/dashboard/34/"
+  }
+ },
+ "first_names": "抗菌办·门急诊处方查询查询条件：开单日期|抗菌办·住院检验结果查询查询条件：出院日期|抗菌办·抗菌药物消耗查询（季度）查询条件：统计季度"
+}

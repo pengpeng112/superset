@@ -1,0 +1,322 @@
+[
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "login-admin",
+    "result": "PASS",
+    "detail": "logged in as admin"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-bi-section",
+    "result": "PASS",
+    "detail": "items=[{\"t\": \"全院医疗运营核心指标总览\", \"h\": \"/superset/dashboard/72/\"}, {\"t\": \"门急诊流量与窗口负荷监测中心\", \"h\": \"/superset/dashboard/73/\"}, {\"t\": \"手术与住院医疗质量可视化分析\", \"h\" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-bi-order",
+    "result": "PASS",
+    "detail": "sections=['可视化驾驶舱', '报表分类']"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-search+showcase",
+    "result": "PASS",
+    "detail": "search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-card-style",
+    "result": "PASS",
+    "detail": "h=56 borderLeft=3px rgb(22, 119, 200)"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-card-click",
+    "result": "PASS",
+    "detail": "click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "slug72-crumb",
+    "result": "PASS",
+    "detail": "crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-render",
+    "result": "PASS",
+    "detail": "charts=8 rendered=8 loading=0 other=0 errCards=0"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-cold<10s",
+    "result": "PASS",
+    "detail": "cold=3.5s"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-hot",
+    "result": "PASS",
+    "detail": "hot=2.9s rendered=8/8"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash72-linkage",
+    "result": "PASS",
+    "detail": "pick=picked:range apply=clicked 371: 54619→56279 373:5389"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-render",
+    "result": "PASS",
+    "detail": "charts=7 rendered=7 loading=0 other=0 errCards=0"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-cold<10s",
+    "result": "PASS",
+    "detail": "cold=7.9s"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-hot",
+    "result": "PASS",
+    "detail": "hot=2.9s rendered=7/7"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-linkage-1106",
+    "result": "PASS",
+    "detail": "pick=picked:range apply=clicked 379=1852(应1852) 381=99"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash73-linkage-2days",
+    "result": "PASS",
+    "detail": "379: 11-06=1852 → 11-05=1963（须不同且均非空）"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-render",
+    "result": "PASS",
+    "detail": "charts=6 rendered=6 loading=0 other=0 errCards=0"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-cold<10s",
+    "result": "PASS",
+    "detail": "cold=7.0s"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-hot",
+    "result": "PASS",
+    "detail": "hot=2.9s rendered=6/6"
+  },
+  {
+    "browser": "chrome",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dash74-linkage",
+    "result": "PASS",
+    "detail": "pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={\"住院\": 507, \"门诊\": 129} → 9月 386=1997 392=516"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "login-003158",
+    "result": "PASS",
+    "detail": "logged in as 003158"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-bi-section",
+    "result": "PASS",
+    "detail": "items=[{\"t\": \"全院医疗运营核心指标总览\", \"h\": \"/superset/dashboard/72/\"}, {\"t\": \"门急诊流量与窗口负荷监测中心\", \"h\": \"/superset/dashboard/73/\"}, {\"t\": \"手术与住院医疗质量可视化分析\", \"h\" secs=['可视化驾驶舱', '报表分类'] biColor=rgb(22, 119, 200)"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-bi-order",
+    "result": "PASS",
+    "detail": "sections=['可视化驾驶舱', '报表分类']"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-search+showcase",
+    "result": "PASS",
+    "detail": "search=True input=True showcase=True cards=3 h=56 border=3px rgb(22, 119, 200) order=search>showcase>ul"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-card-style",
+    "result": "PASS",
+    "detail": "h=56 borderLeft=3px rgb(22, 119, 200)"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-card-click",
+    "result": "PASS",
+    "detail": "click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "slug72-crumb",
+    "result": "PASS",
+    "detail": "crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' biPage=True"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash72-render",
+    "result": "PASS",
+    "detail": "charts=8 rendered=8 loading=0 other=0 errCards=0"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash72-cold<10s",
+    "result": "PASS",
+    "detail": "cold=4.6s"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash72-hot",
+    "result": "PASS",
+    "detail": "hot=2.9s rendered=8/8"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash72-linkage",
+    "result": "PASS",
+    "detail": "pick=picked:range apply=clicked 371: 54619→56279 373:5389"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash73-render",
+    "result": "PASS",
+    "detail": "charts=7 rendered=7 loading=0 other=0 errCards=0"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash73-cold<10s",
+    "result": "PASS",
+    "detail": "cold=6.5s"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash73-hot",
+    "result": "PASS",
+    "detail": "hot=2.9s rendered=7/7"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash73-linkage-1106",
+    "result": "PASS",
+    "detail": "pick=picked:range apply=clicked 379=1852(应1852) 381=99"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash73-linkage-2days",
+    "result": "PASS",
+    "detail": "379: 11-06=1852 → 11-05=1963（须不同且均非空）"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash74-render",
+    "result": "PASS",
+    "detail": "charts=6 rendered=6 loading=0 other=0 errCards=0"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash74-cold<10s",
+    "result": "PASS",
+    "detail": "cold=6.4s"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash74-hot",
+    "result": "PASS",
+    "detail": "hot=2.9s rendered=6/6"
+  },
+  {
+    "browser": "chrome",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dash74-linkage",
+    "result": "PASS",
+    "detail": "pick=picked:range apply=clicked 默认窗 386=507(应507) 392=129(应129) 饼图={\"住院\": 507, \"门诊\": 129} → 9月 386=1997 392=516"
+  }
+]

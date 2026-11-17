@@ -1,0 +1,702 @@
+[
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "login",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as admin"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-sidebar",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "nav=True items=10"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-nav-kyb",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "kyb=True label='抗菌药物监测10 项' (expect True)"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-search-input",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "input#hh-report-search"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-search-手术",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-search-月报",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-search-医嘱",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "home-search-jump",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "href=/superset/dashboard/65/ landed=/superset/dashboard/65/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-groups",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-kyb-group",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "kyb group=True (expect True)"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-search-input",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "dir search wrap"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-kyb-10",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "reports=10 hrefs ok=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-search-手术",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-search-月报",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-search-医嘱",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=1 expanded=True rowsOk=True shown=1 ids=kyb"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-search-clear",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "all visible=True all rows=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "dir34-kyb-open-61",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "landed=/superset/dashboard/61/ reportPage=True queryUi=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page2-classes",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hh-report-page=True hh-query-ui=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page2-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "count=1 crumb='报表目录 / 病案专项 / 病案首页非医嘱离院与死亡明细' link=/superset/dashboard/34/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page2-hdt",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hdt pickers=1"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-classes",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hh-report-page=True hh-query-ui=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-hdt",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hdt pickers=1"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-classes",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hh-report-page=True hh-query-ui=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-hdt",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hdt pickers=1"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page70-classes",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hh-report-page=True hh-query-ui=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page70-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page70-hdt",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hdt pickers=1"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "login",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as 001643"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "home-sidebar",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "nav=True items=10"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "home-nav-kyb",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "kyb=True label='抗菌药物监测10 项' (expect True)"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "home-search-input",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "input#hh-report-search"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "home-search-手术",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=5 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "home-search-月报",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "home-search-医嘱",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=1 empty=False 抗菌办·住院医嘱查询抗菌药物监测 · 医嘱日期"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "home-search-jump",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "href=/superset/dashboard/65/ landed=/superset/dashboard/65/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-groups",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "groups=9 ids=33,26,25,27,28,29,30,31,kyb"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-kyb-group",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "kyb group=True (expect True)"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-search-input",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "dir search wrap"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-kyb-10",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "reports=10 hrefs ok=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-search-手术",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=3 expanded=True rowsOk=True shown=5 ids=33,29,kyb"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-search-月报",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-search-医嘱",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=1 expanded=True rowsOk=True shown=1 ids=kyb"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-search-clear",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "all visible=True all rows=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "dir34-kyb-open-61",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "landed=/superset/dashboard/61/ reportPage=True queryUi=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page61-classes",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hh-report-page=True hh-query-ui=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page61-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·门急诊处方查询' link=/superset/dashboard/34/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page61-hdt",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hdt pickers=1"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page65-classes",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hh-report-page=True hh-query-ui=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page65-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·住院医嘱查询' link=/superset/dashboard/34/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page65-hdt",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hdt pickers=1"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page70-classes",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hh-report-page=True hh-query-ui=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page70-crumb",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "count=1 crumb='报表目录 / 抗菌药物监测 / 抗菌办·生命体征查询' link=/superset/dashboard/34/"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "001643",
+    "viewport": "1920x1080",
+    "check": "page70-hdt",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "hdt pickers=1"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "login",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as 003158"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-sidebar",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "nav=True items=9"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-nav-kyb",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "kyb=False label='' (expect False)"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-search-input",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "input#hh-report-search"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-search-手术",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=4 empty=False 手术量统计质控科报表 · 日期+门诊/住院;门诊手术数据提取手术 · 月份;科室手术质量分析手术 · 月份+科室"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-search-月报",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=7 empty=False 护理工作量月报表护理部报表 · 月份;月工作报表（新）月报 · 日期;月工作报表（二）新月报 · 月份"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "home-search-医嘱",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "rows=0 empty=True "
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-groups",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "groups=8 ids=33,26,25,27,28,29,30,31"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-kyb-group",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "kyb group=False (expect False)"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-search-input",
+    "verify_point": "VP1/VP3",
+    "result": "PASS",
+    "detail": "dir search wrap"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-search-手术",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=2 expanded=True rowsOk=True shown=4 ids=33,29"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-search-月报",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=2 expanded=True rowsOk=True shown=7 ids=26,25"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-search-医嘱",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "visible=0 expected for guest"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "dir34-search-clear",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "all visible=True all rows=True"
+  },
+  {
+    "browser": "chrome",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "003158",
+    "viewport": "1920x1080",
+    "check": "guest-direct-61-denied",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "filterBar=False hdt=0 chartTable=False marker=not found"
+  }
+]

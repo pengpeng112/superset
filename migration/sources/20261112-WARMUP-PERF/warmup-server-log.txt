@@ -1,0 +1,45 @@
+/bin/bash:行1: 15：未找到命令
+[2026-11-14 17:31:13] warmup-2026-11-14-173113 start args=
+[2026-11-14 17:31:14] warmup-2026-11-14-173113 [warmup] start base=http://superset-web:8088 user=admin templates=39 force=True
+[2026-11-14 17:31:15] warmup-2026-11-14-173113 [warmup] d72/s373/big_number_total ok 966ms rows=1 key=1880418a4e1f
+[2026-11-14 17:31:19] warmup-2026-11-14-173113 [warmup] d72/s372/big_number_total ok 2163ms rows=1 key=5937f86c912c
+[2026-11-14 17:31:23] warmup-2026-11-14-173113 [warmup] d72/s371/big_number_total ok 2116ms rows=1 key=5b3b6b790bcb
+[2026-11-14 17:31:27] warmup-2026-11-14-173113 [warmup] d72/s375/echarts_timeseries_bar ok 2170ms rows=15 key=c03c0d6072e6
+[2026-11-14 17:31:30] warmup-2026-11-14-173113 [warmup] d72/s376/echarts_timeseries_bar ok 615ms rows=15 key=bdeff1615cae
+[2026-11-14 17:31:33] warmup-2026-11-14-173113 [warmup] d72/s374/big_number_total ok 594ms rows=1 key=eaa504f36542
+[2026-11-14 17:31:35] warmup-2026-11-14-173113 [warmup] d72/s377/pie ok 631ms rows=5 key=3e5c322167f4
+[2026-11-14 17:31:38] warmup-2026-11-14-173113 [warmup] d72/s378/table ok 783ms rows=50 key=26b7b98e16d5
+[2026-11-14 17:31:42] warmup-2026-11-14-173113 [warmup] d72/sft/filter_time ok 2139ms rows=1 key=2ffce12c3db3
+[2026-11-14 17:31:45] warmup-2026-11-14-173113 [warmup] d73/s380/big_number_total ok 854ms rows=1 key=ae55c91b3256
+[2026-11-14 17:31:48] warmup-2026-11-14-173113 [warmup] d73/s381/big_number_total ok 906ms rows=1 key=a6f37ee91d4a
+[2026-11-14 17:31:51] warmup-2026-11-14-173113 [warmup] d73/s379/big_number_total ok 778ms rows=1 key=eaba95ce14dd
+[2026-11-14 17:31:58] warmup-2026-11-14-173113 [warmup] d73/s384/echarts_timeseries_line ok 5108ms rows=17 key=7ae2361f128a
+[2026-11-14 17:32:01] warmup-2026-11-14-173113 [warmup] d73/s385/table ok 783ms rows=17 key=6a65b70300b8
+[2026-11-14 17:32:07] warmup-2026-11-14-173113 [warmup] d73/s382/big_number_total ok 4909ms rows=1 key=270fb104bdaa
+[2026-11-14 17:32:10] warmup-2026-11-14-173113 [warmup] d73/s383/echarts_timeseries_line ok 780ms rows=17 key=d302d117932c
+[2026-11-14 17:32:13] warmup-2026-11-14-173113 [warmup] d73/sft/filter_time ok 1179ms rows=1 key=f742c650af83
+[2026-11-14 17:32:21] warmup-2026-11-14-173113 [warmup] d74/s392/big_number_total ok 5289ms rows=1 key=5d57b770f97d
+[2026-11-14 17:32:28] warmup-2026-11-14-173113 [warmup] d74/s389/pie ok 5534ms rows=2 key=a671eb17c19b
+[2026-11-14 17:32:31] warmup-2026-11-14-173113 [warmup] d74/s386/big_number_total ok 471ms rows=1 key=329e4cd5c1cc
+[2026-11-14 17:32:33] warmup-2026-11-14-173113 [warmup] d74/s387/echarts_timeseries_bar ok 465ms rows=15 key=b23c5165fa08
+[2026-11-14 17:32:36] warmup-2026-11-14-173113 [warmup] d74/s391/table ok 752ms rows=39 key=15939445cd6a
+[2026-11-14 17:32:39] warmup-2026-11-14-173113 [warmup] d74/s390/echarts_timeseries_bar ok 735ms rows=15 key=5659e83d7554
+[2026-11-14 17:32:41] warmup-2026-11-14-173113 [warmup] d74/sft/filter_time ok 458ms rows=1 key=4a6182194872
+[2026-11-14 17:32:44] warmup-2026-11-14-173113 [warmup] d32/s324/table ok 704ms rows=246 key=b5a82a16771e
+[2026-11-14 17:32:48] warmup-2026-11-14-173113 [warmup] d32/s342/table ok 2171ms rows=107 key=f363d67a81e0
+[2026-11-14 17:32:51] warmup-2026-11-14-173113 [warmup] d32/sft/filter_time ok 618ms rows=1 key=60346bc1ebd2
+[2026-11-14 17:32:54] warmup-2026-11-14-173113 [warmup] d35/s332/table ok 1605ms rows=10 key=163109df2e1a
+[2026-11-14 17:32:57] warmup-2026-11-14-173113 [warmup] d35/sft/filter_time ok 782ms rows=1 key=607c281f3d65
+[2026-11-14 17:33:01] warmup-2026-11-14-173113 [warmup] d41/s334/table ok 1604ms rows=10 key=e86531f891c0
+[2026-11-14 17:33:03] warmup-2026-11-14-173113 [warmup] d41/sft/filter_time ok 713ms rows=1 key=eb02ab1abfbc
+[2026-11-14 17:33:07] warmup-2026-11-14-173113 [warmup] d45/s333/table ok 1611ms rows=10 key=9ddce2635e77
+[2026-11-14 17:33:10] warmup-2026-11-14-173113 [warmup] d45/sft/filter_time ok 1388ms rows=1 key=2bbd113ed47f
+[2026-11-14 17:33:13] warmup-2026-11-14-173113 [warmup] d46/sft/filter_time ok 731ms rows=1 key=d67373750117
+[2026-11-14 17:33:17] warmup-2026-11-14-173113 [warmup] d46/s335/table ok 1524ms rows=10 key=bb245083e356
+[2026-11-14 17:33:20] warmup-2026-11-14-173113 [warmup] d60/sft/filter_time ok 1028ms rows=1 key=f91c41d2f351
+[2026-11-14 17:33:28] warmup-2026-11-14-173113 [warmup] d60/s337/table ok 6243ms rows=1 key=6690efe2cd11
+[2026-11-14 17:34:15] warmup-2026-11-14-173113 [warmup] d63/s347/table ok 45506ms rows=87 key=920024cee5d9
+[2026-11-14 17:35:00] warmup-2026-11-14-173113 [warmup] d63/sft/filter_time ok 42477ms rows=1 key=41a3234fe02e
+[2026-11-14 17:35:02] warmup-2026-11-14-173113 [warmup] SUMMARY json={"ts": "2026-11-14T09:35:02", "total": 39, "ok": 39, "fail": 0, "duration_secs": 228.2, "force": true, "circuit_break": false}
+[2026-11-14 17:35:02] warmup-2026-11-14-173113 end exit=0
+[exit 0]

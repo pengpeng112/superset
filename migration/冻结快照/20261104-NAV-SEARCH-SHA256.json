@@ -1,0 +1,116 @@
+{
+  "本地 offline-bundle（部署源）": {
+    "offline-bundle/custom/home-ui.js": "9c79c9b62a8255e6ac2017e48cbd746dfcfc018b6e497e086661bdce241ac7c6",
+    "offline-bundle/custom/report-ui.js": "d21a7fb9e9525c4d35c9f065df53e60af7f2fdce2c394e6d985e0f5768394af0",
+    "offline-bundle/custom/report-dates.js": "c5ce21460f36092eedb7e7ac93e8ae4377b95920db68fa31c1506089cd77f937",
+    "offline-bundle/nginx.conf": "a0029e16d2c93c776b4299be7a50f6215fa3dc18729f3b319f9799458ee06d5d"
+  },
+  "生产（写后快照核对一致）": {
+    "/home/superset/custom/home-ui.js": "9c79c9b62a8255e6ac2017e48cbd746dfcfc018b6e497e086661bdce241ac7c6",
+    "/home/superset/custom/report-ui.js": "d21a7fb9e9525c4d35c9f065df53e60af7f2fdce2c394e6d985e0f5768394af0",
+    "/home/superset/custom/report-dates.js": "c5ce21460f36092eedb7e7ac93e8ae4377b95920db68fa31c1506089cd77f937",
+    "/home/superset/nginx.conf": "a0029e16d2c93c776b4299be7a50f6215fa3dc18729f3b319f9799458ee06d5d"
+  },
+  "验收证据": {
+    "nav-search-acceptance.json": "6e0bb8c52810527704af2ca7b59bfa9689f6eddde13965b608b3126e9349e3ab",
+    "nav-search-acceptance.csv": "706676618ca4593ded70c8f196d5373b9587f9f2700ab69915caf7de90fca3ac",
+    "snapshot-before.json": "661e23802ed698496a892e271221facc826efe527d4bb1a94479fd9e36b54c8a",
+    "snapshot-after.json": "7b8a488a4494822b8e1c2a5eaefba6fdbe41732d29f0bf0966e13ee33a3b462f",
+    "snapshot.sh": "8b5c3887fbedff0de09c4c7a8ec0e443d330a54f4b832f13de127278b1365ebf",
+    "acc_run.py": "1f78ba5cecdbe1841d839c31acfc6fc267a3098bb922f718cce7e947e2278f94",
+    "最终报告.md": "6564008c9c583491ec155f0d17ab38bef66f8f99dc31e4d0f88b13774f68663d",
+    "layout_probe.py": "5e2783d249c964a36fad406023df4cf8695e127d6cf7b36c30e878d8af41934b",
+    "lp-chrome-1920.json": "db1d165663ea3b99a186b7a005d5fd6c92213d885ea95967f071c78be000c433",
+    "lp-chrome-1366.json": "9b281e0f5ea2f7b0ec9778c0fb5522d7f2e1cd2d388f81389978bc6786a8c57c",
+    "lp-chrome87-1920.json": "f478ab98135b932333a68f31cc4dec07d9d413e4d367fe2e4adb6069f88a10c4",
+    "lp-chrome87-1366.json": "6d64c3d9906a2e301e6bbcbfea0c52cac4ea9fefa676c600f9e32c2b701bed7a"
+  },
+  "版本基线（写前，迁移自生产备份）": {
+    "before-assets/home-ui.js(20261026h6)": "d401679cf5c0a4ef55f3f72afd85f3324ad49c2b32f0609d3dae711326ec169f",
+    "before-assets/report-ui.js(20261025f8)": "33808c7244946cc8303661ada28de9bec031400362768e1380de0471a9897344",
+    "before-assets/report-dates.js(20261022d12)": "bf8efb345930335ad3e8f2c8a851ff28e2edc9f4170bf1fa8e03884534555fa4",
+    "before-assets/nginx.conf(inode 47580611)": "b23e7a99644fea97920fa04949be23de1ec060e52ca16194e86f2cfd8b789841"
+  },
+  "元数据保护（写前=写后）": {
+    "G1_dashboards": {
+      "rows": 49,
+      "sha256": "bca57c8faa8fee398249441f45df4a3c827364e86b6316dd7a76ba1a9709156a"
+    },
+    "G1_dashboard_slices": {
+      "rows": 53,
+      "sha256": "f061c8ebbfdb1e27749be59246555ee89aa6326a62ac95d4af7a9c74d2a9c87b"
+    },
+    "G1_dashboard_roles": {
+      "rows": 42,
+      "sha256": "199d24c9aba54857d2cba1e0352dfd4c2118c9191879042f9ce0748f60682a56"
+    },
+    "G2_datasets": {
+      "rows": 4998,
+      "sha256": "e61adb40071c92685db845e67944596e09fd6a8a05b0c4b6e70b3c4c71e48594"
+    },
+    "G2_columns": {
+      "rows": 817,
+      "sha256": "28a9fa8c2a1831119feea23689a32c790487b1061bf5c593c31d8c59fc1adc5d"
+    },
+    "G2_metrics": {
+      "rows": 74,
+      "sha256": "87eca637032a61590d606d2f756df92c700565582bf0e906443afe9e473ee30a"
+    },
+    "G3_charts": {
+      "rows": 65,
+      "sha256": "c2417c58e4e4c28ad35e72c7f530e82c68f2d7cb0e84dc66474d9f81ac1fa876"
+    },
+    "G4_users": {
+      "rows": 2383,
+      "sha256": "e452e91609d8e3556eb58b6f62f6f6c9ad838b142b6dc13f7425f631961ba1a7"
+    },
+    "G5_roles": {
+      "rows": 342,
+      "sha256": "b69ec42557ac3182c395b8b7dc3109fb2a1d6fa0b10180ea44480c556da8553d"
+    },
+    "G5_user_role": {
+      "rows": 4767,
+      "sha256": "b4397218db282ff113c4628eede3e9b45bc2c1da11169ae42bee95c5d0a3cc5d"
+    },
+    "G6_permissions": {
+      "rows": 86,
+      "sha256": "440a9a430c582c3610b330c3c4a2b14bbfbe8e43f0e778af78368fbca14c03bb"
+    },
+    "G6_view_menu": {
+      "rows": 409,
+      "sha256": "0f2674b8587fd2e5e3266db2d720c79cf4e60c58e69a3e2566af4205cfae94f1"
+    },
+    "G6_perm_view": {
+      "rows": 541,
+      "sha256": "dd0ee3a1cc424f48999811173c37ae51d40b3603a472855f261443756305df3a"
+    },
+    "G6_perm_view_role": {
+      "rows": 410,
+      "sha256": "0e13f0ccdf905bc43d84ac4b4c3595714df8c9aee81c0bddc88bf52f836555ae"
+    },
+    "G7_rls_filters": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "G7_rls_tables": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "G7_rls_roles": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "G8_favstar": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  },
+  "_meta": {
+    "run": "20261104-NAV-SEARCH",
+    "date": "2026-11-07",
+    "nginx_inode": "47580611（写前=写后，原位写入）",
+    "browser_matrix": "Chrome156/Chromium87 × 1920x1080/1366x768 × admin/001643/003158 = 280/280 PASS",
+    "db_change": "零变化（counts+18组哈希）",
+    "layout_probe": "4组合全过：无横向溢出；侧栏项42px；目录行49px(h6基线)；搜索框260px；bg #f5f7fa"
+  }
+}

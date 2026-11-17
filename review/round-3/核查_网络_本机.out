@@ -1,0 +1,60 @@
+# 起草会话本机网络核查证据（补录，2026-10-04）
+
+> 补录说明（分歧表 B12）：round-3 方案初稿第 3 节引用的以下检查在起草会话中执行，
+> 原始输出当时仅存在于会话记录。现按会话输出原文补录存档，以闭合证据链。
+> 执行时间：2026-10-04 20:00 前后（方案.md 初稿起草前）；执行机：本机（192.168.2.105）。
+
+## 1. ping 10.10.8.73（Windows ping，2 包）
+
+```
+来自 10.20.255.30 的回复: 无法访问目标主机。
+
+10.10.8.73 的 Ping 统计信息:
+    数据包: 已发送 = 2，已接收 = 1，丢失 = 1 (50% 丢失)，
+```
+
+## 2. TCP 端口探测（Python socket，超时 4s）
+
+```
+10.10.8.73 22 closed/unreachable: TimeoutError
+10.10.8.73 2222 closed/unreachable: TimeoutError
+10.10.8.73 80 closed/unreachable: TimeoutError
+10.10.8.73 8080 closed/unreachable: TimeoutError
+10.10.8.73 8088 closed/unreachable: TimeoutError
+10.10.8.216 1521 OPEN
+10.10.8.216 22 closed/unreachable: ConnectionRefusedError
+```
+
+## 3. 本机网络（ipconfig 节选）
+
+```
+IPv4 地址 . . . . . . . . . . . . . : 172.29.64.1    （虚拟网卡）
+IPv4 地址 . . . . . . . . . . . . . : 192.168.2.105  （物理网卡）
+```
+
+## 4. 本机工具链（PATH 探测，which/version）
+
+```
+/usr/bin/ssh                      → 存在
+plink                             → /c/Program Files/PuTTY/plink
+paramiko 4.0.0                    → 已安装（数据资产平台 venv）
+Docker Desktop / PostgreSQL 17 / Node.js → 在 PATH（ls 证实）
+sshpass                           → 不存在
+codex-cli 0.160.0 / kimi 0.29.1 / grok 1.0.46 → 在席
+```
+
+## 5. paramiko SSH 登录尝试（核查_服务器.py 初版）
+
+```
+File "核查_服务器.py", line 34, in main
+    cli.connect(HOST, username=USER, password=PWD, timeout=12, ...)
+TimeoutError: timed out
+```
+
+## 结论（措辞按分歧表 B12 修正）
+
+- 10.10.8.73 的 22 端口超时 + 网关回复不可达：**SSH 服务不可达**，成因待查
+  （服务器关机 / IP 未配置 / 防火墙拦截 / 需跳板机，四选一未定），**不推断"整机不可达"**；
+- 10.10.8.216:1521 TCP 可达：仅证明端口开放，**不证明 Oracle 认证与 oracledb Thin 连接可用**
+  （认证验证在 P1-S6 由执行者完成）；
+- 本机存在到 10.10 网段的路由（1521 可达），10.10.8.73 的不可达更可能是主机侧原因。

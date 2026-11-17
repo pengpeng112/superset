@@ -1,0 +1,25 @@
+{
+ "browser": "Chrome/156.0.8078.81",
+ "phase": "x53",
+ "rows": [
+  {
+   "id": 53,
+   "first_dom_ms": 2281,
+   "full_ms": 5322,
+   "posts": 2,
+   "hits": 2,
+   "judged": 2,
+   "slowest_req_ms": 1022,
+   "rendered": 1,
+   "mr": false,
+   "table": true,
+   "rows": 10,
+   "err": false,
+   "sum": "共返回 20 行数据（约） · 耗时 0.4 秒",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  }
+ ]
+}

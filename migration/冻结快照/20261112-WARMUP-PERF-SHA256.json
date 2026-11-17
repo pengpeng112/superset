@@ -1,0 +1,84 @@
+{
+ "run_id": "20261112-WARMUP-PERF",
+ "date": "2026-11-14",
+ "summary": "慢报表防呆守卫闭环（report-guards g5：59 >31 天拦截+橙色软提示，39/58 软提示，62/65 g4 回归通过；ds281 默认窗核实近 7 天不动 SQL）+ 每日 06:15 缓存预热引擎（39 模板 force 重放，3 次真实运行 39/39、228~231s，浏览器 31/31 is_cached:true，TTL 86400s 实证）+ 生产一键体检（17/17 全绿）+ 冷/热双浏览器测速（63 号 47.3s→4.2s=11.2×）；元数据零非预期变更（86/77/52/2383/344/RLS0 写前=写后）",
+ "production_final": {
+  "custom/report-guards.js": {
+   "sha256": "9ff7e07e251635faaf84366984d12f0418811947be2947169ce051479e480cf6",
+   "version": "20261112g5（g4→g5：59 >31 天拦截 + 59/58/39 橙色软提示 + render 节流防冻结）"
+  },
+  "custom/report-dates.js": {
+   "sha256": "a26e751d008498868686edbd397e4f5ca2749093eec319d94388ac2633112141",
+   "version": "20261111d18（本批未动）"
+  },
+  "custom/report-ui.js": {
+   "sha256": "add99c189c9d2c08c070901a1b99f1c1498397b2833486f01abd97b558d18b17",
+   "version": "20261108f13（本批未动）"
+  },
+  "custom/home-ui.js": {
+   "sha256": "5f7e9115683e06ed952b91fb8c63acb9aafa6173f20c4cf90a398a91b7ec63e5",
+   "version": "20261111h10（本批未动）"
+  },
+  "custom/monthly-report.js": {
+   "sha256": "fe8abd70f38334ef6434058b1f86bccfedcbc215b440c4959c4a03bb4cecc460",
+   "version": "20261022m12（本批未动）"
+  },
+  "nginx.conf": {
+   "sha256": "2135b093141c60f530fd1c47ee000a34cf975182704aab202b950fdadb5b722e",
+   "version": "仅版本串 g4→g5，inode 47580611 保持"
+  },
+  "scripts/superset_cache_warmup.py": {
+   "sha256": "4978469fe67be67296bdc0af009bf2cb3fa004cf09438b011c08dc092cea78c1",
+   "note": "新增：预热引擎（39 模板串行 force 重放，锁+熔断）"
+  },
+  "scripts/run_warmup.sh": {
+   "sha256": "7b9fa73715b5855ba1bcb488a82453407dc3faa4ec42ad9b8422de35c9753037",
+   "note": "新增：cron 入口（.env 注入凭据，flock 防重入）"
+  },
+  "scripts/superset_health_check.sh": {
+   "sha256": "8d533f8dd4f8e1ee0ce8c4903c7edac8cbae40803e81b0bb42f6b4e5632e3534",
+   "note": "新增：只读一键体检（8 类 17 项）"
+  },
+  "scripts/warmup_templates.json": {
+   "sha256": "0b76fe74bc9bb84e934339b7141e8a9ea97a368456254800f996478a47a47657",
+   "note": "新增：39 条浏览器真实 QueryContext 模板"
+  }
+ },
+ "production_before": {
+  "custom/report-guards.js": "4faa3d390fbde65dd1d1ad761826ec3d70ac45c5a2f54b21a64f06eb8ee66718 (20261105g4)",
+  "nginx.conf": "dcad595397c91d65a9bafc06429d86ed756c42f8ac3b8a37f42aaa1176a26545 (inode 47580611)",
+  "server_backup_dir": "73:/home/superset/migration-private/20261112-WARMUP-PERF/before-assets/"
+ },
+ "ops_changes": {
+  "crontab_added": "15 6 * * * /bin/bash /home/superset/superset_home/scripts/run_warmup.sh >> /home/superset/logs/warmup.log 2>&1",
+  "redis": "db1 缓存（验收含 FLUSHDB；db0/2/3/4 未触碰）",
+  "containers": "零重启；仅 superset-nginx reload（inode 保持）"
+ },
+ "baseline_unchanged": {
+  "slices": 86,
+  "datasets": 77,
+  "dashboards": 52,
+  "published": 50,
+  "users": 2383,
+  "roles": 344,
+  "rls": 0
+ },
+ "batch_products_sha256": {
+  "wb_run.py": "557c4c319947fa23f412a9381cade8a5be6752a1c57e0ca6591002168a8771d0",
+  "guard_test.py": "ce4a276e3172e463e23142713db425761430e638dbbd5667410857a1a70e0870",
+  "bench-chrome-cold.json": "84bf49f65e7ab3475ddd37de23ac9919150976f21da045c46e1535a5ba6bd7ed",
+  "bench-chrome-hot.json": "ce71e12658caa69a113305d7937c01971bd18c0ae31982b5a503a0cd402ede3e",
+  "bench-c87-cold.json": "75412de6d612a934d0366c168ae982513f2d0cdbf5bc1271f2f701c3dff780fb",
+  "bench-c87-hot.json": "90c87c0e0868274321e541454e2d870895ed0ebd8fa47dd6839d0d9d939fe436",
+  "bench-chrome-cold39.json": "dbcec76fbe2651da89877bd6025bce0af29e08822eb937785646d1fe7d2c32ce",
+  "bench-c87-cold39.json": "88247171dbff8c4da18223c83fce0bbb3f30a22a0bbd80bda050ec62eaab96e0",
+  "templates-chrome.json": "a054f20dda448dba6f2ecd8af601c7606515f68b3d292492bde4c4cbcf672f4b",
+  "warmup_templates.json": "0b76fe74bc9bb84e934339b7141e8a9ea97a368456254800f996478a47a47657",
+  "guard-test-chrome.json": "20dcbb78a4513b8134ab0baf833d5d89bf956b47b2992aa58b97eb85d363258d",
+  "guard-test-c87.json": "8e43e709623782c893906da98d598e9f22340fd1bafea04b88b5b5ed4ccff641",
+  "warmup-benchmark.csv": "900e34ddafe10260357acd1f0b8fb923d094ebebdffa885429b0965253d17eb1",
+  "warmup-server-log.txt": "b36566a72519c0c366e50bf1132319dd9fdb27323f49128df8e30654b2fc3895",
+  "health-check-output.txt": "64c7ccebce009d867f9900f1b2b55fb4eb894cd29114000a66ee48503d74d25d",
+  "最终报告.md": "93ac4ea8e0b8eac5ffb60329148050e8b0a84864befea20a08d93bd04b0fc113"
+ }
+}

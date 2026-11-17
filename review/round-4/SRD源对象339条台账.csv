@@ -1,0 +1,345 @@
+﻿源序号,模块,数据窗口,提取标题（需核对）,状态,对象份数,数据集ID,图表ID,源参数名,源含compute控件
+1,cate_d,d_area_dict,,已建对象，业务待验收,1,96,98,,False
+2,cate_d,d_arrear_stat,欠费病人明细报表,已建对象，业务待验收,1,97,99,js;ks,True
+3,cate_d,d_banot,Pat Master Index Inp No,已建对象，业务待验收,1,98,100,dept;js;ks,False
+4,cate_d,d_banull,Pat Master Index Inp No,已建对象，业务待验收,1,99,101,dept;js;ks,False
+5,cate_d,d_baqt,Pat Master Index Inp No,已建对象，业务待验收,1,100,102,dept;js;ks,False
+6,cate_d,d_brzc,病人姓名,已建对象，业务待验收,1,101,103,js;ks,True
+7,cate_d,d_brzr,病人姓名,已建对象，业务待验收,1,102,104,js;ks,True
+8,cate_d,d_categrarycsd,病    案    催    收    单,未建对象：未在 SQL 失败清单，原因待追溯,0,,,dept;js;ks,True
+9,cate_d,d_categrarycsdks,你科室有下列病人病案，在病人出院后至今仍未交到我室，请查询后速交我室，谢谢。,未建对象：未在 SQL 失败清单，原因待追溯,0,,,dept;js;ks,True
+10,cate_d,d_categrarygd,病  案  归  档  情  况,已建对象，业务待验收,1,103,105,dept;js;ks,True
+11,cate_d,d_categraywgdqx,病 案 归 档 情 况,未建对象：原 SQL 试跑失败记录,0,,,dept;js;ks,True
+12,cate_d,d_categrorycygd,Pat Visit Discharge Date Time,未建对象：原 SQL 试跑失败记录,0,,,dept;js;ks,True
+13,cate_d,d_categrorycygdcq,"Pat Visit
+Doctor In Charge",未建对象：原 SQL 试跑失败记录,0,,,dept;gd;js;ks,False
+14,cate_d,d_categrorycywgd,"Pat Visit
+Doctor In Charge",已建对象，业务待验收,1,104,106,dept;js;ks,False
+15,cate_d,d_code_same,重码显示区,未建对象：未在 SQL 失败清单，原因待追溯,0,,,code;name,False
+16,cate_d,d_cycostwk,"Pat Visit
+Admission Date Time",已建对象，业务待验收,1,105,107,dept;js;ks,False
+17,cate_d,d_ddd_dept,Dept Code,已建对象，业务待验收,1,106,108,,False
+18,cate_d,d_dddw_director,,已建对象，业务待验收,1,107,109,,False
+19,cate_d,d_dddw_doctor,,已建对象，业务待验收,1,108,110,,False
+20,cate_d,d_dddw_doctor_all,,已建对象，业务待验收,1,109,111,,False
+21,cate_d,d_dddw_doctor_in,,已建对象，业务待验收,1,110,112,,False
+22,cate_d,d_dddw_mzdoctor,Name,已建对象，业务待验收,1,111,113,,False
+23,cate_d,d_dddw_pat_master_index,Patient Id,已建对象，业务待验收,1,112,114,,False
+24,cate_d,d_dictprint_print,中国人民解放军总医院,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+25,cate_d,d_discharged_patients,出院第一诊断,未建对象：原 SQL 试跑失败记录,0,,,,True
+26,cate_d,d_discharged_patients_print,1996-01-01,未建对象：原 SQL 试跑失败记录,0,,,,True
+27,cate_d,d_dynaoperation,,已建对象，业务待验收,1,113,115,js;ks,True
+28,cate_d,d_dynaoperation_ans,,已建对象，业务待验收,1,114,116,js;ks,False
+29,cate_d,d_fs_statday,,已建对象，业务待验收,1,115,117,js;ks,True
+30,cate_d,d_fs_zystatday,,已建对象，业务待验收,1,116,118,js;ks,True
+31,cate_d,d_hossettle,科室名称,已建对象，业务待验收,1,117,119,,False
+32,cate_d,d_hosunsettle,科室名称,已建对象，业务待验收,1,118,120,,True
+33,cate_d,d_hy_mzdetail,,已建对象，业务待验收,1,119,121,dept;js;ks,True
+34,cate_d,d_hy_statday,门诊化验：,已建对象，业务待验收,1,120,122,js;ks,True
+35,cate_d,d_hy_statdaymaster,,已建对象，业务待验收,1,121,123,js;ks,True
+36,cate_d,d_hy_zydetail,,已建对象，业务待验收,1,122,124,dept;js;ks,True
+37,cate_d,d_hy_zystatday,住院化验：,已建对象，业务待验收,1,123,125,js;ks,True
+38,cate_d,d_hy_zystatdaymaster,住院化验：,已建对象，业务待验收,1,124,126,js;ks,True
+39,cate_d,d_jc_statday,,已建对象，业务待验收,1,125,127,js;ks,True
+40,cate_d,d_jc_zystatday,,已建对象，业务待验收,1,126,128,js;ks,True
+41,cate_d,d_modi_dict_outcode_input,输入码,已建对象，业务待验收,1,127,129,code;name;topic,False
+42,cate_d,d_mrfee_class,Mr Fee Class Name,已建对象，业务待验收,1,128,130,,False
+43,cate_d,d_mz,科室名称,已建对象，业务待验收,1,129,131,js;ks,True
+44,cate_d,d_not_in,病案首页尚未编目的出院病人,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+45,cate_d,d_not_in_print,首页尚未编目的出院病人,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+46,cate_d,d_notcatalog_patients,病人ID,未建对象：原 SQL 试跑失败记录,0,,,discharge_date;discharge_dept,True
+47,cate_d,d_notcatalog_patients_print,中国人民解放军总医院,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+48,cate_d,d_operation,"手术编码",未建对象：原 SQL 试跑失败记录,0,,,patient_id;visit_id,True
+49,cate_d,d_operation_dict,手术操作名称,已建对象，业务待验收,1,130,132,code,False
+50,cate_d,d_outer_code_input,"当前编码条目输入码录入区",已建对象，业务待验收,1,131,133,,False
+51,cate_d,d_outer_code_txt,,已建对象，业务待验收,1,132,134,,False
+52,cate_d,d_query_patient,病人ID,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+53,cate_d,d_schotistic_diag,疾病名称,已建对象，业务待验收,1,133,135,,True
+54,cate_d,d_search_brief,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,False
+55,cate_d,d_search_brief_print,中国人民解放军总医院,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+56,cate_d,d_search_detail,出生日期,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+57,cate_d,d_search_detail_print,HOSPITAL NAME,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+58,cate_d,d_select_oper,手术名称,已建对象，业务待验收,1,134,136,,False
+59,cate_d,d_ss_statday,,已建对象，业务待验收,1,135,137,js;ks,True
+60,cate_d,d_ss_zystatday,,已建对象，业务待验收,1,136,138,js;ks,True
+61,cate_d,d_try,,已建对象，业务待验收,1,137,139,patient_id;visit_id,True
+62,cate_d,d_try_bank,,已建对象，业务待验收,1,138,140,patient_id;visit_id,True
+63,cate_d,d_zy,科室名称,已建对象，业务待验收,1,139,141,js;ks,True
+64,cate_d,d_zy_monthreport,Sum Of Compute 0003,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True
+65,cate_d,d_zy_monthreport1,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True
+66,cate_d,d_zycosts,病人姓名,已建对象，业务待验收,1,140,142,js;ks,True
+67,cate_d,dw_diag_obj,诊断类别,已建对象，业务待验收,1,141,143,m_patientid,False
+68,cate_d,dw_inpathis_obj,入院日期,未建对象：原 SQL 试跑失败记录,0,,,m_patientid,False
+69,cate_d,dw_operation_obj,手术名称,已建对象，业务待验收,1,142,144,m_patientid,False
+70,cate_d,dw_patnature_obj,,已建对象，业务待验收,1,143,145,inp_no;patient_id,False
+71,clinic,d_clinic_inp_dept,,未建对象：原 SQL 试跑失败记录,0,,,,True
+72,clinic,d_clinic_inp_dept_mr,,未建对象：原 SQL 试跑失败记录,0,,,,True
+73,clinic,d_clinic_inp_dept_reckoning,,未建对象：原 SQL 试跑失败记录,0,,,,True
+74,clinic,d_clinic_inp_dept_subj_code,,未建对象：原 SQL 试跑失败记录,0,,,,True
+75,clinic,d_clinic_inp_mr,,已建对象，业务待验收,1,144,146,end_date;start_date,True
+76,clinic,d_clinic_inp_reckoning,,已建对象，业务待验收,1,145,147,end_date;start_date,True
+77,clinic,d_clinic_inp_subj_code,,已建对象，业务待验收,1,146,148,end_date;start_date,True
+78,clinic,d_clinic_inp,,已建对象，业务待验收,1,147,149,end_date;start_date,True
+79,clinic,d_prn_day_test,,已建对象，业务待验收,1,148,150,end_date;start_date,True
+80,comm,dw_stat_dept,,未建对象：原 SQL 试跑失败记录,0,,,stat_dept_code,False
+81,dis_report,d_dis_avg_costs,人  均  费  用,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True
+82,dis_report,d_dis_avg_costs_st,人  均  费  用,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True
+83,dis_report,d_dis_costs,obj_53608449,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True
+84,dis_report,d_dis_costs_st,费用类别,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,False
+85,dis_report,d_dis_diag1,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+86,dis_report,d_dis_diag_single_analazy_fhlv,入院诊断与出院诊断符合率%,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+87,dis_report,d_dis_diag_st,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+88,dis_report,d_dis_effic1,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+89,dis_report,d_dis_mzyb2_dw2_bk,治愈者平均住院日,已建对象，业务待验收,1,149,151,adt_end_date;adt_start_date;as_dept,True
+90,dis_report,d_dis_operation_st,,已建对象，业务待验收,1,150,152,dept;end_date;start_date,True
+91,dis_report,d_dis_thr_day_defi,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,False
+92,dis_report,d_dis_thr_day_defi_st,,未建对象：原 SQL 试跑失败记录,0,,,,False
+93,dis_report,d_dis_treat,治愈者平均住院日,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+94,dis_report,d_dis_treat_167_report,,已建对象，业务待验收,1,151,153,as_sex;dept;end_date;start_date,True
+95,dis_report,d_dis_treat_167_reportecnomic,,已建对象，业务待验收,1,152,154,dept;end_date;start_date,True
+96,dis_report,d_dis_treat_report,出   院   病   人   数,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True
+97,dis_report,d_dis_treat_st,,已建对象，业务待验收,1,153,155,dept;end_date;start_date,True
+98,dis_report,d_dise_class_stat_dict,,已建对象，业务待验收,1,154,156,STAT_LEVEL,False
+99,dis_report,d_disease_class_report,,已建对象，业务待验收,1,155,157,dept;end_date;start_date,True
+100,dis_report,d_disease_clss_st,治愈者平均住院日,已建对象，业务待验收,1,156,158,dept;end_date;start_date,True
+101,dis_report,d_dysyntaxpatient,,已建对象，业务待验收,1,157,159,js;ks,False
+102,dis_report,d_mr_fee_class,Mr Fee Class Name,已建对象，业务待验收,1,158,160,,False
+103,dis_report,d_mztj_ks,,未建对象：原 SQL 试跑失败记录,0,,,,False
+104,dis_report,d_prn_dis_avg_costs,YYYY-MM-DD,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True
+105,dis_report,d_prn_dis_costs,obj_53608449,未建对象：原 SQL 试跑失败记录,0,,,end_day;start_day,True
+106,dis_report,d_prn_dis_diag,门诊诊断与出院诊断符合率%,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True
+107,dis_report,d_prn_dis_diag_analazy,门诊诊断与出院诊断符合率%,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True
+108,dis_report,d_prn_dis_effic,平均    优先    一般,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+109,dis_report,d_prn_dis_treat,治愈者平均住院日,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True
+110,dis_report,d_prn_medi_report,,已建对象，业务待验收,1,159,161,dept1_len;dept2_len;end_datetime;start_datetime,True
+111,dis_report,d_prn_medi_report_temp,"表    号：卫统2表1制表机关：卫生部批准机关：国家统计局批准文号：(96)国统字第52号",未建对象：未在 SQL 失败清单，原因待追溯,0,,,dept1_len;dept2_len;end_datetime;start_datetime,True
+112,dis_report,d_special_costs_st,Count(~,已建对象，业务待验收,1,160,162,charge_type_set;end_day;oper_mark;start_day,True
+113,dis_report,d_special_discharge_st,Sum(trunc(~,已建对象，业务待验收,1,161,163,charge_type_set;end_day;oper_mark;start_day,False
+114,dis_report,d_tj1,Discharge Date Time,已建对象，业务待验收,1,162,164,dept;js;ks,True
+115,dis_report,d_tj2,Discharge Date Time,已建对象，业务待验收,1,163,165,dept;js;ks,True
+116,dis_report,d_tj3,Discharge Date Time,已建对象，业务待验收,1,164,166,dept;js;ks,True
+117,dis_report,d_tj4,Discharge Date Time,已建对象，业务待验收,1,165,167,dept;js;ks,True
+118,dis_report,d_tjll,,已建对象，业务待验收,2,166;305,168;307,dept;js;ks,True
+119,dis_report,dw_month_report2_main,二、门诊分科人次数,已建对象，业务待验收,1,167,169,,False
+120,dis_report,dw_month_report3_main,st_hospital_name,未建对象：原 SQL 试跑失败记录,0,,,,True
+121,dis_report,dw_month_report3_main_bk,"表    号：卫统32表-3 制表机关：卫生部 备案机关：国家统计局 备案文号：(2001)卫办字第198号",未建对象：原 SQL 试跑失败记录,0,,,,True
+122,dis_report,dw_month_report_3main,"医   疗事   故发生数",未建对象：未在 SQL 失败清单，原因待追溯,0,,,adt_end_date;adt_start_date,True
+123,dis_report,dw_tjks,Tjks Code,未建对象：原 SQL 试跑失败记录,0,,,ks_name,False
+124,dis_report,dw_year_report,Diagnosis Name,未建对象：原 SQL 试跑失败记录,0,,,,False
+125,dis_report,dw_year_report1,,已建对象，业务待验收,1,168,170,tj_type,False
+126,dis_report,dw_year_report_main,,未建对象：原 SQL 试跑失败记录,0,,,,True
+127,dis_report,dw_year_report_main_zhuanke,"表    号：卫统32表-3 制表机关：卫生部 备案机关：国家统计局 备案文号：(2001)卫办字第198号",未建对象：原 SQL 试跑失败记录,0,,,,True
+128,dis_report,dw_year_report_o,Diagnosis Name,未建对象：原 SQL 试跑失败记录,0,,,,False
+129,dis_report,yty,"医   疗事   故发生数",已建对象，业务待验收,1,169,171,,True
+130,disanalyse,d_blood_query,,已建对象，业务待验收,1,170,172,pid,False
+131,disanalyse,d_new_diagnosis_costs,,已建对象，业务待验收,2,171;306,173;308,,True
+132,disanalyse,d_tj1,Discharge Date Time,已建对象，业务待验收,1,172,174,dept;js;ks,True
+133,disanalyse,d_tj2,Discharge Date Time,已建对象，业务待验收,1,173,175,dept;js;ks,True
+134,disanalyse,d_tj3,Discharge Date Time,已建对象，业务待验收,1,174,176,dept;js;ks,True
+135,disanalyse,d_tj4,Discharge Date Time,已建对象，业务待验收,1,175,177,dept;js;ks,True
+136,disanalyse,d_tjll,,已建对象，业务待验收,2,176;307,178;309,dept;js;ks,True
+137,disanalyse,dap2000201,,未建对象：原 SQL 试跑失败记录,0,,,,True
+138,disanalyse,dap2000202,,已建对象，业务待验收,1,177,179,,False
+139,disanalyse,dap2000203,,已建对象，业务待验收,1,178,180,adt_end_date;adt_start_date,True
+140,disanalyse,dap20202,,未建对象：原 SQL 试跑失败记录,0,,,,True
+141,disanalyse,dap20202_old,,未建对象：原 SQL 试跑失败记录,0,,,,True
+142,disanalyse,dap20302,,已建对象，业务待验收,1,179,181,ldt_js;ldt_ks;ls_dept_code,True
+143,disanalyse,dap30002,,已建对象，业务待验收,1,180,182,end_date;start_date,True
+144,disanalyse,dap30302,,已建对象，业务待验收,1,181,183,as_dept;end_date;start_date,True
+145,disanalyse,dap30402,,已建对象，业务待验收,1,182,184,ldt_frdate;ldt_todate,True
+146,disanalyse,dap30502,,已建对象，业务待验收,1,183,185,ldt_frdate;ldt_todate,True
+147,disanalyse,dap30602,,已建对象，业务待验收,1,184,186,ldt_frdate;ldt_todate,True
+148,disanalyse,dap40002,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+149,disanalyse,dap40102,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+150,disanalyse,dap40302,,已建对象，业务待验收,1,185,187,dept;end_day;start_day,True
+151,disanalyse,dw_outp_dept,,已建对象，业务待验收,1,186,188,stat_dept_name,False
+152,disanalyse,het10102,,已建对象，业务待验收,1,187,189,Dto;dFrom,True
+153,disanalyse,wbj10002,,已建对象，业务待验收,1,188,190,,False
+154,djdesign,d_bydoctor,Orders Order Text,已建对象，业务待验收,1,189,191,jsdate;ksdate;text,True
+155,djdesign,d_dispense,药品名称,已建对象，业务待验收,1,190,192,dept;form;jsdate;ksdate,False
+156,djdesign,d_doctor,,已建对象，业务待验收,1,191,193,js;ks;text,True
+157,djdesign,d_drugpresc,药品名称,已建对象，业务待验收,1,192,194,dept;form;jsdate;ksdate,False
+158,djdesign,d_mzdoctor,"Drug Presc Master
+Prescriber",未建对象：原 SQL 试跑失败记录,0,,,js;ks;text,True
+159,djdesign,d_newdispense,,已建对象，业务待验收,1,193,195,dept;form;jsdate;ksdate,False
+160,djdesign,d_newdispensedoctor,"Drug Dispense Rec
+Drug Units",已建对象，业务待验收,1,194,196,dept;form;jsdate;ksdate,False
+161,djdesign,d_newpresc,,已建对象，业务待验收,1,195,197,dept;form;jsdate;ksdate;storage,False
+162,djdesign,d_newpresc_inp,,已建对象，业务待验收,1,196,198,dept;form;jsdate;ksdate,False
+163,djdesign,d_newpresc_outp,,已建对象，业务待验收,1,197,199,dept;form;jsdate;ksdate,False
+164,djdesign,d_newprescdoctor,,已建对象，业务待验收,1,198,200,form;jsdate;ksdate;li_presc_source,False
+165,drug,d_dispense_drugsum,,已建对象，业务待验收,1,199,201,ldtEnd;ldtStart;ls_storage,True
+166,drug,d_dispense_drugsum_prn,摆药出库药品品种金额统计,已建对象，业务待验收,1,200,202,ldt_start;ldt_stop;ls_storage,True
+167,drug,d_drug_price,,已建对象，业务待验收,1,201,203,li_codelen;ls_drugcode,False
+168,drug,d_drug_price_modify_profit_060109,,未建对象：原 SQL 试跑失败记录,0,,,,True
+169,drug,d_drug_price_modify_profit_prn,XXXX医院,未建对象：原 SQL 试跑失败记录,0,,,,True
+170,drug,d_drug_sell_for_alldept_sx,,已建对象，业务待验收,1,202,204,enddate;itemclass;startdate,True
+171,drug,d_drug_storage_for_alldept_sx,,已建对象，业务待验收,1,203,205,drugcode;storagecode,False
+172,drug,d_drug_storage_used_forall_storage_sx,,已建对象，业务待验收,1,204,206,enddate;startdate,True
+173,drug,d_drugallstorage_import_sxzx,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,drugcode;drugstorage;enddate;startdate,True
+174,drug,d_drugused_for_allstorage_sx,,已建对象，业务待验收,1,205,207,drugcode;drugstorage;enddate;startdate,True
+175,drug,d_exp_export_detail_sx,,已建对象，业务待验收,1,206,208,end_date;ls_rece;ls_storage;start_date,True
+176,drug,d_exp_export_master_sx,,已建对象，业务待验收,1,207,209,end_date;ls_storage;start_date,False
+177,drug,d_im_ex_stock,,已建对象，业务待验收,1,208,210,ldt_start;ldt_stop;ls_storage,True
+178,drug,d_im_ex_stock_060109,,已建对象，业务待验收,1,209,211,ldt_start;ldt_stop;ls_storage,True
+179,drug,d_im_ex_stock_exp,,已建对象，业务待验收,1,210,212,ldt_start;ldt_stop;ls_storage,True
+180,drug,d_im_ex_stock_prn,药 品 入 出 存 统 计,已建对象，业务待验收,1,211,213,ls_end;ls_start;ls_storage,True
+181,drug,d_presc_drugsum,,已建对象，业务待验收,1,212,214,ls_end;ls_start;ls_storage,True
+182,drug,d_presc_drugsum_prn,处方药品出库品种金额统计,已建对象，业务待验收,1,213,215,ls_end;ls_start;ls_storage,True
+183,inp,d_abstract_cards,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,WardCode,True
+184,inp,d_abstract_cards_01,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,WardCode,False
+185,inp,d_adt_log_day_graph,,已建对象，业务待验收,1,214,216,js;ks,False
+186,inp,d_adt_log_month_graph,,已建对象，业务待验收,1,215,217,js;ks,True
+187,inp,d_adt_log_month_graph_new,,已建对象，业务待验收,1,216,218,adt_end_date;adt_start_date,False
+188,inp,d_arrear_acct_detail,回收日期及时间,未建对象：原 SQL 试跑失败记录,0,,,js;ks;operator,True
+189,inp,d_arrear_stat,,已建对象，业务待验收,1,217,219,js;ks,True
+190,inp,d_bed_rec,,已建对象，业务待验收,1,218,220,,True
+191,inp,d_bed_rec_prt,床位情况统计,已建对象，业务待验收,1,219,221,,True
+192,inp,d_bill_item_detail,计价日期及时间,已建对象，业务待验收,1,220,222,,True
+193,inp,d_criticall_serious_detail,,已建对象，业务待验收,1,221,223,,True
+194,inp,d_criticall_serious_prn,,已建对象，业务待验收,1,222,224,,True
+195,inp,d_dept_adt_month,,已建对象，业务待验收,1,223,225,ls_end;ls_start,True
+196,inp,d_dept_adt_year,,已建对象，业务待验收,1,224,226,ls_end;ls_start,True
+197,inp,d_diag_fee,,未建对象：原 SQL 试跑失败记录,0,,,,True
+198,inp,d_dis_control_regedit_disdesc_sx,,已建对象，业务待验收,1,225,227,ls_end;ls_start,False
+199,inp,d_dis_control_regedit_pats_list_sx,,已建对象，业务待验收,1,226,228,ls_diagnosis_desc;ls_end;ls_start,True
+200,inp,d_dis_diag,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+201,inp,d_dis_econic_stat,,未建对象：原 SQL 试跑失败记录,0,,,,True
+202,inp,d_dis_effic,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_date;start_date,True
+203,inp,d_discharge_disposition_dict,,已建对象，业务待验收,1,227,229,,False
+204,inp,d_doctor_in_charge,,已建对象，业务待验收,1,228,230,dept_code;end_date;start_date,True
+205,inp,d_excel_titlename,,已建对象，业务待验收,1,229,231,js;ks,False
+206,inp,d_inp_bill_day_graph,统计区间：,已建对象，业务待验收,1,230,232,js;ks,True
+207,inp,d_inp_bill_month_graph,统计区间：,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True
+208,inp,d_inp_bill_month_graph11,,已建对象，业务待验收,1,231,233,,True
+209,inp,d_inp_bill_month_graph_prt,住院费用统计对比,未建对象：原 SQL 试跑失败记录,0,,,,True
+210,inp,d_inp_nursing_sx_work,,已建对象，业务待验收,1,232,234,enddt;startdt,True
+211,inp,d_inp_rcpt,收据项目,已建对象，业务待验收,1,233,235,,True
+212,inp,d_inp_rcpt_class,Fee Class Code,已建对象，业务待验收,1,234,236,,False
+213,inp,d_inpat_list1,入院日期,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+214,inp,d_inpat_list_insurance,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ls_type,True
+215,inp,d_insurance_inp_quary_sx,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,dt_end;dt_start,True
+216,inp,d_insurance_out_quary_sx,,已建对象，业务待验收,1,235,237,dt_end;dt_start,True
+217,inp,d_insurance_type,,已建对象，业务待验收,1,236,238,,False
+218,inp,d_new_bed,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,WardCode,True
+219,inp,d_new_bed_and_pats_yesterdayinfo_sx,,已建对象，业务待验收,1,237,239,ls_date,True
+220,inp,d_new_diagnosis_costs,,未建对象：原 SQL 试跑失败记录,0,,,dept;end_day;start_day,True
+221,inp,d_new_pat_admission,,已建对象，业务待验收,1,238,240,dept;js;ks,True
+222,inp,d_new_pat_admission_back,,已建对象，业务待验收,1,239,241,dept;js;ks,True
+223,inp,d_new_pat_discharge,,已建对象，业务待验收,1,240,242,dept;js;ks,True
+224,inp,d_new_patvisit_costs,,已建对象，业务待验收,1,241,243,js;ks,True
+225,inp,d_pat_admission,入院日期及时间,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True
+226,inp,d_pat_admission_insurance,入院日期及时间,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True
+227,inp,d_pat_admission_insurance_prn,全院医保入院病人登记表,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True
+228,inp,d_pat_admission_prn,1996-08-08,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True
+229,inp,d_pat_discharge,出院科室,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True
+230,inp,d_pat_discharge_insurance,出院科室,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True
+231,inp,d_pat_discharge_insurance_prn,全院医保出院病人登记表,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to;ls_type,True
+232,inp,d_pat_discharge_prn,1996-08-08,未建对象：未在 SQL 失败清单，原因待追溯,0,,,date_from;date_to,True
+233,inp,d_print_cost,病人费用清单,未建对象：原 SQL 试跑失败记录,0,,,,True
+234,inp,d_print_cost_detail,病 人 费 用 清 单,已建对象，业务待验收,1,242,244,,True
+235,inp,d_print_single_rcpt_cost,1234567891,已建对象，业务待验收,1,243,245,,True
+236,inp,d_single_fee_query,,未建对象：原 SQL 试跑失败记录,0,,,,True
+237,inp,d_total_fee_for_zlh,,已建对象，业务待验收,1,244,246,ds_end;ds_start,True
+238,inp,d_transferring,,未建对象：原 SQL 试跑失败记录,0,,,,True
+239,inp,d_try,,已建对象，业务待验收,1,245,247,patient_id;visit_id,True
+240,inp,d_zy_monthreport2,@dept_name,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True
+241,inp,d_zy_monthreport3,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,js;ks,True
+242,inp,inp_bill_ordered_patient_detailcosts,,已建对象，业务待验收,1,246,248,js;ks,True
+243,inp,inp_bill_ordered_sx,,已建对象，业务待验收,1,247,249,end_date;start_date,True
+244,inp,inp_bill_performed_patient_costs,,已建对象，业务待验收,1,248,250,js;ks,True
+245,inp,inp_bill_performed_sx,,已建对象，业务待验收,1,249,251,end_date;start_date,True
+246,medicaldata,mdp10002,,已建对象，业务待验收,1,250,252,end_day;start_day,True
+247,medicaldata,mdp10102,,已建对象，业务待验收,1,251,253,adt_end;adt_start,True
+248,medicaldata,mdp10202,,已建对象，业务待验收,1,252,254,ldtEnd;ldtStart,True
+249,medicaldata,mdp10302,,已建对象，业务待验收,1,253,255,,True
+250,medicaldata,mdp10402,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,,True
+251,medicaldata,mdp20002,,已建对象，业务待验收,1,254,256,ldt_end;ldt_start;lsDept,True
+252,medicaldata,mdp20302,,已建对象，业务待验收,1,255,257,asMrFeeCol;ldt_frdate;ldt_todate,True
+253,medicaldata,mdp30402,,已建对象，业务待验收,1,256,258,asMrFeeCol;ldt_end;ldt_start;ls_dept,True
+254,medicaldata,mdp30502,,已建对象，业务待验收,1,257,259,ldt_end;ldt_start,True
+255,medicaldata,mdp3060201,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_frdate;ldt_todate,True
+256,medicaldata,mdp3060202,,未建对象：原 SQL 试跑失败记录,0,,,,True
+257,medicaldata,mdp4000201,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_frdate;ldt_todate,True
+258,medicaldata,mdp4000202,,未建对象：原 SQL 试跑失败记录,0,,,,True
+259,medicaldata,mdp40102,,已建对象，业务待验收,1,258,260,ldt_end;ldt_start,True
+260,medicaldata,mdp40202,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_end;ldt_start,True
+261,mrdatainput_dw,d_clinic_in_num_month,,已建对象，业务待验收,1,259,261,ldt_end;ldt_start,False
+262,mrdatainput_dw,d_clinic_in_num_zm_month,,已建对象，业务待验收,1,260,262,ldt_end;ldt_start,False
+263,mrdatainput_dw,d_dddw_unit,,已建对象，业务待验收,1,261,263,,False
+264,mrdatainput_dw,d_q_clinicmaster,,已建对象，业务待验收,1,262,264,adFrom;adTo;sDept,True
+265,mrdatainput_dw,dept_adt_day_002,,未建对象：原 SQL 试跑失败记录,0,,,,True
+266,mrpublic,d_dis_30_new,,未建对象：原 SQL 试跑失败记录,0,,,,True
+267,mrpublic,d_dis_mzyb2_dw2_bk,,已建对象，业务待验收,1,263,265,adt_end_date;adt_start_date;as_dept,True
+268,mrpublic,d_tj2,Discharge Date Time,已建对象，业务待验收,1,264,266,dept;js;ks,True
+269,mrpublic,dd_unit_table,Unit Code,已建对象，业务待验收,1,265,267,,False
+270,p_comm_print,d_clinic_comp,,已建对象，业务待验收,1,266,268,ldt_frdate;ldt_todate,True
+271,p_comm_print,d_clinic_dept,,未建对象：原 SQL 试跑失败记录,0,,,end_date;start_date,True
+272,p_comm_print,d_clinicmaster_fenlei,,未建对象：原 SQL 试跑失败记录,0,,,,False
+273,p_comm_print,d_desc_age,,已建对象，业务待验收,1,267,269,end_date;start_date,True
+274,p_comm_print,d_diag_comp,,已建对象，业务待验收,1,268,270,ldt_frdate;ldt_todate,True
+275,p_comm_print,d_dis_mzyb2_dw2_bk,,已建对象，业务待验收,1,269,271,adt_end_date;adt_start_date;as_dept,True
+276,p_comm_print,d_dis_treat_report_icd10,,已建对象，业务待验收,1,270,272,diagnosis_name;end_date;start_date,True
+277,p_comm_print,d_laiwu_ksxiaoyi,,未建对象：原 SQL 试跑失败记录,0,,,js;ks,True
+278,p_comm_print,d_laiwu_menzhen,,未建对象：原 SQL 试跑失败记录,0,,,,True
+279,p_comm_print,d_mrstat_8711,,已建对象，业务待验收,1,271,273,ldt_frdate;ldt_todate,True
+280,p_comm_print,d_yaopinbili_laiwu,,未建对象：原 SQL 试跑失败记录,0,,,js;ks,True
+281,pubcomm,d_bill_item_refund,项目类别,已建对象，业务待验收,1,272,274,,False
+282,pubcomm,d_bill_refund,,已建对象，业务待验收,1,273,275,,False
+283,pubcomm,d_bill_refund_print,,已建对象，业务待验收,1,274,276,,True
+284,pubcomm,d_inhospital_info,,已建对象，业务待验收,1,275,277,,False
+285,spjxc,d_2,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,as_dept;as_ym,True
+286,spjxc,d_3,,已建对象，业务待验收,1,276,278,as_ym,True
+287,spjxc,d_4,,已建对象，业务待验收,1,277,279,ANUM_E;ANUM_S;AS_EDT;AS_SDT,True
+288,spjxc,d_cancel_discharge_pat,,已建对象，业务待验收,1,278,280,ldEnd;ldStart,True
+289,spjxc,d_clinic_pats,,已建对象，业务待验收,1,279,281,ldt_end;ldt_start,True
+290,spjxc,d_dept_wh,,已建对象，业务待验收,1,280,282,,True
+291,spjxc,d_exam_dept_person,,已建对象，业务待验收,1,281,283,ldt_end;ldt_start;ls_bnj;ls_hj,True
+292,spjxc,d_exam_person_ordered,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,end_date;outp_or_inp;st_date,True
+293,spjxc,d_exam_person_performed,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,end_date;st_date;visit_id1;visit_id2,True
+294,spjxc,d_hldy5,,已建对象，业务待验收,1,282,284,,False
+295,spjxc,d_hldy_chu,,已建对象，业务待验收,1,283,285,ld_js;ld_ks,False
+296,spjxc,d_hldy_code,,已建对象，业务待验收,1,284,286,,False
+297,spjxc,d_hulidanyuangzl2,,已建对象，业务待验收,1,285,287,,False
+298,spjxc,d_hulidanyuangzl4,,已建对象，业务待验收,1,286,288,,False
+299,spjxc,d_hulidanyuangzl5,,已建对象，业务待验收,1,287,289,,False
+300,spjxc,d_ks_tywh,,已建对象，业务待验收,1,288,290,,False
+301,spjxc,d_new_bed_and_pats_yesterdayinfo_sx,,已建对象，业务待验收,1,289,291,ls_date,True
+302,spjxc,d_operation_tj,,已建对象，业务待验收,1,290,292,ldt_begin;ldt_end;outp_or_inp,True
+303,spjxc,d_operation_tj_sxold,,已建对象，业务待验收,1,291,293,ldt_begin;ldt_end;outp_or_inp,True
+304,spjxc,d_outp_appointment,,未建对象：原 SQL 试跑失败记录,0,,,,False
+305,spjxc,d_outp_blood,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False
+306,spjxc,d_outp_booking,,未建对象：原 SQL 试跑失败记录,0,,,,False
+307,spjxc,d_outp_drug,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False
+308,spjxc,d_outp_pay,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False
+309,spjxc,d_outp_register3,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False
+310,spjxc,d_1,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,as_dept;as_ym,True
+311,spjxc,d_outp_ultrasonic,,未建对象：原 SQL 试跑失败记录,0,,,ls_date,False
+312,spjxc,d_sx1,,已建对象，业务待验收,1,292,294,,False
+313,spjxc,d_sx2,,已建对象，业务待验收,1,293,295,,False
+314,spjxc,d_sx3,,已建对象，业务待验收,1,294,296,,False
+315,spjxc,d_test,,未建对象：未在 SQL 失败清单，原因待追溯,0,,,ldt_from;ldt_to;ls_charge_type,True
+316,spjxc,d_tian_report,,未建对象：原 SQL 试跑失败记录,0,,,,True
+317,spjxc,d_tian_report_bak,,未建对象：原 SQL 试跑失败记录,0,,,,True
+318,spjxc,d_tjbb,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True
+319,spjxc,d_tjbb_bak,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True
+320,spjxc,d_tjbb_mz,,已建对象，业务待验收,1,295,297,adt_begin;adt_end,True
+321,spjxc,d_tjbb_mz_slslx,,已建对象，业务待验收,1,296,298,adt_begin;adt_end,True
+322,spjxc,d_tjbb_zy,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True
+323,spjxc,d_tjbb_zy_new,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True
+324,spjxc,d_tjbb_zy_new_191213,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True
+325,spjxc,d_tjbb_zy_new_210304,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True
+326,spjxc,d_tjbb_zy_sb,,未建对象：原 SQL 试跑失败记录,0,,,adt_begin;adt_end,True
+327,spjxc,d_tjll,,未建对象：原 SQL 试跑失败记录,0,,,DEPT;JS;KS,True
+328,spjxc,d_tjll1,,已建对象，业务待验收,1,297,299,dept;js;ks,True
+329,spjxc,d_tjll2,,已建对象，业务待验收,1,298,300,dept;js;ks,True
+330,spjxc,d_tjll3,,未建对象：原 SQL 试跑失败记录,0,,,DEPT;JS;KS,True
+331,spjxc,d_tjll3_ward,,未建对象：原 SQL 试跑失败记录,0,,,dept;js;ks,True
+332,spjxc,d_total_costs_for_zlh,,已建对象，业务待验收,1,299,301,ds_end;ds_start,False
+333,spjxc,d_wstj_4,,已建对象，业务待验收,1,300,302,DT_YEAR,False
+334,spjxc,d_zkzb_query,,未建对象：原 SQL 试跑失败记录,0,,,adt_edt;adt_sdt,False
+335,spjxc,d_zrzmzbb,,已建对象，业务待验收,1,301,303,ldt_js;ldt_ks,True
+336,spjxc,d_zrzmzbb1,,已建对象，业务待验收,1,302,304,ldt_js;ldt_ks,True
+337,spjxc,d_zrzmzbb_20210821,,已建对象，业务待验收,1,303,305,ldt_js;ldt_ks,True
+338,spjxc,d_zrzmzbb_20210821_modify,,已建对象，业务待验收,1,304,306,ldt_js;ldt_ks,True
+339,spjxc,dddw_dept_dict,,未建对象：原 SQL 试跑失败记录,0,,,,False

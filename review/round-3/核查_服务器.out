@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "F:\python\superset\review\round-3\核查_服务器.py", line 48, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "F:\python\superset\review\round-3\核查_服务器.py", line 34, in main
+    cli.connect(HOST, username=USER, password=PWD, timeout=12, banner_timeout=12, auth_timeout=12)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\python\数据资产\backend\.venv\Lib\site-packages\paramiko\client.py", line 364, in connect
+    sock.connect(addr)
+    ~~~~~~~~~~~~^^^^^^
+TimeoutError: timed out

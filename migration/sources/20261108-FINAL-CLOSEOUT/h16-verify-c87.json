@@ -1,0 +1,16 @@
+{
+ "browser": "Chrome/87.0.4272.0",
+ "version": "20261117h16",
+ "C87_desc_expand": {
+  "attr": "1",
+  "inline": "block",
+  "links": 10,
+  "boxH": 400
+ },
+ "C87_desync_selfheal": {
+  "attr": "1",
+  "inline": "block",
+  "links": 10,
+  "boxH": 400
+ }
+}

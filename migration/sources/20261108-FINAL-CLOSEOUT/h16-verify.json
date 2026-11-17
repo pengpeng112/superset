@@ -1,0 +1,34 @@
+{
+ "browser": "Chrome/157.0.8103.51",
+ "version": "20261117h16",
+ "T1_collapsed": {
+  "attr": "0",
+  "toggle": "▸",
+  "inline": "none",
+  "computed": "none",
+  "links": 10,
+  "boxH": 0
+ },
+ "T2_desc_expand": {
+  "attr": "1",
+  "toggle": "▾",
+  "inline": "block",
+  "computed": "block",
+  "links": 10,
+  "boxH": 400
+ },
+ "T3_desync_selfheal": {
+  "attr": "1",
+  "toggle": "▾",
+  "inline": "block",
+  "computed": "block",
+  "links": 10,
+  "boxH": 400
+ },
+ "T4_native25": {
+  "attr": "1",
+  "inline": "block",
+  "links": 6,
+  "boxH": 240
+ }
+}

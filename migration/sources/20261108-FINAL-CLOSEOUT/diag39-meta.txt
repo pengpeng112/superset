@@ -1,0 +1,185 @@
+Output format is unaligned.
+D39_JSON_METADATA||{"default_filters": "{}", "timed_refresh_immune_slices": [], "expanded_slices": {}, "refresh_frequency": 0, "color_scheme": "", "label_colors": {}, "shared_label_colors": [], "map_label_colors": {}, "color_scheme_domain": [], "cross_filters_enabled": true, "chart_configuration": {}, "global_chart_configuration": {"scope": {"rootPath": ["ROOT_ID"], "excluded": []}, "chartsInScope": [283]}, "filter_bar_orientation": "HORIZONTAL", "native_filter_configuration": [{"id": "NATIVE_FILTER-UI-39-COMPAT-Z06-DATE", "name": "\u68c0\u67e5\u4eba\u6b21\u7edf\u8ba1\u65e5\u671f", "filterType": "filter_time", "targets": [{"datasetId": 281, "column": {"name": "STAT_BEGIN"}}], "defaultDataMask": {"extraFormData": {}, "filterState": {}, "ownState": {}}, "cascadeParentIds": [], "scope": {"rootPath": ["ROOT_ID"], "excluded": []}, "controlValues": {"enableEmptyFilter": false}, "type": "NATIVE_FILTER", "chartsInScope": [283], "tabsInScope": [], "description": "\u68c0\u67e5\u4eba\u6b21\u8d77\u6b62\u65e5\u671f\uff0c\u9ed8\u8ba4\u6700\u8fd17\u4e2a\u5b8c\u6574\u81ea\u7136\u65e5\u3002"}]}
+CH283_PARAMS||{"viz_type": "pivot_table_v2", "query_mode": "aggregate", "all_columns": ["OUTP_OR_INP", "DEPT_NAME", "EXAM_CLASS", "AMOUNT", "ROW_TOTAL", "STAT_BEGIN", "STAT_END", "ERR_MSG"], "row_limit": 50000, "server_pagination": true, "page_length": 50, "include_search": true, "order_desc": false, "table_timestamp_format": "%Y-%m-%d", "groupbyRows": ["OUTP_OR_INP", "DEPT_NAME"], "groupbyColumns": ["EXAM_CLASS"], "metrics": [{"expressionType": "SIMPLE", "column": {"column_name": "AMOUNT", "type": "NUMERIC"}, "aggregate": "SUM", "sqlExpression": null, "hasCustomLabel": true, "label": "人次", "optionName": "metric_sum_amount_legacy"}], "aggregateFunction": "Sum", "rowTotals": true, "colTotals": true, "rowSubTotals": true, "colSubTotals": false, "rowSubtotalPosition": false, "colSubtotalPosition": false, "transposePivot": false, "combineMetric": false, "metricsLayout": "COLUMNS", "rowOrder": "key_a_to_z"
+DS281_SQL||{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}
+{% set tf_s = "'" + tf.from_expr + "'" if tf.from_expr else 'NULL' %}
+{% set tf_e = "'" + tf.to_expr + "'" if tf.to_expr else 'NULL' %}
+WITH input_bounds AS (
+  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE)-7) d1,
+         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE))-1/86400 d2 FROM dual),
+chk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),
+bnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),
+legacy AS (select a.dept_name,
+
+       t.exam_class,
+
+       count(*) amount,
+
+       case
+
+         when a.outp_or_inp = 0 then
+
+          '门诊' 
+
+         else
+
+          '住院'
+
+       end as outp_or_inp
+
+  from exam_master t, dept_dict a
+
+ where t.req_dept = a.dept_code
+
+   and t.exam_date_time >= (SELECT d1 FROM bnd)
+
+   and t.exam_date_time <= (SELECT d2 FROM bnd)
+
+ group by a.dept_name, t.exam_class, a.outp_or_inp
+
+ union all
+
+ select a.dept_name,
+
+      '喉镜' exam_class,
+
+      case when sum(amount)<0 then null else sum(amount) end amount,
+
+      case
+
+         when a.outp_or_inp = 0 then
+
+          '门诊' 
+
+         else
+
+          '住院'
+
+       end as outp_or_inp
+
+ from inp_bill_detail t, dept_dict a
+
+where t.ordered_by = a.dept_code
+
+  and t.item_code in('GG310403009')
+
+  and (t.billing_date_time >=(SELECT d1 FROM bnd)
+
+  and t.billing_date_time <= (SELECT d2 FROM bnd))
+
+  group by a.dept_name, a.outp_or_inp
+
+ union all
+
+ select a.dept_name,
+
+      '鼻内镜' exam_class,
+
+	case when sum(amount)<0 then null else sum(amount) end amount,
+
+       case
+
+         when a.outp_or_inp = 0 then
+
+          '门诊' 
+
+         else
+
+          '住院'
+
+       end as outp_or_inp
+
+ from inp_bill_detail t, dept_dict a
+
+where t.ordered_by = a.dept_code
+
+  and t.item_code in('GG310402001')
+
+  and (t.billing_date_time >=(SELECT d1 FROM bnd)
+
+  and t.billing_date_time <= (SELECT d2 FROM bnd))
+
+  group by a.dept_name, a.outp_or_inp
+
+  union all
+
+  select a.dept_name,
+
+      '喉镜' exam_class,
+
+      case when sum(amount)<0 then null else sum(amount) end amount,
+
+       case
+
+         when a.outp_or_inp = 0 then
+
+          '门诊' 
+
+         else
+
+          '住院'
+
+       end as outp_or_inp
+
+ from outp_bill_items t, dept_dict a
+
+where t.ordered_by_dept = a.dept_code
+
+  and t.item_code in('GG310403009')
+
+  and (t.visit_date >=(SELECT d1 FROM bnd)
+
+  and t.visit_date <=(SELECT d2 FROM bnd))
+
+  group by a.dept_name, a.outp_or_inp
+
+ union all
+
+select a.dept_name,
+
+	'鼻内镜' exam_class,
+
+	case when sum(amount)<0 then null else sum(amount) end amount,
+
+	    case
+
+         when a.outp_or_inp = 0 then
+
+          '门诊' 
+
+         else
+
+          '住院'
+
+       end as outp_or_inp
+
+from outp_bill_items t, dept_dict a
+
+where t.ordered_by_dept = a.dept_code
+
+and t.item_code in('GG310402001')
+
+and (t.visit_date >=(SELECT d1 FROM bnd)
+
+and t.visit_date <=(SELECT d2 FROM bnd))
+
+group by a.dept_name, a.outp_or_inp ),
+base AS (SELECT outp_or_inp,dept_name,exam_class,SUM(amount) amount FROM legacy
+ GROUP BY outp_or_inp,dept_name,exam_class),
+rt AS (SELECT outp_or_inp,dept_name,SUM(amount) row_total FROM base GROUP BY outp_or_inp,dept_name),
+det AS (SELECT b.outp_or_inp,b.dept_name,b.exam_class,b.amount,r.row_total FROM base b
+ JOIN rt r ON r.outp_or_inp=b.outp_or_inp AND r.dept_name=b.dept_name),
+r AS (SELECT 2 rn,d.* FROM det d
+ UNION ALL SELECT 1,outp_or_inp,outp_or_inp||'合计',NULL,SUM(amount),NULL FROM base GROUP BY outp_or_inp
+ UNION ALL SELECT 0,NULL,'合计',NULL,SUM(amount),NULL FROM base)
+SELECT NULL err_msg,rn,outp_or_inp,dept_name,exam_class,amount,row_total,
+ (SELECT d1 FROM bnd) stat_begin,TRUNC((SELECT d2 FROM bnd)) stat_end FROM r
+WHERE (SELECT over_limit FROM chk)=0
+UNION ALL
+SELECT '所选日期无效或超过366天，请缩小范围后重试',-1,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+FROM dual WHERE (SELECT over_limit FROM chk)=1
+ORDER BY rn DESC,outp_or_inp,dept_name,exam_class
+[stderr] psql:/tmp/q8.sql:4: ERROR:  column "params" does not exist
+LINE 1: select 'D39_PARAMS||'||left(params,600) from dashboards wher...
+                                    ^
+[exit 0]

@@ -1,0 +1,44 @@
+{
+ "browser": "Chrome/156.0.8078.81",
+ "phase": "final-spot",
+ "rows": [
+  {
+   "id": 72,
+   "first_dom_ms": 3394,
+   "full_ms": 6502,
+   "posts": 9,
+   "hits": 9,
+   "judged": 9,
+   "slowest_req_ms": 1089,
+   "rendered": 8,
+   "mr": false,
+   "table": true,
+   "rows": 25,
+   "err": false,
+   "sum": "",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  },
+  {
+   "id": 63,
+   "first_dom_ms": 2885,
+   "full_ms": 5929,
+   "posts": 2,
+   "hits": 2,
+   "judged": 2,
+   "slowest_req_ms": 1011,
+   "rendered": 1,
+   "mr": false,
+   "table": true,
+   "rows": 50,
+   "err": false,
+   "sum": "共返回 87 行数据 · 耗时 0.3 秒",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  }
+ ]
+}

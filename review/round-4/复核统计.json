@@ -1,0 +1,120 @@
+{
+  "source_count": 339,
+  "srd_chart_count": 212,
+  "unique_source_deployed": 209,
+  "missing_source_count": 130,
+  "missing_with_sql_failure_record": 86,
+  "missing_without_sql_failure_record": 44,
+  "duplicate_extra_objects": 3,
+  "null_affected_chart_count": 161,
+  "top_where_rejected_count": 126,
+  "unique_null_affected_source_count": 159,
+  "source_compute_count_deployed_unique": 138,
+  "chinese_column_count": 468,
+  "column_count": 1744,
+  "raw_srd_json_file_count": 20,
+  "raw_srd_object_count": 811,
+  "source_meta_sha256": "6e7933cce8b8c89262f7bfe8daebe6b841f85e2a49d9a9dd315ec3f84be3ac48",
+  "raw_srd_manifest": [
+    {
+      "file": "autoload_dw.pbl.srd.json",
+      "count": 1,
+      "sha256": "c791c7452bdb6e582e56815ba28b6d9f5b93383ea96adc4a7b0f155d3077c1f4"
+    },
+    {
+      "file": "cate_d_dw.pbl.srd.json",
+      "count": 125,
+      "sha256": "2c24227b8424c2999a7489b20bb90872e91e7540ceb5f3887ac71db6201e0545"
+    },
+    {
+      "file": "clinic_dw.pbl.srd.json",
+      "count": 34,
+      "sha256": "47a02b5762a62fd637567d47d145bf23a4398a0014531910c04a480c8316e0bd"
+    },
+    {
+      "file": "comm_dw.pbl.srd.json",
+      "count": 9,
+      "sha256": "422eb6766c91894e6fcad689ab1d07c81302165ff49a30510f5c6c5e21303963"
+    },
+    {
+      "file": "dis_report_dw.pbl.srd.json",
+      "count": 79,
+      "sha256": "e6e565f48d07f1033f2469597aaa71eb2924d38ebd6d8f8078eb1a640b8e311a"
+    },
+    {
+      "file": "disanalyse_dw.pbl.srd.json",
+      "count": 99,
+      "sha256": "bd557e47b29f23e25c4f499e80655341a17b21ffdafca9709397406ea6c96efa"
+    },
+    {
+      "file": "djdesign_dw.pbl.srd.json",
+      "count": 12,
+      "sha256": "67f38bd192ca57454a04b6b2d5e239726d0021ca06eda15d31ecd615092766aa"
+    },
+    {
+      "file": "drug_dw.pbl.srd.json",
+      "count": 36,
+      "sha256": "8b7e917e15c4866440a0842eb36380be027c2ba8060a7d41bd9643b8c80af2d8"
+    },
+    {
+      "file": "dw2xls_dw.pbl.srd.json",
+      "count": 8,
+      "sha256": "ada7f2589b39842c46457d3be9925b714bf297f123b3d549282840757a7cd62c"
+    },
+    {
+      "file": "f_comm_dynamic_report_dw.pbl.srd.json",
+      "count": 3,
+      "sha256": "305b2389eb3652c02aeaa7e843e2d5a96cdfd60be1154298d8dec76aa94abd93"
+    },
+    {
+      "file": "f_comm_function_dw.pbl.srd.json",
+      "count": 2,
+      "sha256": "aa28e33589ad8a83da9e9cd3c1905a6da81df77b86f7e6abf7f0651977350947"
+    },
+    {
+      "file": "inp_dw.pbl.srd.json",
+      "count": 165,
+      "sha256": "d1abf9e2eb779d75b98b5180be6f1f790a8e3b2dbbb218865b511fd6d91ed3c0"
+    },
+    {
+      "file": "medicaldata_dw.pbl.srd.json",
+      "count": 48,
+      "sha256": "d6ee7b35a51a39736ff70156f738738b7e56df9745710b962bd583d3a019bc98"
+    },
+    {
+      "file": "mrdatainput_dw.pbl.srd.json",
+      "count": 1,
+      "sha256": "4b46c7cff1f5f24bb2cbf4532c36f5406c6fb9161d9a97d66c5a722dab626b25"
+    },
+    {
+      "file": "mrdatainput_dw_dw.pbl.srd.json",
+      "count": 43,
+      "sha256": "13f825c26cab9619a27e9b5b28f2e4371cfa130860f53165af95bed57b75df71"
+    },
+    {
+      "file": "mrpublic_dw.pbl.srd.json",
+      "count": 24,
+      "sha256": "75d4fee6f6d70f0723cb9669c957bf596bdf487882747063b08b06bfcdeda1d9"
+    },
+    {
+      "file": "p_comm_print_dw.pbl.srd.json",
+      "count": 22,
+      "sha256": "257a34568d8fe3779f7f2403f7bc66f88033d9055e0d25070c9251174d211364"
+    },
+    {
+      "file": "printer_dw.pbl.srd.json",
+      "count": 4,
+      "sha256": "c8035161a93b3742562793d7d1c2325147d8193b9ba34c54252f454967f1818f"
+    },
+    {
+      "file": "pubcomm_dw.pbl.srd.json",
+      "count": 16,
+      "sha256": "2c5e0827fd11fe35819ef2f3d9b560c79a028fe949b7a788d0d0f1a6a308220f"
+    },
+    {
+      "file": "spjxc_dw.pbl.srd.json",
+      "count": 80,
+      "sha256": "3797a997ec8dab6f68df55183c1910d1cfde552ae667e0a107820fb44943fcf7"
+    }
+  ]
+}

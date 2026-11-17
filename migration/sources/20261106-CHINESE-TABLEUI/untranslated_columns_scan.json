@@ -1,0 +1,391 @@
+{
+ "generated": "2026-11-08",
+ "scope": "dashboards 32,35-70; protected datasets 3-12/166/171/176 excluded",
+ "total_untranslated_columns": 84,
+ "datasets": [
+  {
+   "table_id": 276,
+   "table_name": "统计报表·d_3",
+   "used_by_pages": [
+    {
+     "dashboard_id": 50,
+     "slice_id": 278,
+     "slice_name": "门诊手术数据提取"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 279,
+   "table_name": "统计报表·d_clinic_pats",
+   "used_by_pages": [
+    {
+     "dashboard_id": 47,
+     "slice_id": 281,
+     "slice_name": "门诊转住院入院途径报表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 281,
+   "table_name": "统计报表·d_exam_dept_person",
+   "used_by_pages": [
+    {
+     "dashboard_id": 39,
+     "slice_id": 283,
+     "slice_name": "检查按开单科室查询人次"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 321,
+   "table_name": "急诊分诊统计",
+   "used_by_pages": [
+    {
+     "dashboard_id": 49,
+     "slice_id": 323,
+     "slice_name": "急诊分诊统计"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 322,
+   "table_name": "门诊采血人次时段统计",
+   "used_by_pages": [
+    {
+     "dashboard_id": 53,
+     "slice_id": 327,
+     "slice_name": "门诊采血人次时段统计"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 323,
+   "table_name": "门诊取药人次时段统计",
+   "used_by_pages": [
+    {
+     "dashboard_id": 54,
+     "slice_id": 328,
+     "slice_name": "门诊取药人次时段统计"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 324,
+   "table_name": "门诊缴费人次查询",
+   "used_by_pages": [
+    {
+     "dashboard_id": 55,
+     "slice_id": 329,
+     "slice_name": "门诊缴费人次查询"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 325,
+   "table_name": "门诊挂号量时段统计",
+   "used_by_pages": [
+    {
+     "dashboard_id": 56,
+     "slice_id": 330,
+     "slice_name": "门诊挂号量时段统计"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 326,
+   "table_name": "门诊超声流量监测",
+   "used_by_pages": [
+    {
+     "dashboard_id": 57,
+     "slice_id": 331,
+     "slice_name": "门诊超声流量监测"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 329,
+   "table_name": "绩效考核暨高质量发展监测指标情况",
+   "used_by_pages": [
+    {
+     "dashboard_id": 60,
+     "slice_id": 337,
+     "slice_name": "绩效考核暨高质量发展监测指标情况"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 330,
+   "table_name": "责任组门诊报表",
+   "used_by_pages": [
+    {
+     "dashboard_id": 48,
+     "slice_id": 338,
+     "slice_name": "责任组门诊报表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 332,
+   "table_name": "科室手术质量分析",
+   "used_by_pages": [
+    {
+     "dashboard_id": 51,
+     "slice_id": 315,
+     "slice_name": "科室手术质量分析"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 333,
+   "table_name": "科室住院手术数据提取",
+   "used_by_pages": [
+    {
+     "dashboard_id": 52,
+     "slice_id": 316,
+     "slice_name": "科室住院手术数据提取"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 336,
+   "table_name": "检查人次按开单科室统计",
+   "used_by_pages": [
+    {
+     "dashboard_id": 58,
+     "slice_id": 320,
+     "slice_name": "检查人次按开单科室统计"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 337,
+   "table_name": "检查人次按执行科室统计（门诊）",
+   "used_by_pages": [
+    {
+     "dashboard_id": 59,
+     "slice_id": 321,
+     "slice_name": "检查人次按执行科室统计（门诊）"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 344,
+   "table_name": "病房工作日报表",
+   "used_by_pages": [
+    {
+     "dashboard_id": 36,
+     "slice_id": 339,
+     "slice_name": "病房工作日报表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 348,
+   "table_name": "月工作报表(二)新·主表",
+   "used_by_pages": [
+    {
+     "dashboard_id": 35,
+     "slice_id": 332,
+     "slice_name": "医院医疗工作月报表(二)"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 350,
+   "table_name": "护理工作量月报表·主表",
+   "used_by_pages": [
+    {
+     "dashboard_id": 41,
+     "slice_id": 334,
+     "slice_name": "医院绩效工作月报表(二)"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 351,
+   "table_name": "护理工作量日报表·主表",
+   "used_by_pages": [
+    {
+     "dashboard_id": 42,
+     "slice_id": 289,
+     "slice_name": "护理工作量日报表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 355,
+   "table_name": "护理单元工作量·主表v2",
+   "used_by_pages": [
+    {
+     "dashboard_id": 43,
+     "slice_id": 288,
+     "slice_name": "护理单元工作量"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 356,
+   "table_name": "月上报数据·主表v2",
+   "used_by_pages": [
+    {
+     "dashboard_id": 44,
+     "slice_id": 325,
+     "slice_name": "月上报数据"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 358,
+   "table_name": "医院绩效工作月报表·主表v2",
+   "used_by_pages": [
+    {
+     "dashboard_id": 46,
+     "slice_id": 335,
+     "slice_name": "医院绩效工作月报表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 363,
+   "table_name": "抗菌办·门急诊处方明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 61,
+     "slice_id": 345,
+     "slice_name": "门急诊处方明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 364,
+   "table_name": "抗菌办·住院检验结果明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 62,
+     "slice_id": 346,
+     "slice_name": "住院检验结果明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 365,
+   "table_name": "抗菌办·消耗明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 63,
+     "slice_id": 347,
+     "slice_name": "消耗明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 366,
+   "table_name": "抗菌办·住院患者信息明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 64,
+     "slice_id": 348,
+     "slice_name": "住院患者信息明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 367,
+   "table_name": "抗菌办·住院医嘱明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 65,
+     "slice_id": 349,
+     "slice_name": "住院医嘱明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 368,
+   "table_name": "抗菌办·微生物明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 66,
+     "slice_id": 350,
+     "slice_name": "微生物明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 369,
+   "table_name": "抗菌办·检查结果明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 67,
+     "slice_id": 351,
+     "slice_name": "检查结果明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 370,
+   "table_name": "抗菌办·住院诊断明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 68,
+     "slice_id": 352,
+     "slice_name": "住院诊断明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 371,
+   "table_name": "抗菌办·手术记录明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 69,
+     "slice_id": 353,
+     "slice_name": "手术记录明细表"
+    }
+   ],
+   "columns": []
+  },
+  {
+   "table_id": 372,
+   "table_name": "抗菌办·生命体征明细",
+   "used_by_pages": [
+    {
+     "dashboard_id": 70,
+     "slice_id": 354,
+     "slice_name": "生命体征明细表"
+    }
+   ],
+   "columns": []
+  }
+ ]
+}

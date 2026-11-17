@@ -1,0 +1,652 @@
+{
+ "371": {
+  "slice_name": "【BI】门急诊总诊疗人次",
+  "viz_type": "big_number_total",
+  "datasource_id": 347,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "347__table",
+   "metric": {
+    "expressionType": "SIMPLE",
+    "column": {
+     "column_name": "MEN_ZHENS"
+    },
+    "aggregate": "SUM",
+    "label": "门急诊总诊疗人次"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "372": {
+  "slice_name": "【BI】急诊与观察室人次",
+  "viz_type": "big_number_total",
+  "datasource_id": 347,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "347__table",
+   "metric": {
+    "expressionType": "SQL",
+    "sqlExpression": "SUM(JIZHENS)+SUM(GUANCHA)",
+    "label": "急诊与观察室人次"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "373": {
+  "slice_name": "【BI】住院出院总人数",
+  "viz_type": "big_number_total",
+  "datasource_id": 338,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "338__table",
+   "metric": {
+    "expressionType": "SIMPLE",
+    "column": {
+     "column_name": "CHUYUAN"
+    },
+    "aggregate": "SUM",
+    "label": "住院出院总人数"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "374": {
+  "slice_name": "【BI】月末实际在院人数",
+  "viz_type": "big_number_total",
+  "datasource_id": 338,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "338__table",
+   "metric": {
+    "expressionType": "SIMPLE",
+    "column": {
+     "column_name": "CURR"
+    },
+    "aggregate": "SUM",
+    "label": "月末实际在院人数"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "375": {
+  "slice_name": "【BI】临床科室门急诊诊疗人次 TOP15",
+  "viz_type": "table",
+  "datasource_id": 347,
+  "params": {
+   "viz_type": "table",
+   "datasource": "347__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "KSDM"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "MEN_ZHENS"
+     },
+     "aggregate": "SUM",
+     "label": "门急诊诊疗人次",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 15,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": true,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "376": {
+  "slice_name": "【BI】临床科室出院人数 TOP15",
+  "viz_type": "table",
+  "datasource_id": 338,
+  "params": {
+   "viz_type": "table",
+   "datasource": "338__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "KSDM"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "CHUYUAN"
+     },
+     "aggregate": "SUM",
+     "label": "出院人数",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 15,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": true,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "377": {
+  "slice_name": "【BI】全院出院患者转归构成",
+  "viz_type": "table",
+  "datasource_id": 338,
+  "params": {
+   "viz_type": "table",
+   "datasource": "338__table",
+   "query_mode": "aggregate",
+   "groupby": [],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "RECOVER"
+     },
+     "aggregate": "SUM",
+     "label": "治愈",
+     "hasCustomLabel": true
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "EFFECT"
+     },
+     "aggregate": "SUM",
+     "label": "好转",
+     "hasCustomLabel": true
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "UNTREAT"
+     },
+     "aggregate": "SUM",
+     "label": "未愈",
+     "hasCustomLabel": true
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "DIED"
+     },
+     "aggregate": "SUM",
+     "label": "死亡",
+     "hasCustomLabel": true
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "OTHER_N"
+     },
+     "aggregate": "SUM",
+     "label": "其他",
+     "hasCustomLabel": true
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "WILL_N"
+     },
+     "aggregate": "SUM",
+     "label": "自动出院",
+     "hasCustomLabel": true
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "XFER"
+     },
+     "aggregate": "SUM",
+     "label": "转院",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 15,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": true,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "378": {
+  "slice_name": "【BI】各科室核心运营指标排行明细表",
+  "viz_type": "table",
+  "datasource_id": 348,
+  "params": {
+   "viz_type": "table",
+   "datasource": "348__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "KS"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "DISCH_N"
+     },
+     "aggregate": "SUM",
+     "label": "出院人数"
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "BED_END"
+     },
+     "aggregate": "SUM",
+     "label": "月末实有病床"
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "DEATH_RATE"
+     },
+     "aggregate": "SUM",
+     "label": "病死率(%)"
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "OCC_DAYS"
+     },
+     "aggregate": "SUM",
+     "label": "出院者占用总床日"
+    }
+   ],
+   "row_limit": 50,
+   "page_length": 25,
+   "server_pagination": false,
+   "include_search": true,
+   "include_time": false,
+   "order_desc": true,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "379": {
+  "slice_name": "【BI】门诊挂号人次",
+  "viz_type": "big_number_total",
+  "datasource_id": 325,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "325__table",
+   "metric": {
+    "expressionType": "SIMPLE",
+    "column": {
+     "column_name": "COUNT(*)"
+    },
+    "aggregate": "SUM"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "380": {
+  "slice_name": "【BI】门诊缴费人次",
+  "viz_type": "big_number_total",
+  "datasource_id": 324,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "324__table",
+   "metric": {
+    "expressionType": "SIMPLE",
+    "column": {
+     "column_name": "COUNT(*)"
+    },
+    "aggregate": "SUM"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "381": {
+  "slice_name": "【BI】门诊取药人次",
+  "viz_type": "big_number_total",
+  "datasource_id": 323,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "323__table",
+   "metric": {
+    "expressionType": "SQL",
+    "sqlExpression": "SUM(\"COUNT(DISTINCT(B.RCPT_NO))\")",
+    "label": "取药人次"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "382": {
+  "slice_name": "【BI】门诊采血人次",
+  "viz_type": "big_number_total",
+  "datasource_id": 322,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "322__table",
+   "metric": {
+    "expressionType": "SIMPLE",
+    "column": {
+     "column_name": "COUNT(*)"
+    },
+    "aggregate": "SUM"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "383": {
+  "slice_name": "【BI】门诊挂号全天分时段流量",
+  "viz_type": "table",
+  "datasource_id": 325,
+  "params": {
+   "viz_type": "table",
+   "datasource": "325__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "DTIME"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "COUNT(*)"
+     },
+     "aggregate": "SUM",
+     "label": "人次",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 20,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": false,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "384": {
+  "slice_name": "【BI】门诊采血全天分时段流量",
+  "viz_type": "table",
+  "datasource_id": 322,
+  "params": {
+   "viz_type": "table",
+   "datasource": "322__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "DTIME"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "COUNT(*)"
+     },
+     "aggregate": "SUM",
+     "label": "人次",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 20,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": false,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "385": {
+  "slice_name": "【BI】各窗口分时段负荷明细对照表",
+  "viz_type": "table",
+  "datasource_id": 325,
+  "params": {
+   "viz_type": "table",
+   "datasource": "325__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "DTIME",
+    "STAT_DATE"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "COUNT(*)"
+     },
+     "aggregate": "SUM"
+    }
+   ],
+   "row_limit": 30,
+   "page_length": 25,
+   "server_pagination": false,
+   "include_search": true,
+   "include_time": false,
+   "order_desc": false,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "386": {
+  "slice_name": "【BI】手术总台数",
+  "viz_type": "big_number_total",
+  "datasource_id": 345,
+  "params": {
+   "viz_type": "big_number_total",
+   "datasource": "345__table",
+   "metric": {
+    "expressionType": "SIMPLE",
+    "column": {
+     "column_name": "OPER_NUM"
+    },
+    "aggregate": "SUM",
+    "label": "手术总台数"
+   },
+   "compare_lag": "",
+   "compare_suffix": "",
+   "y_axis_format": ",d",
+   "date_format": "smart_date",
+   "subheader": "",
+   "time_range": "No filter"
+  }
+ },
+ "387": {
+  "slice_name": "【BI】手术科室分布 TOP15",
+  "viz_type": "table",
+  "datasource_id": 345,
+  "params": {
+   "viz_type": "table",
+   "datasource": "345__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "TJ_KSMC"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "OPER_NUM"
+     },
+     "aggregate": "SUM",
+     "label": "手术台数",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 15,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": true,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "389": {
+  "slice_name": "【BI】门诊与住院手术量构成",
+  "viz_type": "table",
+  "datasource_id": 345,
+  "params": {
+   "viz_type": "table",
+   "datasource": "345__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "BRANCH_NAME"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "OPER_NUM"
+     },
+     "aggregate": "SUM",
+     "label": "手术台数",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 5,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": false,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "390": {
+  "slice_name": "【BI】各病区出院人数 TOP15",
+  "viz_type": "table",
+  "datasource_id": 350,
+  "params": {
+   "viz_type": "table",
+   "datasource": "350__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "KS"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "DISCH_N"
+     },
+     "aggregate": "SUM",
+     "label": "出院人数",
+     "hasCustomLabel": true
+    }
+   ],
+   "row_limit": 15,
+   "page_length": 15,
+   "server_pagination": false,
+   "include_search": false,
+   "order_desc": true,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ },
+ "391": {
+  "slice_name": "【BI】各病区核心质量指标汇总表",
+  "viz_type": "table",
+  "datasource_id": 350,
+  "params": {
+   "viz_type": "table",
+   "datasource": "350__table",
+   "query_mode": "aggregate",
+   "groupby": [
+    "KS"
+   ],
+   "metrics": [
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "DISCH_N"
+     },
+     "aggregate": "SUM",
+     "label": "出院人数"
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "BED_END"
+     },
+     "aggregate": "SUM",
+     "label": "月末实有病床"
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "CURE_RATE"
+     },
+     "aggregate": "SUM",
+     "label": "治愈率(%)"
+    },
+    {
+     "expressionType": "SIMPLE",
+     "column": {
+      "column_name": "DEATH_RATE"
+     },
+     "aggregate": "SUM",
+     "label": "病死率(%)"
+    }
+   ],
+   "row_limit": 50,
+   "page_length": 25,
+   "server_pagination": false,
+   "include_search": true,
+   "include_time": false,
+   "order_desc": true,
+   "table_timestamp_format": "%Y-%m-%d",
+   "time_range": "No filter",
+   "column_config": {}
+  }
+ }
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1366x768",
+    "check": "login",
+    "result": "PASS",
+    "detail": "r=submitted who=admin"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1366x768",
+    "check": "home-pwd-btn",
+    "result": "PASS",
+    "detail": "{\"exists\": true, \"text\": \"修改密码\", \"href\": \"/user_info/\", \"h\": \"32px\", \"bg\": \"rgb(255, 255, 255)\", \"border\": \"rgb(217, 225, 234)\", \"color\": \"rgb(68, 83, 106)\", \"afterPrimary\": true}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1366x768",
+    "check": "user-info-zh",
+    "result": "PASS",
+    "detail": "{\"crumb\": true, \"backHref\": \"/superset/welcome/\", \"backText\": \"← 返回工作台\", \"cur\": \"账号基本信息\", \"hasLoginId\": true, \"hasStatus\": true, \"hasRole\": true, \"hasCount\": true, \"hasName\": true, \"hasSurname\": true, \"legacyUser\": false, \"legacyCount\": false, \"legacyActive\": "
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1366x768",
+    "check": "pwd-modal",
+    "result": "PASS",
+    "detail": "{\"pw\":2,\"save\":1}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1366x768",
+    "check": "admin-50-normal",
+    "result": "PASS",
+    "detail": "{\"table\":true,\"card\":false}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1366x768",
+    "check": "regression-36",
+    "result": "PASS",
+    "detail": "{\"toolbar\":true,\"cal\":true,\"table\":true,\"crumb\":true}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "login",
+    "result": "PASS",
+    "detail": "r=submitted who=003158"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "home-pwd-btn",
+    "result": "PASS",
+    "detail": "{\"exists\": true, \"text\": \"修改密码\", \"href\": \"/user_info/\", \"h\": \"32px\", \"bg\": \"rgb(255, 255, 255)\", \"border\": \"rgb(217, 225, 234)\", \"color\": \"rgb(68, 83, 106)\", \"afterPrimary\": true}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "user-info-zh",
+    "result": "PASS",
+    "detail": "{\"crumb\": true, \"backHref\": \"/superset/welcome/\", \"backText\": \"← 返回工作台\", \"cur\": \"账号基本信息\", \"hasLoginId\": true, \"hasStatus\": true, \"hasRole\": true, \"hasCount\": true, \"hasName\": true, \"hasSurname\": true, \"legacyUser\": false, \"legacyCount\": false, \"legacyActive\": "
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "pwd-modal",
+    "result": "PASS",
+    "detail": "{\"pw\":2,\"save\":1}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "denied-card-50",
+    "result": "PASS",
+    "detail": "{\"card\": true, \"title\": \"专项明细权限受控\", \"text\": \"该报表包含患者/手术级明细数据，需开通对应的【报表授权】专项角色后方可查看。如需使用请联系信息科授权，或点击下方按钮返回\", \"btnText\": \"返回报表目录\", \"btnHref\": \"/superset/dashboard/34/\", \"errHidden\": true}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "denied-card-47",
+    "result": "PASS",
+    "detail": "{\"card\": true, \"title\": \"专项明细权限受控\", \"text\": \"该报表包含患者/手术级明细数据，需开通对应的【报表授权】专项角色后方可查看。如需使用请联系信息科授权，或点击下方按钮返回\", \"btnText\": \"返回报表目录\", \"btnHref\": \"/superset/dashboard/34/\", \"errHidden\": true}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "denied-card-61",
+    "result": "PASS",
+    "detail": "{\"card\": true, \"title\": \"专项明细权限受控\", \"text\": \"该报表包含患者/手术级明细数据，需开通对应的【报表授权】专项角色后方可查看。如需使用请联系信息科授权，或点击下方按钮返回\", \"btnText\": \"返回报表目录\", \"btnHref\": \"/superset/dashboard/34/\", \"errHidden\": true}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "unknown-dash-raw",
+    "result": "PASS",
+    "detail": "{\"card\":false,\"err\":true,\"errVisible\":true}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "003158",
+    "viewport": "1366x768",
+    "check": "regression-36",
+    "result": "PASS",
+    "detail": "{\"toolbar\":true,\"cal\":true,\"table\":true,\"crumb\":true}"
+  }
+]

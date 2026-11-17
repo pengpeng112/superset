@@ -1,0 +1,15 @@
+﻿模块,源对象数,已建不同来源数,未覆盖来源数,业务功能数,基线依据,刷新状态
+cate_d,70,48,22,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+clinic,9,5,4,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+comm,1,0,1,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+dis_report,49,21,28,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+disanalyse,24,19,5,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+djdesign,11,10,1,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+drug,18,15,3,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+inp,63,36,27,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+medicaldata,15,9,6,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+mrdatainput_dw,5,4,1,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+mrpublic,4,3,1,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+p_comm_print,11,6,5,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+pubcomm,4,4,0,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新
+spjxc,55,29,26,待P2确认,round-4/SRD源对象339条台账.csv,待P0刷新

@@ -1,0 +1,103 @@
+{
+  "run": "20261104-NAV-SEARCH",
+  "phase": "after",
+  "ts": "2026-11-07T00:17:48+08:00",
+  "counts": {
+    "charts": 65,
+    "datasets": 75,
+    "dashboards": 49,
+    "users": 2383,
+    "published": 47,
+    "roles": 342,
+    "rls": 0,
+    "favstar": 0,
+    "dash_slices": 53,
+    "perm_view_role": 410
+  },
+  "groups": {
+    "G1_dashboards": {
+      "rows": 49,
+      "sha256": "bca57c8faa8fee398249441f45df4a3c827364e86b6316dd7a76ba1a9709156a"
+    },
+    "G1_dashboard_slices": {
+      "rows": 53,
+      "sha256": "f061c8ebbfdb1e27749be59246555ee89aa6326a62ac95d4af7a9c74d2a9c87b"
+    },
+    "G1_dashboard_roles": {
+      "rows": 42,
+      "sha256": "199d24c9aba54857d2cba1e0352dfd4c2118c9191879042f9ce0748f60682a56"
+    },
+    "G2_datasets": {
+      "rows": 4998,
+      "sha256": "e61adb40071c92685db845e67944596e09fd6a8a05b0c4b6e70b3c4c71e48594"
+    },
+    "G2_columns": {
+      "rows": 817,
+      "sha256": "28a9fa8c2a1831119feea23689a32c790487b1061bf5c593c31d8c59fc1adc5d"
+    },
+    "G2_metrics": {
+      "rows": 74,
+      "sha256": "87eca637032a61590d606d2f756df92c700565582bf0e906443afe9e473ee30a"
+    },
+    "G3_charts": {
+      "rows": 65,
+      "sha256": "c2417c58e4e4c28ad35e72c7f530e82c68f2d7cb0e84dc66474d9f81ac1fa876"
+    },
+    "G4_users": {
+      "rows": 2383,
+      "sha256": "e452e91609d8e3556eb58b6f62f6f6c9ad838b142b6dc13f7425f631961ba1a7"
+    },
+    "G5_roles": {
+      "rows": 342,
+      "sha256": "b69ec42557ac3182c395b8b7dc3109fb2a1d6fa0b10180ea44480c556da8553d"
+    },
+    "G5_user_role": {
+      "rows": 4767,
+      "sha256": "b4397218db282ff113c4628eede3e9b45bc2c1da11169ae42bee95c5d0a3cc5d"
+    },
+    "G6_permissions": {
+      "rows": 86,
+      "sha256": "440a9a430c582c3610b330c3c4a2b14bbfbe8e43f0e778af78368fbca14c03bb"
+    },
+    "G6_view_menu": {
+      "rows": 409,
+      "sha256": "0f2674b8587fd2e5e3266db2d720c79cf4e60c58e69a3e2566af4205cfae94f1"
+    },
+    "G6_perm_view": {
+      "rows": 541,
+      "sha256": "dd0ee3a1cc424f48999811173c37ae51d40b3603a472855f261443756305df3a"
+    },
+    "G6_perm_view_role": {
+      "rows": 410,
+      "sha256": "0e13f0ccdf905bc43d84ac4b4c3595714df8c9aee81c0bddc88bf52f836555ae"
+    },
+    "G7_rls_filters": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "G7_rls_tables": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "G7_rls_roles": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "G8_favstar": {
+      "rows": 0,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  },
+  "assets": {
+    "/home/superset/custom/home-ui.js": "9c79c9b62a8255e6ac2017e48cbd746dfcfc018b6e497e086661bdce241ac7c6",
+    "/home/superset/custom/report-ui.js": "d21a7fb9e9525c4d35c9f065df53e60af7f2fdce2c394e6d985e0f5768394af0",
+    "/home/superset/custom/report-dates.js": "c5ce21460f36092eedb7e7ac93e8ae4377b95920db68fa31c1506089cd77f937",
+    "/home/superset/nginx.conf": "a0029e16d2c93c776b4299be7a50f6215fa3dc18729f3b319f9799458ee06d5d"
+  },
+  "nginx_inode": "47580611",
+  "diff": {
+    "counts": {},
+    "groups": [],
+    "inode_same": true
+  }
+}

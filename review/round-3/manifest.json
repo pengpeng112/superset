@@ -1,0 +1,37 @@
+{
+  "round": 3,
+  "created_at": "2026-10-04 19:56:13",
+  "tool": "tools/multi_ai_evidence.py",
+  "ais": {
+    "kimi": {
+      "status": "absent",
+      "files": [],
+      "reason": "403 周额度耗尽（kimi.com 7 天窗口限额，2026-10-04 20:04）"
+    },
+    "grok": {
+      "status": "present",
+      "files": [
+        {
+          "file": "审查_grok.raw",
+          "normalized_to": "审查_grok",
+          "sha256_raw": "191b130fa17f9be4917a1879833c990e2aced260826e6ad97b5ee24d2d3deae0",
+          "bytes": 15162
+        }
+      ],
+      "reason": ""
+    },
+    "codex": {
+      "status": "present",
+      "files": [
+        {
+          "file": "检查_codex.md",
+          "normalized_to": "检查_codex_normalized.md",
+          "sha256_raw": "771a759ddd4bffc90415200aa50816803207e6a5bd073931a5cb15dac36fb353",
+          "bytes": 24238
+        }
+      ],
+      "reason": ""
+    }
+  },
+  "note": "本 manifest 只登记文件级证据（哈希/在席/缺席），不载结论；终审归人工。"
+}

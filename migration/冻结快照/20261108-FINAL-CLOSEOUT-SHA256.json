@@ -1,0 +1,90 @@
+{
+ "run_id": "20261108-FINAL-CLOSEOUT",
+ "date": "2026-11-15",
+ "summary": "FINAL-CLOSEOUT 收尾闭环：home-ui h11（pageId 别名解析 Bug 修复）+ report-guards g6（版本串递增）上线（inode 47580611 保持、宿主=容器 sha 一致、CDP 验收 13/13）；五处 Bug/灾备漏项闭环（39 号终判=探针 pivot_table_v2 选择器缺陷、probe39-pivot.json 实证 pvtTable 174 行真实渲染、acc6 双残卷重跑 15/15、warmup_templates 灾备副本补齐）；全系统 51 看板双浏览器终验 102/102 PASS + 终验总表 CSV 落地（死链接通）+ acc6 四轮 60/60；元数据零非预期变更（86/77/52/2383/344/RLS0）；2026-11-17 补充：报表目录下钻修复 h14（头部整行点击+openSet 字符串归一，原生分类展开粘住+刷新记忆），Chrome156 10/10 + C87 抽检 PASS",
+ "production_final": {
+  "custom/home-ui.js": {
+   "sha256": "62df59b087473a55544663a108c315c89026f849756146dffec0d78e3c43e67b",
+   "version": "20261117h16（下钻修复终版：syncGroupOpen 统一属性+箭头+内联display；h11→h16）"
+  },
+  "custom/report-guards.js": {
+   "sha256": "f517580d162163268be09f50df4160ef40133f6212d7d875b5939b8449ed3c52",
+   "version": "20261115g6（版本串递增，代码=g5 热修终版）"
+  },
+  "nginx.conf": {
+   "sha256": "506ba584ccd5fc0b498bf5e5d689f6346c7bd59c1553e8f9076b211d50c9a6a5",
+   "version": "inode 47580611 保持，版本串 h16/g6"
+  },
+  "custom/report-dates.js": {
+   "sha256": "a26e751d008498868686edbd397e4f5ca2749093eec319d94388ac2633112141",
+   "version": "20261111d18（本日未动）"
+  },
+  "custom/report-ui.js": {
+   "sha256": "add99c189c9d2c08c070901a1b99f1c1498397b2833486f01abd97b558d18b17",
+   "version": "20261108f13（本日未动）"
+  }
+ },
+ "production_before": {
+  "custom/home-ui.js": "5f7e9115683e06ed952b91fb8c63acb9aafa6173f20c4cf90a398a91b7ec63e5 (20261111h10)；2026-11-15 h11=258aec57…；2026-11-17 回退链 before-h12/（h11）",
+  "custom/report-guards.js": "9ff7e07e251635faaf84366984d12f0418811947be2947169ce051479e480cf6 (20261112g5 热修版)",
+  "nginx.conf": "2135b093141c60f530fd1c47ee000a34cf975182704aab202b950fdadb5b722e (11-15 前)；11-15 h11 版=e979ff32…；11-17 回退链 before-h12/",
+  "server_backup_dir": "73:/home/superset/migration-private/20261108-FINAL-CLOSEOUT/before-h11-g6/"
+ },
+ "acceptance": {
+  "sweep_chrome": "51/51 PASS (Chrome/156.0.8078.81)",
+  "sweep_c87": "51/51 PASS (Chrome/87.0.4272.0)",
+  "acc6": "4 rounds x 15 = 60/60 PASS",
+  "mod1_verify": "13/13 PASS",
+  "csv_rows": 51,
+  "probe39": "pvtTable 174rows x 25 header cols, data 765 rows, viz=pivot_table_v2",
+  "kyb_fix": "h16: 失同步自愈+正常展开 Chrome157/C87 双 PASS（h16-verify.json / h16-verify-c87.json）"
+ },
+ "baseline_unchanged": {
+  "slices": 86,
+  "datasets": 77,
+  "dashboards": 52,
+  "published": 50,
+  "users": 2383,
+  "roles": 344,
+  "rls": 0
+ },
+ "batch_products_sha256": {
+  "最终报告.md": "55075d893e0d4a17156f35cb6d7ff76f8c79a639fc35a221001a942a35daab6d",
+  "交接-剩余计划-20261111.md": "29478195b98caa9962ad138f5d3ccccaf004aa790d627a1fd8e32d9d704ffb4b",
+  "mod1_verify.py": "aa955ae4908e09dab3965618027d4f752118e38c2124834c38fcf3665b979d8e",
+  "mod1-verify.json": "8784991ccb1803681855c5ab58af40108d1bf54f3725359a4d934ebdaa46d8d4",
+  "sweep_run.py": "31d354942098467927f420c5950f0d952566c4f02a8176adf0968fc3e4d75ad4",
+  "sweep-chrome.json": "7ef45e8748ec9442666b1dcfaa427e78381cc00c210bad17e6a5c6c0ff1e2a6d",
+  "sweep-c87.json": "e0247641d6511f869e23b067bf2900467cf0e4b210bb4c67b9af0d29e2f783c2",
+  "全系统看板终验总表-20261108.csv": "113727e99068cf9ca69804959be9919eca32a65a6b668e081b11b65f08c9acfe",
+  "acc6-chrome-1920x1080.json": "679714ec89438005c98258bf082b01d3e84300173adceff2bfcd670ea124bf03",
+  "acc6-chrome-1366x768.json": "5cbbfff163707e24eb985532312afa66ffe55e0c7a33386ba57c42c2960aa2f1",
+  "acc6-c87-1920x1080.json": "0f2c66599d7e4ed8b559d4aeae1953755a2d1b39fb2f75d3b2214cb4a2902e38",
+  "acc6-c87-1366x768.json": "23e22cbbcb1581a85d63a373a6c0a9c8bfc54d35797c32928ce0b83a880c639f",
+  "probe39_pivot.py": "ad22833eff47035ceaa7bff2dfcac36559a2ca19553d1b73b723680922865ea7",
+  "probe39-pivot.json": "cfbbf4c113762488d2893e5675a54f5960a736082e5414162709283c095a3426",
+  "sweep_meta.tsv": "126cff5b02111c5ebdd68bad6a160570fabdb85cfb5c5f46d96ca4c92e52b061",
+  "catalog_map.json": "6749f507d4d5f5340d9160da5b1bf6e6e842e0972598de0fd63121b911bedb68",
+  "build_final_csv.py": "e95c8417f1f7266638b00b0775e38c964097ecb23c5ffebe491df24a72a60166",
+  "diag39-meta.txt": "e78246e6e71fb09a396002ed5d8927ed4b31ecaeb4ccea8423aa0f6da8cce319",
+  "全院专项明细角色对照与人员授权操作指南.md": "04075e1ea1f5c9597ed8b78ce10bb3761e380456495885585fe3a58f2c521f0c",
+  "kyb_diag.py": "656734efd4ec5f0937d0c584fc58ac5592c260c32f8f539e58f35cea108b0d9f",
+  "kyb-diag.json": "972561085a2ae34066f92324cb96923247b41a16e31c7b26fd90297a10c444f4",
+  "kyb_verify.py": "f84d6dc29f43b0e6e7f8e54a93e9119a7370714ab365ef279051928e15e486c8",
+  "kyb_verify2.py": "1408b925d47599e00e825ee276eb3cf008acb83f514fd25516b19b94966028eb",
+  "kyb-verify.json": "8e9810881eca8b18872cc611552c13a167b92d177f846ed3bc2bb00b93b7d76c",
+  "kyb-verify-final.json": "a91004934aa70858cef033ab494e4f7913a9007166ab9dfea9d23b7e9aa8a09d",
+  "kyb-verify-c87.json": "c12640d5f28723ee47e41888a766f6e34a8d8a216dfdca09a64b88a2c9160e73",
+  "kyb_deep.py": "b4ea18d0a3a07090352c052123604c1712b3c298626893e38ee19820403b527e",
+  "kyb-deep.json": "9e27579a3f4b88eebeaf444e1d0a5b5611eeb70bcd15dfc067a6b48451dca692",
+  "h15-regression.json": "577615f444e50aa5255b7919243c62a942a1c5babb31be9e0791e5cfbd6eef33",
+  "h16-verify.json": "7c8083b8994bdf27096a9d84025a8260355a7bbc5a213f1a633c1d447601e77f",
+  "h16-verify-c87.json": "c131e6bbe08eaa2f26b932f329e3cc46faf3d1006807f5300942b2f2921dec5b"
+ },
+ "offline_bundle_mirror_sha256": {
+  "custom/home-ui.js": "62df59b087473a55544663a108c315c89026f849756146dffec0d78e3c43e67b",
+  "custom/report-guards.js": "f517580d162163268be09f50df4160ef40133f6212d7d875b5939b8449ed3c52",
+  "nginx.conf": "506ba584ccd5fc0b498bf5e5d689f6346c7bd59c1553e8f9076b211d50c9a6a5",
+  "scripts/warmup_templates.json": "0b76fe74bc9bb84e934339b7141e8a9ea97a368456254800f996478a47a47657"
+ }
+}

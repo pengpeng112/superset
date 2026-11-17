@@ -1,0 +1,104 @@
+{
+  "日期": "2026-10-06",
+  "轮次": "round-4",
+  "复核性质": "Codex 单方只读复核，未执行生产迁移",
+  "哈希算法": "SHA-256",
+  "说明": "不对哈希清单自身计算哈希；此前轮次归档未修订。",
+  "files": [
+    {
+      "file": "review/round-4/SRD图表212条复核台账.csv",
+      "bytes": 40272,
+      "sha256": "8b5e6b37f9dfa04d0a47a491492ca91589b951455931fccab31cdddbe2a833d1"
+    },
+    {
+      "file": "review/round-4/SRD源对象339条台账.csv",
+      "bytes": 34232,
+      "sha256": "45a3008237f9832b29187661f631830c0570ccae6273f4cff62310eb41f49ba4"
+    },
+    {
+      "file": "review/round-4/修订前文件哈希.json",
+      "bytes": 315,
+      "sha256": "0f51835f3c8f0b29c8a011e3059f7e529eb2cb65c190946f73cc6a8f22a256f6"
+    },
+    {
+      "file": "review/round-4/只读远程核查.py",
+      "bytes": 2686,
+      "sha256": "413835dd2da51027f8fdddcb7a27248613a3f307b0162106bce6b63d2d358eb3"
+    },
+    {
+      "file": "review/round-4/复核统计.json",
+      "bytes": 3903,
+      "sha256": "812d4fd18a5fe99a0b9bb49af65fede9cce03bef8a72bdf971fef6450a7af9f2"
+    },
+    {
+      "file": "review/round-4/最终报告.md",
+      "bytes": 18094,
+      "sha256": "a2cc6aad15dca7a14601e67f3fc653128c6e64d9c2d6c84ad5ab27072a978e57"
+    },
+    {
+      "file": "review/round-4/核查元数据结构.sh",
+      "bytes": 820,
+      "sha256": "84ef37c8a9f8772d28d1dbeababac48ba3beb43bcc85e0372a39197e30dc6ff7"
+    },
+    {
+      "file": "review/round-4/生产元数据只读快照.json",
+      "bytes": 408104,
+      "sha256": "a5f45a3a9922b57d1aa449d0095b7d48f1d380521f6ed979baecb5d7b16a068f"
+    },
+    {
+      "file": "review/round-4/生产元数据只读快照.sh",
+      "bytes": 7186,
+      "sha256": "b467e2926f26b40b295e8475c24b2a992c8ac2718ad47607a885edb03621398d"
+    },
+    {
+      "file": "review/round-4/生成复核台账.py",
+      "bytes": 6658,
+      "sha256": "ad3f4e4a2d497dd9118b3daab94f0f6445114f70b9d13204e75215e7ed337976"
+    },
+    {
+      "file": "review/round-4/迁移结果缺失原因核查.out",
+      "bytes": 803,
+      "sha256": "43dc4c5fac9c11902f94d5dfc9d3749c42578c0bbcbc1447249bf06e2f781eb4"
+    },
+    {
+      "file": "review/round-4/迁移结果缺失原因核查.sh",
+      "bytes": 1727,
+      "sha256": "5f2b052afbbf811113bb74ddd091ff85451b4c503cf5197fcdef6f1c8791013c"
+    },
+    {
+      "file": "review/round-4/迁移语义与权限补充核查.json",
+      "bytes": 366016,
+      "sha256": "b221f70d16897e60ba8f128f5e2b8083651f30831f13ab0699d42fe32bb53500"
+    },
+    {
+      "file": "review/round-4/迁移语义与权限补充核查.out",
+      "bytes": 366696,
+      "sha256": "bd83446283dba5c135199ab4f8d121da741fa680f239346a24540654bcac29ca"
+    },
+    {
+      "file": "review/round-4/迁移语义与权限补充核查.sh",
+      "bytes": 5513,
+      "sha256": "090661accf45f42ac6a85c488b8bec3d4bc9dd987362fae378d744b95ff1389d"
+    },
+    {
+      "file": "review/round-4/运行状态只读核查.out",
+      "bytes": 2479,
+      "sha256": "0dc4180d1b4ac0180f85c3dda88997aad446055c1a186be6456701f3ec5f0f0a"
+    },
+    {
+      "file": "review/round-4/运行状态只读核查.sh",
+      "bytes": 2591,
+      "sha256": "1642d02f2a7bcba6cc16fdf8aec2a3ec7654e87b44512b4a5faa156f49191591"
+    },
+    {
+      "file": "superset-访问信息.md",
+      "bytes": 9353,
+      "sha256": "37ae539e3f0969208de2dce52e583966649e99690a45a776e78f6d86b0fb20a1"
+    },
+    {
+      "file": "迁移完成情况与待办说明.md",
+      "bytes": 9701,
+      "sha256": "33bcd18c907d7236f305258b9c2c27a15a2465ce2918443425d606d16ce09895"
+    }
+  ]
+}

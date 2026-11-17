@@ -1,0 +1,95 @@
+{
+ "chrome": {
+  "error": "<HTTPError 405: 'Method Not Allowed'>"
+ },
+ "c87": {
+  "browser": "Chrome/87.0.4272.0",
+  "login": true,
+  "pages": {
+   "dashboard50_denied": {
+    "path": "/superset/dashboard/50/",
+    "title": "山东省第二人民医院",
+    "bodyHead": "Page not found Sorry, we cannot find the page you are looking for. You may have mistyped the address or the page may have moved. BACK TO HOME",
+    "alerts": [],
+    "h12": [
+     "H1:Page not found"
+    ],
+    "buttons": [],
+    "labels": [],
+    "tables": [],
+    "mainCls": "",
+    "htmlCls": "hh-report-page hh-query-ui",
+    "hhAdmin": false
+   },
+   "dashboard47_denied": {
+    "path": "/superset/dashboard/47/",
+    "title": "山东省第二人民医院",
+    "bodyHead": "Page not found Sorry, we cannot find the page you are looking for. You may have mistyped the address or the page may have moved. BACK TO HOME",
+    "alerts": [],
+    "h12": [
+     "H1:Page not found"
+    ],
+    "buttons": [],
+    "labels": [],
+    "tables": [],
+    "mainCls": "",
+    "htmlCls": "hh-report-page hh-query-ui",
+    "hhAdmin": false
+   },
+   "user_info": {
+    "path": "/user_info/",
+    "title": "山东省第二人民医院",
+    "bodyHead": "首页 报表目录 设置 附加信息 账号信息 用户名 003158 是否启用 是 角色 Gamma, 科室_微生物实验室（050205） 计数 31 个人信息 名 李春香 姓 邮箱 003158@superset.local 重置密码 编辑查询",
+    "alerts": [],
+    "h12": [],
+    "buttons": [
+     "重置密码",
+     "编辑查询"
+    ],
+    "labels": [
+     "用户名",
+     "是否启用",
+     "角色",
+     "计数",
+     "名",
+     "姓",
+     "邮箱"
+    ],
+    "tables": [
+     "用户名,是否启用,角色,计数",
+     "名,姓,邮箱"
+    ],
+    "mainCls": "ant-layout-content superset-v3goet css-1qnrq57",
+    "htmlCls": "",
+    "hhAdmin": false
+   },
+   "resetmypassword": {
+    "path": "/resetmypassword/form",
+    "title": "山东省第二人民医院",
+    "bodyHead": "首页 报表目录 李春香 × 访问被拒绝 重设密码表单 密码 * 请使用较为安全的密码，该应用不会检查密码安全性 确认密码 请重新输入密码以确认 保存 返回",
+    "alerts": [
+     "alert alert-danger || ×\n            访问被拒绝"
+    ],
+    "h12": [],
+    "buttons": [
+     "Cancel",
+     "OK",
+     "OK",
+     "×",
+     "保存",
+     "返回"
+    ],
+    "labels": [
+     "密码\n                  \n                  ",
+     "确认密码"
+    ],
+    "tables": [
+     ""
+    ],
+    "mainCls": "",
+    "htmlCls": "",
+    "hhAdmin": false
+   }
+  }
+ }
+}

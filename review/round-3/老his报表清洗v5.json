@@ -1,0 +1,1762 @@
+[
+ {
+  "src": "统计管理\\autoload.pbd",
+  "name": "Q",
+  "sql": "Select remotepath , downmode , lastuploadtime , isonlydownpbd From COMM.applications_para WheDAT*"
+ },
+ {
+  "src": "统计管理\\autoload.pbd",
+  "name": "Q",
+  "sql": "select isdownload , lastuploadtime , remotepath from COMM.applications_para where code =' '"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT TOPIC, ITEM_NAME, ITEM_CODE,CODING_SCHM,OUTER_CODE FROM COMM.OUTER_CODE_DICT WHERE ( ITEM_NAME =   ) AND ( ITEM_CODE =   ) AND ( TOPIC =   )"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.OPERATION_DICT.OPERATION_NAME, COMM.OPERATION_DICT.OPERATION_CODE FROM COMM.OPERATION_DICT WHERE COMM.OPERATION_DICT.OPDAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT TOPIC, ITEM_NAME, ITEM_CODE, CODING_SCHM, OUTER_CODE, 99 FROM COMM.OUTER_CODE_DICT"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT rpad(OUTER_CODE,8) ,rpad(ITEM_NAME,40), rpad(ITEM_CODE,16) FROM OUTER_CODDAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT \"MEDREC.OPERATION\".\"OPERATION_DESC\", \"MEDREC.OPERATION\".\"OPERATION_CODE\", count(*) FROM \"MEDREC.OPERATION\", \"MEDREC.PAT_VISIT\" WHERE ( \"MEDREC.OPERATION\".\"PATIENT_ID\" = \"MEDREC.PAT_VISIT\".\"PATIENT_ID\" ) and ( \"MEDREC.OPERATION\".\"VISIT_ID\" = \"MEDREC.PAT_VISIT\".\"VISIT_ID\" ) GROUP BY \"MEDREC.OPERATION\".\"OPERATION_CODE\", \"MEDREC.OPERATION\".\"OPERATION_DESC\" ORDER BY 3 DESC"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select COMM.dept_dict.dept_name, OUTPBILL.outp_bill_items.item_name, OUTPBILL.outp_bill_items.item_spec, OUTPBILL.outp_bill_items.units, sum(OUTPBILL.outp_bill_items.amount), sum(OUTPBILL.outp_bill_items.charges) from outp_DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select MEDREC.operation.patient_id, MEDREC.operation.visit_id, MEDREC.operation.operation_code, MEDREC.pat_visit.discharge_date_time, MEDREC.pat_visit.admission_date_time, MEDREC.operation.operating_date from MEDREC.operation,MEDREC.pat_visit where MEDREC.operation.patient_id = MEDREC.pat_visit.patient_id and MEDREC.operation.visit_id = MEDREC.pat_visit.visit_id and trunc(MEDREC.pat_visit.discharge_date_time) DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT INPBILL.INP_BILL_DETAIL.ITEM_NAME, INPBILL.INP_BILL_DETAIL.ITEM_SPEC, INPBILL.INP_BILL_DETAIL.UNITS, sum(INPBILL.INP_BILL_DETAIL.AMOUNT), sum(INPBILL.INP_BILL_DETAIL.COSTS) FROM INPBILL.INP_BILL_DETAIL where ( 1 = 1) DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT INPADM.PATS_IN_HOSPITAL.PATIENT_ID, INPADM.PATS_IN_HOSPITAL.VISIT_ID, INPADM.PATS_IN_HOSPITAL.BED_NO, MEDREC.PAT_MASTER_INDEX.NAME, COMM.DEPT_DICT.DEPT_NAME, MEDREC.PAT_MASTER_INDEX.INP_NO, INPBILL.INP_SETTLE_MASTER.SETTLING_DATE FROM INPADM.PATS_IN_HOSPITAL, COMM.DEPT_DICT, MEDREC.PAT_MASTER_INDEX, INPBILL.INP_SETTLE_MASTER WHERE INPADM.PATS_IN_HOSPITAL.PATIENT_ID = MEDREC.PAT_MASTER_INDEX.PATIENT_ID AND INPADM.PATS_IN_HOSPITAL.DEPT_CODE = DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select COMM.dept_dict.dept_name, sum(OUTPBILL.outp_bill_items.amount), sum(OUTPBILL.outp_bill_items.charges) from OUTPBILL.outp_bill_items,deptDAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT NAME,title ,group_code FROM COMM.STAFF_DICT ,COMM.staff_vs_group WHERE COMM.staff_dict.emp_no=COMM.staff_vs_group.emp_no and group_class='病区医生' AND (COMM.STAFF_DICT.TITLE='副主任医师' OR COMM.STAFF_DICT.TITLE='主治医师')"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT NAME,title ,DEPT_CODE FROM COMM.STAFF_DICT WHERE job='医生'"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT \"MEDREC.BLOOD_TRANSFUSION\".\"PATIENT_ID\", \"MEDREC.BLOOD_TRANSFUSION\".\"VISIT_ID\", \"MEDREC.BLOOD_TRANSFUSION\".\"WHOLE_BLOOD\", \"MEDREC.BLOOD_TRANSFUSION\".\"RED_CELL\", \"MEDREC.BLOOD_TRANSFUSION\".\"PURE_RED_CELL\", \"MEDREC.BLOOD_TRANSFUSION\".\"PLATELET\", \"MEDREC.BLOOD_TRANSFUSION\".\"CRYOAGGLUTININ\", \"MEDREC.BLOOD_TRANSFUSION\".\"PLASMA\", \"MEDREC.BLOOD_TRANSFUSION\".\"AUTOTRANSFUSION\" FROM \"MEDREC.BLOOD_TRANSFUSION\" WHERE ( \"MEDREC.BLOOD_TRANSFUSION\".\"PATIENT_ID\" =   ) AND ( \"MEDREC.BLOOD_TRANSFUSION\".\"VISIT_ID\" =   )"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT NAME,title ,group_CODE FROM COMM.STAFF_DICT,COMM.staff_vs_group WHERE COMM.staff_dict.emp_no = COMM.staff_vs_group.emp_no and group_class='病区医生'"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT \"MEDREC.BLOOD_TRANSFUSION\".\"WHOLE_BLOOD\", \"MEDREC.BLOOD_TRANSFUSION\".\"RED_CELL\", \"MEDREC.BLOOD_TRANSFUSION\".\"PURE_RED_CELL\", \"MEDREC.BLOOD_TRANSFUSION\".\"PLATELET\", \"MEDREC.BLOOD_TRANSFUSION\".\"PLASMA\", \"MEDREC.BLOOD_TRANSFUSION\".\"PATIENT_ID\", \"MEDREC.BLOOD_TRANSFUSION\".\"VISIT_ID\" FROM \"MEDREC.BLOOD_TRANSFUSION\" WHERE (\"MEDREC.BLOOD_TRANSFUSION\".\"PATIENT_ID\" =  ) AND (\"MEDREC.BLOOD_TRANSFUSION\".\"VISIT_ID\" =  ) DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select name from COMM.staff_dict where emp_no in( select emp_no from COMM.staff_vs_group where group_code = '2204')"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select MEDREC.pat_visit.patient_id, MEDREC.pat_visit.visit_id, MEDREC.pat_visit.total_costs, INPADM.adt_log.dept_code, INPADM.adt_log.log_date_time, INPADM.adt_log.WARD_CODE, MEDREC.pat_visit.dept_admission_to from INPADM.adt_log,MEDREC.pat_visit where INPADM.adt_log.action = 'D' and INPADM.adt_log.patient_id = MEDREC.pat_visit.patient_id and INPADM.adt_log.visit_id = MEDREC.pat_visit.visiDAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select patient_id, visit_id from MEDREC.DIAGNOSIS where TREAT_RESULT is not null DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select patient_id, visit_id from MEDREC.DIAGNOSIS where TREAT_RESULT is nDAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "select patient_id, visit_id from MEDREC.DIAGNOSIS where TREAT_RESULT = '其他' and DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.DEPT_DICT.DEPT_NAME, MEDREC.PAT_VISIT.DOCTOR_IN_CHARGE, count(MEDREC.PAT_VISIT.patient_id), 0 aqgd, 0 cqgd, 0 wgd FROM MEDREC.PAT_VISIT,COMM.DEPT_DICT wDAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.DEPT_DICT.DEPT_NAME, MEDREC.PAT_VISIT.DOCTOR_IN_CHARGE, count(MEDREC.PAT_VISIT.patient_id) FROM MEDREC.PAT_VISIT,COMM.DEPT_DICT DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.AREA_DICT.AREA_NAME, COMM.AREA_DICT.AREA_CODE FROM COMM.AREA_DICT"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDREC.PAT_VISIT.ADMISSION_DATE_TIME , DEPT_DICT_B.DEPT_NAME , MEDREC.PAT_VISIT.DISCHARGE_DATE_TIME , DEPT_DICT_A.DEPT_NAME , MEDREC.PAT_VISIT.VISIT_ID FROM MEDREC.PAT_VISIT , COMM.DEPT_DICT DEPT_DICT_A , COMM.DEPT_DICT DEPT_DICT_B WHERE ( MEDREC.PAT_VISIT.DEPT_DISCHARGE_FROM = DEPT_DICT_A.DEPT_CODE ) and ( MEDREC.PAT_VISIT.DEPT_ADMISSION_TO = DEPT_DICT_B.DEPT_CODE ) and ( ( MEDREC.PAT_VISIT.PATIENT_ID =   ) )"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDREC.PAT_MASTER_INDEX.INP_NO, MEDREC.PAT_MASTER_INDEX.NAME, MEDREC.PAT_MASTER_INDEX.SEX, DATE_OF_BIRTH , MEDREC.PAT_MASTER_INDEX.PATIENT_ID FROM MEDREC.PAT_MASTER_INDEX WHERE PATIENT_ID=  OR INP_NO="
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDREC.PAT_VISIT.PATIENT_ID, MEDREC.PAT_VISIT.VISIT_ID, INPADM.pats_in_hospital.ADMISSION_DATE_TIME, COMM.dept_dict.dept_name, MEDREC.PAT_VISIT.DEPT_DISCHARGE_FROM, INPADM.PATS_IN_HOSPITAL.BED_NO, INPADM.PATS_IN_HOSPITAL.WARD_CODE, 0 costs, 0 yj FROM MEDREC.PAT_VISIT,DAT*"
+ },
+ {
+  "src": "统计管理\\cate_d.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.DEPT_DICT.DEPT_NAME, to_char(DEPT_ADT.ST_DATE,'yyyy-mm-dd'), sum(MEDADM.DEPT_LOAD_DAY.CRITICAL_NUM), sum(DEPT_ADT.ADM_OUTP), sum(DEPT_ADT.DISCHARGE_NUM), sum(DEPT_ADT.USED_BED_DAYS) FROM DEPT_ADT, MEDADM.DEPT_LOAD_DAY, COMM.DEPT_DICT WHERE DEPDAT*"
+ },
+ {
+  "src": "统计管理\\clinic.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.dept_dict.dept_code, COMM.dept_dict.dept_name, COMM.tally_subject_dict.subj_name, INPBILL.inp_bill_detail.charges FROM COMM.dept_dict, COMM.tally_subject_dict, INPBILL.inp_bill_detail WHERE ( COMM.tally_subject_dict.subj_code(+) = INPBILL.inp_bill_detail.subj_code ) anDAT*"
+ },
+ {
+  "src": "统计管理\\clinic.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.DEPT_DICT\".\"DEPT_NAME\", \"MEDADM.DEPT_EXAM_DAY\".\"EXAM_CLASS\", SUM(COMPLETED_NUM) completed, SUM(ABNORMAL_NUM) abnormal , \"MEDADM.DEPT_EXAM_DAY\".\"EXAM_SUBCLASS\" FROM \"COMM.DEPT_DICT\", \"MEDADM.DEPT_EXAM_DAY\" WHERE ( \"COMM.DEPT_DICT\".\"DEPT_CODE\" (+) = \"MEDADM.DEPT_EXAM_DAY\".\"DEPT_CODE\" ) AND (ST_DATE >=   ) AND ( ST_DATE <=   ) GROUP DAT*"
+ },
+ {
+  "src": "统计管理\\clinic.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.dept_dict.dept_code, COMM.dept_dict.dept_name, COMM.inp_rcpt_fee_dict.fee_class_name, INPBILL.inp_bill_detail.charges FROM COMM.inp_rcpt_fee_dict, COMM.dept_dict, INPBILL.inp_bill_detail DAT*"
+ },
+ {
+  "src": "统计管理\\comm.pbd",
+  "name": "Q",
+  "sql": "SELECT STAT_DEPT_CODE, STAT_DEPT_NAME, DEPT_CODE, DEPT_NAME, REMARK FROM MEDREC.STAT_DEPT_DICT WHERE REMARK = '2' AND STAT_DEPT_CODE like"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "select PATIENT_ID, VISIT_ID , sum(COSTS) sum_COSTS, sum(decode(fee_type,'西药', COSTS,'中药',COSTS,0)) MEDREC.medical_costs from MEDREC.MEDICAL_COSTS GROUP BY PATIENT_ID, DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDREC.diagnosis.diagnosis_code diagnosis_code, V_PAT_VISIT.DEATH_REASON death_reason, sum(decode(MEDREC.DIAGnosis.TREAT_RESULT,'死亡',1,0)) death_num, a_V_PAT_VISIT.sum_num FROM V_PAT_VISIT, DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select nSeq,sTxt,sExp FROM MEDREC.MR_REPORT_DIAG WHERE sFrm='WT5-1' ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "select start_date , ori_bednum , modify_date , modify_bednum from MEDADM.stat_dept_modifyfix where stat_deptcode =' '"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT sum ( trunc ( MEDREC.OPERATION.OPERATING_DATE ) - trunc ( V_PAT_VISIT.ADMISSION_DATE_TIME ) ) , count ( *) FROM MEDREC.OPERATION , V_PAT_VISIT where V_PAT_VISIT.patient_id =MEDREC.OPERATION.patient_id and V_PAT_VISIT.visit_id =MEDREC.OPERATION.visit_id and operatioDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select count ( *) from V_PAT_VISIT , MEDREC.OPERATION where V_PAT_VISIT.patient_id =operatiDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select SUM ( NVL ( OUTP_NUM , 0 ) ) , SUM ( NVL ( HEALTH_EXAM_NUM , 0 ) ) from MEDADM.DEPT_OUTP_NUM_DAY where DEPT_CODE =DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select DISTINCT MEDADM.DEPT_OUTP_NUM_DAY.DEPT_CODE,COMM.DEPT_DICT.DEPT_NAME FROM COMM.DEPT_DICT,MEDADM.DEPT_OUTP_NUM_DAY WHERE MEDADM.DEPT_OUTP_NUM_DAY.DEPT_CODE=COMM.DEPT_DICT.DEPT_CODE ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select count ( *) from V_PAT_VISIT , MEDREC.OPERATION where V_PAT_VISIT.patient_id =MEDREC.operation.patient_id and V_PAT_VISIT.visit_id =MEDREC.operation.visit_id and V_PAT_VISIT.DEPT_DISCHARGE_FROM =' ' and V_PAT_VISIT.DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select STAT_DEPTCODE,STAT_DEPTNAME FROM MEDADM.STAT_DEPT_MODIFYFIX ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT nvl ( SUM ( outp_num ) , 0 ) FROM MEDADM.dept_outp_num_day WHERE trunc ( st_date ) between TRUNC(SYSDATE,'MM') and SYSDATE and clinic_type like '%专家%'"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT NVL ( SUM ( emergency_num ) , 0 ) , NVL ( SUM ( out_observ_num ) , 0 ) , NVL ( SUM ( died_in_observ_num ) , 0 ) , NVL ( SUM ( rescued_num ) , 0 ) , NVL ( SUM ( res_suc_num ) , 0 ) , NVL ( SUM ( died_in_clinic_num ) , 0 ) , NVL ( SUM ( died_when_arrived_num ) , 0 ) , NVL ( SUM ( emeygency_bed_sum ) , 0 ) FROM MEDADM.emergency_day WHERE trunc ( st_date ) between TRUNC(SYSDATE,'MM') and SYSDATE"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT COUNT ( *) FROM ( SELECT rownum - 1 rnum FROM all_objects WHERE rownum <= 0 + 1 ) T WHERE TRUNC(SYSDATE,'MM') + T.rnum NOT IN ( SELECT holiday_date FROM MEDADM.holiday_dict )"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT NVL ( SUM ( outp_num ) , 0 ) FROM MEDADM.dept_outp_num_day WHERE ( trunc ( st_date ) BETWEEN TRUNC(SYSDATE,'MM') AND SYSDATE ) AND ( dept_code =' ' )"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT NVL ( SUM ( outp_num ) , 0 ) FROM MEDADM.dept_outp_num_day WHERE trunc ( st_date ) BETDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT DEPT_DISCHARGE_FROM, COUNT(*) ss_hj FROM (SELECT DISTINCT V_PAT_VISIT.DEPT_DISCHARGE_FROM DEPT_DISCHARGE_FROM, MEDREC.operation.patient_id,MEDREC.operation.visit_id FROM MEDREC.operation,V_PAT_VISIT WHERE (TRUNC(operating_date) between   and   ) and (V_PAT_VISIT.patient_id = MEDREC.operation.patient_id) and (V_PAT_VISIT.visit_id = MEDREC.operation.visit_id ) ) DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT V_PAT_VISIT.DEPT_DISCHARGE_FROM DEPT_DISCHARGE_FROM, SUM(DECODE(ACCIDENT_CLASS,'1',1,'2',1,'3',1,0)) ylsg_num FROM MEDADM.ACCIDENT_REC ,V_PAT_VISIT WHERE (TRUNC(OCCUR_DATE) between   and  ) and (V_PAT_VISIT.patient_id = MEDADM.ACCIDENT_REC.patient_id) group by V_PAT_VISIT.DEPT_DISCHARGE_FROM) t_g, (SELECT V_PAT_VISIT.DEPTDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "select DEPT_DISCHARGE_FROM from V_PAT_VISIT where DISCHARGE_DATE_TIME >=  and DISCHARGE_DATE_TIME <= ) V_PAT_VISIT where (V_PAT_VISIT.DEPT_DISCHARGE_FROM = t_a.DEPT_DISCHARGE_FROMDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT NVL ( SUM ( outp_num ) , 0 ) FROM MEDADM.dept_outp_num_day WHERE trunc ( st_date ) BETWEEN TRUNC(SYSDATE,'MM') AND SYSDATE"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT V_PAT_VISIT.DEPT_DISCHARGE_FROM DEPT_DISCHARGE_FROM, COUNT(SERIAL_NO) yzcc_num FROM MEDADM.ACCIDENT_REC ,V_PAT_VISIT WHERE (TRUNC(OCCUR_DATE) between   and   ) and (ACCIDENT_CLASS = '4') and (V_PAT_VISIT.patient_id = MEDADM.ACCIDENT_REC.patient_id) group by V_PAT_VISIT.DEPT_DISCHARGE_FROM) t_h, (select DEPT_DISCHARGE_FROM from V_PAT_VISIT where DISCHARGE_DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT discharge_date_time, admission_date_time, patient_id, visit_id FROM V_DAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT discharge_date_time, admission_date_time, patient_id, visit_id FROM V_PAT_VISIT WHERE ((admission_date_time) between   and  ) AND ((discharge_date_time) >   OR discharge_date_time IS NULL) AND (DEPT_ADMISSION_TO =   )"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT V_PAT_VISIT.discharge_date_time, V_PAT_VISIT.admission_date_time, V_PAT_VISIT.patient_id, V_PAT_VISIT.visit_id FROM V_PAT_VISIT WHERE ( discharge_date_time between   and  ) AND ( V_PAT_VISIT.DEPT_DISCHARGE_FROM =  )"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select nSeq,sTxt,sExp FROM MEDREC.MR_REPORT_DIAG WHERE sFrm='WT5-1' AND nSeq <= 173 ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select nSeq,sTxt,sExp FROM MEDREC.MR_REPORT_DIAG WHERE sFrm='WT5-1' AND nSeq >173 AND nSeq <= 218 ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "SELECT a.patient_id,a.pat_name,e.blood_type_name AS xuexing, d.blood_class AS chengfen,SUM(b.blood_capacity)||b.dw AS xuel FROM blood_apply a,blood_inp_detailDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Nvl(Sum(Real_Bed_Num),0) N18 From MEDADM.Dept_Empty_Bed"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Sum ( 1 ) N71 , Sum ( Decode ( xb , '男' , 1 , 0 ) ) N72 , Sum ( Decode ( xb , '女' , 1 , 0 ) ) N73 , Sum ( Decode ( xb , '未知' , 1 , 0 ) ) N74 , Sum ( Decode ( bfz , '有' , 1 , 0 ) ) N81 , Sum ( Decode ( bfz , '无' , 1 , 0 ) ) N82 , Sum ( Decode ( bfz , '不确定' , 1 , 0 ) ) N83 FROM V_PAT_VISDAT*"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) From MEDREC.MR_REPORT_DEPT WHERE sFrm ='BJ_002'"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Nvl(WEIGHT_BIRTH,0) Sf0101,Nvl(WEIGHT_INP,0) Sf0102 FROM MEDREC.newborn_rec TA"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select SERIAL_NO,Dept_Code,DEPT_NAME FROM COMM.DEPT_DICT WHERE OUTP_OR_INP='0' ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) From MEDREC.MR_REPORT_BJ01 WHERE R1 =' ' And R5 =' '"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) From MEDREC.MR_REPORT_BJ02 WHERE R1 =' ' And R5 =' '"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "select nvl ( count ( *) , 0 ) , nvl ( Sum ( decode ( accident_class , '4' , 1 , 0 ) ) , 0 ) from MEDADM.accident_rec where occur_date Between TRUNC(SYSDATE,'MM') And SYSDATE"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) From MEDREC.MR_REPORT_BJ04 WHERE R1 =' ' And R5 =' '"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) From MEDREC.MR_REPORT_BJ05 WHERE R1 =' ' And R5 =' '"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select sExp From MEDREC.MR_REPORT_DEPT WHERE sFrm='BJ_002' ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Nvl(Sum(outp_num),0) From MEDADM.DEPT_OUTP_NUM_DAY Where St_Date Between ? And ?"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select sExp,sCode From MEDREC.MR_REPORT_DEPT WHERE sFrm='BJ_002' ORDER BY nSeq"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select sTxt,sExp,sDept,sType From MEDREC.MR_REPORT_DIAG WHERE sFrm='WT5-3-50' Order by nSeq"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select diagnosis_desc FROM MEDREC.DIAGNOSIS WHERE PATIENT_ID =' ' And VISIT_ID =0 And diagnosis_type ='6' and diagnsis_no =1"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "Select Nvl ( Dept_Name , '' ) from COMM.DEPT_DICT WHERE DEPT_CODE =' '"
+ },
+ {
+  "src": "统计管理\\disanalyse.pbd",
+  "name": "Q",
+  "sql": "select a.stat_dept_code,a.stat_dept_name,b.dept_code from STAT_DEPT_DICDAT*"
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "SELECT TJKS_CODE, TJKS_NAME, KS_CODE, KS_NAME, BZ FROM TJKS_DICT WHERE TJKS_NAME =   AND BZ='2'"
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "SELECT count(*) yngr_num FROM MEDREC.diagnosis,MEDREC.pat_visit WHERE ( TRUNC(MEDREC.pat_visit.discharge_date_time) between   and   ) and ( MEDREC.diagnosis.diagnosis_type ='5' ) and ( MEDREC.pat_visit.patient_id = MEDREC.diagnosis.patient_id) and ( MEDREC.pat_visit.visit_id = MEDREC.diagnosis.visit_id) and length(ltrim(rtrim(diagnosis_desc))) > 2), (SELECT SUM(DECODE(ACCIDENT_CLASS,'1',1,'2',1,'3',1,0)) ylsg_num FROM MEDADM.ACCIDENT_REC WHERE TRUNC(OCCUR_DATE) between   and   ), (SELDAT*"
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "SELECT \"OUTPADM.CLINIC_MASTER\".\"VISIT_DEPT\",NVL(\"OUTPADM.CLINIC_MASTER\".\"CLINIC_TYPE\",0), COUNT(*) RC FROM \"OUTPADM.CLINIC_MASTER\" WHERE ( \"OUTPADM.CLINIC_MASTER\".\"VISIT_DATE\" =   ) AND ( \"OUTPADM.CLINIC_MASTER\".\"RETURNED_DATE\" IS NULL ) GROUP BY \"OUTPADM.CLINIC_MASTER\".\"VISIT_DEPT\",NVL(\"OUTPADM.CLINIC_MASTER\".\"CLINIC_TYPE\",0)"
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "SELECT discharge_date_time, admission_date_time, patient_id, visit_id FROM MEDREC.PAT_VISIT DAT*"
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "SELECT STAT_DEPT_CODE, STAT_DEPT_NAME, DEPT_CODE, DEPT_NAME, REMARK FROM MEDREC.STAT_DEPT_DICT WHERE REMARK = '2' order by STAT_DEPT_CODE"
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.MR_FEE_CLASS_DICT.SERIAL_NO, COMM.MR_FEE_CLASS_DICT.MR_FEE_CLASS_NAME FROM COMM.MR_FEE_CLASS_DICT ORDER BY COMM.MR_FEE_CLASS_DICT.SERIAL_NO ASC"
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "SELECT \"MEDADM.STAT_OPERCLASS_CONDITION\".\"STAT_CODE\", \"MEDADM.STAT_OPERCLASS_CONDITION\".\"STAT_NAME\", \"MEDADM.STAT_OPERCLASS_CONDITION\".\"CONDITION\" FROM \"MEDADM.STAT_OPERCLASS_CONDITION\""
+ },
+ {
+  "src": "统计管理\\dis_report.pbd",
+  "name": "Q",
+  "sql": "select PATIENT_ID,VISIT_ID,SUM(COSTS) COST from MEDREC.MEDICAL_COSTS GROUP BY PATIENT_ID, VISIT_ID ) B WHERE ( MEDREC.DIAGNOSIS.PATIENT_ID = MEDREC.PAT_VISIT.PATIENT_ID ) and ( MEDREC.DIAGNOSIS.VISIT_ID = MEDREC.PAT_VISIT.VISIT_ID ) and ( MEDREC.pat_master_index.patient_id = MEDREC.PAT_VISIT.patient_id) and ( B.PATIENT_ID = MEDREC.PAT_VISIT.PATIENT_ID) AND ( B.VISIT_ID = MEDREC.PAT_VISIT.VISIT_ID) AND ( MEDREC.DIAGNOSIS.DIAGNOSIS_CODAT*"
+ },
+ {
+  "src": "统计管理\\djdesign.pbd",
+  "name": "Q",
+  "sql": "select ORDADM.orders.doctor, ORDADM.orders.order_text, sum(ORDADM.orders_costs.costs) as costs, sum(ORDADM.orders_costs.amount) as amount from ORDADM.orders,ORDADM.orders_costs wherDAT*"
+ },
+ {
+  "src": "统计管理\\djdesign.pbd",
+  "name": "Q",
+  "sql": "select PHARMACY.drug_dispense_rec.drug_code, PHARMACY.drug_dispense_rec.drug_spec, PHARMACY.drug_dispense_rec.drug_units, 'a' as drug_name, sum(PHARMACY.drug_dispense_rec.dispense_amount) as amount, sum(PHARMACY.drug_dispense_rec.costs) as costs from PHARMACY.drug_dispense_rec,ORDADM.orders,COMM.drug_name_dict where PHARMACY.drug_dispense_rec.patient_id=ordersDAT*"
+ },
+ {
+  "src": "统计管理\\djdesign.pbd",
+  "name": "Q",
+  "sql": "select PHARMACY.drug_presc_master.prescriber, COMM.drug_dict.drug_name, sum(PHARMACY.drug_presc_detail.quantity), sum(PHARMACY.drug_presc_detail.costs) from PHARMACY.drug_presc_master,PHARMACY.drug_presc_detail,COMM.drug_dict where PHARMACY.drug_presc_master.presc_no=PHARMACY.drug_presc_detail.presc_no and PHARMACY.drug_presc_detail.drug_code=drug_dDAT*"
+ },
+ {
+  "src": "统计管理\\djdesign.pbd",
+  "name": "Q",
+  "sql": "select sum(PHARMACY.drug_presc_detail.costs), sum(PHARMACY.drug_presc_detail.quantity) as amount, PHARMACY.drug_presc_detail.drug_name, COMM.drug_dict.drug_spec, COMM.drug_dict.units, COMM.drug_dict.drug_code from PHARMACY.drug_presc_detail,COMM.drug_dict,PHARMACY.drug_presc_master where PHARMACY.drug_presc_detail.presc_no=PHARMACY.drug_presc_master.presc_no and COMM.drug_dict.drug_spec=PHARMACY.drug_presc_detail.package_spec and COMM.drug_dict.units=PHARMACY.drug_presc_detail.package_units and COMM.drug_dict.drugDAT*"
+ },
+ {
+  "src": "统计管理\\djdesign.pbd",
+  "name": "Q",
+  "sql": "select ORDADM.orders.doctor, sum(ORDADM.orders_costs.total_amount) as amount, sum(ORDADM.orders_costs.costs) as costs, 'a' as name, 'a' as drug_spec from ORDADM.orders,ORDADM.orders_costs where ORDADM.orders.order_no=ordeDAT*"
+ },
+ {
+  "src": "统计管理\\djdesign.pbd",
+  "name": "Q",
+  "sql": "select COMM.drug_name_dict.drug_code, COMM.drug_name_dict.drug_name, PHARMACY.drug_presc_detail.package_spec, PHARMACY.drug_presc_detail.package_units, sum(PHARMACY.drug_presc_detail.costs) as costs, sum(PHARMACY.drug_presc_detail.quantity) as amount from PHARMACY.drug_presc_detail,PHARMACY.drug_presc_master,drug_name_dicDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT storage,sub_storage,drug_form,PHARMACY.drug_export_detail.drug_code,drug_name,package_spec,package_units, 0,0,sum(quantity),sum(quantity*purchase_price),0,0 FROM PHARMACY.drug_export_detail,PHARMACY.drug_export_master,COMM.drug_dict WHERE PHARMACY.drug_export_detail.document_noDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT sub_storage,PHARMACY.drug_export_detail.drug_code,drug_name,package_spec,package_units, 0,0,sum(quantity),sum(quantity*purchase_price),0,0 FROM PHARMACY.drug_export_detail,PHARMACY.drug_export_master,COMM.drug_dict WHERE PHARMACY.drug_export_detail.document_no DAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT class_name || '(' || class_code || ')' FROM COMM.drug_class_dict WHERE 0 =0 ORDER BY class_code"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT storage_code , storage_name FROM PHARMACY.drug_storage_dept ORDER BY storage_name"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT sub_storage,drug_form,PHARMACY.drug_export_detail.drug_code,drug_name,package_spec,package_units, 0,0,sum(quantity),sum(quantity*purchase_price),0,0 FROM PHARMACY.drug_export_detail,PHARMACY.drug_export_master,COMM.drug_dict WHERE PHARMACY.drug_export_detail.document_no = PHARMACY.drug_export_master.document_no AND PHARMACY.drug_export_detail.drug_code = COMM.drug_dict.drug_code(+) AND PHARMACY.drug_export_detail.drug_spec = COMM.drug_dict.drug_spec(+) AND PHARMACY.drug_export_master.account_indicator = 1 AND DAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT sub_storage,drug_form,PHARMACY.drug_stock.drug_code,drug_name,package_spec,package_units, 0,0,0,0,sum(quantity),sum(quantity*Nvl(purchase_price,0)) FROM PHARMACY.drug_stock,COMM.drug_dict WHERE PHARMACY.drug_stock.drug_code = COMM.drug_dict.drug_code(+) AND PHARMACY.drug_stock.drug_spec = drDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT storage,sub_storage,COMM.exp_dict.exp_form exp_form,exp_export_detail.exp_code,exp_name,package_spec,package_units, 0,0,sum(quantity),sum(quantity*purchase_price),0,0 FROM exp_export_detail,exp_export_master,COMM.exp_dict WHERE exp_export_detail.document_no = exp_export_master.document_no AND exp_export_detail.exp_code = COMM.exp_dict.exp_code(+) AND exp_export_detaDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT storage_code , storage_name FROM exp_storage_dept ORDER BY storage_name"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT ITEM_CODE, ITEM_NAME, ITEM_SPEC, SUM(AMOUNT) AAA, UNITS, SUM(COSTS) BBB FROM OUTPBILL.OUTP_BILL_ITEMS WHERE ITEM_CLASS like   and item_class in ('A','B') and to_char(visit_date,'yyyy-mm-dd')>=   and to_char(visit_date,'yyyy-mm-dd')<=   GROUP BY ITDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "select receiver, sum(account_receivable) from exp_export_master where storage =   and to_char(export_date,'yyyy-mm-dd') >=   and to_char(export_date,'yyyy-mm-dd') <=   and Doc_Status = 0 group by receiver"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT \"DRUG_IES_MONTH\".\"STORAGE\",0,0,0,0,0,0, SUM(\"DRUG_IES_MONTH\".\"DRUG_SORT\"), SUM(\"DRUG_IES_MONTH\".\"AMOUNT\") FROM \"DRUG_IES_MONTH\" WHERE ( to_char(\"DRUG_IES_MONTH\".\"ST_MONTH\",'yyyy-mm') =   ) AND (\"DRUG_IES_MONTH\".\"IM_EX_STOCK\" = '3') GROUP BY \"DRUG_IES_MONTH\".\"STORAGE\""
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT \"DRUG_PRESC_MONTH\".\"DISPENSARY\",0,0,0,0,0,0,sum(\"DRUG_PRESC_MONTH\".\"COUNT\"), sum(\"DRUG_PRESC_MONTH\".\"DRUG_SORT\"), sum(\"DRUG_PRESC_MONTH\".\"AMOUNT\"),0,0,0 FROM \"DRUG_PRESC_MONTH\" WHERE ( to_char(\"DRUG_PRESC_MONTH\".\"ST_MONTH\",'yyyy-mm') >=   ) AND ( to_char(\"DRUG_PRESC_MONTH\".\"ST_MONTH\",'yyyy-mm') <=   ) and \"DRUG_PRESC_MONTH\".\"PRESC_SOURCE\" = 1 GROUP BY \"DRUG_PRESC_MONTH\".\"DISPENSARY\" UNIDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT \"DRUG_PRESC_MONTH\".\"DISPENSARY\",0,0,0,0,0,0,0,0,0,sum(\"DRUG_PRESC_MONTH\".\"COUNT\"), sum(\"DRUG_PRESC_MONTH\".\"DRUG_SORT\"), sum(\"DRUG_PRESC_MONTH\".\"AMOUNT\") FROM \"DRUG_PRESC_MONTH\" WHERE ( to_char(\"DRUG_PRESC_MONTH\".\"ST_MONTH\",'yyyy-mm') >=   ) AND ( to_char(\"DRUG_PRESC_MONTH\".\"ST_MONTH\",'yyyy-mm') <=   ) and \"DRUG_PRESC_MONTH\".\"PRESC_SOURCE\" = 0 GROUP BY \"DRUG_PRESC_MONTH\".\"DISPENSARY\""
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT \"DRUG_IES_DAY\".\"STORAGE\", SUM(\"DRUG_IES_DAY\".\"DRUG_COUNT\") COUNT, SUM(\"DRUG_IES_DAY\".\"DRUG_SORT\") SORT, SUM(\"DRUG_IES_DAY\".\"AMOUNT\") AMOUNT,0 COUNT1,0 SORT1,0 AMOUNT1,0 SORT2,0 AMOUNT2 FROM \"DRUG_IES_DAY\"DAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT \"DRUG_IES_DAY\".\"STORAGE\",0,0,0,0,0,0, SUM(\"DRUG_IES_DAY\".\"DRUG_SORT\"), SUM(\"DRUG_IES_DAY\".\"AMOUNT\") FROM \"DRUG_IES_DAY\" WHERE ( to_char(\"DRUG_IES_DAY\".\"ST_DATE\",'yyyy-mm-dd') =   ) AND (\"DRUG_IES_DAY\".\"IM_EX_STOCK\" = '3') GROUP BY \"DRUG_IES_DAY\".\"STORAGE\""
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT \"DRUG_DAY\".\"DISPENSARY\", sum(\"DRUG_DAY\".\"COUNT\") count, sum(\"DRUG_DAY\".\"DRUG_SORT\") sort, sum(\"DRUG_DAY\".\"AMOUNT\") amount,0 Count1,0 sort1,0 amount1,0 count2,0 sort2,0 amount2, 0 count3,0 sort3,0 amount3 FROM \"DRUG_DAY\" WHERE ( to_char(\"DRUG_DAY\".\"ST_DATE\",'yyyy-mm-dd') >=   ) AND DAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT \"DRUG_PRESC_DAY\".\"DISPENSARY\",0,0,0,0,0,0,sum(\"DRUG_PRESC_DAY\".\"COUNT\"), sum(\"DRUG_PRESC_DAY\".\"DRUG_SORT\"), sum(\"DRUG_PRESC_DAY\".\"AMOUNT\"),0,0,0 FROM \"DRUG_PRESC_DAY\" WHERE ( to_char(\"DRUG_PRESC_DAY\".\"ST_DATE\",'yyyy-mm-dd') >=   ) AND ( to_char(\"DRUG_PRESC_DAY\".\"ST_DATE\",'yyyy-mm-dd') <=   ) and \"DRUG_PRESC_DAY\".\"PRESC_SOURCE\" = 1 GROUP BY \"DRUG_PRESC_DAY\".\"DISPENSARY\" UNION ALL SELEDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "SELECT PHARMACY.drug_dispense_rec.drug_code,PHARMACY.drug_dispense_rec.drug_spec,PHARMACY.drug_dispense_rec.drug_units, PHARMACY.drug_dispense_rec.firm_id,sum(PHARMACY.drug_dispense_rec.dispense_amount) quantity,sum(PHARMACY.drug_dispense_rec.costs) costs,sum(PHARMACY.drug_dispense_rec.charges) charges FROM drug_disDAT*"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "select name from COMM.staff_dict where dept_code in ( select storage_code from PHARMACY.drug_storage_dept )"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "select storage_code from PHARMACY.drug_storage_dept where storage_name like ' '"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "select storage_name from PHARMACY.drug_storage_dept where storage_name not like '药库'"
+ },
+ {
+  "src": "统计管理\\drug.pbd",
+  "name": "Q",
+  "sql": "select dept_code from COMM.dept_dict where dept_name like ' '"
+ },
+ {
+  "src": "统计管理\\f_comm_dynamic_report.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) FROM COMM.MR_REPORT_SYNTAX WHERE sApp =' ' And sWin =' ' And sDW =' ' And sDWObj =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_dynamic_report.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) From COMM.MR_REPORT_SYNTAX WHERE sApp =' ' And sWin =' ' And sDw =' ' And sDWObj =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_dynamic_report.pbd",
+  "name": "Q",
+  "sql": "SELECT Count ( *) FROM COMM.MR_REPORT_SYNTAX WHERE sApp =' ' And sWin =' ' And sDw =' ' And sDWObj =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select Data_table_name , input_code_wb , Data_Code_Field , Data_Name_Field , Data_Filter , updt_method from \"COMM\".\"COMM.OUTER_GENERATION\" where Upper ( Dict_File_Name ) =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "SELECT updt_method FROM \"COMM\".\"COMM.OUTER_GENERATION\" WHERE Upper ( Dict_File_Name ) =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select outer_code_length , text_length , std_code_length from \"COMM\".\"COMM.OUTER_CODING_CONFIG\" where Upper ( dict_file_name ) =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from \"COMM.TJ_PRG_FUNCTION_NAME\" where \"PRG_NAME\" =' ' and \"WINDOW_NAME\" =' ' and \"CONTROL_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from \"COMM.TJ_REPORT_COLUMN_NAME\" where \"PRG_NAME\" =' ' and \"WINDOW_NAME\" =' ' and \"DATAWINDOW_NAME\" =' ' and \"COLUMN_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from \"COMM.TJ_PRG_FUNCTION_CONTROL\" where \"DB_USER\" =' ' and \"PRG_NAME\" =' ' and \"WINDOW_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from \"COMM.TJ_PRG_FUNCTION_CONTROL\" where \"DB_USER\" =' ' and \"PRG_NAME\" =' ' and \"WINDOW_NAME\" =' ' and \"CONTROL_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from \"COMM.TJ_REPORT_COLUMN_CONTROL\" where \"DB_USER\" =' ' and \"PRG_NAME\" =' ' and \"WINDOW_NAME\" =' ' AND \"DATAWINDOW_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "SELECT MAX ( \"COMM.TJ_REPORT_COLUMN_CONTROL\".\"DB_USER\" ) FROM \"COMM.MENU_VS_USER_GRANT\" , \"COMM.TJ_REPORT_COLUMN_CONTROL\"DAT*"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from \"COMM.TJ_REPORT_COLUMN_CONTROL\" where \"DB_USER\" =' ' and \"PRG_NAME\" =' ' and \"WINDOW_NAME\" =' ' and \"DATAWINDOW_NAME\" =' ' and \"COLUMN_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select TOTAL_SANCTIFIED_AMOUNT from INPBILL.INP_OVERDRAFT_REG_MASTER where patient_id =' ' and visit_id =0"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "select TOTAL_SANCTIFIED_AMOUNT from INPBILL.INP_OVERDRAFT_REG_MASTER where patient_id ='*'"
+ },
+ {
+  "src": "统计管理\\f_comm_function.pbd",
+  "name": "Q",
+  "sql": "SELECT KEY FROM \"COMM\".\"APPLICATION_KEY\" WHERE Upper ( application ) =' ' AND version =' '"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select b.pay_way_name , a.payment_amount , a.refunded_amount , a.payment_amount - a.refunded_amount from INPBILL.inp_payments_money a , COMM.pay_way_dict b where a.rcpt_no =' ' and b.pay_waDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select sum ( costs ) from MEDREC.MEDICAL_COSTS where patient_id =' ' and visit_id =0 and fee_type ='西药'"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select sum ( costs ) from MEDREC.MEDICAL_COSTS where patient_id =' ' and visit_id =0 and fee_type ='床位'"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select sum ( costs ) from MEDREC.MEDICAL_COSTS where patient_id =' ' and visit_id =0 and fee_type ='手术'"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.DEPT_DICT\".\"DEPT_CODE\" FROM \"COMM.DEPT_DICT\" WHERE \"COMM.DEPT_DICT\".\"DEPT_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select count ( b.patient_id ) from MEDREC.pat_visit a , MEDREC.DIAG_COMPARING b whDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select dept_name from COMM.dept_dict where clinic_attr =0 and outp_or_inp =1"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT MAX ( CLASS_ON_INP_RCPT ) FROM ITEM_CLASS_VS_OTHER_CLASS WHERE ITEM_CLASS =' ' AND ITEM_CODE =' '"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select drug_name from COMM.drug_name_dict where drug_code =' ' and std_indicator =1"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select class_code from COMM.BILL_ITEM_CLASS_DICT where class_name =' '"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT CLASS_ON_INP_RCPT FROM ITEM_CLASS_VS_OTHER_CLASS WHERE ITEM_CLASS =' ' AND ITEM_CODE =' '"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select count ( bed_no ) from INPADM.bed_rec where bed_approved_type =0 and ward_code =' ' and dept_code =' '"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select count ( bed_no ) from INPADM.bed_rec where bed_approved_type =0 and ward_code =' ' and dept_code =' ' and bed_status =2 and bed_class <> 'P'"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.DEPT_DICT\".\"DEPT_CODE\", \"COMM.DEPT_DICT\".\"DEPT_NAME\", \"COMM.INP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", \"INPBILL.INP_BILL_DETAIL\".\"CHARGES\" FROM \"COMM.INP_RCPT_FEE_DICT\", DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT nvl ( dept_code , '待入科' ) , count ( patient_id ) FROM INPADM.pats_in_hospital GROUP BY nvl ( dept_code , '待入科' )"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT count ( patient_id ) FROM MEDREC.pat_visit WHERE to_char ( admission_date_time , 'yyyy-mm-dd' ) =' ' and dept_admission_to =' '"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.DEPT_DICT.DEPT_NAME, MEDREC.PAT_MASTER_INDEX.NAME, COMM.INP_RCPT_FEE_DICT.FEE_CLASS_NAME, MEDREC.PAT_VISIT.CHARGE_TYPE, SUM(INPBILL.INP_BILL_DETAIL.COSTS) costs FROM COMM.DEPT_DICT,INPBILL.INP_BILL_DETAIL,MEDREC.PAT_VISIT,ITEM_CLASS_VS_OTHER_CLASS,COMM.INP_RCPT_FEE_DICT,MEDREC.PAT_MASTER_INDEX WHERE MEDREC.PAT_MASTER_INDEX.PATIENT_ID = MEDREC.PAT_VISIT.PATIENT_ID AND MEDREC.PAT_VISIT.PATIENT_ID = INPBILL.INP_BILL_DETAIL.PATIENT_ID AND MEDREC.PAT_VISIT.VISIT_ID = INPBILL.INP_BILL_DETAIL.VISIT_ID AND INPBILL.INP_BILL_DETAIL.ORDDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.PAY_WAY_DICT\".\"PAY_WAY_NAME\" , 0.00, 0.00, 0.00 FROM \"COMM.PAY_WAY_DICT\""
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT PATIENT_ID,VISIT_ID,DIAGNOSIS_DESC,DIAGNOSIS_NO FROM MEDREC.DIAGNOSIS WHERE DIAGNOSIS_TYPE = '3' AND DIAGNOSIS_NO = 1) b, MEDREC.PAT_MASTER_INDEX c, MEDREC.PAT_VISIT d WHERE ( c.PATIENT_ID = d.PATIENT_ID ) and ( a.dept_cDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"PREPAYMENT_MONTH\".\"TRANSACT_TYPE\", \"PREPAYMENT_MONTH\".\"PAY_WAY\", \"PREPAYMENT_MONTH\".\"AMOUNT\" FROM \"PREPAYMENT_MONTH\" WHERE ( to_char(\"PREPAYMENT_MONTH\".\"ST_MONTH\",'yyyy-mm-dd') >=   ) AND ( to_char(\"PREPAYMENT_MONTH\".\"ST_MONTH\",'yyyy-mm-dd') <=   )"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.INP_RCPT_FEE_DICT.FEE_CLASS_CODE,0.00,0.00,COMM.INP_RCPT_FEE_DICT.SERIAL_NO FROM COMM.INP_RCPT_FEE_DICT ORDER BY COMM.INP_RCPT_FEE_DICT.SERIAL_NO"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.INP_RCPT_FEE_DICT.FEE_CLASS_CODE,0000000.00 FROM COMM.INP_RCPT_FEE_DICT ORDER BY COMM.INP_RCPT_FEE_DICT.FEE_CLASS_CODE ASC"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select m.dept_name, d.fee_class_name, sum(c.payments) from COMM.dept_dict m,MEDREC.pat_visit a,INPBILL.inp_settle_master b,INPBILL.inp_settle_detail c,COMM.inp_rcpt_fee_dict d where m.dept_code = a.dept_discharge_from and a.patient_id = b.patient_id and a.visit_id = b.visit_id and b.rcpt_no = c.rcpt_no and c.fee_class_name = d.fee_class_code and trunc(b.settling_date) >=DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select sum(total_costs) outpcosts, sum(total_charges) outpcharges, 0 outpregist , 0 outphospitalpay, 0 inpcosts from OUTPBILL.outp_rcpt_master where to_char(visit_date,'yyyy-mm-dd') >=   and to_char(visit_date,'yyyy-mm-dd') <=   and charge_indicator <> 1 union all select 0 outpcosts, 0 outpcharges, sum(regist_fee) outpregist, 0 outphospitalpay, 0 inpcosts from OUTPADM.clinic_master where DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select ward_code wardcode, count(*) bedno, 0 bedused, 0 admissionnum, 0 transfromnum, 0 outhospitalnum, 0 diednum, 0 transtonum, 0 zhiyunum, 0 betternum, 0 inpday from INPADM.bed_rec where BED_APPROVED_TYPE=0 group by ward_code union all select COMM.dept_vs_ward.ward_code wardcode, 0 bedno, sum(MEDADM.dept_adt_day.BED_USED_NUM) bedused, sum(ADM_OUTP_NUM + FROM_OTHER_HOSPITAL_NUM) admissionnum, sum(from_other_dept_num) transfromnum, DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select COMM.dept_vs_ward.ward_code wardcode , 0 bedno, 0 bedused, 0 admissionnum, 0 transfromnum, 0 outhospitalnum, 0 diednum, 0 transtonum, 0 zhiyunum, 0 betternum, sum(ceil(discharge_date_time-admission_date_time)) inpday from COMM.dept_vs_ward, MEDREC.pat_visit where COMM.dept_vs_ward.dept_code = MEDREC.pat_visit.dept_discharge_from and to_char(MEDREC.pat_visit.discharge_date_time,'yyyy-mm-dd') =   group bDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"INP_SETTLE_MONTH_ED\".\"PERFORMED_BY\", \"COMM.INP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", sum(\"INP_SETTLE_MONTH_ED\".\"PAYMENTS\") costs FROM \"INP_SETTLE_MONTH_ED\",\"COMM.INP_RCPT_FEE_DICT\" WHERE to_char( \"INP_SETTLE_MONTH_ED\".\"ST_MONTH\",'yyyy-mm') >=   AND to_char( \"INP_SETTLE_MONTH_ED\".\"ST_MONTH\",'yyyy-mm') <=   and \"COMM.INP_RCPT_FEE_DICT\".\"FEE_CLASS_CODE\" = \"INP_SETTLE_MONTH_ED\".\"CLASS_ON_RCPT\" GROUP BY \"INP_SETTLE_MONTH_ED\".\"PERFORMED_BY\", DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.INP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", sum(\"INP_SETTLE_MONTH\".\"PAYMENTS\") costs FROM \"INP_SETTLE_MONTH\",\"COMM.INP_RCPT_FEE_DICT\" WHERE to_char( \"INP_SETTLE_MONTH\".\"ST_MONTH\",'yyyy-mm') >=   AND to_char( \"INP_SETTLE_MONTH\".\"ST_MONTH\",'yyyy-mm') <=DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.INP_RCPT_FEE_DICT.FEE_CLASS_CODE, COMM.INP_RCPT_FEE_DICT.FEE_CLASS_NAME FROM COMM.INP_RCPT_FEE_DICT"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select charge_type chargetype, count(rcpt_no) countnum, sum(total_costs) countcosts, 0 drug , 0 drug_cn, 0 test, 0 lab, 0 radiation, 0 hospitalcosts from OUTPBILL.outp_rcpt_master where charge_type in ('医疗保险','医保离休','外院离休','本院职工','本院离休') and to_char(visit_date,'yyyy-mm-dd')>=   and to_char(visit_date,'yyyy-mm-dd')<=   group by charge_type union all select DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT sum(COSTS)/10000 incomes, to_char(ST_MONTH,'YYYY' ) year, to_char(ST_MONTH,'mm' ) month FROM INP_BILL_MONTH_ED WHERE TO_CHAR(ST_MONTH,'YYYY-MM-DD') >= to_char( add_months(SYSDATE,-36),'yyyy')||'01-01'DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.INP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", sum(\"INP_BILL_MONTH_ED\".\"COSTS\") costs FROM \"INP_BILL_MONTH_ED\",\"COMM.INP_RCPT_FEE_DICT\" WHERE to_char( \"INP_BILL_MONTH_ED\".\"ST_MONTH\",'yyyy-mm') >=   AND to_char( \"INP_BILL_MONTH_ED\".\"ST_MONTH\",'yyyy-mm') <=   AND \"INP_BILL_MONTH_ED\".\"CLASS_ON_RCPT\" DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT BILLING_DATE_TIME, sum(charges) FROM INPBILL.INP_BILL_DETAIL where to_char(BILLING_DATE_TIME,'yyyy-mm-dd') >=   and to_char(BILLING_DATE_TIME,'yyyy-mm-dd') <=   group by BILLING_DATE_TIME"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT sum(charges)/10000 incomes, to_char(billing_date_time,'YYYY' ) year, to_char(billing_date_time,'mm' ) month FROM INPBILL.INP_BILL_detail WHERE billing_date_time DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select distinct diagnosis_desc from MEDREC.diagnosis, MEDREC.pat_visit where diagnosis_type=3 and diagnosis_no=1 and MEDREC.pat_visit.patient_id=MEDREC.diagnosis.patient_id and MEDREC.diagnosis.visit_id=MEDREC.pat_visit.visit_id and to_char(admission_date_time,'yyyy-mm-dd') >=   and to_char(admission_date_time,'yyyy-mm-dd') <=   and dept_discharge_from is not null"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select MEDREC.pat_master_index.inp_no, MEDREC.pat_master_index.name, MEDREC.diagnosis.treat_result, MEDREC.diagnosis.treat_days, MEDREC.pat_visit.total_costs from MEDREC.pat_master_index, MEDREC.pat_visit, MEDREC.diagnosis where MEDREC.pat_master_index.patient_id=MEDREC.pat_visit.patient_id and MEDREC.pat_visit.patient_id=MEDREC.diagnosis.patient_id and MEDREC.pat_visit.visit_id=MEDREC.diagnosis.visit_id and diagnosis_type=3 and diagnosis_no=1 DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select discharge_disposition_code, discharge_disposition_name from COMM.discharge_disposition_dict"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"ARREAR_RECLAIM_REC\".\"PAY_WAY\", \"ARREAR_RECLAIM_REC\".\"RECLAIM_AMOUNT\", \"ARREAR_RECLAIM_REC\".\"REFUNDED_AMOUNT\" FROM \"ARREAR_RECLAIM_REC\" WHERE ( to_char(\"ARREAR_RECLAIM_REC\".\"RECLAIM_DATE_TIME\",'yyyy-mm-dd') >=   ) AND ( to_char(\"ARREAR_RECLAIM_REC\".\"RECLAIM_DATE_TIME\",'yyyy-mm-dd') <=   )"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.DEPT_DICT\".\"DEPT_NAME\", \"COMM.DEPT_DICT\".\"DEPT_CODE\" FROM \"COMM.DEPT_DICT\" WHERE ( clinic_attr = '0' )"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.INP_RCPT_FEE_DICT.FEE_CLASS_CODE,0 FROM COMM.INP_RCPT_FEE_DICT ORDER BY COMM.INP_RCPT_FEE_DICT.FEE_CLASS_CODE ASCDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select performed_by dept, 0 admissionnum, 0 dischargenum, count(distinct patient_id||visit_id) savenum, 0 specialnum, 0 firstnum, 0 kouqianghuli, 0 yangqixiru, 0 wuhuaxiru, 0 guanchang, 0 pangguangchongxi, 0 qiguanqiekai, 0 weichangjianya, 0 xitan, 0 shuye, 0 shuxue, 0 huanyeti, 0 jirouzhushe, 0 pishi, 0 jingmaizhushe, 0 daoniao, 0 caixue, 0 beipi from INPBILL.inp_bill_detail where item_name like '%抢救%' and to_chDAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select performed_by dept, 0 admissionnum, 0 dischargenum, 0 savenum, 0 specialnum, 0 firstnum, 0 kouqianghuli, 0 yangqixiru, 0 wuhuaxiru, 0 guanchang, 0 pangguangchongxi, sum(amount) qiguanqiekai, 0 weichangjianya, 0 xitan, 0 shuye, 0 shuxue, 0 huanyeti, 0 jirouzhushe, 0 pishi, 0 jingmaizhushe, 0 daoniao, 0 caixue, 0 beipi from INPBILL.inp_bill_detail where item_code='314101' and to_DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"INPBILL.UNSETTLE_REC\".\"DEPT_NAME\", \"INPBILL.UNSETTLE_REC\".\"PATIENT_ID\", \"INPBILL.UNSETTLE_REC\".\"TOTAL_COST\", \"INPBILL.UNSETTLE_REC\".\"PREPAYMENTS\" FROM \"INPBILL.UNSETTLE_REC\" WHERE ( to_char(\"INPBILL.UNSETTLE_REC\".\"ENTER_DATE\",'yyyy-mm-dd') >=   ) AND ( to_char(\"INPBILL.UNSETTLE_REC\".\"ENTER_DATE\",'yyyy-mm-dd') <=   ) DAT*"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "SELECT WARD_CODE FROM INPADM.PATS_IN_HOSPITAL WHERE PATIENT_ID =' ' AND VISIT_ID =0"
+ },
+ {
+  "src": "统计管理\\inp.pbd",
+  "name": "Q",
+  "sql": "select fee_class_code from COMM.inp_rcpt_fee_dict where fee_class_name =' '"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "select PATIENT_ID, VISIT_ID ,sum(Decode( ,'COSTS',COSTS,'CHARGES',CHARGES,COSTS)) COSTS from MEDREC.MEDICAL_COSTS GROUP BY PATIENT_ID, VISIT_ID) a_MEDICAL_COSTS WHERE ( V_PAT_VISIT.PATIENT_ID = MEDREC.DIAGNOSIS.PATIENT_ID(+) ) and ( V_PAT_VISIT.VISIT_ID = MEDREC.DIAGNOSIS.VISIT_ID(+) ) and ( V_PAT_VISIT.PATIENT_ID = a_MEDICAL_COSTS.PATIENT_ID(+) ) and ( V_PAT_VISIT.VISIT_ID = a_MEDICALDAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "SELECT \"MEDREC.PAT_MASTER_INDEX\".\"PATIENT_ID\", \"MEDREC.PAT_MASTER_INDEX\".\"INP_NO\", MEDREC.pat_master_index.name, V_PAT_VISIT_b.dept_admission_to, V_PAT_VISIT_b.admission_date_time, MEDREC.diagnosis.diagnosis_desc, V_PAT_VISIT_a.dept_discharge_from, V_PAT_VISIT_a.discharge_date_time FROM \"MEDREC.PAT_MASTER_INDEX\", (SELECT patient_id,visit_id,dept_discharge_from,discharge_date_time FROM V_PAT_VISIT) V_PAT_VISIT_a , DAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDREC.PAT_MASTER_INDEX.NAME, MEDREC.PAT_MASTER_INDEX.SEX, Round((Trunc(ADMISSION_DATE_TIME)-Trunc(MEDREC.PAT_MASTER_INDEX.DATE_OF_BIRTH))/365,0) age_months , MEDREC.PAT_MASTER_INDEX.IDENTITY, INPADM.PATS_IN_HOSPITAL.DEPT_CODE, INPADM.PATS_IN_HOSPITAL.BED_NO, INPADM.PATS_IN_HOSPITAL.ADMISSION_DATE_TIME, max( INPADM.ADT_LOG.LOG_DATE_TIME) critical_date, MEDREC.PAT_MASTER_INDEX.unit_in_contract, INPADM.PATS_IN_HOSPITAL.DIAGNOSIS, INPADM.PATS_IN_HOSPITAL.PATIENT_CONDITION FROM MEDREC.PAT_MASTER_INDEX, INPADM.ADT_LOG, PDAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "SELECT SubStr(INPADM.BED_REC.DEPT_CODE,1,2), INPADM.BED_REC.DEPT_CODE , INPADM.BED_REC.BED_SEX_TYPE , INPADM.BED_REC.BED_STATUS , INPADM.BED_REC.BED_APPROVED_TYPE, COMM.DEPT_DICT.ORDER_CODE FROM INPADM.BED_REC, COMM.DEPT_DICT WHERE INPADM.BED_REC.DEPT_CODE = COMM.DEPT_DICT.DEPT_CODE"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "select VISIT_DEPT, count(*), sum(decode(FIRST_VISIT_INDICATOR,1,1,0)), sum(decode(CLINIC_TYPE,'急诊',1,0)), sum(decode(CLINIC_TYPE,'急诊',0,1)), COMM.dept_dict.input_code from OUTPADM.CLINIC_MASTER,COMM.dept_dict where VISIT_DATE >=   and VISIT_DATE <=   DAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "SELECT V_PAT_VISIT.DEPT_ADMISSION_TO A1, count(V_PAT_VISIT.PATIENT_ID) A2, SUM(NVL(V_PAT_VISIT.EMER_TREAT_TIMES,0)) A3, SUM(NVL(V_PAT_VISIT.ESC_EMER_TIMES,0)) A4 FROM V_PAT_VISIT WHERE V_PAT_VISIT.DISCHARGE_DATE_TIME >=   AND V_PAT_VISIT.DISCHARGE_DATE_TIME <=   GROUP BY V_PAT_VISIT.DEPT_ADMISSIODAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "SELECT V_PAT_VISIT.DEPT_DISCHARGE_FROM DEPT_DISCHARGE_FROM, 0 a, count(*) b, 0 c, 0 d from V_PAT_VISIT,MEDREC.pat_master_index,COMM.hospital_config where V_PAT_VISIT.patient_id = MEDREC.pat_master_index.patient_id and NVL(substr(MEDREC.PAT_MASTER_INDEX.BIRTH_PLACE,1,2),' ') = substr(COMM.hospital_config.location,1,2) and NVL(MEDREC.PAT_MASTER_INDEX.patient_class,'0') <> '1' and PAT_MASTERDAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "SELECT V_PAT_VISIT.DEPT_DISCHARGE_FROM DEPT_DISCHARGE_FROM, 0 a, 0 b, count(*) c, 0 d from V_PAT_VISIT,MEDREC.pat_master_index,COMM.hospital_config where V_PAT_VISIT.patient_id = MEDREC.pat_master_index.patient_id and NVL(substr(MEDREC.PAT_MASTER_INDEX.BIRTH_PLACE,1,2),' ') <> subsDAT*"
+ },
+ {
+  "src": "统计管理\\medicaldata.pbd",
+  "name": "Q",
+  "sql": "SELECT V_PAT_VISIT.DEPT_DISCHARGE_FROM DEPT_DISCHARGE_FROM, 0 a, 0 b, 0 c, count(*) d from V_PAT_VISIT,MEDREC.pat_master_index,COMM.hospital_config where V_PAT_VISIT.patient_id = MEDREC.pat_master_index.patient_id and PAT_MASTEDAT*"
+ },
+ {
+  "src": "统计管理\\mrdatainput.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) From MEDADM.ST_OUTSYS_DATA WHERE nYear =0 And nMonth =0"
+ },
+ {
+  "src": "统计管理\\mrdatainput.pbd",
+  "name": "Q",
+  "sql": "SELECT stat_dept_code FROM MEDREC.STAT_DEPT_VS_HIS_DEPT WHERE dept_code =' '"
+ },
+ {
+  "src": "统计管理\\mrdatainput.pbd",
+  "name": "Q",
+  "sql": "select nm1 , nm2 from COMM.diagnosis_dict where diagnosis_code =' '"
+ },
+ {
+  "src": "统计管理\\mrdatainput.pbd",
+  "name": "Q",
+  "sql": "select nm2 from COMM.operation_dict where operation_code =' '"
+ },
+ {
+  "src": "统计管理\\mrdatainput.pbd",
+  "name": "Q",
+  "sql": "Select Nvl ( b.fee_type , '其他' ) , Nvl ( Sum ( b.Costs ) , 0 ) From MEDREC.medical_costs b Where b.patient_id =' ' and b.Visit_id =0 Group by Nvl ( b.fee_type , '其他' )"
+ },
+ {
+  "src": "统计管理\\mrdatainput.pbd",
+  "name": "Q",
+  "sql": "SELECT name , COMM.unit_in_contract From MEDREC.pat_master_index where patient_id =' '"
+ },
+ {
+  "src": "统计管理\\mrdatainput.pbd",
+  "name": "Q",
+  "sql": "SELECT Unit_Name FROM COMM.unit_in_contract where unit_code =' '"
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "Q",
+  "sql": "Select 1 From MEDREC.Diagnosis Where MEDREC.Diagnosis.Patient_Id=V_Pat_Visit.Patient_id And MEDREC.Diagnosis.Visit_id=V_Pat_Visit.VisiDAT*"
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.UNIT_IN_CONTRACT.UNIT_CODE, COMM.UNIT_IN_CONTRACT.UNIT_NAME FROM COMM.UNIT_IN_CONTRACT"
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "Q",
+  "sql": "SELECT \"MEDADM.ST_DEPT_TECH\".\"SID\", \"MEDADM.ST_DEPT_TECH\".\"SDESC\", \"MEDADM.ST_DEPT_TECH\".\"SQUN\", \"MEDADM.ST_DEPT_TECH\".\"STYPE\", \"MEDADM.ST_DEPT_TECH\".\"BST\" FROM \"MEDADM.ST_DEPT_TECH\""
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "Q",
+  "sql": "select Nvl(DEPT_CODE,'') , 0, 0, 0, 0 , 0 , 0 , sum(HEALTH_EXAM_NUM) check_num, 0 from MEDADM.DEPT_OUTP_NUM_DAY where ( Trunc(ST_DATE) between   and   ) and ( DEPT_CODE =   or   = 'all' ) group by Nvl(DEPT_CODE,'') union all select Nvl(DEPT_CODE,'') , 0, 0, 0, sum(died_in_clinic_num) emer_died_num, sum(admitted_num) catch_num, sum(died_in_observ_num) catch_died_num, 0 check_num, sum(emeygency_bed_sum) family_bed_num from EMEDAT*"
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "Q",
+  "sql": "select PATIENT_ID, VISIT_ID ,sum(Decode( ,'COSTS',COSTS,'CHARGES',CHARGES,COSTS)) COSTS from MEDICALDAT*"
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "Q",
+  "sql": "select b.name,count(a.clinic_no) clinic_num,0 in_num from OUTPADM.clinic_master a,COMM.staff_dict b where a.visit_date >=   and a.visit_date <=   and a.doctor = b.user_name(+) and (a.clinic_type = '主任号' or a.clinic_type = '副主任号') and (a.returned_date is null) group by b.name"
+ },
+ {
+  "src": "统计管理\\mrdatainput_dw.pbd",
+  "name": "Q",
+  "sql": "select b.name,count(a.clinic_no) clinic_num,0 in_num from OUTPADM.clinic_master a,stafDAT*"
+ },
+ {
+  "src": "统计管理\\mrpublic.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from \"COMM.TJ_PRG_FUNCTION_CONTROL\" where \"DB_USER\" =' ' and ( \"PRG_NAME\" =' ' or \"PRG_NAME\" ='main_prg_tj' ) and \"WINDOW_NAME\" =' '"
+ },
+ {
+  "src": "统计管理\\mrpublic.pbd",
+  "name": "Q",
+  "sql": "select PATIENT_ID, VISIT_ID , sum(DECODE(MEDREC.DIAG_COMPARING.DIAG_COMPARE_GROUP,'3',DIAG_CORRESPONDENCE,0)) DIAG_3, sum(DECODE(MEDREC.DIAG_COMPARING.DIAG_COMPARE_GROUP,'2',DIAG_CORRESPONDENCE,0)) DIAG_2 from MEDREC.DIAG_COMPARING GROUP BY PATIENT_ID, VISIT_ID) a_DIAG_COMPARING WHERE ( \"MEDREC.PAT_VISIT\".\"PATIENT_ID\" = \"MEDREC.DIAGNOSIS\".\"PATIENT_ID\" DAT*"
+ },
+ {
+  "src": "统计管理\\mrpublic.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDADM.dise_class_stat_dict.class_name , MEDADM.dise_query_condition.condition FROM MEDADM.dise_class_stat_dict , MEDADM.dise_query_condition WHERE MEDADM.dise_class_stat_dict.stat_levDAT*"
+ },
+ {
+  "src": "统计管理\\mrpublic.pbd",
+  "name": "Q",
+  "sql": "Select SERIAL_NO,DEPT_NAME FROM COMM.DEPT_DICT WHERE OUTP_OR_INP='0' ORDER BY 1"
+ },
+ {
+  "src": "统计管理\\mrpublic.pbd",
+  "name": "Q",
+  "sql": "Select Count ( *) FROM COMM.MR_REPORT_PRTST WHERE sWin =' ' AND sDW =' ' AND sDWOBJ =' ' and sapp =' '"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.DEPT_DICT\".\"DEPT_NAME\", \"COMM.OUTP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", SUM(\"OUTPBILL.OUTP_BILL_ITEMS\".\"CHARGES\") FROM \"COMM.DEPT_DICT\", DAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "select wm_concat ( diagnosis_desc ) from MEDREC.diagnosis where patient_id =' ' and visit_id =0 and diagnosis_type ='1'"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "select wm_concat ( diagnosis_desc ) from MEDREC.diagnosis where patient_id =' ' and visit_id =0 and diagnosis_type ='3'"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "select wound_grade from MEDREC.operation where patient_id =' ' and visit_id =0 and rownum =1"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT VISIT_DATE, sum(CHARGES) FROM OUTPBILL.OUTP_BILL_ITEMS where to_char(visit_date,'yyyy-mm-dd') >=   and to_char(visit_date,'yyyy-mm-dd') <=   and rcpt_no in (select rcpt_no from OUTPBILL.outp_rcpt_master where charge_indicator <> 1) groupDAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.OUTP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", sum(\"OUTP_CHARGE_TYPE_DAY\".\"COSTS\" ) costs FROM \"OUTP_CHARGE_TYPE_DAY\",\"COMM.OUTP_RCPT_FEE_DICT\" WHERE to_char( \"OUTP_CHARGE_TYPE_DAY\".\"ST_DATE\",'yyyy-mm-dd') >=   AND to_char( \"OUTP_CHARGE_TYPE_DAY\".\"ST_DATE\",'yyyy-mm-dd') <=   AND \"OUTP_CHARGE_TYPE_DAY\".\"CHARGE_TYPE\" = '记帐病人' AND \"OUTP_CHARGE_TYPE_DAY\".\"CLASS_ON_RCPT\" = \"COMM.OUTP_RCPT_FEE_DICT\".\"FEE_CLASS_CODE\" GRODAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT sum(charges)/10000 incomes, to_char(visit_date,'YYYY' ) year, to_char(visit_date,'mm' ) month FROM OUTPBILL.OUTP_BILL_items WHERE visit_date between   And   GROUP BY to_char(visit_date,'YYYY' ), to_char(visit_date,'mm' )"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "select count(*) count, a.visit_dept, a.clinic_type, b.clinic_type_name, c.dept_name from OUTPADM.clinic_master a,COMM.clinic_type_dict b,COMM.dept_dict c where a.visit_dept = c.dept_code and a.clinic_type = b.DAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "select to_char(visit_date,'yyyy-mm'), count(clinic_label), count(clinic_label) - nvl(sum(decode(clinic_type,'急诊号',1,'急诊',1,0)),0) mzl, nvl(sum(decode(clinic_type,'急诊号',1,'急诊',1,0)),0) emergence from OUTPADM.clinic_master where to_char(visit_date,'yyyy-mm-dd') >=   and to_char(visit_date,'yyyy-mm-dd') <=   and returned_date is null groDAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"CLINIC_NUMBERS\".\"CLINIC_DATE\", \"CLINIC_NUMBERS\".\"CLINIC_DEPT\", \"CLINIC_NUMBERS\".\"DEPT_NAME\", \"CLINIC_NUMBERS\".\"EXPERT\", \"CLINIC_NUMBERS\".\"PROFESSOR\", \"CLINIC_NUMBERS\".\"ASSOCIATE_PROFESSOR\", \"CLINIC_NUMBERS\".\"CURE_DOCTOR\", \"CLINIC_NUMBERS\".\"LAB.DOCTOR\", \"CLINIC_NUMBERS\".\"CLINIC_AGAIN\", \"CLINIC_NUMBERS\".\"SYNTHESIS\" FROM \"CLINIC_NUMBERS\" WHERE DAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT ST_DATE, sum(EMERGENCY) emerg FROM DEPT_CLINIC_DAY WHERE TO_CHAR(ST_DATE,'YYYY-MM-DD') >=   AND TO_CHAR(ST_DATE,'YYYY-MM-DD') <=   GROUP BY ST_DATE"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT \"COMM.OUTP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", sum(\"OUTP_BILL_DAY_ED\".\"COSTS\") costs FROM \"OUTP_BILL_DAY_ED\",\"COMM.OUTP_RCPT_FEE_DICT\" WHERE to_char( \"OUTP_BILL_DAY_ED\".\"ST_DATE\",'yyyy-mm-dd') >=   AND to_char( \"OUTP_BILL_DAY_ED\".\"ST_DATE\",'yyyy-mm-dd') <DAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT /* + parallel(\"COMM.DEPT_DICT\",100) */\"COMM.DEPT_DICT\".\"DEPT_NAME\", /* + parallel(\"OUTPBILL.OUTP_ORDER_DESC\",100) */\"OUTPBILL.OUTP_ORDER_DESC\".\"ORDERED_BY_DOCTOR\", /* + parallel(\"OUTPBILL.OUTP_ORDER_DESC\",100) */\"OUTPBILL.OUTP_ORDER_DESC\".\"RCPT_NO\", /* + parallel(\"COMM.OUTP_RCPT_FEE_DICT\",100) */ \"COMM.OUTP_RCPT_FEE_DICT\".\"FEE_CLASS_NAME\", /* + parallel(\"OUTPBILL.OUTP_BILL_ITEMS\",100) */\"OUTPBILL.OUTP_BILL_ITEMS\".\"CHARGES\" FROM \"OUTPBILL.OUTP_BILL_ITEMS\", \"OUTPBILL.OUTP_ORDER_DESC\", DAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.DEPT_DICT.DEPT_NAME, to_char(OUTPADM.CLINIC_MASTER.VISIT_DATE,'yyyy-mm') yuefen, nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'普通',1,0)),0) pt, nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'专家',1,0)),0) zj, nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'急诊',1,0)),0) jz, nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'专科',1,0)),0) zk, OUTPADM.CLINIC_MASTER.DOCTOR, OUTPADM.CLINIC_MASTER.CLINIC_TYPE FROM CLINIC_MASTEDAT*"
+ },
+ {
+  "src": "统计管理\\outp.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.DEPT_DICT.DEPT_NAME, to_char(OUTPADM.CLINIC_MASTER.VISIT_DATE,'yyyy-mm'), nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'1',1,0)),0) pt, nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'2',1,0)),0) zj, nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'4',1,0)),0) zk, nvl(sum(decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'3',1,0)),0) jz, OUTPADM.CLINIC_MASTER.DOCTOR, decode(OUTPADM.CLINIC_MASTER.CLINIC_TYPE,'1','普通','2','专家','3','急诊','4','专科') FROM CLINIC_MASDAT*"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select total_costs from MEDREC.pat_visit where patient_id =' ' and visit_id =0"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.HOSPITAL_CONFIG.HOSPITAL FROM COMM.HOSPITAL_CONFIG"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT proportion_numerator , proportion_denominator , free_limit FROM COMM.charge_special_except_dict WHERE charge_type =' ' AND item_class =' ' AND ( item_code =' ' OR item_code ='*' ) AND ( item_spec =' ' OR item_spec ='*' )"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT \"CLASS_NAME\", \"CLASS_CODE\" FROM \"COMM.BILL_ITEM_CLASS_DICT\" where class_code<>'A' and class_code<>'B'"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT \"CLASS_CODE\", \"CLASS_NAME\" FROM \"COMM.BILL_ITEM_CLASS_DICT\" where class_code<>'A' and class_code<>'B'"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select round ( SYSDATE - to_date ( ' ' , 'YYYY-MM-DD' ) , 0 ) from dual"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT class_name FROM COMM.official_drug_catalog_class WHERE class_code =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT CHARGE_PRICE_INDICATOR FROM COMM.CHARGE_TYPE_DICT WHERE CHARGE_TYPE_NAME =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT PRICE_COEFF_NUMERATOR , PRICE_COEFF_DENOMINATOR , CHARGE_SPECIAL_INDICATOR FROM COMM.CHARGE_PRICE_SCHEDULE WHERE CHARGE_TYPE =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT FEE_TYPE_MASK , PRICE , PREFER_PRICE , FOREIGNER_PRICE , ITEM_NAME , class_on_inp_rcpt , class_on_reckoning , subj_code , class_on_mr FROM COMM.PRICE_LIST WHERE ( ITEM_CLASS =' ' ) and ( ITEM_CODE =' ' ) and ( ITEM_SPEC =' ' ) and ( UNITS =' ' ) and ( SYSDATE >= start_date and ( SYSDATE < stop_date or stop_date is null ) ) and ROWNUM =1"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select distinct order_group from COMM.doctor_group where LAB.doctor =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT MAX ( ITEM_NO ) FROM INPBILL.INP_BILL_DETAIL WHERE ( PATIENT_ID =' ' ) AND ( VISIT_ID =0 )"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select INP_START_VALUE , INP_CURRENTLY_VALUE , INP_LENGTH , INP_UPGRADE , INP_SQL from COMM.auto_setting_id where SERIAL_NO =0"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from MEDREC.pat_master_index where patient_id =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from MEDREC.pat_master_index where inp_no =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT SUM ( \"CHARGES\" ) FROM \"INPBILL.INP_BILL_DETAIL\" WHERE ( \"PATIENT_ID\" =' ' ) AND ( \"VISIT_ID\" =0 ) AND ( \"RCPT_NO\" is NULL )"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select sum ( amount ) from INPBILL.inp_bill_detail where patient_id =' ' and visit_id =0 and item_clasDAT*"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT sum ( level_width ) FROM COMM.class_coding_rule WHERE LAB.Item =' ' AND ( code_level <= 0 )"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT level_width FROM COMM.class_coding_rule WHERE LAB.Item =' ' AND code_level =0 + 1"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT Wizard_Code_field , Wizard_Name_field , Wizard_Filter , Wizard_Table_name , Data_Code_field , Data_Name_field , Data_Filter , Data_table_name FROM COMM.class_coding_config WHERE LAB.item =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.messages FROM COMM.help_msg WHERE application =' ' AND window_id =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select data_col from comm.input_setting where dict_type =' ' and input_code =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select max ( substr ( rcpt_no , 3 ) ) from INPBILL.prepayment_rcpt where visit_id =0 and substr ( rcpt_no , 1 , 2 ) =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select id_currently_value , id_length from COMM.auto_setting_id where serial_no =0"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select sum ( amount ) from INPBILL.prepayment_rcpt where patient_id =' ' and visit_id =0 and used_flag =0"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select amount , rcpt_no from INPBILL.prepayment_rcpt where patient_id =' ' and visit_id =0 and used_flag =0 order by transact_date"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select sum ( amount ) from INPBILL.prepayment_rcpt where pay_way ='现金' and patient_id =' ' and visit_id =0 and transact_type <> '作废'"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT ward_code From INPADM.pats_in_hospital where patient_id =' ' and visit_id =0"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select charge_type from MEDREC.pat_master_index where patient_id =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select count ( *) , sum ( TOTAL_SANCTIFIED_AMOUNT ) from INPBILL.INP_OVERDRAFT_REG_MASTER where patient_id =' ' and visit_id =0 and charge_type ='*' and dept_code ='*'"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select count ( *) , sum ( TOTAL_SANCTIFIED_AMOUNT ) from INPBILL.INP_OVERDRAFT_REG_MASTER where patient_id ='*' and visit_id =0 and charge_type =' ' and dept_code ='*'"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select count ( *) , sum ( TOTAL_SANCTIFIED_AMOUNT ) from INPBILL.INP_OVERDRAFT_REG_MASTER where patient_id ='*' and charge_type ='*' and depDAT*"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select password from COMM.staff_dict where upper ( user_name ) =upper ( ' ' )"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.IDENTITY_DICT.IDENTITY_NAME FROM COMM.IDENTITY_DICT ORDER BY COMM.IDENTITY_DICT.SERIAL_NO ASC"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.CHARGE_TYPE_DICT.CHARGE_TYPE_NAME FROM COMM.CHARGE_TYPE_DICT ORDER BY COMM.CHARGE_TYPE_DICT.SERIAL_NO ASC"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "SELECT NAME_PHONETIC FROM MEDREC.PAT_MASTER_INDEX WHERE PATIENT_ID =' '"
+ },
+ {
+  "src": "统计管理\\pubcomm.pbd",
+  "name": "Q",
+  "sql": "select id from COMM.staff_dict where upper ( user_name ) =' ' and password =' '"
+ },
+ {
+  "src": "统计管理\\p_comm_print.pbd",
+  "name": "Q",
+  "sql": "select t.dept_code, t.dept_name dept_name, 0 zong, 0 yaofei, sum(t.charges) zong_q, sum(decode(m.stat_name,'药费',t.charges,0)) yaofei_q from econstat.ST_OD_ED_DEPT_UNIT t,MEDADM.STAT_VS_FEE_CLASS m where m.fee_code=t.item_class and t.indecator='1' and t.data_date>= add_months( ,-12) and t.data_date<=add_monthDAT*"
+ },
+ {
+  "src": "统计管理\\p_comm_print.pbd",
+  "name": "Q",
+  "sql": "SELECT b.dept_name , count(a.clinic_type) hj, sum(decode(a.clinic_type,'普通',1,0 ) ) pt, sum(decode(a.clinic_type,'急诊',1,0 ) ) jz, sum(decode(a.clinic_type,'专家',1,0 ) ) zj, sum(decode(a.clinic_type,'专科',1,0 ) ) zk, 0 jkct, 0 gcbr FROM \"OUTPADM.CLINIC_MASTER\" a ,COMM.dept_dict b WHERE a.\"RETURNED_OPERATOR\" is null and a.visiDAT*"
+ },
+ {
+  "src": "统计管理\\p_comm_print.pbd",
+  "name": "Q",
+  "sql": "select b.dept_name, sum( a.total_charges), sum(decode(a.income_class,'西药费',a.total_charges,'中成药费',a.total_charges,'中草药费',a.total_charges,0)) yaofei from \"ECONSTAT\".\"ST_OUTD_INCOME_BY_ED\" a ,COMM.dept_dict b where a.year_month>=  anDAT*"
+ },
+ {
+  "src": "统计管理\\p_comm_print.pbd",
+  "name": "Q",
+  "sql": "select (floor((months_between(MEDREC.PAT_VISIT.DISCHARGE_DATE_TIME, MEDREC.pat_master_index.date_of_birth)) / 12) + 1) age, MEDREC.PAT_VISIT.PATIENT_ID, MEDREC.PAT_VISIT.VISIT_ID from MEDREC.PAT_VISIT, MEDREC.pat_master_index where (MEDREC.pat_visit.patient_id = MEDREC.pat_master_index.patient_id) and MEDREC.PAT_VISIT.DISCHARGE_DATE_TIMDAT*"
+ },
+ {
+  "src": "统计管理\\recking.pbd",
+  "name": "Q",
+  "sql": "SELECT nvl(\"COMM.DEPT_DICT\".\"DEPT_NAME\",'(开单科室为空)'), \"COMM.STAFF_DICT\".\"NAME\", \"COMM.RECK_ITEM_CLASS_DICT\".\"CLASS_NAME\", \"OUTPBILL.OUTP_BILL_ITEMS\".\"ITEM_NAME\", SUM(\"OUTPBILL.OUTP_BILL_ITEMS\".\"AMOUNT\"), sum(\"OUTPBILL.OUTP_BILL_ITEMS\".\"CHARGES\"), nvl(g.dept_name,'空') FROM \"COMM.DEPT_DICT\", DAT*"
+ },
+ {
+  "src": "统计管理\\recking.pbd",
+  "name": "Q",
+  "sql": "SELECT * FROM current_price_list e,COMM.dept_dict f WHERE e.performed_by=f.dept_code (+))g WHERE /*( \"OUTPBILL.OUTP_ORDER_DESC\".\"ORDERED_BY_DEPT\" = \"COMM.DEPT_DICT\".\"DEPT_CODE\"(+) ) and*/ ( \"OUTPBILL.OUTP_ORDER_DESC\".\"RCPT_NO\" = \"OUTPBILL.OUTP_BILL_ITEMS\".\"RCPT_NO\" ) and ( \"OUTPBILL.OUTP_ORDER_DESC\".\"VISIT_NO\" = \"OUTPBILL.OUTP_BILL_ITEMS\".\"VISIT_NO\" ) and ( \"OUTPBILL.OUTP_BILL_ITEMS\".\"CLASS_ON_RECKONING\" DAT*"
+ },
+ {
+  "src": "统计管理\\recking.pbd",
+  "name": "Q",
+  "sql": "SELECT b.dept_name,a.order_doctor,a.item_name,a.item_spec,sum(a.amount),sum(a.costs) FROM inp_bill_detaDAT*"
+ },
+ {
+  "src": "统计管理\\recking.pbd",
+  "name": "Q",
+  "sql": "SELECT b.NAME ,count(to_char(a.visit_date,'yyyymmdd')||visit_no)/*a.queue_name,a.doctor,*/ FROM outp_wait_queuDAT*"
+ },
+ {
+  "src": "统计管理\\recking.pbd",
+  "name": "Q",
+  "sql": "SELECT b.dept_name,a.item_name,a.item_spec,sum(a.amount),sum(a.costs) FROM INPBILL.inp_bill_detail a ,COMM.dept_dict b WHERE a.performed_by=DAT*"
+ },
+ {
+  "src": "统计管理\\recking.pbd",
+  "name": "Q",
+  "sql": "SELECT b.NAME ,c.clinic_label,c.clinic_type FROM outp_wait_queue a ,COMM.staff_dict b,OUTPADM.clinic_master c WHERE a.doctor=b.emp_no(+) AND a.visit_date = c.visit_date and a.visit_no = c.visit_no and a.register_date >=  AND a.register_date <="
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select COMM.diagnosis_dict.diagnosis_code from MEDREC.diagnosis , COMM.diagnosis_dict where MEDREC.diagnosis.patient_id =' ' and MEDREC.diagnosis.visit_id =0 and MEDREC.diagnosis.diagnosis_desc =COMM.diagnosis_dict.diagnosis_name and MEDREC.diagnosis.diagnosis_type ='2' and MEDREC.diagnosis.diagnosis_no =1"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select to_char ( diagnosis_date , 'yyyy-mm-dd' ) from MEDREC.diagnosis where patient_id =' ' and visit_id =0 and diagnosis_type ='2' and diagnosis_no =1"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select COMM.diagnosis_dict.diagnosis_code from MEDREC.diagnosis , COMM.diagnosis_dict where MEDREC.diagnosis.patient_id =' ' and visit_id =0 and MEDREC.diagnosis.diagnosis_desc =COMM.diagnosis_dict.diagnosis_name andDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select treat_result from MEDREC.diagnosis where patient_id =' ' and visit_id =0 and diagnosis_type ='3' and diagnosis_no =1"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select COMM.diagnosis_dict.diagnosis_code from MEDREC.diagnosis , COMM.diagnosis_dict wDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select treat_result from MEDREC.diagnosis where patient_id =' ' and visit_id =0 and diagnosis_type ='3' and diagnosis_no =2"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select operation_code from MEDREC.operation where patient_id =' ' and visit_id =0 and operation_no =1"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select sum ( costs ) from INPBILL.inp_settle_master where patient_id =' ' and visit_id =0 and transact_type ='正常'"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select sum ( INPBILL.inp_settle_detail.costs ) from INPBILL.inp_settle_master , INPBILL.inp_settle_detail where inp_settle_mDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select sum ( INPBILL.inp_settle_detail.costs ) from INPBILL.inp_settle_master , INPBILL.inp_settle_detail where INPBILL.inp_settle_master.rcpt_no =INPBILL.inp_settle_detail.rcpt_no and INPBILL.inp_settle_master.patientDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select red_cell , PLATELET , PLASMA , WHOLE_BLOOD from MEDREC.BLOOD_TRANSFUSION where patient_iDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT SUM ( \"A\".\"ORI_BEDNUM\" ) FROM MEDADM.STAT_DEPT_MODIFYFIX A , COMM.DEPT_VS_WARD B WHERE A.STAT_DEPTCODE =B.DEPT_CODE AND A.ORI_BEDNUM <> 0 AND B.WARD_CODE =' '"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select to_char ( sysdate , 'yyyy-MM-dd' ) , to_char ( sysdate , 'hh24:mi' ) from dual"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from OUTPADM.clinic_master where registering_date >= to_date ( ' ' || '00:00:00' , 'yyyy-mm-dd hh24:mi:ss' ) and registering_date <= to_date ( ' ' || '23:59:59' , 'yyyy-mm-dd hh24:mi:ss' ) and registration_status <> 0 and returned_date is null"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( distinct ( b.rcpt_no ) ) from OUTPBILL.outp_rcpt_master a , OUTPBILL.OUTP_ORDER_DESC b where a.patient_id =b.patient_id and a.rcpt_no =b.rcpt_no and presc_indicator <> 0 and a.visit_date >= to_date ( ' ' || '00:00:00' , 'yyyy-mm-dd hh24:mi:ss' ) and a.visit_date < to_date ( ' ' || '23:59:59' , 'yyyy-mm-dd hh24:mi:ss' )"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( *) from LAB.lab_test_master where specimen ='静脉血' and visit_id =0 and requested_date_time between to_date ( ' ' || '00:00:00' , 'yyyy-mm-dd hh24:mi:ss' ) and to_date ( ' ' || '23:59:59' , 'yyyy-mm-dd hh24:mi:ss' )"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select to_char ( sysdate , 'yyyy-mm-dd hh24:mi:ss' ) from dual"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select a.parameter_value from COMM.app_configer_parameter a where a.app_name ='LAB.EXAM' and a.parameter_name ='EXAM_ITEM_THROAT'"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select a.parameter_value from COMM.app_configer_parameter a where a.app_name ='LAB.EXAM' and a.parameter_naDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select start_date , ori_bednum , modify_date , modify_bednum from MEDADM.stat_dept_modifyfix a , COMM.dept_vs_ward b where a.stat_deptcode =b.dept_code and b.ward_code =' '"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT SUM ( a.TRANS_DEPT_NUM ) BED_USED_NUM FROM MEDADM.DEPT_ADT_DAY a , COMM.dept_vs_ward b where a.dept_code =b.dept_code and a.ST_DATEDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select start_date , ori_bednum , modify_date , modify_bednum from MEDADM.stat_ward_modifyfix a where a.stat_deptcode =' '"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( distinct a.patient_id ) from MEDREC.pat_visit a , ward_tDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( distinct a.patient_id ) from MEDREC.pat_visit a , MEDREC.ward_transfer b wherDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( distinct a.patient_id ) from MEDREC.pat_visit a , MEDREC.ward_transfer b where a.patient_id =b.patient_id and a.visDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( distinct a.patient_id ) from MEDREC.pat_visit a , MEDREC.ward_transfer b where a.patient_id =b.patient_id andDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select *from MEDREC.ward_transfer where ( discharge_date_time is null or discharge_date_time between trunc ( sysdate - 1 ) and trunc ( sysdate ) ) and admission_date_time < trunc ( sysdate ) and instr ( patient_id , '_' ) =0 ) a left join ORDADM.orders c on a.patient_id =c.patient_id and a.visit_id =c.visit_id where c.order_text in ( 'Ⅰ级护理' , 'Ⅱ级护理' , 'Ⅲ级护理' , '特级护理' ) and c.start_date_time < trunc ( sysdate ) and ( c.stop_date_time is null or c.stop_date_tDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count ( distinct a.patient_id ) from ( select *from MEDREC.ward_transfer where ( discharge_date_time is null or discharge_date_time between trunc ( sysdate - 1 ) and trunc ( sysdate ) ) and admission_date_time < trunc ( sysdate ) and instr ( patient_id , '_' ) =0 ) a left join ORDADM.orders c on a.patient_id =c.patient_id and a.visit_id =c.visit_id where c.order_teDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT COUNT ( 1 ) FROM MEDREC.PAT_VISIT WHERE ADMISSION_DATE_TIME BETWEEN to_date ( ' ' , 'YYYY-MM-DD HH24:MI:SS' ) AND to_date ( ' ' , 'YYYY-MM-DD HH24:MI:SS' )"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT TO_CHAR ( SYSDATE , 'yyyy' ) , to_char ( sysdate , 'mm' ) FROM DUAL"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select Nvl(OUTPADM.clinic_master.visit_dept,'') dept_code, count(*) total_num, sum(decode(nvl(OUTPADM.clinic_master.clinic_type,'*'),'专家号主',1,'专家号副',1,'知名专家',1,0)) normal_num, sum(decode(nvl(OUTPADM.clinic_master.clinic_type,'*'),'急诊号',1,0)) emergency_num, 0 emer_died_num, 0 catch_num, 0 catch_died_num, 0 check_num from OUTPADM.clinic_master,COMM.dept_dict where DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select rcpt_no from OUTPBILL.outp_rcpt_master where to_char(visit_date,'yyyy-mm-dd') >=   and to_char(visit_date,'yyyy-mm-dd') <=  ) and money_type = '医院垫支' union all select 0 outpcosts, 0 outpcharges, 0 outpregist, 0 outphospitalpay , sum(costs) inpcosts from INPBILL.inp_bill_detail where to_char(billing_date_time,'yyyy-mm-dd') >=   and to_char(billing_date_timeDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, 0 便民, 0 高端门诊, COUNT(*) 急诊号, 0 普通, 0 优抚, 0 专家, 0 知名专家, 0 留观, 0 核酸检测, 0 义诊 FROM OUTPADM.CLINIC_MASTER M, COMM.STAFF_DICT S, COMM.DEPT_DICT D WHERE M.REGISTERING_DATE >=   AND M.REGISTERING_DATEDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, 0 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, COUNT(*) 专家, 0 知名专家, 0 留观, 0 核酸检测, 0 义诊 FROM OUTPADM.CLINIC_MASTER M, COMM.STAFF_DICT S, DDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, 0 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, 0 知名专家, count(*) 留观, 0 核酸检测, 0 义诊 FROM OUTPADM.CLINIC_MASTER M, COMM.STAFF_DICT S, COMM.DEPT_DICT D WHERE M.REGISTERING_DATE >=   AND M.REGISTERING_DATE <=   AND M.DOCTOR = S.EMP_NO(+) DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, COUNT(*) 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, 0 知名专家, 0 核酸检测 FROM CLINIC_MASTDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT B.DEPT_NAME, 0 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, COUNT(*) 知名专家, 0 核酸检测 FROM OUTPADM.CLINIC_MASTER A, COMM.DEPT_DICT B DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, COUNT(*) 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, 0 知名专家, 0 留观, 0 核酸检测, 0 义诊 FROM CLINIC_MDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT '无科室' DEPT_NAME, 0 便民, COUNT(*) 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, 0 知名专家, 0 留观, 0 核酸检测, 0 义诊 FROM OUTPADM.CLINIC_MASTER M WHERE M.REGISTERING_DATE >=   AND M.REGISTERING_DATE <=   AND m.DOCTOR IS NULL AND M.CLINIC_TYPE LIKE '%高端门诊%' DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, 0 便民, 0 高端门诊, 0 急诊号, 0 普通, COUNT(*) 优抚, 0 专家, 0 知名专家, 0 留观, 0 核酸检测, 0 义诊 FROM OUTPADM.CLINIC_MASTER M, COMM.STAFF_DICT S, COMM.DEPT_DICT D WHERE M.REGISTERING_DATE >=   AND M.REGISTERING_DATE <=   AND M.DOCTOR = S.EMP_NO(+) AND S.DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, 0 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, COUNT(*) 知名专家, 0 留观, 0 核酸检测, 0 义诊 FROM OUTPADM.CLINIC_MASTER M, COMM.STAFF_DICT S, COMM.DEPT_DICT D WHERE M.REGISTERING_DATE >=   AND M.REGISTERING_DATE <=   AND M.DOCTODAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT '无科室' DEPT_NAME, 0 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, 0 知名专家, 0 留观, COUNT(*) 核酸检测, 0 义诊 FROM OUTPADM.CLINIC_MASTER M WHERE M.REGISTERING_DATE >=   AND M.REGISTERING_DATE <=   AND m.DOCTOR ISDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT D.DEPT_NAME, 0 便民, 0 高端门诊, 0 急诊号, 0 普通, 0 优抚, 0 专家, 0 知名专家, 0 留观, 0 核酸检测, count(*) 义诊 FROM OUTPADM.CLINIC_MASTER M, COMM.STAFF_DICT S, COMM.DEPT_DICT D WHERE M.REGISTERING_DATE >=   DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT sum(CHARGES) CHARGE FROM OUTPBILL.OUTP_BILL_ITEMS WHERE VISIT_DATE BETWEEN   AND   AND ITEM_CLASS NOT IN ('A','C','D','I') UNION SELECT sum(CHARGES) CHARGE FROM INPBILL.INP_BILL_DETAIL WHERE BILLING_DATE_TIME BETWEEN   AND   AND ITEM_CLASS NOT IN ('A','C','D','I'))) / (SELECT sum(CHARGE) CHARGE FROM (SELECT sum(CLINIC_CHARGE) CHARGE DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select id , password from COMM.staff_dict where upper ( user_name ) =upper ( ' ' )"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT LASTUPLOADTIME FROM COMM.APPLICATIONS_PARA WHERE CODE =' '"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select a.patient_id, a.visit_id, a.dept_admission_to, a.admission_date_time, a.dept_discharge_from, a.discharge_date_time, b.ward_stayed, b.admission_date_time, b.discharge_date_time, b.dept_ward_transfered_to from MEDREC.pat_visit a, MEDREC.ward_transfer b where a.discharge_date_time >=   and a.discharge_date_time <=   and a.patient_id = b.patiDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select MEDREC.pat_visit.dept_admission_to dept_code, 0 bed_used_num, 0 first_oldnum, 0 from_out_num, 0 total_num, 0 opers, count(*) as oper_sum from MEDREC.operation,MEDREC.pat_visit where MEDREC.operation.patienDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select Nvl(OUTPADM.clinic_master.visit_dept,'') dept_code, 0 bed_used_num, 0 first_oldnum, 0 from_out_num, count(*) total_num, 0 opers, 0 oper_sum, 0 bc1, 0 bc2, 0 ct1, 0 ct2, 0 mr1, 0 mr2 from OUTPADM.clinic_master,COMM.dept_dict DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select EXAM.exam_master.req_dept dept_code, 0 bed_used_num, 0 first_oldnum, 0 from_out_num, 0 total_num, 0 opers, 0 oper_sum, 0 bc1, 0 bc2, count(*) as ct1, 0 ct2, 0 mr1, 0 mr2 from EXAM.exam_master where DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select d.dept_name dept_name ,'平均住院天数' js,round(sum(round(p.discharge_date_time - p.admission_date_time)) / count(*)) rj from MEDREC.pat_visit p,COMM.dept_dict d ,INPBILL.inp_settle_master ism where p.discharge_date_time is not null and p.dept_discharge_from =d.dept_code and p.charge_type in( ) and p.patient_id =ism.patient_id and p.visit_id =ism.visit_id and ism.transactDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select d.dept_name as dept_name, '药费' as js ,sum(isd.costs) as yf from INPBILL.inp_settle_detail isd ,INPBILL.inp_settle_master ism ,MEDREC.pat_visit p ,COMM.dept_dict d where isd.fee_class_name in ('西药费', '中草药','中成药') and ism.transact_type ='正常' and isd.rcpt_no = ism.rcpt_no and p.patient_id =ism.patient_id and p.visit_id =ism.visit_id and p.discharge_date_time is not null and p.discharge_DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select d.dept_name as dept_name, '卫材费' as js ,sum(isd.costs) as yf from INPBILL.inp_settle_detail isd ,INPBILL.inp_settle_master ism ,MEDREC.pat_visit p ,COMM.dept_dict d where isd.fee_class_name in ('卫材费') and ism.transact_type ='正常' and isd.rcpt_no = ism.rcpt_no and p.patient_id =ismDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select d.dept_name dept_name, '总费用' as js,sum（ism.costs）as yf from INPBILL.inp_settle_master ism ,MEDREC.pat_visit p ,COMM.dept_dict d where ism.transact_type ='正常' and p.patient_DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select d.dept_name ,'补偿金额' as js ,sum(t.payment_amount) as yf from inpbill.inp_payments_money t ,MEDREC.pat_visit p ,COMM.dept_dict d,INPBILL.inp_settle_master ism where t.money_type inDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select MEDREC.operation from (select e.patient_id, e.visit_id, listagg(e.operation, ' || ') within group(order by e.operation) as MEDREC.operation from operation_name e group by e.patient_id, e.visit_id) where patient_id = a.patient_id and visit_id = a.visit_id) 手术名称, b.plsx from (select a.start_dDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select count(1) from INPADM.lend_bed_log where dept_code <> lend_dept_code and patient_id = a.patient_id and visit_id = a.visit_id and lend_end_date is not nuDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT c.tj_ksmc, a.patient_id, a.visit_id, b.inp_no, b.name, b.sex, a.cancel_discharge_time FROM medadm.cancel_discharge_pat a, MEDREC.pat_master_index b, COMM.dept_dict c where a.dept_code = c.dept_code and a.patient_id = b.patient_id and a.st_date betwDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT A.DEPT_CODE, A.DEPT_NAME FROM COMM.DEPT_DICT A WHERE A.DEPT_NAME LIKE '%护理单元'"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select a.dept_code, a.dept_name from COMM.WARD_DEPT_DICT a, COMM.dept_dict b where a.dept_code = b.dept_code and b.outp_or_inp = 1and b.stop_flag is null order by a.dept_name"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '09:00' dtime,count( * ) from OUTPADM.clinic_master where registering_date >= to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and registering_date < to_date(  || ' 09:00:00', 'yyyy-mm-dd hh24:mi:ss') and registration_status <>0 and RETURNED_DATE iDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '10:30' dtime,count( * ) from OUTPADM.clinic_master where registering_date >= to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and registering_date < to_date(  || ' 10:30:00', 'yyyy-mm-dd hh24:mi:ss') and registration_status <>0 and RETURNED_DATE is null union all select '11:00' dtime,count( * ) from OUTPADM.clinic_master where registering_date >= to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') andDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '11:30' dtime,count( * ) from OUTPADM.clinic_master where registering_date >= to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and registering_date < to_date(  || ' 11:30:00', 'yyyy-mm-dd hh24:mi:ss') and registration_status <>0 and RETURNED_DATE is null union all select '12:00' dtime,count( * ) from OUTPADM.clinic_master where registering_daDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '14:30' dtime,count( * ) from OUTPADM.clinic_master where registering_date >= to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and registering_date < to_date(  || ' 14:30:00', 'yyyy-mm-dd hh24:mi:ss') and registration_sDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '09:00' dtime, count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b where a.patient_id = b.patient_id and a.rcpt_no = b.rcpt_no and presDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '10:00' dtime, count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b where a.patient_id = b.patient_id and a.rcpt_no = b.rcpt_no and presc_indicator <> 0 and a.visit_date >= to_date(  || '00:00:00' , 'yyyy-mm-dd hh24:mi:ss') and a.visit_date < to_date(  ||' 10:00:00', 'yyyy-mm-dd hh24:mi:ss') union all select '10:30' dtime,count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b wherDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '13:30' dtime, count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b where a.patient_id = b.patient_id and a.rcpt_no = b.rcpt_no and prDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '14:30' dtime, count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b where a.patient_id = b.patient_id and a.rcpt_no = b.rcpt_no and presc_indicator <> 0 and a.visit_date >= to_date(  || '00:00:00' , 'yyyy-mm-dd hh24:mi:ss') and a.visit_date < to_date(  ||' 14:30:00', 'yyyy-mm-dd hh24:mi:ss') union all select '15:00' dtime, count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b whDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '16:00' dtime, count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b where a.patient_id = b.patient_id and a.rcpt_no = b.rcpt_no and presc_indicator <> 0 and a.visit_date >= to_date(  || '00:00:00' , 'yyyy-mm-dd hh24:mi:ss') and a.visit_date < to_date(  ||' 16:00:00', 'yyyy-mm-dd hh24:mi:ss') union all select '16:30' dtime, counDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '17:00' dtime, count(distinct(b.rcpt_no)) from OUTPBILL.outp_rcpt_master a, OUTPBILL.OUTP_ORDER_DESC b where a.patient_id = b.patient_id and a.rcpt_no = b.rcpt_no and DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '09:00' dtime, count(*) from LAB.lab_test_master where requested_date_time between to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and to_date(  || ' 09:00:00', 'yyyy-mm-dd hh24:mi:ss') and specimen = '静脉血' and visit_id =0 union all selecDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '11:30' dtime, count(*) from LAB.lab_test_master where requested_date_time between to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and to_date(  || ' 11:30:00', 'yyyy-mm-dd hh24:mi:ss') and specimen = '静脉血' and visit_id =0 union all select '12:00' dtime, count(*) from LAB.lab_test_master where requested_date_time between to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and to_DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '14:30' dtime, count(*) from LAB.lab_test_master where requested_date_time between to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and to_date(  || ' 14:30:00', 'yyyy-mm-dd hh24:mi:ss') and specimen = '静脉血' and visit_id =0 union all select '15:00' dtime, count(*) from LAB.lab_test_master where requested_date_time between DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '15:30' dtime, count(*) from LAB.lab_test_master where requested_date_time between to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and to_date(  || ' 15:30:00', 'yyyy-mm-dd hh24:mi:ss') and specimen = '静脉血' and visit_id =0 union all select '16:00' dtime, count(*) from LAB.lab_test_master DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select '16:30' dtime, count(*) from LAB.lab_test_master where requested_date_time between to_date(  || ' 00:00:00', 'yyyy-mm-dd hh24:mi:ss') and to_date(  || ' 16:30:00', 'yyyy-mm-dd hh24:mi:ss') and specimen = '静脉血' and visit_id =0 union all select '17:00' dtiDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select (select patient_class_name from COMM.patient_class_dict where patient_class_code = b.patient_class) as patient_class, (select dept_name from COMM.dept_dict where dept_code = b.dept_admission_to) dept_admission_to, b.consulting_doctor from MEDREC.pat_master_index a, MEDREC.pat_visit b where a.patient_id = b.patDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT B.OPERATING_DATE, B.OPERATION_DESC, B.ANAESTHESIA_METHOD, D.OPERATION_SCALE, B.WOUND_GRADE, B.OPERATION_EMER_INDICATOR FJHZSS, '否' QKGR, '否' SHBFZ, NVL(C.NAME,B.OPERATOR) OPERATOR FROM OPERATION_SCHEDULE A INNER JOIN MEDREC.OPERATION B ON A.PATIENT_ID = B.PATIENT_ID AND A.VISIT_ID = B.VISIT_ID AND A.SCHEDULE_ID = B.ODAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT PATIENT_ID,NAME, ITEM_NAME, SUM(AMOUNT) AMOUNT, DEPT_NAME, '' OPERTOR FROM OUTPADM.CLINIC_MASTER, OUTPDOCT.OUTP_TREAT_REC , COMM.DEPT_DICT WHERE OUTPADM.CLINIC_MASTER.VISIT_DATE = OUTP_TREAT_REC.VISIT_DATE AND OUTPADM.CLINIC_MASTER.VISIT_NO DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT C.INP_NO INP_NO, D.DEPT_NAME DEPT_NAME, E.NAME DOCTOR_NAME, F.DIAGNOSIS_DESC MEDREC.DIAGNOSIS, A.DISCHARGE_DATE_TIME CYSJ1, B.ADMISSION_DATE_TIME RYSJ1, ROUND(B.ADMISSION_DATE_TIME - A.DISCHARGE_DATE_TIME,0) DAYS FROM MEDREC.PAT_VISIT A, MEDREC.PAT_VISIT B, MEDREC.PAT_MASTER_INDEX C, COMM.DEPT_DICT D, DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select a.dept_name, t.exam_class, count(*) amount, case when a.outp_or_inp = 0 then '门诊' else '住院' end as outp_or_inp from EXAM.exam_master t, COMM.dept_dict a where t.req_dept = a.dept_code and t.exam_date_time >=   and t.exam_date_time <=   group by a.dept_name, t.exam_class, a.outp_or_inp unionDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select a.dept_name, '喉镜' exam_class, case when sum(amount)<0 then null else sum(amount) end amount, case when a.outp_or_inp = 0 then '门诊' else '住院' end as outp_or_inp from INPBILL.inp_bill_detail t, COMM.dept_dict a where t.ordered_by = a.dept_code and t.item_code in( ) and (t.billing_date_time >=  and t.billing_date_time <=  ) group by a.dept_name, a.outp_or_inp union all select a.dept_name, '鼻内镜'DAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select (select aa.dept_name from COMM.dept_dict aa where aa.dept_code = b.out_operator_dept) out_operator_dept, (select name from COMM.staff_dict bb where bb.emp_no = b.out_operator_no) out_operator_no, 0 as ru, count(1) chu from MEDREC.pat_visit a, MEDREC.pat_visit_new b where a.pDAT*"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "select to_char ( sysdate - 1 , 'yyyy-mm-dd' ) , to_char ( sysdate , 'yyyy-mm-dd' ) from dual"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT PARAMETER_VALUE FROM COMM.APP_CONFIGER_PARAMETER WHERE APP_NAME ='INFORGY' AND PARAMETER_NAME ='OPERATIONREPORT' AND EMP_NO =' '"
+ },
+ {
+  "src": "统计管理\\spjxc.pbd",
+  "name": "Q",
+  "sql": "SELECT TO_CHAR ( SYSDATE , 'YYYY-MM-DD' ) , TO_CHAR ( SYSDATE-30 , 'YYYY-MM-DD' ) FROM DUAL"
+ },
+ {
+  "src": "统计管理\\stat.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDADM.QU_OPERATION_DEPT.DEPT_CODE, sum(GREAT_OPER_NUM+MAJOR_OPER_NUM+MEDIUM_OPER_NUM+MINOR_OPER_NUM) operat FROM MEDADM.QU_OPERATION_DEPT WHERE (MEDADM.QU_OPERATION_DEPT.YEAR_MONTH >=   ) AND (MEDADM.QU_OPERATION_DEPT.YEAR_MONTH <=   ) GROUP BY MEDADM.QU_OPERATION_DEPT.DEPT_CODE"
+ },
+ {
+  "src": "统计管理\\stat.pbd",
+  "name": "Q",
+  "sql": "SELECT MEDADM.QU_DEPT_BED_REC.DEPT_CODE, sum(MEDADM.QU_DEPT_BED_REC.REAL_BED_NUM) enabled_bed_num FROM MEDADM.QU_DEPT_BED_REC WHERE (MEDADM.QU_DEPT_BED_REC.YEAR_MONTH >=   ) AND (MEDADM.QU_DEPT_BED_REC.YEAR_MONTH <=   ) GROUP BY MEDADM.QU_DEPT_BED_REC.DEPT_CODE"
+ },
+ {
+  "src": "统计管理\\stat.pbd",
+  "name": "Q",
+  "sql": "SELECT COMM.CLINICAL_DEPT_CONFIG.DEPT_CODE, COMM.CLINICAL_DEPT_CONFIG.BED_NUMBER FROM COMM.CLINICAL_DEPT_CONFIG"
+ },
+ {
+  "src": "统计管理\\u_comm_object.pbd",
+  "name": "Q",
+  "sql": "SELECT NVL ( sORIEN , '0' ) , NVL ( sPSIZE , '0' ) , NVL ( sLEFT , '0' ) , NVL ( sRIGHT , '0' ) , NVL ( sTOP , '0' ) , NVL ( sBOTTOM , '0' ) , NVL ( sZOOM , '100' ) , NVL ( sSCALE , '100' ) FROM COMM.MR_REPORT_PRTST WHERE sWin =' ' AND sDW =' ' AND sDWOBJ =' ' and sapp =' '"
+ }
+]

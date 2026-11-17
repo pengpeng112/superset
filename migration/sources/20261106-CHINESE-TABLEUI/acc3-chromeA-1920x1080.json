@@ -1,0 +1,552 @@
+[
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "login",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as admin"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-version",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261106f11 guard=20261105g4 cols=17"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-no-english",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "clean; ths sample=['科别', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-anchor",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "anchors=['科别', '科室名称'] found in 科别 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周转次"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-sticky",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no sticky (sw=None cw=None) wide_expected=True"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-num",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "num=140 right=140 tabnum=140 thRight=14 bad=[] sample=['41', '1271', '41', '429', '421']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-zero",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "zeroMarked=31 zeroTotal=31 miss=0"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-summary",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "summaryRows=0 labels=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page36-version",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261106f11 guard=20261105g4 cols=18"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page36-no-english",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "clean; ths sample=['科别', '开放床位', '原有人数', '入院人数', '转入人数', '小计']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page36-anchor",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "anchors=['科室代码', '科室名称'] found in 科别 开放床位 原有人数 入院人数 转入人数 小计 转科 治愈 好转 未愈 死亡 小计 现有人数 床位使用率 出院者共住院天数 出院者平均住院天数 统计日期 提"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page36-sticky",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no sticky (sw=None cw=None) wide_expected=True"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page36-num",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "num=150 right=150 tabnum=150 thRight=15 bad=[] sample=['41', '22', '0', '0', '22']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page36-zero",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "zeroMarked=66 zeroTotal=66 miss=0"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page36-summary",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "summaryRows=0 labels=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page41-version",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261106f11 guard=20261105g4 cols=19"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page41-no-english",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "clean; ths sample=['护理单元', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page41-anchor",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "anchors=['病区代码', '科室名称', '护理单元'] found in 护理单元 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page41-sticky",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no sticky (sw=None cw=None) wide_expected=True"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page41-num",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "num=160 right=160 tabnum=160 thRight=16 bad=[] sample=['52', '1612', '52', '998', '888']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page41-zero",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "zeroMarked=39 zeroTotal=39 miss=0"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page41-summary",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "summaryRows=0 labels=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-version",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261106f11 guard=20261105g4 cols=17"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-no-english",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "clean; ths sample=['科别', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-anchor",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "anchors=['科室名称'] found in 科别 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周转次"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-sticky",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no sticky (sw=None cw=None) wide_expected=True"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-num",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "num=140 right=140 tabnum=140 thRight=14 bad=[] sample=['41', '1271', '41', '429', '421']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-zero",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "zeroMarked=31 zeroTotal=31 miss=0"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-summary",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "summaryRows=0 labels=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page46-version",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261106f11 guard=20261105g4 cols=19"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page46-no-english",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "clean; ths sample=['护理单元', '(月)底实有病床数', '实际开放总床日数', '平均开放病床数', '实际占用总床日数', '出院者占用总床日数']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page46-anchor",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "anchors=['病区代码'] found in 护理单元 (月)底实有病床数 实际开放总床日数 平均开放病床数 实际占用总床日数 出院者占用总床日数 出院人数 治愈率(%) 好转率(%) 病死率(%) 病床周"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page46-sticky",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no sticky (sw=None cw=None) wide_expected=True"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page46-num",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "num=160 right=160 tabnum=160 thRight=16 bad=[] sample=['52', '1612', '52', '998', '888']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page46-zero",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "zeroMarked=39 zeroTotal=39 miss=0"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page46-summary",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "summaryRows=0 labels=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page47-version",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261106f11 guard=20261105g4 cols=3"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page47-no-english",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "clean; ths sample=['入院科室', '接诊医生', '接诊医生']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page47-anchor",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "anchors=['接诊医生', '入院时间'] found in 入院科室 接诊医生 接诊医生"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page47-sticky",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "no sticky (sw=None cw=None) wide_expected=False"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page47-num",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "num=0 right=0 tabnum=0 thRight=0 bad=[] sample=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page47-zero",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "zeroMarked=0 zeroTotal=0 miss=0"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page47-summary",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "summaryRows=0 labels=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-version",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261106f11 guard=20261105g4 cols=9"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-no-english",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "clean; ths sample=['项目名称', '台次', '术者', '患者标识', '姓名', '科室名称']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-anchor",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "anchors=['患者标识', '姓名', '项目名称'] found in 项目名称 台次 术者 患者标识 姓名 科室名称 提示 统计开始日期 统计结束日期"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-sticky",
+    "verify_point": "VP2",
+    "result": "FAIL",
+    "detail": "no sticky (sw=None cw=None) wide_expected=True"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-num",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "num=13 right=13 tabnum=13 thRight=2 bad=[] sample=['0.1', '0.1', '00941239', '0.1', '01021744']"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-zero",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "zeroMarked=0 zeroTotal=0 miss=0"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-summary",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "summaryRows=0 labels=[]"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page51-table",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "table not ready"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page58-table",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "table not ready"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page59-table",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "table not ready"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page60-table",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "table not ready"
+  },
+  {
+    "browser": "chromeA",
+    "browser_version": "Chrome/156.0.8078.81",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-table",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "table not ready"
+  }
+]

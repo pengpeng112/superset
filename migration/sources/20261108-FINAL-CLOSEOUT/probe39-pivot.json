@@ -1,0 +1,30 @@
+{
+ "browser": "Chrome/157.0.8103.51",
+ "final": {
+  "holders": 2,
+  "rendered": 1,
+  "pivot": false,
+  "pivotRows": -1,
+  "supersetChartTable": false,
+  "anyHolderTable": {
+   "rows": 174,
+   "cls": "pvtTable",
+   "header": 25
+  },
+  "sum": "共返回 765 行数据（约） · 耗时 0.2 秒"
+ },
+ "posts": [
+  {
+   "ms": 0,
+   "hit": true,
+   "rows": 765,
+   "status": "success"
+  },
+  {
+   "ms": 0,
+   "hit": true,
+   "rows": 1,
+   "status": "success"
+  }
+ ]
+}

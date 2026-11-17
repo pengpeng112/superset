@@ -1,0 +1,20 @@
+[09:46:02] browser ctC Chrome/156.0.8078.81 1366x768
+[09:46:06] PASS login | admin
+[09:46:13] page51 setup: picked:020101
+[09:46:14] page51 apply: clicked
+[09:46:18] PASS page51-version | ui=20261106f11 rows=10
+[09:46:18] PASS page51-no-english | residue=[] ths=['日期', '手术名称', '麻醉方式', '手术级别', '切口分类', '是否发生非计划再手术(采用术式)']
+[09:46:18] PASS page51-anchor | anchors=['切口感染', '手术并发症', '手术医师', '麻醉方式'] in=日期 手术名称 麻醉方式 手术级别 切口分类 是否发生非计划再手术(采用术式) 切口感染 手术并发症 手术医师 提示 统计开始日期 统计结束
+[09:46:18] PASS page51-sticky | sticky=None (cols=13)
+[09:46:18] PASS page51-enhance | num=10 right=10 zeroMiss=0 summaryRows=0
+[09:46:26] page58 setup: picked:门诊
+[09:46:27] page58 apply: clicked
+[09:46:31] PASS page58-version | ui=20261106f11 rows=10
+[09:46:31] PASS page58-no-english | residue=[] ths=['开单科室', 'B超', 'CT', 'X线', '一氧化氮', '动态血压']
+[09:46:31] PASS page58-anchor | anchors=['检查类别', '科别', '科室'] in=开单科室 B超 CT X线 一氧化氮 动态血压 妇产超声 幽门螺杆菌 心电图 支气管镜 数字胃肠 消化内镜 磁共振 肺功能 胃肠镜 胸腔镜 
+[09:46:31] PASS page58-sticky | sticky=None (cols=19)
+[09:46:31] PASS page58-enhance | num=26 right=26 zeroMiss=0 summaryRows=0
+[09:46:36] page59 setup: set:1 set:99
+[09:46:38] page59 apply: clicked
+[09:51:38] FAIL page59-table | no table after setup+query; guard={"msg":""}
+[09:51:40] results -> F:\python\superset\migration\sources\20261106-CHINESE-TABLEUI\acc3b-ctC-1366x768.json (12 rows, 1 fail)

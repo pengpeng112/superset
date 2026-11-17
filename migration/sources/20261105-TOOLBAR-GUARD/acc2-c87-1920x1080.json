@@ -1,0 +1,332 @@
+[
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "login",
+    "verify_point": "LOGIN",
+    "result": "PASS",
+    "detail": "logged in as admin"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 150 行数据（约） · 耗时 0.8 秒' chart=ok:10:50000 0.0s"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 150 行数据（约） · 耗时 0.5 秒' chart=ok:10:50000 0.0s"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page45-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 670 行数据（约） · 耗时 0.6 秒' chart=ok:10:50000 0.0s"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page50-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 20,760 行数据（约） · 耗时 0.5 秒' chart=ok:10:100000 0.0s"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-firstload",
+    "verify_point": "VP4",
+    "result": "PASS",
+    "detail": "first-open 3.6s (<20s) state=ok:10:100000"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-summary",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "summary='共返回 24,151 行数据 · 耗时 8.2 秒' chart=ok:24151:50000 7.2s"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-buttons",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "xlsx=True csv=True density=True xlsxDisabled=False csvDisabled=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-versions",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "ui=20261105f10 guard=20261105g4 dates=20261104d13"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-no-overflow",
+    "verify_point": "VP1",
+    "result": "PASS",
+    "detail": "scrollWidth overflow=False"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "density-toggle",
+    "verify_point": "VP1",
+    "result": "FAIL",
+    "detail": "compact h=0 ss=compact -> standard h=0 ss=standard"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-day-query",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "draft=picked:2026-09-16:2026-09-16 state=ok:4444:50000 2.7s summary='共返回 4,444 行数据 · 耗时 1.9 秒'"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-xlsx-file",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "抗菌办·住院医嘱查询_20260916.xlsx | xlsx_rows=4445 cjk=True expect=4444(+header) | note=✅ 已导出 抗菌办·住院医嘱查询_20260916.xlsx"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-csv-file",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "抗菌办·住院医嘱查询_20260916.csv | rows=4444 bom=True cjk_header=True header=患者唯一标识,患者住院唯一标识,住院病历号,医嘱唯一标识,医嘱开立科室代码,医嘱开立科室名称,医嘱类型,医嘱分类,药品h expect=4444 | note=✅ 已导出 抗菌办·住院医嘱查询_20260916.csv"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-xlsx-file",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "月工作报表（二）新_20261108.xlsx | xlsx_rows=151 cjk=True expect=150(+header) | note=✅ 已导出 月工作报表（二）新_20261108.xlsx"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page35-csv-file",
+    "verify_point": "VP2",
+    "result": "PASS",
+    "detail": "月工作报表（二）新_20261108.csv | rows=150 bom=True cjk_header=True header=科别,(月)底实有病床数,实际开放总床日数,平均开放病床数,实际占用总床日数,出院者占用总床日数,出院人数,治愈率(%) expect=150 | note=✅ 已导出 月工作报表（二）新_20261108.csv"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-span30-blocked",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "msg='该明细表数据量极大（单月超 10 万行），单次查询跨度请勿超过 15 天（建议按单日或单周查询导出）。' lastBlock='该明细表数据量极大（单月超 10 万行），单次查询跨度请勿超过 15 天（建议按单日或单周查询导出）' before=ok:24151:50000 after=ok:24151:50000 draft=picked:2026-09-01:2026-09-30"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-span15-passed",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "draft=picked:2026-09-01:2026-09-15 state=ok:50000:50000 20s span={\"days\":15}"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-truncation-banner",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "banner=True rows=50000 limit=50000 text='⚠️ 数据截断警告：当前查询结果已达到单次上限（50,000 行），超出的明细已被截断！为保证数据完整，请将左侧【日期范'"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page65-banner-removed",
+    "verify_point": "VP3",
+    "result": "PASS",
+    "detail": "after requery banner=False state=ok:4444:50000"
+  },
+  {
+    "browser": "c87",
+    "browser_version": "Chrome/87.0.4272.0",
+    "user": "admin",
+    "viewport": "1920x1080",
+    "check": "page61-week-query",
+    "verify_point": "VP4",
+    "result": "PASS",
+    "detail": "draft=picked:2026-09-01:2026-09-07 state=ok:10:100000 1s summary='共返回 22,850 行数据（约） · 耗时 0.4 秒'"
+  }
+]

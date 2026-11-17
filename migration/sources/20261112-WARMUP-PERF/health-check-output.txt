@@ -1,0 +1,37 @@
+
+== 1. 六容器运行状态 ==
+  [绿] superset-nginx Up 4 weeks（无探针，按 Up 判定）
+  [绿] superset-web Up 4 weeks (healthy)
+  [绿] superset-worker Up 5 weeks（无探针，按 Up 判定）
+  [绿] superset-beat Up 4 weeks（无探针，按 Up 判定）
+  [绿] superset-postgres Up 5 weeks (healthy)
+  [绿] superset-redis Up 5 weeks (healthy)
+
+== 2. 磁盘使用率 ==
+  [绿] 根分区使用率 57%（<80%）
+
+== 3. HIS 隧道（15215） ==
+  [绿] his-tunnel=active，0.0.0.0:15215 已监听
+
+== 4. 最近 02:00 数据库备份 ==
+  [绿] 2026-11-14-020001 DONE 且 SHA256 一致（superset-2026-11-14.dump 5.2M，对象 86/52）
+
+== 5. 最近 06:00 用户同步 ==
+  [绿] [2026-11-14 06:00:12] sync-2026-11-14-060001 end exit=0
+
+== 6. 最近 06:15 缓存预热 ==
+  [绿] 最近一次 2026-11-14 17:31:14命中 39/39，耗时 228.2s，无熔断
+
+== 7. nginx.conf 挂载一致性 ==
+  [绿] 宿主机与容器内 nginx.conf 一致（sha=2135b093141c…，inode=47580611）
+
+== 8. 生产 5 个核心 JS 版本与 SHA256 ==
+  [绿] report-guards.js  v=20261112g5  sha256=9ff7e07e2516…
+  [绿] report-dates.js  v=20261111d18  sha256=a26e751d0084…
+  [绿] report-ui.js  v=20261108f13  sha256=add99c189c9d…
+  [绿] home-ui.js  v=20261111h10  sha256=5f7e9115683e…
+  [绿] monthly-report.js  v=20261022m12  sha256=fe8abd70f383…
+
+========== 体检汇总：绿 17 / 红 0 ==========
+全部通过 ✔
+[exit 0]

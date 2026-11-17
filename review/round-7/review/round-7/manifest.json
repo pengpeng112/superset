@@ -1,0 +1,7 @@
+{
+  "round": 7,
+  "created_at": "2026-10-08 20:34:59",
+  "tool": "tools/multi_ai_evidence.py",
+  "ais": {},
+  "note": "本 manifest 只登记文件级证据（哈希/在席/缺席），不载结论；终审归人工。"
+}

@@ -1,0 +1,248 @@
+{
+ "generated": "2026-11-13",
+ "batch": "20261108-FINAL-CLOSEOUT",
+ "purpose": "offline-bundle 离线灾备包与生产 /home/superset/ 全量对齐清单（2026-11-07 目录丢失后的完整回补）",
+ "server_host": "10.10.8.73 (/home/superset)",
+ "excluded": [
+  "chrome80-assets/（体积大，生产在用，灾备恢复时另行打包）",
+  ".env / secrets/（含口令，严禁落盘文档）",
+  "superset-bundle.tar（镜像介质 1.2GB）",
+  "pgdata/ redis/ logs/ backup/（运行时数据）"
+ ],
+ "security_note": "config/superset_config.py 已核：全部凭据经 os.environ 注入（SECRET_KEY/POSTGRES_PASSWORD/GUEST_TOKEN_JWT_SECRET），无硬编码口令，可落盘",
+ "alignment": "29/29 文件 SHA256 与生产一致",
+ "files": [
+  {
+   "server_path": "/home/superset/docker-compose.yml",
+   "local_path": "offline-bundle/compose/docker-compose.yml",
+   "bytes": 3308,
+   "sha256": "19393a6063487498cfd4dfa35d636bdb36cce6eedf401cbed9f46256e10c4a14",
+   "server_sha256": "19393a6063487498cfd4dfa35d636bdb36cce6eedf401cbed9f46256e10c4a14",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/superset_config.py",
+   "local_path": "offline-bundle/config/superset_config.py",
+   "bytes": 5258,
+   "sha256": "336798870bfdb9a19417390c69179de0fefafe4b89b0c06fa504836c1dafa09b",
+   "server_sha256": "336798870bfdb9a19417390c69179de0fefafe4b89b0c06fa504836c1dafa09b",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/nginx.conf",
+   "local_path": "offline-bundle/nginx.conf",
+   "bytes": 3759,
+   "sha256": "dcad595397c91d65a9bafc06429d86ed756c42f8ac3b8a37f42aaa1176a26545",
+   "server_sha256": "dcad595397c91d65a9bafc06429d86ed756c42f8ac3b8a37f42aaa1176a26545",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/brand.js",
+   "local_path": "offline-bundle/custom/brand.js",
+   "bytes": 12096,
+   "sha256": "67407c6502dbf5ee68d81ae61617dd1914247c117bdb1e7464f886046c818add",
+   "server_sha256": "67407c6502dbf5ee68d81ae61617dd1914247c117bdb1e7464f886046c818add",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/monthly-report.js",
+   "local_path": "offline-bundle/custom/monthly-report.js",
+   "bytes": 26831,
+   "sha256": "fe8abd70f38334ef6434058b1f86bccfedcbc215b440c4959c4a03bb4cecc460",
+   "server_sha256": "fe8abd70f38334ef6434058b1f86bccfedcbc215b440c4959c4a03bb4cecc460",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/report-dates.js",
+   "local_path": "offline-bundle/custom/report-dates.js",
+   "bytes": 26204,
+   "sha256": "a26e751d008498868686edbd397e4f5ca2749093eec319d94388ac2633112141",
+   "server_sha256": "a26e751d008498868686edbd397e4f5ca2749093eec319d94388ac2633112141",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/report-ui.js",
+   "local_path": "offline-bundle/custom/report-ui.js",
+   "bytes": 82044,
+   "sha256": "add99c189c9d2c08c070901a1b99f1c1498397b2833486f01abd97b558d18b17",
+   "server_sha256": "add99c189c9d2c08c070901a1b99f1c1498397b2833486f01abd97b558d18b17",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/home-ui.js",
+   "local_path": "offline-bundle/custom/home-ui.js",
+   "bytes": 66455,
+   "sha256": "5f7e9115683e06ed952b91fb8c63acb9aafa6173f20c4cf90a398a91b7ec63e5",
+   "server_sha256": "5f7e9115683e06ed952b91fb8c63acb9aafa6173f20c4cf90a398a91b7ec63e5",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/report-guards.js",
+   "local_path": "offline-bundle/custom/report-guards.js",
+   "bytes": 9318,
+   "sha256": "4faa3d390fbde65dd1d1ad761826ec3d70ac45c5a2f54b21a64f06eb8ee66718",
+   "server_sha256": "4faa3d390fbde65dd1d1ad761826ec3d70ac45c5a2f54b21a64f06eb8ee66718",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/date-range-zh.js",
+   "local_path": "offline-bundle/custom/date-range-zh.js",
+   "bytes": 10081,
+   "sha256": "0715ce86c2f08972a85a6f8a562c25ea291a950b1160a6264277d5ad60e89e3a",
+   "server_sha256": "0715ce86c2f08972a85a6f8a562c25ea291a950b1160a6264277d5ad60e89e3a",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/roles-zh.js",
+   "local_path": "offline-bundle/custom/roles-zh.js",
+   "bytes": 26551,
+   "sha256": "0fd899d1bd512a99e896e692d07fda2df54c8f98733abebde2e72b84bae38edb",
+   "server_sha256": "0fd899d1bd512a99e896e692d07fda2df54c8f98733abebde2e72b84bae38edb",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/app-recovery.js",
+   "local_path": "offline-bundle/custom/app-recovery.js",
+   "bytes": 2003,
+   "sha256": "c1d702c7646230adddc829f5fb1093819362e40b16a47396a71941616841559c",
+   "server_sha256": "c1d702c7646230adddc829f5fb1093819362e40b16a47396a71941616841559c",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/browser-compat.js",
+   "local_path": "offline-bundle/custom/browser-compat.js",
+   "bytes": 4267,
+   "sha256": "81b1a335dfb5e10da8f75972e37ff85b1a5f341ad110c9d2be67b494d43600af",
+   "server_sha256": "81b1a335dfb5e10da8f75972e37ff85b1a5f341ad110c9d2be67b494d43600af",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/browser-polyfills.js",
+   "local_path": "offline-bundle/custom/browser-polyfills.js",
+   "bytes": 237101,
+   "sha256": "edcc5a7f7e9a76460d9b3e33cca3c90bb768e387411c23d3006f9ac35a95626d",
+   "server_sha256": "edcc5a7f7e9a76460d9b3e33cca3c90bb768e387411c23d3006f9ac35a95626d",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/messages.json",
+   "local_path": "offline-bundle/custom/messages.json",
+   "bytes": 444415,
+   "sha256": "798bc3629ed0face0c23b6c1d4f10d2076dfe1c2927e371f3e2eaba4afb992b0",
+   "server_sha256": "798bc3629ed0face0c23b6c1d4f10d2076dfe1c2927e371f3e2eaba4afb992b0",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/logo.png",
+   "local_path": "offline-bundle/custom/logo.png",
+   "bytes": 24045,
+   "sha256": "d475fad629848f8a0f2e1a6f3e580d7d6b83e5ade677d996fcd15f91a0161986",
+   "server_sha256": "d475fad629848f8a0f2e1a6f3e580d7d6b83e5ade677d996fcd15f91a0161986",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/logo-bar.png",
+   "local_path": "offline-bundle/custom/logo-bar.png",
+   "bytes": 14768,
+   "sha256": "482d6624244e9895415542955ad0ab2598c47d897f3c4455f8bd2b53761792d1",
+   "server_sha256": "482d6624244e9895415542955ad0ab2598c47d897f3c4455f8bd2b53761792d1",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/logo-bar-light.png",
+   "local_path": "offline-bundle/custom/logo-bar-light.png",
+   "bytes": 15515,
+   "sha256": "225cc8ecd1ed5ba2456fc5ae4d80d386778eedf9aad38c4c694f3545f7ebd484",
+   "server_sha256": "225cc8ecd1ed5ba2456fc5ae4d80d386778eedf9aad38c4c694f3545f7ebd484",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/vendor/flatpickr-4.6.13/flatpickr.min.js",
+   "local_path": "offline-bundle/custom/vendor/flatpickr-4.6.13/flatpickr.min.js",
+   "bytes": 50679,
+   "sha256": "1eeab1cb779471a0b0aaa93dd91c2eb1aa537d696f01ab05ea9dabc55e8525a1",
+   "server_sha256": "1eeab1cb779471a0b0aaa93dd91c2eb1aa537d696f01ab05ea9dabc55e8525a1",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/vendor/flatpickr-4.6.13/flatpickr.min.css",
+   "local_path": "offline-bundle/custom/vendor/flatpickr-4.6.13/flatpickr.min.css",
+   "bytes": 16166,
+   "sha256": "1b34a42552c96f10e4dfaaa4a367276b03868aacff63c1ac42ffe331352bc754",
+   "server_sha256": "1b34a42552c96f10e4dfaaa4a367276b03868aacff63c1ac42ffe331352bc754",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/vendor/flatpickr-4.6.13/monthSelect.js",
+   "local_path": "offline-bundle/custom/vendor/flatpickr-4.6.13/monthSelect.js",
+   "bytes": 13651,
+   "sha256": "07782c68d4ee9a21c122227cc5228bbee134517ea0c99f1577af3f014746633e",
+   "server_sha256": "07782c68d4ee9a21c122227cc5228bbee134517ea0c99f1577af3f014746633e",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/vendor/flatpickr-4.6.13/monthSelect.css",
+   "local_path": "offline-bundle/custom/vendor/flatpickr-4.6.13/monthSelect.css",
+   "bytes": 2822,
+   "sha256": "d6b99c057e2222a7c279c81caced0fcf6bdf2fd44aa402b81ade6c1d2a19a10a",
+   "server_sha256": "d6b99c057e2222a7c279c81caced0fcf6bdf2fd44aa402b81ade6c1d2a19a10a",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/vendor/flatpickr-4.6.13/zh.js",
+   "local_path": "offline-bundle/custom/vendor/flatpickr-4.6.13/zh.js",
+   "bytes": 1859,
+   "sha256": "8629568c4e6c9536864189e9434195416ab5b2d63c9793a3779f12a5b34d9955",
+   "server_sha256": "8629568c4e6c9536864189e9434195416ab5b2d63c9793a3779f12a5b34d9955",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/vendor/flatpickr-4.6.13/LICENSE.md",
+   "local_path": "offline-bundle/custom/vendor/flatpickr-4.6.13/LICENSE.md",
+   "bytes": 1084,
+   "sha256": "5fd57afc3905651175947ae44818e91ffcf5b605e4c88fac42d9700243bd9095",
+   "server_sha256": "5fd57afc3905651175947ae44818e91ffcf5b605e4c88fac42d9700243bd9095",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/custom/vendor/flatpickr-4.6.13/来源与哈希.json",
+   "local_path": "offline-bundle/custom/vendor/flatpickr-4.6.13/来源与哈希.json",
+   "bytes": 2744,
+   "sha256": "1ec05bb831b85a8e96a04ddd2615123104425ca66bb2790d9c7bfcc111410428",
+   "server_sha256": "1ec05bb831b85a8e96a04ddd2615123104425ca66bb2790d9c7bfcc111410428",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/scripts/superset_user_sync.py",
+   "local_path": "offline-bundle/scripts/superset_user_sync.py",
+   "bytes": 25512,
+   "sha256": "87a0992d71fd88d0d3483c2c58d4832620895d1b6c321f94fd553343507a1e36",
+   "server_sha256": "87a0992d71fd88d0d3483c2c58d4832620895d1b6c321f94fd553343507a1e36",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/scripts/run_sync.sh",
+   "local_path": "offline-bundle/scripts/run_sync.sh",
+   "bytes": 1083,
+   "sha256": "323f0174a8789848acd469a0448f89e973800a8ccc4e0ea6bfa881c958b88204",
+   "server_sha256": "323f0174a8789848acd469a0448f89e973800a8ccc4e0ea6bfa881c958b88204",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/scripts/pg_backup.sh",
+   "local_path": "offline-bundle/scripts/pg_backup.sh",
+   "bytes": 3013,
+   "sha256": "a084d8162a3960e194c8dee9ba02a7af36fde186e2ea5f249546b3bf69593316",
+   "server_sha256": "a084d8162a3960e194c8dee9ba02a7af36fde186e2ea5f249546b3bf69593316",
+   "match": true
+  },
+  {
+   "server_path": "/home/superset/translations_zh/messages.json",
+   "local_path": "offline-bundle/translations/messages.json",
+   "bytes": 444415,
+   "sha256": "798bc3629ed0face0c23b6c1d4f10d2076dfe1c2927e371f3e2eaba4afb992b0",
+   "server_sha256": "798bc3629ed0face0c23b6c1d4f10d2076dfe1c2927e371f3e2eaba4afb992b0",
+   "match": true
+  }
+ ]
+}

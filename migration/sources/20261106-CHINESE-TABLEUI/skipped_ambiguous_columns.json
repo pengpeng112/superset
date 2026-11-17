@@ -1,0 +1,31 @@
+{
+  "batch": "20261106-CHINESE-TABLEUI",
+  "note": "扫描命中但不写入的列：已等效中文（列名本身为中文+单位/拼音字母）或语义无法 100% 确认。绝不编造。",
+  "skipped": [
+    {"column_id": 2061, "table_id": 329, "table_name": "绩效考核暨高质量发展监测指标情况", "column_name": "ACDI_ZB", "reason": "SQL 分子为 ITEM_CLASS NOT IN ('A','C','D','I') 的费用占总费用比；ITEM_CLASS 各字母的费用类别含义未在库内核实，无法 100% 命名，不猜"},
+    {"column_id": 2156, "table_id": 336, "table_name": "检查人次按开单科室统计", "column_name": "B超", "reason": "verbose_name 已='B超'，等效中文，无需改"},
+    {"column_id": 2157, "table_id": 336, "table_name": "检查人次按开单科室统计", "column_name": "CT", "reason": "CT 为标准医学检查缩写，不汉化"},
+    {"column_id": 2158, "table_id": 336, "table_name": "检查人次按开单科室统计", "column_name": "X线", "reason": "已等效中文"},
+    {"column_id": 2174, "table_id": 337, "table_name": "检查人次按执行科室统计（门诊）", "column_name": "B超", "reason": "已等效中文"},
+    {"column_id": 2175, "table_id": 337, "table_name": "检查人次按执行科室统计（门诊）", "column_name": "CT", "reason": "标准医学缩写"},
+    {"column_id": 2176, "table_id": 337, "table_name": "检查人次按执行科室统计（门诊）", "column_name": "X线", "reason": "已等效中文"},
+    {"column_id": 2655, "table_id": 363, "table_name": "抗菌办·门急诊处方明细", "column_name": "身高（cm）", "reason": "列名已中文（含单位字母）"},
+    {"column_id": 2656, "table_id": 363, "table_name": "抗菌办·门急诊处方明细", "column_name": "体重（kg）", "reason": "列名已中文"},
+    {"column_id": 2681, "table_id": 363, "table_name": "抗菌办·门急诊处方明细", "column_name": "开单日期T", "reason": "get_time_filter 模板时间列，列名已中文"},
+    {"column_id": 2699, "table_id": 364, "table_name": "抗菌办·住院检验结果明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2700, "table_id": 365, "table_name": "抗菌办·消耗明细", "column_name": "药品hisid", "reason": "列名已中文"},
+    {"column_id": 2714, "table_id": 365, "table_name": "抗菌办·消耗明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2730, "table_id": 366, "table_name": "抗菌办·住院患者信息明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2739, "table_id": 367, "table_name": "抗菌办·住院医嘱明细", "column_name": "药品hisid", "reason": "列名已中文"},
+    {"column_id": 2766, "table_id": 367, "table_name": "抗菌办·住院医嘱明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2790, "table_id": 368, "table_name": "抗菌办·微生物明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2810, "table_id": 369, "table_name": "抗菌办·检查结果明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2816, "table_id": 370, "table_name": "抗菌办·住院诊断明细", "column_name": "诊断ICD编码", "reason": "列名已中文"},
+    {"column_id": 2820, "table_id": 370, "table_name": "抗菌办·住院诊断明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2838, "table_id": 371, "table_name": "抗菌办·手术记录明细", "column_name": "出血量（ml）", "reason": "列名已中文"},
+    {"column_id": 2839, "table_id": 371, "table_name": "抗菌办·手术记录明细", "column_name": "输血量（ml）", "reason": "列名已中文"},
+    {"column_id": 2840, "table_id": 371, "table_name": "抗菌办·手术记录明细", "column_name": "输液量（ml）", "reason": "列名已中文"},
+    {"column_id": 2843, "table_id": 371, "table_name": "抗菌办·手术记录明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"},
+    {"column_id": 2852, "table_id": 372, "table_name": "抗菌办·生命体征明细", "column_name": "出院日期T", "reason": "模板时间列，已中文"}
+  ]
+}

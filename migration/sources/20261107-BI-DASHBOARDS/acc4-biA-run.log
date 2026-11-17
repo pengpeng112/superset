@@ -1,0 +1,25 @@
+[10:42:09] browser biA Chrome/156.0.8078.81 1920x1080 users=admin,003158
+[10:42:16] PASS login-admin | logged in as admin
+[10:42:21] PASS home-bi-section | ver=20261107h8 items=[{"t": "全院医疗运营核心指标总览", "h": "/superset/dashboard/72/"}, {"t": "门急诊流量与窗口负荷监测中心", "h": "/superset/dashboard/73/"}, {"t": "手术与住院医疗质量可视化分析", "h": "/super
+[10:42:21] PASS home-bi-order | sections=['可视化驾驶舱', '报表分类']
+[10:42:26] PASS home-bi-click | click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+[10:42:31] FAIL dir34-showcase | ver=20261107h8 cards=null cardH=None border=None bg=None
+[10:43:36] FAIL dash72-render | charts=8 rendered=5 loading=0 other=3 errCards=3 firstAllRendered=60.2s wall=64.1s
+[10:43:36] FAIL dash72-fast | firstAllRendered=60.2s (<10s)
+[10:43:36] PASS dash72-page | biPage=True reportPage=True crumb='报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）' holders=9
+[10:43:36] PASS dash72-crumb | crumb=报表目录 / 可视化驾驶舱 / 全院医疗运营核心指标总览（BI 驾驶舱）
+[10:45:08] FAIL dash72-linkage | pick=picked apply=clicked changedCharts=0/8 rowsBefore={"371": 1, "372": 1, "373": 1, "374": 1, "375": 15, "376": 15, "377": 0, "378":  rowsAfter={"371": 1, "372": 1, "37
+[10:46:14] FAIL dash73-render | charts=7 rendered=5 loading=0 other=2 errCards=2 firstAllRendered=60.2s wall=64.2s
+[10:46:14] FAIL dash73-fast | firstAllRendered=60.2s (<10s)
+[10:46:14] PASS dash73-page | biPage=True reportPage=True crumb='报表目录 / 可视化驾驶舱 / 门急诊流量与窗口负荷监测中心（BI 驾驶舱）' holders=8
+[10:46:14] PASS dash73-crumb | crumb=报表目录 / 可视化驾驶舱 / 门急诊流量与窗口负荷监测中心（BI 驾驶舱）
+[10:47:19] FAIL dash74-render | charts=5 rendered=2 loading=0 other=3 errCards=3 firstAllRendered=60.2s wall=64.7s
+[10:47:19] FAIL dash74-fast | firstAllRendered=60.2s (<10s)
+[10:47:19] PASS dash74-page | biPage=True reportPage=True crumb='报表目录 / 可视化驾驶舱 / 手术与住院医疗质量可视化分析（BI 驾驶舱）' holders=6
+[10:47:19] PASS dash74-crumb | crumb=报表目录 / 可视化驾驶舱 / 手术与住院医疗质量可视化分析（BI 驾驶舱）
+[10:47:23] PASS login-003158 | logged in as 003158
+[10:47:28] PASS home-bi-section | ver=20261107h8 items=[{"t": "全院医疗运营核心指标总览", "h": "/superset/dashboard/72/"}, {"t": "门急诊流量与窗口负荷监测中心", "h": "/superset/dashboard/73/"}, {"t": "手术与住院医疗质量可视化分析", "h": "/super
+[10:47:28] PASS home-bi-order | sections=['可视化驾驶舱', '报表分类']
+[10:47:33] PASS home-bi-click | click=clicked:/superset/dashboard/72/ landed=/superset/dashboard/72/
+[10:47:38] FAIL dir34-showcase | ver=20261107h8 cards=null cardH=None border=None bg=None
+[10:47:40] results -> F:\python\superset\migration\sources\20261107-BI-DASHBOARDS\acc4-biA-1920x1080.json (23 rows, 9 fail)

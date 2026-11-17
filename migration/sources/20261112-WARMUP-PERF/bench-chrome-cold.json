@@ -1,0 +1,120 @@
+{
+ "browser": "Chrome/156.0.8078.81",
+ "phase": "cold",
+ "rows": [
+  {
+   "id": 72,
+   "first_dom_ms": 2529,
+   "full_ms": 8820,
+   "posts": 9,
+   "hits": 0,
+   "judged": 9,
+   "slowest_req_ms": 3274,
+   "rendered": 8,
+   "mr": false,
+   "table": true,
+   "rows": 25,
+   "err": false,
+   "sum": "",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  },
+  {
+   "id": 73,
+   "first_dom_ms": 2200,
+   "full_ms": 9262,
+   "posts": 8,
+   "hits": 0,
+   "judged": 8,
+   "slowest_req_ms": 5057,
+   "rendered": 7,
+   "mr": false,
+   "table": true,
+   "rows": 17,
+   "err": false,
+   "sum": "",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  },
+  {
+   "id": 74,
+   "first_dom_ms": 2467,
+   "full_ms": 9492,
+   "posts": 7,
+   "hits": 0,
+   "judged": 7,
+   "slowest_req_ms": 5269,
+   "rendered": 6,
+   "mr": false,
+   "table": true,
+   "rows": 25,
+   "err": false,
+   "sum": "",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  },
+  {
+   "id": 32,
+   "first_dom_ms": 2227,
+   "full_ms": 5250,
+   "posts": 3,
+   "hits": 0,
+   "judged": 3,
+   "slowest_req_ms": 1032,
+   "rendered": 2,
+   "mr": true,
+   "table": false,
+   "rows": 0,
+   "err": false,
+   "sum": "",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  },
+  {
+   "id": 45,
+   "first_dom_ms": 2187,
+   "full_ms": 5214,
+   "posts": 2,
+   "hits": 0,
+   "judged": 2,
+   "slowest_req_ms": 1018,
+   "rendered": 1,
+   "mr": false,
+   "table": true,
+   "rows": 10,
+   "err": false,
+   "sum": "共返回 150 行数据（约） · 耗时 1.7 秒",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  },
+  {
+   "id": 63,
+   "first_dom_ms": 2177,
+   "full_ms": 47282,
+   "posts": 2,
+   "hits": 0,
+   "judged": 2,
+   "slowest_req_ms": 43098,
+   "rendered": 1,
+   "mr": false,
+   "table": true,
+   "rows": 50,
+   "err": false,
+   "sum": "共返回 87 行数据 · 耗时 43.9 秒",
+   "statuses": [
+    "success"
+   ],
+   "api_errors": []
+  }
+ ]
+}

@@ -1,0 +1,147 @@
+{
+ "browser": "Chrome/87.0.4272.0",
+ "login": true,
+ "cases": [
+  {
+   "case": "A-59-block-44d",
+   "checks": [
+    [
+     "guard_v",
+     true,
+     "20261112g5"
+    ],
+    [
+     "visit_set",
+     true,
+     [
+      "picked 1",
+      "picked 99"
+     ]
+    ],
+    [
+     "span44",
+     true,
+     {
+      "days": 44
+     }
+    ],
+    [
+     "click",
+     true,
+     "clicked"
+    ],
+    [
+     "blocked_msg",
+     true,
+     "检查执行统计涉及全院多项目交叉汇总，单次查询日期跨度请勿超过 31 天"
+    ],
+    [
+     "msg_text",
+     true,
+     "检查执行统计涉及全院多项目交叉汇总，单次查询日期跨度请勿超过 31 天"
+    ],
+    [
+     "no_query_post",
+     true,
+     []
+    ]
+   ],
+   "pass": true
+  },
+  {
+   "case": "B-59-soft-13d-wide-visit",
+   "checks": [
+    [
+     "tip_shown",
+     true,
+     "提示：当前日期与就诊次数范围较宽，查询预计耗时 20~50 秒，请耐心等待"
+    ],
+    [
+     "tip_orange",
+     true,
+     "rgb(212, 107, 8)"
+    ],
+    [
+     "click",
+     true,
+     "clicked"
+    ],
+    [
+     "post_fired",
+     true,
+     1
+    ]
+   ],
+   "pass": true
+  },
+  {
+   "case": "C-59-clean-7d",
+   "checks": [
+    [
+     "tip_empty",
+     true,
+     null
+    ],
+    [
+     "click",
+     true,
+     "clicked"
+    ],
+    [
+     "post_fired",
+     true,
+     1
+    ]
+   ],
+   "pass": true
+  },
+  {
+   "case": "D-39-soft-44d",
+   "checks": [
+    [
+     "tip_shown",
+     true,
+     "提示：检查按开单科室统计为多源交叉汇总，当前日期跨度较大，预计耗时 20~60 秒，请耐心等待或缩小范围"
+    ]
+   ],
+   "pass": true
+  },
+  {
+   "case": "E-58-soft-44d",
+   "checks": [
+    [
+     "branch_set",
+     true,
+     "picked 门诊"
+    ],
+    [
+     "tip_shown",
+     true,
+     "提示：检查人次按开单科室统计当前日期跨度较大，预计耗时 20~60 秒，请耐心等待或缩小范围"
+    ]
+   ],
+   "pass": true
+  },
+  {
+   "case": "F-62-block-30d-regression",
+   "checks": [
+    [
+     "click",
+     true,
+     "clicked"
+    ],
+    [
+     "blocked_msg",
+     true,
+     "该明细表数据量极大（单月超 10 万行），单次查询跨度请勿超过 15 天（建议按单日或单周查询导出）。"
+    ],
+    [
+     "no_post",
+     true,
+     0
+    ]
+   ],
+   "pass": true
+  }
+ ]
+}
