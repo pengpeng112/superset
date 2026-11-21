@@ -1,0 +1,1569 @@
+{
+ "meta": {
+  "started": "2026-11-19 19:20:28",
+  "session_retries": [
+   {
+    "combo": "c87-1920x1080",
+    "reason": "blank-session"
+   }
+  ],
+  "finished": "2026-11-19 19:42:18"
+ },
+ "checks": [
+  {
+   "n": 1,
+   "name": "PRE 003158 起点无报表授权角色",
+   "pass": true,
+   "detail": "['Gamma', '科室_微生物实验室（050205）']"
+  },
+  {
+   "n": 2,
+   "name": "A1 A/chrome-1920x1080 零权限侧栏收起",
+   "pass": true,
+   "detail": "nonav=True nav=False"
+  },
+  {
+   "n": 3,
+   "name": "A1 A/chrome-1920x1080 无BI死链/无分类行",
+   "pass": true,
+   "detail": "[][]"
+  },
+  {
+   "n": 4,
+   "name": "A1 A/chrome-1920x1080 引导卡在场含工号",
+   "pass": true,
+   "detail": "当前账号暂未开通统计报表查阅权限工号 003158：如需查看科室日常统计、管理月报、BI 驾驶舱或专项明细，请联系信息科为您分配对应的【报表授权】角色。（您仍可"
+  },
+  {
+   "n": 5,
+   "name": "A1 A/chrome-1920x1080 改密按钮在场/搜索框隐藏",
+   "pass": true,
+   "detail": "pwd=True search=False"
+  },
+  {
+   "n": 6,
+   "name": "A1 A/chrome-1920x1080 最近使用仅剩目录外壳可见",
+   "pass": true,
+   "detail": "vis=['统计报表目录']"
+  },
+  {
+   "n": 7,
+   "name": "A1 A/chrome-1920x1080 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 8,
+   "name": "A1 A/chrome-1920x1080 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 9,
+   "name": "A2 A/chrome-1920x1080 34零分类零驾驶舱",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 10,
+   "name": "A2 A/chrome-1920x1080 34其他专题隐藏/引导卡在场",
+   "pass": false,
+   "detail": "sp=True guide=False"
+  },
+  {
+   "n": 11,
+   "name": "A2 A/chrome-1920x1080 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 12,
+   "name": "A2 A/chrome-1920x1080 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 13,
+   "name": "A3 A/chrome-1920x1080 /46 提示卡点名【报表授权_绩效考核管理】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_绩效考核管理】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 14,
+   "name": "A3 A/chrome-1920x1080 /46 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 15,
+   "name": "A3 A/chrome-1920x1080 /46 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/46/', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46'] expect=['46']"
+  },
+  {
+   "n": 16,
+   "name": "A3 A/chrome-1920x1080 /72 提示卡点名【报表授权_院领导与运营驾驶舱】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_院领导与运营驾驶舱】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 17,
+   "name": "A3 A/chrome-1920x1080 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 18,
+   "name": "A3 A/chrome-1920x1080 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/72/', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72'] expect=['72']"
+  },
+  {
+   "n": 19,
+   "name": "A1 A/chrome-1366x768 零权限侧栏收起",
+   "pass": true,
+   "detail": "nonav=True nav=False"
+  },
+  {
+   "n": 20,
+   "name": "A1 A/chrome-1366x768 无BI死链/无分类行",
+   "pass": true,
+   "detail": "[][]"
+  },
+  {
+   "n": 21,
+   "name": "A1 A/chrome-1366x768 引导卡在场含工号",
+   "pass": true,
+   "detail": "当前账号暂未开通统计报表查阅权限工号 003158：如需查看科室日常统计、管理月报、BI 驾驶舱或专项明细，请联系信息科为您分配对应的【报表授权】角色。（您仍可"
+  },
+  {
+   "n": 22,
+   "name": "A1 A/chrome-1366x768 改密按钮在场/搜索框隐藏",
+   "pass": true,
+   "detail": "pwd=True search=False"
+  },
+  {
+   "n": 23,
+   "name": "A1 A/chrome-1366x768 最近使用仅剩目录外壳可见",
+   "pass": true,
+   "detail": "vis=['统计报表目录']"
+  },
+  {
+   "n": 24,
+   "name": "A1 A/chrome-1366x768 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 25,
+   "name": "A1 A/chrome-1366x768 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 26,
+   "name": "A2 A/chrome-1366x768 34零分类零驾驶舱",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 27,
+   "name": "A2 A/chrome-1366x768 34其他专题隐藏/引导卡在场",
+   "pass": true,
+   "detail": "sp=True guide=True"
+  },
+  {
+   "n": 28,
+   "name": "A2 A/chrome-1366x768 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 29,
+   "name": "A2 A/chrome-1366x768 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 30,
+   "name": "A3 A/chrome-1366x768 /46 提示卡点名【报表授权_绩效考核管理】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_绩效考核管理】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 31,
+   "name": "A3 A/chrome-1366x768 /46 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 32,
+   "name": "A3 A/chrome-1366x768 /46 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/46/', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46'] expect=['46']"
+  },
+  {
+   "n": 33,
+   "name": "A3 A/chrome-1366x768 /72 提示卡点名【报表授权_院领导与运营驾驶舱】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_院领导与运营驾驶舱】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 34,
+   "name": "A3 A/chrome-1366x768 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 35,
+   "name": "A3 A/chrome-1366x768 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/72/', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72'] expect=['72']"
+  },
+  {
+   "n": 36,
+   "name": "A1 A/c87-1920x1080 零权限侧栏收起",
+   "pass": true,
+   "detail": "nonav=True nav=False"
+  },
+  {
+   "n": 37,
+   "name": "A1 A/c87-1920x1080 无BI死链/无分类行",
+   "pass": true,
+   "detail": "[][]"
+  },
+  {
+   "n": 38,
+   "name": "A1 A/c87-1920x1080 引导卡在场含工号",
+   "pass": true,
+   "detail": "当前账号暂未开通统计报表查阅权限工号 003158：如需查看科室日常统计、管理月报、BI 驾驶舱或专项明细，请联系信息科为您分配对应的【报表授权】角色。（您仍可"
+  },
+  {
+   "n": 39,
+   "name": "A1 A/c87-1920x1080 改密按钮在场/搜索框隐藏",
+   "pass": true,
+   "detail": "pwd=True search=False"
+  },
+  {
+   "n": 40,
+   "name": "A1 A/c87-1920x1080 最近使用仅剩目录外壳可见",
+   "pass": true,
+   "detail": "vis=['统计报表目录']"
+  },
+  {
+   "n": 41,
+   "name": "A1 A/c87-1920x1080 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 42,
+   "name": "A1 A/c87-1920x1080 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 43,
+   "name": "A2 A/c87-1920x1080 34零分类零驾驶舱",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 44,
+   "name": "A2 A/c87-1920x1080 34其他专题隐藏/引导卡在场",
+   "pass": true,
+   "detail": "sp=True guide=True"
+  },
+  {
+   "n": 45,
+   "name": "A2 A/c87-1920x1080 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 46,
+   "name": "A2 A/c87-1920x1080 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 47,
+   "name": "A3 A/c87-1920x1080 /46 提示卡点名【报表授权_绩效考核管理】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_绩效考核管理】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 48,
+   "name": "A3 A/c87-1920x1080 /46 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 49,
+   "name": "A3 A/c87-1920x1080 /46 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/46/', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46'] expect=['46']"
+  },
+  {
+   "n": 50,
+   "name": "A3 A/c87-1920x1080 /72 提示卡点名【报表授权_院领导与运营驾驶舱】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_院领导与运营驾驶舱】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 51,
+   "name": "A3 A/c87-1920x1080 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 52,
+   "name": "A3 A/c87-1920x1080 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/72/', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72'] expect=['72']"
+  },
+  {
+   "n": 53,
+   "name": "A1 A/c87-1366x768 零权限侧栏收起",
+   "pass": true,
+   "detail": "nonav=True nav=False"
+  },
+  {
+   "n": 54,
+   "name": "A1 A/c87-1366x768 无BI死链/无分类行",
+   "pass": true,
+   "detail": "[][]"
+  },
+  {
+   "n": 55,
+   "name": "A1 A/c87-1366x768 引导卡在场含工号",
+   "pass": true,
+   "detail": "当前账号暂未开通统计报表查阅权限工号 003158：如需查看科室日常统计、管理月报、BI 驾驶舱或专项明细，请联系信息科为您分配对应的【报表授权】角色。（您仍可"
+  },
+  {
+   "n": 56,
+   "name": "A1 A/c87-1366x768 改密按钮在场/搜索框隐藏",
+   "pass": true,
+   "detail": "pwd=True search=False"
+  },
+  {
+   "n": 57,
+   "name": "A1 A/c87-1366x768 最近使用仅剩目录外壳可见",
+   "pass": true,
+   "detail": "vis=['统计报表目录']"
+  },
+  {
+   "n": 58,
+   "name": "A1 A/c87-1366x768 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 59,
+   "name": "A1 A/c87-1366x768 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 60,
+   "name": "A2 A/c87-1366x768 34零分类零驾驶舱",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 61,
+   "name": "A2 A/c87-1366x768 34其他专题隐藏/引导卡在场",
+   "pass": true,
+   "detail": "sp=True guide=True"
+  },
+  {
+   "n": 62,
+   "name": "A2 A/c87-1366x768 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 63,
+   "name": "A2 A/c87-1366x768 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 64,
+   "name": "A3 A/c87-1366x768 /46 提示卡点名【报表授权_绩效考核管理】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_绩效考核管理】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 65,
+   "name": "A3 A/c87-1366x768 /46 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 66,
+   "name": "A3 A/c87-1366x768 /46 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/46/', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46'] expect=['46']"
+  },
+  {
+   "n": 67,
+   "name": "A3 A/c87-1366x768 /72 提示卡点名【报表授权_院领导与运营驾驶舱】",
+   "pass": true,
+   "detail": "该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_院领导与运营驾驶舱】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。"
+  },
+  {
+   "n": 68,
+   "name": "A3 A/c87-1366x768 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 69,
+   "name": "A3 A/c87-1366x768 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=['http://127.0.0.1:18180/superset/dashboard/72/', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72'] expect=['72']"
+  },
+  {
+   "n": 70,
+   "name": "B grant-user ok",
+   "pass": true,
+   "detail": "rc=0"
+  },
+  {
+   "n": 71,
+   "name": "B grant 生效",
+   "pass": true,
+   "detail": "['Gamma', '报表授权_护理部管理', '科室_微生物实验室（050205）']"
+  },
+  {
+   "n": 72,
+   "name": "B1 B/chrome-1920x1080 驾驶舱仅75",
+   "pass": true,
+   "detail": "['72:0', '73:0', '74:0', '75:1']"
+  },
+  {
+   "n": 73,
+   "name": "B1 B/chrome-1920x1080 分类仅护理部报表(3项)",
+   "pass": true,
+   "detail": "['33:0:0 项', '26:1:3 项', '25:0:1 项', '27:0:0 项', '28:0:0 项', '29:0:0 项', '30:0:0 项', '31:0:0 项']"
+  },
+  {
+   "n": 74,
+   "name": "B1 B/chrome-1920x1080 引导卡已消失/搜索框在场",
+   "pass": true,
+   "detail": "guide=False search=True nonav=False"
+  },
+  {
+   "n": 75,
+   "name": "B1 B/chrome-1920x1080 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 76,
+   "name": "B1 B/chrome-1920x1080 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 77,
+   "name": "B2 B/chrome-1920x1080 34仅护理部组+单卡75",
+   "pass": true,
+   "detail": "['26:1:3 项:3'] k=1"
+  },
+  {
+   "n": 78,
+   "name": "B2 B/chrome-1920x1080 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 79,
+   "name": "B2 B/chrome-1920x1080 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 80,
+   "name": "B3 B/chrome-1920x1080 搜索『月』仅41",
+   "pass": true,
+   "detail": "['41']"
+  },
+  {
+   "n": 81,
+   "name": "B3 B/chrome-1920x1080 搜索『护理』⊆41/42/43/75 且三表齐",
+   "pass": true,
+   "detail": "['41', '42', '43', '75']"
+  },
+  {
+   "n": 82,
+   "name": "B3 B/chrome-1920x1080 搜索『床位』=75",
+   "pass": true,
+   "detail": "['75']"
+  },
+  {
+   "n": 83,
+   "name": "B4 B/chrome-1920x1080 41 出数+导出可用",
+   "pass": false,
+   "detail": "rows=0 sum="
+  },
+  {
+   "n": 84,
+   "name": "B4 B/chrome-1920x1080 /41 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 85,
+   "name": "B4 B/chrome-1920x1080 /41 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 86,
+   "name": "B4 B/chrome-1920x1080 41 xlsx 导出回执",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "n": 87,
+   "name": "B4 B/chrome-1920x1080 41 xlsx 下载链路（回执实证；CDP 文件落盘通道为自动化限制）",
+   "pass": false,
+   "detail": "receipt= file=None"
+  },
+  {
+   "n": 88,
+   "name": "B4 B/chrome-1920x1080 75 副标题无2026-10硬编码",
+   "pass": false,
+   "detail": "{'subOK': False, 'subBad': False, 'kpiHolders': 0}"
+  },
+  {
+   "n": 89,
+   "name": "B4 B/chrome-1920x1080 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 90,
+   "name": "B4 B/chrome-1920x1080 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 91,
+   "name": "B1 B/chrome-1366x768 驾驶舱仅75",
+   "pass": true,
+   "detail": "['72:0', '73:0', '74:0', '75:1']"
+  },
+  {
+   "n": 92,
+   "name": "B1 B/chrome-1366x768 分类仅护理部报表(3项)",
+   "pass": true,
+   "detail": "['33:0:0 项', '26:1:3 项', '25:0:1 项', '27:0:0 项', '28:0:0 项', '29:0:0 项', '30:0:0 项', '31:0:0 项']"
+  },
+  {
+   "n": 93,
+   "name": "B1 B/chrome-1366x768 引导卡已消失/搜索框在场",
+   "pass": true,
+   "detail": "guide=False search=True nonav=False"
+  },
+  {
+   "n": 94,
+   "name": "B1 B/chrome-1366x768 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 95,
+   "name": "B1 B/chrome-1366x768 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 96,
+   "name": "B2 B/chrome-1366x768 34仅护理部组+单卡75",
+   "pass": true,
+   "detail": "['26:1:3 项:3'] k=1"
+  },
+  {
+   "n": 97,
+   "name": "B2 B/chrome-1366x768 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 98,
+   "name": "B2 B/chrome-1366x768 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 99,
+   "name": "B3 B/chrome-1366x768 搜索『月』仅41",
+   "pass": true,
+   "detail": "['41']"
+  },
+  {
+   "n": 100,
+   "name": "B3 B/chrome-1366x768 搜索『护理』⊆41/42/43/75 且三表齐",
+   "pass": true,
+   "detail": "['41', '42', '43', '75']"
+  },
+  {
+   "n": 101,
+   "name": "B3 B/chrome-1366x768 搜索『床位』=75",
+   "pass": true,
+   "detail": "['75']"
+  },
+  {
+   "n": 102,
+   "name": "B4 B/chrome-1366x768 41 出数+导出可用",
+   "pass": true,
+   "detail": "rows=10 sum=共返回 40 行数据（约） · 耗时 0.4 秒"
+  },
+  {
+   "n": 103,
+   "name": "B4 B/chrome-1366x768 /41 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 104,
+   "name": "B4 B/chrome-1366x768 /41 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 105,
+   "name": "B4 B/chrome-1366x768 75 副标题无2026-10硬编码",
+   "pass": true,
+   "detail": "{'subOK': True, 'subBad': False, 'kpiHolders': 7}"
+  },
+  {
+   "n": 106,
+   "name": "B4 B/chrome-1366x768 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 107,
+   "name": "B4 B/chrome-1366x768 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 108,
+   "name": "B1 B/c87-1920x1080 驾驶舱仅75",
+   "pass": true,
+   "detail": "['72:0', '73:0', '74:0', '75:1']"
+  },
+  {
+   "n": 109,
+   "name": "B1 B/c87-1920x1080 分类仅护理部报表(3项)",
+   "pass": true,
+   "detail": "['33:0:0 项', '26:1:3 项', '25:0:1 项', '27:0:0 项', '28:0:0 项', '29:0:0 项', '30:0:0 项', '31:0:0 项']"
+  },
+  {
+   "n": 110,
+   "name": "B1 B/c87-1920x1080 引导卡已消失/搜索框在场",
+   "pass": true,
+   "detail": "guide=False search=True nonav=False"
+  },
+  {
+   "n": 111,
+   "name": "B1 B/c87-1920x1080 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 112,
+   "name": "B1 B/c87-1920x1080 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 113,
+   "name": "B2 B/c87-1920x1080 34仅护理部组+单卡75",
+   "pass": true,
+   "detail": "['26:1:3 项:3'] k=1"
+  },
+  {
+   "n": 114,
+   "name": "B2 B/c87-1920x1080 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 115,
+   "name": "B2 B/c87-1920x1080 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 116,
+   "name": "B3 B/c87-1920x1080 搜索『月』仅41",
+   "pass": true,
+   "detail": "['41']"
+  },
+  {
+   "n": 117,
+   "name": "B3 B/c87-1920x1080 搜索『护理』⊆41/42/43/75 且三表齐",
+   "pass": true,
+   "detail": "['41', '42', '43', '75']"
+  },
+  {
+   "n": 118,
+   "name": "B3 B/c87-1920x1080 搜索『床位』=75",
+   "pass": true,
+   "detail": "['75']"
+  },
+  {
+   "n": 119,
+   "name": "B4 B/c87-1920x1080 41 出数+导出可用",
+   "pass": true,
+   "detail": "rows=10 sum=共返回 40 行数据（约） · 耗时 0.6 秒"
+  },
+  {
+   "n": 120,
+   "name": "B4 B/c87-1920x1080 /41 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 121,
+   "name": "B4 B/c87-1920x1080 /41 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 122,
+   "name": "B4 B/c87-1920x1080 75 副标题无2026-10硬编码",
+   "pass": true,
+   "detail": "{'subOK': True, 'subBad': False, 'kpiHolders': 7}"
+  },
+  {
+   "n": 123,
+   "name": "B4 B/c87-1920x1080 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 124,
+   "name": "B4 B/c87-1920x1080 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 125,
+   "name": "B1 B/c87-1366x768 驾驶舱仅75",
+   "pass": true,
+   "detail": "['72:0', '73:0', '74:0', '75:1']"
+  },
+  {
+   "n": 126,
+   "name": "B1 B/c87-1366x768 分类仅护理部报表(3项)",
+   "pass": true,
+   "detail": "['33:0:0 项', '26:1:3 项', '25:0:1 项', '27:0:0 项', '28:0:0 项', '29:0:0 项', '30:0:0 项', '31:0:0 项']"
+  },
+  {
+   "n": 127,
+   "name": "B1 B/c87-1366x768 引导卡已消失/搜索框在场",
+   "pass": true,
+   "detail": "guide=False search=True nonav=False"
+  },
+  {
+   "n": 128,
+   "name": "B1 B/c87-1366x768 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 129,
+   "name": "B1 B/c87-1366x768 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 130,
+   "name": "B2 B/c87-1366x768 34仅护理部组+单卡75",
+   "pass": true,
+   "detail": "['26:1:3 项:3'] k=1"
+  },
+  {
+   "n": 131,
+   "name": "B2 B/c87-1366x768 目录34 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 132,
+   "name": "B2 B/c87-1366x768 目录34 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 133,
+   "name": "B3 B/c87-1366x768 搜索『月』仅41",
+   "pass": true,
+   "detail": "['41']"
+  },
+  {
+   "n": 134,
+   "name": "B3 B/c87-1366x768 搜索『护理』⊆41/42/43/75 且三表齐",
+   "pass": true,
+   "detail": "['41', '42', '43', '75']"
+  },
+  {
+   "n": 135,
+   "name": "B3 B/c87-1366x768 搜索『床位』=75",
+   "pass": true,
+   "detail": "['75']"
+  },
+  {
+   "n": 136,
+   "name": "B4 B/c87-1366x768 41 出数+导出可用",
+   "pass": true,
+   "detail": "rows=10 sum=共返回 40 行数据（约） · 耗时 0.6 秒"
+  },
+  {
+   "n": 137,
+   "name": "B4 B/c87-1366x768 /41 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 138,
+   "name": "B4 B/c87-1366x768 /41 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 139,
+   "name": "B4 B/c87-1366x768 75 副标题无2026-10硬编码",
+   "pass": true,
+   "detail": "{'subOK': True, 'subBad': False, 'kpiHolders': 7}"
+  },
+  {
+   "n": 140,
+   "name": "B4 B/c87-1366x768 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 141,
+   "name": "B4 B/c87-1366x768 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 142,
+   "name": "B revoke-user ok",
+   "pass": true,
+   "detail": "rc=0"
+  },
+  {
+   "n": 143,
+   "name": "B 还原：无报表授权角色",
+   "pass": true,
+   "detail": "['Gamma', '科室_微生物实验室（050205）']"
+  },
+  {
+   "n": 144,
+   "name": "C1 C/chrome-1920x1080 admin 4驾驶舱9分类",
+   "pass": true,
+   "detail": "['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']"
+  },
+  {
+   "n": 145,
+   "name": "C1 C/chrome-1920x1080 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 146,
+   "name": "C1 C/chrome-1920x1080 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 147,
+   "name": "C1 C/chrome-1920x1080 34 全组+4卡",
+   "pass": true,
+   "detail": "['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']"
+  },
+  {
+   "n": 148,
+   "name": "C2 C/chrome-1920x1080 h16 下钻33=6行",
+   "pass": true,
+   "detail": "kids=6"
+  },
+  {
+   "n": 149,
+   "name": "C2 C/chrome-1920x1080 h17 收藏面板1条",
+   "pass": true,
+   "detail": "fav=True"
+  },
+  {
+   "n": 150,
+   "name": "C2 C/chrome-1920x1080 34目录 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 151,
+   "name": "C2 C/chrome-1920x1080 34目录 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 152,
+   "name": "C2 C/chrome-1920x1080 f14 单表锁高回归",
+   "pass": true,
+   "detail": "{'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 1.1 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '606p"
+  },
+  {
+   "n": 153,
+   "name": "C2 C/chrome-1920x1080 /40 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 154,
+   "name": "C2 C/chrome-1920x1080 /40 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 155,
+   "name": "C7 C/chrome-1920x1080 42双表页368px双卡",
+   "pass": true,
+   "detail": "{'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}"
+  },
+  {
+   "n": 156,
+   "name": "C7 C/chrome-1920x1080 /42 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 157,
+   "name": "C7 C/chrome-1920x1080 /42 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 158,
+   "name": "C3 C/chrome-1920x1080 roles 11条管辖说明",
+   "pass": true,
+   "detail": "count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']"
+  },
+  {
+   "n": 159,
+   "name": "C3 C/chrome-1920x1080 /roles pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 160,
+   "name": "C3 C/chrome-1920x1080 /roles 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 161,
+   "name": "C4 C/chrome-1920x1080 75 副标题=选定期间",
+   "pass": true,
+   "detail": "{'subOK': True, 'subBad': False, 'kpiHolders': 7}"
+  },
+  {
+   "n": 162,
+   "name": "C4 C/chrome-1920x1080 投屏抬头完整",
+   "pass": true,
+   "detail": "🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析"
+  },
+  {
+   "n": 163,
+   "name": "C4 C/chrome-1920x1080 投屏期间含端",
+   "pass": true,
+   "detail": "统计期间：2026-10-01 至 2026-10-31"
+  },
+  {
+   "n": 164,
+   "name": "C4 C/chrome-1920x1080 Esc 退出投屏",
+   "pass": true,
+   "detail": "{'mode': False, 'bar': False, 'title': '', 'period': ''}"
+  },
+  {
+   "n": 165,
+   "name": "C4 C/chrome-1920x1080 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 166,
+   "name": "C4 C/chrome-1920x1080 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 167,
+   "name": "C5 C/chrome-1920x1080 72 默认窗2026-10",
+   "pass": true,
+   "detail": "period=2026-10-01 至 2026-10-31 queryTR=2026-10-01 : 2026-11-01;"
+  },
+  {
+   "n": 168,
+   "name": "C5 C/chrome-1920x1080 72 KPI=十月真值5276",
+   "pass": true,
+   "detail": "bn373='5,276'"
+  },
+  {
+   "n": 169,
+   "name": "C5 C/chrome-1920x1080 378 高度≥280px",
+   "pass": true,
+   "detail": "h=352"
+  },
+  {
+   "n": 170,
+   "name": "C5 C/chrome-1920x1080 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 171,
+   "name": "C5 C/chrome-1920x1080 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 172,
+   "name": "C1 C/chrome-1366x768 admin 4驾驶舱9分类",
+   "pass": true,
+   "detail": "['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']"
+  },
+  {
+   "n": 173,
+   "name": "C1 C/chrome-1366x768 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 174,
+   "name": "C1 C/chrome-1366x768 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 175,
+   "name": "C1 C/chrome-1366x768 34 全组+4卡",
+   "pass": true,
+   "detail": "['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']"
+  },
+  {
+   "n": 176,
+   "name": "C2 C/chrome-1366x768 h16 下钻33=6行",
+   "pass": true,
+   "detail": "kids=6"
+  },
+  {
+   "n": 177,
+   "name": "C2 C/chrome-1366x768 h17 收藏面板1条",
+   "pass": true,
+   "detail": "fav=True"
+  },
+  {
+   "n": 178,
+   "name": "C2 C/chrome-1366x768 34目录 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 179,
+   "name": "C2 C/chrome-1366x768 34目录 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 180,
+   "name": "C2 C/chrome-1366x768 f14 单表锁高回归",
+   "pass": true,
+   "detail": "{'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.3 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '318p"
+  },
+  {
+   "n": 181,
+   "name": "C2 C/chrome-1366x768 /40 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 182,
+   "name": "C2 C/chrome-1366x768 /40 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 183,
+   "name": "C7 C/chrome-1366x768 42双表页368px双卡",
+   "pass": true,
+   "detail": "{'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}"
+  },
+  {
+   "n": 184,
+   "name": "C7 C/chrome-1366x768 /42 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 185,
+   "name": "C7 C/chrome-1366x768 /42 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 186,
+   "name": "C3 C/chrome-1366x768 roles 11条管辖说明",
+   "pass": true,
+   "detail": "count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']"
+  },
+  {
+   "n": 187,
+   "name": "C3 C/chrome-1366x768 /roles pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 188,
+   "name": "C3 C/chrome-1366x768 /roles 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 189,
+   "name": "C4 C/chrome-1366x768 75 副标题=选定期间",
+   "pass": true,
+   "detail": "{'subOK': True, 'subBad': False, 'kpiHolders': 7}"
+  },
+  {
+   "n": 190,
+   "name": "C4 C/chrome-1366x768 投屏抬头完整",
+   "pass": true,
+   "detail": "🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析"
+  },
+  {
+   "n": 191,
+   "name": "C4 C/chrome-1366x768 投屏期间含端",
+   "pass": true,
+   "detail": "统计期间：2026-10-01 至 2026-10-31"
+  },
+  {
+   "n": 192,
+   "name": "C4 C/chrome-1366x768 Esc 退出投屏",
+   "pass": true,
+   "detail": "{'mode': False, 'bar': False, 'title': '', 'period': ''}"
+  },
+  {
+   "n": 193,
+   "name": "C4 C/chrome-1366x768 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 194,
+   "name": "C4 C/chrome-1366x768 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 195,
+   "name": "C5 C/chrome-1366x768 72 默认窗2026-10",
+   "pass": true,
+   "detail": "period=2026-10-01 至 2026-10-31 queryTR=2026-10-01 : 2026-11-01;"
+  },
+  {
+   "n": 196,
+   "name": "C5 C/chrome-1366x768 72 KPI=十月真值5276",
+   "pass": true,
+   "detail": "bn373='5,276'"
+  },
+  {
+   "n": 197,
+   "name": "C5 C/chrome-1366x768 378 高度≥280px",
+   "pass": true,
+   "detail": "h=352"
+  },
+  {
+   "n": 198,
+   "name": "C5 C/chrome-1366x768 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 199,
+   "name": "C5 C/chrome-1366x768 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 228,
+   "name": "C1 C/c87-1920x1080 admin 4驾驶舱9分类",
+   "pass": true,
+   "detail": "['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']"
+  },
+  {
+   "n": 229,
+   "name": "C1 C/c87-1920x1080 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 230,
+   "name": "C1 C/c87-1920x1080 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 231,
+   "name": "C1 C/c87-1920x1080 34 全组+4卡",
+   "pass": true,
+   "detail": "['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']"
+  },
+  {
+   "n": 232,
+   "name": "C2 C/c87-1920x1080 h16 下钻33=6行",
+   "pass": true,
+   "detail": "kids=6"
+  },
+  {
+   "n": 233,
+   "name": "C2 C/c87-1920x1080 h17 收藏面板1条",
+   "pass": true,
+   "detail": "fav=True"
+  },
+  {
+   "n": 234,
+   "name": "C2 C/c87-1920x1080 34目录 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 235,
+   "name": "C2 C/c87-1920x1080 34目录 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 236,
+   "name": "C2 C/c87-1920x1080 f14 单表锁高回归",
+   "pass": true,
+   "detail": "{'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.5 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '624p"
+  },
+  {
+   "n": 237,
+   "name": "C2 C/c87-1920x1080 /40 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 238,
+   "name": "C2 C/c87-1920x1080 /40 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 239,
+   "name": "C7 C/c87-1920x1080 42双表页368px双卡",
+   "pass": true,
+   "detail": "{'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}"
+  },
+  {
+   "n": 240,
+   "name": "C7 C/c87-1920x1080 /42 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 241,
+   "name": "C7 C/c87-1920x1080 /42 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 242,
+   "name": "C3 C/c87-1920x1080 roles 11条管辖说明",
+   "pass": true,
+   "detail": "count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']"
+  },
+  {
+   "n": 243,
+   "name": "C3 C/c87-1920x1080 /roles pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 244,
+   "name": "C3 C/c87-1920x1080 /roles 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 245,
+   "name": "C4 C/c87-1920x1080 75 副标题=选定期间",
+   "pass": true,
+   "detail": "{'subOK': True, 'subBad': False, 'kpiHolders': 7}"
+  },
+  {
+   "n": 246,
+   "name": "C4 C/c87-1920x1080 投屏抬头完整",
+   "pass": true,
+   "detail": "🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析"
+  },
+  {
+   "n": 247,
+   "name": "C4 C/c87-1920x1080 投屏期间含端",
+   "pass": true,
+   "detail": "统计期间：2026-10-01 至 2026-10-31"
+  },
+  {
+   "n": 248,
+   "name": "C4 C/c87-1920x1080 Esc 退出投屏",
+   "pass": true,
+   "detail": "{'mode': False, 'bar': False, 'title': '', 'period': ''}"
+  },
+  {
+   "n": 249,
+   "name": "C4 C/c87-1920x1080 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 250,
+   "name": "C4 C/c87-1920x1080 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 251,
+   "name": "C5 C/c87-1920x1080 72 默认窗2026-10",
+   "pass": true,
+   "detail": "period=2026-10-01 至 2026-10-31 queryTR=2026-10-01 : 2026-11-01;"
+  },
+  {
+   "n": 252,
+   "name": "C5 C/c87-1920x1080 72 KPI=十月真值5276",
+   "pass": true,
+   "detail": "bn373='5,276'"
+  },
+  {
+   "n": 253,
+   "name": "C5 C/c87-1920x1080 378 高度≥280px",
+   "pass": true,
+   "detail": "h=352"
+  },
+  {
+   "n": 254,
+   "name": "C5 C/c87-1920x1080 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 255,
+   "name": "C5 C/c87-1920x1080 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 256,
+   "name": "C1 C/c87-1366x768 admin 4驾驶舱9分类",
+   "pass": true,
+   "detail": "['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']"
+  },
+  {
+   "n": 257,
+   "name": "C1 C/c87-1366x768 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 258,
+   "name": "C1 C/c87-1366x768 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 259,
+   "name": "C1 C/c87-1366x768 34 全组+4卡",
+   "pass": true,
+   "detail": "['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']"
+  },
+  {
+   "n": 260,
+   "name": "C2 C/c87-1366x768 h16 下钻33=6行",
+   "pass": true,
+   "detail": "kids=6"
+  },
+  {
+   "n": 261,
+   "name": "C2 C/c87-1366x768 h17 收藏面板1条",
+   "pass": true,
+   "detail": "fav=True"
+  },
+  {
+   "n": 262,
+   "name": "C2 C/c87-1366x768 34目录 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 263,
+   "name": "C2 C/c87-1366x768 34目录 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 264,
+   "name": "C2 C/c87-1366x768 f14 单表锁高回归",
+   "pass": true,
+   "detail": "{'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.4 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '325p"
+  },
+  {
+   "n": 265,
+   "name": "C2 C/c87-1366x768 /40 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 266,
+   "name": "C2 C/c87-1366x768 /40 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 267,
+   "name": "C7 C/c87-1366x768 42双表页368px双卡",
+   "pass": true,
+   "detail": "{'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}"
+  },
+  {
+   "n": 268,
+   "name": "C7 C/c87-1366x768 /42 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 269,
+   "name": "C7 C/c87-1366x768 /42 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 270,
+   "name": "C3 C/c87-1366x768 roles 11条管辖说明",
+   "pass": true,
+   "detail": "count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']"
+  },
+  {
+   "n": 271,
+   "name": "C3 C/c87-1366x768 /roles pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 272,
+   "name": "C3 C/c87-1366x768 /roles 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 273,
+   "name": "C4 C/c87-1366x768 75 副标题=选定期间",
+   "pass": true,
+   "detail": "{'subOK': True, 'subBad': False, 'kpiHolders': 7}"
+  },
+  {
+   "n": 274,
+   "name": "C4 C/c87-1366x768 投屏抬头完整",
+   "pass": true,
+   "detail": "🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析"
+  },
+  {
+   "n": 275,
+   "name": "C4 C/c87-1366x768 投屏期间含端",
+   "pass": true,
+   "detail": "统计期间：2026-10-01 至 2026-10-31"
+  },
+  {
+   "n": 276,
+   "name": "C4 C/c87-1366x768 Esc 退出投屏",
+   "pass": true,
+   "detail": "{'mode': False, 'bar': False, 'title': '', 'period': ''}"
+  },
+  {
+   "n": 277,
+   "name": "C4 C/c87-1366x768 /75 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 278,
+   "name": "C4 C/c87-1366x768 /75 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 279,
+   "name": "C5 C/c87-1366x768 72 默认窗2026-10",
+   "pass": true,
+   "detail": "period=2026-10-01 至 2026-10-31 queryTR=2026-10-01 : 2026-11-01;"
+  },
+  {
+   "n": 280,
+   "name": "C5 C/c87-1366x768 72 KPI=十月真值5276",
+   "pass": true,
+   "detail": "bn373='5,276'"
+  },
+  {
+   "n": 281,
+   "name": "C5 C/c87-1366x768 378 高度≥280px",
+   "pass": true,
+   "detail": "h=352"
+  },
+  {
+   "n": 282,
+   "name": "C5 C/c87-1366x768 /72 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 283,
+   "name": "C5 C/c87-1366x768 /72 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  },
+  {
+   "n": 284,
+   "name": "POST revoke 后恢复零权限态",
+   "pass": false,
+   "detail": "[]"
+  },
+  {
+   "n": 285,
+   "name": "POST chrome-1920 首页 pageerror=0",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "n": 286,
+   "name": "POST chrome-1920 首页 无未预期404",
+   "pass": true,
+   "detail": "404s=[] expect=[]"
+  }
+ ],
+ "combos": {},
+ "summary": {
+  "total": 258,
+  "pass": 252,
+  "fail": 6,
+  "all_pass": false
+ }
+}

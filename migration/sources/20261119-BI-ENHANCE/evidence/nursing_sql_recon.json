@@ -1,0 +1,3141 @@
+{
+ "ts": "2026-11-17 23:28:27",
+ "datasets": {
+  "338": {
+   "id": 338,
+   "table_name": "月工作报表(新)",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),ADD_MONTHS(TRUNC(SYSDATE,'MM'),-1)) d1,\n         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE,'MM'))-1/86400 d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nlegacy AS (select t.dept_code,\n\n       null jgs,\n\n       sum(t.total_num) total_num,\n\n       sum(t.normal_num) normal_num,\n\n       sum(t.emergency_num) emergency_num,\n\n       sum(t.emer_died_num) emer_died_num,\n\n       sum(t.catch_num) catch_num,\n\n       sum(t.catch_died_num) catch_died_num,\n\n       sum(t.check_num) check_num,\n\n       sum(t.recover) recover,\n\n       sum(t.effect) effect,\n\n       sum(t.untreat) untreat,\n\n       sum(t.died) died,\n\n       sum(t.other) other,\n\n       sum(t.will) will,\n\n       sum(t.transfer) transfer,\n\n       sum(t.TRANS_HOSP",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "RECOVER",
+     "verbose": "治愈",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "EFFECT",
+     "verbose": "好转",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "UNTREAT",
+     "verbose": "未愈",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DIED",
+     "verbose": "死亡",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OTHER_N",
+     "verbose": "其他",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "WILL_N",
+     "verbose": "自动",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "XFER",
+     "verbose": "转院",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CHUYUAN",
+     "verbose": "出院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "ZHUANCHU",
+     "verbose": "转出人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CURR",
+     "verbose": "(月)现有人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "ORIAL",
+     "verbose": "上(月)原有人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "RUMEN",
+     "verbose": "入院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "ZHUANRU",
+     "verbose": "转入人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "KSDM",
+     "verbose": "科别",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "PLSX",
+     "verbose": "排列序号",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DIFF_N",
+     "verbose": "核对差",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "344": {
+   "id": 344,
+   "table_name": "病房工作日报表",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_DATE', strftime='%Y-%m-%d', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH bnd AS (\n  SELECT NVL(TRUNC(TO_DATE({{ tf_s }},'YYYY-MM-DD')), TRUNC(SYSDATE)-1) AS d1,\n         NVL(CASE WHEN TO_DATE({{ tf_e }},'YYYY-MM-DD') = TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD'))\n                  THEN TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) - 1\n                  ELSE TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) END,\n             TRUNC(SYSDATE)-1) AS d2 FROM dual),\nchk AS (SELECT CASE WHEN (SELECT d2-d1+1 FROM bnd) > 366 THEN 1 ELSE 0 END over_limit FROM dual),\nrng AS (SELECT d1, d2 FROM bnd WHERE (SELECT over_limit FROM chk)=0),\nfx AS (SELECT stat_deptcode, start_date, ori_bednum, modify_date, modify_bednum FROM stat_dept_modifyfix),\nbeds AS (SELECT f.stat_deptcode dept_code,\n           CASE WHEN f.modify_date IS NULL OR (SELECT d2 FROM rng) < f.modify_date THEN NVL(f.ori_bednum,0) ELSE NVL(f.modify_bednum,0) END open_beds\n         FROM fx f\n         WHERE (SELECT d2 FROM rng) >= f.start_date\n           AND NOT EXISTS (SELECT 1 FROM fx f2 WHERE f2.stat_dept",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "DEPT_CODE",
+     "verbose": "科室代码",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "KS",
+     "verbose": "科别",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OPEN_BEDS",
+     "verbose": "开放床位",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "ORIG_NUM",
+     "verbose": "原有人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "ADMIT_NUM",
+     "verbose": "入院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TRANSIN_NUM",
+     "verbose": "转入人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "SUBTOTAL_IN",
+     "verbose": "小计",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TRANS_DEPT",
+     "verbose": "转科",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CURE",
+     "verbose": "治愈",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "IMPROVE",
+     "verbose": "好转",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "UNTREAT",
+     "verbose": "未愈",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DIED",
+     "verbose": "死亡",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "SUBTOTAL_OUT",
+     "verbose": "小计",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CURR_NUM",
+     "verbose": "现有人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "PLSX",
+     "verbose": "排列序号",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "BED_USAGE",
+     "verbose": "床位使用率",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "LOS_DAYS",
+     "verbose": "出院者共住院天数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_LOS",
+     "verbose": "出院者平均住院天数",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_DATE",
+     "verbose": "统计日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "ERR_MSG",
+     "verbose": "提示",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_DATE"
+  },
+  "345": {
+   "id": 345,
+   "table_name": "手术量统计",
+   "kind": "virtual",
+   "sql": "{% set fv = filter_values('BRANCH_NAME', remove_filter=True) %}\n{% set v0 = fv[0] if fv else '' %}\n{% set branch = '0' if v0 in ('0','门诊') else '1' %}\n{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE)-7) d1,\n         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE))-1/86400 d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nlegacy AS (select * from \n\n(\n\nselect dept_dict.tj_ksmc, dept_dict.plsx, count(*) oper_num\n\n  from (select distinct a.rcpt_no,a.visit_date,a.performed_by,a.item_class from  outp_bill_items a where a.item_class = 'F') outp_bill_items, dept_dict\n\n where outp_bill_items.performed_by = dept_dict.dept_code\n\n   and outp_bill_items.item_class = 'F'\n\n   and outp_bill_items.RCPT_NO IN (SELECT RCPT_NO FROM OUTP_RCPT_MASTER WHERE CHARGE_INDI",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "XH",
+     "verbose": "序号",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OPER_NUM",
+     "verbose": "手术台数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "BRANCH_NAME",
+     "verbose": "门诊/住院",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "TJ_KSMC",
+     "verbose": "统计报表科室名称",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "347": {
+   "id": 347,
+   "table_name": "月工作报表(新)·门诊部分",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),ADD_MONTHS(TRUNC(SYSDATE,'MM'),-1)) d1,\n         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE,'MM'))-1/86400 d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nlegacy AS (select  d.tj_ksmc as dept_code,\n\n       null jgs,\n\n  sum(t.total_num) total_num,\n\n  sum(t.normal_num) normal_num,\n\n  sum(t.emergency_num) emergency_num,\n\n  sum(t.emer_died_num) emer_died_num,\n\n  sum(t.catch_num) catch_num,\n\n  sum(t.catch_died_num) catch_died_num,\n\n  sum(t.check_num) check_num,\n\n  sum(t.recover) recover,\n\n  sum(t.effect) effect,\n\n  sum(t.untreat) untreat,\n\n  sum(t.died) died,\n\n  sum(t.other) other,\n\n  sum(t.ADM_OUTP_NUM) ADM_OUTP_NUM,\n\n  sum(t.FROM_OTHER_HOSPITAL_NUM) FROM_OTHER_HOSPITAL_NUM,\n\n   sum(t.orial) orial,\n\n    sum(t.c",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "KSDM",
+     "verbose": "科别",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "PLSX",
+     "verbose": "排列序号",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "JGS",
+     "verbose": "机构数",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "TOTAL_NUM",
+     "verbose": "总数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "JI",
+     "verbose": "计",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "MEN_ZHENS",
+     "verbose": "门诊人次数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "JIZHENS",
+     "verbose": "急诊人次数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "JIZHEN_SIWANG",
+     "verbose": "急诊其中：死亡人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "GUANCHA",
+     "verbose": "观察室收容病人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "GUANCHA_SIWANG",
+     "verbose": "观察室其中:死亡人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "JIANCHA",
+     "verbose": "健康检查人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "348": {
+   "id": 348,
+   "table_name": "月工作报表(二)新·主表",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TRUNC(TO_DATE({{ tf_s }},'YYYY-MM-DD')), ADD_MONTHS(TRUNC(SYSDATE,'MM'),-1)) AS d1,\n         NVL(CASE WHEN TO_DATE({{ tf_e }},'YYYY-MM-DD') = TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD'))\n                  THEN TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) - 1\n                  ELSE TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) END,\n             TRUNC(SYSDATE,'MM')-1) AS d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR d2-d1+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nrng AS (SELECT d1, d2, (d2 - d1) + 1 AS days FROM bnd),\ncal AS (SELECT (SELECT d1 FROM rng) + LEVEL - 1 AS dd FROM dual CONNECT BY (SELECT d1 FROM rng) + LEVEL - 1 <= (SELECT d2 FROM rng)),\nfx AS (SELECT stat_deptcode, start_date, ori_bednum, modify_date, modify_bednum FROM stat_dept_modifyfix),\nbedday AS (SELECT f.stat_deptcode, c.dd,\n             CASE WHEN f.modify_date IS NULL OR c.dd < f.mod",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "KS",
+     "verbose": "科别",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "BED_END",
+     "verbose": "(月)底实有病床数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OPEN_DAYS",
+     "verbose": "实际开放总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_BEDS",
+     "verbose": "平均开放病床数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "USED_DAYS",
+     "verbose": "实际占用总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OCC_DAYS",
+     "verbose": "出院者占用总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DISCH_N",
+     "verbose": "出院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CURE_RATE",
+     "verbose": "治愈率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "IMPROVE_RATE",
+     "verbose": "好转率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DEATH_RATE",
+     "verbose": "病死率(%)",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TURNOVER",
+     "verbose": "病床周转次数(次)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "WORK_DAYS",
+     "verbose": "病床工作日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "USAGE_RATE",
+     "verbose": "病床使用率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_LOS_TRANS",
+     "verbose": "加转科人数平均住院日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_LOS",
+     "verbose": "出院者平均住院日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "DEPT_CODE",
+     "verbose": "科室代码",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "349": {
+   "id": 349,
+   "table_name": "报表科室维护·床位配置(只读)",
+   "kind": "virtual",
+   "sql": "SELECT m.stat_deptcode, d.tj_ksmc, m.start_date, m.ori_bednum, m.modify_date, m.modify_bednum,\n       ROW_NUMBER() OVER (ORDER BY NVL(d.plsx,999999), m.stat_deptcode, m.start_date) xh\nFROM stat_dept_modifyfix m, dept_dict d\nWHERE m.stat_deptcode = d.dept_code\nORDER BY NVL(d.plsx,999999), m.stat_deptcode, m.start_date",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "XH",
+     "verbose": "序号",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_DEPTCODE",
+     "verbose": "统计科室代码",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TJ_KSMC",
+     "verbose": "科室名称",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "ORI_BEDNUM",
+     "verbose": "期初床位数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "MODIFY_DATE",
+     "verbose": "修改日期",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "MODIFY_BEDNUM",
+     "verbose": "修改床位数",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "START_DATE",
+     "verbose": "开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "START_DATE"
+  },
+  "350": {
+   "id": 350,
+   "table_name": "护理工作量月报表·主表",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TRUNC(TO_DATE({{ tf_s }},'YYYY-MM-DD')), ADD_MONTHS(TRUNC(SYSDATE,'MM'),-1)) AS d1,\n         NVL(CASE WHEN TO_DATE({{ tf_e }},'YYYY-MM-DD') = TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD'))\n                  THEN TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) - 1\n                  ELSE TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) END,\n             TRUNC(SYSDATE,'MM')-1) AS d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR d2-d1+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nrng AS (SELECT d1, d2, (d2-d1)+1 days FROM bnd),\ncal AS (SELECT (SELECT d1 FROM rng) + LEVEL - 1 dd FROM dual CONNECT BY (SELECT d1 FROM rng) + LEVEL - 1 <= (SELECT d2 FROM rng)),\nfx AS (SELECT stat_deptcode, start_date, ori_bednum, modify_date, modify_bednum FROM stat_ward_modifyfix),\nbedday AS (SELECT f.stat_deptcode, c.dd,\n             CASE WHEN f.modify_date IS NULL OR c.dd < f.modify_date T",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "WARD_CODE",
+     "verbose": "病区代码",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "KS",
+     "verbose": "护理单元",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "BED_END",
+     "verbose": "(月)底实有病床数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OPEN_DAYS",
+     "verbose": "实际开放总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_BEDS",
+     "verbose": "平均开放病床数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "USED_DAYS",
+     "verbose": "实际占用总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OCC_DAYS",
+     "verbose": "出院者占用总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DISCH_N",
+     "verbose": "出院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CURE_RATE",
+     "verbose": "治愈率(%)",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "IMPROVE_RATE",
+     "verbose": "好转率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DEATH_RATE",
+     "verbose": "病死率(%)",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TURNOVER",
+     "verbose": "病床周转次数(次)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "WORK_DAYS",
+     "verbose": "病床工作日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "USAGE_RATE",
+     "verbose": "病床使用率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_LOS_TRANS",
+     "verbose": "加转科人数平均住院日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_LOS",
+     "verbose": "出院者平均住院日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_INPAT",
+     "verbose": "平均在院人数",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "PEAK_NUM",
+     "verbose": "月峰值患者数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "351": {
+   "id": 351,
+   "table_name": "护理工作量日报表·主表",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE)-1) d1,\n         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE))-1/86400 d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nm0(ward,val) AS (SELECT waed_code ward,nvl ( sum ( bed_used_num ) , 0 ) from waed_adt_day where st_date >= (SELECT d1 FROM bnd) and st_date < (SELECT d2 FROM bnd) GROUP BY waed_code),\nm1(ward,val) AS (SELECT b.ward_stayed ward,nvl ( count ( distinct a.patient_id ) , 0 ) from pat_visit a , ward_transfer b where a.patient_id =b.patient_id and a.visit_id =b.visit_id and instr ( a.patient_id , '_' ) =0 and a.admission_date_time >= (SELECT d1 FROM bnd) and a.admission_date_time <=(SELECT d2 FROM bnd) GROUP BY b.ward_stayed),\nm2(ward,val) AS (SELECT b.ward_stayed ward,nvl ( count ( d",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "WARD_CODE",
+     "verbose": "病区代码",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TRANSIN_NUM",
+     "verbose": "转入人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "SPEC_CARE",
+     "verbose": "特级护理",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CRIT_SEVERE",
+     "verbose": "病重",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CRIT_ILL",
+     "verbose": "病危",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "GEN_LVL1",
+     "verbose": "普通",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "LVL2",
+     "verbose": "Ⅱ级护理",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "LVL3",
+     "verbose": "Ⅲ级护理",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "KS",
+     "verbose": "护理单元",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAY_NUM",
+     "verbose": "在院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TOTAL_ADM",
+     "verbose": "总入院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "NIGHT_ADM",
+     "verbose": "夜班入院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TRANSOUT_NUM",
+     "verbose": "转出人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DISCH_NUM",
+     "verbose": "出院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "VENTILATOR",
+     "verbose": "呼吸机人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "ERR_MSG",
+     "verbose": "提示",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "PLSX",
+     "verbose": "排列序号",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "352": {
+   "id": 352,
+   "table_name": "护理工作量日报表·汇总附区",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE)-1) d1,\n         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE))-1/86400 d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\ns AS (SELECT '产房' section,'待产人数' metric,(select nvl ( count ( 1 ) , 0 ) from pat_visit a , DEPT_VS_WARD b where a.dept_admission_to =b.dept_code and a.admission_cause ='待产' and a.admission_date_time >= (SELECT d1 FROM bnd) and a.admission_date_time < (SELECT d2 FROM bnd)) val FROM dual\nUNION ALL\nSELECT '产房' section,'分娩人数' metric,(select nvl ( count ( 1 ) , 0 ) from pat_visit a , DEPT_VS_WARD b where a.dept_admission_to =b.dept_code and a.admission_cause ='分娩' and a.admission_date_time >= (SELECT d1 FROM bnd) and a.admission_date_time < (SELECT d2 FROM bnd)) val FROM dual\nUNION ",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "SECTION",
+     "verbose": "区域",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "METRIC",
+     "verbose": "指标",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "VAL",
+     "verbose": "数值",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "355": {
+   "id": 355,
+   "table_name": "护理单元工作量·主表v2",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\n{# w_hulidanyuangzl 运行时六条SQL的集合化还原：床位链[0]/前一日占用[1]/入院分解[2]/转归[3]/期初DECODE[4]/占用床日[5]；\n   原窗口按护理单元+时间范围查询；本页输出全部护理单元，空选默认昨日。列题名为运行时SQL语义命名，DW逐字题名待旧客户端证据。 #}\nWITH input_bounds AS (\n  SELECT NVL(TRUNC(TO_DATE({{ tf_s }},'YYYY-MM-DD')), TRUNC(SYSDATE)-1) AS d1,\n         NVL(CASE WHEN TO_DATE({{ tf_e }},'YYYY-MM-DD') = TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD'))\n                  THEN TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) - 1\n                  ELSE TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) END,\n             TRUNC(SYSDATE)-1) AS d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR d2-d1+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nunits AS (SELECT a.dept_code ward_code, a.dept_name ward_name\n            FROM COMM.WARD_DEPT_DICT a JOIN dept_dict b ON a.dept_code = b.dept_code\n           WHERE b.outp_or_inp = 1 AND b.stop_flag IS NULL),\nagg AS (SELECT a.waed_code,\n           SUM(CASE WHEN a.st",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "护理单元代码",
+     "verbose": null,
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "护理单元名称",
+     "verbose": null,
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "开放床位",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "前一日占用床位",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "期初占用",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "入院人数",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "转入人数",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "治愈",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "好转",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "未愈",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "死亡",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "其他",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "占用床日",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "提示",
+     "verbose": null,
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "357": {
+   "id": 357,
+   "table_name": "医院医疗工作月报表·主表v2",
+   "kind": "virtual",
+   "sql": "{# w_tjbb_3（医院医疗工作月报表(二)）主表候选：其6条运行时SQL（stat_dept_modifyfix床位链+DEPT_ADT_DAY按dept_vs_ward组装）与本SQL骨架同构；\n   与35页（w_tjbb_2_zgz，数据集348，原SQL对账通过150行）输出同族，交叉对账见 reconciliation。原窗口 ward 选择器，本页输出全部统计科室。 #}\n{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nWITH input_bounds AS (\n  SELECT NVL(TRUNC(TO_DATE({{ tf_s }},'YYYY-MM-DD')), ADD_MONTHS(TRUNC(SYSDATE,'MM'),-1)) AS d1,\n         NVL(CASE WHEN TO_DATE({{ tf_e }},'YYYY-MM-DD') = TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD'))\n                  THEN TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) - 1\n                  ELSE TRUNC(TO_DATE({{ tf_e }},'YYYY-MM-DD')) END,\n             TRUNC(SYSDATE,'MM')-1) AS d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR d2-d1+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nrng AS (SELECT d1, d2, (d2 - d1) + 1 AS days FROM bnd),\ncal AS (SELECT (SELECT d1 FROM rng) + LEVEL - 1 AS dd FROM dual CONNECT BY (SELECT d1 FROM rng) + LEVEL - 1 <= (SELECT d2 FROM rng)),\nfx AS (SELE",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "KS",
+     "verbose": "科别",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "BED_END",
+     "verbose": "(月)底实有病床数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OPEN_DAYS",
+     "verbose": "实际开放总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_BEDS",
+     "verbose": "平均开放病床数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "USED_DAYS",
+     "verbose": "实际占用总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OCC_DAYS",
+     "verbose": "出院者占用总床日数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DISCH_N",
+     "verbose": "出院人数",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "CURE_RATE",
+     "verbose": "治愈率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "IMPROVE_RATE",
+     "verbose": "好转率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "DEATH_RATE",
+     "verbose": "病死率(%)",
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "TURNOVER",
+     "verbose": "病床周转次数(次)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "WORK_DAYS",
+     "verbose": "病床工作日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "USAGE_RATE",
+     "verbose": "病床使用率(%)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_LOS_TRANS",
+     "verbose": "加转科人数平均住院日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "AVG_LOS",
+     "verbose": "出院者平均住院日(日)",
+     "type": null,
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": "统计开始日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "STAT_END",
+     "verbose": "统计结束日期",
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "DEPT_CODE",
+     "verbose": "科室代码",
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "373": {
+   "id": 373,
+   "table_name": "BI_手术分支合计两行",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nSELECT '门诊' AS branch_name, t.oper_num, t.stat_begin FROM (\n{% set branch = '0' %}\nWITH input_bounds AS (\n  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE)-7) d1,\n         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE))-1/86400 d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nlegacy AS (select * from \n\n(\n\nselect dept_dict.tj_ksmc, dept_dict.plsx, count(*) oper_num\n\n  from (select distinct a.rcpt_no,a.visit_date,a.performed_by,a.item_class from  outp_bill_items a where a.item_class = 'F') outp_bill_items, dept_dict\n\n where outp_bill_items.performed_by = dept_dict.dept_code\n\n   and outp_bill_items.item_class = 'F'\n\n   and outp_bill_items.RCPT_NO IN (SELECT RCPT_NO FROM OUTP_RCPT_MASTER WHERE CHARGE_INDICATOR = 0)\n\n   and (outp_bill_items.visit_date between (SELECT d1 FR",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "BRANCH_NAME",
+     "verbose": null,
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "OPER_NUM",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "STAT_BEGIN",
+     "verbose": null,
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  },
+  "374": {
+   "id": 374,
+   "table_name": "BI_出院转归构成长表",
+   "kind": "virtual",
+   "sql": "{% set tf = get_time_filter('STAT_BEGIN', strftime='%Y-%m-%d %H:%M:%S', remove_filter=True) %}\n{% set tf_s = \"'\" + tf.from_expr + \"'\" if tf.from_expr else 'NULL' %}\n{% set tf_e = \"'\" + tf.to_expr + \"'\" if tf.to_expr else 'NULL' %}\nSELECT v.stat_begin, m.转归,\n  CASE m.转归 WHEN '治愈' THEN v.recover WHEN '好转' THEN v.effect WHEN '未愈' THEN v.untreat\n       WHEN '死亡' THEN v.died ELSE v.other_n END AS 人数\nFROM (\nWITH input_bounds AS (\n  SELECT NVL(TO_DATE({{ tf_s }},'YYYY-MM-DD HH24:MI:SS'),ADD_MONTHS(TRUNC(SYSDATE,'MM'),-1)) d1,\n         NVL(TO_DATE({{ tf_e }},'YYYY-MM-DD HH24:MI:SS'),TRUNC(SYSDATE,'MM'))-1/86400 d2 FROM dual),\nchk AS (SELECT CASE WHEN d2<d1 OR TRUNC(d2)-TRUNC(d1)+1>366 THEN 1 ELSE 0 END over_limit FROM input_bounds),\nbnd AS (SELECT d1,d2 FROM input_bounds WHERE (SELECT over_limit FROM chk)=0),\nlegacy AS (select t.dept_code,\n\n       null jgs,\n\n       sum(t.total_num) total_num,\n\n       sum(t.normal_num) normal_num,\n\n       sum(t.emergency_num) emergency_num,\n\n       sum(t.emer_died_num) emer_died_num,\n\n       sum(t.catch_num) catch_num,\n\n       sum(t.catch_died_num) catch_died_num,\n\n       sum(t.check_num) check_num,\n\n       sum(t.recover) recover,\n\n       sum(t.effect) effe",
+   "database": 2,
+   "owners": 1,
+   "columns": [
+    {
+     "name": "STAT_BEGIN",
+     "verbose": null,
+     "type": "DATETIME",
+     "is_dttm": true,
+     "groupby": true
+    },
+    {
+     "name": "转归",
+     "verbose": null,
+     "type": "STRING",
+     "is_dttm": false,
+     "groupby": true
+    },
+    {
+     "name": "人数",
+     "verbose": null,
+     "type": "INT",
+     "is_dttm": false,
+     "groupby": true
+    }
+   ],
+   "main_dttm": "STAT_BEGIN"
+  }
+ },
+ "gamma": {
+  "338": {
+   "http": 404,
+   "ok": false
+  },
+  "344": {
+   "http": 404,
+   "ok": false
+  },
+  "345": {
+   "http": 404,
+   "ok": false
+  },
+  "347": {
+   "http": 404,
+   "ok": false
+  },
+  "348": {
+   "http": 404,
+   "ok": false
+  },
+  "349": {
+   "http": 404,
+   "ok": false
+  },
+  "350": {
+   "http": 404,
+   "ok": false
+  },
+  "351": {
+   "http": 404,
+   "ok": false
+  },
+  "352": {
+   "http": 404,
+   "ok": false
+  },
+  "355": {
+   "http": 404,
+   "ok": false
+  },
+  "357": {
+   "http": 404,
+   "ok": false
+  },
+  "373": {
+   "http": 404,
+   "ok": false
+  },
+  "374": {
+   "http": 404,
+   "ok": false
+  }
+ },
+ "recon": {},
+ "counts": {
+  "datasets": 77,
+  "dashboards": 52,
+  "charts": 86,
+  "roles": "?"
+ },
+ "dashboard75_free": true,
+ "nursing_datasets": {
+  "349": "报表科室维护·床位配置(只读)",
+  "351": "护理工作量日报表·主表",
+  "355": "护理单元工作量·主表v2",
+  "350": "护理工作量月报表·主表",
+  "352": "护理工作量日报表·汇总附区"
+ },
+ "data": {
+  "ds350.months": {
+   "http": 200,
+   "sec": 0.8,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "STAT_BEGIN": 1790812800000.0,
+     "出院人数": 10630,
+     "实有病床": 2678
+    }
+   ],
+   "note": "按 STAT_BEGIN 分布"
+  },
+  "ds350.byKS": {
+   "http": 200,
+   "sec": 0.8,
+   "rows": 40,
+   "err": "",
+   "data": [
+    {
+     "KS": "北区二护理单元",
+     "DISCH_N": 157,
+     "OPEN_DAYS": 2444,
+     "USED_DAYS": 1636,
+     "OCC_DAYS": 1645
+    },
+    {
+     "KS": "北区三护理单元",
+     "DISCH_N": 255,
+     "OPEN_DAYS": 2115,
+     "USED_DAYS": 1421,
+     "OCC_DAYS": 1445
+    },
+    {
+     "KS": "北区四护理单元",
+     "DISCH_N": 237,
+     "OPEN_DAYS": 2444,
+     "USED_DAYS": 2387,
+     "OCC_DAYS": 2301
+    },
+    {
+     "KS": "北区五护理单元",
+     "DISCH_N": 38,
+     "OPEN_DAYS": 2021,
+     "USED_DAYS": 277,
+     "OCC_DAYS": 575
+    },
+    {
+     "KS": "儿科NICU护理单元",
+     "DISCH_N": 0,
+     "OPEN_DAYS": 329,
+     "USED_DAYS": 0,
+     "OCC_DAYS": 0
+    },
+    {
+     "KS": "合计",
+     "DISCH_N": 8060,
+     "OPEN_DAYS": 62933,
+     "USED_DAYS": 54999,
+     "OCC_DAYS": 60055
+    },
+    {
+     "KS": "急诊科护理单元",
+     "DISCH_N": 0,
+     "OPEN_DAYS": 0,
+     "USED_DAYS": 0,
+     "OCC_DAYS": 0
+    },
+    {
+     "KS": "九号楼北二护理单元",
+     "DISCH_N": 394,
+     "OPEN_DAYS": 1927,
+     "USED_DAYS": 2108,
+     "OCC_DAYS": 2174
+    },
+    {
+     "KS": "九号楼北三护理单元",
+     "DISCH_N": 246,
+     "OPEN_DAYS": 1927,
+     "USED_DAYS": 2106,
+     "OCC_DAYS": 2511
+    },
+    {
+     "KS": "九号楼北四护理单元",
+     "DISCH_N": 436,
+     "OPEN_DAYS": 2021,
+     "USED_DAYS": 1976,
+     "OCC_DAYS": 2027
+    },
+    {
+     "KS": "九号楼北五护理单元",
+     "DISCH_N": 123,
+     "OPEN_DAYS": 846,
+     "USED_DAYS": 532,
+     "OCC_DAYS": 629
+    },
+    {
+     "KS": "九号楼北一护理单元",
+     "DISCH_N": 347,
+     "OPEN_DAYS": 1551,
+     "USED_DAYS": 1827,
+     "OCC_DAYS": 1931
+    },
+    {
+     "KS": "九号楼南二护理单元",
+     "DISCH_N": 230,
+     "OPEN_DAYS": 1316,
+     "USED_DAYS": 1178,
+     "OCC_DAYS": 1233
+    },
+    {
+     "KS": "九号楼南三护理单元",
+     "DISCH_N": 4,
+     "OPEN_DAYS": 564,
+     "USED_DAYS": 241,
+     "OCC_DAYS": 278
+    },
+    {
+     "KS": "九号楼南四护理单元",
+     "DISCH_N": 266,
+     "OPEN_DAYS": 1222,
+     "USED_DAYS": 1607,
+     "OCC_DAYS": 1932
+    },
+    {
+     "KS": "九号楼南五护理单元",
+     "DISCH_N": 21,
+     "OPEN_DAYS": 1034,
+     "USED_DAYS": 352,
+     "OCC_DAYS": 715
+    },
+    {
+     "KS": "九号楼南一护理单元",
+     "DISCH_N": 0,
+     "OPEN_DAYS": 0,
+     "USED_DAYS": 0,
+     "OCC_DAYS": 0
+    },
+    {
+     "KS": "六号楼东三护理单元",
+     "DISCH_N": 135,
+     "OPEN_DAYS": 1786,
+     "USED_DAYS": 1345,
+     "OCC_DAYS": 1520
+    },
+    {
+     "KS": "六号楼东五护理单元",
+     "DISCH_N": 230,
+     "OPEN_DAYS": 2538,
+     "USED_DAYS": 1525,
+     "OCC_DAYS": 1585
+    },
+    {
+     "KS": "六号楼东一护理单元",
+     "DISCH_N": 113,
+     "OPEN_DAYS": 987,
+     "USED_DAYS": 754,
+     "OCC_DAYS": 756
+    },
+    {
+     "KS": "六号楼二护理单元",
+     "DISCH_N": 432,
+     "OPEN_DAYS": 3431,
+     "USED_DAYS": 3743,
+     "OCC_DAYS": 3883
+    },
+    {
+     "KS": "六号楼六护理单元",
+     "DISCH_N": 182,
+     "OPEN_DAYS": 1410,
+     "USED_DAYS": 1675,
+     "OCC_DAYS": 1680
+    },
+    {
+     "KS": "六号楼四护理单元",
+     "DISCH_N": 366,
+     "OPEN_DAYS": 1833,
+     "USED_DAYS": 2085,
+     "OCC_DAYS": 2050
+    },
+    {
+     "KS": "六号楼西三护理单元",
+     "DISCH_N": 103,
+     "OPEN_DAYS": 1786,
+     "USED_DAYS": 1512,
+     "OCC_DAYS": 1346
+    },
+    {
+     "KS": "六号楼一护理单元",
+     "DISCH_N": 188,
+     "OPEN_DAYS": 0,
+     "USED_DAYS": 1322,
+     "OCC_DAYS": 1376
+    },
+    {
+     "KS": "十号楼二护理单元",
+     "DISCH_N": 295,
+     "OPEN_DAYS": 2444,
+     "USED_DAYS": 1764,
+     "OCC_DAYS": 1932
+    },
+    {
+     "KS": "十号楼三护理单元",
+     "DISCH_N": 241,
+     "OPEN_DAYS": 2397,
+     "USED_DAYS": 1701,
+     "OCC_DAYS": 1921
+    },
+    {
+     "KS": "十号楼四护理单元",
+     "DISCH_N": 305,
+     "OPEN_DAYS": 2538,
+     "USED_DAYS": 2439,
+     "OCC_DAYS": 3007
+    },
+    {
+     "KS": "十号楼五护理单元",
+     "DISCH_N": 294,
+     "OPEN_DAYS": 2256,
+     "USED_DAYS": 1786,
+     "OCC_DAYS": 1942
+    },
+    {
+     "KS": "十号楼一护理单元",
+     "DISCH_N": 517,
+     "OPEN_DAYS": 2820,
+     "USED_DAYS": 2294,
+     "OCC_DAYS": 2417
+    },
+    {
+     "KS": "心肺中心东六护理单元",
+     "DISCH_N": 135,
+     "OPEN_DAYS": 1175,
+     "USED_DAYS": 1275,
+     "OCC_DAYS": 1221
+    },
+    {
+     "KS": "心肺中心东七护理单元",
+     "DISCH_N": 101,
+     "OPEN_DAYS": 1081,
+     "USED_DAYS": 746,
+     "OCC_DAYS": 710
+    },
+    {
+     "KS": "心肺中心东四护理单元",
+     "DISCH_N": 352,
+     "OPEN_DAYS": 2350,
+     "USED_DAYS": 2116,
+     "OCC_DAYS": 2311
+    },
+    {
+     "KS": "心肺中心东五护理单元",
+     "DISCH_N": 177,
+     "OPEN_DAYS": 1974,
+     "USED_DAYS": 1742,
+     "OCC_DAYS": 1829
+    },
+    {
+     "KS": "心肺中心呼吸重症护理单元",
+     "DISCH_N": 21,
+     "OPEN_DAYS": 611,
+     "USED_DAYS": 616,
+     "OCC_DAYS": 792
+    },
+    {
+     "KS": "心肺中心西六护理单元",
+     "DISCH_N": 314,
+     "OPEN_DAYS": 1269,
+     "USED_DAYS": 1057,
+     "OCC_DAYS": 1064
+    },
+    {
+     "KS": "心肺中心西七护理单元",
+     "DISCH_N": 232,
+     "OPEN_DAYS": 1551,
+     "USED_DAYS": 1452,
+     "OCC_DAYS": 1607
+    },
+    {
+     "KS": "心肺中心西四护理单元",
+     "DISCH_N": 324,
+     "OPEN_DAYS": 2256,
+     "USED_DAYS": 2029,
+     "OCC_DAYS": 2439
+    },
+    {
+     "KS": "心肺中心西五护理单元",
+     "DISCH_N": 209,
+     "OPEN_DAYS": 1927,
+     "USED_DAYS": 1730,
+     "OCC_DAYS": 1920
+    },
+    {
+     "KS": "综合ICU护理单元",
+     "DISCH_N": 40,
+     "OPEN_DAYS": 752,
+     "USED_DAYS": 643,
+     "OCC_DAYS": 1351
+    }
+   ],
+   "note": "最新月按护理单元"
+  },
+  "ds352.metrics": {
+   "http": 200,
+   "sec": 1.6,
+   "rows": 23,
+   "err": "",
+   "data": [
+    {
+     "METRIC": "待产人数",
+     "数值": 0
+    },
+    {
+     "METRIC": "分娩人数",
+     "数值": 0
+    },
+    {
+     "METRIC": "静脉输液量",
+     "数值": 0
+    },
+    {
+     "METRIC": "静脉输液量(耳鼻喉)",
+     "数值": 0
+    },
+    {
+     "METRIC": "静脉输液量(小儿)",
+     "数值": 0
+    },
+    {
+     "METRIC": "静脉输液量(咽喉)",
+     "数值": 0
+    },
+    {
+     "METRIC": "就诊人次汇总",
+     "数值": 858
+    },
+    {
+     "METRIC": "就诊人数",
+     "数值": 104
+    },
+    {
+     "METRIC": "就诊人数(耳鼻喉)",
+     "数值": 19
+    },
+    {
+     "METRIC": "就诊人数(日间)",
+     "数值": 9
+    },
+    {
+     "METRIC": "就诊人数(小儿)",
+     "数值": 12
+    },
+    {
+     "METRIC": "就诊人数(咽喉)",
+     "数值": 19
+    },
+    {
+     "METRIC": "就诊人数(夜班17:00-次日08:00)",
+     "数值": 6
+    },
+    {
+     "METRIC": "门诊检查量",
+     "数值": 26
+    },
+    {
+     "METRIC": "门诊净化量",
+     "数值": 0
+    },
+    {
+     "METRIC": "门诊就诊人数",
+     "数值": 17
+    },
+    {
+     "METRIC": "门诊治疗人次",
+     "数值": 0
+    },
+    {
+     "METRIC": "门诊治疗人数",
+     "数值": 0
+    },
+    {
+     "METRIC": "手术台数",
+     "数值": 74
+    },
+    {
+     "METRIC": "住院检查量",
+     "数值": 34
+    },
+    {
+     "METRIC": "住院净化量",
+     "数值": 0
+    },
+    {
+     "METRIC": "住院治疗人数",
+     "数值": 0
+    },
+    {
+     "METRIC": "总入院人数",
+     "数值": 108
+    }
+   ],
+   "note": "汇总附区 METRIC 清单"
+  },
+  "ds352.sections": {
+   "http": 200,
+   "sec": 2.0,
+   "rows": 34,
+   "err": "",
+   "data": [
+    {
+     "SECTION": "产房",
+     "METRIC": "待产人数",
+     "数值": 0
+    },
+    {
+     "SECTION": "产房",
+     "METRIC": "分娩人数",
+     "数值": 0
+    },
+    {
+     "SECTION": "急诊科",
+     "METRIC": "就诊人数(日间)",
+     "数值": 9
+    },
+    {
+     "SECTION": "急诊科",
+     "METRIC": "就诊人数(夜班17:00-次日08:00)",
+     "数值": 6
+    },
+    {
+     "SECTION": "儿科门诊",
+     "METRIC": "就诊人数",
+     "数值": 47
+    },
+    {
+     "SECTION": "儿科门诊",
+     "METRIC": "静脉输液量",
+     "数值": 0
+    },
+    {
+     "SECTION": "儿科门诊",
+     "METRIC": "就诊人次汇总",
+     "数值": 31
+    },
+    {
+     "SECTION": "发热门诊",
+     "METRIC": "总入院人数",
+     "数值": 108
+    },
+    {
+     "SECTION": "发热门诊",
+     "METRIC": "门诊就诊人数",
+     "数值": 17
+    },
+    {
+     "SECTION": "门诊输液",
+     "METRIC": "静脉输液量",
+     "数值": 0
+    },
+    {
+     "SECTION": "内镜中心",
+     "METRIC": "门诊检查量",
+     "数值": 26
+    },
+    {
+     "SECTION": "内镜中心",
+     "METRIC": "住院检查量",
+     "数值": 34
+    },
+    {
+     "SECTION": "眼科门诊",
+     "METRIC": "就诊人数",
+     "数值": 47
+    },
+    {
+     "SECTION": "眼科门诊",
+     "METRIC": "门诊治疗人次",
+     "数值": 0
+    },
+    {
+     "SECTION": "第二手术室",
+     "METRIC": "手术台数",
+     "数值": 13
+    },
+    {
+     "SECTION": "第三手术室",
+     "METRIC": "手术台数",
+     "数值": 0
+    },
+    {
+     "SECTION": "第一手术室",
+     "METRIC": "手术台数",
+     "数值": 45
+    },
+    {
+     "SECTION": "耳鼻喉门诊",
+     "METRIC": "就诊人数(小儿)",
+     "数值": 12
+    },
+    {
+     "SECTION": "耳鼻喉门诊",
+     "METRIC": "就诊人数(咽喉)",
+     "数值": 19
+    },
+    {
+     "SECTION": "耳鼻喉门诊",
+     "METRIC": "静脉输液量(小儿)",
+     "数值": 0
+    },
+    {
+     "SECTION": "耳鼻喉门诊",
+     "METRIC": "静脉输液量(咽喉)",
+     "数值": 0
+    },
+    {
+     "SECTION": "耳鼻喉门诊",
+     "METRIC": "就诊人数(耳鼻喉)",
+     "数值": 19
+    },
+    {
+     "SECTION": "耳鼻喉门诊",
+     "METRIC": "静脉输液量(耳鼻喉)",
+     "数值": 0
+    },
+    {
+     "SECTION": "妇产科门诊",
+     "METRIC": "就诊人数",
+     "数值": 10
+    },
+    {
+     "SECTION": "妇产科门诊",
+     "METRIC": "静脉输液量",
+     "数值": 0
+    },
+    {
+     "SECTION": "介入手术室",
+     "METRIC": "手术台数",
+     "数值": 16
+    },
+    {
+     "SECTION": "眼科手术室",
+     "METRIC": "手术台数",
+     "数值": 0
+    },
+    {
+     "SECTION": "专科门诊二",
+     "METRIC": "就诊人次汇总",
+     "数值": 499
+    },
+    {
+     "SECTION": "专科门诊一",
+     "METRIC": "就诊人次汇总",
+     "数值": 328
+    },
+    {
+     "SECTION": "心外科手术室",
+     "METRIC": "手术台数",
+     "数值": 0
+    },
+    {
+     "SECTION": "肾脏病血液净化",
+     "METRIC": "门诊净化量",
+     "数值": 0
+    },
+    {
+     "SECTION": "肾脏病血液净化",
+     "METRIC": "住院净化量",
+     "数值": 0
+    },
+    {
+     "SECTION": "伤口造口护理门诊",
+     "METRIC": "门诊治疗人数",
+     "数值": 0
+    },
+    {
+     "SECTION": "伤口造口护理门诊",
+     "METRIC": "住院治疗人数",
+     "数值": 0
+    }
+   ],
+   "note": "SECTION+METRIC"
+  },
+  "ds351.oneday": {
+   "http": 200,
+   "sec": 2.5,
+   "rows": 40,
+   "err": "",
+   "data": [
+    {
+     "KS": "合计",
+     "PLSX": null,
+     "特级": 41,
+     "病危": 9,
+     "二级": 720
+    },
+    {
+     "KS": "北区二护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 37
+    },
+    {
+     "KS": "北区三护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 37
+    },
+    {
+     "KS": "北区四护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 48
+    },
+    {
+     "KS": "北区五护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 0
+    },
+    {
+     "KS": "急诊科护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 0
+    },
+    {
+     "KS": "综合ICU护理单元",
+     "PLSX": null,
+     "特级": 16,
+     "病危": 2,
+     "二级": 0
+    },
+    {
+     "KS": "儿科NICU护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 0
+    },
+    {
+     "KS": "六号楼二护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 13
+    },
+    {
+     "KS": "六号楼六护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 26
+    },
+    {
+     "KS": "六号楼四护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 49
+    },
+    {
+     "KS": "六号楼一护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 10
+    },
+    {
+     "KS": "十号楼二护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 21
+    },
+    {
+     "KS": "十号楼三护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 26
+    },
+    {
+     "KS": "十号楼四护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 14
+    },
+    {
+     "KS": "十号楼五护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 31
+    },
+    {
+     "KS": "十号楼一护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 39
+    },
+    {
+     "KS": "九号楼北二护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 28
+    },
+    {
+     "KS": "九号楼北三护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 31
+    },
+    {
+     "KS": "九号楼北四护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 45
+    },
+    {
+     "KS": "九号楼北五护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 9
+    },
+    {
+     "KS": "九号楼北一护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 45
+    },
+    {
+     "KS": "九号楼南二护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 18
+    },
+    {
+     "KS": "九号楼南三护理单元",
+     "PLSX": null,
+     "特级": 5,
+     "病危": 0,
+     "二级": 0
+    },
+    {
+     "KS": "九号楼南四护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 38
+    },
+    {
+     "KS": "九号楼南五护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 0
+    },
+    {
+     "KS": "九号楼南一护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 0
+    },
+    {
+     "KS": "六号楼东三护理单元",
+     "PLSX": null,
+     "特级": 6,
+     "病危": 0,
+     "二级": 8
+    },
+    {
+     "KS": "六号楼东五护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 0
+    },
+    {
+     "KS": "六号楼东一护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 5
+    },
+    {
+     "KS": "六号楼西三护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 5,
+     "二级": 6
+    },
+    {
+     "KS": "心肺中心东六护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 17
+    },
+    {
+     "KS": "心肺中心东七护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 11
+    },
+    {
+     "KS": "心肺中心东四护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 18
+    },
+    {
+     "KS": "心肺中心东五护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 13
+    },
+    {
+     "KS": "心肺中心西六护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 22
+    },
+    {
+     "KS": "心肺中心西七护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 29
+    },
+    {
+     "KS": "心肺中心西四护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 2,
+     "二级": 6
+    },
+    {
+     "KS": "心肺中心西五护理单元",
+     "PLSX": null,
+     "特级": 0,
+     "病危": 0,
+     "二级": 20
+    },
+    {
+     "KS": "心肺中心呼吸重症护理单元",
+     "PLSX": null,
+     "特级": 14,
+     "病危": 0,
+     "二级": 0
+    }
+   ],
+   "note": "最近一天行结构"
+  },
+  "ds351.monthSUM": {
+   "http": 200,
+   "sec": 2.4,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "特级": 82,
+     "病危": 18,
+     "病重": 56,
+     "普通": 850,
+     "二级": 1440,
+     "三级": 0,
+     "出院": 306
+    }
+   ],
+   "note": "最新月全表 SUM"
+  },
+  "ds355.months": {
+   "http": 200,
+   "sec": 0.6,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "入院": 316,
+     "占用床日": 1236
+    }
+   ],
+   "note": "最新月合计"
+  },
+  "ds355.byUnit": {
+   "http": 200,
+   "sec": 0.6,
+   "rows": 51,
+   "err": "",
+   "data": [
+    {
+     "护理单元名称": "北区二护理单元",
+     "入院人数": 8,
+     "占用床日": 37,
+     "开放床位": 72
+    },
+    {
+     "护理单元名称": "北区三护理单元",
+     "入院人数": 16,
+     "占用床日": 38,
+     "开放床位": 32
+    },
+    {
+     "护理单元名称": "北区四护理单元",
+     "入院人数": 13,
+     "占用床日": 57,
+     "开放床位": 46
+    },
+    {
+     "护理单元名称": "北区五护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "产房护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "儿科NICU护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 7
+    },
+    {
+     "护理单元名称": "耳鼻喉保健科护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 18
+    },
+    {
+     "护理单元名称": "急诊病房护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "九号楼北二护理单元",
+     "入院人数": 19,
+     "占用床日": 52,
+     "开放床位": 43
+    },
+    {
+     "护理单元名称": "九号楼北三护理单元",
+     "入院人数": 26,
+     "占用床日": 57,
+     "开放床位": 42
+    },
+    {
+     "护理单元名称": "九号楼北四护理单元",
+     "入院人数": 11,
+     "占用床日": 51,
+     "开放床位": 43
+    },
+    {
+     "护理单元名称": "九号楼北五护理单元",
+     "入院人数": 6,
+     "占用床日": 11,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "九号楼北一护理单元",
+     "入院人数": 21,
+     "占用床日": 45,
+     "开放床位": 37
+    },
+    {
+     "护理单元名称": "九号楼南二护理单元",
+     "入院人数": 5,
+     "占用床日": 31,
+     "开放床位": 45
+    },
+    {
+     "护理单元名称": "九号楼南三护理单元",
+     "入院人数": 0,
+     "占用床日": 5,
+     "开放床位": 12
+    },
+    {
+     "护理单元名称": "九号楼南四护理单元",
+     "入院人数": 17,
+     "占用床日": 40,
+     "开放床位": 26
+    },
+    {
+     "护理单元名称": "九号楼南五护理单元",
+     "入院人数": 0,
+     "占用床日": 2,
+     "开放床位": 22
+    },
+    {
+     "护理单元名称": "九号楼南一护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "六号楼东三护理单元",
+     "入院人数": 4,
+     "占用床日": 26,
+     "开放床位": 28
+    },
+    {
+     "护理单元名称": "六号楼东四护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "六号楼东五护理单元",
+     "入院人数": 6,
+     "占用床日": 40,
+     "开放床位": 27
+    },
+    {
+     "护理单元名称": "六号楼东一护理单元",
+     "入院人数": 5,
+     "占用床日": 15,
+     "开放床位": 21
+    },
+    {
+     "护理单元名称": "六号楼二护理单元",
+     "入院人数": 13,
+     "占用床日": 88,
+     "开放床位": 53
+    },
+    {
+     "护理单元名称": "六号楼六护理单元",
+     "入院人数": 5,
+     "占用床日": 39,
+     "开放床位": 21
+    },
+    {
+     "护理单元名称": "六号楼四护理单元",
+     "入院人数": 17,
+     "占用床日": 55,
+     "开放床位": 72
+    },
+    {
+     "护理单元名称": "六号楼西三护理单元",
+     "入院人数": 2,
+     "占用床日": 25,
+     "开放床位": 38
+    },
+    {
+     "护理单元名称": "六号楼西五护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "六号楼一护理单元",
+     "入院人数": 6,
+     "占用床日": 19,
+     "开放床位": 28
+    },
+    {
+     "护理单元名称": "神经重症监护护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "十二号楼二护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "十二号楼三护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "十二号楼一护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 1
+    },
+    {
+     "护理单元名称": "十号楼二护理单元",
+     "入院人数": 5,
+     "占用床日": 26,
+     "开放床位": 27
+    },
+    {
+     "护理单元名称": "十号楼三护理单元",
+     "入院人数": 9,
+     "占用床日": 28,
+     "开放床位": 31
+    },
+    {
+     "护理单元名称": "十号楼四护理单元",
+     "入院人数": 16,
+     "占用床日": 54,
+     "开放床位": 56
+    },
+    {
+     "护理单元名称": "十号楼五护理单元",
+     "入院人数": 2,
+     "占用床日": 42,
+     "开放床位": 23
+    },
+    {
+     "护理单元名称": "十号楼一护理单元",
+     "入院人数": 19,
+     "占用床日": 47,
+     "开放床位": 60
+    },
+    {
+     "护理单元名称": "十一号楼二护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "十一号楼三护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "十一号楼一护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "心肺中心东六护理单元",
+     "入院人数": 7,
+     "占用床日": 32,
+     "开放床位": 26
+    },
+    {
+     "护理单元名称": "心肺中心东七护理单元",
+     "入院人数": 1,
+     "占用床日": 18,
+     "开放床位": 23
+    },
+    {
+     "护理单元名称": "心肺中心东四护理单元",
+     "入院人数": 15,
+     "占用床日": 45,
+     "开放床位": 2
+    },
+    {
+     "护理单元名称": "心肺中心东五护理单元",
+     "入院人数": 3,
+     "占用床日": 42,
+     "开放床位": 35
+    },
+    {
+     "护理单元名称": "心肺中心呼吸重症护理单元",
+     "入院人数": 1,
+     "占用床日": 15,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "心肺中心西六护理单元",
+     "入院人数": 14,
+     "占用床日": 32,
+     "开放床位": 36
+    },
+    {
+     "护理单元名称": "心肺中心西七护理单元",
+     "入院人数": 9,
+     "占用床日": 34,
+     "开放床位": 16
+    },
+    {
+     "护理单元名称": "心肺中心西四护理单元",
+     "入院人数": 5,
+     "占用床日": 29,
+     "开放床位": 89
+    },
+    {
+     "护理单元名称": "心肺中心西五护理单元",
+     "入院人数": 10,
+     "占用床日": 43,
+     "开放床位": 70
+    },
+    {
+     "护理单元名称": "眼科护理单元",
+     "入院人数": 0,
+     "占用床日": 0,
+     "开放床位": 0
+    },
+    {
+     "护理单元名称": "综合ICU护理单元",
+     "入院人数": 0,
+     "占用床日": 16,
+     "开放床位": 10
+    }
+   ],
+   "note": "最近一天按单元"
+  },
+  "ds350.monthAll": {
+   "http": 200,
+   "sec": 0.7,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "出院": 16120,
+     "OPEN_DAYS": 125866,
+     "USED_DAYS": 109998,
+     "OCC_DAYS": 120110,
+     "BED_END": 2678
+    }
+   ],
+   "note": "最新月全表SUM(含合计行)"
+  },
+  "ds350.monthNoSum": {
+   "http": 200,
+   "sec": 0.8,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "出院": 8060,
+     "OPEN_DAYS": 62933,
+     "USED_DAYS": 54999,
+     "OCC_DAYS": 60055,
+     "BED_END": 1339
+    }
+   ],
+   "note": "最新月SUM排除合计行"
+  },
+  "ds350.rowCount": {
+   "http": 200,
+   "sec": 0.7,
+   "rows": 40,
+   "err": "",
+   "data": [
+    {
+     "KS": "北区二护理单元",
+     "床位": 52
+    },
+    {
+     "KS": "北区三护理单元",
+     "床位": 45
+    },
+    {
+     "KS": "北区四护理单元",
+     "床位": 52
+    },
+    {
+     "KS": "北区五护理单元",
+     "床位": 43
+    },
+    {
+     "KS": "儿科NICU护理单元",
+     "床位": 7
+    },
+    {
+     "KS": "合计",
+     "床位": 1339
+    },
+    {
+     "KS": "急诊科护理单元",
+     "床位": 0
+    },
+    {
+     "KS": "九号楼北二护理单元",
+     "床位": 41
+    },
+    {
+     "KS": "九号楼北三护理单元",
+     "床位": 41
+    },
+    {
+     "KS": "九号楼北四护理单元",
+     "床位": 43
+    },
+    {
+     "KS": "九号楼北五护理单元",
+     "床位": 18
+    },
+    {
+     "KS": "九号楼北一护理单元",
+     "床位": 33
+    },
+    {
+     "KS": "九号楼南二护理单元",
+     "床位": 28
+    },
+    {
+     "KS": "九号楼南三护理单元",
+     "床位": 12
+    },
+    {
+     "KS": "九号楼南四护理单元",
+     "床位": 26
+    },
+    {
+     "KS": "九号楼南五护理单元",
+     "床位": 22
+    },
+    {
+     "KS": "九号楼南一护理单元",
+     "床位": 0
+    },
+    {
+     "KS": "六号楼东三护理单元",
+     "床位": 38
+    },
+    {
+     "KS": "六号楼东五护理单元",
+     "床位": 54
+    },
+    {
+     "KS": "六号楼东一护理单元",
+     "床位": 21
+    },
+    {
+     "KS": "六号楼二护理单元",
+     "床位": 73
+    },
+    {
+     "KS": "六号楼六护理单元",
+     "床位": 30
+    },
+    {
+     "KS": "六号楼四护理单元",
+     "床位": 39
+    },
+    {
+     "KS": "六号楼西三护理单元",
+     "床位": 38
+    },
+    {
+     "KS": "六号楼一护理单元",
+     "床位": 0
+    },
+    {
+     "KS": "十号楼二护理单元",
+     "床位": 52
+    },
+    {
+     "KS": "十号楼三护理单元",
+     "床位": 51
+    },
+    {
+     "KS": "十号楼四护理单元",
+     "床位": 54
+    },
+    {
+     "KS": "十号楼五护理单元",
+     "床位": 48
+    },
+    {
+     "KS": "十号楼一护理单元",
+     "床位": 60
+    },
+    {
+     "KS": "心肺中心东六护理单元",
+     "床位": 25
+    },
+    {
+     "KS": "心肺中心东七护理单元",
+     "床位": 23
+    },
+    {
+     "KS": "心肺中心东四护理单元",
+     "床位": 50
+    },
+    {
+     "KS": "心肺中心东五护理单元",
+     "床位": 42
+    },
+    {
+     "KS": "心肺中心呼吸重症护理单元",
+     "床位": 13
+    },
+    {
+     "KS": "心肺中心西六护理单元",
+     "床位": 27
+    },
+    {
+     "KS": "心肺中心西七护理单元",
+     "床位": 33
+    },
+    {
+     "KS": "心肺中心西四护理单元",
+     "床位": 48
+    },
+    {
+     "KS": "心肺中心西五护理单元",
+     "床位": 41
+    },
+    {
+     "KS": "综合ICU护理单元",
+     "床位": 16
+    }
+   ],
+   "note": "最新月全行清单"
+  },
+  "ds350.latest": {
+   "http": 200,
+   "sec": 0.7,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "STAT_BEGIN": 1790812800000.0,
+     "出院": 10630
+    }
+   ],
+   "note": "STAT_BEGIN 降序前6"
+  }
+ },
+ "gamma_probe": {
+  "350": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 350, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 350, \"datasource_name\": \"\\u62a4\\u7406\\u5de5\\u4f5c\\u91cf\\u6708\\u62a5\\u8868\\u00"
+  },
+  "352": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 352, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 352, \"datasource_name\": \"\\u62a4\\u7406\\u5de5\\u4f5c\\u91cf\\u65e5\\u62a5\\u8868\\u00"
+  },
+  "351": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 351, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 351, \"datasource_name\": \"\\u62a4\\u7406\\u5de5\\u4f5c\\u91cf\\u65e5\\u62a5\\u8868\\u00"
+  },
+  "355": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 355, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 355, \"datasource_name\": \"\\u62a4\\u7406\\u5355\\u5143\\u5de5\\u4f5c\\u91cf\\u00b7\\u4e"
+  },
+  "349": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 349, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 349, \"datasource_name\": \"\\u62a5\\u8868\\u79d1\\u5ba4\\u7ef4\\u62a4\\u00b7\\u5e8a\\u4f"
+  },
+  "373": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 373, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 373, \"datasource_name\": \"BI_\\u624b\\u672f\\u5206\\u652f\\u5408\\u8ba1\\u4e24\\u884c\""
+  },
+  "374": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 374, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 374, \"datasource_name\": \"BI_\\u51fa\\u9662\\u8f6c\\u5f52\\u6784\\u6210\\u957f\\u8868\""
+  },
+  "338": {
+   "http": 403,
+   "kind": "DATASET-DENIED",
+   "err": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 338, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"link\": \"\", \"datasource\": 338, \"datasource_name\": \"\\u6708\\u5de5\\u4f5c\\u62a5\\u8868(\\u65b0)\"}}]}"
+  }
+ },
+ "oct": {
+  "ds350.Oct.KPI": {
+   "http": 200,
+   "sec": 0.8,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "开放床日": 41509,
+     "占用床日": 36251,
+     "出院": 5315,
+     "实有床位": 1339,
+     "出院者占用床日": 38306
+    }
+   ]
+  },
+  "ds350.Oct.useRate": {
+   "http": 200,
+   "sec": 0.7,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "病床使用率": 0.8733286757088824
+    }
+   ]
+  },
+  "ds350.Oct.byKS": {
+   "http": 200,
+   "sec": 0.8,
+   "rows": 39,
+   "err": "",
+   "data": [
+    {
+     "KS": "北区二护理单元",
+     "出院人数": 92,
+     "占用床日": 998
+    },
+    {
+     "KS": "北区三护理单元",
+     "出院人数": 161,
+     "占用床日": 878
+    },
+    {
+     "KS": "北区四护理单元",
+     "出院人数": 146,
+     "占用床日": 1532
+    },
+    {
+     "KS": "北区五护理单元",
+     "出院人数": 38,
+     "占用床日": 277
+    },
+    {
+     "KS": "儿科NICU护理单元",
+     "出院人数": 0,
+     "占用床日": 0
+    },
+    {
+     "KS": "急诊科护理单元",
+     "出院人数": 0,
+     "占用床日": 0
+    },
+    {
+     "KS": "九号楼北二护理单元",
+     "出院人数": 253,
+     "占用床日": 1355
+    },
+    {
+     "KS": "九号楼北三护理单元",
+     "出院人数": 163,
+     "占用床日": 1398
+    },
+    {
+     "KS": "九号楼北四护理单元",
+     "出院人数": 284,
+     "占用床日": 1266
+    },
+    {
+     "KS": "九号楼北五护理单元",
+     "出院人数": 77,
+     "占用床日": 349
+    },
+    {
+     "KS": "九号楼北一护理单元",
+     "出院人数": 223,
+     "占用床日": 1200
+    },
+    {
+     "KS": "九号楼南二护理单元",
+     "出院人数": 153,
+     "占用床日": 772
+    },
+    {
+     "KS": "九号楼南三护理单元",
+     "出院人数": 4,
+     "占用床日": 188
+    },
+    {
+     "KS": "九号楼南四护理单元",
+     "出院人数": 168,
+     "占用床日": 990
+    },
+    {
+     "KS": "九号楼南五护理单元",
+     "出院人数": 15,
+     "占用床日": 306
+    },
+    {
+     "KS": "九号楼南一护理单元",
+     "出院人数": 0,
+     "占用床日": 0
+    },
+    {
+     "KS": "六号楼东三护理单元",
+     "出院人数": 92,
+     "占用床日": 879
+    },
+    {
+     "KS": "六号楼东五护理单元",
+     "出院人数": 156,
+     "占用床日": 1066
+    },
+    {
+     "KS": "六号楼东一护理单元",
+     "出院人数": 74,
+     "占用床日": 481
+    },
+    {
+     "KS": "六号楼二护理单元",
+     "出院人数": 303,
+     "占用床日": 2539
+    },
+    {
+     "KS": "六号楼六护理单元",
+     "出院人数": 119,
+     "占用床日": 1152
+    },
+    {
+     "KS": "六号楼四护理单元",
+     "出院人数": 236,
+     "占用床日": 1277
+    },
+    {
+     "KS": "六号楼西三护理单元",
+     "出院人数": 73,
+     "占用床日": 1076
+    },
+    {
+     "KS": "六号楼一护理单元",
+     "出院人数": 124,
+     "占用床日": 893
+    },
+    {
+     "KS": "十号楼二护理单元",
+     "出院人数": 205,
+     "占用床日": 1228
+    },
+    {
+     "KS": "十号楼三护理单元",
+     "出院人数": 167,
+     "占用床日": 1197
+    },
+    {
+     "KS": "十号楼四护理单元",
+     "出院人数": 214,
+     "占用床日": 1605
+    },
+    {
+     "KS": "十号楼五护理单元",
+     "出院人数": 205,
+     "占用床日": 1176
+    },
+    {
+     "KS": "十号楼一护理单元",
+     "出院人数": 346,
+     "占用床日": 1536
+    },
+    {
+     "KS": "心肺中心东六护理单元",
+     "出院人数": 87,
+     "占用床日": 807
+    },
+    {
+     "KS": "心肺中心东七护理单元",
+     "出院人数": 65,
+     "占用床日": 468
+    },
+    {
+     "KS": "心肺中心东四护理单元",
+     "出院人数": 221,
+     "占用床日": 1394
+    },
+    {
+     "KS": "心肺中心东五护理单元",
+     "出院人数": 117,
+     "占用床日": 1125
+    },
+    {
+     "KS": "心肺中心呼吸重症护理单元",
+     "出院人数": 11,
+     "占用床日": 405
+    },
+    {
+     "KS": "心肺中心西六护理单元",
+     "出院人数": 206,
+     "占用床日": 687
+    },
+    {
+     "KS": "心肺中心西七护理单元",
+     "出院人数": 150,
+     "占用床日": 901
+    },
+    {
+     "KS": "心肺中心西四护理单元",
+     "出院人数": 210,
+     "占用床日": 1355
+    },
+    {
+     "KS": "心肺中心西五护理单元",
+     "出院人数": 133,
+     "占用床日": 1093
+    },
+    {
+     "KS": "综合ICU护理单元",
+     "出院人数": 24,
+     "占用床日": 402
+    }
+   ]
+  },
+  "ds351.Oct.levels": {
+   "http": 200,
+   "sec": 3.3,
+   "rows": 1,
+   "err": "",
+   "data": [
+    {
+     "特级护理": 41,
+     "病危": 9,
+     "病重": 28,
+     "普通护理": 425,
+     "二级护理": 720,
+     "三级护理": 0
+    }
+   ]
+  },
+  "recon_detail_vs_kpi": {
+   "byKS_sum": 5315,
+   "kpi_disch": 5315,
+   "equal": true,
+   "units": 39
+  }
+ },
+ "charts_by_ds": {
+  "350": [
+   390,
+   391,
+   334
+  ],
+  "355": [
+   288
+  ],
+  "352": [
+   344
+  ],
+  "349": [
+   343
+  ],
+  "351": [
+   289
+  ]
+ },
+ "gamma_dash_ctx": {
+  "350": {
+   "http": 403,
+   "chart": 390,
+   "dashboard": 74,
+   "body": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 350, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"li"
+  },
+  "351": {
+   "http": 403,
+   "chart": 289,
+   "dashboard": 42,
+   "body": "{\"errors\": [{\"message\": \"This endpoint requires the datasource 351, database or `all_datasource_access` permission\", \"error_type\": \"DATASOURCE_SECURITY_ACCESS_ERROR\", \"level\": \"warning\", \"extra\": {\"li"
+  }
+ }
+}

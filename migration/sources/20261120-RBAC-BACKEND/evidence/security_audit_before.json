@@ -1,0 +1,123 @@
+{
+  "batch": "20261120-RBAC-BACKEND",
+  "stage": "0-before",
+  "audit_time": "2026-11-18 13:30-13:45 (server local)",
+  "baseline_counts": {
+    "ab_role": 344, "ab_user_role": 4767, "dashboard_roles": 51,
+    "dashboards_total": 53, "dashboards_published": 51,
+    "datasets": 78, "users_total": 2383, "users_active": 2383,
+    "rls_filters": 0, "max_ab_role_id": 345, "max_ab_user_role_id": 4769
+  },
+  "backup_evidence": {
+    "server_path": "/home/superset/migration-private/20261120-RBAC-BACKEND/before/rbac_tables_before.sql.gz",
+    "sha256": "34dac5e65fb8eaea7119543792c320a907774c2642aae4959f1c4f154aa76970",
+    "bytes_gz": 60302, "bytes_uncompressed": 273185,
+    "tables_included": ["ab_role","ab_permission","ab_view_menu","ab_permission_view","ab_permission_view_role","ab_user_role","dashboard_roles","dashboards","row_level_security_filters","rls_filter_roles","rls_filter_tables"],
+    "table_rows": {"ab_role":344,"ab_permission":86,"ab_view_menu":412,"ab_permission_view":544,"ab_permission_view_role":415,"ab_user_role":4767,"dashboard_roles":51,"rls_filter_roles":0,"rls_filter_tables":0,"row_level_security_filters":0},
+    "full_state_json_server": "/home/superset/migration-private/20261120-RBAC-BACKEND/before/rbac_state_full.json",
+    "full_state_json_sha256": "da205bfa09a8cc3ebd4041d2d1a53a6511cecfc8bfd60083645bd9e093923930",
+    "full_state_json_local_copy": "migration/sources/20261120-RBAC-BACKEND/before/rbac_state_full.json"
+  },
+  "builtin_roles_audit": {
+    "Gamma": {
+      "id": 4, "members": 2382, "perm_count": 36,
+      "verdict": "PASS-收敛(2026-10-05已收敛,无 all_datasource_access/all_database_access/all_query_access/can_sqllab/can_execute_sql_query)",
+      "retained_export_perms": ["can_csv on Superset", "can_export on Chart", "can_export on Dashboard"],
+      "member_note": "2301 数字工号 + 81 非工号遗留接口账号(MZ101/W00001/task/fxgzh* 等,旧HIS接口账号,本批不触碰) + 1 个带制表符的异常用户名 '003843\\t'(同步历史脏数据,登记不动)"
+    },
+    "Public": {"id": 2, "members": 0, "perm_count": 0, "verdict": "PASS-空角色无任何业务权限"},
+    "Alpha": {"id": 3, "members": 0, "perm_count": 117, "verdict": "PASS-零成员,无人挂载"},
+    "sql_lab": {"id": 5, "members": 0, "perm_count": 30, "verdict": "PASS-零成员,无人挂载"},
+    "Admin": {"id": 1, "members": 1, "member": "admin", "verdict": "PASS-仅 admin 一个成员"},
+    "人工冻结": {"verdict": "角色当前不存在于 ab_role(冻结机制未启用),无成员可扰动"}
+  },
+  "critical_findings": [
+    "F1 大锅饭实锤: Gamma 直接绑 35 张业务看板(25-33,35-46,48,53-60,72-75,34),全院 2382 名员工登录即可看全院运营/绩效/月报并导出",
+    "F2 权限模型实证: FEATURE_FLAGS.DASHBOARD_RBAC=True → 看板可达即图表数据可查;全系统仅 6 条 datasource_access(341:ds4; 344:ds279/321; 345:ds276/332/333),Gamma 日常看板数据全靠 dashboard RBAC 通道,无需每角色配数据集权限也能出数",
+    "F3 343(抗菌办)当前 0 条 datasource_access: 61-70 页数据集(363-372)全部随图表挂看板,靠 dashboard RBAC 通道运行;本批按模板补全(不破坏现有访问)",
+    "F4 原生筛选字典数据集需显式授权: 37→nf353; 51/52→nf360/362; 58→nf353/359; 59→nf359/361; 75→nf351; 这些字典集若不配 datasource_access,角色打开页面下拉筛选 403",
+    "F5 FAB 关联表无自增序列(仅 dashboard_roles 有 seq): ab_user_role/ab_role/ab_view_menu 等一律走 REST API 写入,严禁裸 SQL INSERT",
+    "F6 写通道三件套(全部有生产实证): 建角色 POST /api/v1/security/roles/; 绑看板 PUT /api/v1/dashboard/<id> body {\"roles\":[ids]}(/roles 子端点 404); 授数据集 PUT /api/v1/dataset/<id> body {\"table_name\":...,\"roles\":[rids]}(grant_access.py 同款,须先读现值合并防覆盖 341/344/345 既有绑定)"
+  ],
+  "databases": {"1": "ODS", "2": "HIS实库"},
+  "dept_role_inventory": {
+    "total_dept_roles": 335,
+    "csv_local": "migration/sources/20261120-RBAC-BACKEND/evidence/全院HIS科室列表与人数统计-脱敏.csv",
+    "key_functional_depts": [
+      {"role_id": 7,  "role_name": "科室_信息网络中心（0504）",   "active": 27, "note": "信息科"},
+      {"role_id": 14, "role_name": "科室_护理部（0104）",        "active": 19, "note": "职能护理部(区别于几十个护理单元)"},
+      {"role_id": 185,"role_name": "科室_护理办公室（010401）",  "active": 6},
+      {"role_id": 9,  "role_name": "科室_医务部（0103）",        "active": 17},
+      {"role_id": 217,"role_name": "科室_医务办公室（010301）",   "active": 3},
+      {"role_id": 27, "role_name": "科室_门诊部（0112）",        "active": 4,  "note": "职能门诊部"},
+      {"role_id": 29, "role_name": "科室_门诊办公室（011201）",   "active": 4},
+      {"role_id": 10, "role_name": "科室_质量控制办公室（0125）", "active": 3,  "note": "质控科"},
+      {"role_id": 228,"role_name": "科室_医疗质量管理办公室（010304）", "active": 1},
+      {"role_id": 120,"role_name": "科室_病案室（010303）",      "active": 16},
+      {"role_id": 131,"role_name": "科室_统计室（050402）",      "active": 1},
+      {"role_id": 262,"role_name": "科室_发展运营部（0128）",    "active": 9,  "note": "运营/绩效口"},
+      {"role_id": 269,"role_name": "科室_医院办公室（0101）",    "active": 6,  "note": "院办"},
+      {"role_id": 26, "role_name": "科室_办公室（010101）",       "active": 6},
+      {"role_id": 248,"role_name": "科室_行政管理（01）",        "active": 6},
+      {"role_id": 18, "role_name": "科室_医疗保险办公室（0108）", "active": 21},
+      {"role_id": 63, "role_name": "科室_感染办（010302）",      "active": 8}
+    ]
+  },
+  "existing_report_roles_before": [
+    {"id": 341, "name": "报表授权_病案离院明细", "members": 1, "member_usernames": ["001283"], "dashboards": [2], "datasets": [4]},
+    {"id": 343, "name": "报表授权_抗菌办", "members": 1, "member_usernames": ["001643"], "dashboards": [61,62,63,64,65,66,67,68,69,70], "datasets": []},
+    {"id": 344, "name": "报表授权_门急诊患者明细", "members": 0, "dashboards": [47,49], "datasets": [279,321]},
+    {"id": 345, "name": "报表授权_手术明细提取", "members": 0, "dashboards": [50,51,52], "datasets": [276,332,333]}
+  ],
+  "dashboard_role_binding_before": "见 before/rbac_state_full.json dashboards[].roles;Gamma 35 张绑定清单见 gamma_bound_dashboards",
+  "gamma_bound_dashboards": [
+    [25,"统计报表·月报"],[26,"护理部报表"],[27,"统计报表·门诊"],[28,"统计报表·急诊"],[29,"统计报表·手术"],
+    [30,"统计报表·门诊流量监测"],[31,"统计报表·绩效考核监测"],[32,"月工作报表（新）"],[33,"质控科报表"],
+    [34,"统计报表目录"],[35,"月工作报表（二）新"],[36,"病区工作日报表"],[37,"手术量统计"],[38,"报表科室维护（只读）"],
+    [39,"检查按开单科室查询人次"],[40,"床旁结算工作量"],[41,"护理工作量月报表"],[42,"护理工作量日报表"],
+    [43,"护理单元工作量"],[44,"月上报数据"],[45,"医院医疗工作月报表"],[46,"医院绩效工作月报表"],[48,"责任组门诊报表"],
+    [53,"门诊采血人次时段统计"],[54,"门诊取药人次时段统计"],[55,"门诊缴费人次查询"],[56,"门诊挂号量时段统计"],
+    [57,"门诊超声流量监测"],[58,"检查人次按开单科室统计"],[59,"检查人次按执行科室统计（门诊）"],[60,"绩效考核暨高质量发展监测指标情况"],
+    [72,"全院医疗运营核心指标总览（BI 驾驶舱）"],[73,"门急诊流量与窗口负荷监测中心（BI 驾驶舱）"],
+    [74,"手术与住院医疗质量可视化分析（BI 驾驶舱）"],[75,"全院护理工作量与病区床位效率分析"]
+  ],
+  "dashboard_dataset_map": {
+    "2": {"slices": [4], "nf": [4]},
+    "32": {"slices": [338,347], "nf": [338,347]},
+    "35": {"slices": [348], "nf": [348]},
+    "36": {"slices": [344], "nf": [344]},
+    "37": {"slices": [345], "nf": [345,353]},
+    "38": {"slices": [346,349], "nf": []},
+    "39": {"slices": [281], "nf": [281]},
+    "40": {"slices": [283], "nf": [283]},
+    "41": {"slices": [350], "nf": [350]},
+    "42": {"slices": [351,352], "nf": [351,352]},
+    "43": {"slices": [355], "nf": [355]},
+    "44": {"slices": [356], "nf": [356]},
+    "45": {"slices": [357], "nf": [357]},
+    "46": {"slices": [358], "nf": [358]},
+    "47": {"slices": [279], "nf": [279]},
+    "48": {"slices": [330], "nf": [330]},
+    "49": {"slices": [321], "nf": [321]},
+    "50": {"slices": [276], "nf": [276]},
+    "51": {"slices": [332], "nf": [360,362]},
+    "52": {"slices": [333], "nf": [360,362]},
+    "53": {"slices": [322], "nf": [322]},
+    "54": {"slices": [323], "nf": [323]},
+    "55": {"slices": [324], "nf": [324]},
+    "56": {"slices": [325], "nf": [325]},
+    "57": {"slices": [326], "nf": [326]},
+    "58": {"slices": [336], "nf": [359,353]},
+    "59": {"slices": [337], "nf": [359,361]},
+    "60": {"slices": [329], "nf": [329]},
+    "61": {"slices": [363], "nf": [363]}, "62": {"slices": [364], "nf": [364]},
+    "63": {"slices": [365], "nf": [365]}, "64": {"slices": [366], "nf": [366]},
+    "65": {"slices": [367], "nf": [367]}, "66": {"slices": [368], "nf": [368]},
+    "67": {"slices": [369], "nf": [369]}, "68": {"slices": [370], "nf": [370]},
+    "69": {"slices": [371], "nf": [371]}, "70": {"slices": [372], "nf": [372]},
+    "72": {"slices": [338,347,348,374], "nf": [338,347,348,374]},
+    "73": {"slices": [322,324,325,326], "nf": [322,324,325,326]},
+    "74": {"slices": [345,350,373], "nf": [345,350,373]},
+    "75": {"slices": [350,375], "nf": [350,351,375]}
+  }
+}

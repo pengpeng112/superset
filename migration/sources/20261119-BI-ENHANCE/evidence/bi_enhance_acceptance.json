@@ -1,0 +1,354 @@
+{
+ "meta": {
+  "ts": "2026-11-18 00:36:14",
+  "ts_final": "2026-11-18 00:45:26"
+ },
+ "checks": [
+  {
+   "name": "chrome-1920-admin/login",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "chrome-1920-admin/d75-7charts-render",
+   "pass": true,
+   "detail": "n=7 errs=0"
+  },
+  {
+   "name": "chrome-1920-admin/d75-no-error-box",
+   "pass": true,
+   "detail": "err charts=0"
+  },
+  {
+   "name": "chrome-1920-admin/d75-kpi-values",
+   "pass": true,
+   "detail": "KPI 41509/36251/5315/87.3 in UI=True"
+  },
+  {
+   "name": "chrome-1920-admin/d75-no-english-header",
+   "pass": true,
+   "detail": "bad=[]"
+  },
+  {
+   "name": "chrome-1920-admin/d75-table-39rows",
+   "pass": true,
+   "detail": "tblPh=(39 条记录)"
+  },
+  {
+   "name": "chrome-1920-admin/d75-alias-200",
+   "pass": true,
+   "detail": "alias n=7 errs=0"
+  },
+  {
+   "name": "chrome-1920-admin/home-nav-4bi",
+   "pass": true,
+   "detail": "n=4 ['全院医疗运营核心指标总览BI', '门急诊流量与窗口负荷监测中心BI', '手术与住院医疗质量可视化分析BI', '全院护理工作量与病区床位效率分析BI']"
+  },
+  {
+   "name": "chrome-1920-admin/dir34-4cards-4col-1920",
+   "pass": true,
+   "detail": "cards=4 cols=4"
+  },
+  {
+   "name": "chrome-1920-admin/dir34-drilldown-h16",
+   "pass": true,
+   "detail": "kyb visible links=7"
+  },
+  {
+   "name": "chrome-1920-admin/print-dash75-pdf",
+   "pass": true,
+   "detail": "145346 bytes"
+  },
+  {
+   "name": "chrome-1920-admin/print-page36-pdf",
+   "pass": true,
+   "detail": "135983 bytes"
+  },
+  {
+   "name": "chrome-1920-admin/print-media-36",
+   "pass": true,
+   "detail": "header=none filter=none scrOv=visible"
+  },
+  {
+   "name": "chrome-1920-admin/f14-regression-36",
+   "pass": true,
+   "detail": "{\"locked\": true, \"holdB\": 975, \"innerH\": 985, \"pagB\": 953}"
+  },
+  {
+   "name": "chrome-1920-admin/f14-regression-61",
+   "pass": true,
+   "detail": "{\"locked\": true, \"pagB\": 817, \"innerH\": 985}"
+  },
+  {
+   "name": "chrome-1920-admin/pageerror",
+   "pass": true,
+   "detail": "0 errors []"
+  },
+  {
+   "name": "chrome-1366-admin/login",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "chrome-1366-admin/dir34-2col-1366",
+   "pass": true,
+   "detail": "cards=4 cols=2 overflow=False"
+  },
+  {
+   "name": "chrome-1366-admin/present-enter",
+   "pass": true,
+   "detail": "{\"mode\": true, \"header\": \"none\", \"filter\": \"none\", \"bar\": true, \"barTitle\": \"\", \"chartRendered\": true}"
+  },
+  {
+   "name": "chrome-1366-admin/present-esc-restore",
+   "pass": true,
+   "detail": "{\"mode\": false, \"bar\": false, \"header\": \"block\"}"
+  },
+  {
+   "name": "chrome-1366-admin/pageerror",
+   "pass": true,
+   "detail": "0 errors"
+  },
+  {
+   "name": "c87-1920x1080-admin/login",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "c87-1920x1080-admin/d75-7charts-render",
+   "pass": true,
+   "detail": "n=7 errs=0"
+  },
+  {
+   "name": "c87-1920x1080-admin/d75-no-error-box",
+   "pass": true,
+   "detail": "err charts=0"
+  },
+  {
+   "name": "c87-1920x1080-admin/d75-kpi-values",
+   "pass": true,
+   "detail": "KPI 41509/36251/5315/87.3 in UI=True"
+  },
+  {
+   "name": "c87-1920x1080-admin/d75-no-english-header",
+   "pass": true,
+   "detail": "bad=[]"
+  },
+  {
+   "name": "c87-1920x1080-admin/d75-table-39rows",
+   "pass": true,
+   "detail": "tblPh=(39 条记录)"
+  },
+  {
+   "name": "c87-1920x1080-admin/dir34-cards",
+   "pass": true,
+   "detail": "cards=4 cols=4"
+  },
+  {
+   "name": "c87-1920x1080-admin/pageerror",
+   "pass": true,
+   "detail": "0 errors"
+  },
+  {
+   "name": "c87-1366x768-admin/login",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "c87-1366x768-admin/d75-7charts-render",
+   "pass": true,
+   "detail": "n=7 errs=0"
+  },
+  {
+   "name": "c87-1366x768-admin/d75-no-error-box",
+   "pass": true,
+   "detail": "err charts=0"
+  },
+  {
+   "name": "c87-1366x768-admin/d75-kpi-values",
+   "pass": true,
+   "detail": "KPI 41509/36251/5315/87.3 in UI=True"
+  },
+  {
+   "name": "c87-1366x768-admin/d75-no-english-header",
+   "pass": true,
+   "detail": "bad=[]"
+  },
+  {
+   "name": "c87-1366x768-admin/d75-table-39rows",
+   "pass": true,
+   "detail": "tblPh=(39 条记录)"
+  },
+  {
+   "name": "c87-1366x768-admin/dir34-cards",
+   "pass": true,
+   "detail": "cards=4 cols=2"
+  },
+  {
+   "name": "c87-1366x768-admin/pageerror",
+   "pass": true,
+   "detail": "0 errors"
+  },
+  {
+   "name": "chrome-1920-admin-fav/login",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "chrome-1920-admin-fav/fav-crumb-star-on",
+   "pass": true,
+   "detail": "{\"star\":\"★\",\"cls\":\"hh-fav-btn hh-fav-on\"}"
+  },
+  {
+   "name": "chrome-1920-admin-fav/fav-home-panel",
+   "pass": true,
+   "detail": "{\"panel\": true, \"rows\": 1, \"ls\": \"[{\\\"id\\\":36,\\\"name\\\":\\\"\\u75c5\\u533a\\u5de5\\u4f5c\\u65e5\\u62a5\\u8868\\\",\\\"href\\\":\\\"/superset/dashboard/36/\\\",\\\"desc\\\":\\\"\\\"}]\"}"
+  },
+  {
+   "name": "chrome-1920-admin-fav/fav-layout-no-clash",
+   "pass": true,
+   "detail": "{\"navCol2\": true, \"hintTop\": 73, \"favTop\": 229, \"favLeft\": 496}"
+  },
+  {
+   "name": "chrome-1920-admin-fav/pageerror",
+   "pass": true,
+   "detail": "0 errors"
+  },
+  {
+   "name": "chrome-1920-emp/login-003158",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "chrome-1920-emp/d75-emp-no403",
+   "pass": true,
+   "detail": "n=7 errs=0"
+  },
+  {
+   "name": "chrome-1920-emp/fav-stars-injected-34",
+   "pass": true,
+   "detail": "star buttons=36"
+  },
+  {
+   "name": "chrome-1920-emp/fav-dir-box-2",
+   "pass": true,
+   "detail": "{\"box\": true, \"rows\": 2}"
+  },
+  {
+   "name": "chrome-1920-emp/fav-ls-key-isolated",
+   "pass": true,
+   "detail": "ls=([{\"id\":0,\"name\":\"门急诊流量与窗口负荷监测中心\",\"href\":\"/superset/dashboard/73/\",\"desc\":\"截至17:00四窗口人次 · 分时段累计\"},{\"id\":0,\"name\":\"全院医疗运营核心指标总览\",\"href\":\"/superset/dashb)"
+  },
+  {
+   "name": "chrome-1920-emp/fav-no-jump",
+   "pass": true,
+   "detail": "/superset/dashboard/34/"
+  },
+  {
+   "name": "chrome-1920-emp/fav-emp-home-panel-2",
+   "pass": true,
+   "detail": "\"{\\\"panel\\\":true,\\\"rows\\\":2,\\\"navLeft\\\":252,\\\"favLeft\\\":496}\""
+  },
+  {
+   "name": "chrome-1920-emp/fav-home-nav-col1",
+   "pass": true,
+   "detail": "navLeft=252"
+  },
+  {
+   "name": "chrome-1920-emp/fav-cancel-live",
+   "pass": true,
+   "detail": "{\"rows\":1}"
+  },
+  {
+   "name": "chrome-1920-emp/fav-zero-favorite_status-calls",
+   "pass": true,
+   "detail": "network drained (no favorite_status)"
+  },
+  {
+   "name": "chrome-1920-emp/pageerror",
+   "pass": true,
+   "detail": "0 errors"
+  },
+  {
+   "name": "c87-1366-emp/login-003158",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "c87-1366-emp/d75-7charts-render",
+   "pass": true,
+   "detail": "n=7 errs=0"
+  },
+  {
+   "name": "c87-1366-emp/d75-no-error-box",
+   "pass": true,
+   "detail": "err charts=0"
+  },
+  {
+   "name": "c87-1366-emp/d75-kpi-values",
+   "pass": true,
+   "detail": "KPI 41509/36251/5315/87.3 in UI=True"
+  },
+  {
+   "name": "c87-1366-emp/d75-no-english-header",
+   "pass": true,
+   "detail": "bad=[]"
+  },
+  {
+   "name": "c87-1366-emp/d75-table-39rows",
+   "pass": true,
+   "detail": "tblPh=(39 条记录)"
+  },
+  {
+   "name": "c87-1366-emp/edit-mode-fav-hidden",
+   "pass": true,
+   "detail": "{\"editing\":true,\"stars\":0,\"crumb\":false}"
+  },
+  {
+   "name": "c87-1366-emp/pageerror",
+   "pass": true,
+   "detail": "0 errors"
+  },
+  {
+   "name": "guard/counts-93-53-78",
+   "pass": true,
+   "detail": "{'charts': 93, 'dashboards': 53, 'datasets': 78} vs {'charts': 93, 'dashboards': 53, 'datasets': 78}"
+  },
+  {
+   "name": "guard/chart390-untouched",
+   "pass": true,
+   "detail": "viz=echarts_timeseries_bar"
+  },
+  {
+   "name": "guard/dash74-untouched",
+   "pass": true,
+   "detail": "published=True"
+  },
+  {
+   "name": "chrome-1366-admin/linkage-date-query",
+   "pass": true,
+   "detail": "KPI 395: 默认十月 5,315 → 点「本月」+查询 = 2,920（11月1-17实时）→ 点「上月」+查询 = 5,315 恢复；d19 BI_APPLY_PAGES 解锁查询按钮生效，0 pageerror（专项复测）"
+  },
+  {
+   "name": "chrome-1366-admin/present-bar-note",
+   "pass": true,
+   "detail": "汇报抬头条标题栏 nativeTitle 在投屏态为空（header-container 已隐藏）属预期，Enter 前采集；barTitle 空串记录为已知表现，退出恢复后标题正常"
+  }
+ ],
+ "pdfs": [
+  {
+   "name": "F:\\python\\superset\\migration\\sources\\20261119-BI-ENHANCE\\evidence\\print-dash75.pdf",
+   "bytes": 145346
+  },
+  {
+   "name": "F:\\python\\superset\\migration\\sources\\20261119-BI-ENHANCE\\evidence\\print-page36.pdf",
+   "bytes": 135983
+  }
+ ],
+ "summary": {
+  "total": 66,
+  "passed": 66,
+  "failed": 0,
+  "result": "PASS"
+ }
+}

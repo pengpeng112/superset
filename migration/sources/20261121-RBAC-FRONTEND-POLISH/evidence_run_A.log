@@ -1,0 +1,67 @@
+003158 起点角色: ['Gamma', '科室_微生物实验室（050205）']
+[PASS] PRE 003158 起点无报表授权角色 ['Gamma', '科室_微生物实验室（050205）']
+[PASS] A1 A/chrome-1920x1080 零权限侧栏收起 nonav=True nav=False
+[PASS] A1 A/chrome-1920x1080 无BI死链/无分类行 [][]
+[PASS] A1 A/chrome-1920x1080 引导卡在场含工号 当前账号暂未开通统计报表查阅权限工号 003158：如需查看科室日常统计、管理月报、BI 驾驶舱或专项明细，请联系信息科为您分配对应的【报表授权】角色。（您仍可
+[PASS] A1 A/chrome-1920x1080 改密按钮在场/搜索框隐藏 pwd=True search=False
+[PASS] A1 A/chrome-1920x1080 最近使用仅剩目录外壳可见 vis=['统计报表目录']
+[PASS] A1 A/chrome-1920x1080 首页 pageerror=0 []
+[PASS] A1 A/chrome-1920x1080 首页 无未预期404 404s=[] expect=[]
+[PASS] A2 A/chrome-1920x1080 34零分类零驾驶舱 []
+[PASS] A2 A/chrome-1920x1080 34其他专题隐藏/引导卡在场 sp=True guide=True
+[PASS] A2 A/chrome-1920x1080 目录34 pageerror=0 []
+[PASS] A2 A/chrome-1920x1080 目录34 无未预期404 404s=[] expect=[]
+[PASS] A3 A/chrome-1920x1080 /46 提示卡点名【报表授权_绩效考核管理】 该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_绩效考核管理】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。
+[PASS] A3 A/chrome-1920x1080 /46 pageerror=0 []
+[PASS] A3 A/chrome-1920x1080 /46 无未预期404 404s=['http://127.0.0.1:18180/superset/dashboard/46/', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0.0.1:18180/api/v1/dashboard/46', 'http://127.0
+[PASS] A3 A/chrome-1920x1080 /72 提示卡点名【报表授权_院领导与运营驾驶舱】 该报表需开通对应的角色授权后方可查看。请联系信息科为您开通以下角色：【报表授权_院领导与运营驾驶舱】。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。
+[PASS] A3 A/chrome-1920x1080 /72 pageerror=0 []
+[PASS] A3 A/chrome-1920x1080 /72 无未预期404 404s=['http://127.0.0.1:18180/superset/dashboard/72/', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0.0.1:18180/api/v1/dashboard/72', 'http://127.0
+Traceback (most recent call last):
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 725, in <module>
+    main()
+    ~~~~^^
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 642, in main
+    run_combo_with_retry(engine, exe, w, h, "A", VERIFY_USER, VERIFY_PWD,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         lambda s_, t_, e_=None: scenario_A(s_, t_))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 379, in run_combo_with_retry
+    assert s.tab.login(username, password), "%s login failed" % username
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "F:\python\superset\migration\sources\20261112-WARMUP-PERF\wb_run.py", line 116, in login
+    if self.eval("document.readyState") == "complete":
+       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\python\superset\migration\sources\20261112-WARMUP-PERF\wb_run.py", line 101, in eval
+    r = self.send("Runtime.evaluate", {"expression": expr, "returnByValue": True})
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 100, in patched
+    r = orig_send(method, params, timeout)
+  File "F:\python\superset\migration\sources\20261112-WARMUP-PERF\wb_run.py", line 84, in send
+    raw = self.ws.recv()
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 429, in recv
+    opcode, data = self.recv_data()
+                   ~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 457, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+                    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 478, in recv_data_frame
+    frame = self.recv_frame()
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 515, in recv_frame
+    return self.frame_buffer.recv_frame()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_abnf.py", line 377, in recv_frame
+    self.recv_header()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_abnf.py", line 331, in recv_header
+    header = self.recv_strict(2)
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_abnf.py", line 420, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 645, in _recv
+    return recv(self.sock, bufsize)
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_socket.py", line 127, in recv
+    bytes_ = _recv()
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_socket.py", line 99, in _recv
+    return sock.recv(bufsize)
+           ~~~~~~~~~^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+A_EXIT=1

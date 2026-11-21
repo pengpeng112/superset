@@ -1,0 +1,133 @@
+{
+ "created_at": "2026-11-17 23:39:27",
+ "batch": "20261119-BI-ENHANCE",
+ "charts": [
+  {
+   "type": "chart",
+   "id": 393,
+   "uuid": "551e6e8f-c766-4ffd-b488-d104265e4043",
+   "title": "【BI】实际开放总床日数",
+   "preexisting": true
+  },
+  {
+   "type": "chart",
+   "id": 394,
+   "uuid": "42049b4a-94b0-40b6-9b62-6c97b889ed1c",
+   "title": "【BI】实际占用总床日数",
+   "preexisting": true
+  },
+  {
+   "type": "chart",
+   "id": 395,
+   "uuid": "8debd3b9-1e6b-4ce5-8473-efb8c97e8620",
+   "title": "【BI】出院总人数",
+   "preexisting": true
+  },
+  {
+   "type": "chart",
+   "id": 396,
+   "uuid": "a67cb982-3b58-4997-a350-d1ad11c60cbd",
+   "title": "【BI】病床使用率",
+   "preexisting": true
+  },
+  {
+   "type": "chart",
+   "id": 397,
+   "uuid": "800fe2fc-a41b-4672-9de7-7059244bf13d",
+   "title": "【BI】各护理单元出院人数 TOP15",
+   "preexisting": true
+  },
+  {
+   "type": "chart",
+   "id": 398,
+   "uuid": "20f96905-d5f7-4736-b6db-eb7c6016a037",
+   "title": "【BI】护理级别人日结构",
+   "preexisting": true
+  },
+  {
+   "type": "chart",
+   "id": 399,
+   "uuid": "49236184-cd7a-436e-acf5-314705ebdf9e",
+   "title": "【BI】各护理单元工作量与床位效率明细汇总表",
+   "preexisting": true
+  }
+ ],
+ "dashboards": [
+  {
+   "type": "dashboard",
+   "id": 75,
+   "uuid": "f0bb32e5-0cba-48bf-961e-ff0f2584cb1b",
+   "slug": "bi-nursing-bed",
+   "title": "全院护理工作量与病区床位效率分析",
+   "roles": [
+    4
+   ],
+   "resumed": true,
+   "published": true,
+   "roles_put_status": 404
+  }
+ ],
+ "gamma_grants": [],
+ "precheck": [
+  {
+   "name": "KPI 开放床日",
+   "dataset": 350,
+   "http": 200,
+   "rows": 1,
+   "seconds": 0.7
+  },
+  {
+   "name": "KPI 占用床日",
+   "dataset": 350,
+   "http": 200,
+   "rows": 1,
+   "seconds": 0.7
+  },
+  {
+   "name": "KPI 出院",
+   "dataset": 350,
+   "http": 200,
+   "rows": 1,
+   "seconds": 0.8
+  },
+  {
+   "name": "KPI 使用率",
+   "dataset": 350,
+   "http": 200,
+   "rows": 1,
+   "seconds": 0.7
+  },
+  {
+   "name": "TOP15 柱图",
+   "dataset": 350,
+   "http": 200,
+   "rows": 15,
+   "seconds": 0.7
+  },
+  {
+   "name": "饼图级别",
+   "dataset": 351,
+   "http": 200,
+   "rows": 1,
+   "seconds": 2.7
+  },
+  {
+   "name": "汇总表",
+   "dataset": 350,
+   "http": 200,
+   "rows": 40,
+   "seconds": 0.7
+  }
+ ],
+ "new_datasets": [
+  {
+   "type": "dataset",
+   "id": 375,
+   "table_name": "BI_护理级别人日构成长表",
+   "sql_file": "evidence/ds_nursing_levels.sql",
+   "pattern": "ds374 同构（Jinja头+内联视图+标签CROSS JOIN+CASE展开）",
+   "cold_query_seconds": 2.5,
+   "cold_query_rows": 5
+  }
+ ]
+}

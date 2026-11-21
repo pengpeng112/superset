@@ -1,0 +1,126 @@
+{
+ "filter_bar_orientation": "HORIZONTAL",
+ "native_filter_configuration": [
+  {
+   "id": "NATIVE-FILTER-BI3-DATE",
+   "name": "统计日期",
+   "filterType": "filter_time",
+   "targets": [
+    {
+     "datasetId": 345,
+     "column": {
+      "name": "STAT_BEGIN"
+     }
+    },
+    {
+     "datasetId": 350,
+     "column": {
+      "name": "STAT_BEGIN"
+     }
+    },
+    {
+     "datasetId": 373,
+     "column": {
+      "name": "STAT_BEGIN"
+     }
+    }
+   ],
+   "defaultDataMask": {
+    "extraFormData": {},
+    "filterState": {},
+    "ownState": {}
+   },
+   "cascadeParentIds": [],
+   "scope": {
+    "rootPath": [
+     "ROOT_ID"
+    ],
+    "excluded": []
+   },
+   "controlValues": {
+    "enableEmptyFilter": false
+   },
+   "type": "NATIVE_FILTER",
+   "chartsInScope": [
+    386,
+    387,
+    389,
+    390,
+    391,
+    392
+   ],
+   "tabsInScope": [],
+   "description": "选择日期范围后点击“查询”，全部图表联动刷新。"
+  }
+ ],
+ "timed_refresh_immune_slices": [],
+ "expanded_slices": {},
+ "refresh_frequency": 0,
+ "color_scheme": "",
+ "label_colors": {},
+ "shared_label_colors": [],
+ "map_label_colors": {},
+ "color_scheme_domain": [],
+ "cross_filters_enabled": false,
+ "default_filters": "{}",
+ "chart_configuration": {
+  "386": {
+   "id": 386,
+   "crossFilters": {
+    "chartsInScope": [],
+    "scope": "global"
+   }
+  },
+  "387": {
+   "id": 387,
+   "crossFilters": {
+    "chartsInScope": [],
+    "scope": "global"
+   }
+  },
+  "389": {
+   "id": 389,
+   "crossFilters": {
+    "chartsInScope": [],
+    "scope": "global"
+   }
+  },
+  "390": {
+   "id": 390,
+   "crossFilters": {
+    "chartsInScope": [],
+    "scope": "global"
+   }
+  },
+  "391": {
+   "id": 391,
+   "crossFilters": {
+    "chartsInScope": [],
+    "scope": "global"
+   }
+  },
+  "392": {
+   "id": 392,
+   "crossFilters": {
+    "chartsInScope": [],
+    "scope": "global"
+   }
+  }
+ },
+ "global_chart_configuration": {
+  "chartsInScope": [
+   386,
+   387,
+   389,
+   390,
+   391,
+   392
+  ],
+  "scope": {
+   "excluded": [],
+   "rootPath": [
+    "ROOT_ID"
+   ]
+  }
+ }
+}

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# 生产日常巡检一键体检（20261112-WARMUP-PERF 批）。只读：不重启、不写库、不改配置。
+# 生产日常巡检一键体检（20261120-RBAC-BACKEND 批升 18 项）。只读：不重启、不写库、不改配置。
 # 供信息科随时执行：bash /home/superset/superset_home/scripts/superset_health_check.sh
 # 检查项：六容器 / 磁盘 / HIS 隧道 15215 / 02:00 备份(DONE+SHA256) / 06:00 同步 rc /
-#         06:15 缓存预热(耗时+成功率) / nginx.conf 挂载一致 / 5 个核心 JS 版本与 SHA256
+#         06:15 缓存预热(耗时+成功率) / nginx.conf 挂载一致 / 5 个核心 JS 版本与 SHA256 /
+#         9. RBAC 恒常（11 角色矩阵 / Gamma 仅外壳34 / 绑定63 / 授权66 / 受保护在位 / 序列无滞后）
 # 退出码：0 全绿；1 存在红项（⚠ 不影响退出码）。
 set -u
 G=0; R=0
@@ -118,6 +119,37 @@ for js in report-guards report-dates report-ui home-ui monthly-report; do
     bad "${js}.js 版本串或文件缺失（nginx.conf ver=${ver:-无}）"; miss=1
   fi
 done
+
+hdr "9. RBAC 恒常（20261120 批次终态）"
+PGPW=$(grep -E '^POSTGRES_PASSWORD=' .env | head -1 | cut -d= -f2-)
+rbac_line=$(docker exec -e PGPASSWORD="$PGPW" superset-postgres psql -U superset -d superset -tA -F'|' -c "
+SELECT
+  (SELECT count(*) FROM ab_role WHERE name LIKE '报表授权_%') AS rbac_roles,
+  (SELECT count(*) FROM dashboard_roles dr JOIN ab_role r ON r.id=dr.role_id WHERE r.name='Gamma' AND dr.dashboard_id<>34) AS gamma_extra,
+  (SELECT count(*) FROM dashboard_roles) AS dr_rows,
+  (SELECT count(*) FROM ab_permission_view_role pvr JOIN ab_permission_view pv ON pv.id=pvr.permission_view_id JOIN ab_permission p ON p.id=pv.permission_id JOIN ab_view_menu vm ON vm.id=pv.view_menu_id WHERE p.name='datasource_access' AND vm.name ~ '\(id:[0-9]+\)$') AS ds_access,
+  (SELECT count(*) FROM ab_user_role ur JOIN ab_user u ON u.id=ur.user_id JOIN ab_role r ON r.id=ur.role_id WHERE u.username='001283' AND r.name='报表授权_病案离院明细') AS prot1,
+  (SELECT count(*) FROM ab_user_role ur JOIN ab_user u ON u.id=ur.user_id JOIN ab_role r ON r.id=ur.role_id WHERE u.username='001643' AND r.name='报表授权_抗菌办') AS prot2,
+  (SELECT last_value FROM ab_user_role_id_seq) - (SELECT coalesce(max(id),0) FROM ab_user_role) AS seq1,
+  (SELECT last_value FROM ab_role_id_seq) - (SELECT coalesce(max(id),0) FROM ab_role) AS seq2,
+  (SELECT last_value FROM ab_permission_view_role_id_seq) - (SELECT coalesce(max(id),0) FROM ab_permission_view_role) AS seq3,
+  (SELECT last_value FROM ab_view_menu_id_seq) - (SELECT coalesce(max(id),0) FROM ab_view_menu) AS seq4,
+  (SELECT last_value FROM ab_permission_view_id_seq) - (SELECT coalesce(max(id),0) FROM ab_permission_view) AS seq5
+" 2>/dev/null)
+if [ -z "$rbac_line" ]; then
+  bad "RBAC 恒常查询失败（postgres 容器或 .env POSTGRES_PASSWORD 异常）"
+else
+  IFS='|' read -r n_roles gamma_extra dr_rows ds_access prot1 prot2 s1 s2 s3 s4 s5 <<EOF
+$rbac_line
+EOF
+  if [ "$n_roles" = "11" ] && [ "$gamma_extra" = "0" ] && [ "$dr_rows" = "63" ] \
+     && [ "$ds_access" = "66" ] && [ "$prot1" = "1" ] && [ "$prot2" = "1" ] \
+     && [ "$s1" -ge 0 ] && [ "$s2" -ge 0 ] && [ "$s3" -ge 0 ] && [ "$s4" -ge 0 ] && [ "$s5" -ge 0 ]; then
+    ok "RBAC 恒常：11 角色 / Gamma 仅外壳34 / 绑定 63 / 授权 66 / 受保护在位 / 5 序列无滞后（超前 +$s1）"
+  else
+    bad "RBAC 恒常异常：角色=$n_roles Gamma外看板=$gamma_extra 绑定=$dr_rows 授权=$ds_access 受保护=$prot1/$prot2 序列差=$s1/$s2/$s3/$s4/$s5（详见 全院角色矩阵与科室赋权操作手册.md 排障节）"
+  fi
+fi
 
 printf '\n========== 体检汇总：绿 %d / 红 %d ==========\n' "$G" "$R"
 [ "$R" -eq 0 ] && echo "全部通过 ✔" || echo "存在红项，请按上文提示处理 ✘"

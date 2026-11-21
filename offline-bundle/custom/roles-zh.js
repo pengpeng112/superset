@@ -1,4 +1,9 @@
-/* 医院角色管理中文显示。仅处理浏览器显示和只读查询，不改角色/权限标识。 */
+/* 医院角色管理中文显示。仅处理浏览器显示和只读查询，不改角色/权限标识。
+   20261121d2（RBAC-FRONTEND-POLISH 批）：新增 ROLE_SCOPE_DESC——为 11 个「报表授权_*」角色
+   （20261120-RBAC-BACKEND 建立）附一句简明管辖说明：/roles/list/ 角色列表行名称下方 12px
+   浅蓝辅助小字；编辑用户的角色多选下拉选项右侧附同款短标签（纯 DOM 显示层装饰，绝不改动
+   提交给后端的 role.name）。管辖看板清单依据 2026-11-21 生产 dashboard_roles 只读导出核对。
+   「人工冻结」为 001283/001643 专项的管理口径描述而非独立角色，无对应行。 */
 (function () {
   'use strict';
   function clearChildren(el){while(el.firstChild)el.removeChild(el.firstChild);}
@@ -52,6 +57,21 @@
     all_database_access:'全部数据库',all_datasource_access:'全部数据集',all_query_access:'全部查询'
   };
   var builtins = {Admin:'系统管理员',Alpha:'报表开发人员',Gamma:'普通报表用户',Public:'匿名访问',sql_lab:'SQL查询人员'};
+  /* 20261121d2：11 个报表授权_ 角色的管辖说明（信息科 1~2 人赋权时一眼看懂）。
+     看板编号与 20261120-RBAC-BACKEND 终态绑定一致；管理员新增/改绑看板后同步本字典。 */
+  var ROLE_SCOPE_DESC = {
+    '报表授权_病案离院明细': '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）',
+    '报表授权_抗菌办': '管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）',
+    '报表授权_门急诊患者明细': '管辖：47 门诊转住院途径 / 49 急诊分诊明细＋目录 27、28',
+    '报表授权_手术明细提取': '管辖：50 门诊手术 / 51 科室手术质量 / 52 住院手术提取＋目录 29',
+    '报表授权_院领导与运营驾驶舱': '管辖：72 全院运营 / 73 门急诊流量 / 74 手术质量 / 75 护理床位四大驾驶舱',
+    '报表授权_质控与全院月报': '管辖：32/35 月报、36 病区日报、37 手术统计、39 检查开单、44 月上报、45 医疗月报＋目录 25/29/33',
+    '报表授权_绩效考核管理': '管辖：40 床旁结算、46 绩效月报、58/59 检查统计、60 高质量发展监测＋目录 31',
+    '报表授权_护理部管理': '管辖：41 护理月报、42 护理日报、43 护理单元＋75 护理驾驶舱＋目录 26',
+    '报表授权_门诊与窗口管理': '管辖：48 责任组门诊、53–57 门诊流量五表＋73 门急诊驾驶舱＋目录 27/28/30',
+    '报表授权_临床科室日常统计': '管辖：36 病区日报、37 手术量、39 检查开单、41 护理月报＋目录 26/29/33',
+    '报表授权_系统字典维护': '管辖：38 报表科室维护（信息网络中心 BI 运维）'
+  };
   var categories = {managed:'常用角色',business:'业务授权',department:'科室数据范围',system:'系统内置',all:'全部角色'};
   function isRolePage() { return /^\/roles(?:\/|$)/.test(location.pathname); }
   function category() {
@@ -265,8 +285,60 @@
     style.textContent='.hospital-permission-editor{border:1px solid #d7e3ef;border-radius:8px;background:#fff;padding:12px;color:#35516c}.hp-tools{display:flex;align-items:center;flex-wrap:wrap}.hp-tools>*{margin:0 14px 8px 0}.hp-tools label input{margin-right:6px}.hp-layout nav button{margin-bottom:6px}.hp-permission input{margin-right:8px}.hp-tools input[type=search]{flex:1;min-width:210px;padding:8px 10px;border:1px solid #a8bdcf;border-radius:6px}.hp-tools label{display:flex;align-items:center}.hp-summary{color:#0e4c86}.hp-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:12px;margin-top:12px}.hp-layout nav{display:flex;flex-direction:column}.hp-layout nav button{padding:9px 10px;border:1px solid #d7e3ef;border-radius:6px;background:#f8fafc;color:#35516c;text-align:left;cursor:pointer}.hp-layout nav button[aria-pressed=true]{background:#e8f1fa;border-color:#0e4c86;color:#0e4c86;font-weight:600}.hp-count{margin:0 0 8px}.hp-list{max-height:310px;min-height:140px;overflow:auto;border:1px solid #e7edf3;border-radius:6px;padding:4px 10px}.hp-permission{display:flex;align-items:flex-start;padding:8px 0;border-bottom:1px solid #edf1f5;cursor:pointer;line-height:1.6}.hp-permission input{margin-top:5px;flex-shrink:0}.hp-permission>span{flex:1;overflow-wrap:anywhere}.hp-permission small{color:#637b91;white-space:nowrap}.hp-permission .hp-broad{color:#a3560b}.hp-note{font-size:12px;line-height:1.6;margin:10px 0 0;color:#637b91}@media(max-width:650px){.hp-layout{grid-template-columns:1fr}.hp-layout nav{flex-direction:row;flex-wrap:wrap}.hp-layout nav button{font-size:12px}.hp-permission small{display:none}}';
     document.head.appendChild(style);
   }
+  /* 20261121d2：管辖说明注入样式（角色列表行 + 用户编辑角色下拉选项，纯显示层） */
+  function installScopeStyles() {
+    if(document.getElementById('hospital-role-scope-style'))return;
+    var st=document.createElement('style');st.id='hospital-role-scope-style';
+    st.textContent='.hh-role-scope{margin-top:2px;font-size:12px;line-height:18px;color:#5f8bb4;font-weight:400;white-space:normal;word-break:break-all}'
+      +'.ant-table-tbody tr[data-test="table-row"] [data-test="table-row-cell"]{min-width:230px}'
+      +'.hh-role-scope-opt{display:block;margin-top:1px;font-size:11px;line-height:16px;color:#7fa3c4;font-weight:400;white-space:normal}';
+    document.head.appendChild(st);
+  }
+  /* 角色多选下拉选项短标签（/roles/list 与用户编辑页通用；不改提交值，仅 DOM 装饰） */
+  function decorateRoleOptions() {
+    var opts=document.querySelectorAll('.ant-select-item-option');
+    if(!opts.length)return;
+    installScopeStyles();
+    opts.forEach(function(opt){
+      var name=(opt.getAttribute('title')||'').trim();
+      var host=opt.querySelector('.ant-select-item-option-content')||opt;
+      var tag=host.querySelector('.hh-role-scope-opt');
+      if(!ROLE_SCOPE_DESC[name]){if(tag)tag.remove();return;}
+      if(!tag){
+        tag=document.createElement('span');tag.className='hh-role-scope-opt';
+        tag.textContent='· '+ROLE_SCOPE_DESC[name].replace(/^管辖：/,'');
+        host.appendChild(tag);
+      }
+    });
+  }
+  /* 20261121d2：/roles/list/ 实为 FAB 服务端渲染表格（第 3 列纯文本角色名，非 antd）——
+     逐行按名称单元格文本命中 ROLE_SCOPE_DESC 时，在名称单元格内追加管辖说明小字 */
+  function decorateFabRows() {
+    if(!/\/roles\/list/.test(location.pathname))return;
+    document.querySelectorAll('.table tbody tr').forEach(function(tr){
+      var cells=tr.cells;
+      if(!cells||cells.length<3)return;
+      /* 行结构（生产实测）：[0]选择框 [1]操作按钮组 [2]角色名(纯文本) [3]权限摘要 */
+      var td=cells[2];
+      /* 名称只取首次纯文本（缓存进 dataset），避免追加的管辖说明在重复渲染时混入名称匹配 */
+      if(!td.dataset.hospitalOriginal){
+        td.dataset.hospitalOriginal=(td.textContent||'').replace(/\s+/g,' ').trim();
+      }
+      var name=td.dataset.hospitalOriginal;
+      if(!name||name.length>60||td.querySelector('a,button'))return;
+      var scope=ROLE_SCOPE_DESC[name];
+      var sub=td.querySelector('.hh-role-scope');
+      if(scope){
+        installScopeStyles();
+        if(!sub){sub=document.createElement('div');sub.className='hh-role-scope';td.appendChild(sub);}
+        setText(sub,scope);
+      } else if(sub) sub.remove();
+    });
+  }
   function render() {
+    decorateRoleOptions();
     if(!isRolePage())return;
+    decorateFabRows();
     var permissionInput=document.getElementById('rolePermissions');
     if(permissionInput){installPermissionStyles();buildPermissionEditor(permissionInput);}
     if(permissionEditor && !permissionEditor.panel.isConnected)permissionEditor=null;
@@ -287,6 +359,14 @@
       cell.dataset.hospitalOriginal=original;
       var label=builtins[original] ? builtins[original]+'（'+original+'）' : original.startsWith('科室_') ? '科室范围 · '+original.slice(3) : original;
       setText(span,label);
+      /* 20261121d2：报表授权_ 角色行附管辖说明（12px 浅蓝小字，不撑破行高） */
+      var scope=ROLE_SCOPE_DESC[original];
+      var sub=cell.querySelector('.hh-role-scope');
+      if(scope){
+        installScopeStyles();
+        if(!sub){sub=document.createElement('div');sub.className='hh-role-scope';cell.appendChild(sub);}
+        setText(sub,scope);
+      } else if(sub) sub.remove();
     });
     var add=document.querySelector('[data-test="add-role-button"]');
     if(location.pathname==='/roles/' && add && !document.getElementById('hospital-role-categories')) {

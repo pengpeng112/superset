@@ -1,0 +1,135 @@
+{
+ "DASHBOARD_VERSION_KEY": "v2",
+ "ROOT_ID": {
+  "id": "ROOT_ID",
+  "type": "ROOT",
+  "children": [
+   "GRID_ID"
+  ]
+ },
+ "GRID_ID": {
+  "id": "GRID_ID",
+  "type": "GRID",
+  "children": [
+   "ROW-TOP",
+   "ROW-BI3-1",
+   "ROW-BI3-2",
+   "ROW-BI3-3"
+  ]
+ },
+ "MD-TOP": {
+  "id": "MD-TOP",
+  "type": "MARKDOWN",
+  "children": [],
+  "meta": {
+   "width": 12,
+   "height": 4,
+   "background": "BACKGROUND_TRANSPARENT",
+   "text": "**手术与住院医疗质量可视化分析**　手术台数按门诊/住院分支统计（各取合计行：默认窗住院 507 / 门诊 129）；住院手术科室与病区出院 TOP15 柱图降序、门诊与住院构成饼图、病区核心质量指标汇总表（数据源：手术量统计、护理工作量月报已对账数据集；均已排除合计行）。",
+   "code": "**手术与住院医疗质量可视化分析**　手术台数按门诊/住院分支统计（各取合计行：默认窗住院 507 / 门诊 129）；住院手术科室与病区出院 TOP15 柱图降序、门诊与住院构成饼图、病区核心质量指标汇总表（数据源：手术量统计、护理工作量月报已对账数据集；均已排除合计行）。"
+  }
+ },
+ "CHART-BI3-1-0": {
+  "id": "CHART-BI3-1-0",
+  "type": "CHART",
+  "children": [],
+  "meta": {
+   "chartId": 392,
+   "width": 3,
+   "height": 8
+  }
+ },
+ "CHART-BI3-1-1": {
+  "id": "CHART-BI3-1-1",
+  "type": "CHART",
+  "children": [],
+  "meta": {
+   "chartId": 386,
+   "width": 3,
+   "height": 8
+  }
+ },
+ "CHART-BI3-1-2": {
+  "id": "CHART-BI3-1-2",
+  "type": "CHART",
+  "children": [],
+  "meta": {
+   "chartId": 389,
+   "width": 6,
+   "height": 8
+  }
+ },
+ "ROW-BI3-1": {
+  "id": "ROW-BI3-1",
+  "type": "ROW",
+  "children": [
+   "CHART-BI3-1-0",
+   "CHART-BI3-1-1",
+   "CHART-BI3-1-2"
+  ],
+  "meta": {
+   "background": "BACKGROUND_TRANSPARENT"
+  }
+ },
+ "CHART-BI3-2-0": {
+  "id": "CHART-BI3-2-0",
+  "type": "CHART",
+  "children": [],
+  "meta": {
+   "chartId": 387,
+   "width": 6,
+   "height": 14
+  }
+ },
+ "CHART-BI3-2-1": {
+  "id": "CHART-BI3-2-1",
+  "type": "CHART",
+  "children": [],
+  "meta": {
+   "chartId": 390,
+   "width": 6,
+   "height": 14
+  }
+ },
+ "ROW-BI3-2": {
+  "id": "ROW-BI3-2",
+  "type": "ROW",
+  "children": [
+   "CHART-BI3-2-0",
+   "CHART-BI3-2-1"
+  ],
+  "meta": {
+   "background": "BACKGROUND_TRANSPARENT"
+  }
+ },
+ "CHART-BI3-3-0": {
+  "id": "CHART-BI3-3-0",
+  "type": "CHART",
+  "children": [],
+  "meta": {
+   "chartId": 391,
+   "width": 12,
+   "height": 14
+  }
+ },
+ "ROW-BI3-3": {
+  "id": "ROW-BI3-3",
+  "type": "ROW",
+  "children": [
+   "CHART-BI3-3-0"
+  ],
+  "meta": {
+   "background": "BACKGROUND_TRANSPARENT"
+  }
+ },
+ "ROW-TOP": {
+  "id": "ROW-TOP",
+  "type": "ROW",
+  "children": [
+   "MD-TOP"
+  ],
+  "meta": {
+   "background": "BACKGROUND_TRANSPARENT"
+  }
+ }
+}

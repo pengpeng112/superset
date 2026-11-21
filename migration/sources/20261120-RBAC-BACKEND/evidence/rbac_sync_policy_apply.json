@@ -1,0 +1,1978 @@
+{
+  "command": "sync-policy",
+  "ts": "2026-11-18T14:20:20+0800",
+  "dry_run": false,
+  "policy_version": 1,
+  "policy_updated": "2026-11-20",
+  "stats": {
+    "users_to_change": 157,
+    "bindings_planned": 0,
+    "bindings_applied": 310,
+    "extra_bindings": 1,
+    "protected_kept": 1,
+    "no_change_users": 0
+  },
+  "departments": [
+    {
+      "dept_code": "0504",
+      "dept_name": "信息网络中心",
+      "dept_role": "科室_信息网络中心（0504）",
+      "policy_roles": [
+        "报表授权_系统字典维护",
+        "报表授权_临床科室日常统计"
+      ],
+      "member_count": 27,
+      "actions": [
+        {
+          "username": "BLGL",
+          "user_id": 2306,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "task",
+          "user_id": 2382,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "JCWZH",
+          "user_id": 2321,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000000",
+          "user_id": 43,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000060",
+          "user_id": 72,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000324",
+          "user_id": 244,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000325",
+          "user_id": 245,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000326",
+          "user_id": 246,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000928",
+          "user_id": 596,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000929",
+          "user_id": 597,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001173",
+          "user_id": 725,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001291",
+          "user_id": 791,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001303",
+          "user_id": 796,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001311",
+          "user_id": 800,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001312",
+          "user_id": 801,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001525",
+          "user_id": 923,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001563",
+          "user_id": 946,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002075",
+          "user_id": 1205,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003269",
+          "user_id": 1787,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003535",
+          "user_id": 1982,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003614",
+          "user_id": 2047,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "009090",
+          "user_id": 2299,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "FXDZBL",
+          "user_id": 2312,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "FXJCPT",
+          "user_id": 2315,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "fxgzhj",
+          "user_id": 2379,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "fxyyjd",
+          "user_id": 2380,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "FXHISNEW",
+          "user_id": 2313,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_系统字典维护"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "010303",
+      "dept_name": "病案室",
+      "dept_role": "科室_病案室（010303）",
+      "policy_roles": [
+        "报表授权_病案离院明细",
+        "报表授权_质控与全院月报",
+        "报表授权_临床科室日常统计"
+      ],
+      "member_count": 16,
+      "actions": [
+        {
+          "username": "BAS",
+          "user_id": 2305,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000275",
+          "user_id": 210,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000321",
+          "user_id": 242,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000363",
+          "user_id": 275,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001243",
+          "user_id": 766,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001282",
+          "user_id": 786,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001283",
+          "user_id": 787,
+          "current_rbac": [
+            "报表授权_病案离院明细"
+          ],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001559",
+          "user_id": 942,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001994",
+          "user_id": 1152,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002120",
+          "user_id": 1224,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002122",
+          "user_id": 1225,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003646",
+          "user_id": 2073,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003786",
+          "user_id": 2186,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003864",
+          "user_id": 2233,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003888",
+          "user_id": 2250,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003843\t",
+          "user_id": 2218,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_病案离院明细",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "050402",
+      "dept_name": "统计室",
+      "dept_role": "科室_统计室（050402）",
+      "policy_roles": [
+        "报表授权_质控与全院月报",
+        "报表授权_临床科室日常统计"
+      ],
+      "member_count": 1,
+      "actions": [
+        {
+          "username": "000327",
+          "user_id": 247,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "0104",
+      "dept_name": "护理部",
+      "dept_role": "科室_护理部（0104）",
+      "policy_roles": [
+        "报表授权_护理部管理",
+        "报表授权_临床科室日常统计"
+      ],
+      "member_count": 19,
+      "actions": [
+        {
+          "username": "000023",
+          "user_id": 50,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000136",
+          "user_id": 117,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000153",
+          "user_id": 131,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000173",
+          "user_id": 146,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000209",
+          "user_id": 172,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000630",
+          "user_id": 459,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000857",
+          "user_id": 550,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000887",
+          "user_id": 564,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001307",
+          "user_id": 797,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001718",
+          "user_id": 1027,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002073",
+          "user_id": 1204,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002413",
+          "user_id": 1358,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002672",
+          "user_id": 1466,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002892",
+          "user_id": 1563,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003147",
+          "user_id": 1712,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003224",
+          "user_id": 1764,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003275",
+          "user_id": 1793,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003384",
+          "user_id": 1864,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003663",
+          "user_id": 2087,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "010401",
+      "dept_name": "护理办公室",
+      "dept_role": "科室_护理办公室（010401）",
+      "policy_roles": [
+        "报表授权_护理部管理"
+      ],
+      "member_count": 6,
+      "actions": [
+        {
+          "username": "000861",
+          "user_id": 553,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001396",
+          "user_id": 847,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003273",
+          "user_id": 1791,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003320",
+          "user_id": 1821,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003617",
+          "user_id": 2050,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003772",
+          "user_id": 2174,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_护理部管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "0103",
+      "dept_name": "医务部",
+      "dept_role": "科室_医务部（0103）",
+      "policy_roles": [
+        "报表授权_质控与全院月报",
+        "报表授权_绩效考核管理",
+        "报表授权_手术明细提取"
+      ],
+      "member_count": 17,
+      "actions": [
+        {
+          "username": "000011",
+          "user_id": 45,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000886",
+          "user_id": 563,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001100",
+          "user_id": 689,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001643",
+          "user_id": 983,
+          "current_rbac": [
+            "报表授权_抗菌办"
+          ],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [
+            "报表授权_抗菌办"
+          ],
+          "status": "applied"
+        },
+        {
+          "username": "001674",
+          "user_id": 1001,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001830",
+          "user_id": 1071,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001831",
+          "user_id": 1072,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002183",
+          "user_id": 1255,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002194",
+          "user_id": 1258,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002441",
+          "user_id": 1372,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002526",
+          "user_id": 1414,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002704",
+          "user_id": 1479,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002884",
+          "user_id": 1559,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002889",
+          "user_id": 1562,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002896",
+          "user_id": 1566,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002920",
+          "user_id": 1583,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003425",
+          "user_id": 1897,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": [
+        {
+          "username": "001643",
+          "user_id": 983,
+          "current_rbac": [
+            "报表授权_抗菌办"
+          ],
+          "missing": [
+            "报表授权_手术明细提取",
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [
+            "报表授权_抗菌办"
+          ],
+          "status": "applied"
+        }
+      ]
+    },
+    {
+      "dept_code": "010301",
+      "dept_name": "医务办公室",
+      "dept_role": "科室_医务办公室（010301）",
+      "policy_roles": [
+        "报表授权_质控与全院月报"
+      ],
+      "member_count": 3,
+      "actions": [
+        {
+          "username": "001278",
+          "user_id": 782,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001809",
+          "user_id": 1059,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002800",
+          "user_id": 1522,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "0112",
+      "dept_name": "门诊部",
+      "dept_role": "科室_门诊部（0112）",
+      "policy_roles": [
+        "报表授权_门诊与窗口管理"
+      ],
+      "member_count": 4,
+      "actions": [
+        {
+          "username": "000059",
+          "user_id": 71,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000386",
+          "user_id": 294,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000884",
+          "user_id": 562,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003211",
+          "user_id": 1753,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "011201",
+      "dept_name": "门诊办公室",
+      "dept_role": "科室_门诊办公室（011201）",
+      "policy_roles": [
+        "报表授权_门诊与窗口管理"
+      ],
+      "member_count": 4,
+      "actions": [
+        {
+          "username": "000063",
+          "user_id": 74,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000108",
+          "user_id": 94,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001095",
+          "user_id": 687,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001679",
+          "user_id": 1004,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "0125",
+      "dept_name": "质量控制办公室",
+      "dept_role": "科室_质量控制办公室（0125）",
+      "policy_roles": [
+        "报表授权_质控与全院月报",
+        "报表授权_绩效考核管理"
+      ],
+      "member_count": 3,
+      "actions": [
+        {
+          "username": "000012",
+          "user_id": 46,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002665",
+          "user_id": 1461,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003423",
+          "user_id": 1895,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "010304",
+      "dept_name": "医疗质量管理办公室",
+      "dept_role": "科室_医疗质量管理办公室（010304）",
+      "policy_roles": [
+        "报表授权_质控与全院月报"
+      ],
+      "member_count": 1,
+      "actions": [
+        {
+          "username": "001636",
+          "user_id": 979,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "0128",
+      "dept_name": "发展运营部",
+      "dept_role": "科室_发展运营部（0128）",
+      "policy_roles": [
+        "报表授权_院领导与运营驾驶舱",
+        "报表授权_绩效考核管理"
+      ],
+      "member_count": 9,
+      "actions": [
+        {
+          "username": "002591",
+          "user_id": 1437,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002706",
+          "user_id": 1481,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002708",
+          "user_id": 1482,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002710",
+          "user_id": 1483,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002819",
+          "user_id": 1530,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002820",
+          "user_id": 1531,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003210",
+          "user_id": 1752,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003253",
+          "user_id": 1777,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003257",
+          "user_id": 1780,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "0101",
+      "dept_name": "医院办公室",
+      "dept_role": "科室_医院办公室（0101）",
+      "policy_roles": [
+        "报表授权_院领导与运营驾驶舱"
+      ],
+      "member_count": 6,
+      "actions": [
+        {
+          "username": "002775",
+          "user_id": 1510,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002821",
+          "user_id": 1532,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002902",
+          "user_id": 1571,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003174",
+          "user_id": 1732,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003568",
+          "user_id": 2010,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003611",
+          "user_id": 2044,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "010101",
+      "dept_name": "办公室",
+      "dept_role": "科室_办公室（010101）",
+      "policy_roles": [
+        "报表授权_院领导与运营驾驶舱"
+      ],
+      "member_count": 6,
+      "actions": [
+        {
+          "username": "000057",
+          "user_id": 70,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000303",
+          "user_id": 228,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001098",
+          "user_id": 688,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001259",
+          "user_id": 776,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002397",
+          "user_id": 1349,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003501",
+          "user_id": 1955,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "01",
+      "dept_name": "行政管理",
+      "dept_role": "科室_行政管理（01）",
+      "policy_roles": [
+        "报表授权_院领导与运营驾驶舱"
+      ],
+      "member_count": 6,
+      "actions": [
+        {
+          "username": "JHPT",
+          "user_id": 2322,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002254",
+          "user_id": 1282,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003480",
+          "user_id": 1938,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003515",
+          "user_id": 1965,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003516",
+          "user_id": 1966,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003622",
+          "user_id": 2055,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_院领导与运营驾驶舱"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "0108",
+      "dept_name": "医疗保险办公室",
+      "dept_role": "科室_医疗保险办公室（0108）",
+      "policy_roles": [
+        "报表授权_绩效考核管理",
+        "报表授权_门诊与窗口管理"
+      ],
+      "member_count": 21,
+      "actions": [
+        {
+          "username": "000038",
+          "user_id": 57,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000041",
+          "user_id": 58,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000044",
+          "user_id": 60,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000045",
+          "user_id": 61,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000319",
+          "user_id": 240,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000774",
+          "user_id": 506,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "000997",
+          "user_id": 628,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001076",
+          "user_id": 675,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001087",
+          "user_id": 681,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001286",
+          "user_id": 788,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001287",
+          "user_id": 789,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "001719",
+          "user_id": 1028,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002129",
+          "user_id": 1228,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002774",
+          "user_id": 1509,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002796",
+          "user_id": 1521,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002813",
+          "user_id": 1527,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003025",
+          "user_id": 1635,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003366",
+          "user_id": 1851,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003486",
+          "user_id": 1943,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "114514",
+          "user_id": 2302,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "TF0424",
+          "user_id": 2341,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_绩效考核管理",
+            "报表授权_门诊与窗口管理"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    },
+    {
+      "dept_code": "010302",
+      "dept_name": "感染办",
+      "dept_role": "科室_感染办（010302）",
+      "policy_roles": [
+        "报表授权_质控与全院月报",
+        "报表授权_临床科室日常统计"
+      ],
+      "member_count": 8,
+      "actions": [
+        {
+          "username": "000142",
+          "user_id": 123,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002185",
+          "user_id": 1257,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002452",
+          "user_id": 1378,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "002537",
+          "user_id": 1415,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003209",
+          "user_id": 1751,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003427",
+          "user_id": 1899,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003841",
+          "user_id": 2216,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        },
+        {
+          "username": "003842",
+          "user_id": 2217,
+          "current_rbac": [],
+          "missing": [
+            "报表授权_临床科室日常统计",
+            "报表授权_质控与全院月报"
+          ],
+          "extra": [],
+          "status": "applied"
+        }
+      ],
+      "extras": []
+    }
+  ]
+}

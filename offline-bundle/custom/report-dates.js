@@ -1,4 +1,8 @@
-/* 离线日历直接选择。20261111d18（FINAL-CLOSEOUT 收尾）：
+/* 离线日历直接选择。20261119d19（BI-ENHANCE 批）：
+   CONTRACT/isReportKey/BI_APPLY_PAGES 三处同步补入第 4 个 BI 驾驶舱 75 与别名 bi-nursing-bed
+   （契约 gran:'range',quick:'month' 与 72/74 一致），防通过别名访问时查询按钮死锁，日历/快选/查询
+   按钮行为与既有驾驶舱完全一致。
+   20261111d18（FINAL-CLOSEOUT 收尾）：
    CONTRACT/isReportKey 补 BI 驾驶舱 3 个 slug 别名（bi-overview→72、bi-outpatient-flow→73、
    bi-surgery-quality→74，契约与数字 ID 完全一致），render() 编辑态判断改按 AGENTS.md 约定读
    dashboardState.editMode（经 home-ui isEditing，不能只看 ?edit=true 查询串），BI_APPLY_PAGES
@@ -16,7 +20,7 @@
 (function(){
   'use strict';
   if(window.hospitalDateUI||!window.flatpickr)return;
-  var api=window.hospitalDateUI={version:'20261111d18'};
+  var api=window.hospitalDateUI={version:'20261119d19'};
   var states=[],metadata={},metaTries={},metaFlight={},metaEpoch=0,pending=0,lastKey=null;
   /* 只登记已核对的粒度。maxSpanDays / bounds 不写在这里：契约跨度仍是 unknown，不能猜。 */
   var CONTRACT={
@@ -35,8 +39,9 @@
     /* 抗菌办查询页（20261104d13）：61 门急诊处方、62 住院检验、63 季度消耗、64 住院患者、
        65 住院医嘱、66 微生物、67 检查、68 诊断、69 手术记录、70 生命体征 */
     61:{gran:'range',quick:'month'},72:{gran:'range',quick:'month'},73:{gran:'sameday',quick:'day'},74:{gran:'range',quick:'month'},62:{gran:'range',quick:'day'},63:{gran:'range',quick:'month'},
-    /* BI 驾驶舱 slug 别名（20261111d18）：契约与对应数字 ID 完全一致 */
+    /* BI 驾驶舱 slug 别名（20261111d18，20261119d19 补第 4 个）：契约与对应数字 ID 完全一致 */
     'bi-overview':{gran:'range',quick:'month'},'bi-outpatient-flow':{gran:'sameday',quick:'day'},'bi-surgery-quality':{gran:'range',quick:'month'},
+    75:{gran:'range',quick:'month'},'bi-nursing-bed':{gran:'range',quick:'month'},
     64:{gran:'range',quick:'month'},65:{gran:'range',quick:'day'},66:{gran:'range',quick:'month'},
     67:{gran:'range',quick:'month'},68:{gran:'range',quick:'month'},69:{gran:'range',quick:'month'},
     70:{gran:'range',quick:'day'}
@@ -67,7 +72,7 @@
   function parse(s){var m=String(s).match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?/);return m?new Date(+m[1],+m[2]-1,+m[3],+(m[4]||0),+(m[5]||0),+(m[6]||0)):null;}
   function key(){var m=location.pathname.match(/\/dashboard\/([^/]+)/);return m?m[1]:'';}
   function contract(f){var md=metadata[key()],c=CONTRACT[key()]||CONTRACT[md&&md.__dashboardId];if(c&&c.filterId&&f&&c.filterId!==f.id)c=null;return c||(f&&f.filterType==='filter_time'?{gran:'range',quick:'month',generic:true}:null);}
-  function isReportKey(k){if(k==='month-work-report-new'||k==='mr-discharge-death-detail'||k==='bi-overview'||k==='bi-outpatient-flow'||k==='bi-surgery-quality')return true;var n=+k;return n===2||n===32||(n>=35&&n<=70)||(n>=72&&n<=74);}
+  function isReportKey(k){if(k==='month-work-report-new'||k==='mr-discharge-death-detail'||k==='bi-overview'||k==='bi-outpatient-flow'||k==='bi-surgery-quality'||k==='bi-nursing-bed')return true;var n=+k;return n===2||n===32||(n>=35&&n<=70)||(n>=72&&n<=75);}
   function info(t){var md=metadata[key()];return md&&!md.__failed&&(md.native_filter_configuration||[]).find(function(f){return f.id===t.getAttribute('name')&&f.filterType==='filter_time';});}
   function clearFlight(id,doAbort,expected){var f=metaFlight[id];if(!f||(expected&&f!==expected))return;if(f.timer)clearTimeout(f.timer);if(doAbort&&f.ac){try{f.ac.abort();}catch(e){}}if(metaFlight[id]===f)delete metaFlight[id];}
   function abortFlights(){Object.keys(metaFlight).forEach(function(id){clearFlight(id,true);});}
@@ -253,7 +258,7 @@
      点击仍走原生 onClick(onApply) 真实应用；非法选择仍被 blockSubmit 拦截。
      注意：不得挂在 render()（MutationObserver 驱动）里——会在挂载期放大成
      变更风暴饿死图表网格（d15 教训）；改用独立低频轮询。 */
-  var BI_APPLY_PAGES={72:1,73:1,74:1,'bi-overview':1,'bi-outpatient-flow':1,'bi-surgery-quality':1};
+  var BI_APPLY_PAGES={72:1,73:1,74:1,75:1,'bi-overview':1,'bi-outpatient-flow':1,'bi-surgery-quality':1,'bi-nursing-bed':1};
   function biBarOnApply(){
     var b=document.querySelector('[data-test="filter-bar__apply-button"]');if(!b)return null;
     var k=Object.keys(b).find(function(k){return k.indexOf('__reactFiber')===0;});if(!k)return null;

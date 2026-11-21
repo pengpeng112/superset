@@ -1,0 +1,109 @@
+{
+  "command": "verify-rbac-backend",
+  "ts": "2026-11-18T14:43:11.137056+08:00",
+  "verify_user": "003158",
+  "checks": [
+    {
+      "check": "N1 dashboard列表仅外壳34",
+      "ok": true,
+      "detail": "status=200 ids=[34]"
+    },
+    {
+      "check": "N2 受控看板41/72均404",
+      "ok": true,
+      "detail": "{41: 404, 72: 404}"
+    },
+    {
+      "check": "N3 chart/data重放ds350→403",
+      "ok": true,
+      "detail": "status=403"
+    },
+    {
+      "check": "N4 SQLLab通道全拒绝(403/401/404)",
+      "ok": true,
+      "detail": "{'sqlexec': 404, 'saved_query': 403}"
+    },
+    {
+      "check": "P1 grant-user 003158→报表授权_护理部管理",
+      "ok": true,
+      "detail": "rc=0 out=REPORT_JSON /tmp/rbac_grant_user.json\ngrant-user → applied err="
+    },
+    {
+      "check": "P1b 授权看板41/42/43/75可达200",
+      "ok": true,
+      "detail": "{41: 200, 42: 200, 43: 200, 75: 200}"
+    },
+    {
+      "check": "P2 chart/data出数200",
+      "ok": true,
+      "detail": "status=200 rows_nonempty=True"
+    },
+    {
+      "check": "P3 xlsx导出重放200+attachment",
+      "ok": true,
+      "detail": "status=200 cd=attachment; filename=20261118_064257.xlsx"
+    },
+    {
+      "check": "P4 非跨界看板72/46/32/38/50仍404",
+      "ok": true,
+      "detail": "{72: 404, 46: 404, 32: 404, 38: 404, 50: 404}"
+    },
+    {
+      "check": "P5a revoke-user",
+      "ok": true,
+      "detail": "rc=0 out=REPORT_JSON /tmp/rbac_revoke_user.json\nrevoke-user → applied"
+    },
+    {
+      "check": "P5b 恢复拒绝：41→404、ds350→403",
+      "ok": true,
+      "detail": "dash41=404 ds350=403"
+    },
+    {
+      "check": "PR1 摘除001283↔报表授权_病案离院明细被拒绝(exit3)",
+      "ok": true,
+      "detail": "rc=3 out=REPORT_JSON /tmp/rbac_revoke_user.json\nrevoke-user → refused"
+    },
+    {
+      "check": "PR2 摘除001643↔报表授权_抗菌办被拒绝(exit3)",
+      "ok": true,
+      "detail": "rc=3 out=REPORT_JSON /tmp/rbac_revoke_user.json\nrevoke-user → refused"
+    },
+    {
+      "check": "PR3 受保护绑定在位",
+      "ok": true,
+      "detail": "missing=无"
+    },
+    {
+      "check": "S1 user_sync --dry-run rc=0 failed=0 零提报表授权_",
+      "ok": true,
+      "detail": "rc=0 failed0=True zeroRole=True"
+    },
+    {
+      "check": "C1 Gamma权限36/看板仅34",
+      "ok": true,
+      "detail": "perm=36 dash=[34]"
+    },
+    {
+      "check": "C2 体系计数恒常(11角色/63绑定/66授权/351总数)",
+      "ok": true,
+      "detail": "role=11 dr=63 ds=66 all=351"
+    },
+    {
+      "check": "C3 五序列无滞后(超前无害)",
+      "ok": true,
+      "detail": "超前量(无害): ab_user_role_id_seq: +7"
+    },
+    {
+      "check": "C4 003158结束态仅Gamma+科室",
+      "ok": true,
+      "detail": "['Gamma', '科室_微生物实验室（050205）']"
+    },
+    {
+      "check": "R1 rollback 保护性拒绝(有成员时拒绝全量回退, rc=1)",
+      "ok": true,
+      "detail": "rc=1 out=_护理部管理(id=349) 有成员 25，拒绝删除\n  PROBLEM: F-PROTECT 新角色 报表授权_门诊与窗口管理(id=350) 有成员 29，拒绝删除\n  PROBLEM: F-PROTECT 新角色 报表授权_临床科室日常统计(id=351) 有成员 71，拒绝删除\n  PROBLEM: F-PROTECT 新角色 报表授权_系统字典维护(id=352) 有成员 27，拒绝删除 err="
+    }
+  ],
+  "ok": 20,
+  "fail": 0
+}

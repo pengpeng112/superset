@@ -1,4 +1,34 @@
-/* 20261117h16（FINAL-CLOSEOUT 收尾续）：修复展开态失同步根因——applyDirectoryFilter 每次刷新
+/* 20261121h18（RBAC-FRONTEND-POLISH 批）：千人千面动态权限感知导航（配套 20261120-RBAC-BACKEND
+   11 个 报表授权_* 角色体系）。核心机制：
+   ①单飞获取当前登录用户真实授权看板白名单 allowedIds：GET /api/v1/dashboard/?q=(page:0,
+     page_size:200,columns:!(id,slug))（DASHBOARD_RBAC=True 下后端按用户角色精确返回有权看板）。
+     Admin 全通不打接口；结果仅存内存态（60s 短缓存，进入首页/34 目录时静默校验更新），管理员刚
+     加角色、员工 F5 即可见——不写 sessionStorage 死缓存。挂 window.hospitalHomeUI.allowedIds 供
+     report-ui.js 共享。
+   ②CATALOG_REPORTS：从生产 25–31,33 目录 position_json 逐字导出核对的静态目录字典（2026-11-21
+     只读导出：26=[40,41,42,43]、29=[50,51,52]、33=[32,35,36,37,38,39]、25=[32,35,41,44,45,46]、
+     31=[39,40,58,59,60] 等），含报表名/查询条件摘要。配合 allowedIds：分类计数实时按真实可见张数
+     计算；无权分类/驾驶舱/搜索项/收藏 100% 自动隐藏，不再对无权分类发 /api/v1/dashboard/<catId>
+     盲请求（彻底淘汰 h7 版 dashboard/61 单点探测与分类 404 刷屏）。
+   ③五大视图裁剪：BI 驾驶舱区按可见数 k 动态 1/2/3/4 列排版（0 张彻底隐藏不留空白）；左侧导航与
+     34 目录隐藏 0 可见报表的分类整行、按真实张数显示徽标；二级分类页（25–31,33）自动隐藏无权
+     子报表行；搜索候选池与「⭐ 我的常用报表」严格限制在 allowedIds 内；34 底部「其他专题」逐链接
+     过滤。
+   ④零报表权限员工友好引导态：可见业务报表数为 0 时侧栏自动收起（hh-home-nonav 单栏），工作台
+     与 34 目录渲染 #hh-no-perm-guide 白底蓝边引导卡（显示工号姓名+开通指引，保留改密入口）。
+     未决态（接口未返回）按原样渲染不闪空；仅最近使用列表中已撤权看板行自动隐藏。
+   编辑态/管理员视图 100% 不受影响；syncGroupOpen 下钻、h16 展开记忆、h17 收藏夹全部保留。
+   20261119h17（BI-ENHANCE 批）：①接入第 4 个 BI 驾驶舱——BI_LINKS 补「全院护理工作量与病区床位效率分析」
+   （/superset/dashboard/75/，别名 bi-nursing-bed→75，isQuery 范围 72–75），34 目录 .hh-bi-showcase
+   网格改响应式（≥1440px 四列单排、901–1439px 含 1366×768 两列双排，卡片 56px 蓝左边框不变）。
+   ②新增「⭐ 我的常用报表」个人收藏夹（纯 localStorage 键 hh_fav_reports_v1_<工号> 按登录用户隔离，
+   上限 12 条，严禁调用 /favorite_status/ 等后端接口）——34 目录报表行/驾驶舱卡右侧、8 个二级分类页
+   报表行右侧、查询页与驾驶舱 .hh-crumb 主标题右侧注入星标按钮 button.hh-fav-btn（☆ 空心 / ★ 实心
+   #f59e0b，点击 preventDefault+stopPropagation 只切状态绝不误跳链接，编辑态全部隐藏）；首页工作台
+   收藏数≥1 时在 #hospital-home-hint 下方渲染 #hh-fav-panel 置顶列表（grid-column:2，左侧导航同步跨
+   全高 1/4，收藏数=0 不渲染空盒子）；34 目录收藏数≥1 时在驾驶舱入口条下方渲染 #hh-dir-fav-box，
+   为 0 时搜索框旁仅显示 12px 灰字提示。不删除业务说明、不改权限与链接。
+   20261117h16（FINAL-CLOSEOUT 收尾续）：修复展开态失同步根因——applyDirectoryFilter 每次刷新
    只写 data-hh-open 属性与 ▾ 箭头，却不同步子容器内联 display；当容器内联为 none 而 openSet
    判定展开时，出现“箭头 ▾ 但下方无报表行”（用户截图实态）。h16 新增 syncGroupOpen(li,open)
    统一同步 属性+箭头+内联display 三者，applyDirectoryFilter 两分支与 renderGroup 全部走它。
@@ -40,7 +70,7 @@
 (function () {
   'use strict';
   if (window.hospitalHomeUI) return;
-  var api=window.hospitalHomeUI={version:'20261117h16'},pending=0,editGrid=null,editStore=null;
+  var api=window.hospitalHomeUI={version:'20261121h18'},pending=0,editGrid=null,editStore=null;
   var catalogs=[25,26,27,28,29,30,31,33,34];
   var NAV=[['质控科报表',33,'质'],['护理部报表',26,'护'],['月报',25,'月'],['门诊',27,'门'],['急诊',28,'急'],['手术',29,'术'],['门诊流量监测',30,'流'],['绩效考核监测',31,'绩']];
   var MGMT=[['dashboards','看板'],['charts','图表'],['queries','已保存查询']];
@@ -54,8 +84,85 @@
     {id:69,name:'抗菌办·手术记录查询（ODS）'},{id:70,name:'抗菌办·生命体征查询（ODS）'}
   ];
   var GENERIC_DESC='设置查询条件，查看报表结果';
-  /* 可视化驾驶舱（20261107h8）：3 个 BI 看板已 published+Gamma，全员可见 */
-  var BI_LINKS=[['全院医疗运营核心指标总览','/superset/dashboard/72/','KPI 总览 · 科室 TOP15 · 转归构成'],['门急诊流量与窗口负荷监测中心','/superset/dashboard/73/','截至17:00四窗口人次 · 分时段累计'],['手术与住院医疗质量可视化分析','/superset/dashboard/74/','门诊住院手术构成 · 科室病区TOP15']];
+  /* 可视化驾驶舱（20261107h8 建 3 个，20261119h17 补 75；20261121h18 起按角色过滤可见性） */
+  var BI_LINKS=[['全院医疗运营核心指标总览','/superset/dashboard/72/','KPI 总览 · 科室 TOP15 · 转归构成',72],['门急诊流量与窗口负荷监测中心','/superset/dashboard/73/','截至17:00四窗口人次 · 分时段累计',73],['手术与住院医疗质量可视化分析','/superset/dashboard/74/','门诊住院手术构成 · 科室病区TOP15',74],['全院护理工作量与病区床位效率分析','/superset/dashboard/75/','床位负荷 · 分级护理 · 病区排行',75]];
+  /* ---------- CATALOG_REPORTS（20261121h18）：从生产 25–31,33 目录 position_json 只读导出
+     逐字核对的静态目录字典。desc 为目录页/34 展开层的最终显示文案（GENERIC 行已按
+     QUERY_SUMMARY 折算为「查询条件：…」）。kyb 为抗菌办固定 10 项。管理员编辑目录 Markdown 后
+     须同步本字典。 ---------- */
+  var CATALOG_REPORTS={
+    33:{name:'质控科报表',reports:[[32,'月工作报表（新）','住院与门诊两部分，共用统计月份'],[35,'月工作报表（二）新','查询条件：月份'],[36,'病区工作日报表','查询条件：日期'],[37,'手术量统计','查询条件：日期+门诊/住院'],[38,'报表科室维护（只读）','科室清单与床位配置，只读查询'],[39,'检查按开单科室查询人次','查询条件：日期+门诊/住院']]},
+    26:{name:'护理部报表',reports:[[40,'床旁结算工作量','查询条件：日期'],[41,'护理工作量月报表','查询条件：月份'],[42,'护理工作量日报表','主表与汇总附区，共用统计日期'],[43,'护理单元工作量','查看报表结果']]},
+    25:{name:'月报',reports:[[32,'月工作报表（新）','住院与门诊两部分，共用统计月份'],[35,'月工作报表（二）新','查询条件：月份'],[41,'护理工作量月报表','查询条件：月份'],[44,'月上报数据','查看报表结果'],[45,'医院医疗工作月报表','查看报表结果'],[46,'医院绩效工作月报表','查看报表结果']]},
+    27:{name:'门诊',reports:[[47,'门诊转住院入院途径报表','查看报表结果'],[48,'责任组门诊报表','查看报表结果']]},
+    28:{name:'急诊',reports:[[49,'急诊分诊统计','查看报表结果']]},
+    29:{name:'手术',reports:[[50,'门诊手术数据提取','查看报表结果'],[51,'科室手术质量分析','查看报表结果'],[52,'科室住院手术数据提取','查看报表结果']]},
+    30:{name:'门诊流量监测',reports:[[53,'门诊采血人次时段统计','查看报表结果'],[54,'门诊取药人次时段统计','查看报表结果'],[55,'门诊缴费人次查询','查看报表结果'],[56,'门诊挂号量时段统计','查看报表结果'],[57,'门诊超声流量监测','查看报表结果']]},
+    31:{name:'绩效考核监测',reports:[[39,'检查按开单科室查询人次','查询条件：日期+门诊/住院'],[40,'床旁结算工作量','查询条件：日期'],[58,'检查人次按开单科室统计','查看报表结果'],[59,'检查人次按执行科室统计（门诊）','查看报表结果'],[60,'绩效考核暨高质量发展监测指标情况','查看报表结果']]}
+  };
+  /* 34 目录底部「其他专题」链接（20261121h18：逐链接按权限过滤） */
+  var SPECIAL_LINKS=[[3,'核心统计报表'],[1,'病案统计'],[2,'病案明细']];
+  /* ---------- 权限引擎（20261121h18）：单飞 GET /api/v1/dashboard/ 白名单，60s 内存缓存 ---------- */
+  var perm={state:'idle',ids:null,at:0,listeners:[]};
+  function permResolved(){return isAdmin()||perm.state==='ok'||perm.state==='fail';}
+  function ensureAllowed(cb){
+    if(isAdmin()){perm.state='ok';perm.ids=null;if(cb)cb(true);return;}
+    if(perm.state==='ok'&&Date.now()-perm.at<60000){if(cb)cb(true);return;}
+    if(perm.state==='pending'){if(cb)perm.listeners.push(cb);return;}
+    perm.state='pending';if(cb)perm.listeners.push(cb);
+    fetch('/api/v1/dashboard/?q=(page:0,page_size:200,columns:!(id,slug))',{credentials:'same-origin'}).then(function(r){
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      return r.json();
+    }).then(function(doc){
+      var ids=[];
+      ((doc&&doc.result)||[]).forEach(function(x){if(x&&typeof x.id==='number')ids.push(x.id);});
+      perm.ids=ids;perm.state='ok';perm.at=Date.now();
+      api.allowedIds=ids;api.allowedAt=perm.at;api.allowedTotal=(doc&&doc.count)||ids.length;
+      /* 决出后：有权分类清掉未决期的 static 缓存，refresh 重取生产 Markdown（即时编辑生效） */
+      Object.keys(categoryCache).forEach(function(k){
+        var e=categoryCache[k];
+        if(e&&e.static&&k!=='kyb'&&allowed(Number(k)))delete categoryCache[k];
+      });
+      notify();schedule();
+    }).catch(function(){
+      /* 失败按最保守空集处理（不渲染死链），下次进入页面重试 */
+      perm.ids=[];perm.state='fail';perm.at=Date.now();api.allowedIds=[];notify();schedule();
+    });
+    function notify(){var ls=perm.listeners;perm.listeners=[];ls.forEach(function(f){try{f(perm.state==='ok');}catch(e){}});}
+  }
+  /* allowed(id)：Admin 恒真；白名单未决时乐观放行（决出后 schedule 重渲校正）；未决闪现由
+     60~80ms 单帧合并抹平，绝不出现永久死链 */
+  function allowed(id){
+    if(isAdmin())return true;
+    if(!permResolved()||!perm.ids)return true;
+    return perm.ids.indexOf(id)>=0;
+  }
+  function staticReports(id){
+    if(id==='kyb')return KYB_REPORTS.map(function(r){return {id:r.id,name:r.name,href:'/superset/dashboard/'+r.id+'/',description:QUERY_SUMMARY[r.id]?'查询条件：'+QUERY_SUMMARY[r.id]:''};});
+    var c=CATALOG_REPORTS[id];
+    if(!c)return [];
+    return c.reports.map(function(r){return {id:r[0],name:r[1],href:'/superset/dashboard/'+r[0]+'/',description:r[2]};});
+  }
+  /* 某分类下当前用户真实可见的子报表（live 缓存优先，静态兜底，均按 allowed 过滤） */
+  function visibleReports(id){
+    var d=categoryCache[id];
+    var src=(d&&d.reports&&d.reports.length)?d.reports:staticReports(id);
+    return src.filter(function(r){
+      var rid=Number((r.href.match(/\/dashboard\/(\d+)\//)||[])[1]||r.id||0);
+      return allowed(rid);
+    });
+  }
+  /* 分类目录页本身是否可达（目录也是看板，受 dashboard_roles 绑定） */
+  function catVisible(id){return allowed(id);}
+  function visibleBiLinks(){return BI_LINKS.filter(function(b){return allowed(b[3]);});}
+  /* 除目录外壳外可见业务报表是否为 0（零报表权限引导态判定；未决按有内容保持布局稳定） */
+  function hasAnyVisible(){
+    if(!permResolved())return true;
+    if(visibleBiLinks().length)return true;
+    var key;for(key in CATALOG_REPORTS){if(visibleReports(Number(key)).length)return true;}
+    if(visibleReports('kyb').length)return true;
+    return allowed(2);
+  }
   var categoryCache={},categoryPending={};
   var SS=window.sessionStorage;
   function ssGet(k){try{return SS?SS.getItem(k):null}catch(e){return null}}
@@ -63,7 +170,7 @@
   var recentAutoDone=false,programmatic=0,pollTimer=0;
   function isHome(){return location.pathname==='/'||/^\/superset\/welcome\/?$/.test(location.pathname);}
   /* 别名看板 → 数字 ID（20261111h10）：病案明细=2、月报=32、BI 驾驶舱=72/73/74 */
-  var DASH_ALIASES={'mr-discharge-death-detail':2,'month-work-report-new':32,'bi-overview':72,'bi-outpatient-flow':73,'bi-surgery-quality':74};
+  var DASH_ALIASES={'mr-discharge-death-detail':2,'month-work-report-new':32,'bi-overview':72,'bi-outpatient-flow':73,'bi-surgery-quality':74,'bi-nursing-bed':75};
   function pageId(){var m=location.pathname.match(/^\/superset\/dashboard\/([^/]+)\/?$/);if(!m)return 0;if(/^\d+$/.test(m[1]))return +m[1];return DASH_ALIASES[m[1]]||0;}
   function editing(){
     if(/(?:\?|&)edit=true/.test(location.search))return true;
@@ -77,7 +184,7 @@
   }
   api.isEditing=editing;
   function isCatalog(){return catalogs.indexOf(pageId())>=0&&!editing();}
-  function isQuery(){var id=pageId();return !editing()&&((id===2||id===32||(id>=35&&id<=70)||(id>=72&&id<=74))||/^\/superset\/dashboard\/(?:mr-discharge-death-detail|month-work-report-new|bi-overview|bi-outpatient-flow|bi-surgery-quality)\/?$/.test(location.pathname));}
+  function isQuery(){var id=pageId();return !editing()&&((id===2||id===32||(id>=35&&id<=70)||(id>=72&&id<=75))||/^\/superset\/dashboard\/(?:mr-discharge-death-detail|month-work-report-new|bi-overview|bi-outpatient-flow|bi-surgery-quality|bi-nursing-bed)\/?$/.test(location.pathname));}
   function isAdmin(){
     try{
       var app=document.getElementById('app'),raw=app&&app.getAttribute('data-bootstrap');
@@ -94,36 +201,34 @@
   function removeById(id){var e=document.getElementById(id);if(e)e.remove();}
   function directoryAllowed(){return !!(window.hospitalReportUI&&window.hospitalReportUI.directoryAccess===true);}
 
-  /* ---------- 抗菌办分类（20261104h7）：Admin 直通，其余探测看板 61 可达性 ---------- */
+  /* ---------- 抗菌办分类（20261104h7 建；20261121h18 改由 allowedIds 精确判定） ---------- */
   function kybList(){
     return {reports:KYB_REPORTS.map(function(r){
-      return {name:r.name,href:'/superset/dashboard/'+r.id+'/',description:QUERY_SUMMARY[r.id]?'查询条件：'+QUERY_SUMMARY[r.id]:''};
+      return {id:r.id,name:r.name,href:'/superset/dashboard/'+r.id+'/',description:QUERY_SUMMARY[r.id]?'查询条件：'+QUERY_SUMMARY[r.id]:''};
     })};
   }
   function checkKybAccess(){
-    if(categoryCache.kybStatus)return;
-    if(isAdmin()){
-      categoryCache.kybStatus='ok';categoryCache.kyb=kybList();updateCounts('kyb');schedule();return;
-    }
-    categoryCache.kybStatus='pending';
-    fetch('/api/v1/dashboard/61',{credentials:'same-origin'}).then(function(r){
-      categoryCache.kybStatus=r.ok?'ok':'denied';
-      if(r.ok)categoryCache.kyb=kybList();
-      schedule();
-    }).catch(function(){categoryCache.kybStatus='denied';schedule();});
+    /* 20261121h18：静态清单常驻 categoryCache.kyb，可见性由 allowed(61)（抗菌办角色绑定 61–70）
+       判定；不再对 /api/v1/dashboard/61 发探测请求（零盲请求、零 404） */
+    if(!categoryCache.kyb)categoryCache.kyb=kybList();
   }
-  function kybAllowed(){return categoryCache.kybStatus==='ok';}
-  /* 首页侧栏：8 分类下方按权限追加“抗菌药物监测（10 项）”，无权限不渲染 */
+  function kybAllowed(){return allowed(61);}
+  /* 首页侧栏：8 分类下方按权限追加“抗菌药物监测”，无权限不渲染（20261121h18：按可见张数） */
   function updateKybNav(){
     var nav=document.getElementById('hh-home-nav');if(!nav)return;
     var item=document.getElementById('hh-home-nav-kyb');
-    if(!kybAllowed()){if(item)item.remove();return;}
-    if(item)return;
+    var n=visibleReports('kyb').length;
+    if(!kybAllowed()||!n){if(item)item.remove();return;}
+    if(item){
+      var c0=item.querySelector('[data-hh-cat-count="kyb"]');
+      if(c0&&c0.textContent!==n+' 项')c0.textContent=n+' 项';
+      return;
+    }
     var all=nav.querySelector('.hh-home-nav-all');
     item=node('a','hh-home-nav-item');item.id='hh-home-nav-kyb';item.href='/superset/dashboard/34/#kyb';
-    item.title='抗菌药物监测（10 项专项查询）';
+    item.title='抗菌药物监测（'+n+' 项专项查询）';
     item.appendChild(node('span','hh-home-nav-label','抗菌药物监测'));
-    var count=node('span','hh-home-nav-count','10 项');count.setAttribute('data-hh-cat-count','kyb');count.setAttribute('aria-hidden','true');
+    var count=node('span','hh-home-nav-count',n+' 项');count.setAttribute('data-hh-cat-count','kyb');count.setAttribute('aria-hidden','true');
     item.appendChild(count);
     nav.insertBefore(item,all);
   }
@@ -143,7 +248,7 @@
     var md=document.querySelector('.dashboard-markdown');if(!md)return;
     var list=md.querySelector('ul');if(!list)return;
     var li=list.querySelector('li[data-hh-cat-group="kyb"]');
-    if(!kybAllowed()){if(li)li.remove();return;}
+    if(!kybAllowed()||!visibleReports('kyb').length){if(li)li.remove();return;}
     if(li){
       /* 20261117h15：自愈——展开态子容器空则强制填充；内联显示与属性保持一致 */
       var hbox2=li.querySelector('.hh-cat-children');
@@ -200,21 +305,33 @@
     return input;
   }
   function searchIndex(){
-    var out=[];
+    /* 20261121h18：候选池严格限制在当前用户 allowedIds 内（visibleReports 已按权限过滤），
+       并纳入有权的 BI 驾驶舱；绝不搜出无权限报表；同一报表跨分类出现（如 41 同在 25/26）按
+       href 去重只留一条 */
+    var out=[],seen={};
     function catName(id){for(var i=0;i<NAV.length;i++)if(NAV[i][1]===id)return NAV[i][0];return id==='kyb'?'抗菌药物监测':'';}
     function push(id,reports){
       (reports||[]).forEach(function(r){
         var rid=Number((r.href.match(/\/dashboard\/(\d+)\//)||[])[1]||0);
+        if(seen[r.href])return;
+        seen[r.href]=1;
         out.push({name:r.name,href:r.href,cat:catName(id),cond:QUERY_SUMMARY[rid]||''});
       });
     }
-    NAV.forEach(function(c){var d=categoryCache[c[1]];if(d&&d.reports)push(c[1],d.reports);});
-    if(kybAllowed()&&categoryCache.kyb&&categoryCache.kyb.reports)push('kyb',categoryCache.kyb.reports);
+    NAV.forEach(function(c){push(c[1],visibleReports(c[1]));});
+    if(visibleReports('kyb').length)push('kyb',visibleReports('kyb'));
+    visibleBiLinks().forEach(function(b){
+      if(seen[b[1]])return;
+      seen[b[1]]=1;
+      out.push({name:b[0],href:b[1],cat:'可视化驾驶舱',cond:b[2]});
+    });
     return out;
   }
   function ensureHomeSearch(){
     var hint=document.getElementById('hospital-home-hint');
     if(!hint||!directoryAllowed())return;
+    /* 20261121h18：零报表权限员工隐藏搜索框（候选池为空，避免无效操作） */
+    if(isZeroPerm()){var zw=document.getElementById('hh-search-wrap');if(zw)zw.remove();return;}
     if(document.getElementById('hh-search-wrap'))return;
     var wrap=node('span','hh-search-box');wrap.id='hh-search-wrap';
     var input=makeSearchInput();
@@ -316,13 +433,13 @@
     var work=node('a','hh-home-nav-item hh-home-nav-active','工作台');
     work.href='/superset/welcome/';work.setAttribute('aria-current','page');work.title='工作台';
     nav.appendChild(work);
-    /* 📊 可视化驾驶舱（20261107h8）：置顶分区，工作台下方、报表分类上方 */
+    /* 📊 可视化驾驶舱（20261107h8）：置顶分区，工作台下方、报表分类上方（20261121h18 按权限过滤） */
     nav.appendChild(node('div','hh-home-nav-section hh-home-nav-section-bi','可视化驾驶舱'));
     Array.prototype.forEach.call(BI_LINKS,function(b){
       var a=node('a','hh-home-nav-item hh-home-nav-bi');a.href=b[1];a.title=b[0];
       a.appendChild(node('span','hh-home-nav-label',b[0]));
       a.appendChild(node('span','hh-home-nav-count','BI'));
-      a.setAttribute('data-hh-bi-link',b[1]);nav.appendChild(a);
+      a.setAttribute('data-hh-bi-link',b[1]);a.setAttribute('data-hh-bi-id',String(b[3]));nav.appendChild(a);
     });
     nav.appendChild(node('div','hh-home-nav-section','报表分类'));
     Array.prototype.forEach.call(NAV,function(c){
@@ -335,6 +452,26 @@
     all.href='/superset/dashboard/34/';all.title='查看全部报表';
     nav.appendChild(all);
     main.insertBefore(nav,main.firstChild);
+  }
+  /* 20261121h18：侧栏千人千面——BI 分区与分类行按真实权限/可见张数显隐（幂等，可反复调用） */
+  function updateNavPerm(){
+    var nav=document.getElementById('hh-home-nav');if(!nav)return;
+    var biSec=nav.querySelector('.hh-home-nav-section-bi'),biN=0;
+    Array.prototype.forEach.call(nav.querySelectorAll('[data-hh-bi-id]'),function(a){
+      var vis=allowed(Number(a.getAttribute('data-hh-bi-id')));
+      a.style.display=vis?'':'none';
+      if(vis)biN++;
+    });
+    if(biSec)biSec.style.display=biN?'':'none';
+    Array.prototype.forEach.call(NAV,function(c){
+      var a=nav.querySelector('[data-hh-cat-link="'+c[1]+'"]');
+      if(!a)return;
+      /* 20261121h18：分类行同时要求 ①分类页本身可达（catVisible：目录看板绑定在角色上）
+         ②至少 1 张可见子报表——仅持有子报表而无目录绑定的角色（如系统字典维护之于 33）
+         不露出打不开的分类死链 */
+      var n=visibleReports(c[1]).length;
+      a.style.display=(catVisible(c[1])&&n)?'':'none';
+    });
   }
 
   function parseReports(code){
@@ -354,10 +491,13 @@
     return items;
   }
   function updateCounts(id){
-    var data=categoryCache[id],text=data&&data.reports?data.reports.length+' 项':(data&&data.error?'—':'…');
+    /* 20261121h18：徽标显示该用户真实可见张数（visibleReports 已按 allowed 过滤） */
+    var data=categoryCache[id];
+    var list=visibleReports(id);
+    var text=(list.length||(data&&data.reports))?list.length+' 项':(data&&data.error?'—':'…');
     Array.prototype.forEach.call(document.querySelectorAll('[data-hh-cat-count="'+id+'"]'),function(e){
       if(e.textContent!==text)e.textContent=text;
-      var title=data&&data.error?'分类清单暂时无法读取':text;
+      var title=text;
       if(e.title!==title)e.title=title;
     });
     var group=document.querySelector('[data-hh-cat-group="'+id+'"]');
@@ -366,6 +506,21 @@
   }
   function loadCategory(id){
     if(categoryCache[id]){updateCounts(id);return Promise.resolve(categoryCache[id]);}
+    /* 20261121h18：非 Admin 且白名单未决——allowed() 乐观放行会在此窗口对无权分类发盲请求
+       （实测 34 目录对 25/26/33 等连发 404）。未决期一律以 CATALOG_REPORTS 静态清单渲染零请求，
+       决出后 ensureAllowed 会清掉有权分类的 static 缓存并 refresh 重取生产 Markdown。 */
+    if(!isAdmin()&&!permResolved()){
+      categoryCache[id]={reports:staticReports(id),static:true};
+      updateCounts(id);
+      return Promise.resolve(categoryCache[id]);
+    }
+    /* 20261121h18：无权分类不再发 /api/v1/dashboard/<catId> 盲请求（控制台 404 刷屏根因），
+       直接以 CATALOG_REPORTS 静态清单供渲染；有权分类仍取生产 Markdown（管理员改目录即时生效） */
+    if(!catVisible(id)){
+      categoryCache[id]={reports:staticReports(id)};
+      updateCounts(id);
+      return Promise.resolve(categoryCache[id]);
+    }
     if(categoryPending[id])return categoryPending[id];
     categoryPending[id]=fetch('/api/v1/dashboard/'+id,{credentials:'same-origin'}).then(function(r){
       if(!r.ok)return {error:r.status};
@@ -401,14 +556,21 @@
   }
   function renderGroup(li,id){
     var box=li.querySelector('.hh-cat-children');if(!box)return;
-    var data=categoryCache[id];if(!data)return;
-    var signature=data.error?'error:'+data.error:(data.reports||[]).map(function(r){return r.name+'|'+r.href+'|'+r.description;}).join(';');
+    var data=categoryCache[id];
+    /* 20261121h18：live 缓存优先、CATALOG_REPORTS 静态兜底，统一按 allowed 过滤——
+       展开层绝不渲染无权报表死链 */
+    var list=visibleReports(id);
+    if(!data&&!list.length)return;
+    var signature=id+':'+list.map(function(r){return r.name+'|'+r.href+'|'+r.description;}).join(';');
     if(box.getAttribute('data-hh-signature')===signature)return;
     box.setAttribute('data-hh-signature',signature);
     while(box.firstChild)box.removeChild(box.firstChild);
-    if(data.error){box.appendChild(node('div','hh-cat-error','暂时无法加载，点击分类名进入分类页。'));return;}
-    if(!data.reports.length){box.appendChild(node('div','hh-cat-error','该分类暂无可展开的报表。'));return;}
-    Array.prototype.forEach.call(data.reports,function(report){
+    if(!list.length){
+      if(data&&data.error)box.appendChild(node('div','hh-cat-error','暂时无法加载，点击分类名进入分类页。'));
+      else box.appendChild(node('div','hh-cat-error','当前账号在该分类下暂无授权报表。'));
+      return;
+    }
+    Array.prototype.forEach.call(list,function(report){
       var a=node('a','hh-cat-report');a.href=report.href;a.title=report.name+(report.description?'：'+report.description:'');
       a.appendChild(node('span','hh-cat-report-name',report.name));
       if(report.description)a.appendChild(node('span','hh-cat-report-desc',report.description));
@@ -455,24 +617,47 @@
       var link=li.querySelector('a[href*="/superset/dashboard/"]');if(!link)return;
       var id=Number((link.getAttribute('href').match(/\/dashboard\/(\d+)\//)||[])[1]||0);
       if(!NAV.some(function(c){return c[1]===id;}))return;
+      /* 20261121h18：0 可见报表或分类页本身无权的分类整行隐藏（不留死链不留空行）；
+         权限未决时先渲染再校正 */
+      if(permResolved()&&(!catVisible(id)||!visibleReports(id).length)){li.remove();return;}
       if(!li.hasAttribute('data-hh-cat-group'))setupCategoryGroup(li,id);
       loadCategory(id);
     });
     kybGroup();
     ensureDirectorySearch();
     ensureBiShowcase();
+    applySpecialPerm();
+    ensureNoPermGuide(md);
     applyDirectoryFilter();
   }
-  /* 34 目录顶部：可视化驾驶舱三列入口条（20261107h8 修复：插列表父节点、搜索框先行、幂等+try/catch） */
+  /* 20261121h18：34 底部「其他专题」逐链接按权限过滤（3/1 为 Admin 保留，2 需病案离院明细角色） */
+  function applySpecialPerm(){
+    var p=document.querySelector('.dashboard-markdown [data-hh-special]');if(!p)return;
+    var vis=0;
+    Array.prototype.forEach.call(p.querySelectorAll('a'),function(a){
+      var m=(a.getAttribute('href')||'').match(/\/dashboard\/(\d+)\//);
+      var ok=!!m&&allowed(Number(m[1]));
+      a.style.display=ok?'':'none';
+      if(ok)vis++;
+    });
+    p.style.display=vis?'':'none';
+  }
+  /* 34 目录顶部：可视化驾驶舱入口条（20261107h8 建；20261121h18 按权限过滤 + 可见数 k 动态列） */
   function ensureBiShowcase(){
     try{
       var md=document.querySelector('.dashboard-markdown');if(!md)return;
       var list=md.querySelector('ul');if(!list)return;
       var old=document.getElementById('hh-bi-showcase');
-      if(old&&old.nextElementSibling===list)return;
+      var links=visibleBiLinks();
+      if(!links.length){if(old)old.remove();return;}
+      var sig=links.map(function(b){return b[3];}).join(',');
+      if(old&&old.getAttribute('data-hh-sig')===sig&&old.nextElementSibling===list)return;
       if(old)old.remove();
       var box=node('div');box.id='hh-bi-showcase';box.className='hh-bi-showcase';
-      Array.prototype.forEach.call(BI_LINKS,function(b){
+      box.setAttribute('data-hh-sig',sig);
+      /* 可见卡片数 k：1 半宽单列 / 2 双列 / 3 三列 / 4 沿用响应式四列（1366 屏 2×2） */
+      box.setAttribute('data-hh-k',String(links.length));
+      Array.prototype.forEach.call(links,function(b){
         var a=node('a','hh-bi-card');a.href=b[1];a.title=b[0];
         var t=node('span','hh-bi-card-title','📊 '+b[0]);
         var d=node('span','hh-bi-card-desc',b[2]);
@@ -485,6 +670,7 @@
 
   function updateNavCountsAndDirectory(){
     updateNavCounts();
+    updateNavPerm();
     if(pageId()===34)directoryTree();
   }
 
@@ -654,16 +840,70 @@
       }
     });
   }
+  /* ---------- 20261121h18：零报表权限员工友好引导态 ---------- */
+  function isZeroPerm(){return !isAdmin()&&permResolved()&&!hasAnyVisible();}
+  function currentUserName(){
+    var u=null;
+    try{
+      var app=document.getElementById('app'),raw=app&&app.getAttribute('data-bootstrap');
+      if(raw){var j=JSON.parse(raw);u=j&&j.user;}
+    }catch(e){}
+    if(!u)return '';
+    var name=String(u.last_name||'')+String(u.first_name||'');
+    name=name.trim();
+    if(name)return u.username?name+'（工号 '+u.username+'）':name;
+    return u.username?'工号 '+u.username:'';
+  }
+  function noPermGuideNode(){
+    var card=node('section');card.id='hh-no-perm-guide';card.setAttribute('role','note');
+    card.appendChild(node('div','hh-npg-title','当前账号暂未开通统计报表查阅权限'));
+    var who=currentUserName();
+    var line1=node('p','hh-npg-text');
+    line1.textContent=(who?who+'：':'')+'如需查看科室日常统计、管理月报、BI 驾驶舱或专项明细，请联系信息科为您分配对应的【报表授权】角色。';
+    card.appendChild(line1);
+    card.appendChild(node('p','hh-npg-sub','（您仍可点击右上角“修改密码”维护个人口令）'));
+    return card;
+  }
+  /* 34 目录内引导卡（顶部，搜索框上方） */
+  function ensureNoPermGuide(md){
+    var old=document.getElementById('hh-no-perm-guide');
+    if(!isZeroPerm()){if(old&&old.parentElement===md)old.remove();return;}
+    if(old&&old.parentElement===md)return;
+    if(old)old.remove();
+    var card=noPermGuideNode();
+    var wrap=md.querySelector('.hh-dir-search-wrap');
+    if(wrap&&wrap.parentElement===md)md.insertBefore(card,wrap);
+    else md.insertBefore(card,md.firstChild);
+  }
+  /* 工作台引导卡（hint 下方，占第 2 行；折叠面板顺移第 3 行） */
+  function ensureNoPermHome(main,allowed){
+    var need=!allowed&&permResolved();
+    main.setAttribute('data-hh-npg',need?'1':'0');
+    var old=document.getElementById('hh-no-perm-guide');
+    if(!need){if(old&&old.parentElement===main)old.remove();return;}
+    if(old&&old.parentElement===main)return;
+    if(old)old.remove();
+    var hint=document.getElementById('hospital-home-hint');
+    var card=noPermGuideNode();
+    if(hint&&hint.parentElement===main)main.insertBefore(card,hint.nextSibling);
+    else main.insertBefore(card,main.firstChild);
+  }
+
   function home(){
     var collapse=document.querySelector('main .ant-collapse'),main=collapse&&collapse.closest('main');if(!main)return;
     mark(main,'data-hh-home-content');
     Array.prototype.forEach.call(main.children,function(e){if(e.textContent.trim()==='首页'&&!e.querySelector('a,button,input'))mark(e,'data-hh-home-old-title');});
-    var allowed=directoryAllowed();
-    document.documentElement.classList.toggle('hh-home-nonav',!allowed);
-    buildNav(main,allowed);
+    /* 20261121h18：目录外壳可达 && 至少有 1 项可见业务内容才渲染侧栏；零报表权限收起侧栏单栏化。
+       注意：局部变量命名 layoutAllowed——严禁用 allowed，否则遮蔽全局权限函数 allowed(id)
+       （首版 h18 即因此 TypeError 中断最近使用过滤，本行注释即防回归） */
+    var layoutAllowed=directoryAllowed()&&hasAnyVisible();
+    document.documentElement.classList.toggle('hh-home-nonav',!layoutAllowed);
+    buildNav(main,layoutAllowed);
     updateKybNav();
-    header(main,allowed);
+    updateNavPerm();
+    header(main,layoutAllowed);
     ensureHomeSearch();
+    ensureNoPermHome(main,layoutAllowed);
     var p=panelItems(collapse);
     if(p.recent)recentPanel(p.recent);
     management(collapse,p.map,isAdmin());
@@ -692,34 +932,261 @@
       if(bar&&!bar.hasAttribute('data-hh-home-toolbar')&&!bar.querySelector('[data-test="styled-card"]'))mark(bar,'data-hh-home-toolbar');
       columns(grid);
     });
+    /* 20261121h18：最近使用列表按权限过滤——已撤权看板的卡片行自动隐藏，不出死链。
+       原生卡片标题多为 React onClick 导航（无 href 锚点，实测 003158 首页 5 卡全无 href）：
+       先取锚点看板号，取不到再按标题对 CATALOG_REPORTS/BI_LINKS 名称前缀映射
+       （容忍「（BI 驾驶舱）」等显示后缀；34 目录外壳对全员可见） */
+    if(!isAdmin()){
+      var nameMap=[];
+      Object.keys(CATALOG_REPORTS).forEach(function(cid){
+        CATALOG_REPORTS[cid].reports.forEach(function(r){nameMap.push([r[1],r[0]]);});
+      });
+      BI_LINKS.forEach(function(b){nameMap.push([b[0],b[3]]);});
+      nameMap.push(['统计报表目录',34]);
+      Array.prototype.forEach.call(main.querySelectorAll('[data-hh-home-card]'),function(item){
+        var id=0,lnk=item.querySelector('a[href*="/dashboard/"]');
+        var m=lnk?(lnk.getAttribute('href')||'').match(/\/dashboard\/(\d+)/):null;
+        if(m)id=Number(m[1]);
+        else{
+          var tt=(item.querySelector('[data-hh-row-title]')||{}).textContent||'';
+          for(var ni=0;ni<nameMap.length;ni++){
+            if(tt&&nameMap[ni][0]&&tt.indexOf(nameMap[ni][0])===0){id=nameMap[ni][1];break;}
+          }
+        }
+        /* h5 卡片压平规则 [data-hh-home-card]{display:block!important} 会压过普通内联
+           display:'none'（实测 TypeError 修复后仍可见的根因）——必须 important 优先级写入 */
+        if(id){
+          if(allowed(id))item.style.removeProperty('display');
+          else item.style.setProperty('display','none','important');
+        }
+      });
+    }
     localizeRecent(collapse);
     api.homeReady=true;
   }
   function catalog(){
+    /* 20261121h18：二级分类目录页（25–31,33）自动隐藏无权访问的子报表行（如仅有手术明细提取
+       角色的员工进入 29 只见 50/51/52）；整分类无权时给出简明提示。34 目录页的分类行由
+       directoryTree 整行移除，不在此列。 */
+    var allRows=0,allowedRows=0;
     Array.prototype.forEach.call(document.querySelectorAll('.dashboard-markdown li'),function(li){
       var links=li.querySelectorAll('a');if(links.length!==1)return;
-      var link=links[0];tooltip(link);tooltip(li);
+      var link=links[0];
+      var mid=Number(((link.getAttribute('href')||'').match(/\/dashboard\/(\d+)\//)||[])[1]||0);
+      if(mid)allRows++;
+      if(mid&&!allowed(mid)){li.style.setProperty('display','none','important');return;}
+      if(mid){allowedRows++;li.style.removeProperty('display');}
+      tooltip(link);tooltip(li);
       var root=link;while(root.parentElement&&root.parentElement!==li)root=root.parentElement;
       if(root.parentElement!==li||root.textContent.trim()!==link.textContent.trim())return;
       mark(root,'data-hh-catalog-name');
       Array.prototype.forEach.call(li.children,function(e){if(e!==root&&!e.querySelector('a')){mark(e,'data-hh-catalog-description');tooltip(e);}});
     });
+    var md=document.querySelector('.dashboard-markdown');
+    var notice=document.getElementById('hh-cat-empty-note');
+    if(pageId()!==34&&permResolved()&&allRows>0&&allowedRows===0&&md){
+      if(!notice){
+        notice=node('p','hh-cat-error');notice.id='hh-cat-empty-note';
+        notice.textContent='当前账号在该分类下暂无授权报表，如需开通请联系信息科分配对应的【报表授权】角色。';
+        md.appendChild(notice);
+      }
+    }else if(notice)notice.remove();
   }
   function restoreCatalog(){
     Array.prototype.forEach.call(document.querySelectorAll('[data-hh-catalog-description]'),function(e){e.removeAttribute('data-hh-catalog-description');});
   }
+  /* ---------- ⭐ 我的常用报表（20261119h17）：纯 localStorage 收藏夹，按登录工号隔离，上限 12 条 ---------- */
+  function favUserKey(){
+    var u='anon';
+    try{
+      var app=document.getElementById('app'),raw=app&&app.getAttribute('data-bootstrap');
+      if(raw){var j=JSON.parse(raw),un=j&&j.user&&j.user.username;if(un)u=String(un);}
+    }catch(e){}
+    return 'hh_fav_reports_v1_'+u;
+  }
+  function favsAll(){try{var a=JSON.parse(localStorage.getItem(favUserKey())||'[]');return Array.isArray(a)?a:[];}catch(e){return [];}}
+  function favsSave(a){try{localStorage.setItem(favUserKey(),JSON.stringify(a.slice(0,12)));}catch(e){}}
+  function canonHref(href){
+    var m=String(href||'').match(/\/superset\/dashboard\/([^/?#]+)/);
+    if(!m)return '';
+    var k=m[1].replace(/\/$/,'');
+    if(/^\d+$/.test(k))return '/superset/dashboard/'+k+'/';
+    var id=DASH_ALIASES[k];
+    return id?'/superset/dashboard/'+id+'/':href;
+  }
+  function favIndexOf(arr,href){for(var i=0;i<arr.length;i++)if(arr[i].href===href)return i;return -1;}
+  function favToggle(item){
+    var arr=favsAll(),i=favIndexOf(arr,item.href);
+    if(i>=0)arr.splice(i,1);
+    else arr.unshift({id:item.id||0,name:item.name||'',href:item.href,desc:item.desc||''});
+    favsSave(arr);
+  }
+  function mkFavBtn(href,name,desc,id){
+    var b=document.createElement('button');
+    b.type='button';b.className='hh-fav-btn';b.textContent='☆';
+    b.setAttribute('data-hh-fav-href',href);b.setAttribute('data-hh-fav-name',name||'');
+    b.setAttribute('data-hh-fav-desc',desc||'');b.setAttribute('data-hh-fav-id',id||0);
+    b.setAttribute('aria-label','收藏 '+(name||'报表'));
+    if(favIndexOf(favsAll(),href)>=0){b.classList.add('hh-fav-on');b.textContent='★';b.title='从我的常用报表移除';}
+    else b.title='加入我的常用报表';
+    return b;
+  }
+  function syncFavBtn(b){
+    var on=favIndexOf(favsAll(),b.getAttribute('data-hh-fav-href'))>=0;
+    b.classList.toggle('hh-fav-on',on);
+    b.textContent=on?'★':'☆';
+    b.title=on?'从我的常用报表移除':'加入我的常用报表';
+  }
+  function favRow(f){
+    var a=document.createElement('a');a.className='hh-fav-row';a.href=f.href;a.title=f.name;
+    var nm=document.createElement('span');nm.className='hh-fav-name';nm.textContent=f.name||f.href;
+    a.appendChild(nm);
+    if(f.desc){var d=document.createElement('span');d.className='hh-fav-desc';d.textContent=f.desc;a.appendChild(d);}
+    a.appendChild(mkFavBtn(f.href,f.name,f.desc,f.id));
+    return a;
+  }
+  function favHead(n){
+    var head=document.createElement('div');head.className='hh-fav-head';
+    var t=document.createElement('span');t.setAttribute('class','hh-fav-star');t.textContent='★';
+    var label=document.createElement('span');label.textContent=' 我的常用报表（'+n+'）';
+    head.appendChild(t);head.appendChild(label);
+    var clear=document.createElement('span');clear.className='hh-fav-clear';clear.textContent='清空';
+    clear.setAttribute('role','button');clear.setAttribute('tabindex','0');
+    clear.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();favsSave([]);schedule();});
+    head.appendChild(clear);
+    return head;
+  }
+  /* 首页工作台置顶面板（收藏数≥1 才渲染，=0 不渲染空盒子） */
+  function ensureFavHome(main){
+    if(!main)return;
+    var panel=document.getElementById('hh-fav-panel');
+    /* 20261121h18：收藏渲染对照 allowedIds 过滤——已撤权报表自动隐藏不展示死链 */
+    var list=favsAll().filter(function(f){
+      var m=String(f.href||'').match(/\/dashboard\/(\d+)/);
+      return !m||allowed(Number(m[1]));
+    }),need=list.length>0&&!editing();
+    main.setAttribute('data-hh-fav',need?'1':'0');
+    if(!need){if(panel)panel.remove();return;}
+    if(!panel){
+      panel=document.createElement('div');panel.id='hh-fav-panel';panel.setAttribute('data-hh-home-v4','1');
+      /* ant-collapse 嵌套在 React wrapper div 内（非 main 直接子节点）：insertBefore 参照必须是
+         main 的直接子节点，否则 NotFoundError——取 collapse 的顶层祖先作锚点 */
+      var collapse=main.querySelector('.ant-collapse');
+      var anchor=collapse;
+      while(anchor&&anchor.parentElement&&anchor.parentElement!==main)anchor=anchor.parentElement;
+      if(anchor&&anchor.parentElement===main)main.insertBefore(panel,anchor);
+      else main.appendChild(panel);
+    }
+    if(panel.getAttribute('data-hh-n')!==String(list.length)||!panel.querySelector('.hh-fav-row')){
+      while(panel.firstChild)panel.removeChild(panel.firstChild);
+      panel.setAttribute('data-hh-n',String(list.length));
+      panel.appendChild(favHead(list.length));
+      Array.prototype.forEach.call(list,function(f){panel.appendChild(favRow(f));});
+    }
+  }
+  /* 34 目录：驾驶舱入口条下收藏盒（≥1）；=0 时搜索框旁仅 12px 灰字轻提示 */
+  function ensureFavDir(){
+    var md=document.querySelector('.dashboard-markdown');if(!md)return;
+    var box=document.getElementById('hh-dir-fav-box');
+    var hint=document.getElementById('hh-dir-fav-hint');
+    /* 20261121h18：同 ensureFavHome，按 allowedIds 过滤已撤权收藏 */
+    var list=favsAll().filter(function(f){
+      var m=String(f.href||'').match(/\/dashboard\/(\d+)/);
+      return !m||allowed(Number(m[1]));
+    }),need=list.length>0&&!editing();
+    if(!need){
+      if(box)box.remove();
+      var wrap=document.querySelector('.hh-dir-search-wrap');
+      if(wrap&&!hint){
+        hint=document.createElement('span');hint.id='hh-dir-fav-hint';
+        hint.textContent='提示：点击报表旁的 ☆ 可将常用报表置顶到首页';
+        wrap.insertBefore(hint,wrap.firstChild);
+      }
+      return;
+    }
+    if(hint)hint.remove();
+    var showcase=document.getElementById('hh-bi-showcase');
+    var anchor=showcase?showcase.nextSibling:null;
+    if(!box){
+      box=document.createElement('div');box.id='hh-dir-fav-box';
+      if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(box,anchor);
+      else md.appendChild(box);
+    }
+    if(box.getAttribute('data-hh-n')!==String(list.length)||!box.querySelector('.hh-fav-row')){
+      while(box.firstChild)box.removeChild(box.firstChild);
+      box.setAttribute('data-hh-n',String(list.length));
+      box.appendChild(favHead(list.length));
+      Array.prototype.forEach.call(list,function(f){box.appendChild(favRow(f));});
+    }
+  }
+  /* 星标注入：34 目录报表行+驾驶舱卡、分类页（25–31,33）报表行、查询页/驾驶舱面包屑主标题右侧 */
+  function ensureFavStars(){
+    if(editing()){
+      Array.prototype.forEach.call(document.querySelectorAll('.hh-fav-btn'),function(b){b.remove();});
+      return;
+    }
+    var pid=pageId();
+    if(pid===34||(pid>=25&&pid<=31)||pid===33){
+      Array.prototype.forEach.call(document.querySelectorAll('.dashboard-markdown .hh-cat-report'),function(a){
+        if(a.querySelector('.hh-fav-btn'))return;
+        var nm=a.querySelector('.hh-cat-report-name'),ds=a.querySelector('.hh-cat-report-desc');
+        var href=a.getAttribute('href')||'';
+        var num=(href.match(/\/dashboard\/(\d+)/)||[])[1]||0;
+        a.appendChild(mkFavBtn(canonHref(href),(nm?nm.textContent:'').trim(),(ds?ds.textContent:'').trim(),Number(num)));
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('.hh-bi-card'),function(a){
+        if(a.querySelector('.hh-fav-btn'))return;
+        var t=a.querySelector('.hh-bi-card-title'),d=a.querySelector('.hh-bi-card-desc');
+        a.appendChild(mkFavBtn(canonHref(a.getAttribute('href')),(t?t.textContent.replace(/^📊\s*/,''):'').trim(),(d?d.textContent:'').trim(),0));
+      });
+    }
+    if((pid>=25&&pid<=31)||pid===33){
+      Array.prototype.forEach.call(document.querySelectorAll('.dashboard-markdown li'),function(li){
+        if(li.getAttribute('data-hh-cat-group')||li.querySelector('.hh-fav-btn'))return;
+        var link=li.querySelector('a[href*="/superset/dashboard/"]');if(!link)return;
+        var root=link;while(root.parentElement&&root.parentElement!==li)root=root.parentElement;
+        var desc=li.querySelector('[data-hh-catalog-description]');
+        var href=link.getAttribute('href')||'';
+        var num=(href.match(/\/dashboard\/(\d+)/)||[])[1]||0;
+        li.appendChild(mkFavBtn(canonHref(href),(root.textContent||'').trim(),(desc?desc.textContent:'').trim(),Number(num)));
+      });
+    }
+    if(isQuery()&&pid!==34){
+      var cur=document.querySelector('#hh-crumb .hh-crumb-cur');
+      if(cur&&cur.parentElement&&!cur.parentElement.querySelector('.hh-fav-btn')){
+        cur.parentElement.appendChild(mkFavBtn(canonHref(location.pathname),(cur.textContent||'').trim(),'',pid));
+      }
+    }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target&&e.target.closest?e.target.closest('.hh-fav-btn'):null;
+    if(!b)return;
+    /* 防误触：只切换收藏状态，绝不触发外层链接跳转或分类收起 */
+    e.preventDefault();e.stopPropagation();
+    favToggle({href:b.getAttribute('data-hh-fav-href'),name:b.getAttribute('data-hh-fav-name'),
+               desc:b.getAttribute('data-hh-fav-desc'),id:Number(b.getAttribute('data-hh-fav-id')||0)});
+    Array.prototype.forEach.call(document.querySelectorAll('.hh-fav-btn'),function(x){syncFavBtn(x);});
+    schedule();
+  },true);
+
   function refresh(){
     pending=0;var h=isHome(),c=isCatalog(),q=isQuery();
     document.documentElement.classList.toggle('hh-home',h);document.documentElement.classList.toggle('hh-catalog-compact',c);document.documentElement.classList.toggle('hh-query-ui',q);
     document.documentElement.classList.toggle('hh-native-editor',editing());
-    if(h){home();}
+    if(h){home();ensureFavHome(document.querySelector('main[data-hh-home-content]'));}
     else{
       recentAutoDone=false;
       document.documentElement.classList.remove('hh-home-nonav');
       removeById('hh-home-nav');removeById('hospital-home-hint');removeById('hh-home-management');
+      var fp=document.getElementById('hh-fav-panel');if(fp)fp.remove();
+      removeById('hh-no-perm-guide');
     }
-    if(c)catalog();else restoreCatalog();
-    if(h||pageId()===34){checkKybAccess();updateNavCountsAndDirectory();}
+    if(c){catalog();ensureFavDir();}
+    else{restoreCatalog();var db=document.getElementById('hh-dir-fav-box');if(db)db.remove();var dh=document.getElementById('hh-dir-fav-hint');if(dh)dh.remove();}
+    if(c||q)ensureFavStars();
+    /* 20261121h18：进入首页/34 目录即静默校验白名单（60s 内存缓存），加角色后 F5 立即可见；
+       checkKybAccess 仅固化静态抗菌办清单，不再发探测请求 */
+    if(h||pageId()===34){ensureAllowed();checkKybAccess();updateNavCountsAndDirectory();}
   }
   function schedule(){if(!pending)pending=setTimeout(refresh,80);}
   function watchDirectory(){
@@ -739,11 +1206,12 @@
       'html.hh-home{--hh-page:#f5f7fa;--hh-panel:#fff;--hh-border:#e4e9ef;--hh-text:#263445;--hh-muted:#718096;--hh-blue:#1677c8;--hh-blue-dark:#135da3;--hh-radius:8px;--hh-line:#eef2f6}',
       'html.hh-home body{color:var(--hh-text);font-family:"Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;background:var(--hh-page)!important}',
       'html.hh-catalog-compact body,html.hh-query-ui body{color:var(--hui-text);font-family:"Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}',
-      'html.hh-home main[data-hh-home-content]{display:grid!important;grid-template-columns:224px minmax(0,1fr);grid-template-rows:auto auto;gap:0 20px;align-items:start;align-content:start;width:100%;max-width:1440px;margin:0 auto;box-sizing:border-box;padding:16px 20px 24px!important;background:var(--hh-page)}',
+      'html.hh-home main[data-hh-home-content]{display:grid!important;grid-template-columns:224px minmax(0,1fr);grid-template-rows:auto auto auto;gap:0 20px;align-items:start;align-content:start;width:100%;max-width:1440px;margin:0 auto;box-sizing:border-box;padding:16px 20px 24px!important;background:var(--hh-page)}',
       'html.hh-home.hh-home-nonav main[data-hh-home-content]{grid-template-columns:minmax(0,1fr)}',
       'html.hh-home.hh-home-nonav #hospital-home-hint,html.hh-home.hh-home-nonav main .ant-collapse{grid-column:1}',
       'html.hh-home [data-hh-home-old-title]{display:none!important}',
-      'html.hh-home #hh-home-nav{grid-column:1;grid-row:1/3;display:flex;flex-direction:column;align-self:start;position:sticky;top:16px;background:var(--hh-panel);border:1px solid var(--hh-border);border-radius:var(--hh-radius);padding:8px 0 6px;margin:0;box-sizing:border-box;min-width:0}',
+      /* 20261119h17：收藏面板行——有收藏时 main[data-hh-fav="1"]，面板占第 2 行、折叠面板顺移第 3 行，左侧导航跨全高 */
+      'html.hh-home #hh-home-nav{grid-column:1;grid-row:1/4;display:flex;flex-direction:column;align-self:start;position:sticky;top:16px;background:var(--hh-panel);border:1px solid var(--hh-border);border-radius:var(--hh-radius);padding:8px 0 6px;margin:0;box-sizing:border-box;min-width:0}',
       'html.hh-home #hh-home-nav .hh-home-nav-title{padding:4px 16px 10px;margin:0 0 6px;border-bottom:1px solid var(--hh-line);font-size:15px;line-height:22px;font-weight:600;color:var(--hh-text)}',
       'html.hh-home #hh-home-nav .hh-home-nav-section{padding:8px 16px 4px;font-size:12px;line-height:18px;color:var(--hh-muted)}',
       'html.hh-home #hh-home-nav .hh-home-nav-item{display:flex;align-items:center;justify-content:space-between;gap:8px;height:42px;padding:0 14px;margin:2px 8px;border-radius:4px;font-size:14px;line-height:22px;color:var(--hh-text);text-decoration:none;white-space:nowrap;overflow:hidden}',
@@ -765,6 +1233,39 @@
       '#hospital-home-hint .hh-home-pwd-btn:focus-visible{outline:2px solid #1677c8;outline-offset:2px}',
       'html.hh-home.hh-home-nonav #hospital-home-hint .hh-home-pwd-btn{margin-left:auto}',
       'html.hh-home main .ant-collapse{grid-column:2;grid-row:2;display:block;margin:0!important;padding:0!important;border:0!important;background:transparent}',
+      'html.hh-home main[data-hh-fav="1"] .ant-collapse{grid-row:3}',
+      /* ⭐ 我的常用报表（20261119h17）：首页置顶面板（标题行 38px + 行高 40px 紧凑列表） */
+      '#hh-fav-panel{grid-column:2;grid-row:2;min-width:0;margin:0 0 12px;background:var(--hh-panel);border:1px solid var(--hh-border);border-radius:var(--hh-radius);box-sizing:border-box;overflow:hidden}',
+      '#hh-fav-panel .hh-fav-head{display:flex;align-items:center;height:38px;padding:0 16px;border-bottom:1px solid var(--hh-line);font-size:14px;font-weight:600;color:var(--hh-text)}',
+      '#hh-fav-panel .hh-fav-head .hh-fav-star{color:#f59e0b;margin-right:8px;font-size:14px}',
+      '#hh-fav-panel .hh-fav-head .hh-fav-clear{margin-left:auto;font-size:12px;font-weight:400;color:var(--hh-muted);cursor:pointer}',
+      '#hh-fav-panel .hh-fav-head .hh-fav-clear:hover{color:var(--hh-blue)}',
+      '#hh-fav-panel .hh-fav-row{display:flex;align-items:center;height:40px;padding:0 16px;border-bottom:1px solid var(--hh-line);font-size:14px;text-decoration:none;color:var(--hh-text);min-width:0}',
+      '#hh-fav-panel .hh-fav-row:last-child{border-bottom:0}',
+      '#hh-fav-panel .hh-fav-row:hover{background:#f3f8fc}',
+      '#hh-fav-panel .hh-fav-row .hh-fav-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--hh-text);font-size:14px;line-height:22px}',
+      '#hh-fav-panel .hh-fav-row:hover .hh-fav-name{color:var(--hh-blue)}',
+      '#hh-fav-panel .hh-fav-row .hh-fav-desc{flex:none;max-width:40%;margin-left:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:var(--hh-muted)}',
+      '#hh-fav-panel .hh-fav-row .hh-fav-btn{flex:none;margin-left:10px}',
+      /* 星标按钮（34 目录行/分类页行/驾驶舱卡/查询页面包屑共用） */
+      '.hh-fav-btn{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;padding:0;border:0;border-radius:4px;background:transparent;color:#a8b3bf;font-size:16px;line-height:26px;cursor:pointer;flex:none;font-family:inherit}',
+      '.hh-fav-btn:hover{color:#f59e0b;background:#fff7e6}',
+      '.hh-fav-btn.hh-fav-on{color:#f59e0b}',
+      '.hh-fav-btn:focus-visible{outline:2px solid #1677c8;outline-offset:1px}',
+      '.hh-bi-card .hh-fav-btn{position:absolute;top:6px;right:6px}',
+      'html.hh-native-editor .hh-fav-btn,html.hh-native-editor #hh-fav-panel,html.hh-native-editor #hh-dir-fav-box{display:none!important}',
+      'html.hh-catalog-compact .dashboard-markdown .hh-cat-report{grid-template-columns:minmax(220px,300px) minmax(0,1fr) 30px}',
+      /* 34 目录置顶收藏盒 + 无收藏轻提示 */
+      '#hh-dir-fav-box{margin:0 0 12px;background:#fff;border:1px solid #e4e9ef;border-radius:8px;overflow:hidden;box-sizing:border-box}',
+      '#hh-dir-fav-box .hh-fav-head{display:flex;align-items:center;height:38px;padding:0 16px;border-bottom:1px solid #eef2f6;font-size:14px;font-weight:600;color:#263445}',
+      '#hh-dir-fav-box .hh-fav-head .hh-fav-star{color:#f59e0b;margin-right:8px}',
+      '#hh-dir-fav-box .hh-fav-row{display:flex;align-items:center;height:40px;padding:0 16px;border-bottom:1px solid #eef2f6;font-size:14px;text-decoration:none;color:#263445;min-width:0}',
+      '#hh-dir-fav-box .hh-fav-row:last-child{border-bottom:0}',
+      '#hh-dir-fav-box .hh-fav-row:hover{background:#f3f8fc}',
+      '#hh-dir-fav-box .hh-fav-row .hh-fav-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#1677c8}',
+      '#hh-dir-fav-box .hh-fav-row .hh-fav-desc{flex:none;max-width:40%;margin-left:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;color:#909399}',
+      '#hh-dir-fav-box .hh-fav-row .hh-fav-btn{flex:none;margin-left:10px}',
+      '#hh-dir-fav-hint{font-size:12px;color:#909399;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0;margin-right:8px}',
       'html.hh-home .ant-collapse-item{background:var(--hh-panel);border:1px solid var(--hh-border);border-radius:var(--hh-radius);margin:0 0 12px!important;overflow:hidden;box-shadow:none!important}',
       'html.hh-home .ant-collapse-item>.ant-collapse-header{display:flex!important;align-items:center!important;min-height:44px;margin:0!important;padding:0 16px!important;font-size:15px!important;line-height:22px!important;font-weight:600!important;color:var(--hh-text)!important;background:transparent!important}',
       'html.hh-home .ant-collapse-header .ant-collapse-arrow{color:var(--hh-muted)}',
@@ -865,9 +1366,28 @@
       '.hh-search-empty{display:flex;align-items:center;height:38px;padding:0 12px;font-size:13px;color:#8a97a5}',
       '.hh-dir-search-wrap{margin:0 0 10px}',
       '.hh-dir-search-wrap #hh-report-search{display:block}',
-      /* 可视化驾驶舱入口条（34 目录）：三列网格、卡片 56px 蓝左边框 */
-      '.hh-bi-showcase{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 12px}',
-      '.hh-bi-card{display:flex;flex-direction:column;justify-content:center;gap:2px;height:56px;padding:0 12px;background:#fff;border:1px solid #e4e9ef;border-left:3px solid #1677c8;border-radius:6px;text-decoration:none;box-sizing:border-box;min-width:0}',
+      /* 可视化驾驶舱入口条（34 目录）：20261119h17 起 4 卡响应式网格——≥1440px 四列单排，
+         901–1439px（含 1366×768）两列双排；卡片 56px 蓝左边框不变 */
+      '.hh-bi-showcase{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 12px}',
+      '@media(min-width:1440px){.hh-bi-showcase{grid-template-columns:repeat(4,minmax(0,1fr))}}',
+      /* 20261121h18：BI 入口条按实际可见卡片数 k 动态列（1 半宽单列 / 2 双列 / 3 三列；k=4 沿用上方响应式） */
+      '.hh-bi-showcase[data-hh-k="1"]{grid-template-columns:minmax(0,560px)}',
+      '.hh-bi-showcase[data-hh-k="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}',
+      '.hh-bi-showcase[data-hh-k="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}',
+      '@media(max-width:900px){.hh-bi-showcase[data-hh-k="1"]{grid-template-columns:minmax(0,1fr)}.hh-bi-showcase[data-hh-k="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}}',
+      /* 20261121h18：零报表权限引导卡（工作台 + 34 目录共用，白底 3px 蓝左边框） */
+      'html.hh-home #hh-no-perm-guide{grid-column:2;grid-row:2;min-width:0;margin:0 0 12px;padding:18px 22px;background:var(--hh-panel);border:1px solid var(--hh-border);border-left:3px solid #1677c8;border-radius:8px;box-sizing:border-box}',
+      'html.hh-home.hh-home-nonav #hh-no-perm-guide{grid-column:1}',
+      'html.hh-home main[data-hh-npg="1"] .ant-collapse{grid-row:3}',
+      'html.hh-home main[data-hh-npg="1"][data-hh-fav="1"] #hh-fav-panel{grid-row:2}',
+      '#hh-no-perm-guide .hh-npg-title{margin:0 0 8px;font-size:15px;line-height:24px;font-weight:600;color:#263445}',
+      '#hh-no-perm-guide .hh-npg-text{margin:0;font-size:14px;line-height:24px;color:#44536a}',
+      '#hh-no-perm-guide .hh-npg-sub{margin:8px 0 0;font-size:12px;line-height:20px;color:#8a97a5}',
+      'html.hh-catalog-compact .dashboard-markdown #hh-no-perm-guide{margin:0 0 12px;padding:16px 20px;background:#fff;border:1px solid #e4e9ef;border-left:3px solid #1677c8;border-radius:8px}',
+      'html.hh-catalog-compact .dashboard-markdown #hh-no-perm-guide .hh-npg-title{font-size:15px;line-height:24px;font-weight:600;color:#263445}',
+      'html.hh-catalog-compact .dashboard-markdown #hh-no-perm-guide .hh-npg-text{font-size:14px;line-height:24px;color:#44536a}',
+      'html.hh-catalog-compact .dashboard-markdown #hh-no-perm-guide .hh-npg-sub{font-size:12px;color:#8a97a5}',
+      '.hh-bi-card{display:flex;flex-direction:column;justify-content:center;gap:2px;height:56px;padding:0 12px;background:#fff;border:1px solid #e4e9ef;border-left:3px solid #1677c8;border-radius:6px;text-decoration:none;box-sizing:border-box;min-width:0;position:relative}',
       '.hh-bi-card:hover{background:#f3f8fc}',
       '.hh-bi-card .hh-bi-card-title{font-size:14px;font-weight:600;color:#263445;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
       '.hh-bi-card .hh-bi-card-desc{font-size:12px;color:#909399;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
@@ -883,8 +1403,8 @@
       'html.hh-query-ui #hospital-monthly-report th.hm-group{font-size:15px;background:#f0f2f5!important}',
       'html.hh-query-ui .superset-chart-table tbody tr:hover td,html.hh-query-ui #hospital-monthly-report tr:hover td{background:#f3f8fc!important}',
       '@media(min-width:901px) and (max-width:1199px){html.hh-home main[data-hh-home-content]{grid-template-columns:200px minmax(0,1fr)}html.hh-home #hospital-home-hint{flex-wrap:wrap;gap:8px 12px}#hospital-home-hint .hh-home-desc{white-space:normal;overflow:visible;text-overflow:clip}}',
-      '@media(max-width:900px){html.hh-home main[data-hh-home-content]{grid-template-columns:minmax(0,1fr);padding:14px 12px 20px!important}html.hh-home #hh-home-nav{grid-column:1/-1;grid-row:1;position:static;flex-direction:row;align-items:center;gap:0;padding:0 4px;margin:0 0 12px;overflow-x:auto;overflow-y:hidden}html.hh-home #hh-home-nav .hh-home-nav-title,html.hh-home #hh-home-nav .hh-home-nav-section,html.hh-home #hh-home-nav .hh-home-nav-count{display:none}html.hh-home #hh-home-nav .hh-home-nav-item{flex:none;height:36px;margin:4px 2px;padding:0 10px}html.hh-home #hh-home-nav .hh-home-nav-badge{display:none}html.hh-home #hh-home-nav .hh-home-nav-all{flex:none;height:36px;margin:4px 2px;padding:0 10px;border-top:0}html.hh-home #hospital-home-hint{grid-column:1/-1;grid-row:2;flex-wrap:wrap;gap:8px 12px}#hospital-home-hint h1{white-space:normal}#hospital-home-hint .hh-home-desc{white-space:normal;overflow:visible;text-overflow:clip;flex-basis:100%}html.hh-home main .ant-collapse{grid-column:1/-1;grid-row:3}html.hh-home [data-hh-home-grid]{--hui-columns:minmax(0,1fr) 120px 78px 68px}html.hh-home [data-hh-home-grid][data-hh-has-state=false]{--hui-columns:minmax(0,1fr) 120px 68px}html.hh-catalog-compact [data-hh-catalog-name]{flex-basis:200px}html.hh-catalog-compact .dashboard-markdown .hh-cat-head [data-hh-catalog-description]{display:none}html.hh-catalog-compact .dashboard-markdown .hh-cat-report{grid-template-columns:minmax(180px,240px) minmax(0,1fr)}}',
-      '@media(max-width:600px){#hospital-home-hint .hh-home-desc{display:none}#hospital-home-hint .hh-home-primary{padding:0 10px}#hospital-home-hint .hh-home-pwd-btn{margin-left:8px;padding:0 10px}html.hh-home [data-hh-home-grid]{--hui-columns:minmax(0,1fr) 72px 64px}html.hh-home [data-hh-home-grid][data-hh-has-state=false]{--hui-columns:minmax(0,1fr) 64px}html.hh-home [data-hh-row-info],html.hh-home .hh-list-columns>span:nth-child(2){display:none}html.hh-home [data-hh-row-state]{grid-column:2}html.hh-home [data-hh-home-toolbar] .nav-right{flex-wrap:wrap}html.hh-catalog-compact [data-hh-catalog-name]{flex-basis:150px}html.hh-catalog-compact .dashboard-markdown .hh-cat-head{gap:8px;padding-left:8px;padding-right:8px}html.hh-catalog-compact .dashboard-markdown .hh-cat-head [data-hh-catalog-name]{flex:1;min-width:0}html.hh-catalog-compact .dashboard-markdown .hh-cat-children{margin-left:38px;padding-left:6px}html.hh-catalog-compact .dashboard-markdown .hh-cat-report{grid-template-columns:minmax(0,1fr);min-height:40px}html.hh-catalog-compact .dashboard-markdown .hh-cat-report-desc{display:none}}'
+      '@media(max-width:900px){html.hh-home main[data-hh-home-content]{grid-template-columns:minmax(0,1fr);padding:14px 12px 20px!important}html.hh-home #hh-home-nav{grid-column:1/-1;grid-row:1;position:static;flex-direction:row;align-items:center;gap:0;padding:0 4px;margin:0 0 12px;overflow-x:auto;overflow-y:hidden}html.hh-home #hh-home-nav .hh-home-nav-title,html.hh-home #hh-home-nav .hh-home-nav-section,html.hh-home #hh-home-nav .hh-home-nav-count{display:none}html.hh-home #hh-home-nav .hh-home-nav-item{flex:none;height:36px;margin:4px 2px;padding:0 10px}html.hh-home #hh-home-nav .hh-home-nav-badge{display:none}html.hh-home #hh-home-nav .hh-home-nav-all{flex:none;height:36px;margin:4px 2px;padding:0 10px;border-top:0}html.hh-home #hospital-home-hint{grid-column:1/-1;grid-row:2;flex-wrap:wrap;gap:8px 12px}#hospital-home-hint h1{white-space:normal}#hospital-home-hint .hh-home-desc{white-space:normal;overflow:visible;text-overflow:clip;flex-basis:100%}html.hh-home main .ant-collapse{grid-column:1/-1;grid-row:3}html.hh-home [data-hh-home-grid]{--hui-columns:minmax(0,1fr) 120px 78px 68px}html.hh-home [data-hh-home-grid][data-hh-has-state=false]{--hui-columns:minmax(0,1fr) 120px 68px}html.hh-catalog-compact [data-hh-catalog-name]{flex-basis:200px}html.hh-catalog-compact .dashboard-markdown .hh-cat-head [data-hh-catalog-description]{display:none}html.hh-catalog-compact .dashboard-markdown .hh-cat-report{grid-template-columns:minmax(180px,240px) minmax(0,1fr) 30px}}',
+      '@media(max-width:600px){#hospital-home-hint .hh-home-desc{display:none}#hospital-home-hint .hh-home-primary{padding:0 10px}#hospital-home-hint .hh-home-pwd-btn{margin-left:8px;padding:0 10px}html.hh-home [data-hh-home-grid]{--hui-columns:minmax(0,1fr) 72px 64px}html.hh-home [data-hh-home-grid][data-hh-has-state=false]{--hui-columns:minmax(0,1fr) 64px}html.hh-home [data-hh-row-info],html.hh-home .hh-list-columns>span:nth-child(2){display:none}html.hh-home [data-hh-row-state]{grid-column:2}html.hh-home [data-hh-home-toolbar] .nav-right{flex-wrap:wrap}html.hh-catalog-compact [data-hh-catalog-name]{flex-basis:150px}html.hh-catalog-compact .dashboard-markdown .hh-cat-head{gap:8px;padding-left:8px;padding-right:8px}html.hh-catalog-compact .dashboard-markdown .hh-cat-head [data-hh-catalog-name]{flex:1;min-width:0}html.hh-catalog-compact .dashboard-markdown .hh-cat-children{margin-left:38px;padding-left:6px}html.hh-catalog-compact .dashboard-markdown .hh-cat-report{grid-template-columns:minmax(0,1fr) 30px;min-height:40px}html.hh-catalog-compact .dashboard-markdown .hh-cat-report-desc{display:none}}'
     ].join('\n');document.head.appendChild(style);
     var push=history.pushState;history.pushState=function(){var r=push.apply(history,arguments);schedule();return r;};
     window.addEventListener('popstate',schedule);window.addEventListener('resize',schedule);window.addEventListener('hashchange',schedule);new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});

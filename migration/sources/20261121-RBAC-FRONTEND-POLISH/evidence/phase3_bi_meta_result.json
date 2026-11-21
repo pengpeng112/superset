@@ -1,0 +1,70 @@
+{
+ "steps": [
+  {
+   "step": "login",
+   "ok": true,
+   "detail": "admin"
+  },
+  {
+   "step": "72_default_window_check",
+   "ok": true,
+   "detail": "native filters matched=1"
+  },
+  {
+   "step": "72_json_metadata_put",
+   "ok": true,
+   "detail": "HTTP 200 {\"id\":72,\"last_modified_time\":1795041800.0,\"result\":{\"json_metadata\":\"{\\\"filter_bar_orientation\\\": \\\"HORIZONTAL\\\", \\\"nat"
+  },
+  {
+   "step": "72_default_window_verify",
+   "ok": true,
+   "detail": "readback time_ranges=['2026-10-01 : 2026-11-01']"
+  },
+  {
+   "step": "chart_393_put",
+   "ok": true,
+   "detail": "HTTP 200 old='2026-10 全院合计'"
+  },
+  {
+   "step": "chart_393_verify",
+   "ok": true,
+   "detail": "subheader='选定期间全院合计'"
+  },
+  {
+   "step": "chart_394_put",
+   "ok": true,
+   "detail": "HTTP 200 old='2026-10 全院合计'"
+  },
+  {
+   "step": "chart_394_verify",
+   "ok": true,
+   "detail": "subheader='选定期间全院合计'"
+  },
+  {
+   "step": "chart_395_put",
+   "ok": true,
+   "detail": "HTTP 200 old='2026-10 全院合计'"
+  },
+  {
+   "step": "chart_395_verify",
+   "ok": true,
+   "detail": "subheader='选定期间全院合计'"
+  },
+  {
+   "step": "378_height_found",
+   "ok": true,
+   "detail": "meta.height before=14"
+  },
+  {
+   "step": "72_position_put",
+   "ok": true,
+   "detail": "HTTP 200 {\"id\":72,\"last_modified_time\":1795041801.0,\"result\":{\"position_json\":\"{\\\"DASHBOARD_VERSION_KEY\\\": \\\"v2\\\", \\\"ROOT_ID\\\": {"
+  },
+  {
+   "step": "378_height_verify",
+   "ok": true,
+   "detail": "readback heights=[44]"
+  }
+ ],
+ "ok": true
+}

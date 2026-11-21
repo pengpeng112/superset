@@ -1,0 +1,172 @@
+{
+ "batch": "20261119-BI-ENHANCE",
+ "generated": "2026-11-18 00:47:12",
+ "summary": "第 4 个 BI 驾驶舱 75（bi-nursing-bed：KPI×4+TOP15+分级护理环形饼+汇总表，图表 393-399、数据集 375）+ ⭐我的常用报表收藏夹（h17，localStorage 按工号隔离）+ 汇报投屏/打印报表/A4 横向干净打印（f15）+ 预热模板 46 条（d19 同步 75）；验收 66/66 PASS，存量 1-374/1-74 零篡改",
+ "production_changes": [
+  "/home/superset/custom/report-dates.js（20261111d18 → 20261119d19）",
+  "/home/superset/custom/home-ui.js（20261117h16 → 20261119h17）",
+  "/home/superset/custom/report-ui.js（20261118f14 → 20261119f15，终版 73d6fcb1…）",
+  "/home/superset/nginx.conf（三版本串；inode 47580611 保持，仅 reload）",
+  "/home/superset/superset_home/scripts/warmup_templates.json（39→46 条）",
+  "元库新增：看板 75 / 图表 393-399 / 数据集 375（零修改存量）"
+ ],
+ "rollback": "rollback_bi_enhance.py（--dry-run 已验证）删除本批 9 个对象；73:/home/superset/migration-private/20261119-BI-ENHANCE/before/ 写前三 JS/nginx/warmup 备份 + 本地 before-assets/",
+ "files": [
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/recon_nursing.py",
+   "bytes": 4085,
+   "sha256": "0c96526c71d647ab3ffcb1aa078f91708f107232ed88247f77a5249795875759",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/probe_nursing2.py",
+   "bytes": 6937,
+   "sha256": "6b7513896211eb8f855541d65d4c82fc75d2f12af0fbe8071e7932bfe5b250a9",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/probe_final_recon.py",
+   "bytes": 6313,
+   "sha256": "7f589a25e74abe0cea88e1a9f32c395d644bce0cc81567ad548e3c4395016a2a",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/evidence/nursing_sql_recon.json",
+   "bytes": 82205,
+   "sha256": "877ae6ccbab983f3c658f63aa61e6ef626b54aab923e6ce86726130855265b44",
+   "note": "勘察对账"
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/create_bi_nursing.py",
+   "bytes": 19257,
+   "sha256": "d625a82c003778f79c367d19f96b5739c598a2e9fd30f9a78c7d6cc1d57f3fcd",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/build_longtable.py",
+   "bytes": 6756,
+   "sha256": "14652f88e90a38c577ec878bb6a7851c797324d6dd1d011d8884e76de4bff4ab",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/rollback_bi_enhance.py",
+   "bytes": 3252,
+   "sha256": "caec9ad059e55452dd0079db0031549155d0c7fe5286531e79d77e73c917f043",
+   "note": "回退（--dry-run PASS）"
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/bi_enhance_ledger.json",
+   "bytes": 2777,
+   "sha256": "22bdca8d1c2e7d8eae81dce28fcf9010f992aa66564114ea26a82df5f0b5c3fd",
+   "note": "台账"
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/deploy_bi_enhance.py",
+   "bytes": 4186,
+   "sha256": "379191364c508b58c9685a3c94af364ad030f7fbfbacb1973de8c501c905cf4f",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/capture_warmup75.py",
+   "bytes": 5029,
+   "sha256": "5d6e81f4924b8e0d7b53fdc9d7d040116bdabd77fe46e41827a97bd2028a1672",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/run_warmup_remote.py",
+   "bytes": 2280,
+   "sha256": "4ccc9848537169242650c78c83a86124842eb45a7c43e702a6c20a6897d64fc7",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/verify_bi_enhance.py",
+   "bytes": 25569,
+   "sha256": "1c1171a861863ab5743d250aada1809a0de04e5fc77f93a5301b5b73f8ef84e3",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/build_manifest19.py",
+   "bytes": 7127,
+   "sha256": "84eb69b4eeba8cc865ddbee41ab569162116196f8cbc98fe09447007c30958c4",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/freeze_snapshot19.py",
+   "bytes": 4541,
+   "sha256": "e462fb49e4ac2adb5bee4858e276aa5b56f468e9f885928f609a87be7d7bfc96",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/evidence/bi_enhance_acceptance.json",
+   "bytes": 9100,
+   "sha256": "f55f42f8e9978fb43bbfea9717b8887becfe03c4a4b369f93fe89787497941a8",
+   "note": "66/66 PASS"
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/evidence/warmup_templates.json",
+   "bytes": 173104,
+   "sha256": "f7f5928a9007e64f87d873b54f717c975097742ceada15836a26db38161991d4",
+   "note": "46 条模板副本"
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/evidence/print-dash75.pdf",
+   "bytes": 145346,
+   "sha256": "a22bed50993e88293bf6a3b205a9aa057e794857ab7855b9ae47e36973912c78",
+   "note": "打印留证"
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/evidence/print-page36.pdf",
+   "bytes": 135983,
+   "sha256": "8c139f84eaac68c73cdd132f488a74546853f36c982090a416b1b2c7e2c6e00c",
+   "note": "打印留证"
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/evidence/dash75_check.png",
+   "bytes": 67340,
+   "sha256": "28fd268c42755e84554fe748c5875207505736fdf2e7c20ab8d4a9bd640c5f71",
+   "note": "看板 75 截图"
+  },
+  {
+   "file": "offline-bundle/custom/report-dates.js",
+   "bytes": 26683,
+   "sha256": "7f99cbc6355900a6ea131160f1a90701b5bb1236ab9fd710ea68cbe6b3ef31e3",
+   "note": "生产变更 d19"
+  },
+  {
+   "file": "offline-bundle/custom/home-ui.js",
+   "bytes": 87347,
+   "sha256": "9ace57266b25a4b958f723782a80b9dd05909afa8f57f8ad992514f9117018b8",
+   "note": "生产变更 h17"
+  },
+  {
+   "file": "offline-bundle/custom/report-ui.js",
+   "bytes": 121859,
+   "sha256": "73d6fcb1b497589c48e4937c512530c384e14e81aceb09c8c9bb127d80edeb24",
+   "note": "生产变更 f15"
+  },
+  {
+   "file": "offline-bundle/nginx.conf",
+   "bytes": 3759,
+   "sha256": "1fc1c3846d53e5e7e598d3c69ea669a962dfc82039cd690bd3851ab6686f5ce4",
+   "note": "生产变更（inode 47580611 保持）"
+  },
+  {
+   "file": "offline-bundle/scripts/warmup_templates.json",
+   "bytes": 173104,
+   "sha256": "f7f5928a9007e64f87d873b54f717c975097742ceada15836a26db38161991d4",
+   "note": "生产变更 46 条"
+  },
+  {
+   "file": "offline-bundle/PRODUCTION-MANIFEST-20261119.json",
+   "bytes": 12556,
+   "sha256": "145db2c05dc7dff791f94d7a704025ac6e647e1f9903669242dabbe1431fe108",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261119-BI-ENHANCE/最终报告.md",
+   "bytes": 13824,
+   "sha256": "6b0f0b43122ace7c0c25a233077ad8e548a1380cea505279489d6f62da3211fe",
+   "note": ""
+  }
+ ]
+}

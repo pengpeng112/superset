@@ -1,0 +1,102 @@
+{
+ "batch": "20261118-DETAIL-UX",
+ "generated": "2026-11-17 23:02:58",
+ "summary": "明细表裁切/双滚动条根治（report-ui 20261108f13→20261118f14）+ 工具条收起筛选/全屏看表 + 滚动条加粗 + 长文本气泡 + 灾备清扫（2 个 $f 脏文件与 12 个 profile 缓存目录）",
+ "production_changes": [
+  "/home/superset/custom/report-ui.js（20261108f13 → 20261118f14）",
+  "/home/superset/nginx.conf（report-ui 版本串更新；inode 47580611 保持，仅 nginx -t + reload，零容器重启）"
+ ],
+ "rollback": "73:/home/superset/migration-private/20261118-DETAIL-UX/before/（report-ui.js/monthly-report.js/nginx.conf 写前备份）",
+ "files": [
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/diagnose_clip_before.py",
+   "bytes": 8695,
+   "sha256": "182978ee3a56588d820c0e5a4778ccad5b4dd6d36ffed80866618d5045e19783",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/evidence/clip_before.json",
+   "bytes": 147528,
+   "sha256": "c2194a0cd584a60c88582cbcb6b171381adce87ea8434f00f6e1aeaadb6c294a",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/deploy_f14.py",
+   "bytes": 4582,
+   "sha256": "53671537634670438496c5adbd2af385774a1c0e74361ee239d74d3eee9c6646",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/verify_detail_ux.py",
+   "bytes": 17546,
+   "sha256": "0cc4a76b42bccc447618dbad4e2f19bc13a9cee40d8cce7e396f085f225e369f",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/reverify_a3.py",
+   "bytes": 4664,
+   "sha256": "e57efcaf6091e78d0f155ad13f743f2170b7620a0bc5c3c2314ffd0294bb7f82",
+   "note": "A3 段重验（max-padding 补丁后）"
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/reverify_p32.py",
+   "bytes": 3376,
+   "sha256": "267d31f884eeec260fce36add82e804393448a0f3a9a0bc7288c62d5bfa2a9be",
+   "note": "32 号会话停滞单独重验"
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/build_manifest.py",
+   "bytes": 7689,
+   "sha256": "41f7b4e39ef9bc9b12a7dd738327b19f18edf42323946793b19f98009491e4fd",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/freeze_snapshot.py",
+   "bytes": 3351,
+   "sha256": "7b822dc8d614567f75da36aacec5ecdab7a460e52f6a2d2c532249c319f4d537",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/evidence/detail_ux_acceptance.json",
+   "bytes": 26196,
+   "sha256": "0d09a306454e607f9dc0ec134ae61a9c4c262026fe8b35b9a2b2095b65fbf7ff",
+   "note": "111/111 PASS"
+  },
+  {
+   "file": "offline-bundle/custom/report-ui.js",
+   "bytes": 111748,
+   "sha256": "7db3d0b1024e7eaeec4425ea803be990be08fa590a4ef5b004e4ebebdd18e4a9",
+   "note": "生产变更：/home/superset/custom/report-ui.js"
+  },
+  {
+   "file": "offline-bundle/nginx.conf",
+   "bytes": 3759,
+   "sha256": "141fde5db682357f48c42258eb5ddbdcde97953aae400361b3688eee365f62c7",
+   "note": "生产变更：/home/superset/nginx.conf（inode 47580611 保持）"
+  },
+  {
+   "file": "offline-bundle/PRODUCTION-MANIFEST-20261118.json",
+   "bytes": 12457,
+   "sha256": "6bc3e798663877e0e37a4ea1708300e12ed26b4bfa3f9767634eca2638f135a1",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/最终报告.md",
+   "bytes": 15520,
+   "sha256": "ba4063264c1d728eb5e351c3ed6a83eb91da7f454fb4c9ef1700a539755dd23b",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/before-assets/report-ui.js",
+   "bytes": 82044,
+   "sha256": "add99c189c9d2c08c070901a1b99f1c1498397b2833486f01abd97b558d18b17",
+   "note": "写前备份（f13 生产原样）"
+  },
+  {
+   "file": "migration/sources/20261118-DETAIL-UX/before-assets/nginx.conf",
+   "bytes": 3759,
+   "sha256": "506ba584ccd5fc0b498bf5e5d689f6346c7bd59c1553e8f9076b211d50c9a6a5",
+   "note": "写前备份"
+  }
+ ]
+}

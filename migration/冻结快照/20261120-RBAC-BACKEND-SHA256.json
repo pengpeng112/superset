@@ -1,0 +1,167 @@
+{
+ "batch": "20261120-RBAC-BACKEND",
+ "generated": "2026-11-18 14:47:58",
+ "summary": "Gamma 大锅饭终结：35 张业务看板从 Gamma 解绑（仅留外壳 34），11 个报表授权_ 角色矩阵管辖全部 52 张已发布看板，datasource_access 6→66 对数据闸门，17 职能科室 311 绑定落位；渗透验收 20/20 全绿（003158 正负向闭环、001283/001643 摘除拒绝 exit3），体检升 18 项全绿，offline-bundle 35/35 对齐；f15b 不触发（导出实测 200 非 403）",
+ "production_changes": [
+  "ab_role：344→351（新增 346-352 七个报表授权_角色，341/343/344/345 保留）",
+  "dashboard_roles：51→63（Gamma 解绑 34 张业务看板，仅留外壳 34）",
+  "datasource_access：6→66 对（43 个数据集，SQL 单事务幂等授权 + 序列修复）",
+  "ab_user_role：4767→5077（17 科室 311 绑定 + 1 受保护=312，FAB PUT 合并保留既有角色）",
+  "/home/superset/superset_home/scripts/：新增 superset_rbac_manage.py + rbac_policy.json",
+  "/home/superset/superset_home/scripts/superset_health_check.sh：17→18 项（第 9 项 RBAC 恒常）",
+  "migration_20261120/：apply_rbac_matrix.py / rollback_rbac_matrix.py / verify_rbac_backend.py / audit_rbac_before.py"
+ ],
+ "rollback": "rollback_rbac_matrix.py（正确顺序：先 revoke-dept 清人员赋权再 --apply；字节级兜底=before/rbac_tables_before.sql.gz 11 表 COPY 全量）；工具层护栏：报表授权_前缀校验 + 001283/001643 受保护摘除拒绝 exit3 + flock /tmp/user_sync.lock",
+ "files": [
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/audit_rbac_before.py",
+   "bytes": 7093,
+   "sha256": "38b9ea3f67775564d3f94724e23a5824ddffe4465be39cd5c1533f1f21d121cd",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/before/rbac_state_full.json",
+   "bytes": 300602,
+   "sha256": "da205bfa09a8cc3ebd4041d2d1a53a6511cecfc8bfd60083645bd9e093923930",
+   "note": "阶段0全量状态快照"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/apply_rbac_matrix.py",
+   "bytes": 37066,
+   "sha256": "1e7ac9f4e45233ce775f320fb8c8fc85155b9c6ce6f75d54e9c66fffc314b1f5",
+   "note": "阶段1落地(APPLY_OK)"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/rollback_rbac_matrix.py",
+   "bytes": 16355,
+   "sha256": "e4597cf1bd4db2717d9e516e59924b6d8a5f4fae89850e36558b43d3657fcb33",
+   "note": "回退(--dry-run 保护性拒绝实证)"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/apply/rbac_apply_plan.json",
+   "bytes": 22693,
+   "sha256": "b1914d304a782861b9a8869203facdb7bd613ef10a51ccd197280998cd619e81",
+   "note": "写前计划"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/apply/rbac_changes_applied.json",
+   "bytes": 11961,
+   "sha256": "3b2b90b72f480b6cfd5d5283dab805453424af682cb38064f945606910d4d5b1",
+   "note": "终报告 16 校验全过"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/apply/rbac_grant_sql.sql",
+   "bytes": 9901,
+   "sha256": "2263de8fda6d945998295d907f9910ad61ab42d93a4ba3110791e1e58927a5dc",
+   "note": "授权 SQL trace"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/superset_rbac_manage.py",
+   "bytes": 27824,
+   "sha256": "e4e915ad66a9fd4e7fd3ffa233bc69c43b4ed1a55b4e1a7c502fd7b730ddeae9",
+   "note": "常驻工具"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/rbac_policy.json",
+   "bytes": 3514,
+   "sha256": "677833d21099dbb4c90d6ce568eb43ec2387aaf20c0e7156c6b0c32b8db540a2",
+   "note": "17 科室政策"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/全院角色矩阵与科室赋权操作手册.md",
+   "bytes": 8562,
+   "sha256": "42541ab38cff38a0cf2a252fa26531762e8a0aa084908833869d4c7efdfca37a",
+   "note": "操作手册"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/rbac_sync_policy_dryrun.json",
+   "bytes": 52644,
+   "sha256": "e0f5e220cd6f4f847ffd1e85ef606dc1a202ca2da2cef8a342a1fc239b71f6fe",
+   "note": "157人/310绑定预览"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/rbac_sync_policy_apply.json",
+   "bytes": 52645,
+   "sha256": "094385073dbb39f3cd93e9437282f4c9b11561c0b8f12ec7aa3e5c594041d7a0",
+   "note": "310绑定落库"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/rbac_audit_after.json",
+   "bytes": 54493,
+   "sha256": "a9ef472b030e4d6dd953dea27f15b9768338edae848057e058d07b5517d50d1c",
+   "note": "apply后审计"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/rbac_status_after.json",
+   "bytes": 7432,
+   "sha256": "52662eb6fdee12aea9b0bb9a29d91961b27f331c32227c0877eaf7a25fcf658b",
+   "note": "apply后状态"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/verify_rbac_backend.py",
+   "bytes": 17555,
+   "sha256": "a38c5f6fddd685af9a1ebec7ff10ae5d30a6a657008fbf57b821beb500ace990",
+   "note": "验收脚本"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/verify/rbac_verify_report.json",
+   "bytes": 3426,
+   "sha256": "12ff2ac8ca2957bb1b3b517a374c3b57885531ded651bdf70d76c8e47730ee8c",
+   "note": "20/20 全绿"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/security_audit_before.json",
+   "bytes": 9848,
+   "sha256": "a9e8283bf3254db19cd1fce9eebd2c43364b96d1a6ae1e7dd13b1a0a4d49443c",
+   "note": "F1-F6 审计发现"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/evidence/全院HIS科室列表与人数统计-脱敏.csv",
+   "bytes": 24409,
+   "sha256": "cf4b623d038af1118a252a7ca22110a2bc79630a11aa245140191d6eda02acd8",
+   "note": "科室字典脱敏"
+  },
+  {
+   "file": "offline-bundle/scripts/superset_rbac_manage.py",
+   "bytes": 27824,
+   "sha256": "e4e915ad66a9fd4e7fd3ffa233bc69c43b4ed1a55b4e1a7c502fd7b730ddeae9",
+   "note": "生产常驻"
+  },
+  {
+   "file": "offline-bundle/scripts/rbac_policy.json",
+   "bytes": 3514,
+   "sha256": "677833d21099dbb4c90d6ce568eb43ec2387aaf20c0e7156c6b0c32b8db540a2",
+   "note": "生产常驻"
+  },
+  {
+   "file": "offline-bundle/scripts/superset_health_check.sh",
+   "bytes": 8268,
+   "sha256": "575a1211b9122b3ba3f079424c31b540f38d98fea8eabbba66ae8986a5c41cd1",
+   "note": "升 18 项（第9项 RBAC 恒常）"
+  },
+  {
+   "file": "offline-bundle/PRODUCTION-MANIFEST-20261120.json",
+   "bytes": 13646,
+   "sha256": "955d4c6f2f926a8a2bac161776ed55db85346e593a395182afab144bf5c24949",
+   "note": "35/35 对齐"
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/build_manifest20.py",
+   "bytes": 7793,
+   "sha256": "4ddeb8ea62f9027486ee7bc68824b70766e9b83ada7bf0e6c4a2015ace046ea9",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/freeze_snapshot20.py",
+   "bytes": 5534,
+   "sha256": "7ef0c4e868d4872daf7dbd9f281877b958b9bb4495af427349416f8a6d2f4734",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261120-RBAC-BACKEND/最终报告.md",
+   "bytes": 10463,
+   "sha256": "c98424cafa77552187476789c94e1d172fba6e8a66dc68d4e150426581d3bbaa",
+   "note": ""
+  }
+ ]
+}

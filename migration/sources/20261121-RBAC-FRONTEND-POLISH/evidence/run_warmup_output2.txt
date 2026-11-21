@@ -1,0 +1,6 @@
+[2026-11-19 19:18:15] warmup-2026-11-19-191413 [warmup] d75/s396/big_number_total ok 756ms rows=1 key=0e26f88694fa
+[2026-11-19 19:18:18] warmup-2026-11-19-191413 [warmup] d75/s397/echarts_timeseries_bar ok 774ms rows=15 key=c09e92961923
+[2026-11-19 19:18:23] warmup-2026-11-19-191413 [warmup] d75/s398/pie ok 2649ms rows=5 key=1a7df36cdcbb
+[2026-11-19 19:18:25] warmup-2026-11-19-191413 [warmup] d75/s399/table ok 803ms rows=39 key=92698c2a575e
+[2026-11-19 19:18:27] warmup-2026-11-19-191413 [warmup] SUMMARY json={"ts": "2026-11-19T11:18:27", "total": 47, "ok": 47, "fail": 0, "duration_secs": 253.5, "force": true, "circuit_break": false, "roll_month": null}
+[2026-11-19 19:18:27] warmup-2026-11-19-191413 end exit=0

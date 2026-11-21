@@ -1,0 +1,100 @@
+{
+ "steps": [
+  {
+   "step": "login",
+   "ok": true,
+   "detail": "admin"
+  },
+  {
+   "step": "chart_371_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_371_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_372_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_372_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_373_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_373_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_374_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_374_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_375_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_375_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_376_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_376_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_377_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_377_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_378_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_378_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  },
+  {
+   "step": "chart_398_put",
+   "ok": true,
+   "detail": "HTTP 200 old='No filter'"
+  },
+  {
+   "step": "chart_398_verify",
+   "ok": true,
+   "detail": "readback='2026-10-01 : 2026-11-01'"
+  }
+ ],
+ "ok": true
+}

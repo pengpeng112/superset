@@ -1,0 +1,1187 @@
+{
+ "batch": "20261120-RBAC-BACKEND",
+ "stage": "stage1-apply",
+ "mode": "dry-run",
+ "time_utc": "2026-11-18T06:03:12.760260+00:00",
+ "new_roles": [
+  {
+   "name": "报表授权_院领导与运营驾驶舱",
+   "id": null,
+   "dashboards": [
+    72,
+    73,
+    74,
+    75
+   ],
+   "datasets": [
+    322,
+    324,
+    325,
+    326,
+    338,
+    345,
+    347,
+    348,
+    350,
+    351,
+    373,
+    374,
+    375
+   ]
+  },
+  {
+   "name": "报表授权_质控与全院月报",
+   "id": null,
+   "dashboards": [
+    25,
+    29,
+    33,
+    32,
+    35,
+    36,
+    37,
+    39,
+    44,
+    45
+   ],
+   "datasets": [
+    281,
+    338,
+    344,
+    345,
+    347,
+    348,
+    353,
+    356,
+    357
+   ]
+  },
+  {
+   "name": "报表授权_绩效考核管理",
+   "id": null,
+   "dashboards": [
+    31,
+    40,
+    46,
+    58,
+    59,
+    60
+   ],
+   "datasets": [
+    283,
+    329,
+    336,
+    337,
+    353,
+    358,
+    359,
+    361
+   ]
+  },
+  {
+   "name": "报表授权_护理部管理",
+   "id": null,
+   "dashboards": [
+    26,
+    41,
+    42,
+    43,
+    75
+   ],
+   "datasets": [
+    350,
+    351,
+    352,
+    355,
+    375
+   ]
+  },
+  {
+   "name": "报表授权_门诊与窗口管理",
+   "id": null,
+   "dashboards": [
+    27,
+    28,
+    30,
+    48,
+    53,
+    54,
+    55,
+    56,
+    57,
+    73
+   ],
+   "datasets": [
+    322,
+    323,
+    324,
+    325,
+    326,
+    330
+   ]
+  },
+  {
+   "name": "报表授权_临床科室日常统计",
+   "id": null,
+   "dashboards": [
+    26,
+    29,
+    33,
+    36,
+    37,
+    39,
+    41
+   ],
+   "datasets": [
+    281,
+    344,
+    345,
+    350,
+    353
+   ]
+  },
+  {
+   "name": "报表授权_系统字典维护",
+   "id": null,
+   "dashboards": [
+    38
+   ],
+   "datasets": [
+    346,
+    349
+   ]
+  }
+ ],
+ "existing_dash_add": {
+  "344": [
+   27,
+   28
+  ],
+  "345": [
+   29
+  ]
+ },
+ "gamma_unbind": [
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  48,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  72,
+  73,
+  74,
+  75
+ ],
+ "gamma_keep": [
+  34
+ ],
+ "dashboards": [
+  {
+   "id": 25,
+   "title": "统计报表·月报",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 26,
+   "title": "护理部报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_护理部管理"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_护理部管理"
+   ]
+  },
+  {
+   "id": 27,
+   "title": "统计报表·门诊",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理",
+    "报表授权_门急诊患者明细"
+   ],
+   "after_role_ids": [
+    344,
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 28,
+   "title": "统计报表·急诊",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理",
+    "报表授权_门急诊患者明细"
+   ],
+   "after_role_ids": [
+    344,
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 29,
+   "title": "统计报表·手术",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报",
+    "报表授权_手术明细提取"
+   ],
+   "after_role_ids": [
+    345,
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 30,
+   "title": "统计报表·门诊流量监测",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 31,
+   "title": "统计报表·绩效考核监测",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 32,
+   "title": "月工作报表（新）",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 33,
+   "title": "质控科报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 35,
+   "title": "月工作报表（二）新",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 36,
+   "title": "病区工作日报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 37,
+   "title": "手术量统计",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 38,
+   "title": "报表科室维护（只读）",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_系统字典维护"
+   ],
+   "after_role_ids": [
+    "报表授权_系统字典维护"
+   ]
+  },
+  {
+   "id": 39,
+   "title": "检查按开单科室查询人次",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 40,
+   "title": "床旁结算工作量",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 41,
+   "title": "护理工作量月报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_护理部管理"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_护理部管理"
+   ]
+  },
+  {
+   "id": 42,
+   "title": "护理工作量日报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_护理部管理"
+   ],
+   "after_role_ids": [
+    "报表授权_护理部管理"
+   ]
+  },
+  {
+   "id": 43,
+   "title": "护理单元工作量",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_护理部管理"
+   ],
+   "after_role_ids": [
+    "报表授权_护理部管理"
+   ]
+  },
+  {
+   "id": 44,
+   "title": "月上报数据",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 45,
+   "title": "医院医疗工作月报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 46,
+   "title": "医院绩效工作月报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 48,
+   "title": "责任组门诊报表",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 53,
+   "title": "门诊采血人次时段统计",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 54,
+   "title": "门诊取药人次时段统计",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 55,
+   "title": "门诊缴费人次查询",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 56,
+   "title": "门诊挂号量时段统计",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 57,
+   "title": "门诊超声流量监测",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 58,
+   "title": "检查人次按开单科室统计",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 59,
+   "title": "检查人次按执行科室统计（门诊）",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 60,
+   "title": "绩效考核暨高质量发展监测指标情况",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 72,
+   "title": "全院医疗运营核心指标总览（BI 驾驶舱）",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 73,
+   "title": "门急诊流量与窗口负荷监测中心（BI 驾驶舱）",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 74,
+   "title": "手术与住院医疗质量可视化分析（BI 驾驶舱）",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 75,
+   "title": "全院护理工作量与病区床位效率分析",
+   "before_roles": [
+    "Gamma"
+   ],
+   "after_roles": [
+    "NEW:报表授权_护理部管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_护理部管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  }
+ ],
+ "datasets": [
+  {
+   "id": 281,
+   "table_name": "统计报表·d_exam_dept_person",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 283,
+   "table_name": "统计报表·d_hldy_chu",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 322,
+   "table_name": "门诊采血人次时段统计",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 323,
+   "table_name": "门诊取药人次时段统计",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 324,
+   "table_name": "门诊缴费人次查询",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 325,
+   "table_name": "门诊挂号量时段统计",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 326,
+   "table_name": "门诊超声流量监测",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 329,
+   "table_name": "绩效考核暨高质量发展监测指标情况",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 330,
+   "table_name": "责任组门诊报表",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_门诊与窗口管理"
+   ],
+   "after_role_ids": [
+    "报表授权_门诊与窗口管理"
+   ]
+  },
+  {
+   "id": 336,
+   "table_name": "检查人次按开单科室统计",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 337,
+   "table_name": "检查人次按执行科室统计（门诊）",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 338,
+   "table_name": "月工作报表(新)",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 344,
+   "table_name": "病房工作日报表",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 345,
+   "table_name": "手术量统计",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_质控与全院月报",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_质控与全院月报",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 346,
+   "table_name": "报表科室维护",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_系统字典维护"
+   ],
+   "after_role_ids": [
+    "报表授权_系统字典维护"
+   ]
+  },
+  {
+   "id": 347,
+   "table_name": "月工作报表(新)·门诊部分",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 348,
+   "table_name": "月工作报表(二)新·主表",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 349,
+   "table_name": "报表科室维护·床位配置(只读)",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_系统字典维护"
+   ],
+   "after_role_ids": [
+    "报表授权_系统字典维护"
+   ]
+  },
+  {
+   "id": 350,
+   "table_name": "护理工作量月报表·主表",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_护理部管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_护理部管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 351,
+   "table_name": "护理工作量日报表·主表",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_护理部管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_护理部管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 352,
+   "table_name": "护理工作量日报表·汇总附区",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_护理部管理"
+   ],
+   "after_role_ids": [
+    "报表授权_护理部管理"
+   ]
+  },
+  {
+   "id": 353,
+   "table_name": "UI_门诊住院筛选选项",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_临床科室日常统计",
+    "NEW:报表授权_绩效考核管理",
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_临床科室日常统计",
+    "报表授权_绩效考核管理",
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 355,
+   "table_name": "护理单元工作量·主表v2",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_护理部管理"
+   ],
+   "after_role_ids": [
+    "报表授权_护理部管理"
+   ]
+  },
+  {
+   "id": 356,
+   "table_name": "月上报数据·主表v2",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 357,
+   "table_name": "医院医疗工作月报表·主表v2",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_质控与全院月报"
+   ],
+   "after_role_ids": [
+    "报表授权_质控与全院月报"
+   ]
+  },
+  {
+   "id": 358,
+   "table_name": "医院绩效工作月报表·主表v2",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 359,
+   "table_name": "UI_检查日期选项",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 360,
+   "table_name": "UI_手术月份选项",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_手术明细提取"
+   ],
+   "after_role_ids": [
+    345
+   ]
+  },
+  {
+   "id": 361,
+   "table_name": "UI_就诊次数选项",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_绩效考核管理"
+   ],
+   "after_role_ids": [
+    "报表授权_绩效考核管理"
+   ]
+  },
+  {
+   "id": 362,
+   "table_name": "UI_手术科室选项",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_手术明细提取"
+   ],
+   "after_role_ids": [
+    345
+   ]
+  },
+  {
+   "id": 363,
+   "table_name": "抗菌办·门急诊处方明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 364,
+   "table_name": "抗菌办·住院检验结果明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 365,
+   "table_name": "抗菌办·消耗明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 366,
+   "table_name": "抗菌办·住院患者信息明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 367,
+   "table_name": "抗菌办·住院医嘱明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 368,
+   "table_name": "抗菌办·微生物明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 369,
+   "table_name": "抗菌办·检查结果明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 370,
+   "table_name": "抗菌办·住院诊断明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 371,
+   "table_name": "抗菌办·手术记录明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 372,
+   "table_name": "抗菌办·生命体征明细",
+   "before_roles": [],
+   "after_roles": [
+    "报表授权_抗菌办"
+   ],
+   "after_role_ids": [
+    343
+   ]
+  },
+  {
+   "id": 373,
+   "table_name": "BI_手术分支合计两行",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 374,
+   "table_name": "BI_出院转归构成长表",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  },
+  {
+   "id": 375,
+   "table_name": "BI_护理级别人日构成长表",
+   "before_roles": [],
+   "after_roles": [
+    "NEW:报表授权_护理部管理",
+    "NEW:报表授权_院领导与运营驾驶舱"
+   ],
+   "after_role_ids": [
+    "报表授权_护理部管理",
+    "报表授权_院领导与运营驾驶舱"
+   ]
+  }
+ ],
+ "baseline_counts": {
+  "ab_role": 344,
+  "dashboard_roles": 51,
+  "ab_user_role": 4767,
+  "ab_permission_view_role": 415,
+  "ds_access": 6
+ }
+}

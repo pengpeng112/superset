@@ -1,4 +1,41 @@
 /* 报表目录与查询页显示增强。仅作用于已迁移页面；不修改查询结果和访问权限。
+   20261121f16（RBAC-FRONTEND-POLISH 批）：①deniedCard 全面升级——DENIED_DASH_IDS 从 16 张
+   明细表扩展为全量受控看板映射字典 DASH_ROLE_HINT（2, 25–33, 35–75，2026-11-20 RBAC 终态
+   导出核对），非 Admin 直输受控 URL 触发错误页时展示中文引导卡并精确点名需联系信息科开通的
+   【报表授权】角色（多角色看板逐个列出）；未知乱输看板号（如 9999）保持原生 404 不误报。
+   ②修复「汇报投屏」顶部抬头条标题空串 Bug——f15 先挂 hh-present-mode 再取标题导致读到空值；
+   现在切换前先缓存当前看板标题，并以 BI_TITLES 固定映射兜底（72–75 中文名 100% 在场）；
+   统计期间改为含端口径（排他上界折回前一日，如 2026-10-01 至 2026-10-31）。
+   ③42 号双表页（hh-duo-table-page）高度重排：两张卡片等高固定舒适内滚（卡高约 456px、
+   表区约 368px），分页栏完整可见，外层页面自然滚动（不再首表锁视口、次表裸奔）。
+   ④打印隐藏清单补 #hh-no-perm-guide（h18 零权限引导卡）。
+   20261119f15（BI-ENHANCE 批）：①BI_DASH_IDS 扩为 [72,73,74,75] 并补别名 bi-nursing-bed=75
+   （第 4 驾驶舱按多图 BI 页对待，不触发 f14 单表锁高）。②查看态 BI 驾驶舱（72–75）页头右侧注入
+   「汇报投屏」（html.hh-present-mode + requestFullscreen try/catch：隐藏顶栏/筛选/管理按钮，顶部
+   40px 白底汇报抬头条 #hh-present-bar 左侧显示医院+驾驶舱标题+统计期间、右侧“退出投屏 (Esc)”，
+   切换后延迟触发 window resize 使 ECharts 自适应铺满；Esc/离页 100% 恢复）与「打印报表」
+   （window.print()）两枚 28px 次要按钮。③全站 @media print A4 横向干净打印：@page A4 landscape
+   10mm；打印隐藏顶栏/侧栏/筛选/星标/投屏打印按钮/单元格气泡/工具条右侧按钮（保留行数摘要）；
+   beforeprint/matchMedia('print') 双通道解除 f14 单表锁高内联样式（height/max-height/overflow
+   全部放开、sticky 首列取消、thead 每页重复、图表卡片 break-inside:avoid），打印预览完整展开不裁切。
+   20261118f14（DETAIL-UX 批）：彻底根治明细表“末行/合计行/分页器被切、横向滚动条掉出屏幕外出现
+   内外双滚动条、1366×768 视野局促”痛点——
+   ①refresh() 调用顺序修正：fitTables 移到 queryToolbar/sliceTitleDedup/emptyStateText/enhanceReportTable
+   之后（此前漏扣工具条高度）；queryToolbar 动态增删 .hh-truncation-banner 或切密度后立即重调高度。
+   ②单表查询页视口锁高 fitSingleQueryViewport()：满足 ①isQueryPage ②非 32 月报/非 BI 驾驶舱 ③无未授权
+   提示卡 ④主数据图表 holder（.dashboard-chart-id-*，实测各页顶部另有一个 40px 无 id 空筛选容器）恰 1 个
+   时挂 html.hh-single-table-page，把 grid-content 之下到 holder 的栅格
+   高度链统一锁为剩余视口高（底边距 10px），外层网页滚动条彻底消失；编辑态/离开页面即清除内联高度
+   （data-hh-sized 标记）保证原生拖拽编辑 100% 无损。32 号月报 .hm-scroll 动态 max-height 一屏到底。
+   ③fitTables() 重构：去掉必须存在 .dt-controls 的限制，扣除 wrapper 自身 padding/border、工具条、
+   横幅、分页器并留 6px 余量；scroll 容器 padding-bottom:8px 确保横向滚动条不遮挡末行/合计行；
+   表头吸顶与首列冻结交汇 z-index 提升；39 号 pivot_table_v2 透视表高度适配分支。
+   ④工具条新增「收起筛选/展开筛选」（html.hh-top-folded + 日期范围胶囊，多释放 85~120px）与
+   「全屏看表/退出全屏」（html.hh-table-max，Esc/离页 100% 恢复）两按钮。
+   ⑤表格滚动区加粗高对比滚动条（11px，轨道 #eef2f6，滑块 #9aa8b8，悬停 #5b7088）易拖拽。
+   ⑥明细长文本截断悬停 title 提示 + 双击弹出 #hh-cell-pop 完整内容复制气泡（复制走 execCommand，
+   兼容内网 http 非安全上下文与 Chromium 80/87）。
+   兼容性：全部 ES5/基础 ES6 写法（无 replaceAll/.at()/??= 等），node --check 通过。
    20261108f13（FINAL-CLOSEOUT 批）：①账号自助页优化——/user_info/ 与 /resetmypassword/form 挂
    html.hh-admin-page 明亮底色、顶部注入“← 返回工作台”面包屑（/superset/welcome/）；残留英文及简略
    中文词条按标准口径映射（Reset my password/User info/First Name/Last Name/User Name/Is Active?/
@@ -40,8 +77,8 @@
 (function () {
   'use strict';
   if (window.hospitalReportUI) return;
-  window.hospitalReportUI = { version: '20261108f13' };
-  var BI_DASH_IDS = [72, 73, 74]; /* 可视化驾驶舱（20261107f12） */
+  window.hospitalReportUI = { version: '20261121f16' };
+  var BI_DASH_IDS = [72, 73, 74, 75]; /* 可视化驾驶舱（20261107f12 建 72-74，20261119f15 补 75） */
   var categories = [25, 26, 27, 28, 29, 30, 31, 33, 34];
   var CATEGORY_NAMES = {25:'月报',26:'护理部报表',27:'门诊',28:'急诊',29:'手术',30:'门诊流量监测',31:'绩效考核监测',33:'质控科报表',34:'报表目录'};
   var canOpenDirectory = false;
@@ -199,7 +236,76 @@
     'html.hh-report-page .error-page-content[data-hh-denied="1"]{display:none!important}',
     '@media(max-width:760px){.hh-denied-card{margin:7vh 12px 0;padding:32px 22px 28px}}',
     '@media(max-width:1200px){html.hh-directory .dashboard-markdown ul{grid-template-columns:repeat(2,minmax(0,1fr))}}',
-    '@media(max-width:760px){html.hh-directory .dashboard-markdown ul{grid-template-columns:1fr}html.hh-directory .dashboard-markdown .dashboard-component{padding:18px!important}}'
+    '@media(max-width:760px){html.hh-directory .dashboard-markdown ul{grid-template-columns:1fr}html.hh-directory .dashboard-markdown .dashboard-component{padding:18px!important}}',
+    /* ========== 20261118f14（DETAIL-UX 批）新增 ========== */
+    /* ②单表视口锁高：外层网页不再出现纵向滚动条，横向滚动条与分页栏钉在视口底沿 */
+    'html.hh-single-table-page body{overflow-y:hidden!important}',
+    /* React/sticky-table 每秒会用普通内联 height 重写 .superset-chart-table（覆盖我们的 important），
+       样式表 important 的 max-height 是内联普通值无法逾越的硬上限——CSS 变量由锁高逻辑写入 html */
+    'html.hh-single-table-page .superset-chart-table{max-height:var(--hh-chart-max,none)!important;overflow:hidden!important}',
+    'html.hh-duo-table-page .superset-chart-table{max-height:var(--hh-chart-max,none)!important;overflow:hidden!important}',
+    /* ④a 收起筛选：折叠顶部日历筛选栏与业务说明条（用户主动点击才折叠，默认完整展示） */
+    'html.hh-top-folded [data-test="filter-bar"]{display:none!important}',
+    'html.hh-top-folded [data-test="dashboard-filters-panel"]{display:none!important}',
+    'html.hh-top-folded .dashboard-markdown{display:none!important}',
+    '.hh-fold-capsule{display:inline-flex;align-items:center;height:22px;margin-left:10px;padding:0 10px;border-radius:11px;background:#eaf3fb;border:1px solid #c8ddf0;color:#1a5c94;font-size:12px;line-height:20px;white-space:nowrap;flex:none}',
+    /* ④b 全屏看表：临时隐藏全局顶栏/页头/面包屑/说明/筛选，工具条+大表+分页铺满窗口（8px 边距） */
+    'html.hh-table-max header{display:none!important}',
+    'html.hh-table-max .dashboard-header-container{display:none!important}',
+    'html.hh-table-max .hh-crumb{display:none!important}',
+    'html.hh-table-max [data-test="filter-bar"]{display:none!important}',
+    'html.hh-table-max [data-test="dashboard-filters-panel"]{display:none!important}',
+    'html.hh-table-max .dashboard-markdown{display:none!important}',
+    'html.hh-table-max body{overflow:hidden!important}',
+    'html.hh-table-max [data-test="dashboard-content-wrapper"]{margin:8px!important;width:calc(100% - 16px)!important;padding:0!important}',
+    'html.hh-table-max [data-test="grid-content"]{padding:0!important}',
+    'html.hh-table-max main.ant-layout-content,html.hh-table-max .ant-layout-content{padding:0!important;margin:0!important}',
+    'html.hh-table-max .dashboard-content{padding:0!important}',
+    'html.hh-table-max .dashboard-component-chart-holder{padding:0!important}',
+    '.hh-max-title{display:inline-flex;align-items:center;max-width:360px;margin-right:10px;padding:0 10px;height:22px;border-radius:4px;background:#153f66;color:#fff;font-size:12px;line-height:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:none}',
+    /* ③表头吸顶与首列冻结左上角交汇不穿帮；横向滚动条出现时 padding-bottom 保护末行/合计行 */
+    'html.hh-report-page .superset-chart-table thead th{position:sticky!important;top:0!important;z-index:3!important}',
+    'table[data-hh-sticky-first="1"] thead th:first-child{z-index:5!important}',
+    /* ⑤加粗高对比易拖拽滚动条（Chrome / 老 Chromium 87 均醒目） */
+    'html.hh-report-page .superset-chart-table ::-webkit-scrollbar,#hospital-monthly-report .hm-scroll::-webkit-scrollbar,.hh-pvt-scroll::-webkit-scrollbar{width:11px!important;height:11px!important}',
+    'html.hh-report-page .superset-chart-table ::-webkit-scrollbar-track,#hospital-monthly-report .hm-scroll::-webkit-scrollbar-track,.hh-pvt-scroll::-webkit-scrollbar-track{background:#eef2f6!important}',
+    'html.hh-report-page .superset-chart-table ::-webkit-scrollbar-thumb,#hospital-monthly-report .hm-scroll::-webkit-scrollbar-thumb,.hh-pvt-scroll::-webkit-scrollbar-thumb{background:#9aa8b8!important;border-radius:5px!important;border:2px solid #eef2f6!important}',
+    'html.hh-report-page .superset-chart-table ::-webkit-scrollbar-thumb:hover,#hospital-monthly-report .hm-scroll::-webkit-scrollbar-thumb:hover,.hh-pvt-scroll::-webkit-scrollbar-thumb:hover{background:#5b7088!important}',
+    /* ②32 号月报：隐藏源图表彻底移除布局占位（m12 只读 Redux/请求快照，不依赖源 DOM 可见性；
+       此前 visibility+absolute 残留 640px 栅格高度导致外层网页溢出 164px） */
+    'html.hh-report-page [data-hm-source]{display:none!important}',
+    /* ⑥长文本双击完整内容气泡 */
+    '#hh-cell-pop{position:fixed;z-index:1600;max-width:420px;box-sizing:border-box;background:#fff;border:1px solid #d9e1ea;border-left:3px solid #1677c8;border-radius:6px;box-shadow:0 8px 24px rgba(16,42,67,.18);padding:10px 12px;font-size:13px;color:#263445}',
+    '#hh-cell-pop .hh-pop-col{font-size:12px;color:#8a97a5;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
+    '#hh-cell-pop .hh-pop-body{max-height:220px;overflow:auto;white-space:pre-wrap;word-break:break-all;line-height:1.6}',
+    '#hh-cell-pop .hh-pop-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}',
+    '#hh-cell-pop button{height:24px;padding:0 10px;border:1px solid #c9d6e2;border-radius:4px;background:#fff;color:#2f4257;font-size:12px;line-height:22px;cursor:pointer;font-family:inherit}',
+    '#hh-cell-pop .hh-pop-copy{color:#1677c8!important;border-color:#9ec7e8!important}',
+    '#hh-cell-pop .hh-pop-copy:hover{background:#f2f9ff!important}',
+    /* ========== 20261119f15（BI-ENHANCE 批）新增 ========== */
+    /* 汇报投屏（BI 72–75 查看态）：隐藏顶栏/筛选/管理按钮，视口 100% 干净铺满 */
+    'html.hh-present-mode header{display:none!important}',
+    'html.hh-present-mode [data-test="filter-bar"]{display:none!important}',
+    'html.hh-present-mode [data-test="dashboard-filters-panel"]{display:none!important}',
+    'html.hh-present-mode .dashboard-markdown{display:none!important}',
+    'html.hh-present-mode .right-button-panel{display:none!important}',
+    'html.hh-present-mode [data-test="dashboard-content-wrapper"]{margin:0!important;width:100%!important;padding:0 8px 8px!important;background:#f5f7fa!important}',
+    'html.hh-present-mode body{overflow-y:auto!important}',
+    '#hh-present-bar{display:flex;align-items:center;height:40px;box-sizing:border-box;padding:0 16px;background:#fff;border-bottom:1px solid #e4e9ef;font-size:14px;color:#263445;gap:10px}',
+    '#hh-present-bar .hh-pres-title{font-weight:600;color:#153f66;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
+    '#hh-present-bar .hh-pres-period{font-size:12px;color:#718096;white-space:nowrap;flex:none}',
+    '#hh-present-bar .hh-pres-exit{margin-left:auto;flex:none;height:26px;padding:0 12px;border:1px solid #c9d6e2;border-radius:4px;background:#fff;color:#2f4257;font-size:12px;line-height:24px;cursor:pointer;font-family:inherit}',
+    '#hh-present-bar .hh-pres-exit:hover{border-color:#9ec7e8;color:#0f5da4;background:#f2f9ff}',
+    /* 全站 A4 横向干净打印（BI 72–75 + 查询页）：打印隐藏导航/筛选/星标/投屏打印按钮/气泡/工具条右侧按钮 */
+    '@page{size:A4 landscape;margin:10mm}',
+    '@media print{header,#hh-home-nav,[data-test="filter-bar"],[data-test="dashboard-filters-panel"],.right-button-panel,.hh-fav-btn,#hh-present-btn,#hh-print-btn,#hh-cell-pop,#hh-present-bar,.hh-crumb,.hh-query-toolbar .hh-qt-right,.hh-truncation-banner,.dashboard-header-container .ant-tag,[data-hh-metadata],[data-hh-native-title],#hh-dir-fav-box,#hh-fav-panel,.hh-dir-search-wrap,#hh-no-perm-guide,#hh-cat-empty-note{display:none!important}}',
+    '@media print{html,body{background:#fff!important}body{overflow:visible!important}}',
+    '@media print{.dashboard-component-chart-holder,.chart-container,.slice_container{height:auto!important;max-height:none!important;overflow:visible!important;break-inside:avoid;page-break-inside:avoid;border:1px solid #d9e1ea!important;box-shadow:none!important}}',
+    '@media print{.superset-chart-table,.resizable-container,html.hh-single-table-page .superset-chart-table,.superset-chart-table div,.superset-chart-table table,.superset-chart-table td,.superset-chart-table th{height:auto!important;max-height:none!important;overflow:visible!important}}',
+    '@media print{html.hh-single-table-page body,html.hh-table-max body{overflow:visible!important}}',
+    '@media print{html.hh-report-page .superset-chart-table thead th,table[data-hh-sticky-first="1"] th:first-child,table[data-hh-sticky-first="1"] td:first-child{position:static!important;z-index:auto!important}}',
+    '@media print{.superset-chart-table thead{display:table-header-group!important}}',
+    '@media print{html.hh-report-page .dashboard-markdown{display:block!important;border:0!important;background:#fff!important;color:#263445!important;font-size:12px!important}}'
   ].join('\n');
   document.head.appendChild(st);
 
@@ -209,7 +315,8 @@
     '/superset/dashboard/mr-discharge-death-detail/': 2,
     '/superset/dashboard/bi-overview/': 72,
     '/superset/dashboard/bi-outpatient-flow/': 73,
-    '/superset/dashboard/bi-surgery-quality/': 74
+    '/superset/dashboard/bi-surgery-quality/': 74,
+    '/superset/dashboard/bi-nursing-bed/': 75
   };
   function pageId() {
     var m = location.pathname.match(/^\/superset\/dashboard\/(\d+)\/?$/);
@@ -224,6 +331,16 @@
     document.documentElement.classList.toggle('hh-directory', !editing && categories.indexOf(id) >= 0);
     document.documentElement.classList.toggle('hh-report-page', !editing && (id === 2 || id === 32 || (id >= 35 && id <= 70) || biPage));
     document.documentElement.classList.toggle('hh-bi-page', biPage);
+    /* 20261118f14：路由跳转离开单表查询页（或进入编辑态）时，清除“收起筛选/全屏看表”全局态，100% 恢复原布局 */
+    if (editing || !(id === 2 || id === 32 || (id >= 35 && id <= 70) || biPage)) {
+      document.documentElement.classList.remove('hh-top-folded');
+      if (document.documentElement.classList.contains('hh-table-max')) {
+        document.documentElement.classList.remove('hh-table-max');
+        removeMaxTitle();
+      }
+    }
+    /* 20261119f15：离页/编辑态退出汇报投屏，100% 恢复原布局 */
+    if (editing || !biPage) exitPresent();
     var p = location.pathname;
     var adminPage = /^\/(dashboard|chart|tablemodelview)\/list\//.test(p) || /^\/sqllab(\/|$)/.test(p) || /^\/savedqueryview\/list\//.test(p)
       || /^\/(user_info|resetmypassword)(\/|$)/.test(p); /* 20261108f13：账号自助页同明亮底色 */
@@ -983,6 +1100,168 @@
     try { sessionStorage.setItem('hhTableDensity', compact ? 'compact' : 'standard'); } catch (e) {}
     refresh();
   }
+  /* ---------- 20261118f14【交互增强 4】：收起筛选 / 全屏看表 ---------- */
+  /* 当前生效日期范围标签：读最近一次查询的 time_range（排他上界折回含端末日） */
+  function currentDateRangeLabel() {
+    var charts = dashboardCharts(), txt = '';
+    for (var k in charts) {
+      if (charts[k] && charts[k].latestQueryFormData && charts[k].latestQueryFormData.time_range) {
+        txt = String(charts[k].latestQueryFormData.time_range); break;
+      }
+    }
+    var m = txt.match(/^(\d{4}-\d{2}-\d{2})\s*:\s*(\d{4}-\d{2}-\d{2})/);
+    if (!m) return '当前筛选';
+    var b = m[2].split('-');
+    var B = new Date(+b[0], +b[1] - 1, (+b[2]) - 1);
+    var bs = B.getFullYear() + '-' + ('0' + (B.getMonth() + 1)).slice(-2) + '-' + ('0' + B.getDate()).slice(-2);
+    return m[1] + ' 至 ' + (bs < m[1] ? m[1] : bs);
+  }
+  function updateFoldCapsule() {
+    var left = document.querySelector('.hh-query-toolbar .hh-qt-left');
+    if (!left) return;
+    var cap = left.querySelector('.hh-fold-capsule');
+    if (document.documentElement.classList.contains('hh-top-folded')) {
+      if (!cap) {
+        cap = document.createElement('span');
+        cap.className = 'hh-fold-capsule';
+        left.appendChild(cap);
+      }
+      var label = '📅 ' + currentDateRangeLabel();
+      if (cap.textContent !== label) cap.textContent = label;
+    } else if (cap) cap.remove();
+  }
+  function toggleFoldTop() {
+    document.documentElement.classList.toggle('hh-top-folded');
+    updateFoldCapsule();
+    fitSingleQueryViewport();
+    fitTables();
+    fitPivotTable();
+  }
+  function removeMaxTitle() {
+    var t = document.querySelector('.hh-max-title');
+    if (t) t.remove();
+  }
+  function updateMaxTitle() {
+    var left = document.querySelector('.hh-query-toolbar .hh-qt-left');
+    if (!left) return;
+    if (!document.documentElement.classList.contains('hh-table-max')) { removeMaxTitle(); return; }
+    var t = left.querySelector('.hh-max-title');
+    if (!t) {
+      t = document.createElement('span');
+      t.className = 'hh-max-title';
+      left.insertBefore(t, left.firstChild);
+    }
+    var title = nativeTitle() || '报表';
+    if (t.textContent !== title) t.textContent = title;
+  }
+  function toggleMaxTable() {
+    document.documentElement.classList.toggle('hh-table-max');
+    updateMaxTitle();
+    fitSingleQueryViewport();
+    fitTables();
+    fitPivotTable();
+  }
+  /* ---------- 20261118f14【交互增强 6】：明细长文本截断悬停提示 + 双击完整内容气泡 ---------- */
+  var CELL_TD_SEL = '.hh-report-page .superset-chart-table td, #hospital-monthly-report td';
+  function copyTextCompat(t) {
+    /* 内网 http 非安全上下文无 navigator.clipboard，走 execCommand 老路线（Chrome 41+/C87 可用） */
+    var ta = document.createElement('textarea');
+    ta.value = t;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    ta.style.top = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    ta.remove();
+    return ok;
+  }
+  function closeCellPop() {
+    var p = document.getElementById('hh-cell-pop');
+    if (p) p.remove();
+  }
+  function showCellPop(td) {
+    closeCellPop();
+    var text = (td.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!text) return;
+    /* 列头中文名（取同列 thead th 文本；pvtTable/月报同样适用） */
+    var tr = td.parentElement, table = tr && tr.closest('table');
+    var colName = '';
+    if (table) {
+      var headRow = table.querySelector('thead tr');
+      var idx = Array.prototype.indexOf.call(tr.cells, td);
+      if (headRow && headRow.cells && headRow.cells[idx]) colName = (headRow.cells[idx].textContent || '').trim();
+    }
+    var pop = document.createElement('div');
+    pop.id = 'hh-cell-pop';
+    var col = document.createElement('div');
+    col.className = 'hh-pop-col';
+    col.textContent = '列：' + (colName || '—');
+    var body = document.createElement('div');
+    body.className = 'hh-pop-body';
+    body.textContent = text;
+    var foot = document.createElement('div');
+    foot.className = 'hh-pop-foot';
+    var copy = document.createElement('button');
+    copy.type = 'button';
+    copy.className = 'hh-pop-copy';
+    copy.textContent = '复制内容';
+    copy.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var okBtn = copyTextCompat(text);
+      copy.textContent = okBtn ? '已复制 ✓' : '复制失败，请手动选择';
+      setTimeout(function () { if (copy.textContent === '已复制 ✓' || copy.textContent === '复制失败，请手动选择') copy.textContent = '复制内容'; }, 1600);
+    });
+    var closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.textContent = '关闭';
+    closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeCellPop(); });
+    foot.appendChild(copy);
+    foot.appendChild(closeBtn);
+    pop.appendChild(col);
+    pop.appendChild(body);
+    pop.appendChild(foot);
+    document.body.appendChild(pop);
+    /* 定位：靠近单元格，自动防出屏幕边界 */
+    var r = td.getBoundingClientRect();
+    var pw = Math.min(420, pop.offsetWidth || 420);
+    var left = Math.max(8, Math.min(r.left, window.innerWidth - pw - 8));
+    var top = r.bottom + 6;
+    var ph = pop.offsetHeight || 160;
+    if (top + ph > window.innerHeight - 8) top = Math.max(8, r.top - ph - 6);
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+  }
+  function initDetailCellEnhancers() {
+    document.addEventListener('mouseover', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var td = t.closest(CELL_TD_SEL);
+      if (!td) return;
+      if (!td.getAttribute('title') && td.scrollWidth > td.clientWidth + 1) {
+        var s = (td.textContent || '').replace(/\s+/g, ' ').trim();
+        if (s) td.title = s;
+      }
+    }, true);
+    document.addEventListener('dblclick', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var td = t.closest(CELL_TD_SEL);
+      if (!td) return;
+      var s = (td.textContent || '').replace(/\s+/g, ' ').trim();
+      if (!s) return;
+      if (s.length > 10 || td.scrollWidth > td.clientWidth + 1) showCellPop(td);
+    });
+    /* 点击气泡外部区域自动关闭 */
+    document.addEventListener('click', function (e) {
+      var p = document.getElementById('hh-cell-pop');
+      if (!p) return;
+      if (p.contains(e.target)) return;
+      closeCellPop();
+    }, true);
+  }
+  var lastBannerSig = '\u0000';
   function queryToolbar() {
     var on = isQueryPage() && pageId() !== 32 && BI_DASH_IDS.indexOf(pageId()) < 0; /* 多图表 BI 看板不注入单表工具条 */
     if (!on) {
@@ -990,6 +1269,7 @@
       return;
     }
     var charts = dashboardCharts();
+    var bannerSig = '';
     Array.prototype.forEach.call(document.querySelectorAll('.dashboard-component-chart-holder'), function (holder) {
       var m = (holder.className || '').match(/dashboard-chart-id-(\d+)/);
       if (!m) return;
@@ -1024,9 +1304,20 @@
         bd.type = 'button';
         bd.className = 'hh-btn-density';
         bd.addEventListener('click', toggleDensity);
+        /* 20261118f14：高频提效按钮——收起筛选 / 全屏看表（挂同一工具条右侧，紧凑次要按钮风格） */
+        var bf = document.createElement('button');
+        bf.type = 'button';
+        bf.className = 'hh-btn-fold-top';
+        bf.addEventListener('click', toggleFoldTop);
+        var bm = document.createElement('button');
+        bm.type = 'button';
+        bm.className = 'hh-btn-max-table';
+        bm.addEventListener('click', toggleMaxTable);
         right.appendChild(bx);
         right.appendChild(bc);
         right.appendChild(bd);
+        right.appendChild(bf);
+        right.appendChild(bm);
         bar.appendChild(left);
         bar.appendChild(right);
         root.insertBefore(bar, root.firstChild);
@@ -1053,6 +1344,13 @@
       var bd = bar.querySelector('.hh-btn-density');
       var wantDensity = document.documentElement.classList.contains('hh-density-compact') ? '标准行高' : '紧凑行高';
       if (bd.textContent !== wantDensity) bd.textContent = wantDensity;
+      /* 20261118f14：收起筛选 / 全屏看表按钮状态文案同步 */
+      var bf2 = bar.querySelector('.hh-btn-fold-top');
+      var wantFold = document.documentElement.classList.contains('hh-top-folded') ? '展开筛选' : '收起筛选';
+      if (bf2 && bf2.textContent !== wantFold) bf2.textContent = wantFold;
+      var bm2 = bar.querySelector('.hh-btn-max-table');
+      var wantMax = document.documentElement.classList.contains('hh-table-max') ? '退出全屏' : '全屏看表';
+      if (bm2 && bm2.textContent !== wantMax) bm2.textContent = wantMax;
       /* 5 万/10 万行上限截断强警告（E3）：成功且行数 ≥ row_limit 时弹出，低于上限自动移除 */
       var showBanner = info.phase === 'ok' && info.rowLimit > 0 && info.rows >= info.rowLimit;
       var bn = holder.querySelector('.hh-truncation-banner[data-hh-chart="' + id + '"]');
@@ -1069,7 +1367,17 @@
       } else if (bn) {
         bn.remove();
       }
+      bannerSig += id + (showBanner ? 'B' : '-') + (info.phase || 'i');
     });
+    /* 20261118f14【修 Bug 1】：工具条/横幅动态增删后立即重调高度计算（此前 fitTables 先于
+       queryToolbar 执行会漏扣工具条高度；banner 弹出时表格区也应立即让位） */
+    if (bannerSig !== lastBannerSig) {
+      lastBannerSig = bannerSig;
+      fitSingleQueryViewport();
+      fitTables();
+      fitPivotTable();
+      fitMonthlyScroll();
+    }
   }
 
   /* ---------- 管理列表头部 ---------- */
@@ -1105,16 +1413,215 @@
     if (home && !home.querySelector('a')) home.innerHTML = '<strong>统计报表系统</strong><a href="/superset/dashboard/34/">打开报表目录</a>，按分类选择报表并设置查询条件。';
   }
 
+  /* ---------- 20261118f14（DETAIL-UX 批）：单表视口锁高 + 表格高度精确适配 ---------- */
+  function isEditingNow() {
+    return /(?:\?|&)edit=true/.test(location.search) ||
+      !!(window.hospitalHomeUI && window.hospitalHomeUI.isEditing && window.hospitalHomeUI.isEditing());
+  }
+  /* 清除本批写入的全部内联高度与标记（data-hh-sized），原生拖拽编辑栅格 100% 无损 */
+  function cleanSizedNodes() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-hh-sized]'), function (el) {
+      if (el.id === 'hospital-monthly-report' || (el.className || '').indexOf('hm-scroll') >= 0) {
+        el.style.removeProperty('max-height');
+      } else {
+        el.style.removeProperty('height');
+        el.style.removeProperty('overflow');
+        el.style.removeProperty('min-height');
+      }
+      el.removeAttribute('data-hh-sized');
+    });
+  }
+  /* ②单表查询页视口锁高：消灭“外层网页滚动 + 内层表格滚动”双滚动条，横向滚动条与翻页栏钉在屏幕底沿。
+     实测（2026-11-17 clip 诊断）：查询页顶部还有一个无 dashboard-chart-id 的 40px 空筛选容器 holder，
+     因此主数据图表 holder 按 [class*="dashboard-chart-id-"] 精准定位，只统计主 holder。
+     双表页（如 42 号：两张明细表上下排）：锁第一张到视口（hh-duo-table-page，不藏外层滚动，
+     第二张保持原生布局滚动查看）；单表页锁全链并隐藏外层滚动（hh-single-table-page）。 */
+  function fitSingleQueryViewport() {
+    var de = document.documentElement;
+    var id = pageId();
+    var mainHolders = document.querySelectorAll('.dashboard-component-chart-holder[class*="dashboard-chart-id-"]');
+    var n = mainHolders.length;
+    /* 双表页（如 42）：两张都是数据表才按 duo 锁第一张；单主 holder 页（含 61 号非表格图表页）一律锁 */
+    var duo = n === 2 &&
+      !!mainHolders[0].querySelector('.superset-chart-table table, .pvtTable') &&
+      !!mainHolders[1].querySelector('.superset-chart-table table, .pvtTable');
+    var on = isQueryPage() && id !== 32 && BI_DASH_IDS.indexOf(id) < 0 &&
+      !document.querySelector('.hh-denied-card') &&
+      (n === 1 || duo) &&
+      !isEditingNow();
+    if (!on) {
+      if (de.classList.contains('hh-single-table-page') || de.classList.contains('hh-duo-table-page') ||
+          document.querySelector('[data-hh-sized]')) {
+        cleanSizedNodes();
+      }
+      de.classList.remove('hh-single-table-page');
+      de.classList.remove('hh-duo-table-page');
+      de.style.removeProperty('--hh-chart-max');
+      return;
+    }
+    var holder = mainHolders[0];
+    var grid = document.querySelector('[data-test="grid-content"]');
+    if (!holder || !grid) {
+      cleanSizedNodes();
+      de.classList.remove('hh-single-table-page');
+      de.classList.remove('hh-duo-table-page');
+      return;
+    }
+    de.classList.add(duo ? 'hh-duo-table-page' : 'hh-single-table-page');
+    de.classList.remove(duo ? 'hh-single-table-page' : 'hh-duo-table-page');
+    /* 进入/重算锁高前先清旧内联高度并复位外层滚动，保证 top 是文档流自然位置 */
+    cleanSizedNodes();
+    if (duo) {
+      /* 20261121f16：双表页（42 号等）重排——两张卡片等高固定舒适内滚（卡高约 456px，
+         表区约 368px），分页栏完整可见；外层页面自然滚动，不再首表锁视口、次表裸奔 */
+      var DUO_CARD = 456;
+      Array.prototype.forEach.call(mainHolders, function (h) {
+        var innerD = h.querySelector('.slice_container') || h.querySelector('.chart-container') || h;
+        var chainD = [], nd = innerD, guardD = 0;
+        while (nd && nd !== grid && nd !== document.body && guardD < 14) { chainD.push(nd); nd = nd.parentElement; guardD++; }
+        chainD.reverse();
+        var remainD = DUO_CARD;
+        for (var ci = 0; ci < chainD.length; ci++) {
+          var el2 = chainD[ci], s2 = getComputedStyle(el2);
+          var pad2 = (parseFloat(s2.paddingTop) || 0) + (parseFloat(s2.paddingBottom) || 0) +
+            (parseFloat(s2.borderTopWidth) || 0) + (parseFloat(s2.borderBottomWidth) || 0);
+          el2.style.setProperty('height', remainD + 'px', 'important');
+          el2.setAttribute('data-hh-sized', '1');
+          remainD = Math.max(200, remainD - pad2);
+        }
+      });
+      de.style.setProperty('--hh-chart-max', '368px');
+      return;
+    }
+    if (window.pageYOffset > 0) window.scrollTo(0, 0);
+    /* 20261118f14：链穿透到 slice_container——React/sticky-table 的 ResizeObserver 观察的正是
+       这些中间层（chart-slice/dashboard-chart/chart-container/slice_container 的 styled 内联高度
+       不随外层栅格压缩更新，且组件每秒会用普通内联 height 覆盖我们的 important）。
+       把整条链锁好后，组件自己观察到新高度即收敛，不再与注入样式拉锯。 */
+    var chain = [];
+    var inner = holder.querySelector('.slice_container') || holder.querySelector('.chart-container');
+    var n = inner || holder;
+    while (n && n !== grid && n !== document.body) { chain.push(n); n = n.parentElement; }
+    if (!chain.length) return;
+    chain.reverse();
+    var top = holder.getBoundingClientRect().top;
+    var avail = Math.max(300, Math.floor(window.innerHeight - top - 10));
+    var remain = avail;
+    for (var i = 0; i < chain.length; i++) {
+      var el = chain[i], s = getComputedStyle(el);
+      var pad = (parseFloat(s.paddingTop) || 0) + (parseFloat(s.paddingBottom) || 0) +
+        (parseFloat(s.borderTopWidth) || 0) + (parseFloat(s.borderBottomWidth) || 0);
+      el.style.setProperty('height', remain + 'px', 'important');
+      el.setAttribute('data-hh-sized', '1');
+      remain = Math.max(220, remain - pad);
+    }
+    /* CSS 变量兜底：React 每秒重写 chart 内联 height，样式表 important 的 max-height 才压得住 */
+    var chartEl = holder.querySelector('.superset-chart-table');
+    if (chartEl) {
+      var ct = chartEl.getBoundingClientRect().top - holder.getBoundingClientRect().top;
+      if (ct < 0) ct = 0;
+      de.style.setProperty('--hh-chart-max', Math.max(140, Math.floor(avail - ct - 4)) + 'px');
+    } else {
+      de.style.removeProperty('--hh-chart-max');
+    }
+  }
+  /* ②顺手优化：32 号月报 .hm-scroll 动态 max-height（m12 写死 calc(100vh - 410px) 在 768p 偏矮、1080p 底部空一大截）。
+     诊断实证（clip_before.json）：隐藏源图表虽 visibility:hidden 但栅格布局仍占 640px 高，
+     外层网页溢出 164px——同步把源 holder 的栅格链压为 0，月报一屏到底。 */
+  function fitMonthlyScroll() {
+    if (!isQueryPage() || pageId() !== 32) return;
+    /* 先压隐藏源图表的布局占位（[data-hm-source] 所在 holder 及其 resizable-container） */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-hm-source]'), function (src) {
+      var h = src.closest('.dashboard-component-chart-holder');
+      var n = h, guard = 0;
+      while (n && guard < 4) {
+        if ((n.className || '').indexOf('resizable-container') >= 0 || n === h) {
+          n.style.setProperty('height', '0', 'important');
+          n.style.setProperty('overflow', 'hidden', 'important');
+          n.setAttribute('data-hh-sized', '1');
+        }
+        n = n.parentElement; guard++;
+      }
+    });
+    var sc = document.querySelector('#hospital-monthly-report .hm-scroll');
+    if (!sc) return;
+    var doc = document.scrollingElement || document.documentElement;
+    var topDoc = sc.getBoundingClientRect().top + (doc ? doc.scrollTop : 0);
+    var footer = document.querySelector('#hospital-monthly-report .hm-footer');
+    var footerH = footer ? footer.getBoundingClientRect().height + 14 : 46;
+    var mh = Math.max(240, Math.floor(window.innerHeight - topDoc - footerH - 18));
+    sc.style.setProperty('max-height', mh + 'px', 'important');
+    sc.setAttribute('data-hh-sized', '1');
+  }
+  /* ③39 号等 pivot_table_v2 透视表高度适配：滚动区=卡片净高-图表头-工具条，横/纵滚动条钉在首屏视口内 */
+  function fitPivotTable() {
+    if (!isQueryPage()) {
+      Array.prototype.forEach.call(document.querySelectorAll('.hh-pvt-scroll'), function (el) {
+        el.style.removeProperty('max-height');
+        el.style.removeProperty('overflow');
+        el.classList.remove('hh-pvt-scroll');
+      });
+      return;
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.dashboard-component-chart-holder'), function (holder) {
+      var pvt = holder.querySelector('.pvtTable');
+      if (!pvt) return;
+      var slice = holder.querySelector('.slice_container') || holder;
+      var locked = document.documentElement.classList.contains('hh-single-table-page') ||
+        document.documentElement.classList.contains('hh-duo-table-page');
+      /* 锁高页先把 slice 链压回 holder 边界（同 fitTables 的底对齐削减法：
+         chart-container 的 styled 内联高度不随栅格压缩更新） */
+      if (locked) {
+        var sr = slice.getBoundingClientRect(), hr2 = holder.getBoundingClientRect();
+        var over = sr.bottom - hr2.bottom;
+        if (over > 2) {
+          var swant = Math.floor(sr.height - over - 2);
+          if (swant > 120) {
+            slice.style.setProperty('height', swant + 'px', 'important');
+            slice.style.setProperty('overflow', 'hidden', 'important');
+            slice.setAttribute('data-hh-sized', '1');
+          }
+        }
+      }
+      /* 找 .pvtTable 之上第一个可滚动的祖先（含 slice_container 自身）作为滚动区 */
+      var sc = pvt.parentElement, hop = 0, found = null;
+      while (sc && sc !== holder && hop < 8) {
+        var s = getComputedStyle(sc);
+        if (s.overflowY === 'auto' || s.overflowY === 'scroll' || s.overflowX === 'auto' || s.overflowX === 'scroll') { found = sc; break; }
+        sc = sc.parentElement; hop++;
+      }
+      var target = found || slice;
+      target.classList.add('hh-pvt-scroll');
+      var ss = getComputedStyle(slice);
+      var padTop = parseFloat(ss.paddingTop) || 0, padBottom = parseFloat(ss.paddingBottom) || 0;
+      var headH = 0, head = holder.querySelector('[data-test="slice-header"]');
+      if (head && head.offsetHeight) headH = head.getBoundingClientRect().height + 8;
+      var tbH = 0, tb = holder.querySelector('.hh-query-toolbar');
+      if (tb && tb.offsetHeight) tbH = tb.getBoundingClientRect().height;
+      var bnH = 0, bn = holder.querySelector('.hh-truncation-banner');
+      if (bn && bn.offsetHeight) bnH = bn.getBoundingClientRect().height;
+      var h = Math.max(160, Math.floor(slice.clientHeight - padTop - padBottom - headH - tbH - bnH - 6));
+      target.style.setProperty('max-height', h + 'px', 'important');
+      target.style.setProperty('overflow', 'auto', 'important');
+    });
+  }
   function fitTables() {
     if (!document.documentElement.classList.contains('hh-report-page')) return;
     Array.prototype.forEach.call(document.querySelectorAll('.superset-chart-table'), function (chart) {
+      /* 20261118f14：chart 高度不再用内联 height 与 React 拉锯（组件每秒会用普通内联覆盖
+         important）——由锁高逻辑写入 CSS 变量、样式表 important max-height 硬性兜底
+         （html.hh-single-table-page .superset-chart-table{max-height:var(--hh-chart-max)}）。 */
+      var locked = document.documentElement.classList.contains('hh-single-table-page') ||
+        document.documentElement.classList.contains('hh-duo-table-page');
+      var holder = chart.closest('.dashboard-component-chart-holder');
       var body = chart.querySelector('tbody');
       if (!body) return;
       var table = body.closest('table');
       var scroll = table.parentElement;
       var frame = scroll && scroll.parentElement;
-      if (!frame || !frame.parentElement || !frame.parentElement.querySelector('.dt-controls')) return;
-      var wrapper = frame.parentElement;
+      var wrapper = frame && frame.parentElement;
+      /* 20261118f14：去掉必须存在 .dt-controls 的死板限制——只要 table->scroll->frame->wrapper 链在就精确计算 */
+      if (!scroll || !frame || !wrapper) return;
       var controls = wrapper.querySelector('.dt-controls');
       var pagination = wrapper.querySelector('.pagination');
       function outer(el) {
@@ -1122,19 +1629,44 @@
         var s = getComputedStyle(el);
         return el.getBoundingClientRect().height + (parseFloat(s.marginTop) || 0) + (parseFloat(s.marginBottom) || 0);
       }
-      var available = Math.max(120, wrapper.clientHeight - outer(controls) - outer(pagination) - 8);
+      /* 20261118f14：wrapper 压平——以 chart 底边为界（中间 emotion 层 padding/margin 自动计入），
+         分页器随之回到视口内 */
+      if (holder && locked) {
+        var chartRect = chart.getBoundingClientRect();
+        var wrapRect = wrapper.getBoundingClientRect();
+        var wAvail = Math.floor(chartRect.bottom - wrapRect.top - 2);
+        if (wAvail > 80 && wrapRect.height > wAvail + 2) {
+          wrapper.style.setProperty('height', wAvail + 'px', 'important');
+          wrapper.style.setProperty('min-height', '0', 'important');
+          wrapper.setAttribute('data-hh-sized', '1');
+        }
+      }
+      /* 补扣 wrapper 自身上下 padding/border（clientHeight 含 padding，须折算回内容区） */
+      var ws = getComputedStyle(wrapper);
+      var wrapPad = (parseFloat(ws.paddingTop) || 0) + (parseFloat(ws.paddingBottom) || 0) +
+        (parseFloat(ws.borderTopWidth) || 0) + (parseFloat(ws.borderBottomWidth) || 0);
+      var available = Math.max(120, wrapper.clientHeight - wrapPad - outer(controls) - outer(pagination));
       /* 20261105f10：扣除挂在表格容器内、frame 之前的工具条与截断横幅高度 */
       var extra = 0, prev = frame.previousElementSibling;
       while (prev) {
         if (prev.classList.contains('hh-query-toolbar') || prev.classList.contains('hh-truncation-banner')) extra += outer(prev);
         prev = prev.previousElementSibling;
       }
-      available = Math.max(120, available - extra);
+      available = Math.max(120, available - extra - 6);
       var header = frame.querySelector('thead');
       var headerHeight = header ? header.getBoundingClientRect().height : 0;
       // 旧兼容资源的 sticky table 高度会停在初始值；依据现有图表容器重新量取。
       frame.style.setProperty('height', available + 'px', 'important');
+      frame.style.setProperty('min-height', '0', 'important');
+      frame.setAttribute('data-hh-sized', '1');
       scroll.style.setProperty('height', Math.max(80, available - headerHeight) + 'px', 'important');
+      scroll.style.setProperty('min-height', '0', 'important');
+      scroll.setAttribute('data-hh-sized', '1');
+      /* 20261118f14：底部安全余量确保横向滚动条出现时绝不遮挡最后一行或“合计”行文字 */
+      scroll.style.setProperty('overflow-x', 'auto', 'important');
+      scroll.style.setProperty('overflow-y', 'auto', 'important');
+      scroll.style.setProperty('box-sizing', 'border-box', 'important');
+      scroll.style.setProperty('padding-bottom', '8px', 'important');
     });
   }
   function queryLabel() {
@@ -1260,11 +1792,36 @@
     });
   }
 
-  /* ---------- 未授权专项明细页中文提示卡（20261108f13） ----------
-     仅覆盖受控明细页（2/47/49/50/51/52/61–70，含 mr-discharge-death-detail 别名→2）；
-     非管理员打开出现原生“Page not found / Access is Denied”错误页时替换为中文引导卡。
-     未知看板号、Admin、编辑态一律保持原生错误页。 */
-  var DENIED_DASH_IDS = {2:1,47:1,49:1,50:1,51:1,52:1,61:1,62:1,63:1,64:1,65:1,66:1,67:1,68:1,69:1,70:1};
+  /* ---------- 未授权看板中文提示卡（20261108f13 建；20261121f16 升级为全量角色点名） ----------
+     DASH_ROLE_HINT：全部受控看板 → 授予该看板访问权的【报表授权_*】角色清单（多角色逐个列出，
+     依据 20261120-RBAC-BACKEND 终态 dashboard_roles 绑定于 2026-11-21 只读导出核对）。
+     覆盖 2、25–33（含目录页）、35–75（含 BI 驾驶舱）。非 Admin 打开未授权看板出现原生
+     “Page not found / Access is Denied”错误页时替换为中文引导卡并精确点名需开通的角色；
+     未知乱输看板号（不在字典内，如 9999）、Admin、编辑态一律保持原生错误页。 */
+  var DASH_ROLE_HINT = {
+    2: '报表授权_病案离院明细',
+    25: '报表授权_质控与全院月报', 26: '报表授权_护理部管理 或 报表授权_临床科室日常统计',
+    27: '报表授权_门急诊患者明细 或 报表授权_门诊与窗口管理', 28: '报表授权_门急诊患者明细 或 报表授权_门诊与窗口管理',
+    29: '报表授权_手术明细提取、报表授权_质控与全院月报 或 报表授权_临床科室日常统计',
+    30: '报表授权_门诊与窗口管理', 31: '报表授权_绩效考核管理',
+    32: '报表授权_质控与全院月报', 33: '报表授权_质控与全院月报 或 报表授权_临床科室日常统计',
+    35: '报表授权_质控与全院月报', 36: '报表授权_质控与全院月报 或 报表授权_临床科室日常统计',
+    37: '报表授权_质控与全院月报 或 报表授权_临床科室日常统计', 38: '报表授权_系统字典维护',
+    39: '报表授权_质控与全院月报 或 报表授权_临床科室日常统计',
+    40: '报表授权_绩效考核管理', 41: '报表授权_护理部管理 或 报表授权_临床科室日常统计',
+    42: '报表授权_护理部管理', 43: '报表授权_护理部管理',
+    44: '报表授权_质控与全院月报', 45: '报表授权_质控与全院月报', 46: '报表授权_绩效考核管理',
+    47: '报表授权_门急诊患者明细', 48: '报表授权_门诊与窗口管理', 49: '报表授权_门急诊患者明细',
+    50: '报表授权_手术明细提取', 51: '报表授权_手术明细提取', 52: '报表授权_手术明细提取',
+    53: '报表授权_门诊与窗口管理', 54: '报表授权_门诊与窗口管理', 55: '报表授权_门诊与窗口管理',
+    56: '报表授权_门诊与窗口管理', 57: '报表授权_门诊与窗口管理',
+    58: '报表授权_绩效考核管理', 59: '报表授权_绩效考核管理', 60: '报表授权_绩效考核管理',
+    61: '报表授权_抗菌办', 62: '报表授权_抗菌办', 63: '报表授权_抗菌办', 64: '报表授权_抗菌办',
+    65: '报表授权_抗菌办', 66: '报表授权_抗菌办', 67: '报表授权_抗菌办', 68: '报表授权_抗菌办',
+    69: '报表授权_抗菌办', 70: '报表授权_抗菌办',
+    72: '报表授权_院领导与运营驾驶舱', 73: '报表授权_院领导与运营驾驶舱 或 报表授权_门诊与窗口管理',
+    74: '报表授权_院领导与运营驾驶舱', 75: '报表授权_院领导与运营驾驶舱 或 报表授权_护理部管理'
+  };
   function deniedCard() {
     var card = document.getElementById('hh-denied-card');
     if (!/^\/superset\/dashboard\//.test(location.pathname)) {
@@ -1274,7 +1831,9 @@
     var editing = /(?:\?|&)edit=true/.test(location.search) ||
       !!(window.hospitalHomeUI && window.hospitalHomeUI.isEditing && window.hospitalHomeUI.isEditing());
     var err = document.querySelector('.error-page-content');
-    var active = !!err && !editing && !isAdminUser() && DENIED_DASH_IDS[pageId()] === 1;
+    var id = pageId();
+    var hint = DASH_ROLE_HINT[id];
+    var active = !!err && !editing && !isAdminUser() && !!hint;
     if (!active) {
       if (card) card.remove();
       var old = document.querySelector('.error-page-content[data-hh-denied]');
@@ -1282,33 +1841,211 @@
       return;
     }
     err.setAttribute('data-hh-denied', '1');
+    /* 20261121f16：角色清单加书名号高亮（「A、B 或 C」→「【A】、【B】或【C】」） */
+    var roles = '【' + hint.replace(/ 或 /g, '】或【').replace(/、/g, '】、【') + '】';
+    var isCatalog = id >= 25 && id <= 33;
     if (!card) {
       card = document.createElement('div');
       card.id = 'hh-denied-card';
       card.className = 'hh-denied-card';
       card.setAttribute('role', 'alert');
+      err.parentElement.insertBefore(card, err);
+    }
+    var wantTitle = isCatalog ? '此报表分类未对当前账号开放' : '此报表未对当前账号开放';
+    var wantText = (isCatalog ? '该分类目录下的报表需开通对应的角色授权后方可查看。' : '该报表需开通对应的角色授权后方可查看。') +
+      '请联系信息科为您开通以下角色：' + roles +
+      '。开通后刷新页面即可使用；也可点击下方按钮返回报表目录。';
+    var t = card.querySelector('.hh-denied-title');
+    if (!t) {
       var icon = document.createElement('div');
       icon.className = 'hh-denied-icon';
       icon.textContent = '🔒';
-      var title = document.createElement('div');
-      title.className = 'hh-denied-title';
-      title.textContent = '专项明细权限受控';
-      var text = document.createElement('p');
-      text.className = 'hh-denied-text';
-      text.textContent = '该报表包含患者/手术级明细数据，需开通对应的【报表授权】专项角色后方可查看。如需使用请联系信息科授权，或点击下方按钮返回公共报表目录。';
+      t = document.createElement('div');
+      t.className = 'hh-denied-title';
+      var p = document.createElement('p');
+      p.className = 'hh-denied-text';
       var btn = document.createElement('a');
       btn.className = 'hh-denied-btn';
       btn.href = '/superset/dashboard/34/';
       btn.textContent = '返回报表目录';
       card.appendChild(icon);
-      card.appendChild(title);
-      card.appendChild(text);
+      card.appendChild(t);
+      card.appendChild(p);
       card.appendChild(btn);
-      err.parentElement.insertBefore(card, err);
     }
+    if (t.textContent !== wantTitle) t.textContent = wantTitle;
+    var tx = card.querySelector('.hh-denied-text');
+    if (tx && tx.textContent !== wantText) tx.textContent = wantText;
   }
 
-  function refresh() {pending = 0;pageState();pageHeaderMode();navigation();fitTables();queryLabel();menuReorg();menuFixups();crumb();metaHide();catalogEnhance();visitIdLabels();tableToolbarText();emptyStateText();queryToolbar();enhanceReportTable();listHeader();sliceTitleDedup();acctPage();deniedCard();iconA11y();}
+  /* 20261118f14【修 Bug 1】：fitTables/视口锁高移到 queryToolbar、sliceTitleDedup、emptyStateText、
+     enhanceReportTable 之后执行——此前 fitTables 排第 4 位，算高度时漏扣了工具条与去重标题的高度 */
+  /* ---------- 20261119f15（BI-ENHANCE 批）：汇报投屏 + 打印报表 ---------- */
+  /* 20261121f16：72–75 固定中文标题兜底映射（投屏抬头条 100% 有完整标题） */
+  var BI_TITLES = {72: '全院医疗运营核心指标总览', 73: '门急诊流量与窗口负荷监测中心',
+    74: '手术与住院医疗质量可视化分析', 75: '全院护理工作量与病区床位效率分析'};
+  var presentTitleCache = '';
+  /* 含端日期段：排他上界（次日）折回前一日——“A : B”/“A 至 B”统一成「A 至 B-1日」 */
+  function presentFoldEnd(a, b) {
+    var p = b.split('-');
+    var B = new Date(+p[0], +p[1] - 1, (+p[2]) - 1);
+    var bs = B.getFullYear() + '-' + ('0' + (B.getMonth() + 1)).slice(-2) + '-' + ('0' + B.getDate()).slice(-2);
+    return a + ' 至 ' + (bs < a ? a : bs);
+  }
+  function presentPeriod() {
+    /* 统计期间：读 d19 日历草稿值（hdt-picker 输入框回显），无则显示“报表默认期间”；
+       20261121f16：统一折算为含端口径（如 2026-10-01 至 2026-10-31）。
+       实测默认窗不落入输入框 value、draftFor 也仅存用户交互值——补 Redux 兜底：
+       读最近一次图表查询的 time_range（BI 页首屏必在，含原生筛选默认窗） */
+    var inp = document.querySelector('.hdt-picker input[aria-label]');
+    var v = inp ? String(inp.value || '').trim() : '';
+    if (v) {
+      var vm = v.match(/^(\d{4}-\d{2}-\d{2})\s*(?:至|:|：)\s*(\d{4}-\d{2}-\d{2})/);
+      if (vm) return presentFoldEnd(vm[1], vm[2]);
+    }
+    var ui = window.hospitalDateUI;
+    if (ui && typeof ui.draftFor === 'function') {
+      var panels = document.querySelectorAll('.hdt-picker[data-filter-id]');
+      for (var i = 0; i < panels.length; i++) {
+        var d = ui.draftFor(panels[i].getAttribute('data-filter-id'));
+        if (d && String(d).indexOf(':') > 0) {
+          var m = String(d).split(/\s*:\s*/);
+          if (m.length === 2) return presentFoldEnd(m[0].slice(0, 10), m[1].slice(0, 10));
+        }
+      }
+    }
+    var charts = dashboardCharts();
+    for (var ck in charts) {
+      if (charts[ck] && charts[ck].latestQueryFormData && charts[ck].latestQueryFormData.time_range) {
+        var tr = String(charts[ck].latestQueryFormData.time_range);
+        var tm = tr.match(/^(\d{4}-\d{2}-\d{2})\s*:\s*(\d{4}-\d{2}-\d{2})/);
+        if (tm) return presentFoldEnd(tm[1], tm[2]);
+      }
+    }
+    return '报表默认期间';
+  }
+  /* 20261121f16：暴露当前生效统计期间（BI 页刷新时更新，供验收探针/诊断使用） */
+  function refreshPeriodProbe() {
+    try { window.hospitalReportUI.period = presentPeriod(); } catch (e) {}
+  }
+  function updatePresentBar() {
+    var bar = document.getElementById('hh-present-bar');
+    if (!document.documentElement.classList.contains('hh-present-mode')) { if (bar) bar.remove(); return; }
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'hh-present-bar';
+      var wrap = document.querySelector('[data-test="dashboard-content-wrapper"]');
+      (wrap || document.body).insertBefore(bar, (wrap || document.body).firstChild);
+      /* 20261121f16 修正 f15 遗留：标题 span 与退出按钮此前只查不建，抬头条从未显示标题 */
+      var t0 = document.createElement('span');
+      t0.className = 'hh-pres-title';
+      bar.appendChild(t0);
+      var p0 = document.createElement('span');
+      p0.className = 'hh-pres-period';
+      bar.appendChild(p0);
+      var ex = document.createElement('button');
+      ex.type = 'button';
+      ex.className = 'hh-pres-exit';
+      ex.textContent = '退出投屏 (Esc)';
+      ex.title = '退出投屏';
+      ex.addEventListener('click', function (e) { e.preventDefault(); exitPresent(); });
+      bar.appendChild(ex);
+    }
+    /* 20261121f16：优先用进入投屏前缓存的标题（f15 先隐藏容器再取标题读到空串的根因修复），
+       BI_TITLES 固定映射兜底 */
+    var title = presentTitleCache || nativeTitle() || BI_TITLES[pageId()] || 'BI 驾驶舱';
+    var t = '🏥 山东省第二人民医院 · ' + title;
+    var el = bar.querySelector('.hh-pres-title');
+    if (el && el.textContent !== t) el.textContent = t;
+    var per = bar.querySelector('.hh-pres-period');
+    var pd = '统计期间：' + presentPeriod();
+    if (per && per.textContent !== pd) per.textContent = pd;
+  }
+  function enterPresent() {
+    /* 20261121f16：先读并缓存当前看板标题，再切换 hh-present-mode（顺序即根因修复） */
+    presentTitleCache = (nativeTitle() || '').trim() || BI_TITLES[pageId()] || 'BI 驾驶舱';
+    document.documentElement.classList.add('hh-present-mode');
+    /* 20261121f16：requestFullscreen 返回 Promise，同步 try/catch 接不住——无用户手势时
+       （自动化/特殊环境）其拒绝会成为未处理异常（Chrome 文案 'Permissions check failed'、
+       C87 'fullscreen error'），显式 catch 消化；真实用户点击有手势，全屏正常进入 */
+    try {
+      if (document.documentElement.requestFullscreen) {
+        var fp = document.documentElement.requestFullscreen();
+        if (fp && typeof fp.catch === 'function') fp.catch(function () {});
+      }
+    } catch (e) {}
+    updatePresentBar();
+    /* 延迟两档触发 resize，ECharts 逐级自适应铺满 */
+    setTimeout(function () { try { window.dispatchEvent(new Event('resize')); } catch (e) {} }, 250);
+    setTimeout(function () { try { window.dispatchEvent(new Event('resize')); } catch (e) {} }, 700);
+  }
+  function exitPresent() {
+    if (!document.documentElement.classList.contains('hh-present-mode')) return;
+    document.documentElement.classList.remove('hh-present-mode');
+    var bar = document.getElementById('hh-present-bar');
+    if (bar) bar.remove();
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) {
+        var xp = document.exitFullscreen();
+        if (xp && typeof xp.catch === 'function') xp.catch(function () {});
+      }
+    } catch (e) {}
+    setTimeout(function () { try { window.dispatchEvent(new Event('resize')); } catch (e) {} }, 250);
+  }
+  function togglePresent() {
+    if (document.documentElement.classList.contains('hh-present-mode')) exitPresent();
+    else enterPresent();
+  }
+  /* 查看态 BI 驾驶舱（72–75）页头右侧两枚 28px 次要按钮 */
+  function ensureBiHeaderButtons() {
+    var btnP = document.getElementById('hh-present-btn');
+    var on = BI_DASH_IDS.indexOf(pageId()) >= 0 && isQueryPage() && !isEditingNow();
+    if (!on) {
+      if (btnP) btnP.remove();
+      var btnPr = document.getElementById('hh-print-btn');
+      if (btnPr) btnPr.remove();
+      return;
+    }
+    var panel = document.querySelector('.dashboard-header-container .right-button-panel, .dashboard-header-container .button-container');
+    if (!panel) return;
+    if (!btnP) {
+      btnP = document.createElement('button');
+      btnP.type = 'button';
+      btnP.id = 'hh-present-btn';
+      btnP.className = 'hh-head-link';
+      btnP.textContent = '汇报投屏';
+      btnP.addEventListener('click', function (e) { e.preventDefault(); togglePresent(); });
+      panel.insertBefore(btnP, panel.firstChild);
+    }
+    var btnPr = document.getElementById('hh-print-btn');
+    if (!btnPr) {
+      btnPr = document.createElement('button');
+      btnPr.type = 'button';
+      btnPr.id = 'hh-print-btn';
+      btnPr.className = 'hh-head-link';
+      btnPr.textContent = '打印报表';
+      btnPr.addEventListener('click', function (e) { e.preventDefault(); window.print(); });
+      panel.insertBefore(btnPr, panel.firstChild);
+    }
+  }
+  /* 打印前解除 f14 单表锁高（beforeprint + matchMedia 双通道，兼容 CDP emulateMedia），
+     打印后 schedule() 重新适配回屏显布局 */
+  function printUnlock() {
+    try { cleanSizedNodes(); } catch (e) {}
+    try { document.documentElement.style.removeProperty('--hh-chart-max'); } catch (e) {}
+  }
+  function initPrintHandlers() {
+    try { window.addEventListener('beforeprint', printUnlock); } catch (e) {}
+    try { window.addEventListener('afterprint', function () { schedule(); }); } catch (e) {}
+    try {
+      var mql = window.matchMedia('print');
+      var fn = function (m) { if (m.matches) printUnlock(); else schedule(); };
+      if (typeof mql.addEventListener === 'function') mql.addEventListener('change', fn);
+      else if (typeof mql.addListener === 'function') mql.addListener(fn);
+    } catch (e) {}
+  }
+
+  function refresh() {pending = 0;pageState();pageHeaderMode();navigation();queryLabel();menuReorg();menuFixups();crumb();metaHide();catalogEnhance();visitIdLabels();tableToolbarText();emptyStateText();queryToolbar();enhanceReportTable();listHeader();sliceTitleDedup();acctPage();deniedCard();iconA11y();ensureBiHeaderButtons();updatePresentBar();refreshPeriodProbe();updateFoldCapsule();updateMaxTitle();fitSingleQueryViewport();fitTables();fitPivotTable();fitMonthlyScroll();}
   function schedule() {if (!pending) pending = setTimeout(refresh, 120);}
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('[data-test="filter-bar__apply-button"]');
@@ -1327,9 +2064,34 @@
   /* 20261105f10：行高偏好记忆恢复 + 图表查询偷听（供导出重放） + loading 已用时秒级跳动 */
   try { if (sessionStorage.getItem('hhTableDensity') === 'compact') document.documentElement.classList.add('hh-density-compact'); } catch (e) {}
   hookQueryFetch();
+  /* 20261118f14：Esc 退出全屏/关单元格气泡；20261119f15：Esc 退出汇报投屏。事件委托初始化 */
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var de = document.documentElement;
+    var did = false;
+    if (document.getElementById('hh-cell-pop')) { closeCellPop(); did = true; }
+    if (de.classList.contains('hh-table-max')) { de.classList.remove('hh-table-max'); removeMaxTitle(); fitSingleQueryViewport(); fitTables(); fitPivotTable(); did = true; }
+    if (de.classList.contains('hh-present-mode')) { exitPresent(); did = true; }
+    if (did) { e.stopPropagation(); }
+  }, true);
+  initDetailCellEnhancers();
+  initPrintHandlers();
   setInterval(function () {
+    /* 20261118f14：锁高自愈——React/styled-components 重渲染可能重写栅格内联高度、
+       甚至重建表格 DOM，每秒重申一次（内部每次重新判定编辑态/页面条件，误伤为零）。
+       32 号月报页无工具条，单独按 pageId 自愈（源 holder 占位压制 + hm-scroll 动态高度）。 */
+    if (pageId() === 32 && isQueryPage()) {
+      fitMonthlyScroll();
+      return;
+    }
     if (!document.querySelector('.hh-query-toolbar')) return;
     queryToolbar();
+    if (document.documentElement.classList.contains('hh-single-table-page') ||
+        document.documentElement.classList.contains('hh-duo-table-page')) {
+      fitSingleQueryViewport();
+      fitTables();
+      fitPivotTable();
+    }
   }, 1000);
   new MutationObserver(schedule).observe(document.body, {childList:true, subtree:true});
   if (window.ResizeObserver) new ResizeObserver(schedule).observe(document.body);

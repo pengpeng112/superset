@@ -1,0 +1,22 @@
+{
+ "378": {
+  "slice_name": "【BI】各科室核心运营指标排行明细表",
+  "params": "{\"viz_type\": \"table\", \"datasource\": \"348__table\", \"query_mode\": \"aggregate\", \"groupby\": [\"KS\"], \"metrics\": [{\"expressionType\": \"SIMPLE\", \"column\": {\"column_name\": \"DISCH_N\"}, \"aggregate\": \"SUM\", \"label\": \"出院人数\"}, {\"expressionType\": \"SIMPLE\", \"column\": {\"column_name\": \"BED_END\"}, \"aggregate\": \"SUM\", \"label\": \"月末实有病床\"}, {\"expressionType\": \"SIMPLE\", \"column\": {\"column_name\": \"DEATH_RATE\"}, \"aggregate\": \"SUM\", \"label\": \"病死率(%)\"}, {\"expressionType\": \"SIMPLE\", \"column\": {\"column_name\": \"OCC_DAYS\"}, \"aggregate\": \"SUM\", \"label\": \"出院者占用总床日\"}], \"row_limit\": 50, \"page_length\": 25, \"server_pagination\": false, \"include_search\": true, \"include_time\": false, \"order_desc\": true, \"table_timestamp_format\": \"%Y-%m-%d\", \"time_range\": \"No filter\", \"column_config\": {}, \"granularity_sqla\": \"STAT_BEGIN\", \"adhoc_filters\": [{\"clause\": \"WHERE\", \"expressionType\": \"SIMPLE\", \"subject\": \"KS\", \"operator\": \"NOT IN\", \"comparator\": [\"总计\", \"合计\"], \"filterOptionName\": \"bi378_ex_total\", \"isExtra\": false, \"isNew\": false, \"sqlExpression\": null}]}"
+ },
+ "393": {
+  "slice_name": "【BI】实际开放总床日数",
+  "params": "{\"viz_type\": \"big_number_total\", \"datasource\": \"350__table\", \"metric\": {\"expressionType\": \"SIMPLE\", \"column\": {\"column_name\": \"OPEN_DAYS\"}, \"aggregate\": \"SUM\", \"label\": \"实际开放总床日数\", \"hasCustomLabel\": true}, \"granularity_sqla\": \"STAT_BEGIN\", \"adhoc_filters\": [{\"clause\": \"WHERE\", \"expressionType\": \"SIMPLE\", \"subject\": \"KS\", \"operator\": \"NOT IN\", \"comparator\": [\"合计\", \"总计\", \"全院\", \"计\"], \"filterOptionName\": \"bi4_ex_total\", \"isExtra\": false, \"isNew\": false, \"sqlExpression\": null}], \"compare_lag\": \"\", \"compare_suffix\": \"\", \"y_axis_format\": \",d\", \"date_format\": \"smart_date\", \"subheader\": \"2026-10 全院合计\", \"time_range\": \"2026-10-01 : 2026-11-01\"}"
+ },
+ "394": {
+  "slice_name": "【BI】实际占用总床日数",
+  "params": "{\"viz_type\": \"big_number_total\", \"datasource\": \"350__table\", \"metric\": {\"expressionType\": \"SIMPLE\", \"column\": {\"column_name\": \"USED_DAYS\"}, \"aggregate\": \"SUM\", \"label\": \"实际占用总床日数\", \"hasCustomLabel\": true}, \"granularity_sqla\": \"STAT_BEGIN\", \"adhoc_filters\": [{\"clause\": \"WHERE\", \"expressionType\": \"SIMPLE\", \"subject\": \"KS\", \"operator\": \"NOT IN\", \"comparator\": [\"合计\", \"总计\", \"全院\", \"计\"], \"filterOptionName\": \"bi4_ex_total\", \"isExtra\": false, \"isNew\": false, \"sqlExpression\": null}], \"compare_lag\": \"\", \"compare_suffix\": \"\", \"y_axis_format\": \",d\", \"date_format\": \"smart_date\", \"subheader\": \"2026-10 全院合计\", \"time_range\": \"2026-10-01 : 2026-11-01\"}"
+ },
+ "395": {
+  "slice_name": "【BI】出院总人数",
+  "params": "{\"viz_type\": \"big_number_total\", \"datasource\": \"350__table\", \"metric\": {\"expressionType\": \"SIMPLE\", \"column\": {\"column_name\": \"DISCH_N\"}, \"aggregate\": \"SUM\", \"label\": \"出院总人数\", \"hasCustomLabel\": true}, \"granularity_sqla\": \"STAT_BEGIN\", \"adhoc_filters\": [{\"clause\": \"WHERE\", \"expressionType\": \"SIMPLE\", \"subject\": \"KS\", \"operator\": \"NOT IN\", \"comparator\": [\"合计\", \"总计\", \"全院\", \"计\"], \"filterOptionName\": \"bi4_ex_total\", \"isExtra\": false, \"isNew\": false, \"sqlExpression\": null}], \"compare_lag\": \"\", \"compare_suffix\": \"\", \"y_axis_format\": \",d\", \"date_format\": \"smart_date\", \"subheader\": \"2026-10 全院合计\", \"time_range\": \"2026-10-01 : 2026-11-01\"}"
+ },
+ "396": {
+  "slice_name": "【BI】病床使用率",
+  "params": "{\"viz_type\": \"big_number_total\", \"datasource\": \"350__table\", \"metric\": {\"expressionType\": \"SQL\", \"sqlExpression\": \"SUM(USED_DAYS)/NULLIF(SUM(OPEN_DAYS),0)\", \"label\": \"病床使用率\"}, \"granularity_sqla\": \"STAT_BEGIN\", \"adhoc_filters\": [{\"clause\": \"WHERE\", \"expressionType\": \"SIMPLE\", \"subject\": \"KS\", \"operator\": \"NOT IN\", \"comparator\": [\"合计\", \"总计\", \"全院\", \"计\"], \"filterOptionName\": \"bi4_ex_total\", \"isExtra\": false, \"isNew\": false, \"sqlExpression\": null}], \"compare_lag\": \"\", \"compare_suffix\": \"\", \"y_axis_format\": \".1%\", \"date_format\": \"smart_date\", \"subheader\": \"占用床日/开放床日\", \"time_range\": \"2026-10-01 : 2026-11-01\"}"
+ }
+}

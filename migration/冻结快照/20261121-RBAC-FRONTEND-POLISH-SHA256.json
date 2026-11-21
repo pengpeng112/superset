@@ -1,0 +1,217 @@
+{
+ "batch": "20261121-RBAC-FRONTEND-POLISH",
+ "generated": "2026-11-19 20:42:31",
+ "summary": "前端千人千面权限感知与细节收官：验收 52/52 全绿（IAB 首页矩阵 + Chrome 单窗深页 + C87 抽测），warmup 两轮 47/47，体检 18/18；home-ui h17→h18（allowedIds 白名单单飞 + CATALOG_REPORTS 生产导出静态目录 + 五大视图裁剪 + 零权限引导卡）、report-ui f15→f16（DASH_ROLE_HINT 全量角色点名 + 投屏标题根因修复 + 42 双表 456/368px）、roles-zh 20261009d→20261121d2（11 角色管辖说明）；BI 72 默认窗推进 2026-10-01:2026-11-01、75 KPI 393-395 副标题去硬编码、378 高度 14→44 格；warmup 46→47 条 + --roll-month；Chrome+C87×双分辨率×003158/admin 多场景验收；inode 47580611 保持、体检 18/18",
+ "production_changes": [
+  "/home/superset/custom/home-ui.js：20261119h17 → 20261121h18",
+  "/home/superset/custom/report-ui.js：20261119f15 → 20261121f16",
+  "/home/superset/custom/roles-zh.js：20261009d → 20261121d2",
+  "/home/superset/nginx.conf：三版本串更新（inode 47580611 保持，/tmp 中转 + cp 原地覆写）",
+  "dashboards.72：json_metadata 原生筛选默认窗 2026-09-01:2026-10-01 → 2026-10-01:2026-11-01",
+  "dashboards.72：position_json 图表 378 meta.height 14→44（112px→352px）",
+  "slices.393/394/395：params.subheader『2026-10 全院合计』→『选定期间全院合计』",
+  "/home/superset/superset_home/scripts/superset_cache_warmup.py：新增 --roll-month OLD NEW",
+  "/home/superset/superset_home/scripts/warmup_templates.json：46→47 条（重录 72 新窗 + 补 75 filter_time）"
+ ],
+ "rollback": "静态回退：before-assets/ 五文件按 nginx.conf + custom/ + warmup 对应路径回传并 reload（nginx.conf 仍走 /tmp 中转 + cp 保 inode）；BI 元数据回退：phase3_bi_meta.py 中 OLD_WIN/原值反向 PUT（写前值见 evidence/dash_72_75_metadata.json 与 charts_378_393_396_params.json）；人员赋权回退：superset_rbac_manage.py revoke-user",
+ "files": [
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/phase0_backup_and_export.py",
+   "bytes": 6409,
+   "sha256": "b0e029af5b9f6e27c2c5ab70bfbd332ca12265d9880637db6b690ca1498f0c84",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/before-assets/home-ui.js",
+   "bytes": 87347,
+   "sha256": "9ace57266b25a4b958f723782a80b9dd05909afa8f57f8ad992514f9117018b8",
+   "note": "写前 h17"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/before-assets/report-ui.js",
+   "bytes": 121859,
+   "sha256": "73d6fcb1b497589c48e4937c512530c384e14e81aceb09c8c9bb127d80edeb24",
+   "note": "写前 f15"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/before-assets/roles-zh.js",
+   "bytes": 26551,
+   "sha256": "0fd899d1bd512a99e896e692d07fda2df54c8f98733abebde2e72b84bae38edb",
+   "note": "写前 20261009d"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/before-assets/nginx.conf",
+   "bytes": 3759,
+   "sha256": "1fc1c3846d53e5e7e598d3c69ea669a962dfc82039cd690bd3851ab6686f5ce4",
+   "note": "写前版本串"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/before-assets/warmup_templates.json",
+   "bytes": 173104,
+   "sha256": "f7f5928a9007e64f87d873b54f717c975097742ceada15836a26db38161991d4",
+   "note": "写前 46 条"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/catalog_markdown_raw.json",
+   "bytes": 5008,
+   "sha256": "023fb778408dd31f2629bbfc00f285c908b99786392de6f2e12fea1f56aad5d5",
+   "note": "25-31,33,34 目录生产导出（CATALOG_REPORTS 依据）"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/role_dashboard_bindings.json",
+   "bytes": 945,
+   "sha256": "3a1fd079bf237763b25cde236a3feee20becfdadcd3191bb3870ea9487e48e5a",
+   "note": "角色→看板绑定（DASH_ROLE_HINT 依据）"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/rbac_roles.json",
+   "bytes": 499,
+   "sha256": "490ba91964b956e21f75f8f7cb4b6928818bf853ae3a615f87f71a06ee4f1ffd",
+   "note": "11 角色清单"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/dash_72_75_metadata.json",
+   "bytes": 12054,
+   "sha256": "608a1c7b9bf260bb07d3afdcc3eab5371c71a3fc30f97ec1b158678eb2721084",
+   "note": "72/75 写前元数据"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/charts_378_393_396_params.json",
+   "bytes": 4700,
+   "sha256": "4c4461b951a0126bbdb99e381b5af10894f66967c31c70d667b87eff266a56ba",
+   "note": "378/393-396 写前 params"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/phase3_bi_meta.py",
+   "bytes": 5759,
+   "sha256": "4fb704b6114bf2f46cd47eba942632b9b69d4e4ecf21ca1dd80353f4d1b9e584",
+   "note": "REST 修正（幂等+回读断言）"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/phase3_bi_meta_result.json",
+   "bytes": 1582,
+   "sha256": "174414c4a93ad8cf6e08a056e8078bd256a5fef851c53385e0c4c6f0232293c2",
+   "note": "全部 OK"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/capture_warmup_7275.py",
+   "bytes": 6292,
+   "sha256": "dd19edf9c5e9d4b326e2563fec5790a855d581aaffb85cbe23e99a812aac0f9d",
+   "note": "CDP 重录 72/75"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/warmup_templates.json",
+   "bytes": 174485,
+   "sha256": "2b4886f9ae9758a5e15872488a96e362b188aef0cf00b782b52deb33d780b72a",
+   "note": "47 条终版（三端一致）"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/phase3b_result.json",
+   "bytes": 1868,
+   "sha256": "5e248a46acd299efc030b7b7a44b62e5338a55bdf16a5b7f0825b48b00b96d1a",
+   "note": "72 图表显式窗 19/19 OK"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/verify_single_window.py",
+   "bytes": 9255,
+   "sha256": "77304b80481b650e5b7fb7d866fdc087f4c70f95d3462171d681627a0a27c2bf",
+   "note": "Chrome 单窗深页补测"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/verify_c87_spot.py",
+   "bytes": 4827,
+   "sha256": "69cf511de0ec09c5160171e19bbbb77d5026ab7400c8e67a08886d345e726179",
+   "note": "C87 最小抽测"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/run_warmup_output.txt",
+   "bytes": 5765,
+   "sha256": "2a4ae9a0594a7b457b5360c2168ffc98ff5c6f6bde686d2c9f05e38d91509b8b",
+   "note": "实跑 47/47 ok"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/health_check_output.txt",
+   "bytes": 1268,
+   "sha256": "2b3cbf0b1b0e7a14f5b79f8e7003d0ea9141b7246c1913603844c61f94f8db32",
+   "note": "18/18 全绿"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/deploy_rbac_frontend.py",
+   "bytes": 5029,
+   "sha256": "2133a30d2c29676435228ac55262aac75924bea083b9e19b1d70ccd5634712f1",
+   "note": "部署（inode 47580611 保持）"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/verify_rbac_frontend_polish.py",
+   "bytes": 37334,
+   "sha256": "870f931bf1471a4c06284a7975622a0b19e8244df65594ed8ff4885555da05db",
+   "note": "多角色双浏览器验收"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/evidence/iab_acceptance.json",
+   "bytes": 9809,
+   "sha256": "e8859ae05e951db2f86c64fad15c69a2172006e2afbce0a0201e43e7ed5d480a",
+   "note": "验收结果 52/52（IAB+Chrome 单窗+C87 抽测）"
+  },
+  {
+   "file": "offline-bundle/custom/home-ui.js",
+   "bytes": 108625,
+   "sha256": "19d04e49bfdd7d88f9b36aa0b6c8f3ef3cac3e2c7f1a9de7a3916617a0483a7d",
+   "note": "h18 千人千面"
+  },
+  {
+   "file": "offline-bundle/custom/report-ui.js",
+   "bytes": 130983,
+   "sha256": "9e16d425c4c3ad32f29f13b4ae310b04c6298dd9febfc7322462d03481e42543",
+   "note": "f16 角色点名+投屏修复"
+  },
+  {
+   "file": "offline-bundle/custom/roles-zh.js",
+   "bytes": 32183,
+   "sha256": "a8556326c9986215e6f76dbc9cf21746f3ee4865ba55116a765dbf5459b6cfdc",
+   "note": "d2 管辖说明"
+  },
+  {
+   "file": "offline-bundle/nginx.conf",
+   "bytes": 3760,
+   "sha256": "df78b963bdf52a46a0ae963c2430524f8a417ce602315fad55fec2855a4a1ec4",
+   "note": "三版本串"
+  },
+  {
+   "file": "offline-bundle/scripts/superset_cache_warmup.py",
+   "bytes": 7586,
+   "sha256": "6ff43b79ff62af329e91c9730916cf87273af9a277c09188210dfeb3b3fb7aad",
+   "note": "--roll-month 跨月机制"
+  },
+  {
+   "file": "offline-bundle/scripts/warmup_templates.json",
+   "bytes": 174485,
+   "sha256": "2b4886f9ae9758a5e15872488a96e362b188aef0cf00b782b52deb33d780b72a",
+   "note": "47 条"
+  },
+  {
+   "file": "offline-bundle/PRODUCTION-MANIFEST-20261121.json",
+   "bytes": 13704,
+   "sha256": "4c7373c4a71721a129805533ff6e9f0c6faa0591c37d5d50179d497a253cc3cb",
+   "note": "全量对齐"
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/build_manifest21.py",
+   "bytes": 7914,
+   "sha256": "a2c52a7ac704d2715e37cc455b5a1e3c2de3609f43bf3395023ac3412f000a18",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/freeze_snapshot21.py",
+   "bytes": 7016,
+   "sha256": "4407e5486bb1d416bec1e942410f77ab984b73f2c7f1d7fbfcf578ca83908913",
+   "note": ""
+  },
+  {
+   "file": "migration/sources/20261121-RBAC-FRONTEND-POLISH/最终报告.md",
+   "bytes": 15477,
+   "sha256": "a0bd533c352560769ce1e81d5a13eda6f63aeabe0c1010c4c4eaf03852e7194f",
+   "note": ""
+  }
+ ]
+}

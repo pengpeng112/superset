@@ -17,7 +17,13 @@ docker compose exec -e 注入），脚本内不硬编码任何口令：
   SUP_BASE          例：http://superset-web:8088（容器内地址）
   SUP_WARMUP_USER   预热专用账号（admin）
   SUP_WARMUP_PWD    口令
-可选参数：--dry-run 只列模板不发请求；--no-force 按原样重放（验证命中用）。
+可选参数：--dry-run 只列模板不发请求；--no-force 按原样重放（验证命中用）；
+  --roll-month OLD NEW   跨自然月维护（20261121 批新增）：重放时把模板内时间窗字符串
+    OLD 整串替换为 NEW（例：
+    --roll-month "2026-10-01 : 2026-11-01" "2026-11-01 : 2026-12-01"）。
+    仅作用于本次重放（不改模板文件），浏览器随后按新月窗打开必然命中新月缓存键。
+    注意：跨月还需同步推进各 BI 看板原生筛选默认值与 KPI 副标题等元数据
+    （见 migration/sources/20261121-RBAC-FRONTEND-POLISH/，当月以最新完整已结账月为准）。
 
 保护：串行执行，请求间隔 2s，单请求超时 90s；连续 3 个失败自动熔断中止
 （绝不拖累 HIS/ODS 源库）。退出码：0 全部成功；1 部分失败；2 熔断中止；
@@ -35,6 +41,7 @@ TEMPLATE_FILE = os.path.join(HERE, "warmup_templates.json")
 REQ_TIMEOUT = (10, 90)      # 连接 10s / 读取 90s
 GAP_SECONDS = 2.0           # 相邻请求间隔，串行低负载
 MAX_CONSEC_FAIL = 3         # 连续失败熔断阈值
+ROLL = {"from": None, "to": None}  # --roll-month 跨月替换（重放期生效，不改模板文件）
 
 
 def log(msg):
@@ -69,6 +76,10 @@ def login(base, user, pwd):
 def warm(s, base, tpl, force=True):
     """重放一条模板，返回 (ok, 耗时ms, 说明)。HTTP 200 且 result[0].status=success 才算成功。"""
     body = json.loads(json.dumps(tpl["body"]))  # 深拷贝，避免污染模板
+    if ROLL["from"] and ROLL["to"]:
+        # 20261121：--roll-month 跨月——序列化整串替换时间窗（与新月真实首屏请求逐字节一致）
+        raw = json.dumps(body, ensure_ascii=False).replace(ROLL["from"], ROLL["to"])
+        body = json.loads(raw)
     body["force"] = bool(force)
     label = "d%s/s%s%s" % (tpl["dashboard"], tpl["slice_id"] or "ft",
                            "/" + tpl["viz"] if tpl.get("viz") else "")
@@ -95,9 +106,20 @@ def warm(s, base, tpl, force=True):
 
 
 def main():
-    args = set(sys.argv[1:])
+    argv = sys.argv[1:]
+    args = set(a for a in argv if not a.startswith("--roll-month"))
     dry = "--dry-run" in args
     force = "--no-force" not in args
+    if "--roll-month" in argv:
+        i = argv.index("--roll-month")
+        try:
+            ROLL["from"], ROLL["to"] = argv[i + 1], argv[i + 2]
+        except IndexError:
+            log("--roll-month 需要两个参数：OLD NEW（时间窗整串，含空格冒号空格）")
+            return 3
+        if ROLL["from"] == ROLL["to"] or not ROLL["from"]:
+            log("--roll-month 参数非法")
+            return 3
     base = os.environ.get("SUP_BASE", "http://superset-web:8088").rstrip("/")
     user = os.environ.get("SUP_WARMUP_USER", "")
     pwd = os.environ.get("SUP_WARMUP_PWD", "")
@@ -137,7 +159,8 @@ def main():
     secs = round(time.time() - t_start, 1)
     log("SUMMARY json=%s" % json.dumps({
         "ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "total": len(tpl), "ok": ok, "fail": fail,
-        "duration_secs": secs, "force": force, "circuit_break": breaker}, ensure_ascii=False))
+        "duration_secs": secs, "force": force, "circuit_break": breaker,
+        "roll_month": (ROLL["from"] + " -> " + ROLL["to"]) if ROLL["from"] else None}, ensure_ascii=False))
     return 2 if breaker else (0 if fail == 0 else 1)
 
 

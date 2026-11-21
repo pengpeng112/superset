@@ -1,0 +1,76 @@
+003158 起点角色: ['Gamma', '科室_微生物实验室（050205）']
+[PASS] B 还原：无报表授权角色 ['Gamma', '科室_微生物实验室（050205）']
+warmup skipped: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+[PASS] C1 C/chrome-1920x1080 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/chrome-1920x1080 首页 pageerror=0 []
+[PASS] C1 C/chrome-1920x1080 首页 无未预期404 404s=[] expect=[]
+[PASS] C1 C/chrome-1920x1080 34 全组+4卡 ['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']
+[PASS] C2 C/chrome-1920x1080 h16 下钻33=6行 kids=6
+[PASS] C2 C/chrome-1920x1080 h17 收藏面板1条 fav=True
+[PASS] C2 C/chrome-1920x1080 34目录 pageerror=0 []
+[PASS] C2 C/chrome-1920x1080 34目录 无未预期404 404s=[] expect=[]
+[PASS] C2 C/chrome-1920x1080 f14 单表锁高回归 {'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.4 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '606p
+[PASS] C2 C/chrome-1920x1080 /40 pageerror=0 []
+[PASS] C2 C/chrome-1920x1080 /40 无未预期404 404s=[] expect=[]
+[PASS] C7 C/chrome-1920x1080 42双表页368px双卡 {'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}
+[PASS] C7 C/chrome-1920x1080 /42 pageerror=0 []
+[PASS] C7 C/chrome-1920x1080 /42 无未预期404 404s=[] expect=[]
+[PASS] C3 C/chrome-1920x1080 roles 11条管辖说明 count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']
+[PASS] C3 C/chrome-1920x1080 /roles pageerror=0 []
+[PASS] C3 C/chrome-1920x1080 /roles 无未预期404 404s=[] expect=[]
+[PASS] C4 C/chrome-1920x1080 75 副标题=选定期间 {'subOK': True, 'subBad': False, 'kpiHolders': 7}
+[PASS] C4 C/chrome-1920x1080 投屏抬头完整 🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析
+[PASS] C4 C/chrome-1920x1080 投屏期间含端 统计期间：2026-10-01 至 2026-10-31
+[PASS] C4 C/chrome-1920x1080 Esc 退出投屏 {'mode': False, 'bar': False, 'title': '', 'period': ''}
+[PASS] C4 C/chrome-1920x1080 /75 pageerror=0 []
+[PASS] C4 C/chrome-1920x1080 /75 无未预期404 404s=[] expect=[]
+[PASS] C5 C/chrome-1920x1080 72 默认窗2026-10 period=2026-10-01 至 2026-10-31 queryTR=2026-10-01 : 2026-11-01;
+[PASS] C5 C/chrome-1920x1080 72 KPI=十月真值5276 bn373='5,276'
+[PASS] C5 C/chrome-1920x1080 378 高度≥280px h=352
+[PASS] C5 C/chrome-1920x1080 /72 pageerror=0 []
+[PASS] C5 C/chrome-1920x1080 /72 无未预期404 404s=[] expect=[]
+[PASS] C1 C/chrome-1366x768 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/chrome-1366x768 首页 pageerror=0 []
+[PASS] C1 C/chrome-1366x768 首页 无未预期404 404s=[] expect=[]
+Traceback (most recent call last):
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 725, in <module>
+    main()
+    ~~~~^^
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 681, in main
+    run_combo_with_retry(engine, exe, w, h, "C", ADMIN, ADMIN_PW,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         lambda s_, t_, e_=None: scenario_C(s_, t_))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 380, in run_combo_with_retry
+    scenario(s, "%s/%s" % (prefix, tag), do_export) if do_export is not None else scenario(s, "%s/%s" % (prefix, tag))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 682, in <lambda>
+    lambda s_, t_, e_=None: scenario_C(s_, t_))
+                            ~~~~~~~~~~^^^^^^^^
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 508, in scenario_C
+    d = probe_retry(s, DIR_STATE, lambda v: len(v["groups"]) >= 9)
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 309, in probe_retry
+    val = s.j(expr)
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 167, in j
+    v = self.tab.eval(expr)
+  File "F:\python\superset\migration\sources\20261112-WARMUP-PERF\wb_run.py", line 101, in eval
+    r = self.send("Runtime.evaluate", {"expression": expr, "returnByValue": True})
+  File "F:\python\superset\migration\sources\20261121-RBAC-FRONTEND-POLISH\verify_rbac_frontend_polish.py", line 100, in patched
+    r = orig_send(method, params, timeout)
+  File "F:\python\superset\migration\sources\20261112-WARMUP-PERF\wb_run.py", line 79, in send
+    self.ws.send(json.dumps({"id": mid, "method": method, "params": params or {}}))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 338, in send
+    return self.send_frame(frame)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 378, in send_frame
+    bytes_sent = self._send(data)
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 639, in _send
+    return send(self.sock, data)
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_socket.py", line 193, in send
+    return _send()
+  File "C:\Users\Administrator\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_socket.py", line 167, in _send
+    return sock.send(data)
+           ~~~~~~~~~^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+C_EXIT=1

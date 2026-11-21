@@ -1,0 +1,164 @@
+003158 起点角色: ['Gamma', '科室_微生物实验室（050205）']
+[PASS] B 还原：无报表授权角色 ['Gamma', '科室_微生物实验室（050205）']
+warmup session done (absorbs first-session SPA stall)
+[PASS] C1 C/chrome-1920x1080 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/chrome-1920x1080 首页 pageerror=0 []
+[PASS] C1 C/chrome-1920x1080 首页 无未预期404 404s=[] expect=[]
+[PASS] C1 C/chrome-1920x1080 34 全组+4卡 ['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']
+[PASS] C2 C/chrome-1920x1080 h16 下钻33=6行 kids=6
+[PASS] C2 C/chrome-1920x1080 h17 收藏面板1条 fav=True
+[PASS] C2 C/chrome-1920x1080 34目录 pageerror=0 []
+[PASS] C2 C/chrome-1920x1080 34目录 无未预期404 404s=[] expect=[]
+[PASS] C2 C/chrome-1920x1080 f14 单表锁高回归 {'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.5 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '621p
+[PASS] C2 C/chrome-1920x1080 /40 pageerror=0 []
+[PASS] C2 C/chrome-1920x1080 /40 无未预期404 404s=[] expect=[]
+[PASS] C7 C/chrome-1920x1080 42双表页368px双卡 {'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}
+[PASS] C7 C/chrome-1920x1080 /42 pageerror=0 []
+[PASS] C7 C/chrome-1920x1080 /42 无未预期404 404s=[] expect=[]
+[PASS] C3 C/chrome-1920x1080 roles 11条管辖说明 count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']
+[PASS] C3 C/chrome-1920x1080 /roles pageerror=0 []
+[PASS] C3 C/chrome-1920x1080 /roles 无未预期404 404s=[] expect=[]
+[PASS] C4 C/chrome-1920x1080 75 副标题=选定期间 {'subOK': True, 'subBad': False, 'kpiHolders': 7}
+[PASS] C4 C/chrome-1920x1080 投屏抬头完整 🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析
+[PASS] C4 C/chrome-1920x1080 投屏期间含端 统计期间：2026-10-01 至 2026-10-31
+[PASS] C4 C/chrome-1920x1080 Esc 退出投屏 {'mode': False, 'bar': False, 'title': '', 'period': ''}
+[PASS] C4 C/chrome-1920x1080 /75 pageerror=0 []
+[PASS] C4 C/chrome-1920x1080 /75 无未预期404 404s=[] expect=[]
+[FAIL] C5 C/chrome-1920x1080 72 默认窗2026-10 period=报表默认期间 queryTR=No filter
+[PASS] C5 C/chrome-1920x1080 378 高度≥280px h=352
+[PASS] C5 C/chrome-1920x1080 /72 pageerror=0 []
+[PASS] C5 C/chrome-1920x1080 /72 无未预期404 404s=[] expect=[]
+combo chrome-1920x1080 attempt0 1 fails -> retry with fresh session
+[PASS] C1 C/chrome-1920x1080 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/chrome-1920x1080 首页 pageerror=0 []
+[PASS] C1 C/chrome-1920x1080 首页 无未预期404 404s=[] expect=[]
+[PASS] C1 C/chrome-1920x1080 34 全组+4卡 ['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']
+[PASS] C2 C/chrome-1920x1080 h16 下钻33=6行 kids=6
+[PASS] C2 C/chrome-1920x1080 h17 收藏面板1条 fav=True
+[PASS] C2 C/chrome-1920x1080 34目录 pageerror=0 []
+[PASS] C2 C/chrome-1920x1080 34目录 无未预期404 404s=[] expect=[]
+[PASS] C2 C/chrome-1920x1080 f14 单表锁高回归 {'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.4 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '621p
+[PASS] C2 C/chrome-1920x1080 /40 pageerror=0 []
+[PASS] C2 C/chrome-1920x1080 /40 无未预期404 404s=[] expect=[]
+[PASS] C7 C/chrome-1920x1080 42双表页368px双卡 {'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}
+[PASS] C7 C/chrome-1920x1080 /42 pageerror=0 []
+[PASS] C7 C/chrome-1920x1080 /42 无未预期404 404s=[] expect=[]
+[PASS] C3 C/chrome-1920x1080 roles 11条管辖说明 count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']
+[PASS] C3 C/chrome-1920x1080 /roles pageerror=0 []
+[PASS] C3 C/chrome-1920x1080 /roles 无未预期404 404s=[] expect=[]
+[PASS] C4 C/chrome-1920x1080 75 副标题=选定期间 {'subOK': True, 'subBad': False, 'kpiHolders': 7}
+[PASS] C4 C/chrome-1920x1080 投屏抬头完整 🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析
+[PASS] C4 C/chrome-1920x1080 投屏期间含端 统计期间：2026-10-01 至 2026-10-31
+[PASS] C4 C/chrome-1920x1080 Esc 退出投屏 {'mode': False, 'bar': False, 'title': '', 'period': ''}
+[PASS] C4 C/chrome-1920x1080 /75 pageerror=0 []
+[PASS] C4 C/chrome-1920x1080 /75 无未预期404 404s=[] expect=[]
+[FAIL] C5 C/chrome-1920x1080 72 默认窗2026-10 period=报表默认期间 queryTR=No filter
+[PASS] C5 C/chrome-1920x1080 378 高度≥280px h=352
+[PASS] C5 C/chrome-1920x1080 /72 pageerror=0 []
+[PASS] C5 C/chrome-1920x1080 /72 无未预期404 404s=[] expect=[]
+[PASS] C1 C/chrome-1366x768 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/chrome-1366x768 首页 pageerror=0 []
+[PASS] C1 C/chrome-1366x768 首页 无未预期404 404s=[] expect=[]
+[PASS] C1 C/chrome-1366x768 34 全组+4卡 ['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']
+[PASS] C2 C/chrome-1366x768 h16 下钻33=6行 kids=6
+[PASS] C2 C/chrome-1366x768 h17 收藏面板1条 fav=True
+[PASS] C2 C/chrome-1366x768 34目录 pageerror=0 []
+[PASS] C2 C/chrome-1366x768 34目录 无未预期404 404s=[] expect=[]
+[PASS] C2 C/chrome-1366x768 f14 单表锁高回归 {'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.4 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '317p
+[PASS] C2 C/chrome-1366x768 /40 pageerror=0 []
+[PASS] C2 C/chrome-1366x768 /40 无未预期404 404s=[] expect=[]
+[PASS] C7 C/chrome-1366x768 42双表页368px双卡 {'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}
+[PASS] C7 C/chrome-1366x768 /42 pageerror=0 []
+[PASS] C7 C/chrome-1366x768 /42 无未预期404 404s=[] expect=[]
+[PASS] C3 C/chrome-1366x768 roles 11条管辖说明 count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']
+[PASS] C3 C/chrome-1366x768 /roles pageerror=0 []
+[PASS] C3 C/chrome-1366x768 /roles 无未预期404 404s=[] expect=[]
+[PASS] C4 C/chrome-1366x768 75 副标题=选定期间 {'subOK': True, 'subBad': False, 'kpiHolders': 7}
+[PASS] C4 C/chrome-1366x768 投屏抬头完整 🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析
+[PASS] C4 C/chrome-1366x768 投屏期间含端 统计期间：2026-10-01 至 2026-10-31
+[PASS] C4 C/chrome-1366x768 Esc 退出投屏 {'mode': False, 'bar': False, 'title': '', 'period': ''}
+[PASS] C4 C/chrome-1366x768 /75 pageerror=0 []
+[PASS] C4 C/chrome-1366x768 /75 无未预期404 404s=[] expect=[]
+[FAIL] C5 C/chrome-1366x768 72 默认窗2026-10 period=报表默认期间 queryTR=No filter
+[PASS] C5 C/chrome-1366x768 378 高度≥280px h=352
+[PASS] C5 C/chrome-1366x768 /72 pageerror=0 []
+[PASS] C5 C/chrome-1366x768 /72 无未预期404 404s=[] expect=[]
+combo chrome-1366x768 attempt0 1 fails -> retry with fresh session
+[PASS] C1 C/chrome-1366x768 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/chrome-1366x768 首页 pageerror=0 []
+[PASS] C1 C/chrome-1366x768 首页 无未预期404 404s=[] expect=[]
+[PASS] C1 C/chrome-1366x768 34 全组+4卡 ['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']
+[PASS] C2 C/chrome-1366x768 h16 下钻33=6行 kids=6
+[PASS] C2 C/chrome-1366x768 h17 收藏面板1条 fav=True
+[PASS] C2 C/chrome-1366x768 34目录 pageerror=0 []
+[PASS] C2 C/chrome-1366x768 34目录 无未预期404 404s=[] expect=[]
+[FAIL] C2 C/chrome-1366x768 f14 单表锁高回归 {'single': False, 'duo': False, 'summary': '', 'xlsxEnabled': None, 'rows': 0, 'chartMax': ''}
+[PASS] C2 C/chrome-1366x768 /40 pageerror=0 []
+[PASS] C2 C/chrome-1366x768 /40 无未预期404 404s=[] expect=[]
+[FAIL] C7 C/chrome-1366x768 42双表页368px双卡 {'duo': False, 'chartMax': '', 'holderHeights': [], 'pagers': []}
+[PASS] C7 C/chrome-1366x768 /42 pageerror=0 []
+[PASS] C7 C/chrome-1366x768 /42 无未预期404 404s=[] expect=[]
+[PASS] C3 C/chrome-1366x768 roles 11条管辖说明 count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']
+[PASS] C3 C/chrome-1366x768 /roles pageerror=0 []
+[PASS] C3 C/chrome-1366x768 /roles 无未预期404 404s=[] expect=[]
+[PASS] C4 C/chrome-1366x768 75 副标题=选定期间 {'subOK': True, 'subBad': False, 'kpiHolders': 7}
+[PASS] C4 C/chrome-1366x768 投屏抬头完整 🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析
+[PASS] C4 C/chrome-1366x768 投屏期间含端 统计期间：2026-10-01 至 2026-10-31
+[PASS] C4 C/chrome-1366x768 Esc 退出投屏 {'mode': False, 'bar': False, 'title': '', 'period': ''}
+[PASS] C4 C/chrome-1366x768 /75 pageerror=0 []
+[PASS] C4 C/chrome-1366x768 /75 无未预期404 404s=[] expect=[]
+[FAIL] C5 C/chrome-1366x768 72 默认窗2026-10 period=报表默认期间 queryTR=No filter
+[PASS] C5 C/chrome-1366x768 378 高度≥280px h=352
+[PASS] C5 C/chrome-1366x768 /72 pageerror=0 []
+[PASS] C5 C/chrome-1366x768 /72 无未预期404 404s=[] expect=[]
+[PASS] C1 C/c87-1920x1080 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/c87-1920x1080 首页 pageerror=0 []
+[PASS] C1 C/c87-1920x1080 首页 无未预期404 404s=[] expect=[]
+[PASS] C1 C/c87-1920x1080 34 全组+4卡 ['25', '26', '27', '28', '29', '30', '31', '33', 'kyb'] cards=['72', '73', '74', '75']
+[PASS] C2 C/c87-1920x1080 h16 下钻33=6行 kids=6
+[PASS] C2 C/c87-1920x1080 h17 收藏面板1条 fav=True
+[PASS] C2 C/c87-1920x1080 34目录 pageerror=0 []
+[PASS] C2 C/c87-1920x1080 34目录 无未预期404 404s=[] expect=[]
+[PASS] C2 C/c87-1920x1080 f14 单表锁高回归 {'single': True, 'duo': False, 'summary': '共返回 70 行数据（约） · 耗时 0.7 秒', 'xlsxEnabled': True, 'rows': 10, 'chartMax': '624p
+[PASS] C2 C/c87-1920x1080 /40 pageerror=0 []
+[PASS] C2 C/c87-1920x1080 /40 无未预期404 404s=[] expect=[]
+[PASS] C7 C/c87-1920x1080 42双表页368px双卡 {'duo': True, 'chartMax': '368px', 'holderHeights': [456, 456], 'pagers': [1, 1]}
+[PASS] C7 C/c87-1920x1080 /42 pageerror=0 []
+[PASS] C7 C/c87-1920x1080 /42 无未预期404 404s=[] expect=[]
+[PASS] C3 C/c87-1920x1080 roles 11条管辖说明 count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']
+[PASS] C3 C/c87-1920x1080 /roles pageerror=0 []
+[PASS] C3 C/c87-1920x1080 /roles 无未预期404 404s=[] expect=[]
+[PASS] C4 C/c87-1920x1080 75 副标题=选定期间 {'subOK': True, 'subBad': False, 'kpiHolders': 7}
+[PASS] C4 C/c87-1920x1080 投屏抬头完整 🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析
+[PASS] C4 C/c87-1920x1080 投屏期间含端 统计期间：2026-10-01 至 2026-10-31
+[PASS] C4 C/c87-1920x1080 Esc 退出投屏 {'mode': False, 'bar': False, 'title': '', 'period': ''}
+[PASS] C4 C/c87-1920x1080 /75 pageerror=0 []
+[PASS] C4 C/c87-1920x1080 /75 无未预期404 404s=[] expect=[]
+[FAIL] C5 C/c87-1920x1080 72 默认窗2026-10 period=报表默认期间 queryTR=No filter
+[PASS] C5 C/c87-1920x1080 378 高度≥280px h=352
+[PASS] C5 C/c87-1920x1080 /72 pageerror=0 []
+[PASS] C5 C/c87-1920x1080 /72 无未预期404 404s=[] expect=[]
+combo c87-1920x1080 attempt0 1 fails -> retry with fresh session
+[PASS] C1 C/c87-1920x1080 admin 4驾驶舱9分类 ['72', '73', '74', '75']['25', '26', '27', '28', '29', '30', '31', '33']
+[PASS] C1 C/c87-1920x1080 首页 pageerror=0 []
+[PASS] C1 C/c87-1920x1080 首页 无未预期404 404s=[] expect=[]
+[FAIL] C1 C/c87-1920x1080 34 全组+4卡 [] cards=[]
+[FAIL] C2 C/c87-1920x1080 h16 下钻33=6行 kids=-1
+[FAIL] C2 C/c87-1920x1080 h17 收藏面板1条 fav=False
+[PASS] C2 C/c87-1920x1080 34目录 pageerror=0 []
+[PASS] C2 C/c87-1920x1080 34目录 无未预期404 404s=[] expect=[]
+[FAIL] C2 C/c87-1920x1080 f14 单表锁高回归 {'single': False, 'duo': False, 'summary': '', 'xlsxEnabled': None, 'rows': 0, 'chartMax': ''}
+[PASS] C2 C/c87-1920x1080 /40 pageerror=0 []
+[PASS] C2 C/c87-1920x1080 /40 无未预期404 404s=[] expect=[]
+[FAIL] C7 C/c87-1920x1080 42双表页368px双卡 {'duo': False, 'chartMax': '', 'holderHeights': [], 'pagers': []}
+[PASS] C7 C/c87-1920x1080 /42 pageerror=0 []
+[PASS] C7 C/c87-1920x1080 /42 无未预期404 404s=[] expect=[]
+[PASS] C3 C/c87-1920x1080 roles 11条管辖说明 count=11 sample=['管辖：61–70 抗菌药物监测 10 项专项查询（人工冻结，仅指定人员）', '管辖：2 病案首页非医嘱离院与死亡明细（病案室专项）']
+[PASS] C3 C/c87-1920x1080 /roles pageerror=0 []
+[PASS] C3 C/c87-1920x1080 /roles 无未预期404 404s=[] expect=[]
+[FAIL] C4 C/c87-1920x1080 75 副标题=选定期间 {'subOK': False, 'subBad': False, 'kpiHolders': 0}
+[PASS] C4 C/c87-1920x1080 投屏抬头完整 🏥 山东省第二人民医院 · 全院护理工作量与病区床位效率分析
+[FAIL] C4 C/c87-1920x1080 投屏期间含端 统计期间：报表默认期间
+[PASS] C4 C/c87-1920x1080 Esc 退出投屏 {'mode': False, 'bar': False, 'title': '', 'period': ''}
+[PASS] C4 C/c87-1920x1080 /75 pageerror=0 []
+[PASS] C4 C/c87-1920x1080 /75 无未预期404 404s=[] expect=[]
